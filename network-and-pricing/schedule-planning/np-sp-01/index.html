@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NP-SP-01 · Seasonal Schedule Construction · Airlines Process Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <span class="topbar-badge">v1.0</span>
+  <div class="topbar-right">
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network &amp; Pricing</a>
+    <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
+  </div>
+</header>
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-domain open"><span>Network and Pricing</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
+      <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
+        <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-02/"><span class="status-dot status-done"></span><span class="pid">NP-SP-02</span>Fleet Assignment & Tail Routing</a>
+        <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-03/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-03</span>Route Profitability Analysis</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../network-and-pricing/revenue-management/">Revenue Management</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-01/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-01</span>Inventory & Yield Optimization</a>
+        <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-02/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-02</span>Overbooking Policy Management</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../network-and-pricing/pricing-fare-management/">Pricing & Fare Management</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-01/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-01</span>Fare Construction & Filing</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<main class="main"><div class="breadcrumb">
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../">Network and Pricing</a><span class="sep">›</span>
+  <a href="../">Schedule Planning</a><span class="sep">›</span>
+  <span class="current">NP-SP-01 · Seasonal Schedule Construction</span>
+</div><div class="page-header">
+  <div class="page-header-left">
+    <h1>Seasonal Schedule Construction</h1>
+    <p>Network and Pricing › Schedule Planning · 16 L4 steps · 5 phases · 6 decision gates</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-SP-01</span>
+    <span class="status-badge complete">✅ Complete</span>
+  </div>
+</div><div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-sp-01">
+      <img src="../../../assets/img/np-sp-01.png" alt="NP-SP-01 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-sp-01').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-sp-01').style.display='flex'">
+      <div id="diag-placeholder-np-sp-01" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated. Run:<br><code style="font-size:10px;background:#f1f5f9;padding:4px 8px;border-radius:3px">mmdc -i np-sp-01.mmd -o np-sp-01.png -w 1920 -H 1080 --scale 2 --backgroundColor white</code><br>then copy to <code>wiki/assets/img/</code></span>
+      </div>
+    </div>
+  </div>
+</div><div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1 · Route Analysis</div>1.1</td>
+  <td class="td-name">Extract prior season route traffic stats</td>
+  <td class="td-role">Network Planning Analyst</td>
+  <td><span class="stag amadeus">Amadeus SkyCAST</span></td>
+  <td style="font-size:10px;color:#6b7280">Prior SSIM, BTS O&D data</td>
+  <td style="font-size:10px">Route performance report by O&D pair</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Load factor %; Yield per RPM</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Identify underperforming routes for reduction</td>
+  <td class="td-role">Network Planning Analyst</td>
+  <td><span class="stag custom">SkyCAST + SkySYM</span></td>
+  <td style="font-size:10px;color:#6b7280">Route performance report</td>
+  <td style="font-size:10px">Candidate cut list with revenue impact</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Revenue per ASM vs breakeven</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Identify growth routes for frequency uplift</td>
+  <td class="td-role">Network Planning Analyst</td>
+  <td><span class="stag custom">SkySYM + SkyCAST</span></td>
+  <td style="font-size:10px;color:#6b7280">Market demand forecast</td>
+  <td style="font-size:10px">Growth candidate list ranked by PRASM</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Projected incremental PRASM</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2 · Schedule Build</div>2.1</td>
+  <td class="td-name">Assign departure/arrival times per route</td>
+  <td class="td-role">Schedule Manager</td>
+  <td><span class="stag amadeus">Amadeus SkyWORKS</span></td>
+  <td style="font-size:10px;color:#6b7280">Growth/cut list; Fleet availability plan</td>
+  <td style="font-size:10px">Draft schedule with assigned times</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Avg aircraft turn time compliance %</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Apply MCT rules + validate airport curfews</td>
+  <td class="td-role">Schedule Manager</td>
+  <td><span class="stag custom">SkyWORKS + Airport ops data</span></td>
+  <td style="font-size:10px;color:#6b7280">Draft schedule</td>
+  <td style="font-size:10px">Constraint-validated schedule</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">MCT compliance rate %</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Validate schedule against fleet plan</td>
+  <td class="td-role">Schedule Manager + Fleet Planning</td>
+  <td><span class="stag custom">SkyMAX + MRO system</span></td>
+  <td style="font-size:10px;color:#6b7280">Draft schedule; Fleet maintenance calendar</td>
+  <td style="font-size:10px">Fleet-validated schedule</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Aircraft utilization % (target >12 hrs)</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3 · Slot Coordination</div>3.1</td>
+  <td class="td-name">Submit slot requests to FAA / airport coordinators</td>
+  <td class="td-role">Slot Coordinator</td>
+  <td><span class="stag noc">SkyWORKS + FAA SWIM</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated draft schedule</td>
+  <td style="font-size:10px">Slot request submissions to ACL/FAA</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Slot approval rate %</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Receive slot confirmations or counter-offers</td>
+  <td class="td-role">Slot Coordinator</td>
+  <td><span class="stag amadeus">Amadeus SkyWORKS</span></td>
+  <td style="font-size:10px;color:#6b7280">FAA/airport responses</td>
+  <td style="font-size:10px">Confirmed slot list + counter-offer list</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">% slots confirmed as requested</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Negotiate slot swaps with other carriers</td>
+  <td class="td-role">Slot Coordinator + VP Network Planning</td>
+  <td><span class="stag custom">Manual bilateral negotiation</span></td>
+  <td style="font-size:10px;color:#6b7280">Counter-offer list</td>
+  <td style="font-size:10px">Agreed slot swap documentation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Swap resolution cycle time (days)</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4 · Internal Reviews</div>4.1</td>
+  <td class="td-name">Revenue Management reviews schedule</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus NRM</span></td>
+  <td style="font-size:10px;color:#6b7280">Slot-confirmed draft schedule</td>
+  <td style="font-size:10px">RM-approved schedule or flagged itineraries</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Projected PRASM impact vs prior season</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">MRO reviews schedule for Mx window conflicts</td>
+  <td class="td-role">MRO Planner</td>
+  <td><span class="stag custom">Custom MRO system</span></td>
+  <td style="font-size:10px;color:#6b7280">RM-approved schedule; Fleet Mx calendar</td>
+  <td style="font-size:10px">MRO-cleared schedule</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Maintenance coverage %; AOG conflict count</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Crew Planning reviews schedule for pairing feasibility</td>
+  <td class="td-role">Crew Planning Manager</td>
+  <td><span class="stag aws">AWS-hosted crew mgmt system</span></td>
+  <td style="font-size:10px;color:#6b7280">MRO-cleared schedule; FAA Part 117 rules</td>
+  <td style="font-size:10px">Crew-feasible schedule</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Pairing cost per block hour; Legal rest %</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Schedule Manager issues final approved schedule</td>
+  <td class="td-role">Schedule Manager</td>
+  <td><span class="stag amadeus">Amadeus SkyWORKS</span></td>
+  <td style="font-size:10px;color:#6b7280">All dept sign-offs (RM + MRO + Crew)</td>
+  <td style="font-size:10px">Approved SSIM-format seasonal schedule</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Cross-dept approval cycle (target <30 days)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5 · Publication</div>5.1</td>
+  <td class="td-name">Distribute SSIM to PSS and all GDS channels</td>
+  <td class="td-role">IT / Scheduling Ops</td>
+  <td><span class="stag gds">Altéa PSS + GDS APIs</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved SSIM file</td>
+  <td style="font-size:10px">Published flight inventory across all channels</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GDS availability accuracy %; Time-to-publish</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Update public timetable on airline website and app</td>
+  <td class="td-role">Digital Product Team</td>
+  <td><span class="stag custom">Website CMS + PSS inventory feed</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved SSIM</td>
+  <td style="font-size:10px">Live public schedule on web and mobile</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">App/web sync accuracy %</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Notify corporate portal and TMC partners</td>
+  <td class="td-role">Corporate Sales Operations</td>
+  <td><span class="stag gds">Corporate portal + GDS PRISM</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved schedule changes</td>
+  <td style="font-size:10px">TMC and corporate account notifications</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">TMC notification lead time (target >60 days)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
+  </div>
+</div><div class="card" id="metadata">
+  <div class="card-header"><span class="icon">🗃</span><h2>Process Metadata</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-SP-01</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network and Pricing</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Schedule Planning</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Seasonal Schedule Construction</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">16 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">6 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Process Trigger</span><span class="kval">IATA season planning cycle opens</span></div>
+          <div class="krow"><span class="kname">Process Owner</span><span class="kval">VP Network Planning</span></div>
+          <div class="krow"><span class="kname">Upstream</span><span class="kval">— (first subprocess)</span></div><div class="krow"><span class="kname">Downstream</span><span class="kval"><a href="../np-sp-02/">NP-SP-02 · Fleet Assignment & Tail Routing</a></span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Network Planning Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Schedule Manager</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Slot Coordinator + VP Network Planning</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Revenue Management Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>MRO Planner</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Crew Planning Manager</div><div class="swim"><div class="dot" style="background:#6366f1"></div>IT / Scheduling Ops</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Digital Product Team</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Corporate Sales Operations</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag amadeus">Amadeus SkyCAST</span><span class="stag amadeus">Amadeus SkySYM</span><span class="stag amadeus">Amadeus SkyMAX</span><span class="stag amadeus">Amadeus SkyWORKS</span><span class="stag amadeus">Amadeus NRM</span><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag aws">AWS Crew System</span><span class="stag custom">Custom MRO System</span><span class="stag gds">Sabre GDS + PRISM</span><span class="stag gds">Travelport GDS</span><span class="stag noc">FAA SWIM Feed</span><span class="stag custom">Corporate Portal</span><span class="stag custom">Airline Website CMS</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Load factor % by route</span><span class="kval">Target >75%</span></div><div class="krow"><span class="kname">Slot approval rate</span><span class="kval">Target >90%</span></div><div class="krow"><span class="kname">Aircraft utilization</span><span class="kval">Target >12 hrs/day</span></div><div class="krow"><span class="kname">Cross-dept approval cycle</span><span class="kval">Target <30 days</span></div><div class="krow"><span class="kname">GDS publish accuracy</span><span class="kval">Target 100%</span></div><div class="krow"><span class="kname">Time-to-publish post sign-off</span><span class="kval">Target <4 hrs</span></div><div class="krow"><span class="kname">TMC notification lead time</span><span class="kval">Target >60 days</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Point-to-point network: any route change propagates aircraft + crew impacts across all airports simultaneously</div><div class="risk-card">No alliance = fewer slot-swap options at congested airports vs legacy carriers</div><div class="risk-card"><strong>Crew feasibility (Phase 4):</strong> New crew system still maturing — single highest-risk step in the process</div><div class="risk-card">Cross-dept review (Phase 4) is longest elapsed step: 4–6 weeks typical with multiple re-loop cycles</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Prior SSIM file + BTS O&D demand data</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Approved SSIM file + live GDS inventory</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><div class="pn-nav"><span></span><a class="pn-btn" href="../np-sp-02/"><span><span class="sub">Next</span>NP-SP-02 · Fleet Assignment & Tail Routing</span><span class="arrow">→</span></a></div></main>
+
+<script src="../../../assets/js/wiki.js"></script>
+</body></html>
