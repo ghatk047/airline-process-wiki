@@ -1,0 +1,33 @@
+flowchart LR
+  A([Start\nSSIM Approved]):::navy
+
+  subgraph P1[Phase 1 · Fleet Assignment]
+    B[Assign 737\nVariant · SkyMAX]
+    C{Rotation\nFeasible?}:::orange
+  end
+
+  subgraph P2[Phase 2 · Tail Routing]
+    D[Assign Tail\nNumbers · SkyWORKS]
+    E{Mx Due\nConflict?}:::orange
+  end
+
+  subgraph P3[Phase 3 · Integration Check]
+    F[Cross-Check\nCrew + Gates]
+    G{Co-location\nConflict?}:::orange
+  end
+
+  subgraph P4[Phase 4 · Baseline and Archive]
+    H[Load PSS\nPublish NOC\nAWS S3]
+    I{Load\nAccurate?}:::orange
+  end
+
+  Z([Done\nNOC Baseline Live]):::navy
+
+  A --> B --> C -->|Rebalance| B
+  C -->|OK| D --> E -->|Reschedule| D
+  E -->|Cleared| F --> G -->|Resolve| F
+  G -->|OK| H --> I -->|Retry| H
+  I -->|100pct| Z
+
+classDef navy   fill:#003366,color:#fff,stroke:#003366
+classDef orange fill:#ff6600,color:#fff,stroke:#ff6600

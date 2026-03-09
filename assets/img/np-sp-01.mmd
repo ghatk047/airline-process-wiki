@@ -1,0 +1,38 @@
+flowchart LR
+  A([Start\nSeason Opens]):::navy
+
+  subgraph P1[Phase 1 · Route Analysis]
+    B[Extract Traffic\nStats · SkyCAST]
+    C{Underperform\nor Growth?}:::orange
+  end
+
+  subgraph P2[Phase 2 · Schedule Build]
+    D[Assign Times\nSkyWORKS]
+    E{Fleet\nConflict?}:::orange
+  end
+
+  subgraph P3[Phase 3 · Slot Coordination]
+    F[Submit FAA\nSlot Requests]
+    G{Slots\nApproved?}:::orange
+  end
+
+  subgraph P4[Phase 4 · Internal Reviews]
+    H[RM + MRO +\nCrew Review]
+    I{All Depts\nSign Off?}:::orange
+  end
+
+  subgraph P5[Phase 5 · Publication]
+    J[Publish GDS\nAltea + Web]
+    K{Sync\nAccurate?}:::orange
+  end
+
+  Z([Done\nSSIM Live]):::navy
+
+  A --> B --> C -->|Cut/Grow| D --> E -->|Conflict| D
+  E -->|OK| F --> G -->|Counter| F
+  G -->|Confirmed| H --> I -->|Rework| H
+  I -->|Approved| J --> K -->|Error| J
+  K -->|OK| Z
+
+classDef navy   fill:#003366,color:#fff,stroke:#003366
+classDef orange fill:#ff6600,color:#fff,stroke:#ff6600
