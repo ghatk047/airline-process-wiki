@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NP-SP-02 · Fleet Assignment & Tail Routing · Airlines Process Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <span class="topbar-badge">v1.0</span>
+  <div class="topbar-right">
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network &amp; Pricing</a>
+    <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
+  </div>
+</header>
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-domain open"><span>Network and Pricing</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
+      <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/schedule-planning/np-sp-02/"><span class="status-dot status-done"></span><span class="pid">NP-SP-02</span>Fleet Assignment & Tail Routing</a>
+        <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-03/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-03</span>Route Profitability Analysis</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../network-and-pricing/revenue-management/">Revenue Management</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-01/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-01</span>Inventory & Yield Optimization</a>
+        <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-02/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-02</span>Overbooking Policy Management</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../network-and-pricing/pricing-fare-management/">Pricing & Fare Management</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-01/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-01</span>Fare Construction & Filing</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<main class="main"><div class="breadcrumb">
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../">Network and Pricing</a><span class="sep">›</span>
+  <a href="../">Schedule Planning</a><span class="sep">›</span>
+  <span class="current">NP-SP-02 · Fleet Assignment & Tail Routing</span>
+</div><div class="page-header">
+  <div class="page-header-left">
+    <h1>Fleet Assignment & Tail Routing</h1>
+    <p>Network and Pricing › Schedule Planning · 11 L4 steps · 4 phases · 4 decision gates</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-SP-02</span>
+    <span class="status-badge complete">✅ Complete</span>
+  </div>
+</div><div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-sp-02">
+      <img src="../../../assets/img/np-sp-02.png" alt="NP-SP-02 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-sp-02').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-sp-02').style.display='flex'">
+      <div id="diag-placeholder-np-sp-02" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated. Run:<br><code style="font-size:10px;background:#f1f5f9;padding:4px 8px;border-radius:3px">mmdc -i np-sp-02.mmd -o np-sp-02.png -w 1920 -H 1080 --scale 2 --backgroundColor white</code><br>then copy to <code>wiki/assets/img/</code></span>
+      </div>
+    </div>
+  </div>
+</div><div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1 · Fleet Assignment</div>1.1</td>
+  <td class="td-name">Assign aircraft variant to each route</td>
+  <td class="td-role">Fleet Planning Analyst</td>
+  <td><span class="stag amadeus">Amadeus SkyMAX</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved seasonal schedule; Fleet inventory</td>
+  <td style="font-size:10px">Aircraft-type assignment matrix by route</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Seat capacity match %; Variant utilization balance</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Optimize aircraft rotations to minimize ferry flights</td>
+  <td class="td-role">Fleet Planning Analyst</td>
+  <td><span class="stag custom">SkyMAX + SkyWORKS</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft-type matrix; Station demand data</td>
+  <td style="font-size:10px">Optimized rotation plan</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Ferry flight count (target <5/day); Utilization %</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Build aircraft overnight station balance</td>
+  <td class="td-role">Fleet Planning Analyst</td>
+  <td><span class="stag amadeus">Amadeus SkyMAX</span></td>
+  <td style="font-size:10px;color:#6b7280">Rotation plan; Next-day departure schedule</td>
+  <td style="font-size:10px">Station balance report: aircraft count per airport</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Balance vs demand variance %; Zero-aircraft risk</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2 · Tail Routing</div>2.1</td>
+  <td class="td-name">Assign specific tail numbers to flight sequences</td>
+  <td class="td-role">Scheduling Ops</td>
+  <td><span class="stag custom">SkyWORKS + Custom tail routing tool</span></td>
+  <td style="font-size:10px;color:#6b7280">Optimized rotation plan; Fleet Mx due-date register</td>
+  <td style="font-size:10px">Tail routing plan: N-number per flight leg</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Tail utilization hours (target within 5% avg)</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Validate each tail maintenance due dates</td>
+  <td class="td-role">MRO Planner</td>
+  <td><span class="stag custom">Custom MRO system (API to SkyWORKS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Tail routing plan; Aircraft Mx tracking</td>
+  <td style="font-size:10px">Maintenance-cleared tail routing plan</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">% tails with Mx window protected; Hard-time exceedances</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Pre-position reserve aircraft by region</td>
+  <td class="td-role">Fleet Planning Analyst</td>
+  <td><span class="stag custom">SkyMAX + Disruption history heat map</span></td>
+  <td style="font-size:10px;color:#6b7280">Finalized tail routing; Historical disruption data</td>
+  <td style="font-size:10px">Reserve positioning plan at focus cities</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Reserve coverage ratio (target ≥1 per 50 tails)</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3 · Integration Check</div>3.1</td>
+  <td class="td-name">Cross-check tail routing against crew pairing plan</td>
+  <td class="td-role">Crew Planning Manager</td>
+  <td><span class="stag custom">Crew mgmt system + SkyWORKS</span></td>
+  <td style="font-size:10px;color:#6b7280">Tail routing plan; Crew pairing schedule</td>
+  <td style="font-size:10px">Conflict-free integrated aircraft + crew plan</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Crew-aircraft co-location conflict rate (target 0)</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Validate overnight gate/stand availability</td>
+  <td class="td-role">Airport Relations / Station Ops</td>
+  <td><span class="stag custom">Station ops DB + Gate management system</span></td>
+  <td style="font-size:10px;color:#6b7280">Overnight balance plan; Gate lease agreements</td>
+  <td style="font-size:10px">Gate-validated overnight positioning plan</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate conflict count (target 0)</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4 · Baseline & Archive</div>4.1</td>
+  <td class="td-name">Load finalized tail routing into PSS</td>
+  <td class="td-role">IT / Scheduling Ops</td>
+  <td><span class="stag custom">Altéa PSS + SkyWORKS API</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved tail routing plan</td>
+  <td style="font-size:10px">Live tail assignments visible in PSS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data load accuracy % (target 100%); Load time</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Publish tail routing baseline to NOC</td>
+  <td class="td-role">Scheduling Ops / NOC Team</td>
+  <td><span class="stag noc">NOC console + AI cancellation tool</span></td>
+  <td style="font-size:10px;color:#6b7280">PSS-confirmed tail plan</td>
+  <td style="font-size:10px">NOC operational baseline: aircraft positions</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NOC baseline accuracy vs actual ops at T-24hrs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Archive integrated plan to data lake</td>
+  <td class="td-role">IT / Data Engineering</td>
+  <td><span class="stag aws">AWS S3 + real-time streaming pipeline</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved tail + crew integrated plan</td>
+  <td style="font-size:10px">Immutable archived baseline in data lake</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Archive latency (target <15 min); Retrieval <30 sec</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
+  </div>
+</div><div class="card" id="metadata">
+  <div class="card-header"><span class="icon">🗃</span><h2>Process Metadata</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-SP-02</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network and Pricing</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Schedule Planning</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Fleet Assignment & Tail Routing</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">11 across 4 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">4 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Process Trigger</span><span class="kval">NP-SP-01 Schedule Manager sign-off complete</span></div>
+          <div class="krow"><span class="kname">Process Owner</span><span class="kval">VP Fleet Planning / Director Scheduling Ops</span></div>
+          <div class="krow"><span class="kname">Upstream</span><span class="kval"><a href="../np-sp-01/">NP-SP-01 · Seasonal Schedule Construction</a></span></div><div class="krow"><span class="kname">Downstream</span><span class="kval"><a href="../np-sp-03/">NP-SP-03 · Route Profitability Analysis</a></span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Fleet Planning Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>MRO Planner</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Scheduling Ops</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Crew Planning Manager</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Airport Relations / Station Ops</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>IT / Data Engineering</div><div class="swim"><div class="dot" style="background:#6366f1"></div>NOC Team (Ops Control)</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag amadeus">Amadeus SkyMAX</span><span class="stag amadeus">Amadeus SkyWORKS</span><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag aws">AWS Crew System</span><span class="stag aws">AWS S3 Data Lake</span><span class="stag custom">Custom MRO System</span><span class="stag custom">Custom Tail Routing Tool</span><span class="stag noc">NOC Console</span><span class="stag noc">AI Cancellation Tool</span><span class="stag custom">Gate Mgmt System</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Ferry flights per day</span><span class="kval">Target <5/day</span></div><div class="krow"><span class="kname">Aircraft utilization</span><span class="kval">Target >12 hrs/day</span></div><div class="krow"><span class="kname">Crew-aircraft co-location conflicts</span><span class="kval">Target 0</span></div><div class="krow"><span class="kname">Mx hard-time exceedances</span><span class="kval">Target 0</span></div><div class="krow"><span class="kname">Reserve coverage ratio</span><span class="kval">≥1 per 50 active tails</span></div><div class="krow"><span class="kname">PSS load accuracy</span><span class="kval">Target 100%</span></div><div class="krow"><span class="kname">Data lake archive latency</span><span class="kval">Target <15 min</span></div><div class="krow"><span class="kname">NOC re-sync speed</span><span class="kval">Target <30 sec</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card"><strong>Dec 2022 WN root cause:</strong> Aircraft solver and crew solver ran independently → contradictory plans → NOC lost track of crews. Phase 3 is the explicit fix.</div><div class="risk-card">No hub = no natural spare concentration. Reserves must be deliberately pre-positioned at focus cities</div><div class="risk-card">AI cancellation tool recommendation quality depends on this baseline — errors cascade into wrong cancellation recommendations</div><div class="risk-card">Single fleet type: any FAA airworthiness directive hits 100% of fleet simultaneously</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Approved seasonal schedule (NP-SP-01 output)</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Tail routing baseline in NOC + data lake archive</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><div class="pn-nav"><a class="pn-btn" href="../np-sp-01/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-SP-01 · Seasonal Schedule Construction</span></a><a class="pn-btn" href="../np-sp-03/"><span><span class="sub">Next</span>NP-SP-03 · Route Profitability Analysis</span><span class="arrow">→</span></a></div></main>
+
+<script src="../../../assets/js/wiki.js"></script>
+</body></html>
