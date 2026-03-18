@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SP-10 Slides — SSIM File Management &amp; Distribution</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-10</span>
+    <h1>SSIM File Management &amp; Distribution</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sp-10.png" alt="BPMN for NP-SP-10" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-10</span>
+    <h1>SSIM File Management &amp; Distribution</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SP-10</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Schedule Planning</li>
+          <li><strong>L3 Name:</strong> SSIM File Management &amp; Distribution</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Confirm seasonal schedule freeze milestone</li><li><strong>Phase 2:</strong> Generate SSIM Chapter 7 format file</li><li><strong>Phase 3:</strong> Identify slot-controlled airports in schedule</li><li><strong>Phase 4:</strong> Transmit SSIM to Sabre Schedule Distribution</li><li><strong>Phase 5:</strong> Distribute SSIM to codeshare and interline partner</li><li><strong>Phase 6:</strong> Archive versioned SSIM with change log</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Airport Operations Coordinator</li><li>Alliance Operations Analyst</li><li>Distribution Analyst</li><li>Distribution Quality Analyst</li><li>Schedule Data Analyst</li><li>Schedule Systems Engineer</li><li>Senior Network Planner</li><li>Slot Coordinator</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS S3</li><li>Amadeus GDS / Travelport GDS</li><li>Amadeus SkyWORKS</li><li>IATA WSG Slot Portal</li><li>OAG Schedule Analyser</li><li>SITA AMS (Airport Management System)</li><li>SITA STB (Schedule Transfer Bridge)</li><li>Sabre GDS / Amadeus GDS</li><li>Sabre Schedule Distribution System (SDS)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-10</span>
+    <h1>SSIM File Management &amp; Distribution</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Confirm seasonal schedule freeze milestone</td>
+        <td class="kpi-col">Schedule frozen ≥8 weeks before IATA seasonal deadline</td>
+        <td class="pain-col">SkyWORKS freeze locks the shared planning workspace; late changes require an emergency amendment process that triggers full GDS re-distribution</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Extract full flight schedule from SkyWORKS</td>
+        <td class="kpi-col">Extract completeness ≥99.5% of scheduled flight legs</td>
+        <td class="pain-col">SkyWORKS export occasionally omits wet-lease and codeshare-operated segments, requiring manual reconciliation before SSIM generation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate schedule data completeness and codes</td>
+        <td class="kpi-col">Data quality score ≥99% (missing or invalid fields &lt;1% of records)</td>
+        <td class="pain-col">Missing IATA airport codes or unrecognised aircraft ICAO type codes cause SSIM Chapter 7 format rejection at downstream GDS ingestion</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Generate SSIM Chapter 7 format file</td>
+        <td class="kpi-col">File generated within 4 business hours of schedule freeze confirmation</td>
+        <td class="pain-col">SkyWORKS SSIM output does not include non-IATA member charter operations; manual record append required, increasing error risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Run IATA SSIM syntax and schema validation</td>
+        <td class="kpi-col">Zero critical format errors before external submission</td>
+        <td class="pain-col">SkyWORKS embedded IATA SSIM validator version lags IATA annual publication cycle by up to 6 months, causing false positives on new record type extensions requiring manual sign-off</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Correct SSIM format errors and re-validate</td>
+        <td class="kpi-col">Error resolution cycle completed within 2 business days</td>
+        <td class="pain-col">Iterative correction loops frequently triggered by aircraft sub-fleet code changes (e.g. 73H vs 73W); no automated mapping maintained between SkyWORKS fleet types and SSIM equipment codes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Identify slot-controlled airports in schedule</td>
+        <td class="kpi-col">Slot request list submitted ≥4 weeks before IATA scheduling conference</td>
+        <td class="pain-col">IATA Level 2/3 coordination status changes seasonally with no automated alert; reclassification of an airport discovered post-SSIM generation forces last-minute slot programme additions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Submit slot requests to airport coordinators</td>
+        <td class="kpi-col">Submission acknowledgement received from all coordinators within 5 business days</td>
+        <td class="pain-col">Some regional coordinators (e.g. ACNUSA for Paris CDG, NACC for Caribbean) require national-format messages rather than standard IATA WSG SSIM; manual reformatting needed per coordinator</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Reconcile slot confirmations against requests</td>
+        <td class="kpi-col">Slot hit rate ≥90% of requested times within ±30 minutes</td>
+        <td class="pain-col">Slot denials at Level 3 constrained airports (LHR, JFK, FRA) require re-planning iterations with the Network team; no automated feedback loop into SkyWORKS to propagate confirmed times back to the live schedule</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Transmit SSIM to Sabre Schedule Distribution</td>
+        <td class="kpi-col">Sabre display accuracy ≥99% within 48 hours of transmission</td>
+        <td class="pain-col">Sabre SDS equipment type mapping for new aircraft variants (e.g. A321XLR, 737 MAX 10) lags IATA SSIM type code releases by up to one schedule season, causing booking class display errors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Transmit SSIM to Amadeus and Travelport GDS</td>
+        <td class="kpi-col">Display accuracy ≥99% within 48 hours on both GDS platforms</td>
+        <td class="pain-col">Amadeus and Travelport have different SSIM ingestion cutoff times and batch processing windows; staggered submissions required to avoid inconsistent schedule displays across booking channels during the transition window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Distribute schedule data to OAG and Cirium</td>
+        <td class="kpi-col">Schedule data live on OAG and Cirium within 72 hours of SSIM receipt</td>
+        <td class="pain-col">OAG charges amendment fees for mid-cycle corrections; unplanned network changes require budget pre-approval before re-submission, introducing a 2–5 day delay in schedule visibility for travel agencies and competitors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Verify GDS schedule display accuracy post-load</td>
+        <td class="kpi-col">GDS display error rate &lt;0.5% across sampled flights</td>
+        <td class="pain-col">GDS automated post-load checks do not cover all booking class inheritance mappings for new routes; manual spot-check required for every new city-pair added to the schedule</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Distribute SSIM to codeshare and interline partners</td>
+        <td class="kpi-col">Partner receipt confirmation received within 48 hours for ≥95% of partners</td>
+        <td class="pain-col">SITA STB acknowledgement messages do not distinguish between received and processed status; partners occasionally load superseded SSIM versions when multiple amendments are in flight simultaneously</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Notify airports of schedule via IATA AHM 090</td>
+        <td class="kpi-col">Airport acknowledgement received from ≥95% of notified airports within 5 business days</td>
+        <td class="pain-col">AHM 090 message format compliance varies by airport handler; some outstations require a direct email supplement alongside SITA MATIP messages, adding manual workload with no audit trail in AMS</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Archive versioned SSIM with change log</td>
+        <td class="kpi-col">100% version retention; any historical SSIM retrievable within 1 business hour</td>
+        <td class="pain-col">No automated versioning in SkyWORKS SSIM module; manual naming conventions lead to version confusion when multiple mid-season amendments are active, creating audit and regulatory traceability risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Manage mid-season SSIM amendment cycle</td>
+        <td class="kpi-col">Full amendment cycle (generate → validate → distribute → verify) completed within 5 business days</td>
+        <td class="pain-col">Mid-season amendments trigger full re-distribution to all GDS, aggregators, and partners; SkyWORKS SSIM module has no selective-update capability, so even single-flight changes require a complete file re-transmission</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+</body>
+</html>

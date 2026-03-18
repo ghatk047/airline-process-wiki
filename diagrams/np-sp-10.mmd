@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1["Phase 1: Schedule Freeze & Extraction"]
+    A([Start]) --> B[Confirm schedule freeze milestone]
+    B --> C[Extract schedule from SkyWORKS]
+    C --> D{Data completeness ≥99%?}
+    D -- No --> C
+    D -- Yes --> E[Validated schedule dataset]
+  end
+  subgraph P2["Phase 2: SSIM Generation & Validation"]
+    E --> F[Generate SSIM Chapter 7 file]
+    F --> G{IATA syntax validation pass?}
+    G -- No --> H[Correct SSIM format errors]
+    H --> G
+    G -- Yes --> I[Validated SSIM file]
+  end
+  subgraph P3["Phase 3: Slot Coordination"]
+    I --> J[Identify slot-controlled airports]
+    J --> K[Submit slot requests — WSG Portal]
+    K --> L{Slot hit rate ≥90%?}
+    L -- No --> M[Re-plan with Network team]
+    M --> K
+    L -- Yes --> N[Slot confirmations reconciled]
+  end
+  subgraph P4["Phase 4: GDS & Aggregator Distribution"]
+    N --> O[Transmit SSIM to Sabre SDS]
+    O --> P[Transmit to Amadeus & Travelport GDS]
+    P --> Q[Distribute to OAG / Cirium]
+    Q --> R{GDS display error rate <0.5%?}
+    R -- No --> S[Correct & re-submit to GDS]
+    S --> R
+    R -- Yes --> T[GDS distribution verified]
+  end
+  subgraph P5["Phase 5: Partner & Airport Notification"]
+    T --> U[Send SSIM via SITA STB to partners]
+    U --> V[Notify airports via AHM 090 messages]
+  end
+  subgraph P6["Phase 6: Archive & Change Control"]
+    V --> W[Archive versioned SSIM to AWS S3]
+    W --> X{Mid-season amendment required?}
+    X -- Yes --> Y[Trigger amendment cycle]
+    Y --> F
+    X -- No --> Z([Complete])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Z fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600
