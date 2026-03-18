@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-RM-10 Slides — Competitive Fare Monitoring &amp; Response</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-10</span>
+    <h1>Competitive Fare Monitoring &amp; Response</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-rm-10.png" alt="BPMN for NP-RM-10" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-10</span>
+    <h1>Competitive Fare Monitoring &amp; Response</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-RM-10</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Revenue Management</li>
+          <li><strong>L3 Name:</strong> Competitive Fare Monitoring &amp; Response</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Ingest ATPCO competitor fare feed</li><li><strong>Phase 2:</strong> Analyse competitor O&amp;D fare positioning</li><li><strong>Phase 3:</strong> Evaluate inventory availability and load factor</li><li><strong>Phase 4:</strong> File revised fares via ATPCO submissions</li><li><strong>Phase 5:</strong> Monitor booking velocity post-response</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Distribution Analyst</li><li>Pricing Analyst</li><li>Pricing Intelligence Analyst</li><li>Revenue Management Analyst</li><li>Revenue Management System</li><li>Senior Revenue Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>AWS S3 / Redshift</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>OAG Schedule Analyser</li><li>PROS RM</li><li>Sabre GDS</li><li>Tableau / Power BI</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-10</span>
+    <h1>Competitive Fare Monitoring &amp; Response</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Ingest ATPCO competitor fare feed</td>
+        <td class="kpi-col">Feed latency ≤30 min from ATPCO publication; 100% O&amp;D coverage on monitored routes</td>
+        <td class="pain-col">ATPCO batch update cycles (typically 3× daily) create lag vs. real-time OTA price changes; competitor fares visible on GDS before ATPCO reflects them</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Scrape OTA &amp; metasearch displayed fares</td>
+        <td class="kpi-col">Scrape coverage ≥95% of tier-1 competitive routes; data freshness ≤60 min</td>
+        <td class="pain-col">NDC-sourced fares from competitors bypass ATPCO and are invisible to traditional monitoring tools; requires separate NDC channel scraping capability not standard in OAG</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Detect and flag material fare changes</td>
+        <td class="kpi-col">False-positive alert rate ≤5%; mean time to analyst notification ≤15 min from ingestion</td>
+        <td class="pain-col">Threshold calibration is static; promotional fare launches by LCCs in thin markets trigger high false-positive volumes that overwhelm analyst queues</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Analyse competitor O&amp;D fare positioning</td>
+        <td class="kpi-col">Analysis turnaround ≤2 hr for tier-1 alerts; ≤8 hr for tier-2</td>
+        <td class="pain-col">NRM lacks a native competitor fare visualisation layer; analysts context-switch between NRM and Tableau dashboards, increasing error risk and analysis time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Assess impact on O&amp;D demand forecast</td>
+        <td class="kpi-col">Forecast accuracy within ±5% MAPE post-response on monitored O&amp;Ds</td>
+        <td class="pain-col">NRM demand models have limited sensitivity to intraday competitor fare moves on ultra-short booking windows (&lt;72 hr); last-minute price wars require manual forecast override</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Classify response urgency and route tier</td>
+        <td class="kpi-col">Immediate-class alerts actioned within 4 hr in ≥90% of cases</td>
+        <td class="pain-col">Revenue contribution rankings in Tableau are refreshed nightly; intraday revenue shifts on high-value routes are not reflected in urgency scoring during the same business day</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Evaluate inventory availability and load factor</td>
+        <td class="kpi-col">Load factor target ≥83% on relevant departure; RASM ≥ route budget</td>
+        <td class="pain-col">Opening low fare buckets to match competitor on near-full flights cannibalises higher-yield bookings already in the pipe; NRM bid-price guardrails may not prevent this on short notice</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Model fare response scenarios in NRM</td>
+        <td class="kpi-col">Scenario modelling completed within 1 hr of escalation; ≥3 scenarios produced per alert</td>
+        <td class="pain-col">PROS RM scenario engine requires clean elasticity inputs; thin-route O&amp;Ds with &lt;12 months of data produce unreliable price-sensitivity curves, forcing analyst judgment over model output</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Review and approve response strategy</td>
+        <td class="kpi-col">Approval cycle ≤2 hr for immediate-class alerts; sign-off documented in NRM audit trail</td>
+        <td class="pain-col">Commercial policy guardrails (minimum fare floors, allotment restrictions for corporate accounts) are maintained separately in ATPCO and not surfaced within NRM approval workflow, risking policy violations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>File revised fares via ATPCO submissions</td>
+        <td class="kpi-col">ATPCO filing completeness 100% for approved O&amp;Ds; filing-to-effective lag ≤3 hr (next ATPCO update cycle)</td>
+        <td class="pain-col">ATPCO update cycles constrain real-time parity; competitors using direct NDC filing can respond 2–3 hr faster, creating a temporary price-visibility disadvantage in GDS</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Configure fare rules, restrictions, and RBDs</td>
+        <td class="kpi-col">Zero ATPCO rule validation errors on submission; rules audit-compliant with IATA Resolution 024</td>
+        <td class="pain-col">Complex combinability rules (Cat 10) for interline itineraries require manual review against partner agreements; errors result in GDS pricing rejections and customer-visible mispricing</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Verify fare distribution across GDS channels</td>
+        <td class="kpi-col">Fare parity confirmed across ≥3 GDS within 60 min of ATPCO effective time; zero pricing discrepancies on spot-check O&amp;Ds</td>
+        <td class="pain-col">Travelport GDS cache refresh lags Sabre by up to 45 min post-ATPCO update; customers on Travelport-connected TMCs see stale competitor fares, causing booking leakage during the gap</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Activate fares in PSS inventory and NDC</td>
+        <td class="kpi-col">NDC offer response includes new fare within 30 min of Altéa activation; booking class availability aligned with approved strategy</td>
+        <td class="pain-col">Altéa PSS inventory bucket mapping to ATPCO booking class codes requires manual reconciliation when new fare basis codes are introduced; mapping errors cause sell-up failures</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Monitor booking velocity post-response</td>
+        <td class="kpi-col">Booking pace recovery to baseline curve within 24 hr on ≥80% of actioned O&amp;Ds</td>
+        <td class="pain-col">NRM booking-curve comparison uses historical same-departure-day data that may not account for week-of-year seasonality shifts; recovery signals can be misread on holidays or event periods</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Assess revenue impact against route budget</td>
+        <td class="kpi-col">Net yield delta ≥0% vs. pre-response baseline within 48 hr; RASM maintained ≥ route budget</td>
+        <td class="pain-col">Dilution cost from opening low fare buckets is not automatically calculated in NRM; analysts must manually query Redshift to isolate response-attributable revenue changes from organic demand shifts</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Conduct post-action review and update playbook</td>
+        <td class="kpi-col">Post-action review completed within 5 business days for tier-1 alerts; playbook updated within 10 business days</td>
+        <td class="pain-col">Competitive response playbooks are maintained as unstructured documents outside RM systems; institutional knowledge of effective response patterns is lost when analysts rotate, and playbook entries are rarely linked to outcome data</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+</body>
+</html>
