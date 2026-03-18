@@ -352,6 +352,11 @@ print(p['l3_name'])
       || log "  WARN: build_slides.py failed"
 
     # ── Git commit ─────────────────────────────────────────────────
+
+    # Rebuild home page
+    log "  Rebuilding home page..."
+    python3 "$SCRIPT_DIR/build_index.py" 2>>"$LOG_FILE" && log "  Home page rebuilt." || log "  WARN: build_index.py failed"
+
     git_push "$PID" "$L3_NAME"
 
     # ── Clean up temp agent file ───────────────────────────────────
