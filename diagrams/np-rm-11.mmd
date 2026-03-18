@@ -1,0 +1,48 @@
+flowchart LR
+  subgraph P1["Phase 1: Account Qualification"]
+    A([Start]) --> B[Receive corporate RFP]
+    B --> C[Assess volume & route fit]
+    C --> D{Meets min volume\nthreshold?}
+    D -- No --> B
+    D -- Yes --> E[Assign account manager]
+  end
+  subgraph P2["Phase 2: Rate Negotiation"]
+    E --> F[Model discount tiers\nvs NRM inventory]
+    F --> G[Benchmark vs ATPCO\npublished fares]
+    G --> H{Revenue-neutral\nor accretive?}
+    H -- No --> F
+    H -- Yes --> I[Draft contract terms\n& route coverage]
+  end
+  subgraph P3["Phase 3: Fare Filing & Distribution"]
+    I --> J[File private fares\nin ATPCO]
+    J --> K[Configure Sabre PRISM\nfor TMC access]
+    K --> L[Set up NDC private\noffer channel]
+    L --> M{Fare accessible in\nall channels?}
+    M -- No --> J
+    M -- Yes --> N[Activate contract]
+  end
+  subgraph P4["Phase 4: Performance Monitoring"]
+    N --> O[Track volume vs\ncommitment monthly]
+    O --> P[Generate quarterly\nperformance report]
+    P --> Q{Volume commitment\nattained ≥85%?}
+    Q -- No --> R[Trigger rate\nadjustment review]
+    R --> O
+    Q -- Yes --> S[Flag for renewal]
+  end
+  subgraph P5["Phase 5: Contract Renewal"]
+    S --> T[Initiate renewal\n90 days pre-expiry]
+    T --> U[Re-model rates vs\nupdated RM forecast]
+    U --> V{Renew / renegotiate\nor exit?}
+    V -- Renegotiate --> U
+    V -- Exit --> W[Archive contract\n& remove fare codes]
+    V -- Renew --> X([Contract Active])
+    W --> X
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600

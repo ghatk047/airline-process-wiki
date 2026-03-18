@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-RM-11 Slides — Corporate &amp; Negotiated Rate Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-11</span>
+    <h1>Corporate &amp; Negotiated Rate Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-rm-11.png" alt="BPMN for NP-RM-11" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-11</span>
+    <h1>Corporate &amp; Negotiated Rate Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-RM-11</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Revenue Management</li>
+          <li><strong>L3 Name:</strong> Corporate &amp; Negotiated Rate Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive &amp; log corporate RFP in CRM</li><li><strong>Phase 2:</strong> Model discount tiers against NRM inventory</li><li><strong>Phase 3:</strong> File private negotiated fares in ATPCO</li><li><strong>Phase 4:</strong> Track monthly booking volume vs. contracted commit</li><li><strong>Phase 5:</strong> Initiate contract renewal 90 days before expiry</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Corporate Account Analyst</li><li>Corporate Account Manager</li><li>Corporate Sales Manager</li><li>Director of Corporate Sales</li><li>Distribution Analyst</li><li>Pricing Analyst</li><li>Revenue Management Analyst</li><li>Senior Corporate Account Manager</li><li>Senior Revenue Management Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>AWS Redshift</li><li>Amadeus GDS</li><li>Amadeus Revenue Management (NRM)</li><li>NDC API Gateway</li><li>Sabre PRISM</li><li>Salesforce CRM</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-11</span>
+    <h1>Corporate &amp; Negotiated Rate Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive &amp; log corporate RFP in CRM</td>
+        <td class="kpi-col">RFP response time ≤3 business days; 100% RFPs logged in Salesforce within 24 hrs</td>
+        <td class="pain-col">RFPs arrive via multiple untracked channels (email, broker portals, GBTA RFP Hub); manual logging causes duplicates and missed responses</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Assess historical travel volume &amp; route overlap</td>
+        <td class="kpi-col">Volume data pull completed within 4 hours of RFP receipt</td>
+        <td class="pain-col">New corporate accounts have no booking history; reliance on self-reported volume figures that may be overstated by 20–40% to secure deeper discounts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Qualify account against minimum volume threshold</td>
+        <td class="kpi-col">Minimum qualifying threshold: 200 segments/year or $150K annual spend</td>
+        <td class="pain-col">Sub-threshold accounts consuming senior sales capacity; no automated triage in Salesforce to enforce volume floors consistently across regions</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Model discount tiers against NRM inventory</td>
+        <td class="kpi-col">Modelled revenue dilution &lt;3% vs. unconstrained mix; analysis completed within 2 business days</td>
+        <td class="pain-col">NRM bid-price data is point-in-time; discount tiers fixed at contract signing may become revenue-dilutive during high-demand periods without dynamic override capability</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Benchmark proposed rates vs. ATPCO published fares</td>
+        <td class="kpi-col">Negotiated rate within 5–15% below lowest unrestricted published fare for target markets</td>
+        <td class="pain-col">ATPCO tariff data has a 48-hour publication lag; competitor last-minute fare reductions not captured, causing negotiated rates to inadvertently undercut market</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate revenue impact against load factor targets</td>
+        <td class="kpi-col">Approved rates must preserve projected route load factor ≥83% and RASK within 2% of unconstrained forecast</td>
+        <td class="pain-col">NRM does not natively model corporate volume displacement of leisure inventory; manual override required to test scenarios on constrained peak departures</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Draft contract terms and route coverage schedule</td>
+        <td class="kpi-col">Contract draft delivered to corporate buyer within 5 business days of rate approval</td>
+        <td class="pain-col">Contract templates not version-controlled in Salesforce; legal redlines handled via email, creating misalignment between signed terms and fare filing parameters in ATPCO</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>File private negotiated fares in ATPCO</td>
+        <td class="kpi-col">Fare filing completed within 24 hours of contract execution; zero filing errors on first submission</td>
+        <td class="pain-col">ATPCO private fare filing requires precise fare basis code structuring; errors in Rule 15 (Sales Restrictions) or Rule 35 (Negotiated Fares) cause incorrect TMC access or public leakage of private rates</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Configure Sabre PRISM access for TMC booking</td>
+        <td class="kpi-col">PRISM configuration active and tested within 48 hours of ATPCO filing; TMC confirmation of successful test booking</td>
+        <td class="pain-col">Sabre PRISM configuration requires manual pseudo-city mapping for each TMC location; large corporates with 50+ TMC offices create significant setup overhead with no bulk-load API</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Set up NDC private offer for NDC-enabled corporates</td>
+        <td class="kpi-col">NDC offer live within 72 hours for NDC-enabled accounts; ancillary attach rate target ≥35% on NDC-booked itineraries</td>
+        <td class="pain-col">NDC adoption among corporate TMCs remains below 30%; ATPCO and NDC offer parameters must be maintained in parallel, creating dual-maintenance risk and version drift between channels</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Validate fare accessibility across all booked channels</td>
+        <td class="kpi-col">100% fare accessibility in contracted channels before contract activation date; zero public display of private fares</td>
+        <td class="pain-col">GDS fare display inconsistencies across Amadeus, Sabre, and Travelport due to differing cache refresh cycles (up to 4-hour lag); corporate bookers may see incorrect rates during the window</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Track monthly booking volume vs. contracted commitment</td>
+        <td class="kpi-col">Volume commitment attainment reported by 5th business day of following month; data completeness ≥99% across all channels</td>
+        <td class="pain-col">Booking data from NDC channel not consistently flowing into Redshift reconciliation pipeline; NDC-booked corporate trips may be excluded from volume commitment tracking, understating attainment</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Generate quarterly corporate performance report</td>
+        <td class="kpi-col">QBR delivered to corporate buyer within 15 business days of quarter close; 100% of tier-1 accounts receive QBR</td>
+        <td class="pain-col">Manual extraction from Redshift to Tableau for QBR preparation takes 2–3 days per account; no automated QBR generation for the long tail of mid-market accounts (typically 200+ accounts per analyst)</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Assess volume commitment attainment threshold</td>
+        <td class="kpi-col">≥85% of tier-1 accounts maintaining contracted commitment; non-compliant accounts actioned within 10 business days</td>
+        <td class="pain-col">Contracts with volume commitment clauses rarely include enforceable penalties; non-compliant accounts may retain full discount tier without commercial consequence, eroding revenue quality</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Trigger rate adjustment or incentive review</td>
+        <td class="kpi-col">Rate adjustment applied within 30 days of non-compliance trigger; targeted return to ≥85% commitment attainment within 1 quarter</td>
+        <td class="pain-col">NRM does not have a corporate account module; rate adjustment modelling must be done manually outside the system, with no automated link between attainment tracking in Salesforce and NRM inventory controls</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Initiate contract renewal 90 days before expiry</td>
+        <td class="kpi-col">100% of active contracts have renewal opportunity opened ≥90 days before expiry; zero lapsed contracts due to missed renewal trigger</td>
+        <td class="pain-col">Salesforce contract expiry alerts not configured for all accounts due to inconsistent contract record hygiene; lapsed contracts default to published fares, triggering reactive re-negotiation with weakened leverage</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Re-model renewal rates using updated RM forecast</td>
+        <td class="kpi-col">Renewal rates modelled to deliver ≥2% RASK improvement vs. expiring contract; analysis completed 60 days before expiry</td>
+        <td class="pain-col">12-month forward NRM forecasts used for renewal modelling have ±8% accuracy on thin routes; locking renewal rates to inaccurate forecasts on marginal routes risks over-discounting into peak periods</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Approve renewal, renegotiate, or exit account</td>
+        <td class="kpi-col">Tier-1 account renewal rate ≥90%; tier-2 renewal rate ≥75%; exit decision documented in Salesforce within 5 business days of final negotiation</td>
+        <td class="pain-col">No systematic strategic value scoring model in Salesforce; renewal decisions on borderline accounts rely on relationship judgment rather than data, leading to inconsistent discount policy across the portfolio</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+</body>
+</html>
