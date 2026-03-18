@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-PF-01 Slides — Fare Construction &amp; Filing</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-01</span>
+    <h1>Fare Construction &amp; Filing</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-pf-01.png" alt="BPMN for NP-PF-01" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-01</span>
+    <h1>Fare Construction &amp; Filing</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-PF-01</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Pricing &amp; Fare Management</li>
+          <li><strong>L3 Name:</strong> Fare Construction &amp; Filing</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract Competitive Fare Data from GDS</li><li><strong>Phase 2:</strong> Define Fare Basis Codes &amp; Fare Families</li><li><strong>Phase 3:</strong> Code Advance Purchase &amp; Minimum Stay Rules</li><li><strong>Phase 4:</strong> Submit Fare Records to ATPCO</li><li><strong>Phase 5:</strong> Execute End-to-End Fare Shopping Test</li><li><strong>Phase 6:</strong> Monitor Filed Fare Performance vs. Revenue Targets</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Director of Pricing</li><li>Distribution Analyst</li><li>Pricing Analyst</li><li>QA / Pricing Analyst</li><li>Revenue Management Analyst</li><li>Senior Pricing Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>Amadeus SkyCAST</li><li>NDC API Gateway</li><li>OAG Schedule Analyser</li><li>Sabre AirVision Network &amp; Schedule</li><li>Sabre GDS</li><li>Travelport GDS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-01</span>
+    <h1>Fare Construction &amp; Filing</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract Competitive Fare Data from GDS</td>
+        <td class="kpi-col">Competitive data refresh latency ≤24 hours</td>
+        <td class="pain-col">GDS fare data excludes NDC-only offers from competitors; pricing team has blind spots on ~15% of market fares filed outside ATPCO</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Analyse O&amp;D Demand &amp; Price Elasticity</td>
+        <td class="kpi-col">Elasticity model R² ≥0.85</td>
+        <td class="pain-col">Thin O&amp;D markets with &lt;500 passengers/month produce statistically unreliable elasticity estimates; models default to network averages, masking micro-market dynamics</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Confirm Market Opportunity &amp; Pricing Mandate</td>
+        <td class="kpi-col">Time-to-mandate ≤2 business days from competitive trigger</td>
+        <td class="pain-col">Pricing mandate approval chains across Revenue Management, Sales, and Network Planning frequently exceed 5 days, delaying competitive response windows</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Define Fare Basis Codes &amp; Fare Families</td>
+        <td class="kpi-col">Fare basis code uniqueness — zero duplicate FBC conflicts per filing batch</td>
+        <td class="pain-col">Legacy fare basis code libraries carry hundreds of inactive codes; proliferation causes look-up errors in PSS and downstream revenue accounting mis-allocation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Set Fare Ladder by Cabin &amp; Booking Class</td>
+        <td class="kpi-col">Average fare premium over lowest competitor ≥5% in protected markets</td>
+        <td class="pain-col">Misalignment between pricing booking class ladder and RM availability controls causes revenue dilution; PROS RM overrides manual fare ladders without automated reconciliation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate Fare Ladder Against RM Inventory</td>
+        <td class="kpi-col">Zero booking class conflicts at time of filing; reconciliation completed within 4 hours</td>
+        <td class="pain-col">RM system re-optimises availability every 15 minutes; static fare ladder snapshots become stale quickly, requiring intra-day reconciliation loops</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Code Advance Purchase &amp; Minimum Stay Rules</td>
+        <td class="kpi-col">Rule coding error rate ≤0.5% per 1,000 fare rule records filed</td>
+        <td class="pain-col">ATPCO Category 5/6 rule logic requires manual coding in legacy field-based interface; high error rate on complex multi-sector rules requires rework averaging 2.3 hours per filing</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Define Change &amp; Cancellation Fee Structures</td>
+        <td class="kpi-col">Fee structure consistency — 100% of fare families have documented penalty rules before filing</td>
+        <td class="pain-col">Post-pandemic regulatory pressure (EU Regulation 261/2004, DOT refund rules) requires frequent penalty rule updates; manual ATPCO recoding averages 3–5 days per policy change cycle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Set Combinability &amp; Routing Rules</td>
+        <td class="kpi-col">Routing rule coverage — 100% of marketed O&amp;Ds with codeshare have valid combination rules</td>
+        <td class="pain-col">Airlines without alliance membership have limited combinability — standalone routing rules limit interlining revenue recovery and increase mispricing risk on complex itineraries</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Submit Fare Records to ATPCO</td>
+        <td class="kpi-col">Filing lead time: fares effective ≥T+24 hours from ATPCO submission; zero rejected records per batch</td>
+        <td class="pain-col">ATPCO batch submission windows run at fixed intervals (00:00 and 12:00 UTC); missed windows delay fare activation by up to 12 hours, ceding pricing windows to competitors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Distribute Fares to GDS Channels</td>
+        <td class="kpi-col">GDS distribution lag ≤2 hours post-ATPCO publication</td>
+        <td class="pain-col">EDIFACT-based GDS distribution is batch-driven and cannot support real-time fare updates; airlines using NDC face dual-stack maintenance (ATPCO + NDC API) with no automated synchronisation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Publish NDC Offers via API Gateway</td>
+        <td class="kpi-col">NDC offer availability within 1 hour of ATPCO activation; API error rate ≤0.1%</td>
+        <td class="pain-col">NDC offer construction requires separate fare attribute mapping not present in ATPCO records; pricing teams maintain parallel NDC content files — duplication risk is high and divergence causes fare parity violations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Execute End-to-End Fare Shopping Test</td>
+        <td class="kpi-col">QA pass rate ≥99.5% of tested fare/class combinations before go-live</td>
+        <td class="pain-col">PSS fare calculation engine applies complex proration and tax logic; errors in Category 25 Fare by Rule records produce incorrect taxes that only surface during test and cause passenger refund exposure</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Validate Fare Display Across All GDS Channels</td>
+        <td class="kpi-col">Fare parity across all three GDS channels within 2 hours of ATPCO activation; zero parity breaches at go-live</td>
+        <td class="pain-col">GDS fare display logic applies proprietary fare selection algorithms (lowest logical fare rules); correctly filed ATPCO fares may display incorrectly due to GDS-side rule interpretation, which the airline cannot directly control</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Monitor Filed Fare Performance vs. Revenue Targets</td>
+        <td class="kpi-col">Revenue per available seat mile (RASM) within ±3% of plan at T+7 post-filing</td>
+        <td class="pain-col">RM system optimises inventory in real time but does not feed back fare performance signals to ATPCO — pricing re-filing decisions are based on lagged weekly reports rather than live yield data</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Track Competitor Fare Changes &amp; Trigger Re-filing</td>
+        <td class="kpi-col">Competitive response time ≤4 hours for primary O&amp;Ds; ≤24 hours for secondary markets</td>
+        <td class="pain-col">ATPCO competitive alert services notify of filed fares but not NDC-only prices; carriers increasingly filing competitive fares exclusively via NDC bypass ATPCO monitoring, creating systematic intelligence gaps</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+</body>
+</html>

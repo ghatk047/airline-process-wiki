@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Revenue Management · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>NP-PF-01 · Fare Construction &amp; Filing · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -59,7 +60,7 @@
       </div>
       <a class="sidebar-l2-link" href="../../../network-and-pricing/pricing-fare-management/">Pricing &amp; Fare Management</a>
       <div class="sidebar-l3">
-        <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-01/"><span class="status-dot status-done"></span><span class="pid">NP-PF-01</span>Fare Construction &amp; Filing</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/pricing-fare-management/np-pf-01/"><span class="status-dot status-done"></span><span class="pid">NP-PF-01</span>Fare Construction &amp; Filing</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-02/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-02</span>Fare Distribution &amp; Publishing</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-03/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-03</span>Promotional Fare Design</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-04/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-04</span>Fare Rules &amp; Restriction Management</a>
@@ -242,153 +243,238 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Revenue Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/pricing-fare-management/">Pricing &amp; Fare Management</a><span class="sep">›</span>
+  <span class="current">NP-PF-01 · Fare Construction &amp; Filing</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Revenue Management</h1>
-    <p>Network Planning &amp; Scheduling · 15 of 15 subprocesses complete · Updated 2026-03-18 19:23</p>
+    <h1>Fare Construction &amp; Filing</h1>
+    <p>Network Planning &amp; Scheduling › Pricing &amp; Fare Management · 16 L4 steps · 6 phases · 7 decision gates · Updated 2026-03-18 19:23</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-PF-01</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-01</span>Inventory &amp; Yield Optimization</h3>
-    <p>Revenue Management · 18 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-pf-01">
+      <img src="../../../assets/img/np-pf-01.png" alt="NP-PF-01 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-pf-01').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-pf-01').style.display='flex'">
+      <div id="diag-placeholder-np-pf-01" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract Competitive Fare Data from GDS</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag gds">Sabre AirVision Network &amp; Schedule</span></td>
+  <td style="font-size:10px;color:#6b7280">GDS published fares, OAG Schedule Analyser competitive feeds</td>
+  <td style="font-size:10px">Competitor fare matrix by O&amp;D, cabin, and advance purchase window</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Competitive data refresh latency ≤24 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Analyse O&amp;D Demand &amp; Price Elasticity</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag amadeus">Amadeus SkyCAST</span></td>
+  <td style="font-size:10px;color:#6b7280">Historical booking curves, O&amp;D traffic reports, demand signal matrix</td>
+  <td style="font-size:10px">Price elasticity model by market segment and booking window</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Elasticity model R² ≥0.85</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Confirm Market Opportunity &amp; Pricing Mandate</td>
+  <td class="td-role">Director of Pricing</td>
+  <td><span class="stag amadeus">Amadeus SkyCAST</span></td>
+  <td style="font-size:10px;color:#6b7280">Elasticity model, competitive fare matrix, revenue target by route</td>
+  <td style="font-size:10px">Pricing mandate document — target position vs. market (premium, match, or undercut)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Time-to-mandate ≤2 business days from competitive trigger</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Define Fare Basis Codes &amp; Fare Families</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Pricing mandate, existing fare basis code library</td>
+  <td style="font-size:10px">Fare basis code list per cabin with fare family mapping (Economy Light, Standard, Flex, Business)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fare basis code uniqueness — zero duplicate FBC conflicts per filing batch</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Set Fare Ladder by Cabin &amp; Booking Class</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Fare family definitions, RM booking class inventory map, target revenue contribution</td>
+  <td style="font-size:10px">Fare ladder table — fare amounts by booking class (Y/B/M/H/Q/V/L/G/W) for each O&amp;D</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Average fare premium over lowest competitor ≥5% in protected markets</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Validate Fare Ladder Against RM Inventory</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Proposed fare ladder, current RM class availability settings</td>
+  <td style="font-size:10px">Reconciled fare-to-class mapping; conflict report if misalignment detected</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero booking class conflicts at time of filing; reconciliation completed within 4 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Code Advance Purchase &amp; Minimum Stay Rules</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved fare structure, regulatory requirements, market seasonality calendar</td>
+  <td style="font-size:10px">ATPCO Category 5 (Advance Purchase) and Category 6 (Minimum Stay) rule records</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Rule coding error rate ≤0.5% per 1,000 fare rule records filed</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Define Change &amp; Cancellation Fee Structures</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Commercial policy (fee schedule), fare family service attribute matrix</td>
+  <td style="font-size:10px">ATPCO Category 16 (Penalties) rule records; fee table by fare family</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fee structure consistency — 100% of fare families have documented penalty rules before filing</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Set Combinability &amp; Routing Rules</td>
+  <td class="td-role">Senior Pricing Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Interline agreements, codeshare partner list, ticketing authority records</td>
+  <td style="font-size:10px">ATPCO Category 10 (Combinations) and Category 25 (Fare by Rule) records</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Routing rule coverage — 100% of marketed O&amp;Ds with codeshare have valid combination rules</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Submit Fare Records to ATPCO</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated fare basis codes, amounts, and rule records; effective date schedule</td>
+  <td style="font-size:10px">ATPCO filing batch confirmation; fare record IDs</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Filing lead time: fares effective ≥T+24 hours from ATPCO submission; zero rejected records per batch</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Distribute Fares to GDS Channels</td>
+  <td class="td-role">Distribution Analyst</td>
+  <td><span class="stag gds">Sabre GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">ATPCO fare records (published), Travelport and Amadeus GDS distribution agreements</td>
+  <td style="font-size:10px">GDS fare tables populated in Sabre, Travelport, and Amadeus GDS; EDIFACT ATPCO push confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GDS distribution lag ≤2 hours post-ATPCO publication</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Publish NDC Offers via API Gateway</td>
+  <td class="td-role">Distribution Analyst</td>
+  <td><span class="stag custom">NDC API Gateway</span></td>
+  <td style="font-size:10px;color:#6b7280">Fare structure JSON, fare family service attributes, ancillary offer catalogue</td>
+  <td style="font-size:10px">NDC Offer Response payload; fare published in NDC-connected OTA and TMC channels</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NDC offer availability within 1 hour of ATPCO activation; API error rate ≤0.1%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Execute End-to-End Fare Shopping Test</td>
+  <td class="td-role">QA / Pricing Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Filed fare effective date, test O&amp;D pairs, booking class list</td>
+  <td style="font-size:10px">Fare shopping test report — fare display, priceable itineraries, tax calculation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">QA pass rate ≥99.5% of tested fare/class combinations before go-live</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Validate Fare Display Across All GDS Channels</td>
+  <td class="td-role">Distribution Analyst</td>
+  <td><span class="stag gds">Travelport GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">Fare shopping test results, GDS fare display screens (Sabre, Travelport, Amadeus)</td>
+  <td style="font-size:10px">Cross-channel fare parity report; exception list for mis-displayed fares</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fare parity across all three GDS channels within 2 hours of ATPCO activation; zero parity breaches at go-live</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Monitor Filed Fare Performance vs. Revenue Targets</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Live booking data, fare mix report, yield-per-passenger by fare family</td>
+  <td style="font-size:10px">Fare performance dashboard; revenue alert if yield drops &gt;5% below target</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Revenue per available seat mile (RASM) within ±3% of plan at T+7 post-filing</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Track Competitor Fare Changes &amp; Trigger Re-filing</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag custom">OAG Schedule Analyser</span></td>
+  <td style="font-size:10px;color:#6b7280">Competitor ATPCO fare change alerts, GDS fare monitor feeds</td>
+  <td style="font-size:10px">Competitive response recommendation; re-filing ticket if action required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Competitive response time ≤4 hours for primary O&amp;Ds; ≤24 hours for secondary markets</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-02</span>Fare Class &amp; Bucket Management</h3>
-    <p>Revenue Management · 18 steps · 9 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-PF-01</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network Planning &amp; Scheduling</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Pricing &amp; Fare Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Fare Construction &amp; Filing</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">16 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">7 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">6 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Pricing Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Director of Pricing</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Revenue Management Analyst</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Senior Pricing Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>Distribution Analyst</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>QA / Pricing Analyst</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag gds">Sabre AirVision Network &amp; Schedule</span><span class="stag amadeus">Amadeus SkyCAST</span><span class="stag custom">ATPCO</span><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span><span class="stag gds">Sabre GDS</span><span class="stag custom">NDC API Gateway</span><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag gds">Travelport GDS</span><span class="stag custom">OAG Schedule Analyser</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract Competitive Fare Data from GDS</span><span class="kval">Competitive data refresh latency ≤24 hours</span></div><div class="krow"><span class="kname">Analyse O&amp;D Demand &amp; Price Elasticity</span><span class="kval">Elasticity model R² ≥0.85</span></div><div class="krow"><span class="kname">Confirm Market Opportunity &amp; Pricing Mandate</span><span class="kval">Time-to-mandate ≤2 business days from competitive trigger</span></div><div class="krow"><span class="kname">Define Fare Basis Codes &amp; Fare Families</span><span class="kval">Fare basis code uniqueness — zero duplicate FBC conflicts per filing batch</span></div><div class="krow"><span class="kname">Set Fare Ladder by Cabin &amp; Booking Class</span><span class="kval">Average fare premium over lowest competitor ≥5% in protected markets</span></div><div class="krow"><span class="kname">Validate Fare Ladder Against RM Inventory</span><span class="kval">Zero booking class conflicts at time of filing; reconciliation completed within 4 hours</span></div><div class="krow"><span class="kname">Code Advance Purchase &amp; Minimum Stay Rules</span><span class="kval">Rule coding error rate ≤0.5% per 1,000 fare rule records filed</span></div><div class="krow"><span class="kname">Define Change &amp; Cancellation Fee Structures</span><span class="kval">Fee structure consistency — 100% of fare families have documented penalty rules before filing</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">GDS fare data excludes NDC-only offers from competitors; pricing team has blind spots on ~15% of market fares filed outside ATPCO</div><div class="risk-card">Thin O&amp;D markets with &lt;500 passengers/month produce statistically unreliable elasticity estimates; models default to network averages, masking micro-market dynamics</div><div class="risk-card">Pricing mandate approval chains across Revenue Management, Sales, and Network Planning frequently exceed 5 days, delaying competitive response windows</div><div class="risk-card">Legacy fare basis code libraries carry hundreds of inactive codes; proliferation causes look-up errors in PSS and downstream revenue accounting mis-allocation</div><div class="risk-card">Misalignment between pricing booking class ladder and RM availability controls causes revenue dilution; PROS RM overrides manual fare ladders without automated reconciliation</div><div class="risk-card">RM system re-optimises availability every 15 minutes; static fare ladder snapshots become stale quickly, requiring intra-day reconciliation loops</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">GDS published fares, OAG Schedule Analyser competitive feeds</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Competitive response recommendation; re-filing ticket if action required</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-03</span>Overbooking Policy Management</h3>
-    <p>Revenue Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-04</span>Demand Forecasting &amp; Modelling</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-05</span>Group Sales Revenue Management</h3>
-    <p>Revenue Management · 19 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-06</span>Upgrade &amp; Upsell Revenue Optimization</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-07</span>Ancillary Revenue Optimization</h3>
-    <p>Revenue Management · 15 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-08</span>RM System Calibration &amp; Tuning</h3>
-    <p>Revenue Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-09</span>Post-Departure Revenue Reporting</h3>
-    <p>Revenue Management · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-10</span>Competitive Fare Monitoring &amp; Response</h3>
-    <p>Revenue Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-11</span>Corporate &amp; Negotiated Rate Management</h3>
-    <p>Revenue Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-12</span>Real-Time Availability &amp; Seat Inventory Control</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-13</span>Revenue Integrity &amp; Ticketing Compliance</h3>
-    <p>Revenue Management · 18 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-14</span>O&amp;D Revenue Management</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-15</span>LCC Competitive Pricing Strategy</h3>
-    <p>Revenue Management · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../np-rm-15/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-RM-15 · LCC Competitive Pricing Strategy</span></a><a class="pn-btn" href="../np-pf-02/"><span><span class="sub">Next</span>NP-PF-02 · Fare Distribution &amp; Publishing</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

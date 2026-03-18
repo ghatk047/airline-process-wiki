@@ -1,0 +1,56 @@
+flowchart LR
+  subgraph P1["Phase 1: Market & Competitive Intelligence"]
+    A([Start]) --> B[Extract GDS fare data]
+    B --> C[Analyse O&D price elasticity]
+    C --> D{Market opportunity\nconfirmed?}
+    D -- No --> C
+    D -- Yes --> E[Define target fare\nposition]
+  end
+
+  subgraph P2["Phase 2: Fare Structure Design"]
+    E --> F[Define fare basis codes\n& fare families]
+    F --> G[Set fare ladder\nby cabin/booking class]
+    G --> H{Ladder aligned\nwith RM inventory?}
+    H -- No --> G
+    H -- Yes --> I[Approve fare structure]
+  end
+
+  subgraph P3["Phase 3: Fare Rule Development"]
+    I --> J[Code advance purchase\n& min-stay rules]
+    J --> K[Define change/cancel\nfee structures]
+    K --> L{Compliant with\nregulatory requirements?}
+    L -- No --> J
+    L -- Yes --> M[Finalise rule set]
+  end
+
+  subgraph P4["Phase 4: ATPCO Filing & Distribution"]
+    M --> N[Submit fare records\nto ATPCO]
+    N --> O[File fare rules\nvia ATPCO tool]
+    O --> P[Publish to GDS\n& NDC gateway]
+    P --> Q{Fares loaded\ncorrectly in GDS?}
+    Q -- No --> N
+    Q -- Yes --> R[Confirm distribution\nactivation]
+  end
+
+  subgraph P5["Phase 5: Validation & QA"]
+    R --> S[Run end-to-end\nfare shopping test]
+    S --> T{QA pass — fares\nbookable & priceable?}
+    T -- No --> N
+    T -- Yes --> U[Publish release note]
+  end
+
+  subgraph P6["Phase 6: Monitoring & Maintenance"]
+    U --> V[Monitor fare\nperformance vs targets]
+    V --> W{Competitor change\nor revenue gap?}
+    W -- Yes --> C
+    W -- No --> X([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600
