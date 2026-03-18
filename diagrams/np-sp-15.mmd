@@ -1,0 +1,44 @@
+flowchart LR
+  subgraph P1["Phase 1: Market Intelligence"]
+    A([Start]) --> B[Gather competitive & demand data]
+    B --> C{Data complete\n& validated?}
+    C -- No --> B
+    C -- Yes --> D[Model O&D demand scenarios]
+  end
+  subgraph P2["Phase 2: Network Opportunity Assessment"]
+    D --> E[Score route opportunities]
+    E --> F{Route meets\nROI threshold?}
+    F -- No --> E
+    F -- Yes --> G[Prioritise route shortlist]
+  end
+  subgraph P3["Phase 3: Fleet & Slot Feasibility"]
+    G --> H[Run fleet assignment simulation]
+    H --> I{Fleet & slot\nfeasible?}
+    I -- No --> G
+    I -- Yes --> J[Assess slot & airport constraints]
+    J --> K{Slot available\nor waivable?}
+    K -- No --> G
+    K -- Yes --> L[Confirm operational feasibility]
+  end
+  subgraph P4["Phase 4: Financial Modelling"]
+    L --> M[Build P&L model per route]
+    M --> N{Contribution\nmargin positive?}
+    N -- No --> M
+    N -- Yes --> O[Aggregate network business case]
+  end
+  subgraph P5["Phase 5: Governance & Approval"]
+    O --> P[Submit to Network Strategy Committee]
+    P --> Q{Executive\napproval granted?}
+    Q -- No --> O
+    Q -- Yes --> R[Publish strategic network plan]
+    R --> S([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style S fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600

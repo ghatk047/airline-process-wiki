@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Baggage Operations · Ground Operations &amp; Airport Services · Airlines Process Wiki</title>
+<title>NP-SP-15 · Strategic Network Planning · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -37,7 +38,7 @@
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-12/"><span class="status-dot status-done"></span><span class="pid">NP-SP-12</span>Irregular Operations Recovery Planning</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-13/"><span class="status-dot status-done"></span><span class="pid">NP-SP-13</span>Charter &amp; Ad-Hoc Flight Planning</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-14/"><span class="status-dot status-done"></span><span class="pid">NP-SP-14</span>Competition &amp; Capacity Benchmarking</a>
-        <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-15/"><span class="status-dot status-done"></span><span class="pid">NP-SP-15</span>Strategic Network Planning</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/schedule-planning/np-sp-15/"><span class="status-dot status-done"></span><span class="pid">NP-SP-15</span>Strategic Network Planning</a>
       </div>
       <a class="sidebar-l2-link" href="../../../network-and-pricing/revenue-management/">Revenue Management</a>
       <div class="sidebar-l3">
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-queue"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -242,90 +243,248 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
-  <span class="current">Baggage Operations</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a><span class="sep">›</span>
+  <span class="current">NP-SP-15 · Strategic Network Planning</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Baggage Operations</h1>
-    <p>Ground Operations &amp; Airport Services · 0 of 8 subprocesses complete · Updated 2026-03-18 18:43</p>
+    <h1>Strategic Network Planning</h1>
+    <p>Network Planning &amp; Scheduling › Schedule Planning · 17 L4 steps · 5 phases · 6 decision gates · Updated 2026-03-18 18:43</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-SP-15</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-02</span>Baggage Acceptance &amp; Handling</h3>
-    <p>Baggage Operations · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-sp-15">
+      <img src="../../../assets/img/np-sp-15.png" alt="NP-SP-15 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-sp-15').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-sp-15').style.display='flex'">
+      <div id="diag-placeholder-np-sp-15" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-02/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract competitive schedule &amp; capacity data</td>
+  <td class="td-role">Network Intelligence Analyst</td>
+  <td><span class="stag custom">OAG Schedule Analyser</span></td>
+  <td style="font-size:10px;color:#6b7280">Annual planning cycle trigger; prior-year SSIM schedules</td>
+  <td style="font-size:10px">Competitor capacity matrix by O&amp;D market (seats, frequencies, ASMs)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Market coverage: ≥95% of OAG universe validated within 5 business days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Ingest historical O&amp;D traffic &amp; yield data</td>
+  <td class="td-role">Network Intelligence Analyst</td>
+  <td><span class="stag amadeus">Amadeus SkyCAST</span></td>
+  <td style="font-size:10px;color:#6b7280">3-year rolling MIDT booking data, internal ticket coupon data</td>
+  <td style="font-size:10px">O&amp;D demand baseline with seasonality indices per market pair</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Demand model R² ≥0.90 vs actual bookings on back-test</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Validate &amp; cleanse market intelligence dataset</td>
+  <td class="td-role">Senior Network Planner</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">OAG capacity matrix, SkyCAST O&amp;D baseline, macroeconomic indices</td>
+  <td style="font-size:10px">Validated market intelligence dataset approved for modelling</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data completeness ≥98% of target O&amp;D pairs before model run</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Generate long-haul &amp; medium-haul demand scenarios</td>
+  <td class="td-role">Network Strategy Manager</td>
+  <td><span class="stag amadeus">Amadeus SkySYM</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated market intelligence dataset; strategic growth targets from CEO brief</td>
+  <td style="font-size:10px">3 demand scenarios (base, upside, downside) per O&amp;D market for 3-year horizon</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Scenario variance within ±15% of base-case for primary markets</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Score and rank route opportunities by strategic fit</td>
+  <td class="td-role">Network Strategy Manager</td>
+  <td><span class="stag amadeus">Amadeus SkyCAST</span></td>
+  <td style="font-size:10px;color:#6b7280">3 demand scenarios, strategic priority filters (geography, alliance fit, connectivity)</td>
+  <td style="font-size:10px">Ranked route opportunity scorecard (revenue potential, strategic score, competitive intensity)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Top-20 route list updated within 2 weeks of scenario generation</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Review route shortlist against network strategy guardrails</td>
+  <td class="td-role">VP Network Planning</td>
+  <td><span class="stag custom">Tableau / Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">Ranked route opportunity scorecard, board-approved network strategy KPIs</td>
+  <td style="font-size:10px">Approved route shortlist (10–30 routes) for feasibility analysis</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Shortlist approved within 5 business days of scorecard publication</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Run fleet assignment optimisation for shortlisted routes</td>
+  <td class="td-role">Fleet Planning Analyst</td>
+  <td><span class="stag amadeus">Amadeus SkyMAX</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved route shortlist, current fleet plan, aircraft availability calendar</td>
+  <td style="font-size:10px">Fleet assignment plan with gauge recommendations per route</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fleet utilisation uplift ≥2% vs current plan in optimised output</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Assess slot &amp; airport capacity constraints</td>
+  <td class="td-role">Slot Coordinator</td>
+  <td><span class="stag custom">IATA CRS (Coordinated Reservation System)</span></td>
+  <td style="font-size:10px;color:#6b7280">Fleet assignment plan, IATA WSG slot library for target airports</td>
+  <td style="font-size:10px">Slot feasibility report (available, historic grandfather, needs application)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Slot feasibility assessment completed ≥90 days before IATA scheduling conference</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Evaluate airport infrastructure &amp; ground handling readiness</td>
+  <td class="td-role">Airport Development Manager</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Slot feasibility report, proposed frequencies, aircraft gauge</td>
+  <td style="font-size:10px">Airport readiness assessment (gates, ground handlers, customs, fuelling)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Infrastructure gap identified ≥12 months before proposed launch date</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Confirm operational feasibility of candidate routes</td>
+  <td class="td-role">Senior Network Planner</td>
+  <td><span class="stag amadeus">Amadeus SkyWORKS</span></td>
+  <td style="font-size:10px;color:#6b7280">Fleet assignment plan, slot feasibility report, airport readiness assessment</td>
+  <td style="font-size:10px">Operationally feasible route set confirmed in SkyWORKS schedule editor</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">≥80% of shortlisted routes confirmed feasible without major constraint</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Build unit revenue &amp; yield forecast per candidate route</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed feasible route set, demand scenarios, competitive fare data from ATPCO</td>
+  <td style="font-size:10px">PRASM and RASM forecast per route across base/upside/downside scenarios</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">RASM forecast accuracy within ±8% of actuals on launched routes (tracked retrospectively)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Model direct operating costs per route</td>
+  <td class="td-role">Finance Business Partner — Network</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Fleet assignment plan (aircraft type, block hours), fuel price assumptions, airport charges schedule</td>
+  <td style="font-size:10px">CASM breakdown per route (fuel, airport, crew, maintenance, overhead allocation)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CASM model completed within 10 business days of receiving fleet assignment input</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Assess route contribution margin and breakeven load factor</td>
+  <td class="td-role">Network Strategy Manager</td>
+  <td><span class="stag custom">Tableau / Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">RASM forecast, CASM breakdown, targeted load factor assumptions</td>
+  <td style="font-size:10px">Route P&amp;L summary with breakeven load factor and payback period</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Target contribution margin ≥12% in Year 2; breakeven load factor ≤75%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Aggregate network business case for plan period</td>
+  <td class="td-role">VP Network Planning</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Individual route P&amp;L summaries, network-level synergy assumptions (feed, connectivity)</td>
+  <td style="font-size:10px">3-year network business case document (revenue, cost, EBIT impact)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Network EBIT uplift ≥$150M over plan period vs do-nothing baseline</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Package strategic plan for governance review</td>
+  <td class="td-role">Network Strategy Manager</td>
+  <td><span class="stag custom">Tableau / Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">Network business case, route scorecard, risk register</td>
+  <td style="font-size:10px">Executive briefing pack: network strategy summary, investment ask, risk matrix</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Briefing pack issued ≥5 business days before Network Strategy Committee meeting</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Present plan to Network Strategy Committee</td>
+  <td class="td-role">VP Network Planning</td>
+  <td><span class="stag custom">Tableau / Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">Executive briefing pack, committee member pre-read questions</td>
+  <td style="font-size:10px">Committee decision: approved / approved with conditions / rejected with rationale</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Committee decision reached in ≤2 review cycles (no more than 1 deferral per plan)</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Publish approved strategic network plan &amp; handoff to scheduling</td>
+  <td class="td-role">Network Strategy Manager</td>
+  <td><span class="stag amadeus">Amadeus SkyWORKS</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved committee decision, final route list with gauge and frequency targets</td>
+  <td style="font-size:10px">Published strategic network plan loaded into SkyWORKS as planning baseline for Schedule Planning team</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Plan published in SkyWORKS ≤3 business days after committee approval</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-03</span>Lost &amp; Found / Baggage Tracing</h3>
-    <p>Baggage Operations · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-SP-15</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network Planning &amp; Scheduling</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Schedule Planning</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Strategic Network Planning</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">17 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">6 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">3 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Network Intelligence Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Senior Network Planner</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Network Strategy Manager</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>VP Network Planning</div><div class="swim"><div class="dot" style="background:#10b981"></div>Fleet Planning Analyst</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Slot Coordinator</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Airport Development Manager</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Revenue Management Analyst</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Finance Business Partner — Network</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">OAG Schedule Analyser</span><span class="stag amadeus">Amadeus SkyCAST</span><span class="stag aws">AWS S3 / Redshift</span><span class="stag amadeus">Amadeus SkySYM</span><span class="stag custom">Tableau / Power BI</span><span class="stag amadeus">Amadeus SkyMAX</span><span class="stag custom">IATA CRS (Coordinated Reservation System)</span><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag amadeus">Amadeus SkyWORKS</span><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract competitive schedule &amp; capacity data</span><span class="kval">Market coverage: ≥95% of OAG universe validated within 5 business days</span></div><div class="krow"><span class="kname">Ingest historical O&amp;D traffic &amp; yield data</span><span class="kval">Demand model R² ≥0.90 vs actual bookings on back-test</span></div><div class="krow"><span class="kname">Validate &amp; cleanse market intelligence dataset</span><span class="kval">Data completeness ≥98% of target O&amp;D pairs before model run</span></div><div class="krow"><span class="kname">Generate long-haul &amp; medium-haul demand scenarios</span><span class="kval">Scenario variance within ±15% of base-case for primary markets</span></div><div class="krow"><span class="kname">Score and rank route opportunities by strategic fit</span><span class="kval">Top-20 route list updated within 2 weeks of scenario generation</span></div><div class="krow"><span class="kname">Review route shortlist against network strategy guardrails</span><span class="kval">Shortlist approved within 5 business days of scorecard publication</span></div><div class="krow"><span class="kname">Run fleet assignment optimisation for shortlisted routes</span><span class="kval">Fleet utilisation uplift ≥2% vs current plan in optimised output</span></div><div class="krow"><span class="kname">Assess slot &amp; airport capacity constraints</span><span class="kval">Slot feasibility assessment completed ≥90 days before IATA scheduling conference</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">OAG data lags 48–72 hrs for LCC schedule changes; analyst must reconcile against GDS live availability</div><div class="risk-card">MIDT coverage drops to ~60% for LCC-heavy markets where GDS penetration is low; distorts baseline</div><div class="risk-card">Macro data (GDP, tourism forecasts) sourced from multiple external vendors with inconsistent update cycles</div><div class="risk-card">SkySYM scenario runtime scales poorly for networks &gt;500 O&amp;D pairs; overnight batch required for full network runs</div><div class="risk-card">Scoring weights for &#x27;strategic fit&#x27; are subjective; senior stakeholders override quantitative ranking without documented rationale</div><div class="risk-card">No system-enforced guardrail check; planner reliance on manual KPI dashboard review risks missing constraints</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Annual planning cycle trigger; prior-year SSIM schedules</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Published strategic network plan loaded into SkyWORKS as planning baseline for Schedule Planning team</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-05</span>Ramp &amp; Turnaround Operations</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-06</span>Ground Handling Vendor Management</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-07</span>Load Control &amp; Aircraft Loading</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-11</span>Cargo &amp; Mail Ground Handling</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-12</span>De-Icing &amp; Winter Operations</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-14</span>Ground Support Equipment (GSE) Management</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-14/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../np-sp-14/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-SP-14 · Competition &amp; Capacity Benchmarking</span></a><a class="pn-btn" href="../np-rm-01/"><span><span class="sub">Next</span>NP-RM-01 · Inventory &amp; Yield Optimization</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
