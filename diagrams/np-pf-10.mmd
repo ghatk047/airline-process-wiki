@@ -1,0 +1,55 @@
+flowchart LR
+  subgraph P1["Phase 1: Data Collection & Validation"]
+    A([Start]) --> B[Extract ATPCO fare snapshot]
+    B --> C[Validate fare basis codes]
+    C --> D{All active markets covered?}
+    D -- No --> B
+    D -- Yes --> E
+  end
+  subgraph P2["Phase 2: Compliance Rule Checking"]
+    E[Apply IATA combinability rules] --> F[Validate routing & stopover rules]
+    F --> G{Routing violations detected?}
+    G -- Yes --> H[Log routing exceptions]
+    H --> F
+    G -- No --> I[Check tax & surcharge applicability]
+    I --> J[Validate NUC / currency conversion]
+  end
+  subgraph P3["Phase 3: GDS Distribution Audit"]
+    J --> K[Audit GDS vs ATPCO filed fares]
+    K --> L{GDS parity discrepancy?}
+    L -- Yes --> M[Flag & escalate discrepancy]
+    M --> N
+    L -- No --> N[Verify NDC channel parity]
+    N --> O[Check IATA BSP interline settlement]
+    O --> P{BSP deviation exceeds threshold?}
+    P -- Yes --> Q[Raise interline dispute]
+    Q --> O
+    P -- No --> R
+  end
+  subgraph P4["Phase 4: Violation Management"]
+    R[Categorise violations by severity] --> S[Escalate critical to Pricing Director]
+    S --> T{Correction approved?}
+    T -- No --> S
+    T -- Yes --> U[Refile corrected fares to ATPCO]
+    U --> V[Flush GDS cache & spot-check]
+    V --> W{Post-flush parity confirmed?}
+    W -- No --> U
+    W -- Yes --> X
+  end
+  subgraph P5["Phase 5: Reporting & Archive"]
+    X[Generate monthly compliance report] --> Y[Archive audit trail — AWS S3]
+    Y --> Z[Governance committee review]
+    Z --> ZA{KPI targets met & plan approved?}
+    ZA -- No --> R
+    ZA -- Yes --> ZB([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style ZB fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600
+  style ZA fill:#ff6600,color:#fff,stroke:#ff6600

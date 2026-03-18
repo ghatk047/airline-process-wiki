@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-PF-10 Slides — Fare Audit &amp; Compliance</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-10</span>
+    <h1>Fare Audit &amp; Compliance</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-pf-10.png" alt="BPMN for NP-PF-10" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-10</span>
+    <h1>Fare Audit &amp; Compliance</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-PF-10</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Pricing &amp; Fare Management</li>
+          <li><strong>L3 Name:</strong> Fare Audit &amp; Compliance</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract ATPCO fare inventory snapshot</li><li><strong>Phase 2:</strong> Apply IATA fare construction and combinability rul</li><li><strong>Phase 3:</strong> Audit GDS-distributed fares against ATPCO filed re</li><li><strong>Phase 4:</strong> Log and categorise fare violations by severity</li><li><strong>Phase 5:</strong> Generate monthly compliance audit report with tren</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Compliance Archivist</li><li>Digital Channels Analyst</li><li>Director of Pricing / VP Revenue Management</li><li>Distribution Compliance Analyst</li><li>Fare Audit Analyst</li><li>Fare Compliance Manager</li><li>Interline Revenue Analyst</li><li>Pricing Systems Analyst</li><li>Revenue Analytics Manager</li><li>Revenue Standards Analyst</li><li>Tariff Analyst</li><li>Tax Compliance Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO (Airline Tariff Publishing Company) database</li><li>ATPCO / IATA BSP Rate of Exchange (ROE) tables</li><li>ATPCO Automated Pricing</li><li>ATPCO Rules Editor</li><li>AWS S3 (encrypted archive) / SAP S/4HANA Finance document management</li><li>AWS S3 / Jira (compliance ticketing)</li><li>Amadeus SkyWORKS</li><li>IATA BSP / IATA CASS</li><li>Jira / Microsoft Teams workflow</li><li>NDC API Gateway / Airline Direct Connect</li><li>Sabre AirVision Pricing (Sabre Fares)</li><li>Sabre GDS / Travelport GDS / Amadeus GDS</li><li>Sabre GDS API / Travelport Universal API / Amadeus Web Services</li><li>Tableau / AWS Redshift</li><li>Tableau / Microsoft Teams</li><li>Vertex Tax Engine / ATPCO Tax Filing</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-10</span>
+    <h1>Fare Audit &amp; Compliance</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract ATPCO fare inventory snapshot</td>
+        <td class="kpi-col">Data extract completeness ≥99.5% of active fare records</td>
+        <td class="pain-col">ATPCO batch updates carry a 4–6 hr lag before GDS distribution; auditing a stale snapshot generates false-positive violations and wastes analyst investigation time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate fare basis codes against tariff rules</td>
+        <td class="kpi-col">Validation processing time &lt;2 hrs per 10,000 fare records; error detection rate ≥98%</td>
+        <td class="pain-col">Airlines with complex fare families (50+ basis codes per market) generate thousands of rule combinations; automated rule parsing frequently misinterprets footnote exceptions (ATPCO Category 15/25) requiring manual override</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Cross-check fare coverage against active route inventory</td>
+        <td class="kpi-col">Market coverage completeness ≥98% of active O&amp;D pairs with valid filed fares</td>
+        <td class="pain-col">New routes activated in SkyWORKS may lack corresponding ATPCO filings within the required 24-hr effective-date window, causing inventory to distribute without valid fares and triggering GDS pricing errors</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Apply IATA fare construction and combinability rules</td>
+        <td class="kpi-col">Fare construction error rate &lt;0.5% of total filed fares per audit cycle</td>
+        <td class="pain-col">IATA Resolution 722 combinability rules for international itineraries interact unpredictably with carrier-specific footnotes in multi-carrier routings, producing false-positive violations that require manual SME adjudication</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Validate routing and stopover rule compliance</td>
+        <td class="kpi-col">Routing rule compliance rate ≥99.2% of fare records processed</td>
+        <td class="pain-col">Legacy routing rule structures in ATPCO Category 3 (Combinations) and Category 4 (Flight Application) produce ambiguous interpretations when codeshare partners operate a segment, leading to disputed ticketing and potential BSP billing errors</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Check tax and surcharge applicability per market</td>
+        <td class="kpi-col">Tax calculation accuracy ≥99.9%; YQ/YR surcharge compliance 100% within 2 hrs of ATPCO tax update</td>
+        <td class="pain-col">Fuel surcharge (YQ) and carrier-imposed fee (YR) changes in volatile fuel markets require weekly ATPCO refile cycles; GDS distribution lag of 2–8 hrs post-change causes live mispricing and potential DOT consumer-protection violations (14 CFR Part 399)</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Validate NUC and local-currency conversion compliance</td>
+        <td class="kpi-col">NUC conversion error rate &lt;0.1% of international fare records; local-currency price cap breach detection within 48 hrs of IATA ROE update</td>
+        <td class="pain-col">Monthly IATA ROE table updates can cause international fares to breach local-currency price caps in regulated markets (India DGCA, China CAAC) if automated re-pricing is not triggered within 48 hrs of the ROE effective date</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Audit GDS-distributed fares against ATPCO filed records</td>
+        <td class="kpi-col">GDS fare parity compliance ≥99.5% of sampled fare records across all three GDS channels</td>
+        <td class="pain-col">GDS fare cache refresh cycles (typically 4–6 hrs) mean stale fares remain bookable after ATPCO updates, creating revenue leakage, customer disputes, and potential IATA passenger protection liability</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Verify NDC channel fare parity vs. filed fares</td>
+        <td class="kpi-col">NDC–GDS price parity within ±$5 for equivalent fare conditions; parity deviations resolved within 24 hrs</td>
+        <td class="pain-col">NDC API responses bypass ATPCO rule validation for some offers, making automated compliance checking impossible; pricing inconsistencies between NDC and GDS are invisible to standard GDS audit tools and surface only through traveller complaints</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Check interline fare settlement compliance via IATA BSP</td>
+        <td class="kpi-col">Interline proration error rate &lt;0.3%; BSP reconciliation variance within ±0.1% of billed amount</td>
+        <td class="pain-col">Joint fare agreements with codeshare partners may not be synchronised with ATPCO filings; discrepancies surface only at monthly IATA BSP settlement, generating disputed interline billings that average 45 days to resolve</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Log and categorise fare violations by severity</td>
+        <td class="kpi-col">Violation triage completion within 4 hrs of audit run; critical issues escalated within 30 min of detection</td>
+        <td class="pain-col">No single platform aggregates violations across ATPCO, GDS, NDC, and BSP channels; analysts maintain parallel spreadsheets, creating version-control risk, delayed escalation, and fragmented audit evidence for regulatory review</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Escalate critical violations to Director of Pricing</td>
+        <td class="kpi-col">Critical violation resolution SLA ≤4 hrs from detection to correction order issued</td>
+        <td class="pain-col">Pricing team refile authority requires dual-sign-off for fares above the materiality threshold; approval bottleneck averages 2.5 hrs, exceeding SLA during peak booking windows where revenue leakage compounds each hour</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Refile corrected fares to ATPCO</td>
+        <td class="kpi-col">ATPCO refile processing time ≤2 hrs (standard) / ≤30 min (emergency filing window)</td>
+        <td class="pain-col">ATPCO emergency filing window has limited daily capacity; peak-period conflicts when multiple carriers file simultaneously cause queue delays that extend GDS mispricing exposure and increase DOT violation risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Flush GDS cache and verify re-distributed fare accuracy</td>
+        <td class="kpi-col">Post-flush fare parity restoration within 2 hrs across all three GDS; spot-check sample ≥50 O&amp;D pairs per GDS</td>
+        <td class="pain-col">GDS cache flush APIs differ by provider — Sabre requires separate requests per point-of-sale market; Travelport legacy ATPCO feeds lack API hooks and require manual cache refresh, extending mispricing window to 6+ hrs in some markets</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Generate monthly compliance audit report with trend analysis</td>
+        <td class="kpi-col">Report delivered by 5th business day of following month; violation trend growth ≤2% MoM</td>
+        <td class="pain-col">Audit data from ATPCO, GDS feeds, BSP, and NDC channels is not integrated in a single data warehouse; manual consolidation requires 2–3 analyst-days per month and increases error risk in board-level reporting</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Archive audit trail for DOT and IATA regulatory review</td>
+        <td class="kpi-col">Archive completeness 100%; document retrieval SLA ≤48 hrs for regulatory or legal requests</td>
+        <td class="pain-col">DOT consumer protection regulations (14 CFR Part 399) require documented evidence of fare display accuracy; incomplete or unstructured archives expose the carrier to civil penalties up to $37,500 per violation per day during DOT enforcement actions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Review audit KPIs in pricing governance committee</td>
+        <td class="kpi-col">Governance review completed within 10 business days of report delivery; 100% of action items assigned with named owner and due date</td>
+        <td class="pain-col">Audit findings from international and interline markets require cross-functional alignment with Legal, Finance, and partner airlines; average alignment time of 3–4 weeks delays the corrective roadmap and allows repeat violations in the same audit cycle</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+</body>
+</html>
