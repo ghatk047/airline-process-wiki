@@ -1,0 +1,46 @@
+flowchart LR
+  subgraph P1["Phase 1: Change Identification"]
+    A([Start]) --> B[Capture change request\nin SkyWORKS]
+    B --> C{Initial feasibility\nconfirmed?}
+    C -- No --> B
+    C -- Yes --> D[Classify type\n& urgency]
+  end
+  subgraph P2["Phase 2: Network Modelling"]
+    D --> E[Simulate O&D demand\nSkyCAST]
+    E --> F[Model network ripple\nSkySYM]
+    F --> G[Optimise fleet assign\nSkyMAX]
+    G --> H{Meets network\nthresholds?}
+    H -- No --> E
+    H -- Yes --> I[Check slot &\ngate capacity]
+  end
+  subgraph P3["Phase 3: Slot & Infrastructure"]
+    I --> J{Slot & gate\navailable?}
+    J -- No --> K[Escalate to\nairport coord]
+    K --> J
+    J -- Yes --> L[Model revenue\nAmadeus NRM]
+  end
+  subgraph P4["Phase 4: Commercial Validation"]
+    L --> M[Assess fare impact\nATPCO]
+    M --> N{Net revenue\nthreshold met?}
+    N -- No --> E
+    N -- Yes --> O[Update schedule\nSkyWORKS + SSIM]
+  end
+  subgraph P5["Phase 5: Filing & Distribution"]
+    O --> P[Submit SSIM to\nGDS + NDC Gateway]
+    P --> Q{GDS accuracy\nvalidated?}
+    Q -- No --> P
+    Q -- Yes --> R[Notify passengers\nAltéa PSS]
+  end
+  subgraph P6["Phase 6: Re-accommodation & Review"]
+    R --> S[Process re-accom\nwaivers Altéa PSS]
+    S --> T[Monitor KPIs\nTableau / Redshift]
+    T --> U([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
