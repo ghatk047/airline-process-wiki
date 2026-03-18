@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NP-SP-03 · Route Profitability Analysis · Airlines Process Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <span class="topbar-badge">v1.0</span>
+  <div class="topbar-right">
+    <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
+    <a href="../../../">Home</a>
+    <a href="../../../network-planning-scheduling/">Network Planning &amp; Scheduling</a>
+    <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
+  </div>
+</header>
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
+      <a class="sidebar-l2-link" href="../../../network-planning-scheduling/schedule-planning/">Schedule Planning</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-02/"><span class="status-dot status-done"></span><span class="pid">NP-SP-02</span>Fleet Assignment &amp; Tail Routing</a>
+        <a class="sidebar-l3-link active" href="../../../network-planning-scheduling/schedule-planning/np-sp-03/"><span class="status-dot status-done"></span><span class="pid">NP-SP-03</span>Route Profitability Analysis</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-04/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-04</span>Slot Coordination &amp; Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-05/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-05</span>Codeshare &amp; Interline Schedule Planning</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-06/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-06</span>Schedule Change Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-07/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-07</span>Capacity Planning &amp; Utilization</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-08/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-08</span>New Market Entry Feasibility</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-09/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-09</span>Alliance &amp; Partnership Network Strategy</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-10/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-10</span>SSIM File Management &amp; Distribution</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-11/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-11</span>Schedule Publication &amp; GDS Loading</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-12/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-12</span>Irregular Operations Recovery Planning</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-13/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-13</span>Charter &amp; Ad-Hoc Flight Planning</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-14/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-14</span>Competition &amp; Capacity Benchmarking</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/schedule-planning/np-sp-15/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-15</span>Strategic Network Planning</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../network-planning-scheduling/revenue-management/">Revenue Management</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-01/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-01</span>Inventory &amp; Yield Optimization</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-02/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-02</span>Fare Class &amp; Bucket Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-03/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-03</span>Overbooking Policy Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-04/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-04</span>Demand Forecasting &amp; Modelling</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-05/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-05</span>Group Sales Revenue Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-06/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-06</span>Upgrade &amp; Upsell Revenue Optimization</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-07/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-07</span>Ancillary Revenue Optimization</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-08/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-08</span>RM System Calibration &amp; Tuning</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-09/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-09</span>Post-Departure Revenue Reporting</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-10/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-10</span>Competitive Fare Monitoring &amp; Response</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-11/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-11</span>Corporate &amp; Negotiated Rate Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-12/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-12</span>Real-Time Availability &amp; Seat Inventory Control</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-13/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-13</span>Revenue Integrity &amp; Ticketing Compliance</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-14/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-14</span>O&amp;D Revenue Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/revenue-management/np-rm-15/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-15</span>LCC Competitive Pricing Strategy</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../network-planning-scheduling/pricing-fare-management/">Pricing &amp; Fare Management</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-01/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-01</span>Fare Construction &amp; Filing</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-02/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-02</span>Fare Distribution &amp; Publishing</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-03/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-03</span>Promotional Fare Design</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-04/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-04</span>Fare Rules &amp; Restriction Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-05/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-05</span>Dynamic Pricing Engine Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-06/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-06</span>Surcharge &amp; Tax Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-07/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-07</span>Interline &amp; Codeshare Fare Proration</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-08/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-08</span>ATPCO Filing &amp; Maintenance</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-09/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-09</span>Currency &amp; FX Rate Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-10/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-10</span>Fare Audit &amp; Compliance</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-11/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-11</span>Ancillary Pricing (Bags, Seats, Meals)</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-12/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-12</span>Corporate Contract Pricing</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-13/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-13</span>Competitive Fare Intelligence</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-14/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-14</span>Bundled Fare Product Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/pricing-fare-management/np-pf-15/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-15</span>Low Fare Guarantee Program Management</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../network-planning-scheduling/sales-distribution/">Sales &amp; Distribution</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-01/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-01</span>GDS Channel Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-02/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-02</span>Direct Channel Management (Web &amp; App)</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-03/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-03</span>Travel Agency &amp; TMC Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-04/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-04</span>Corporate Account Sales Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-05/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-05</span>NDC Content &amp; API Distribution</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-06/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-06</span>Group Sales Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-07/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-07</span>Charter Sales &amp; Contract Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-08/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-08</span>Commission &amp; Incentive Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-09/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-09</span>Interline &amp; Codeshare Ticketing</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-10/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-10</span>BSP Settlement &amp; IATA Billing</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-11/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-11</span>Online Travel Agency (OTA) Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-12/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-12</span>Metasearch &amp; Comparison Site Management</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-13/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-13</span>Sales Performance Reporting &amp; Analytics</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-14/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-14</span>Distribution Cost Optimization</a>
+        <a class="sidebar-l3-link" href="../../../network-planning-scheduling/sales-distribution/np-sd-15/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-15</span>Sales Force Automation &amp; CRM</a>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-domain"><span>Customer Experience &amp; Loyalty</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
+      <a class="sidebar-l2-link" href="../../../customer-experience-loyalty/loyalty-programme-management/">Loyalty Programme Management</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/loyalty-programme-management/cx-01/"><span class="status-dot status-queue"></span><span class="pid">CX-01</span>Frequent Flyer Program Management</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/loyalty-programme-management/cx-02/"><span class="status-dot status-queue"></span><span class="pid">CX-02</span>Miles &amp; Points Accrual Management</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/loyalty-programme-management/cx-03/"><span class="status-dot status-queue"></span><span class="pid">CX-03</span>Miles &amp; Points Redemption Management</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/loyalty-programme-management/cx-13/"><span class="status-dot status-queue"></span><span class="pid">CX-13</span>Co-Brand Credit Card Partnership Management</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/loyalty-programme-management/cx-14/"><span class="status-dot status-queue"></span><span class="pid">CX-14</span>Loyalty Program Partnerships (Hotels/Cars/Retail)</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../customer-experience-loyalty/customer-experience-operations/">Customer Experience Operations</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/customer-experience-operations/cx-04/"><span class="status-dot status-queue"></span><span class="pid">CX-04</span>Tier Status &amp; Upgrade Management</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/customer-experience-operations/cx-05/"><span class="status-dot status-queue"></span><span class="pid">CX-05</span>Customer Complaint &amp; Feedback Management</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/customer-experience-operations/cx-06/"><span class="status-dot status-queue"></span><span class="pid">CX-06</span>Pre-Flight Customer Communication</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/customer-experience-operations/cx-07/"><span class="status-dot status-queue"></span><span class="pid">CX-07</span>In-Flight Service Design &amp; Standards</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/customer-experience-operations/cx-08/"><span class="status-dot status-queue"></span><span class="pid">CX-08</span>Post-Flight Survey &amp; NPS Management</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/customer-experience-operations/cx-09/"><span class="status-dot status-queue"></span><span class="pid">CX-09</span>Special Services Request (SSR) Management</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/customer-experience-operations/cx-10/"><span class="status-dot status-queue"></span><span class="pid">CX-10</span>Customer Data &amp; Personalization</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/customer-experience-operations/cx-11/"><span class="status-dot status-queue"></span><span class="pid">CX-11</span>IRROP Passenger Recovery</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/customer-experience-operations/cx-12/"><span class="status-dot status-queue"></span><span class="pid">CX-12</span>Lounge &amp; Premium Experience Management</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../customer-experience-loyalty/customer-service-contact-centre/">Customer Service Contact Centre</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/customer-service-contact-centre/cx-15/"><span class="status-dot status-queue"></span><span class="pid">CX-15</span>Customer Service Contact Centre Operations</a>
+        <a class="sidebar-l3-link" href="../../../customer-experience-loyalty/customer-service-contact-centre/cx-16/"><span class="status-dot status-queue"></span><span class="pid">CX-16</span>Digital Self-Service &amp; Chatbot Management</a>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
+      <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-queue"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-02/"><span class="status-dot status-queue"></span><span class="pid">FO-02</span>Operational Flight Plan Management</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-03/"><span class="status-dot status-queue"></span><span class="pid">FO-03</span>Fuel Planning &amp; Tankering</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-04/"><span class="status-dot status-queue"></span><span class="pid">FO-04</span>Weight &amp; Balance Management</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-05/"><span class="status-dot status-queue"></span><span class="pid">FO-05</span>NOTAMs &amp; AIP Information Management</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-06/"><span class="status-dot status-queue"></span><span class="pid">FO-06</span>Weather Monitoring &amp; Decision Support</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-07/"><span class="status-dot status-queue"></span><span class="pid">FO-07</span>Air Traffic Control Coordination</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-12/"><span class="status-dot status-queue"></span><span class="pid">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-14/"><span class="status-dot status-queue"></span><span class="pid">FO-14</span>Air-to-Ground Communications Management</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-15/"><span class="status-dot status-queue"></span><span class="pid">FO-15</span>Dangerous Goods Load Authorization</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../flight-operations/network-operations-control/">Network Operations Control</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../flight-operations/network-operations-control/fo-08/"><span class="status-dot status-queue"></span><span class="pid">FO-08</span>Network Operations Control (NOC)</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/network-operations-control/fo-09/"><span class="status-dot status-queue"></span><span class="pid">FO-09</span>Delay Management &amp; Root Cause Analysis</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/network-operations-control/fo-10/"><span class="status-dot status-queue"></span><span class="pid">FO-10</span>Diversion &amp; Emergency Response Management</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/network-operations-control/fo-11/"><span class="status-dot status-queue"></span><span class="pid">FO-11</span>ETOPS / EDTO Operations Management</a>
+        <a class="sidebar-l3-link" href="../../../flight-operations/network-operations-control/fo-13/"><span class="status-dot status-queue"></span><span class="pid">FO-13</span>Performance &amp; FDR Data Monitoring</a>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-domain"><span>Crew Management</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
+      <a class="sidebar-l2-link" href="../../../crew-management/crew-planning-rostering/">Crew Planning &amp; Rostering</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-planning-rostering/cm-01/"><span class="status-dot status-queue"></span><span class="pid">CM-01</span>Crew Pairing Optimization</a>
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-planning-rostering/cm-02/"><span class="status-dot status-queue"></span><span class="pid">CM-02</span>Crew Rostering &amp; Bidding</a>
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-planning-rostering/cm-09/"><span class="status-dot status-queue"></span><span class="pid">CM-09</span>Cabin Crew Service Standards &amp; Training</a>
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-planning-rostering/cm-12/"><span class="status-dot status-queue"></span><span class="pid">CM-12</span>Crew Recruitment &amp; Onboarding</a>
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-planning-rostering/cm-14/"><span class="status-dot status-queue"></span><span class="pid">CM-14</span>Crew Performance Management</a>
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-planning-rostering/cm-15/"><span class="status-dot status-queue"></span><span class="pid">CM-15</span>Crew Payroll &amp; Hours Tracking</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../crew-management/crew-day-of-operations/">Crew Day-of-Operations</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-day-of-operations/cm-03/"><span class="status-dot status-queue"></span><span class="pid">CM-03</span>Crew Day-of-Operations Tracking</a>
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-day-of-operations/cm-07/"><span class="status-dot status-queue"></span><span class="pid">CM-07</span>Reserve Crew Management</a>
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-day-of-operations/cm-08/"><span class="status-dot status-queue"></span><span class="pid">CM-08</span>Crew Hotel &amp; Transportation Management</a>
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-day-of-operations/cm-10/"><span class="status-dot status-queue"></span><span class="pid">CM-10</span>Crew Disruption Recovery &amp; Re-pairing</a>
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-day-of-operations/cm-13/"><span class="status-dot status-queue"></span><span class="pid">CM-13</span>Deadhead &amp; Positioning Management</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../crew-management/crew-compliance-certification/">Crew Compliance &amp; Certification</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-compliance-certification/cm-04/"><span class="status-dot status-queue"></span><span class="pid">CM-04</span>Fatigue &amp; Rest Rule Compliance (FAR Part 117)</a>
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-compliance-certification/cm-05/"><span class="status-dot status-queue"></span><span class="pid">CM-05</span>Crew Training &amp; Recurrency Management</a>
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-compliance-certification/cm-06/"><span class="status-dot status-queue"></span><span class="pid">CM-06</span>Crew Licensing &amp; Medical Certification</a>
+        <a class="sidebar-l3-link" href="../../../crew-management/crew-compliance-certification/cm-11/"><span class="status-dot status-queue"></span><span class="pid">CM-11</span>Crew Union &amp; Labour Agreement Compliance</a>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
+      <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-queue"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
+        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-04/"><span class="status-dot status-queue"></span><span class="pid">GO-04</span>Gate Management &amp; Assignment</a>
+        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-08/"><span class="status-dot status-queue"></span><span class="pid">GO-08</span>Passenger Disruption Handling (IRROP)</a>
+        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-09/"><span class="status-dot status-queue"></span><span class="pid">GO-09</span>Wheelchair &amp; Special Assistance Services</a>
+        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-10/"><span class="status-dot status-queue"></span><span class="pid">GO-10</span>VIP &amp; Premium Passenger Handling</a>
+        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-13/"><span class="status-dot status-queue"></span><span class="pid">GO-13</span>Airport Security Compliance (TSA/CBP)</a>
+        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-15/"><span class="status-dot status-queue"></span><span class="pid">GO-15</span>Station Performance &amp; KPI Reporting</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../ground-operations/baggage-operations/">Baggage Operations</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../ground-operations/baggage-operations/go-02/"><span class="status-dot status-queue"></span><span class="pid">GO-02</span>Baggage Acceptance &amp; Handling</a>
+        <a class="sidebar-l3-link" href="../../../ground-operations/baggage-operations/go-03/"><span class="status-dot status-queue"></span><span class="pid">GO-03</span>Lost &amp; Found / Baggage Tracing</a>
+        <a class="sidebar-l3-link" href="../../../ground-operations/baggage-operations/go-11/"><span class="status-dot status-queue"></span><span class="pid">GO-11</span>Cargo &amp; Mail Ground Handling</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../ground-operations/ramp-turnaround-operations/">Ramp &amp; Turnaround Operations</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../ground-operations/ramp-turnaround-operations/go-05/"><span class="status-dot status-queue"></span><span class="pid">GO-05</span>Ramp &amp; Turnaround Operations</a>
+        <a class="sidebar-l3-link" href="../../../ground-operations/ramp-turnaround-operations/go-06/"><span class="status-dot status-queue"></span><span class="pid">GO-06</span>Ground Handling Vendor Management</a>
+        <a class="sidebar-l3-link" href="../../../ground-operations/ramp-turnaround-operations/go-07/"><span class="status-dot status-queue"></span><span class="pid">GO-07</span>Load Control &amp; Aircraft Loading</a>
+        <a class="sidebar-l3-link" href="../../../ground-operations/ramp-turnaround-operations/go-12/"><span class="status-dot status-queue"></span><span class="pid">GO-12</span>De-Icing &amp; Winter Operations</a>
+        <a class="sidebar-l3-link" href="../../../ground-operations/ramp-turnaround-operations/go-14/"><span class="status-dot status-queue"></span><span class="pid">GO-14</span>Ground Support Equipment (GSE) Management</a>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
+      <a class="sidebar-l2-link" href="../../../mro-maintenance/line-maintenance/">Line Maintenance</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/line-maintenance/mr-01/"><span class="status-dot status-queue"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/line-maintenance/mr-08/"><span class="status-dot status-queue"></span><span class="pid">MR-08</span>AOG Recovery &amp; Technical Dispatch</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../mro-maintenance/heavy-maintenance/">Heavy Maintenance</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/heavy-maintenance/mr-02/"><span class="status-dot status-queue"></span><span class="pid">MR-02</span>Heavy Maintenance (C/D Check) Planning</a>
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/heavy-maintenance/mr-11/"><span class="status-dot status-queue"></span><span class="pid">MR-11</span>Structural Repair &amp; NDT Management</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../mro-maintenance/engine-component-shop/">Engine &amp; Component Shop</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/engine-component-shop/mr-03/"><span class="status-dot status-queue"></span><span class="pid">MR-03</span>Engine Shop Maintenance Management</a>
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/engine-component-shop/mr-04/"><span class="status-dot status-queue"></span><span class="pid">MR-04</span>Component &amp; Parts Management</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../mro-maintenance/airworthiness-compliance/">Airworthiness &amp; Compliance</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/airworthiness-compliance/mr-05/"><span class="status-dot status-queue"></span><span class="pid">MR-05</span>Airworthiness Directive (AD) Compliance</a>
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/airworthiness-compliance/mr-06/"><span class="status-dot status-queue"></span><span class="pid">MR-06</span>Maintenance Reliability &amp; RCM Program</a>
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/airworthiness-compliance/mr-07/"><span class="status-dot status-queue"></span><span class="pid">MR-07</span>Aircraft Technical Records Management</a>
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/airworthiness-compliance/mr-12/"><span class="status-dot status-queue"></span><span class="pid">MR-12</span>Avionics &amp; Systems Modification</a>
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/airworthiness-compliance/mr-13/"><span class="status-dot status-queue"></span><span class="pid">MR-13</span>Quality Assurance &amp; Safety Audits (CAMO)</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../mro-maintenance/mro-vendor-management/">MRO Vendor Management</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/mro-vendor-management/mr-09/"><span class="status-dot status-queue"></span><span class="pid">MR-09</span>MRO Vendor &amp; Outsourcing Management</a>
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/mro-vendor-management/mr-10/"><span class="status-dot status-queue"></span><span class="pid">MR-10</span>Spare Parts Inventory &amp; Procurement</a>
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/mro-vendor-management/mr-14/"><span class="status-dot status-queue"></span><span class="pid">MR-14</span>Maintenance Cost Control &amp; KPI Reporting</a>
+        <a class="sidebar-l3-link" href="../../../mro-maintenance/mro-vendor-management/mr-15/"><span class="status-dot status-queue"></span><span class="pid">MR-15</span>Warranty Claim Management</a>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
+      <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-queue"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
+        <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-02/"><span class="status-dot status-queue"></span><span class="pid">CS-02</span>Management Accounting &amp; Cost Control</a>
+        <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-03/"><span class="status-dot status-queue"></span><span class="pid">CS-03</span>Revenue Accounting &amp; BSP Settlement</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../corporate-support/human-resources/">Human Resources</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../corporate-support/human-resources/cs-04/"><span class="status-dot status-queue"></span><span class="pid">CS-04</span>Workforce Planning &amp; Headcount Management</a>
+        <a class="sidebar-l3-link" href="../../../corporate-support/human-resources/cs-05/"><span class="status-dot status-queue"></span><span class="pid">CS-05</span>Talent Acquisition &amp; Recruitment</a>
+        <a class="sidebar-l3-link" href="../../../corporate-support/human-resources/cs-06/"><span class="status-dot status-queue"></span><span class="pid">CS-06</span>Learning &amp; Development Management</a>
+        <a class="sidebar-l3-link" href="../../../corporate-support/human-resources/cs-07/"><span class="status-dot status-queue"></span><span class="pid">CS-07</span>Labour Relations &amp; Union Negotiation</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../corporate-support/information-technology/">Information Technology</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../corporate-support/information-technology/cs-08/"><span class="status-dot status-queue"></span><span class="pid">CS-08</span>PSS (Passenger Service System) Management</a>
+        <a class="sidebar-l3-link" href="../../../corporate-support/information-technology/cs-09/"><span class="status-dot status-queue"></span><span class="pid">CS-09</span>Cybersecurity &amp; Threat Management</a>
+        <a class="sidebar-l3-link" href="../../../corporate-support/information-technology/cs-10/"><span class="status-dot status-queue"></span><span class="pid">CS-10</span>Data Engineering &amp; Analytics Platform</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../corporate-support/procurement-supply-chain/">Procurement &amp; Supply Chain</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../corporate-support/procurement-supply-chain/cs-11/"><span class="status-dot status-queue"></span><span class="pid">CS-11</span>Strategic Sourcing &amp; Vendor Selection</a>
+        <a class="sidebar-l3-link" href="../../../corporate-support/procurement-supply-chain/cs-12/"><span class="status-dot status-queue"></span><span class="pid">CS-12</span>Fuel Procurement &amp; Supply Chain</a>
+        <a class="sidebar-l3-link" href="../../../corporate-support/procurement-supply-chain/cs-13/"><span class="status-dot status-queue"></span><span class="pid">CS-13</span>Aircraft Parts &amp; Consumables Procurement</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../../corporate-support/safety-regulatory/">Safety &amp; Regulatory</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../../corporate-support/safety-regulatory/cs-14/"><span class="status-dot status-queue"></span><span class="pid">CS-14</span>Safety Management System (SMS)</a>
+        <a class="sidebar-l3-link" href="../../../corporate-support/safety-regulatory/cs-15/"><span class="status-dot status-queue"></span><span class="pid">CS-15</span>Regulatory Compliance &amp; AOC Management</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
+<main class="content" id="mainContent">
+  <nav class="breadcrumb">
+    <a href="../../../">Home</a> ›
+    <a href="../../../network-planning-scheduling/">Network Planning &amp; Scheduling</a> ›
+    <a href="../../../network-planning-scheduling/schedule-planning/">Schedule Planning</a> ›
+    <span>NP-SP-03</span>
+  </nav>
+
+  <div class="process-header">
+    <div class="process-meta">
+      <span class="pid-badge">NP-SP-03</span>
+      <span class="status-dot status-done"></span>
+      <span class="status-label">Complete</span>
+    </div>
+    <h1>Route Profitability Analysis</h1>
+    <div class="process-tags">
+      <span class="tag tag-l1">Network Planning &amp; Scheduling</span>
+      <span class="tag tag-l2">Schedule Planning</span>
+      <span class="tag">16 steps</span>
+      <span class="tag">5 decision gates</span>
+      <span class="tag">Updated 2026-03-18</span>
+    </div>
+  </div>
+
+  <section class="section" id="bpmn">
+    <h2>BPMN Process Flow</h2>
+    <div class="bpmn-container" id="bpmnContainer">
+      <img src="../../../assets/img/np-sp-03.png" alt="BPMN diagram for NP-SP-03" class="bpmn-img" id="bpmnImg"
+           onclick="openLightbox(this.src)">
+      <p class="bpmn-hint">Click to enlarge · Scroll to zoom · Drag to pan</p>
+    </div>
+  </section>
+
+  <section class="section" id="l4">
+    <h2>L4 Step Detail</h2>
+    <div class="table-wrapper">
+    <table class="l4-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th><th>Role</th><th>System</th>
+          <th>Input</th><th>Output</th><th>KPI</th>
+          <th>Pain Point / Risk</th><th>Decision</th><th>Exception</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-num">1.1
+        <td>Extract O&amp;D Revenue &amp; Booking Data</td>
+        <td>Network Analyst</td>
+        <td class="mono">Amadeus SkyCAST</td>
+        <td>Seasonal booking history, MIDT data feeds, BSP/ARC settlement files</td>
+        <td>O&amp;D revenue matrix by route, cabin class, and booking window</td>
+        <td>Data extract completeness ≥99%; query SLA &lt;4 hrs</td>
+        <td class="pain">MIDT data covers only ~65% of bookings; direct/NDC channel bookings require separate aggregation from Altéa DCS, causing analyst reconciliation overhead</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">1.2
+        <td>Pull Route Operating Cost Data</td>
+        <td>Finance Business Partner</td>
+        <td class="mono">SAP S/4HANA Finance (FI/CO)</td>
+        <td>General ledger actuals, cost centre allocations, fuel price feeds</td>
+        <td>Direct operating cost per departure by route and aircraft type</td>
+        <td>Cost data refresh lag &lt;24 hrs; CASM variance vs budget &lt;2%</td>
+        <td class="pain">Fleet commonality (737 family) limits aircraft-type cost granularity; fuel hedging gains/losses allocated at entity level not route level, distorting route CASM</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">1.3
+        <td>Retrieve Competitive Fare Intelligence</td>
+        <td>Network Analyst</td>
+        <td class="mono">OAG Schedule Analyser</td>
+        <td>Competitor SSIM files, OAG traffic data, ATPCO fare tariff feeds</td>
+        <td>Competitive fare matrix and capacity share by route</td>
+        <td>Competitor fare coverage ≥90% of routes under review</td>
+        <td class="pain">LCC and ULCC competitors file fares with minimal lead time; ATPCO refresh cycle (2x weekly) creates stale data windows that allow mispriced response strategies</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">1.4
+        <td>Validate Data Completeness &amp; Reconcile</td>
+        <td>Senior Network Planner</td>
+        <td class="mono">AWS Redshift</td>
+        <td>O&amp;D revenue matrix, cost extract, competitive data, Altéa PNR data</td>
+        <td>Reconciled route data package; data quality scorecard</td>
+        <td>Reconciliation exceptions &lt;1% of route-months; sign-off completed within 1 business day</td>
+        <td class="pain">Cross-system reconciliation between Altéa settlement data and SAP GL actuals regularly surfaces timing differences of 3–5 days for interline and codeshare revenue</td>
+        <td class="centre">✓</td>
+        <td class="centre">✓</td>
+      </tr>
+      <tr>
+        <td class="step-num">2.1
+        <td>Analyse Load Factor &amp; Yield by Route</td>
+        <td>Revenue Management Analyst</td>
+        <td class="mono">Amadeus Revenue Management (NRM / AltéaRM)</td>
+        <td>Reconciled route data package, cabin inventory records</td>
+        <td>Load factor and yield report by route, DOW, and season</td>
+        <td>System-wide load factor target ≥83%; yield degradation alert threshold &gt;5% YoY</td>
+        <td class="pain">Altéa NRM optimises at O&amp;D level; thin point-to-point routes with no connecting traffic receive less sophisticated demand modelling, leading to premature sell-down</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">2.2
+        <td>Model O&amp;D Traffic Spill &amp; Recapture</td>
+        <td>Network Analyst</td>
+        <td class="mono">Amadeus SkyCAST</td>
+        <td>Load factor report, O&amp;D demand signals, competitor capacity data</td>
+        <td>Spill/recapture estimates; demand elasticity coefficients by route</td>
+        <td>Spill model accuracy ≥88% vs actual post-departure; recapture rate assumption validated quarterly</td>
+        <td class="pain">Pure point-to-point network means spilled passengers rarely recaptured on connecting itineraries; recapture assumptions borrowed from hub-and-spoke models overstate true recapture by 10–15%</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">2.3
+        <td>Assess Route Against Break-Even Load Factor</td>
+        <td>Senior Network Planner</td>
+        <td class="mono">Amadeus SkyCAST</td>
+        <td>Yield data, direct operating costs per ASM, average fare</td>
+        <td>Break-even load factor by route; routes flagged for detailed cost review</td>
+        <td>Break-even LF calculation completed for 100% of routes under review</td>
+        <td class="pain">Break-even LF sensitive to fuel price assumptions; a ±10% fuel swing shifts break-even by 3–4 pp, requiring frequent scenario refreshes that strain analyst bandwidth</td>
+        <td class="centre">✓</td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">3.1
+        <td>Attribute Direct Operating Costs to Route</td>
+        <td>Finance Business Partner</td>
+        <td class="mono">SAP S/4HANA Finance (FI/CO)</td>
+        <td>Cost centre actuals, block hours by route, fuel consumption by tail</td>
+        <td>Direct CASM (crew, fuel, maintenance, airport fees) per route</td>
+        <td>Direct cost attribution covers ≥95% of route operating cost; CASM per ASM variance &lt;1.5¢ vs prior period</td>
+        <td class="pain">Maintenance event timing distorts monthly route CASM; an A-check occurring mid-month inflates CASM for that route by 8–12%, masking underlying profitability</td>
+        <td class="centre"></td>
+        <td class="centre">✓</td>
+      </tr>
+      <tr>
+        <td class="step-num">3.2
+        <td>Allocate Overhead &amp; Indirect Costs to Route</td>
+        <td>Finance Business Partner</td>
+        <td class="mono">SAP S/4HANA Finance (FI/CO)</td>
+        <td>Corporate overhead pools (IT, HR, HQ), fleet lease costs, depreciation schedules</td>
+        <td>Fully-loaded CASM per route including overhead allocation</td>
+        <td>Overhead allocation methodology reviewed annually; allocation variance &lt;3% across fleet</td>
+        <td class="pain">No universally agreed overhead allocation driver; switching from ASM-based to departure-based allocation changes route rankings by up to 15 positions, creating internal disagreement on route verdicts</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">3.3
+        <td>Compare CASM Against Fleet-Type Benchmark</td>
+        <td>Senior Network Planner</td>
+        <td class="mono">Amadeus SkySYM</td>
+        <td>Fully-loaded CASM, benchmark CASM by 737 variant (700/800/MAX 8)</td>
+        <td>CASM variance report; routes flagged for gauge optimisation review</td>
+        <td>Routes with CASM &gt;110% of fleet benchmark escalated for review</td>
+        <td class="pain">737-700 has ~18% higher CASM per ASM vs MAX 8; routes locked to -700 gauge due to gate constraints or runway length restrictions cannot benefit from gauge upgrades</td>
+        <td class="centre">✓</td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">4.1
+        <td>Build Route Contribution Margin P&amp;L Model</td>
+        <td>Senior Network Planner</td>
+        <td class="mono">Amadeus SkySYM</td>
+        <td>O&amp;D revenue matrix, direct CASM, overhead allocation, ancillary revenue estimates</td>
+        <td>Route P&amp;L model: RASM, CASM, contribution margin, EBIT per route</td>
+        <td>P&amp;L model completed for 100% of routes under review; contribution margin &gt;0 for ≥85% of network routes</td>
+        <td class="pain">Ancillary revenue (EarlyBird, upgraded boarding, baggage) not disaggregated at route level in Altéa; lump-sum allocation from corporate finance understates ancillary contribution on leisure-heavy routes by up to 20%</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">4.2
+        <td>Run Frequency &amp; Gauge Sensitivity Scenarios</td>
+        <td>Network Planning Manager</td>
+        <td class="mono">Amadeus SkySYM</td>
+        <td>Route P&amp;L model, fleet assignment options, schedule constraints from SkyWORKS</td>
+        <td>Scenario comparison matrix: +1 freq, -1 freq, gauge-up, gauge-down, suspend</td>
+        <td>At least 3 scenarios modelled per underperforming route; scenario run time &lt;2 hrs per route</td>
+        <td class="pain">Fleet commonality reduces gauge flexibility to 737-700 vs 737-800/MAX 8; slot-constrained airports (DCA, LGA) limit frequency increase scenarios regardless of P&amp;L outcome</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">4.3
+        <td>Assess Network Contribution &amp; Connectivity Value</td>
+        <td>VP Network Planning</td>
+        <td class="mono">Amadeus SkySYM</td>
+        <td>Scenario matrix, network connectivity model, Rapid Rewards contribution data</td>
+        <td>Revised profitability ranking incorporating network externality value</td>
+        <td>Network contribution adjustment applied to ≥100% of reviewed routes; connectivity premium &gt;5% of direct P&amp;L flagged for executive review</td>
+        <td class="pain">Point-to-point model lacks hub feed economics; connectivity value difficult to quantify without connecting passenger data — WN does not sell connecting itineraries through GDS, limiting third-party validation</td>
+        <td class="centre">✓</td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">5.1
+        <td>Prepare Route Profitability Scorecard</td>
+        <td>Network Planning Manager</td>
+        <td class="mono">Tableau</td>
+        <td>Route P&amp;L models, scenario outputs, competitive benchmarks</td>
+        <td>Executive route profitability dashboard: RAG status, trend, strategic recommendation</td>
+        <td>Scorecard delivered within 5 business days of data extract; dashboard refresh SLA &lt;1 hr</td>
+        <td class="pain">Tableau dashboards sourced from AWS Redshift data lake; ETL pipeline latency of 6–8 hrs means executives sometimes review overnight decisions against stale figures</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">5.2
+        <td>Review Findings with Commercial Leadership</td>
+        <td>VP Network Planning</td>
+        <td class="mono">Tableau</td>
+        <td>Route profitability scorecard, RM yield forecast, Sales channel input</td>
+        <td>Reviewed recommendation with leadership commentary; routes approved/deferred/escalated</td>
+        <td>Leadership review completed within 10 business days of analysis; ≥90% of recommendations resolved without escalation to CEO</td>
+        <td class="pain">Revenue Management and Network Planning use different optimisation horizons (RM: 90-day, NP: 12-18 month); misalignment on route verdicts for routes in near-term yield recovery frequently causes review rework</td>
+        <td class="centre">✓</td>
+        <td class="centre">✓</td>
+      </tr>
+      <tr>
+        <td class="step-num">5.3
+        <td>Document Decision &amp; Update Route Status</td>
+        <td>Network Analyst</td>
+        <td class="mono">Amadeus SkyWORKS</td>
+        <td>Approved recommendation, leadership sign-off record</td>
+        <td>Route status updated in SkyWORKS (Grow/Maintain/Reduce/Suspend); decision audit trail</td>
+        <td>Route status update completed within 2 business days of approval; 100% of decisions documented with rationale</td>
+        <td class="pain">SkyWORKS decision log is free-text; no structured field for profitability verdict — audit trail relies on manual documentation discipline, creating compliance risk during DOT reviews</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+  <img id="lightboxImg" src="" alt="BPMN diagram">
+</div>
+
+<div id="searchResults" class="search-results" style="display:none"></div>
+
+<script src="../../../assets/js/wiki.js"></script>
+</body>
+</html>

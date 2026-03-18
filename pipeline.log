@@ -1,0 +1,41 @@
+[00:59:00] ═══════════════════════════════════════
+[00:59:00]  Airlines Process Wiki Pipeline
+[00:59:00]  MAX_RUN=2  DRY_RUN=false
+[00:59:00] ═══════════════════════════════════════
+[00:59:00] Checking dependencies...
+[00:59:00] ERROR: openpyxl not installed. Run: pip install openpyxl
+[01:06:38] ═══════════════════════════════════════
+[01:06:38]  Airlines Process Wiki Pipeline
+[01:06:38]  MAX_RUN=2  DRY_RUN=false
+[01:06:38] ═══════════════════════════════════════
+[01:06:38] Checking dependencies...
+[01:06:38] All dependencies OK.
+[01:06:38] Queue: NP-SP-03 NP-SP-04
+[01:06:38] 
+[01:06:38] ▶ Starting: NP-SP-03
+[01:06:38]   Invoking claude CLI for NP-SP-03...
+[01:06:44]   ERROR: claude CLI failed for NP-SP-03 — marking Failed
+[01:06:44] 
+[01:06:44] ▶ Starting: NP-SP-04
+[01:06:44]   Invoking claude CLI for NP-SP-04...
+[01:06:47]   ERROR: claude CLI failed for NP-SP-04 — marking Failed
+[01:12:41] ═══════════════════════════════════════
+[01:12:41]  Airlines Process Wiki Pipeline
+[01:12:41]  MAX_RUN=2  DRY_RUN=false
+[01:12:41] ═══════════════════════════════════════
+[01:12:41] Checking dependencies...
+[01:12:42] All dependencies OK.
+[01:12:42] Queue: NP-SP-03 NP-SP-04
+[01:12:42] 
+[01:12:42] ▶ Starting: NP-SP-03
+[01:12:42]   Invoking claude CLI for NP-SP-03...
+[01:14:31]   claude CLI completed for NP-SP-03
+[01:14:31]   Running mmdc for np-sp-03...
+[01:14:35]   PNG generated: /Users/amalfidreamer/Downloads/airline-process-wiki/wiki/assets/img/np-sp-03.png
+[01:14:35]   Writing Excel...
+[01:14:35]   Excel updated.
+[01:14:35]   Building wiki page...
+[01:14:35]   Wiki page built.
+[01:14:35]   Building slides...
+[01:14:35]   Slides built.
+[01:14:35]   Git commit + push...

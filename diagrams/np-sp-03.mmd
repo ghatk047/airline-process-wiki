@@ -1,0 +1,49 @@
+flowchart LR
+  A([Start\nPeriodic Review]):::navy
+
+  subgraph P1["Phase 1: Data Extraction & Baseline"]
+    B[Pull O&D Revenue\nSkyCAST]
+    C[Extract Route Costs\nSAP S/4HANA]
+    D{Data\nComplete?}:::orange
+  end
+
+  subgraph P2["Phase 2: Revenue & Traffic Analysis"]
+    E[Analyse LF & Yield\nAltéaRM]
+    F[Model Spill & Recapture\nSkyCAST]
+    G{LF ≥ Break-\nEven Threshold?}:::orange
+  end
+
+  subgraph P3["Phase 3: Cost Attribution"]
+    H[Attribute Direct Op Costs\nSAP S/4HANA]
+    I[Allocate Overhead\nSAP S/4HANA]
+    J{CASM Within\nFleet Target?}:::orange
+  end
+
+  subgraph P4["Phase 4: P&L Modelling"]
+    K[Build Route P&L Model\nSkySYM]
+    L[Run Freq/Gauge Scenarios\nSkySYM]
+    M{Route Profitable\nUnder Base Case?}:::orange
+  end
+
+  subgraph P5["Phase 5: Review & Decision"]
+    N[Present to Network\nLeadership · Tableau]
+    O{Recommendation\nApproved?}:::orange
+    P[Update Route Status\nSkyWORKS]
+  end
+
+  Z([Done\nDecision Logged]):::navy
+
+  A --> B --> C --> D
+  D -->|Gap found| B
+  D -->|Complete| E --> F --> G
+  G -->|Below threshold| L
+  G -->|Meets target| H --> I --> J
+  J -->|Over target| L
+  J -->|Within range| K --> L --> M
+  M -->|Unprofitable| N
+  M -->|Profitable| N
+  N --> O -->|Revise model| K
+  O -->|Approved| P --> Z
+
+classDef navy   fill:#003366,color:#fff,stroke:#003366
+classDef orange fill:#ff6600,color:#fff,stroke:#ff6600

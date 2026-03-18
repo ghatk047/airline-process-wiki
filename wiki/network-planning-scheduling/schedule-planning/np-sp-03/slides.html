@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SP-03 Slides — Route Profitability Analysis</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-03</span>
+    <h1>Route Profitability Analysis</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sp-03.png" alt="BPMN for NP-SP-03" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-03</span>
+    <h1>Route Profitability Analysis</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SP-03</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Schedule Planning</li>
+          <li><strong>L3 Name:</strong> Route Profitability Analysis</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">3</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract O&amp;D Revenue &amp; Booking Data</li><li><strong>Phase 2:</strong> Analyse Load Factor &amp; Yield by Route</li><li><strong>Phase 3:</strong> Attribute Direct Operating Costs to Route</li><li><strong>Phase 4:</strong> Build Route Contribution Margin P&amp;L Model</li><li><strong>Phase 5:</strong> Prepare Route Profitability Scorecard</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Finance Business Partner</li><li>Network Analyst</li><li>Network Planning Manager</li><li>Revenue Management Analyst</li><li>Senior Network Planner</li><li>VP Network Planning</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>Amadeus SkyCAST</li><li>Amadeus SkySYM</li><li>Amadeus SkyWORKS</li><li>OAG Schedule Analyser</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-03</span>
+    <h1>Route Profitability Analysis</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract O&amp;D Revenue &amp; Booking Data</td>
+        <td class="kpi-col">Data extract completeness ≥99%; query SLA &lt;4 hrs</td>
+        <td class="pain-col">MIDT data covers only ~65% of bookings; direct/NDC channel bookings require separate aggregation from Altéa DCS, causing analyst reconciliation overhead</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Pull Route Operating Cost Data</td>
+        <td class="kpi-col">Cost data refresh lag &lt;24 hrs; CASM variance vs budget &lt;2%</td>
+        <td class="pain-col">Fleet commonality (737 family) limits aircraft-type cost granularity; fuel hedging gains/losses allocated at entity level not route level, distorting route CASM</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Retrieve Competitive Fare Intelligence</td>
+        <td class="kpi-col">Competitor fare coverage ≥90% of routes under review</td>
+        <td class="pain-col">LCC and ULCC competitors file fares with minimal lead time; ATPCO refresh cycle (2x weekly) creates stale data windows that allow mispriced response strategies</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Validate Data Completeness &amp; Reconcile</td>
+        <td class="kpi-col">Reconciliation exceptions &lt;1% of route-months; sign-off completed within 1 business day</td>
+        <td class="pain-col">Cross-system reconciliation between Altéa settlement data and SAP GL actuals regularly surfaces timing differences of 3–5 days for interline and codeshare revenue</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Analyse Load Factor &amp; Yield by Route</td>
+        <td class="kpi-col">System-wide load factor target ≥83%; yield degradation alert threshold &gt;5% YoY</td>
+        <td class="pain-col">Altéa NRM optimises at O&amp;D level; thin point-to-point routes with no connecting traffic receive less sophisticated demand modelling, leading to premature sell-down</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Model O&amp;D Traffic Spill &amp; Recapture</td>
+        <td class="kpi-col">Spill model accuracy ≥88% vs actual post-departure; recapture rate assumption validated quarterly</td>
+        <td class="pain-col">Pure point-to-point network means spilled passengers rarely recaptured on connecting itineraries; recapture assumptions borrowed from hub-and-spoke models overstate true recapture by 10–15%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Assess Route Against Break-Even Load Factor</td>
+        <td class="kpi-col">Break-even LF calculation completed for 100% of routes under review</td>
+        <td class="pain-col">Break-even LF sensitive to fuel price assumptions; a ±10% fuel swing shifts break-even by 3–4 pp, requiring frequent scenario refreshes that strain analyst bandwidth</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Attribute Direct Operating Costs to Route</td>
+        <td class="kpi-col">Direct cost attribution covers ≥95% of route operating cost; CASM per ASM variance &lt;1.5¢ vs prior period</td>
+        <td class="pain-col">Maintenance event timing distorts monthly route CASM; an A-check occurring mid-month inflates CASM for that route by 8–12%, masking underlying profitability</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Allocate Overhead &amp; Indirect Costs to Route</td>
+        <td class="kpi-col">Overhead allocation methodology reviewed annually; allocation variance &lt;3% across fleet</td>
+        <td class="pain-col">No universally agreed overhead allocation driver; switching from ASM-based to departure-based allocation changes route rankings by up to 15 positions, creating internal disagreement on route verdicts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Compare CASM Against Fleet-Type Benchmark</td>
+        <td class="kpi-col">Routes with CASM &gt;110% of fleet benchmark escalated for review</td>
+        <td class="pain-col">737-700 has ~18% higher CASM per ASM vs MAX 8; routes locked to -700 gauge due to gate constraints or runway length restrictions cannot benefit from gauge upgrades</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Build Route Contribution Margin P&amp;L Model</td>
+        <td class="kpi-col">P&amp;L model completed for 100% of routes under review; contribution margin &gt;0 for ≥85% of network routes</td>
+        <td class="pain-col">Ancillary revenue (EarlyBird, upgraded boarding, baggage) not disaggregated at route level in Altéa; lump-sum allocation from corporate finance understates ancillary contribution on leisure-heavy routes by up to 20%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Run Frequency &amp; Gauge Sensitivity Scenarios</td>
+        <td class="kpi-col">At least 3 scenarios modelled per underperforming route; scenario run time &lt;2 hrs per route</td>
+        <td class="pain-col">Fleet commonality reduces gauge flexibility to 737-700 vs 737-800/MAX 8; slot-constrained airports (DCA, LGA) limit frequency increase scenarios regardless of P&amp;L outcome</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Assess Network Contribution &amp; Connectivity Value</td>
+        <td class="kpi-col">Network contribution adjustment applied to ≥100% of reviewed routes; connectivity premium &gt;5% of direct P&amp;L flagged for executive review</td>
+        <td class="pain-col">Point-to-point model lacks hub feed economics; connectivity value difficult to quantify without connecting passenger data — WN does not sell connecting itineraries through GDS, limiting third-party validation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Prepare Route Profitability Scorecard</td>
+        <td class="kpi-col">Scorecard delivered within 5 business days of data extract; dashboard refresh SLA &lt;1 hr</td>
+        <td class="pain-col">Tableau dashboards sourced from AWS Redshift data lake; ETL pipeline latency of 6–8 hrs means executives sometimes review overnight decisions against stale figures</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Review Findings with Commercial Leadership</td>
+        <td class="kpi-col">Leadership review completed within 10 business days of analysis; ≥90% of recommendations resolved without escalation to CEO</td>
+        <td class="pain-col">Revenue Management and Network Planning use different optimisation horizons (RM: 90-day, NP: 12-18 month); misalignment on route verdicts for routes in near-term yield recovery frequently causes review rework</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Document Decision &amp; Update Route Status</td>
+        <td class="kpi-col">Route status update completed within 2 business days of approval; 100% of decisions documented with rationale</td>
+        <td class="pain-col">SkyWORKS decision log is free-text; no structured field for profitability verdict — audit trail relies on manual documentation discipline, creating compliance risk during DOT reviews</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+</body>
+</html>
