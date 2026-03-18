@@ -26,7 +26,7 @@
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-02/"><span class="status-dot status-done"></span><span class="pid">NP-SP-02</span>Fleet Assignment &amp; Tail Routing</a>
-        <a class="sidebar-l3-link active" href="../../../network-and-pricing/schedule-planning/np-sp-03/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-03</span>Route Profitability Analysis</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/schedule-planning/np-sp-03/"><span class="status-dot status-done"></span><span class="pid">NP-SP-03</span>Route Profitability Analysis</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-04/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-04</span>Slot Coordination &amp; Management</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-05/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-05</span>Codeshare &amp; Interline Schedule Planning</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-06/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-06</span>Schedule Change Management</a>
@@ -293,15 +293,15 @@
   <div class="process-header">
     <div class="process-meta">
       <span class="pid-badge">NP-SP-03</span>
-      <span class="status-dot status-queue"></span>
-      <span class="status-label">Queued</span>
+      <span class="status-dot status-done"></span>
+      <span class="status-label">Complete</span>
     </div>
     <h1>Route Profitability Analysis</h1>
     <div class="process-tags">
       <span class="tag tag-l1">Network Planning &amp; Scheduling</span>
       <span class="tag tag-l2">Schedule Planning</span>
-      <span class="tag">0 steps</span>
-      <span class="tag">0 decision gates</span>
+      <span class="tag">18 steps</span>
+      <span class="tag">6 decision gates</span>
       <span class="tag">Updated 2026-03-18</span>
     </div>
   </div>
@@ -317,7 +317,235 @@
 
   <section class="section" id="l4">
     <h2>L4 Step Detail</h2>
-<p class="no-steps">L4 steps not yet generated for this subprocess.</p>
+    <div class="table-wrapper">
+    <table class="l4-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th><th>Role</th><th>System</th>
+          <th>Input</th><th>Output</th><th>KPI</th>
+          <th>Pain Point / Risk</th><th>Decision</th><th>Exception</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-num">1.1
+        <td>Extract Booking &amp; Revenue Data by Route</td>
+        <td>Network Analyst</td>
+        <td class="mono">Amadeus SkyCAST</td>
+        <td>PNR booking records, O&amp;D itinerary data, prior 12-month revenue history</td>
+        <td>Route-level revenue dataset by market, cabin, fare family</td>
+        <td>Data extraction completeness ≥99% of active routes</td>
+        <td class="pain">SkyCAST O&amp;D attribution lags 3–5 days; interline revenue excluded from base data, understating true market contribution</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">1.2
+        <td>Pull Ancillary &amp; Fare-Mix Revenue Data</td>
+        <td>Revenue Analyst</td>
+        <td class="mono">Amadeus Altéa PSS</td>
+        <td>Ancillary sales records (bags, seats, upgrades), fare-mix breakdown by RBD</td>
+        <td>Augmented revenue file including total revenue per available seat (RASK) per route</td>
+        <td>Ancillary revenue captured per departure ≥$18 industry benchmark</td>
+        <td class="pain">Altéa ancillary attribution is at PNR level, not segment level; multi-leg itineraries require manual pro-ration logic</td>
+        <td class="centre"></td>
+        <td class="centre">✓</td>
+      </tr>
+      <tr>
+        <td class="step-num">1.3
+        <td>Validate O&amp;D Data Completeness</td>
+        <td>Senior Network Planner</td>
+        <td class="mono">AWS Redshift</td>
+        <td>Extracted revenue file, Altéa ancillary data</td>
+        <td>Data quality scorecard; approved dataset or rejection notice</td>
+        <td>Data gap rate &lt;1% across all active routes before proceeding</td>
+        <td class="pain">AWS Redshift pipeline failures during peak booking windows can delay weekly profitability cycles by 24–48 hours</td>
+        <td class="centre">✓</td>
+        <td class="centre">✓</td>
+      </tr>
+      <tr>
+        <td class="step-num">2.1
+        <td>Allocate Direct Operating Costs to Route</td>
+        <td>Finance Analyst</td>
+        <td class="mono">SAP S/4HANA Finance (FI/CO)</td>
+        <td>Fuel burn records, aircraft block hours, crew pay actuals by tail number</td>
+        <td>Direct cost per available seat mile (CASM-direct) per route</td>
+        <td>CASM-direct variance vs budget ≤2% per route</td>
+        <td class="pain">Fuel cost allocation by route requires tail-level tracking; charter and ferry legs inflate CASM if not excluded from scheduled service analysis</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">2.2
+        <td>Apportion Fleet Ownership &amp; Lease Costs</td>
+        <td>Fleet Planning Analyst</td>
+        <td class="mono">Amadeus SkyMAX</td>
+        <td>Fleet assignment records, aircraft lease rates, depreciation schedules from SAP</td>
+        <td>Ownership cost per block hour allocated to each route</td>
+        <td>Fleet cost per block hour within ±3% of fleet plan target</td>
+        <td class="pain">SkyMAX fleet assignments change frequently intra-day; historical assignment snapshots must be reconciled against actuals to avoid double-counting</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">2.3
+        <td>Assign Airport Fees &amp; Ground Handling Costs</td>
+        <td>Network Analyst</td>
+        <td class="mono">SITA Airport Management System (AMS)</td>
+        <td>Landing fee invoices, ground handling contracts, station cost actuals</td>
+        <td>Station cost per departure allocated to each route</td>
+        <td>Station cost recovery rate ≥95% of contracted amounts</td>
+        <td class="pain">SITA AMS data is station-level, not route-level; multi-carrier station operations require manual apportionment by frequency share</td>
+        <td class="centre"></td>
+        <td class="centre">✓</td>
+      </tr>
+      <tr>
+        <td class="step-num">2.4
+        <td>Reconcile &amp; Freeze Route Cost Baseline</td>
+        <td>Senior Network Planner</td>
+        <td class="mono">AWS Redshift</td>
+        <td>Direct costs, ownership costs, station costs</td>
+        <td>Total CASM baseline locked for analysis; reconciliation sign-off record</td>
+        <td>Cost baseline reconciled within 48 hours of data extraction</td>
+        <td class="pain">Cross-system reconciliation between SAP, SkyMAX, and SITA AMS requires manual pivot matching; no automated three-way reconciliation tool in place</td>
+        <td class="centre">✓</td>
+        <td class="centre">✓</td>
+      </tr>
+      <tr>
+        <td class="step-num">3.1
+        <td>Calculate Route CASM vs RASM Spread</td>
+        <td>Senior Network Planner</td>
+        <td class="mono">Amadeus SkySYM</td>
+        <td>Frozen cost baseline, revenue dataset</td>
+        <td>Route P&amp;L margin (RASM minus CASM) ranked by profitability decile</td>
+        <td>Network-average RASM–CASM spread ≥1.2¢ per ASM</td>
+        <td class="pain">SkySYM network simulation does not natively integrate SAP cost actuals; finance data must be imported via flat-file, introducing version control risk</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">3.2
+        <td>Benchmark Route Against Network Average</td>
+        <td>Network Analyst</td>
+        <td class="mono">OAG Schedule Analyser</td>
+        <td>Route P&amp;L rankings, competitor schedule and frequency data</td>
+        <td>Competitive context report: market share, frequency parity, fare premium vs peers</td>
+        <td>Routes with &lt;80% of network-average margin flagged for review</td>
+        <td class="pain">OAG data refresh is weekly; fast-moving competitive markets (e.g., ultra-LCC entry) may not be reflected until after analysis is complete</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">3.3
+        <td>Segment Profitability by Season &amp; Day-of-Week</td>
+        <td>Revenue Analyst</td>
+        <td class="mono">Amadeus Revenue Management (NRM)</td>
+        <td>Route P&amp;L file, booking curve data segmented by departure date</td>
+        <td>Seasonal P&amp;L heat map per route; peak vs off-peak contribution split</td>
+        <td>Seasonal margin variance identified to ±0.5¢ RASM resolution</td>
+        <td class="pain">NRM seasonal demand curves are calibrated at the O&amp;D level; thin markets with &lt;200 weekly passengers produce statistically unreliable segmentation outputs</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">3.4
+        <td>Flag Routes Below Profitability Threshold</td>
+        <td>Senior Network Planner</td>
+        <td class="mono">Amadeus SkySYM</td>
+        <td>Seasonal P&amp;L heat map, network benchmark data</td>
+        <td>Watch list of underperforming routes requiring scenario modelling</td>
+        <td>Routes with RASM–CASM &lt;0.5¢ or negative margin flagged within 5 business days of data freeze</td>
+        <td class="pain">Threshold calibration is manual; no automated trigger in SkySYM — threshold drift goes undetected between quarterly reviews</td>
+        <td class="centre">✓</td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">4.1
+        <td>Model Frequency &amp; Gauge Change Impact</td>
+        <td>Network Planner</td>
+        <td class="mono">Amadeus SkySYM</td>
+        <td>Watch-list routes, available aircraft and slot capacity</td>
+        <td>Sensitivity analysis: RASM/CASM delta under ±1 frequency and gauge up/down scenarios</td>
+        <td>Scenario delta accuracy vs actuals within ±5% on prior test routes</td>
+        <td class="pain">SkySYM gauge scenarios assume average load factor; does not model spill or recapture from competitor capacity dynamically</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">4.2
+        <td>Test Fare Adjustment Recovery Scenarios</td>
+        <td>Revenue Analyst</td>
+        <td class="mono">PROS RM</td>
+        <td>Route price elasticity curves, current fare ladder, competitor fares from OAG</td>
+        <td>Fare scenario P&amp;L projections; breakeven load factor under revised fare structure</td>
+        <td>Projected breakeven LF improvement ≥5pp vs base case to qualify as a viable path</td>
+        <td class="pain">PROS RM elasticity models require ≥18 months of clean booking data; newly launched routes or post-disruption markets produce unreliable elasticity estimates</td>
+        <td class="centre">✓</td>
+        <td class="centre">✓</td>
+      </tr>
+      <tr>
+        <td class="step-num">4.3
+        <td>Evaluate Seasonal Suspension Viability</td>
+        <td>Senior Network Planner</td>
+        <td class="mono">Amadeus SkyMAX</td>
+        <td>Routes with no viable fare/frequency recovery, slot constraints, aircraft redeployment options</td>
+        <td>Suspension impact model: freed capacity redeployment value vs passenger disruption cost</td>
+        <td>Redeployment must yield ≥2¢ RASM improvement on receiving route to justify suspension</td>
+        <td class="pain">SkyMAX redeployment optimisation does not account for passenger goodwill cost or brand risk on thin community routes serving markets with limited alternatives</td>
+        <td class="centre">✓</td>
+        <td class="centre">✓</td>
+      </tr>
+      <tr>
+        <td class="step-num">5.1
+        <td>Prepare Route P&amp;L Recommendation Report</td>
+        <td>Senior Network Planner</td>
+        <td class="mono">Tableau</td>
+        <td>Scenario modelling outputs, suspension analysis, competitive benchmarks</td>
+        <td>Executive route P&amp;L report with ranked recommendations (retain/optimise/suspend) and financial impact summary</td>
+        <td>Report delivered within 5 business days of scenario completion</td>
+        <td class="pain">Tableau dashboards pull from AWS Redshift snapshots; live schedule changes in SkyWORKS during report preparation can make visuals stale before the committee meeting</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">5.2
+        <td>Present Recommendations to Network Investment Committee</td>
+        <td>Director of Network Planning</td>
+        <td class="mono">Amadeus SkySYM</td>
+        <td>Route P&amp;L report, scenario models, stakeholder pre-read distributed 48 hours prior</td>
+        <td>Committee decision: approve, revise, or defer each recommendation</td>
+        <td>≥80% of recommendations decided in single committee session without remand</td>
+        <td class="pain">Committee decisions require CFO alignment on CASM assumptions; Finance and Network Planning use different cost allocation methodologies, causing recurring meeting delays</td>
+        <td class="centre">✓</td>
+        <td class="centre"></td>
+      </tr>
+      <tr>
+        <td class="step-num">5.3
+        <td>Implement Approved Schedule Changes</td>
+        <td>Schedule Planning Manager</td>
+        <td class="mono">Amadeus SkyWORKS</td>
+        <td>Approved committee decisions, SSIM update requirements, slot availability confirmation</td>
+        <td>Updated schedule in SkyWORKS; SSIM filed to GDS and Altéa PSS</td>
+        <td>Schedule changes published to GDS within 72 hours of committee approval</td>
+        <td class="pain">SkyWORKS to Altéa PSS schedule sync failures have occurred during peak filing periods, requiring manual reconciliation that delays booking availability</td>
+        <td class="centre"></td>
+        <td class="centre">✓</td>
+      </tr>
+      <tr>
+        <td class="step-num">5.4
+        <td>Monitor Post-Action Route Performance</td>
+        <td>Network Analyst</td>
+        <td class="mono">Amadeus Revenue Management (NRM)</td>
+        <td>Live booking data on modified routes, updated CASM actuals from SAP</td>
+        <td>30/60/90-day performance tracking report vs projected recovery targets</td>
+        <td>RASM–CASM spread on modified routes trending toward target within 60 days</td>
+        <td class="pain">NRM monitoring dashboards do not automatically flag when post-action routes underperform vs projection; analyst must manually compare actuals to scenario model each cycle</td>
+        <td class="centre"></td>
+        <td class="centre"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
   </section>
 </main>
 

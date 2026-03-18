@@ -1,49 +1,51 @@
 flowchart LR
-  A([Start\nPeriodic Review]):::navy
-
-  subgraph P1["Phase 1: Data Extraction & Baseline"]
-    B[Pull O&D Revenue\nSkyCAST]
-    C[Extract Route Costs\nSAP S/4HANA]
-    D{Data\nComplete?}:::orange
+  subgraph P1["Phase 1: Data Collection & Revenue Aggregation"]
+    A([Start]) --> B[Extract booking & revenue data]
+    B --> C[Pull ancillary & fare-mix data]
+    C --> D{Data quality acceptable?}
+    D -- No --> B
+    D -- Yes --> E[Validate O&D completeness]
+  end
+  subgraph P2["Phase 2: Cost Allocation"]
+    E --> F[Allocate direct operating costs]
+    F --> G[Apportion fleet ownership costs]
+    G --> H[Assign airport fees & handling]
+    H --> I{Cost allocation reconciled?}
+    I -- No --> F
+    I -- Yes --> J[Freeze route cost baseline]
+  end
+  subgraph P3["Phase 3: Profitability Assessment"]
+    J --> K[Calculate route CASM vs RASM]
+    K --> L[Benchmark vs network average]
+    L --> M{Route below profit threshold?}
+    M -- No --> T([Route healthy — monitor])
+    M -- Yes --> N[Segment by season & day-of-week]
+  end
+  subgraph P4["Phase 4: Scenario Modelling"]
+    N --> O[Model frequency/gauge change impact]
+    O --> P[Test fare adjustment scenarios]
+    P --> Q{Viable recovery path found?}
+    Q -- No --> R[Evaluate seasonal suspension]
+    R --> S{Suspension justified?}
+    S -- Yes --> U[Flag for suspension proposal]
+    S -- No --> O
+    Q -- Yes --> U
+  end
+  subgraph P5["Phase 5: Recommendations & Governance"]
+    U --> V[Prepare route P&L report]
+    V --> W[Present to Network Investment Committee]
+    W --> X{Committee approves action?}
+    X -- No --> V
+    X -- Yes --> Y[Implement approved changes]
+    Y --> Z([Monitor post-action performance])
   end
 
-  subgraph P2["Phase 2: Revenue & Traffic Analysis"]
-    E[Analyse LF & Yield\nAltéaRM]
-    F[Model Spill & Recapture\nSkyCAST]
-    G{LF ≥ Break-\nEven Threshold?}:::orange
-  end
-
-  subgraph P3["Phase 3: Cost Attribution"]
-    H[Attribute Direct Op Costs\nSAP S/4HANA]
-    I[Allocate Overhead\nSAP S/4HANA]
-    J{CASM Within\nFleet Target?}:::orange
-  end
-
-  subgraph P4["Phase 4: P&L Modelling"]
-    K[Build Route P&L Model\nSkySYM]
-    L[Run Freq/Gauge Scenarios\nSkySYM]
-    M{Route Profitable\nUnder Base Case?}:::orange
-  end
-
-  subgraph P5["Phase 5: Review & Decision"]
-    N[Present to Network\nLeadership · Tableau]
-    O{Recommendation\nApproved?}:::orange
-    P[Update Route Status\nSkyWORKS]
-  end
-
-  Z([Done\nDecision Logged]):::navy
-
-  A --> B --> C --> D
-  D -->|Gap found| B
-  D -->|Complete| E --> F --> G
-  G -->|Below threshold| L
-  G -->|Meets target| H --> I --> J
-  J -->|Over target| L
-  J -->|Within range| K --> L --> M
-  M -->|Unprofitable| N
-  M -->|Profitable| N
-  N --> O -->|Revise model| K
-  O -->|Approved| P --> Z
-
-classDef navy   fill:#003366,color:#fff,stroke:#003366
-classDef orange fill:#ff6600,color:#fff,stroke:#ff6600
+  style A fill:#003366,color:#fff,stroke:#003366
+  style T fill:#003366,color:#fff,stroke:#003366
+  style Z fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600
