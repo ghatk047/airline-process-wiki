@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Flight Dispatch &amp; Control · Flight Operations · Airlines Process Wiki</title>
+<title>NP-RM-02 · Fare Class &amp; Bucket Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -42,7 +43,7 @@
       <a class="sidebar-l2-link" href="../../../network-and-pricing/revenue-management/">Revenue Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-01/"><span class="status-dot status-done"></span><span class="pid">NP-RM-01</span>Inventory &amp; Yield Optimization</a>
-        <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-02/"><span class="status-dot status-done"></span><span class="pid">NP-RM-02</span>Fare Class &amp; Bucket Management</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/revenue-management/np-rm-02/"><span class="status-dot status-done"></span><span class="pid">NP-RM-02</span>Fare Class &amp; Bucket Management</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-03/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-03</span>Overbooking Policy Management</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-04/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-04</span>Demand Forecasting &amp; Modelling</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-05/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-05</span>Group Sales Revenue Management</a>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-queue"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -242,153 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Flight Dispatch &amp; Control</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/revenue-management/">Revenue Management</a><span class="sep">›</span>
+  <span class="current">NP-RM-02 · Fare Class &amp; Bucket Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Flight Dispatch &amp; Control</h1>
-    <p>Flight Operations · 0 of 15 subprocesses complete · Updated 2026-03-18 18:47</p>
+    <h1>Fare Class &amp; Bucket Management</h1>
+    <p>Network Planning &amp; Scheduling › Revenue Management · 18 L4 steps · 6 phases · 9 decision gates · Updated 2026-03-18 18:47</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-RM-02</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-01</span>Flight Dispatch &amp; Release</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-rm-02">
+      <img src="../../../assets/img/np-rm-02.png" alt="NP-RM-02 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-rm-02').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-rm-02').style.display='flex'">
+      <div id="diag-placeholder-np-rm-02" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-01/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Define fare class hierarchy in PSS</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Fare product strategy brief, IATA booking class standards</td>
+  <td style="font-size:10px">Booking class configuration (Y, B, M, H, K, Q, V, W, L, G) in PSS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of active fare products mapped to a booking class within 2 business days of product launch</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Map booking classes to RM fare buckets</td>
+  <td class="td-role">Revenue Management System Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Booking class list from Altéa, revenue segmentation guidelines</td>
+  <td style="font-size:10px">Fare bucket mapping table in NRM linking each booking class to O&amp;D revenue tier</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero mismatches between Altéa booking class codes and NRM bucket definitions at go-live</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Validate fare class structure against ATPCO rules</td>
+  <td class="td-role">Pricing &amp; Tariff Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">NRM bucket mapping, published ATPCO fare records (Records 1, 2, 3)</td>
+  <td style="font-size:10px">Validation report confirming booking class eligibility rules match ATPCO Cat 25 combinability and Cat 5 advance purchase restrictions</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">0 ATPCO rule violations flagged by GDS edits at filing; audit pass rate 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Publish fare class availability to GDS channels</td>
+  <td class="td-role">Distribution &amp; GDS Analyst</td>
+  <td><span class="stag gds">Sabre GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated booking class configuration, SSIM schedule file</td>
+  <td style="font-size:10px">Live availability display in Sabre, Travelport, and Amadeus GDS for all market O&amp;Ds</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GDS availability refresh latency ≤ 90 seconds from NRM availability change; GDS parity rate ≥ 99.5%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Extract historical O&amp;D booking data by fare class</td>
+  <td class="td-role">Revenue Analyst</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Altéa booking history (24 months), departure date range for planning horizon</td>
+  <td style="font-size:10px">O&amp;D booking curve dataset segmented by fare class, day-of-week, and booking lead time</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data extraction covering ≥ 95% of historical departures within planning window; query SLA ≤ 4 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Run demand forecast model per O&amp;D bucket</td>
+  <td class="td-role">Revenue Management System Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Historical booking curves, competitive fare inputs from OAG Schedule Analyser</td>
+  <td style="font-size:10px">Forecast demand curve per fare bucket per O&amp;D, including unconstrained demand estimate</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Forecast MASE (Mean Absolute Scaled Error) ≤ 0.25 for 90-day horizon; unconstrained demand estimate within ±12% of actuals at departure</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Review forecast variance and approve bucket plan</td>
+  <td class="td-role">Senior Revenue Manager</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">NRM forecast output, analyst commentary on anomalous markets</td>
+  <td style="font-size:10px">Approved demand forecast for bucket sizing; markets flagged for manual review escalated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Forecast review cycle ≤ 48 hours before system-generated availability updates are applied; &lt; 5% of markets requiring manual correction</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Set initial bucket inventory levels for departure</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved demand forecast, aircraft capacity from Amadeus SkyMAX fleet assignment</td>
+  <td style="font-size:10px">Initial bucket protection levels and booking limits per fare class per flight</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bucket initialisation completed ≥ 330 days before departure for all long-haul markets; ≥ 90 days for short-haul</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Configure EMSR-b bid price and nesting strategy</td>
+  <td class="td-role">Revenue Management System Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved bucket protection levels, fare class revenue values, willingness-to-pay estimates</td>
+  <td style="font-size:10px">Bid price thresholds and virtual bucket nesting hierarchy loaded into NRM for each O&amp;D</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bid price calibration complete ≥ 180 days before departure for long-haul; revenue uplift from nesting vs. partitioned control ≥ 2% RASM on calibrated markets</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Monitor booking pace against expected S-curve</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Real-time bookings from Altéa, expected booking curve from NRM forecast</td>
+  <td style="font-size:10px">Booking pace index (BPI) per flight per fare class; pace alerts for flights deviating &gt; 20%</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">BPI monitored at T−90, T−60, T−30, T−14, T−7, T−3 checkpoints; alert resolution SLA ≤ 4 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Adjust bucket thresholds based on pace deviation</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Booking pace alert, current bucket availability, revised demand estimate</td>
+  <td style="font-size:10px">Updated protection levels and booking limits; change log entry in NRM audit trail</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bucket adjustment applied within 2 hours of pace alert; average revenue recovery per adjustment ≥ $8/seat on affected flights</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Open or close fare classes per booking curve triggers</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">NRM availability recommendation, time-to-departure trigger rules</td>
+  <td style="font-size:10px">Updated fare class availability in Altéa and reflected across GDS/NDC channels</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Availability update propagated to all GDS endpoints within 90 seconds; close-out of discount classes ≥ T−3 on flights with load factor forecast ≥ 90%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Monitor real-time bookings and cancellations by class</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Live Altéa booking stream, cancellation and refund events</td>
+  <td style="font-size:10px">Real-time seat availability dashboard; auto-triggered re-open events when cancellations create sell-up opportunity</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Revenue recovery from cancellation-triggered re-opens ≥ $15/seat; dashboard refresh ≤ 5-minute lag vs. Altéa booking engine</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Process group booking requests against bucket availability</td>
+  <td class="td-role">Group Sales Coordinator</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Group booking request (≥10 pax), current bucket availability, group fare contract</td>
+  <td style="font-size:10px">Group PNR with blocked inventory or counter-offer at higher fare class</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Group booking response time ≤ 24 hours; group revenue contribution ≥ 8% of total flight revenue on managed markets</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Review exception queue for manual intervention flights</td>
+  <td class="td-role">Senior Revenue Manager</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">NRM exception queue (special events, comp schedule changes, distressed inventory flags)</td>
+  <td style="font-size:10px">Prioritised list of flights requiring analyst action; override justification form initiated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Exception queue reviewed twice daily (09:00 and 14:00 local); &lt; 3% of managed flights in exception state at any time</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Apply manual bucket override with audit justification</td>
+  <td class="td-role">Senior Revenue Manager</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved override justification, competitor fare filing from OAG Schedule Analyser, event calendar</td>
+  <td style="font-size:10px">Manual availability override applied; audit log entry with approver, rationale, and expected revenue impact</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of manual overrides documented in NRM audit trail; post-event review shows manual overrides outperform model recommendation in ≥ 60% of cases</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Generate post-departure revenue performance report</td>
+  <td class="td-role">Revenue Analytics Analyst</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Altéa final booking close-out file, NRM forecast at departure, actual revenue by fare class</td>
+  <td style="font-size:10px">Post-departure report: RASM, load factor, yield, and spill/spoilage by bucket for each departed flight</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Report generated within 48 hours of departure; RASM variance between actual and pre-departure NRM estimate reported for 100% of flights</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Recalibrate NRM forecast model parameters</td>
+  <td class="td-role">Revenue Management System Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Post-departure performance reports (rolling 13 weeks), MASE trend, spill and spoilage analysis</td>
+  <td style="font-size:10px">Updated NRM model parameters; recalibration change log; improvement targets set for next review cycle</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Quarterly recalibration reduces MASE by ≥ 0.02 vs. prior quarter; spill rate ≤ 3% and spoilage rate ≤ 5% on managed O&amp;Ds post-calibration</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-02</span>Operational Flight Plan Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-RM-02</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network Planning &amp; Scheduling</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Revenue Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Fare Class &amp; Bucket Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">9 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">6 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Revenue Management Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Revenue Management System Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Pricing &amp; Tariff Analyst</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Distribution &amp; GDS Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>Revenue Analyst</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Senior Revenue Manager</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Group Sales Coordinator</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Revenue Analytics Analyst</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag amadeus">Amadeus Revenue Management (NRM)</span><span class="stag custom">ATPCO</span><span class="stag gds">Sabre GDS</span><span class="stag aws">AWS Redshift</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Define fare class hierarchy in PSS</span><span class="kval">100% of active fare products mapped to a booking class within 2 business days of product launch</span></div><div class="krow"><span class="kname">Map booking classes to RM fare buckets</span><span class="kval">Zero mismatches between Altéa booking class codes and NRM bucket definitions at go-live</span></div><div class="krow"><span class="kname">Validate fare class structure against ATPCO rules</span><span class="kval">0 ATPCO rule violations flagged by GDS edits at filing; audit pass rate 100%</span></div><div class="krow"><span class="kname">Publish fare class availability to GDS channels</span><span class="kval">GDS availability refresh latency ≤ 90 seconds from NRM availability change; GDS parity rate ≥ 99.5%</span></div><div class="krow"><span class="kname">Extract historical O&amp;D booking data by fare class</span><span class="kval">Data extraction covering ≥ 95% of historical departures within planning window; query SLA ≤ 4 hours</span></div><div class="krow"><span class="kname">Run demand forecast model per O&amp;D bucket</span><span class="kval">Forecast MASE (Mean Absolute Scaled Error) ≤ 0.25 for 90-day horizon; unconstrained demand estimate within ±12% of actuals at departure</span></div><div class="krow"><span class="kname">Review forecast variance and approve bucket plan</span><span class="kval">Forecast review cycle ≤ 48 hours before system-generated availability updates are applied; &lt; 5% of markets requiring manual correction</span></div><div class="krow"><span class="kname">Set initial bucket inventory levels for departure</span><span class="kval">Bucket initialisation completed ≥ 330 days before departure for all long-haul markets; ≥ 90 days for short-haul</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Altéa booking class table has finite slots; adding new classes for ancillary bundles requires PSS configuration freeze that blocks concurrent distribution updates</div><div class="risk-card">NRM fare bucket schema uses internal numeric IDs that do not auto-sync with Altéa booking class labels; manual reconciliation required after each PSS config change</div><div class="risk-card">ATPCO Cat 25 combinability rules interact with NRM bucket nesting in non-obvious ways; misalignment causes ghost inventory — classes show available in GDS but are blocked in NRM</div><div class="risk-card">Sabre GDS availability cache TTL (up to 90 s) creates window where high-demand bucket closures are not yet reflected, enabling over-sell of discount classes during flash sales</div><div class="risk-card">Post-COVID booking patterns (2021–2022) distort historical curves; including them without seasonality dampening causes demand models to under-forecast leisure peak</div><div class="risk-card">NRM&#x27;s detruncation algorithm underestimates unconstrained demand on routes with chronic sell-outs; results in systematic under-forecasting for high-yield buckets</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Fare product strategy brief, IATA booking class standards</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Updated NRM model parameters; recalibration change log; improvement targets set for next review cycle</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-02/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-03</span>Fuel Planning &amp; Tankering</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-04</span>Weight &amp; Balance Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-04/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-05</span>NOTAMs &amp; AIP Information Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-06</span>Weather Monitoring &amp; Decision Support</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-07</span>Air Traffic Control Coordination</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-08</span>Network Operations Control (NOC)</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-09</span>Delay Management &amp; Root Cause Analysis</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-10</span>Diversion &amp; Emergency Response Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-11</span>ETOPS / EDTO Operations Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-13</span>Performance &amp; FDR Data Monitoring</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-14</span>Air-to-Ground Communications Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-15</span>Dangerous Goods Load Authorization</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../np-rm-01/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-RM-01 · Inventory &amp; Yield Optimization</span></a><a class="pn-btn" href="../np-rm-03/"><span><span class="sub">Next</span>NP-RM-03 · Overbooking Policy Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
