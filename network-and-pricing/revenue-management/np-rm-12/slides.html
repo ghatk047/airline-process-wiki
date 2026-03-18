@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-RM-12 Slides — Real-Time Availability &amp; Seat Inventory Control</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-12</span>
+    <h1>Real-Time Availability &amp; Seat Inventory Control</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-rm-12.png" alt="BPMN for NP-RM-12" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-12</span>
+    <h1>Real-Time Availability &amp; Seat Inventory Control</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-RM-12</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Revenue Management</li>
+          <li><strong>L3 Name:</strong> Real-Time Availability &amp; Seat Inventory Control</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Load authorized capacity &amp; fleet config</li><li><strong>Phase 2:</strong> Monitor real-time booking pace vs forecast</li><li><strong>Phase 3:</strong> Generate availability adjustment recommendation</li><li><strong>Phase 4:</strong> Receive and assess group booking request</li><li><strong>Phase 5:</strong> Conduct T-72h pre-departure inventory review</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Amadeus Altéa PSS (automated)</li><li>Amadeus AltéaRM (NRM)</li><li>Group Sales Coordinator</li><li>Revenue Management Analyst</li><li>Senior Revenue Management Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Altéa PSS</li><li>Amadeus AltéaRM (NRM)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-12</span>
+    <h1>Real-Time Availability &amp; Seat Inventory Control</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Load authorized capacity &amp; fleet config</td>
+        <td class="kpi-col">Capacity load accuracy 100% before sales open</td>
+        <td class="pain-col">Late fleet swaps from network planning trigger manual capacity corrections in AltéaRM; no automated re-sync with SkyMAX fleet assignment module</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Initialize fare class booking buckets</td>
+        <td class="kpi-col">All booking classes live ≥14 days before departure; 0 missing bucket errors at booking open</td>
+        <td class="pain-col">ATPCO fare class proliferation (20+ classes on competitive routes) increases bucket management complexity; AltéaRM UI does not support bulk bucket edits</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Apply overbooking factors by flight segment</td>
+        <td class="kpi-col">Target involuntary denied boarding rate ≤0.05 per 10,000 passengers</td>
+        <td class="pain-col">No-show model degrades on routes with recent schedule changes or post-event demand spikes; manual recalibration required in AltéaRM — no auto-retraining trigger</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Monitor real-time booking pace vs forecast</td>
+        <td class="kpi-col">Pace variance alert triggered within 15 minutes of threshold breach</td>
+        <td class="pain-col">AltéaRM polling interval from Altéa PSS is near-real-time but not event-driven; sudden group bookings or flash sales can spike pace index before alert fires</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Evaluate booking pace deviation threshold</td>
+        <td class="kpi-col">System recommendation generated within 5 minutes of threshold breach; analyst review SLA ≤30 min</td>
+        <td class="pain-col">Threshold calibration is static per route cluster — unusual demand patterns (e.g. redirected traffic, airline irregular operations) generate false positive alerts requiring analyst intervention</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Flag flight for priority availability review</td>
+        <td class="kpi-col">≥90% of flagged flights actioned within analyst SLA; &lt;5% false-positive escalation rate</td>
+        <td class="pain-col">High-frequency flagging on congested departure banks (e.g. Monday AM banks) overwhelms analyst queues; PROS RM AI prioritisation not yet integrated at this carrier</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Generate availability adjustment recommendation</td>
+        <td class="kpi-col">Revenue uplift from accepted recommendations ≥1.5% per adjusted flight vs control group</td>
+        <td class="pain-col">AltéaRM recommendations do not factor competitor real-time availability in Sabre/Travelport GDS; ATPCO fare data lags competitor filing by up to 2 hours</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Validate recommendation against RM policy bounds</td>
+        <td class="kpi-col">Policy override rate ≤8% of system recommendations; override reason coded for feedback loop</td>
+        <td class="pain-col">RM policy rules are maintained in AltéaRM configuration tables — change request lead time is 5 business days, creating misalignment during rapid competitive responses</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Apply manual override with documented reason</td>
+        <td class="kpi-col">Manual override revenue outcome tracked: ≥60% of overrides must outperform system recommendation at T+7 days post-departure</td>
+        <td class="pain-col">Override audit trail in AltéaRM is flight-level only — no automatic post-departure outcome attribution; manual tracking in spreadsheets introduces error</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Broadcast availability updates to all channels</td>
+        <td class="kpi-col">Availability propagation to all GDS channels within 60 seconds of AltéaRM commit; NDC API latency ≤5 seconds</td>
+        <td class="pain-col">Sabre and Travelport GDS availability caching can delay display of closed classes by up to 90 seconds — undercuts intended revenue protection window on high-demand flights</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Receive and assess group booking request</td>
+        <td class="kpi-col">Group quote turnaround ≤4 hours for ≤50 pax; ≤24 hours for &gt;50 pax</td>
+        <td class="pain-col">Group bookings bypass normal availability controls in Altéa PSS — large groups (&gt;30 pax) can displace higher-yield individual bookings if allotment limits not enforced in real time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Validate group request against allotment policy</td>
+        <td class="kpi-col">Group allotment approval rate within policy: ≥95% handled without senior escalation; group revenue mix target ≤20% of total flight revenue</td>
+        <td class="pain-col">AltéaRM group allotment module requires manual entry of allotment limits per flight — no automated inheritance from network-level group policy, causing inconsistency across the system</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Confirm group block and adjust net inventory</td>
+        <td class="kpi-col">Group block confirmation rate ≥85% within quoted hold period; no-show rate on confirmed groups ≤12%</td>
+        <td class="pain-col">Group blocks held without deposit reduce effective inventory for individual revenue-maximising bookings — Altéa PSS release rules must be manually configured per group record</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Conduct T-72h pre-departure inventory review</td>
+        <td class="kpi-col">Final load factor target ≥83%; revenue per available seat kilometre (RASK) vs budget reviewed at T-72h</td>
+        <td class="pain-col">T-72h review is manual and sequential per flight — on banks of 80+ departures, analyst capacity limits force triage; lower-revenue routes reviewed last or skipped entirely</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Evaluate unsold inventory against threshold</td>
+        <td class="kpi-col">Unsold seat recovery via last-minute availability opening: target ≥65% of exposed seats sold at ≥breakeven yield</td>
+        <td class="pain-col">Static threshold rules for opening lower classes do not account for connecting passenger itinerary value — opening cheap last-minute classes may dilute O&amp;D revenue on competitive routes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Open lower fare classes and clear waitlist</td>
+        <td class="kpi-col">Waitlist clearance rate ≥90% within 2 hours of class opening; confirmed waitlist pax CSAT ≥4.2/5</td>
+        <td class="pain-col">Waitlist auto-confirmation in Altéa PSS sends immediate ticketing deadline — passengers who do not respond within 2 hours forfeit the seat, requiring manual re-processing by reservations agents</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.4</td>
+        <td>Freeze availability at check-in cutoff</td>
+        <td class="kpi-col">Check-in cutoff applied accurately on 100% of departures; overbooking resolution (VDB/IDB) initiated within 30 minutes of cutoff if overbooked</td>
+        <td class="pain-col">Irregular operations (IROPS) delay departures after availability freeze — stranded passengers rebooked on alternate flights consume inventory already frozen for those flights, requiring emergency availability unlocks in Altéa PSS</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+</body>
+</html>
