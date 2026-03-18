@@ -1,0 +1,44 @@
+flowchart LR
+  subgraph P1["Phase 1: Demand Forecasting"]
+    A([Start]) --> B[Extract O&D traffic\nSkyCAST]
+    B --> C[Run demand forecast\nfor planning horizon]
+    C --> D{Forecast variance\n> 5%?}
+    D -- Yes --> C
+    D -- No --> E[Identify routes needing\ncapacity uplift]
+  end
+  subgraph P2["Phase 2: Fleet Assignment"]
+    E --> F[Run fleet assignment\noptimisation SkyMAX]
+    F --> G{Constraint violations\ndetected?}
+    G -- Yes --> H[Adjust gauge\nSkyWORKS]
+    H --> F
+    G -- No --> I[Validate tail balance\nacross focus cities]
+  end
+  subgraph P3["Phase 3: Constraint Resolution"]
+    I --> J[Check slot &\ngate limits IATA CRS]
+    J --> K{Slot or crew\ndeficit found?}
+    K -- Yes --> L[Coordinate swap\nor reduction]
+    L --> K
+    K -- No --> M[Confirm maint\nwindows AMOS]
+  end
+  subgraph P4["Phase 4: SSIM Filing"]
+    M --> N[Generate SSIM\nSkyWORKS]
+    N --> O{SSIM errors\ndetected?}
+    O -- Yes --> N
+    O -- No --> P[Submit to GDS\n& NDC Gateway]
+  end
+  subgraph P5["Phase 5: Utilization Monitoring"]
+    P --> Q[Monitor load factor\nAmadeus NRM]
+    Q --> R{Load factor\n< 78%?}
+    R -- Yes --> S[Trigger re-optimisation\nSkyCAST + SkyMAX]
+    S --> Q
+    R -- No --> T[Log KPIs\nTableau / Redshift]
+    T --> U([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600

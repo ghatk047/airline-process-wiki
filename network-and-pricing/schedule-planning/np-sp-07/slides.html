@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SP-07 Slides — Capacity Planning &amp; Utilization</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-07</span>
+    <h1>Capacity Planning &amp; Utilization</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sp-07.png" alt="BPMN for NP-SP-07" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-07</span>
+    <h1>Capacity Planning &amp; Utilization</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SP-07</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Schedule Planning</li>
+          <li><strong>L3 Name:</strong> Capacity Planning &amp; Utilization</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract historical O&amp;D traffic data</li><li><strong>Phase 2:</strong> Run initial fleet assignment optimisation</li><li><strong>Phase 3:</strong> Assess slot and gate availability constraints</li><li><strong>Phase 4:</strong> Generate SSIM schedule file for submission</li><li><strong>Phase 5:</strong> Monitor in-period seat utilization vs forecast</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Crew Planning Analyst</li><li>Demand Forecasting Analyst</li><li>Distribution Analyst</li><li>Fleet Assignment Analyst</li><li>Line Maintenance Planner</li><li>Network Operations Analyst</li><li>Network Planner</li><li>Network Planning Analyst</li><li>Revenue Management Analyst</li><li>Schedule Coordinator</li><li>Schedule Planning Analyst</li><li>Slot Coordination Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>Amadeus GDS / Sabre GDS / NDC API Gateway</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>Amadeus SkyCAST</li><li>Amadeus SkyMAX</li><li>Amadeus SkySYM</li><li>Amadeus SkyWORKS</li><li>IATA CRS (Coordinated Reservation System)</li><li>Jeppesen Crew Management</li><li>OAG Schedule Analyser</li><li>Tableau / AWS Redshift</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-07</span>
+    <h1>Capacity Planning &amp; Utilization</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract historical O&amp;D traffic data</td>
+        <td class="kpi-col">Data completeness ≥98% of active markets</td>
+        <td class="pain-col">SkyCAST data feeds depend on Altéa PSS booking exports; delays in PSS batch jobs cause stale baseline traffic inputs, distorting forecasts for thin markets</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Run demand forecast for planning horizon</td>
+        <td class="kpi-col">Forecast MAPE ≤8% at 90-day horizon</td>
+        <td class="pain-col">Thin LCC markets and new routes lack sufficient booking history; SkyCAST model defaults to industry averages, understating demand elasticity for fare-sensitive leisure segments</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate forecast variance against prior cycle</td>
+        <td class="kpi-col">Forecast variance report produced within 2 business days of data extraction</td>
+        <td class="pain-col">Manual comparison between planning cycles is error-prone; no automated delta alerting in SkyCAST baseline module — analyst must export to Excel for comparison</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Identify routes requiring capacity uplift</td>
+        <td class="kpi-col">Capacity gap identification covering 100% of markets with forecast load factor ≥85%</td>
+        <td class="pain-col">SkySYM network simulation does not natively import SkyCAST output in real time; manual CSV handoff between tools introduces reconciliation lag of 1–2 days</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Run initial fleet assignment optimisation</td>
+        <td class="kpi-col">Fleet utilisation ≥13.5 block hours/aircraft/day across active rotations</td>
+        <td class="pain-col">SkyMAX optimiser is sensitive to input parameter sequencing; incorrect fleet availability seeding (e.g., aircraft in scheduled maintenance not flagged) generates infeasible rotations that require manual correction</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Detect constraint violations in fleet plan</td>
+        <td class="kpi-col">Zero hard constraint violations (MTOW, turn-time) in approved plan</td>
+        <td class="pain-col">SkyMAX surface-level constraint checker does not model real-time gate availability at congested airports (e.g., LHR, JFK slots); gate conflicts surface only post-filing via airport coordination</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Adjust gauge on constrained rotations</td>
+        <td class="kpi-col">All gauge adjustments resolved and re-optimised within 3 business days</td>
+        <td class="pain-col">Downgrading gauge to resolve tail-count imbalance at outstations triggers yield loss on high-demand rotations; no automated revenue impact warning exists in SkyWORKS at point of gauge swap</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Validate tail-count balance across network</td>
+        <td class="kpi-col">Overnight positioning plan with zero unresolved imbalances before SSIM submission</td>
+        <td class="pain-col">Overnight imbalances at spoke stations with no maintenance capability require costly ferry flights; SkyMAX does not auto-flag stations without MRO support when positioning aircraft</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Assess slot and gate availability constraints</td>
+        <td class="kpi-col">100% of Level 3 coordinated airports reviewed before SSIM submission</td>
+        <td class="pain-col">Slot exchanges with competing carriers at Level 3 airports require bilateral negotiation through IATA slot conferences; lead times of 6–12 months compress planning windows for seasonal capacity changes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Review maintenance capacity windows</td>
+        <td class="kpi-col">Zero unplanned maintenance conflicts in 90-day rolling capacity plan</td>
+        <td class="pain-col">AMOS maintenance window data is not directly integrated with SkyMAX fleet assignment; planners rely on manual exports and cross-referencing in spreadsheets, creating reconciliation errors during peak planning periods</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Validate crew availability against planned capacity</td>
+        <td class="kpi-col">Crew coverage ratio ≥105% (buffer above minimum legal complement)</td>
+        <td class="pain-col">Jeppesen Crew Management pairing outputs are built on published schedule; capacity changes post-pairing require full rerun of crew pairings, increasing planning cycle time by 3–5 days and risking FAR Part 117 duty-time compliance gaps</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Resolve crew or slot deficits via capacity swap</td>
+        <td class="kpi-col">All crew and slot deficits resolved before SSIM filing deadline</td>
+        <td class="pain-col">Reducing frequencies to resolve crew deficits at hub bases cascades into load factor pressure on remaining departures; decision lacks integrated revenue-impact modelling at point of resolution in SkyWORKS</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Generate SSIM schedule file for submission</td>
+        <td class="kpi-col">SSIM file generated within 1 business day of capacity plan sign-off</td>
+        <td class="pain-col">SkyWORKS SSIM export module requires manual mapping of codeshare flight suffixes for partner flights; errors in suffix formatting cause GDS rejection and require resubmission, delaying schedule availability by 24–48 hours</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Validate SSIM file against IATA standards</td>
+        <td class="kpi-col">Zero critical SSIM errors at point of GDS submission</td>
+        <td class="pain-col">OAG validation catches structural SSIM errors but does not validate operational feasibility (e.g., turn-time violations at specific airports); operationally infeasible schedules pass SSIM validation and are caught only during operations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Submit validated schedule to GDS and NDC channels</td>
+        <td class="kpi-col">Schedule available in all GDS channels within 4 hours of SSIM submission; NDC availability within 2 hours</td>
+        <td class="pain-col">Travelport GDS schedule updates lag Amadeus and Sabre by up to 6 hours due to batch processing cadence; passengers booking via Travelport-connected TMCs may see stale capacity, resulting in overbooking conflicts at check-in</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Monitor in-period seat utilization vs forecast</td>
+        <td class="kpi-col">System load factor ≥83% on average across active network; individual market load factor reviewed weekly</td>
+        <td class="pain-col">Amadeus NRM monitors inventory at O&amp;D level but does not natively surface segment-level spill and recapture estimates; capacity reoptimisation decisions rely on analyst judgment without automated spill quantification</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Trigger capacity reoptimisation for underperforming routes</td>
+        <td class="kpi-col">Reoptimisation recommendation issued within 48 hours of load factor breach trigger</td>
+        <td class="pain-col">Within-60-day capacity changes require coordinated updates across Altéa PSS (inventory), SkyWORKS (schedule), and Jeppesen Crew (pairings); the lack of a unified change-management workflow causes synchronisation failures and involuntary passenger re-accommodation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Log final utilization KPIs and close planning cycle</td>
+        <td class="kpi-col">Post-cycle report published within 5 business days of season end; forecast vs actual load factor variance documented for model calibration</td>
+        <td class="pain-col">Redshift data pipeline aggregates actuals from Altéa PSS on a 24-hour delay; post-departure analysis for redeye and overnight flights often reflects next-day timestamps, distorting daily load factor KPIs in Tableau dashboards</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+</body>
+</html>
