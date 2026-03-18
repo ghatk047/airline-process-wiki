@@ -1,0 +1,63 @@
+flowchart LR
+  subgraph P1["Phase 1: Detection & Classification"]
+    A([IROPS Trigger]) --> B[Ingest disruption alerts\nSITA AMS]
+    B --> C{Severity requires\nrecovery activation?}
+    C -- No --> B
+    C -- Yes --> D[Activate IROPS war room]
+  end
+
+  subgraph P2["Phase 2: Impact Assessment"]
+    D --> E[Model affected flights\nAmadeus SkySYM]
+    E --> F{Crew & aircraft\nconflicts resolvable?}
+    F -- No --> G[Escalate to reserves]
+    G --> F
+    F -- Yes --> H[Assess slot constraints\nIATA CRS]
+  end
+
+  subgraph P3["Phase 3: Recovery Strategy"]
+    H --> I[Generate recovery scenarios\nAmadeus SkyWORKS]
+    I --> J{Strategy viable?}
+    J -- No --> I
+    J -- Yes --> K[Validate crew legality\nJeppesen Crew Mgmt]
+    K --> L{FAR 117\ncompliant?}
+    L -- No --> K
+  end
+
+  subgraph P4["Phase 4: Schedule Execution"]
+    L -- Yes --> M[Publish revised schedule\nAltéa PSS + GDS]
+    M --> N[File slot waivers\nIATA CRS]
+    N --> O{Waivers\ngranted?}
+    O -- No --> N
+    O -- Yes --> P[Confirm ferry flights\nNAVBLUE]
+  end
+
+  subgraph P5["Phase 5: Pax & Crew Recovery"]
+    P --> Q[Auto-rebook pax\nAmadeus Altéa PSS]
+    Q --> R{All pax\nrebooked?}
+    R -- No --> S[Manual handling queue]
+    S --> T[Activate reserve crew\nJeppesen Crew Mgmt]
+    R -- Yes --> T
+    T --> U{Reserve pool\nsufficient?}
+    U -- No --> V[Charter / wet lease]
+    V --> W[Issue compensation\nvouchers]
+    U -- Yes --> W
+  end
+
+  subgraph P6["Phase 6: Post-IROPS Review"]
+    W --> X[IROPS cost analysis\nSAP FI/CO + Redshift]
+    X --> Y{Playbook gap\nidentified?}
+    Y -- Yes --> Z[Update SkySYM\nscenario library]
+    Z --> AA([Review Complete])
+    Y -- No --> AA
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AA fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style Y fill:#ff6600,color:#fff,stroke:#ff6600

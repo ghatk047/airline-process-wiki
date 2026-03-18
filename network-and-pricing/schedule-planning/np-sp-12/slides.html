@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SP-12 Slides — Irregular Operations Recovery Planning</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-12</span>
+    <h1>Irregular Operations Recovery Planning</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sp-12.png" alt="BPMN for NP-SP-12" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-12</span>
+    <h1>Irregular Operations Recovery Planning</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SP-12</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Schedule Planning</li>
+          <li><strong>L3 Name:</strong> Irregular Operations Recovery Planning</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Ingest real-time disruption alerts from ops system</li><li><strong>Phase 2:</strong> Model affected flight propagation in network simul</li><li><strong>Phase 3:</strong> Generate recovery schedule scenarios in SkyWORKS</li><li><strong>Phase 4:</strong> Publish revised recovery schedule to PSS and GDS</li><li><strong>Phase 5:</strong> Initiate automated passenger rebooking</li><li><strong>Phase 6:</strong> Conduct post-IROPS cost and performance analysis</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Crew Planning Analyst</li><li>Crew Scheduling Manager</li><li>Customer Operations Manager</li><li>Customer Relations Manager</li><li>Finance Controller (Commercial)</li><li>Fleet Planning Analyst</li><li>Flight Dispatcher</li><li>Network Operations Controller</li><li>Revenue Management Analyst</li><li>Schedule Distribution Analyst</li><li>Schedule Planning Analyst</li><li>Schedule Planning Manager</li><li>Slot Coordinator</li><li>VP Network Operations</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Airport Management</li><li>Amadeus Altéa PSS</li><li>Amadeus Altéa PSS + NDC API Gateway</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>Amadeus SkyMAX</li><li>Amadeus SkySYM</li><li>Amadeus SkySYM + Confluence</li><li>Amadeus SkyWORKS</li><li>Amadeus SkyWORKS → Amadeus Altéa PSS → Sabre GDS / Travelport GDS</li><li>IATA CRS (Coordinated Reservation System)</li><li>IATA CRS + Jeppesen FliteDeck</li><li>Jeppesen Crew Management</li><li>NAVBLUE + Jeppesen FliteDeck</li><li>SAP S/4HANA Finance (FI/CO) + AWS Redshift</li><li>SITA Airport Management System (AMS)</li><li>Telex / SITA ACARS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-12</span>
+    <h1>Irregular Operations Recovery Planning</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Ingest real-time disruption alerts from ops systems</td>
+        <td class="kpi-col">Alert-to-acknowledgement time ≤5 min</td>
+        <td class="pain-col">Multiple alert streams (weather, ATC, maintenance) arrive in disparate systems with no unified ingestion layer, causing detection delays of 10–20 min during complex events</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Classify IROPS trigger type and severity tier</td>
+        <td class="kpi-col">Classification accuracy ≥95%; mis-classification rate &lt;5%</td>
+        <td class="pain-col">No AI-assisted triage in legacy NOC toolsets; mis-classification delays activation of the correct recovery playbook, costing 15–30 min of recovery time</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Activate IROPS command structure and war room</td>
+        <td class="kpi-col">War room activation time ≤15 min from trigger classification</td>
+        <td class="pain-col">Escalation contact lists frequently stale; cross-functional mobilisation relies on manual phone trees rather than automated push notifications, adding 10–20 min delay</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Model affected flight propagation in network simulator</td>
+        <td class="kpi-col">Network impact model run time ≤30 min; propagation accuracy ≥90%</td>
+        <td class="pain-col">SkySYM scenario setup is manual and not pre-loaded with IROPS templates; large weather events affecting 100+ flights can take 30–45 min to model, exceeding recovery window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Identify aircraft and crew positioning conflicts</td>
+        <td class="kpi-col">Conflict identification complete ≤20 min; coverage of 100% of affected pairings</td>
+        <td class="pain-col">FAR Part 117 duty/rest legality checks are sequential in Jeppesen; large-scale events overwhelm manual review, and reserve pool visibility is not real-time</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Estimate disrupted passenger volume and missed connections</td>
+        <td class="kpi-col">Passenger impact estimate accuracy ≥85%; model run time ≤10 min</td>
+        <td class="pain-col">NRM is not designed for real-time IROPS queries; passenger impact models must be manually triggered outside normal RM workflow, creating data-currency risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Assess slot and regulatory constraints at affected airports</td>
+        <td class="kpi-col">Slot waiver request accuracy ≥98%; assessment complete ≤15 min</td>
+        <td class="pain-col">Slot waiver processes vary by country and airport authority; some regions require 24-hour advance notice incompatible with real-time IROPS response timelines</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Generate recovery schedule scenarios in SkyWORKS</td>
+        <td class="kpi-col">Scenario generation time ≤45 min; minimum 2 viable options produced</td>
+        <td class="pain-col">SkyWORKS is not optimised for real-time IROPS iteration; manual schedule editing under time pressure increases the risk of SSIM errors propagating to GDS</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Evaluate aircraft swap and ferry flight feasibility</td>
+        <td class="kpi-col">Ferry cost vs. delay cost ratio assessed within 30 min; SkyMAX fleet assignment feasibility score ≥0.85</td>
+        <td class="pain-col">AMOS maintenance status sync delay (up to 15 min) risks assigning aircraft with open airworthiness items; no automated maintenance-status gate in SkyMAX IROPS workflows</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Validate crew legality for full recovery plan</td>
+        <td class="kpi-col">100% FAR Part 117 compliance validated before plan publication; legality check ≤20 min</td>
+        <td class="pain-col">Iterative crew legality re-checks slow plan finalisation; each SkyWORKS schedule change triggers a full Jeppesen re-validation cycle, compounding delay when multiple iterations are needed</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Publish revised recovery schedule to PSS and GDS</td>
+        <td class="kpi-col">GDS schedule update latency ≤30 min from approval; distribution completeness 100% of active channels</td>
+        <td class="pain-col">Multi-channel distribution (Altéa + Sabre + Travelport + NDC) requires sequential pushes with no atomic commit; partial-update windows create booking inconsistencies and duplicate inventory</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>File slot waivers and coordinate ATC ground delay program</td>
+        <td class="kpi-col">Slot waiver approval rate ≥90%; ATC GDP compliance 100%</td>
+        <td class="pain-col">ATC GDP parameters change frequently during active weather events; real-time coordination requires a dedicated FAA/EUROCONTROL liaison channel that is not always staffed at smaller carriers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Confirm and dispatch aircraft ferry repositioning flights</td>
+        <td class="kpi-col">Ferry flight OTP ≥75%; repositioning within ±2 hrs of recovery plan target</td>
+        <td class="pain-col">Ferry flight fuel burn is not pre-budgeted in standard IROPS cost models; post-event cost attribution to IROPS events is a manual, multi-week reconciliation process</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Initiate automated passenger rebooking</td>
+        <td class="kpi-col">Automated rebooking rate ≥70%; passenger notification delivered ≤30 min of flight cancellation</td>
+        <td class="pain-col">Altéa automated rebooking rules are not always tuned for IROPS scenarios; high-volume events exhaust available recovery inventory before all passengers are rebooked, forcing costly offline handling</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Activate reserve crew and complete crew reassignments</td>
+        <td class="kpi-col">Reserve activation time ≤45 min; crew coverage rate ≥98% of recovery flights</td>
+        <td class="pain-col">Reserve crew contact and activation is phone-based at many carriers; no push-notification system for mass activation means manual calling campaigns during high-stress IROPS events</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Issue passenger care and compensation entitlements</td>
+        <td class="kpi-col">DOT / EU261 compensation filing accuracy ≥99%; voucher issuance within 60 min of entitlement trigger</td>
+        <td class="pain-col">Compensation eligibility rules differ by jurisdiction (DOT, EU261, ANAC, DGAC); no unified entitlement engine forces manual legal review for international itineraries, creating under- or over-payment risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Conduct post-IROPS cost and performance analysis</td>
+        <td class="kpi-col">Report delivered ≤72 hrs post-event; cost capture accuracy ±2%</td>
+        <td class="pain-col">Cost data is scattered across Altéa (compensation), SAP (vendor invoices), and Jeppesen (crew overtime); manual reconciliation typically takes 5–7 business days, delaying learning cycle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Update IROPS recovery playbooks and SkySYM scenario library</td>
+        <td class="kpi-col">Playbook updated within 30 days of event; ≥1 new SkySYM scenario created per Tier 2+ IROPS</td>
+        <td class="pain-col">Playbook updates are routinely deprioritised once normal operations resume; institutional recovery knowledge is frequently lost without a mandatory structured capture and review process</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+</body>
+</html>
