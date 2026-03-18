@@ -1,0 +1,46 @@
+flowchart LR
+  subgraph P1["Phase 1: O&D Demand Forecasting"]
+    A([Start]) --> B[Extract O&D booking history]
+    B --> C[Segment demand by fare class]
+    C --> D[Generate 90-day O&D forecast]
+    D --> E{Forecast within\ntolerance?}
+    E -- No --> C
+    E -- Yes --> F[Publish forecast]
+  end
+  subgraph P2["Phase 2: Network Value Assessment"]
+    F --> G[Calculate itinerary\ncontribution]
+    G --> H[Assess competitive\nfares by O&D]
+    H --> I{Contribution\nvalid?}
+    I -- No --> G
+    I -- Yes --> J[Produce contribution\nmatrix]
+  end
+  subgraph P3["Phase 3: Bid Price Optimisation"]
+    J --> K[Run LP network\noptimisation]
+    K --> L{Bid prices meet\nrevenue target?}
+    L -- No --> K
+    L -- Yes --> M[Validate &\napprove bid prices]
+    M --> N[Publish bid prices\nto inventory]
+  end
+  subgraph P4["Phase 4: Inventory Control"]
+    N --> O[Apply class controls\nin Altéa PSS]
+    O --> P[Monitor intraday\nbooking pace]
+    P --> Q{Pace deviation\n> 10%?}
+    Q -- Yes --> R[Execute override\nadjustment]
+    R --> P
+    Q -- No --> S[Hold current\ncontrols]
+  end
+  subgraph P5["Phase 5: Performance & Recalibration"]
+    S --> T[Capture post-departure\nO&D actuals]
+    T --> U{Model accuracy\n< 85%?}
+    U -- Yes --> V[Recalibrate demand\nmodels]
+    V --> C
+    U -- No --> W([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600

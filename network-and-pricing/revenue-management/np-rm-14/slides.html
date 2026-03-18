@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-RM-14 Slides — O&amp;D Revenue Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-14</span>
+    <h1>O&amp;D Revenue Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-rm-14.png" alt="BPMN for NP-RM-14" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-14</span>
+    <h1>O&amp;D Revenue Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-RM-14</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Revenue Management</li>
+          <li><strong>L3 Name:</strong> O&amp;D Revenue Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">4</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract O&amp;D booking history from data lake</li><li><strong>Phase 2:</strong> Calculate network contribution per itinerary</li><li><strong>Phase 3:</strong> Run LP network optimisation for bid prices</li><li><strong>Phase 4:</strong> Apply O&amp;D class controls to Altéa PSS</li><li><strong>Phase 5:</strong> Capture post-departure O&amp;D revenue actuals</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Revenue Management Analyst</li><li>Revenue Management System (automated)</li><li>Senior Revenue Management Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM)</li><li>Amadeus SkyCAST</li><li>OAG Schedule Analyser</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-14</span>
+    <h1>O&amp;D Revenue Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract O&amp;D booking history from data lake</td>
+        <td class="kpi-col">Data completeness ≥99%; extraction latency &lt;2 hours from departure day-close</td>
+        <td class="pain-col">Connecting itineraries booked via GDS often log leg-level data only; O&amp;D reconstruction requires custom passenger name record (PNR) stitching logic that breaks during irregular operations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Segment O&amp;D demand by fare class and channel</td>
+        <td class="kpi-col">Segment classification accuracy ≥92%; misclassified itineraries &lt;5% of O&amp;D pairs</td>
+        <td class="pain-col">Carriers without seat assignment (open-boarding models) lack seat-map signals for travel-purpose inference, reducing segmentation accuracy vs. assigned-seat competitors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Generate 90-day O&amp;D demand forecast</td>
+        <td class="kpi-col">Mean Absolute Percentage Error (MAPE) ≤8% at 60-day horizon; ≤12% at 90-day horizon</td>
+        <td class="pain-col">SkyCAST demand models require minimum 18 months of stable history per O&amp;D; new routes or routes disrupted by major events (e.g., network collapse, weather) cause cold-start forecast degradation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Validate forecast against booking pace signals</td>
+        <td class="kpi-col">Forecast validation cycle &lt;4 hours; &gt;95% of O&amp;D pairs accepted without manual override</td>
+        <td class="pain-col">Sudden demand spikes driven by flash sales or competitor capacity withdrawal are not captured by statistical models, requiring analyst intervention outside automated tolerance bands</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Calculate network contribution per itinerary</td>
+        <td class="kpi-col">Network revenue contribution accuracy within ±3% of post-departure actuals; matrix refresh latency ≤6 hours</td>
+        <td class="pain-col">Point-to-point network topology limits connecting itinerary combinations available for O&amp;D value netting; contribution calculation must account for high-frequency same-city multi-flight options</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Benchmark competitive fares by O&amp;D market</td>
+        <td class="kpi-col">Competitive fare index maintained within ±5% of market median for top-50 revenue O&amp;D pairs</td>
+        <td class="pain-col">Competitor dynamic pricing and NDC fare products are not consistently visible through ATPCO filings; private corporate fares and carrier-direct channel fares create persistent blind spots in competitive benchmarking</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Assess O&amp;D contribution validity</td>
+        <td class="kpi-col">Gate review cycle ≤2 hours; &lt;10% of O&amp;D pairs requiring manual contribution override</td>
+        <td class="pain-col">High-frequency thin markets (routes with &lt;5 flights/week) produce contribution estimates with wide confidence intervals; analysts must apply manual floors to prevent bid price collapse on low-frequency O&amp;Ds</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Run LP network optimisation for bid prices</td>
+        <td class="kpi-col">Optimisation solve time ≤45 minutes for full network; bid price solution feasibility ≥99.5% of legs</td>
+        <td class="pain-col">LP model size grows quadratically with O&amp;D pairs; large banks of short-haul turns can exceed solver memory limits, requiring network partitioning that degrades optimality</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Review bid price reasonableness</td>
+        <td class="kpi-col">Bid price variance vs. prior day flagged if &gt;20%; analyst review cycle ≤90 minutes</td>
+        <td class="pain-col">Automated bid prices occasionally produce outliers on O&amp;Ds with thin history or solver anomalies; without mandatory review thresholds, outlier prices can suppress availability on high-demand markets</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Publish approved bid prices to inventory</td>
+        <td class="kpi-col">Bid price publication latency &lt;15 minutes from approval; 100% of active departures covered within the 90-day window</td>
+        <td class="pain-col">Altéa availability cache refresh is asynchronous; published bid prices may not be visible to GDS availability queries for up to 10 minutes, creating a transient window where under-priced availability is sold</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Apply O&amp;D class controls to Altéa PSS</td>
+        <td class="kpi-col">Class control accuracy ≥99.8% (no misapplied open/close); distribution sync to all GDS channels &lt;5 minutes</td>
+        <td class="pain-col">Altéa virtual class nesting requires correct AU configuration per booking class; misconfigured inheritance rules cause availability bleed-through where higher-value classes sell below bid price</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Monitor intraday booking pace vs. forecast</td>
+        <td class="kpi-col">Monitoring refresh interval ≤30 minutes; pace deviation alerts triggered at ±10% threshold</td>
+        <td class="pain-col">Bulk GDS batch bookings (travel agency group uploads) cause instantaneous pace spikes that trigger false-positive alerts; lack of booking intent signals before ticketing makes proactive controls difficult</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Evaluate booking pace deviation trigger</td>
+        <td class="kpi-col">Override response time &lt;60 minutes from alert; revenue impact of late override &lt;0.5% of flight revenue</td>
+        <td class="pain-col">Intraday override authority is often limited to Senior Analysts; escalation to RM Manager during off-hours (night departures, weekend shifts) delays response and allows continued mis-pricing</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Execute manual availability override</td>
+        <td class="kpi-col">Override-to-publish latency &lt;10 minutes; 100% of overrides logged with analyst ID and rationale</td>
+        <td class="pain-col">Manual override in Altéa bypasses NRM optimisation logic; overrides that remain in place beyond the intended window lock in suboptimal availability and are difficult to detect without dedicated override-expiry workflow</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Capture post-departure O&amp;D revenue actuals</td>
+        <td class="kpi-col">Report availability ≤24 hours post-departure; O&amp;D revenue reconciliation variance vs. settlement &lt;0.2%</td>
+        <td class="pain-col">BSP/ARC settlement files arrive 48–72 hours post-departure; provisional revenue figures used in day-1 reporting may differ materially from final settled amounts, inflating apparent yield performance</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Evaluate demand model accuracy</td>
+        <td class="kpi-col">Model accuracy review completed within 5 business days of departure; ≥85% of O&amp;D pairs meeting MAPE target</td>
+        <td class="pain-col">Forecast accuracy degrades systematically for new O&amp;Ds, seasonal routes restarted after winter suspension, and markets affected by competitor schedule changes — all require manual baseline resets that the NRM auto-calibration does not trigger</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Recalibrate O&amp;D demand models</td>
+        <td class="kpi-col">Recalibration turnaround ≤3 business days; post-recalibration MAPE improvement ≥15% on flagged O&amp;Ds</td>
+        <td class="pain-col">NRM model recalibration requires analyst SQL access to Redshift parameter tables; access provisioning delays during analyst onboarding leave new team members unable to execute recalibrations independently</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+</body>
+</html>

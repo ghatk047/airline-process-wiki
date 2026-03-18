@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Revenue Management · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>NP-RM-14 · O&amp;D Revenue Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -54,7 +55,7 @@
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-11/"><span class="status-dot status-done"></span><span class="pid">NP-RM-11</span>Corporate &amp; Negotiated Rate Management</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-12/"><span class="status-dot status-done"></span><span class="pid">NP-RM-12</span>Real-Time Availability &amp; Seat Inventory Control</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-13/"><span class="status-dot status-done"></span><span class="pid">NP-RM-13</span>Revenue Integrity &amp; Ticketing Compliance</a>
-        <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-14/"><span class="status-dot status-done"></span><span class="pid">NP-RM-14</span>O&amp;D Revenue Management</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/revenue-management/np-rm-14/"><span class="status-dot status-done"></span><span class="pid">NP-RM-14</span>O&amp;D Revenue Management</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-15/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-15</span>LCC Competitive Pricing Strategy</a>
       </div>
       <a class="sidebar-l2-link" href="../../../network-and-pricing/pricing-fare-management/">Pricing &amp; Fare Management</a>
@@ -242,153 +243,248 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Revenue Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/revenue-management/">Revenue Management</a><span class="sep">›</span>
+  <span class="current">NP-RM-14 · O&amp;D Revenue Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Revenue Management</h1>
-    <p>Network Planning &amp; Scheduling · 14 of 15 subprocesses complete · Updated 2026-03-18 19:19</p>
+    <h1>O&amp;D Revenue Management</h1>
+    <p>Network Planning &amp; Scheduling › Revenue Management · 17 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-18 19:19</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-RM-14</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-01</span>Inventory &amp; Yield Optimization</h3>
-    <p>Revenue Management · 18 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-rm-14">
+      <img src="../../../assets/img/np-rm-14.png" alt="NP-RM-14 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-rm-14').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-rm-14').style.display='flex'">
+      <div id="diag-placeholder-np-rm-14" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract O&amp;D booking history from data lake</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Daily booking feed from Amadeus Altéa PSS (12-month rolling window)</td>
+  <td style="font-size:10px">Cleaned O&amp;D demand dataset segmented by cabin, point-of-sale, and booking lead time</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data completeness ≥99%; extraction latency &lt;2 hours from departure day-close</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Segment O&amp;D demand by fare class and channel</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Cleaned O&amp;D demand dataset from AWS Redshift</td>
+  <td style="font-size:10px">Demand segments by fare class (Y/B/M/H/Q/V/W/L/K/G), booking channel, and travel purpose (leisure/business)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Segment classification accuracy ≥92%; misclassified itineraries &lt;5% of O&amp;D pairs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Generate 90-day O&amp;D demand forecast</td>
+  <td class="td-role">Senior Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus SkyCAST</span></td>
+  <td style="font-size:10px;color:#6b7280">Segmented demand history, seasonal indices, special-events calendar</td>
+  <td style="font-size:10px">90-day O&amp;D demand forecast by fare class and day-of-week; confidence intervals at 80% and 95%</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Mean Absolute Percentage Error (MAPE) ≤8% at 60-day horizon; ≤12% at 90-day horizon</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Validate forecast against booking pace signals</td>
+  <td class="td-role">Senior Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">90-day O&amp;D demand forecast; live booking-curve actuals from Altéa PSS</td>
+  <td style="font-size:10px">Validated forecast or rework flag with variance root-cause note</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Forecast validation cycle &lt;4 hours; &gt;95% of O&amp;D pairs accepted without manual override</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Calculate network contribution per itinerary</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated O&amp;D demand forecast; filed fare inventory from ATPCO; connection rules from Amadeus Altéa</td>
+  <td style="font-size:10px">O&amp;D contribution matrix: revenue yield, spill cost, and recapture probability per itinerary</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Network revenue contribution accuracy within ±3% of post-departure actuals; matrix refresh latency ≤6 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Benchmark competitive fares by O&amp;D market</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag custom">OAG Schedule Analyser</span></td>
+  <td style="font-size:10px;color:#6b7280">Competitor schedule data (OAG), ATPCO published fares, Sabre GDS fare feeds</td>
+  <td style="font-size:10px">Competitive gap analysis: own-fare vs. lowest available competitor fare by O&amp;D and booking lead time</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Competitive fare index maintained within ±5% of market median for top-50 revenue O&amp;D pairs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Assess O&amp;D contribution validity</td>
+  <td class="td-role">Senior Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">O&amp;D contribution matrix; competitive gap analysis</td>
+  <td style="font-size:10px">Approved contribution matrix or rework instruction with adjustment rationale</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate review cycle ≤2 hours; &lt;10% of O&amp;D pairs requiring manual contribution override</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Run LP network optimisation for bid prices</td>
+  <td class="td-role">Revenue Management System (automated)</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved O&amp;D contribution matrix; 90-day demand forecast; current flight leg capacities from Altéa</td>
+  <td style="font-size:10px">Shadow prices (bid prices) per leg-class combination for each active departure window</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Optimisation solve time ≤45 minutes for full network; bid price solution feasibility ≥99.5% of legs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Review bid price reasonableness</td>
+  <td class="td-role">Senior Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Generated bid prices; prior-day bid prices; yield targets by O&amp;D</td>
+  <td style="font-size:10px">Validated bid prices or escalation to RM Manager with variance explanation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bid price variance vs. prior day flagged if &gt;20%; analyst review cycle ≤90 minutes</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Publish approved bid prices to inventory</td>
+  <td class="td-role">Revenue Management System (automated)</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated bid prices</td>
+  <td style="font-size:10px">Bid prices committed to Altéa PSS availability engine; audit log entry with timestamp and analyst sign-off</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bid price publication latency &lt;15 minutes from approval; 100% of active departures covered within the 90-day window</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Apply O&amp;D class controls to Altéa PSS</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Published bid prices; authorisation levels (AU) per fare class from NRM</td>
+  <td style="font-size:10px">Updated fare class open/close status in Altéa inventory; availability snapshot distributed to GDS and NDC channels</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Class control accuracy ≥99.8% (no misapplied open/close); distribution sync to all GDS channels &lt;5 minutes</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Monitor intraday booking pace vs. forecast</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Real-time bookings from Altéa PSS; validated O&amp;D demand forecast</td>
+  <td style="font-size:10px">Intraday booking pace report; pace-vs-forecast variance by O&amp;D and fare class</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Monitoring refresh interval ≤30 minutes; pace deviation alerts triggered at ±10% threshold</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Evaluate booking pace deviation trigger</td>
+  <td class="td-role">Senior Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Intraday pace report; alert flags for O&amp;Ds exceeding ±10% deviation</td>
+  <td style="font-size:10px">Decision: hold current controls, tighten availability, or open additional classes</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Override response time &lt;60 minutes from alert; revenue impact of late override &lt;0.5% of flight revenue</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Execute manual availability override</td>
+  <td class="td-role">Senior Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Override instruction (tighten or open classes); fare class control screen in Altéa</td>
+  <td style="font-size:10px">Revised class availability posted to Altéa; override action logged with business justification</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Override-to-publish latency &lt;10 minutes; 100% of overrides logged with analyst ID and rationale</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Capture post-departure O&amp;D revenue actuals</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Final departure manifest from Altéa; ticketing revenue records from BSP / ARC settlement</td>
+  <td style="font-size:10px">Post-departure O&amp;D revenue report: RASM, yield, load factor, spill, and spoilage by fare class</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Report availability ≤24 hours post-departure; O&amp;D revenue reconciliation variance vs. settlement &lt;0.2%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Evaluate demand model accuracy</td>
+  <td class="td-role">Senior Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Post-departure actuals; corresponding pre-departure forecasts</td>
+  <td style="font-size:10px">Model accuracy scorecard (MAPE by O&amp;D, phase, and departure horizon); recalibration flag if accuracy &lt;85%</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Model accuracy review completed within 5 business days of departure; ≥85% of O&amp;D pairs meeting MAPE target</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Recalibrate O&amp;D demand models</td>
+  <td class="td-role">Senior Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Recalibration flag; post-departure actuals; external demand signals (GDP, events, competitor changes)</td>
+  <td style="font-size:10px">Updated model parameters committed to NRM; change log with effective date and recalibration rationale</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Recalibration turnaround ≤3 business days; post-recalibration MAPE improvement ≥15% on flagged O&amp;Ds</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-02</span>Fare Class &amp; Bucket Management</h3>
-    <p>Revenue Management · 18 steps · 9 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-RM-14</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network Planning &amp; Scheduling</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Revenue Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">O&amp;D Revenue Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">17 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">4 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Revenue Management Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Senior Revenue Management Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Revenue Management System (automated)</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag aws">AWS Redshift</span><span class="stag amadeus">Amadeus Revenue Management (NRM)</span><span class="stag amadeus">Amadeus SkyCAST</span><span class="stag custom">OAG Schedule Analyser</span><span class="stag amadeus">Amadeus Altéa PSS</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract O&amp;D booking history from data lake</span><span class="kval">Data completeness ≥99%; extraction latency &lt;2 hours from departure day-close</span></div><div class="krow"><span class="kname">Segment O&amp;D demand by fare class and channel</span><span class="kval">Segment classification accuracy ≥92%; misclassified itineraries &lt;5% of O&amp;D pairs</span></div><div class="krow"><span class="kname">Generate 90-day O&amp;D demand forecast</span><span class="kval">Mean Absolute Percentage Error (MAPE) ≤8% at 60-day horizon; ≤12% at 90-day horizon</span></div><div class="krow"><span class="kname">Validate forecast against booking pace signals</span><span class="kval">Forecast validation cycle &lt;4 hours; &gt;95% of O&amp;D pairs accepted without manual override</span></div><div class="krow"><span class="kname">Calculate network contribution per itinerary</span><span class="kval">Network revenue contribution accuracy within ±3% of post-departure actuals; matrix refresh latency ≤6 hours</span></div><div class="krow"><span class="kname">Benchmark competitive fares by O&amp;D market</span><span class="kval">Competitive fare index maintained within ±5% of market median for top-50 revenue O&amp;D pairs</span></div><div class="krow"><span class="kname">Assess O&amp;D contribution validity</span><span class="kval">Gate review cycle ≤2 hours; &lt;10% of O&amp;D pairs requiring manual contribution override</span></div><div class="krow"><span class="kname">Run LP network optimisation for bid prices</span><span class="kval">Optimisation solve time ≤45 minutes for full network; bid price solution feasibility ≥99.5% of legs</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Connecting itineraries booked via GDS often log leg-level data only; O&amp;D reconstruction requires custom passenger name record (PNR) stitching logic that breaks during irregular operations</div><div class="risk-card">Carriers without seat assignment (open-boarding models) lack seat-map signals for travel-purpose inference, reducing segmentation accuracy vs. assigned-seat competitors</div><div class="risk-card">SkyCAST demand models require minimum 18 months of stable history per O&amp;D; new routes or routes disrupted by major events (e.g., network collapse, weather) cause cold-start forecast degradation</div><div class="risk-card">Sudden demand spikes driven by flash sales or competitor capacity withdrawal are not captured by statistical models, requiring analyst intervention outside automated tolerance bands</div><div class="risk-card">Point-to-point network topology limits connecting itinerary combinations available for O&amp;D value netting; contribution calculation must account for high-frequency same-city multi-flight options</div><div class="risk-card">Competitor dynamic pricing and NDC fare products are not consistently visible through ATPCO filings; private corporate fares and carrier-direct channel fares create persistent blind spots in competitive benchmarking</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Daily booking feed from Amadeus Altéa PSS (12-month rolling window)</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Updated model parameters committed to NRM; change log with effective date and recalibration rationale</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-03</span>Overbooking Policy Management</h3>
-    <p>Revenue Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-04</span>Demand Forecasting &amp; Modelling</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-05</span>Group Sales Revenue Management</h3>
-    <p>Revenue Management · 19 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-06</span>Upgrade &amp; Upsell Revenue Optimization</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-07</span>Ancillary Revenue Optimization</h3>
-    <p>Revenue Management · 15 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-08</span>RM System Calibration &amp; Tuning</h3>
-    <p>Revenue Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-09</span>Post-Departure Revenue Reporting</h3>
-    <p>Revenue Management · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-10</span>Competitive Fare Monitoring &amp; Response</h3>
-    <p>Revenue Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-11</span>Corporate &amp; Negotiated Rate Management</h3>
-    <p>Revenue Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-12</span>Real-Time Availability &amp; Seat Inventory Control</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-13</span>Revenue Integrity &amp; Ticketing Compliance</h3>
-    <p>Revenue Management · 18 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-14</span>O&amp;D Revenue Management</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-15</span>LCC Competitive Pricing Strategy</h3>
-    <p>Revenue Management · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="np-rm-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../np-rm-13/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-RM-13 · Revenue Integrity &amp; Ticketing Compliance</span></a><a class="pn-btn" href="../np-rm-15/"><span><span class="sub">Next</span>NP-RM-15 · LCC Competitive Pricing Strategy</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
