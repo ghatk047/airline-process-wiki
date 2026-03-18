@@ -1,0 +1,45 @@
+flowchart LR
+  subgraph P1["Phase 1: Demand Forecasting & Data Ingestion"]
+    A([Start]) --> B[Ingest booking & flown data]
+    B --> C[Run O&D demand forecast]
+    C --> D{Forecast MAPE ≤ 15%?}
+    D -- No --> C
+    D -- Yes --> E[Publish approved forecast]
+  end
+  subgraph P2["Phase 2: Inventory Structure & Bucket Setup"]
+    E --> F[Define booking class hierarchy]
+    F --> G[Set AU levels per fare class]
+    G --> H{Fare class valid in ATPCO?}
+    H -- No --> G
+    H -- Yes --> I[Activate nested inventory controls]
+  end
+  subgraph P3["Phase 3: Yield Optimisation"]
+    I --> J[Run EMSRb / O&D optimisation]
+    J --> K[Generate AU recommendations]
+    K --> L{Analyst accepts recommendation?}
+    L -- No --> M[Manual override & rerun]
+    M --> L
+    L -- Yes --> N[Apply AU updates to Altéa]
+  end
+  subgraph P4["Phase 4: Real-time Monitoring & Dynamic Control"]
+    N --> O[Monitor booking pace vs forecast]
+    O --> P{Pace deviation > 10%?}
+    P -- No --> O
+    P -- Yes --> Q[Trigger bid-price / sell-up action]
+    Q --> R[Manage group booking displacement]
+  end
+  subgraph P5["Phase 5: Post-departure Analysis & Calibration"]
+    R --> S[Capture spill / spoilage actuals]
+    S --> T{Spill > 3% of capacity?}
+    T -- Yes --> U[Recalibrate forecast model]
+    U --> C
+    T -- No --> V([End — model updated])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style V fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600

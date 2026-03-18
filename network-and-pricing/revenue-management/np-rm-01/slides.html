@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-RM-01 Slides — Inventory &amp; Yield Optimization</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-01</span>
+    <h1>Inventory &amp; Yield Optimization</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-rm-01.png" alt="BPMN for NP-RM-01" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-01</span>
+    <h1>Inventory &amp; Yield Optimization</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-RM-01</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Revenue Management</li>
+          <li><strong>L3 Name:</strong> Inventory &amp; Yield Optimization</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Ingest booking &amp; flown data from PSS</li><li><strong>Phase 2:</strong> Define booking class hierarchy and nested buckets</li><li><strong>Phase 3:</strong> Run EMSRb / O&amp;D seat allocation optimisation</li><li><strong>Phase 4:</strong> Monitor booking pace against forecast curve</li><li><strong>Phase 5:</strong> Capture post-departure spill and spoilage actuals</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Groups &amp; Allotments Revenue Analyst</li><li>Revenue Management Analyst</li><li>Revenue Management Configuration Analyst</li><li>Revenue Management Manager</li><li>Revenue Management System</li><li>Senior Revenue Management Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>AWS Redshift</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM)</li><li>Amadeus SkyCAST</li><li>OAG Schedule Analyser</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-01</span>
+    <h1>Inventory &amp; Yield Optimization</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Ingest booking &amp; flown data from PSS</td>
+        <td class="kpi-col">Data completeness ≥ 99.5% of all PNRs reconciled within 2 hours of departure</td>
+        <td class="pain-col">Altéa PSS coupon reconciliation latency can delay same-day close files by up to 4 hours, compressing the overnight optimisation window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Enrich data with competitive fare &amp; schedule feeds</td>
+        <td class="kpi-col">Competitive fare parity check completed for 100% of O&amp;D pairs within planning horizon</td>
+        <td class="pain-col">MIDT data lags actuals by 3–5 days, reducing confidence in competitor load factor estimates for near-term departures</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Run O&amp;D demand forecast model</td>
+        <td class="kpi-col">Forecast MAPE ≤ 15% at O&amp;D level for departures within 30 days</td>
+        <td class="pain-col">SkyCAST demand models trained on pre-2020 data underweight volatile post-COVID travel patterns; requires periodic manual seasonality overrides</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Validate forecast accuracy against holdout set</td>
+        <td class="kpi-col">Forecast MAPE ≤ 15%; rejection triggers reforecast within 4 hours</td>
+        <td class="pain-col">Redshift query contention during peak batch windows can delay accuracy checks, pushing AU updates past the 02:00 optimisation deadline</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Define booking class hierarchy and nested buckets</td>
+        <td class="kpi-col">100% of ATPCO-filed fare classes mapped to NRM booking classes before schedule activation</td>
+        <td class="pain-col">Misalignment between ATPCO fare basis codes and NRM class definitions causes availability mismatches in GDS displays, leading to revenue leakage</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Set authorization unit (AU) levels per fare class</td>
+        <td class="kpi-col">AU initialisation completed for 100% of flights ≥ 90 days prior to departure</td>
+        <td class="pain-col">Manual AU overrides by market analysts outside NRM create version conflicts; no audit trail for override rationale increases regulatory audit risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate fare class mappings against ATPCO filings</td>
+        <td class="kpi-col">Zero GDS availability mismatches attributable to class mapping errors post-activation</td>
+        <td class="pain-col">ATPCO filing changes by competitors can trigger a same-day re-mapping requirement; NRM does not auto-ingest ATPCO tariff updates in real time</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Activate nested inventory controls in Altéa</td>
+        <td class="kpi-col">Availability synchronisation latency Altéa → GDS ≤ 5 minutes</td>
+        <td class="pain-col">Altéa availability propagation to Sabre and Travelport GDS can lag by up to 15 minutes during peak filing windows, creating booking class sell-out errors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Run EMSRb / O&amp;D seat allocation optimisation</td>
+        <td class="kpi-col">Revenue per available seat kilometre (RASK) improvement ≥ 2% vs baseline AU</td>
+        <td class="pain-col">NRM O&amp;D optimiser requires full network connectivity data; partial connectivity caused by codeshare partner IT gaps degrades optimisation quality</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Review and approve AU recommendations</td>
+        <td class="kpi-col">Analyst review cycle ≤ 90 minutes per market cluster; override rate ≤ 20%</td>
+        <td class="pain-col">High override rates in thin O&amp;D markets indicate NRM model underfitting; manual overrides are not fed back into the model, perpetuating forecast error</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Apply approved AU updates to live inventory</td>
+        <td class="kpi-col">AU update applied to 100% of affected flights within 30 minutes of approval</td>
+        <td class="pain-col">Bulk AU update jobs during peak hours can queue behind other NRM batch processes, delaying availability changes for same-day and next-day departures</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Monitor booking pace against forecast curve</td>
+        <td class="kpi-col">Analyst response to pace deviation alert ≤ 2 hours for departures within 14 days</td>
+        <td class="pain-col">Tableau dashboards pull from AWS Redshift snapshots with 1-hour refresh lag; real-time anomalies for high-demand events (concerts, sports) are missed until the next refresh</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Apply sell-up action or open lower classes</td>
+        <td class="kpi-col">Yield improvement ≥ 1.5% per sell-up intervention vs control flights</td>
+        <td class="pain-col">Sell-up elasticity coefficients in NRM are recalibrated only quarterly; rapid fare environment changes (fuel surcharge adjustments) make coefficients stale within weeks</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Update bid prices for O&amp;D revenue integrity</td>
+        <td class="kpi-col">Bid price refresh cycle ≤ 4 hours for flights within 7 days of departure</td>
+        <td class="pain-col">Bid price vector updates are network-wide calculations; during irregular ops, displaced passengers and re-accommodation can invalidate bid prices across 30+ connected flights simultaneously</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Manage group booking displacement impact</td>
+        <td class="kpi-col">Group displacement cost ≤ 8% of group revenue contribution on affected flights</td>
+        <td class="pain-col">Altéa group allotment module does not integrate real-time NRM bid prices; group pricing decisions rely on analyst manual look-up, creating inconsistent displacement cost accounting</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Capture post-departure spill and spoilage actuals</td>
+        <td class="kpi-col">Spill (denied boardings) ≤ 1.5% of passengers carried; spoilage (empty seats in high class) ≤ 3% of capacity</td>
+        <td class="pain-col">Denied boarding data from airport check-in is not always tagged with the booking class of the displaced passenger, reducing spill attribution accuracy</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Evaluate forecast model performance and recalibrate</td>
+        <td class="kpi-col">Model recalibration completed within 5 business days of departure; MAPE improvement ≥ 1 pp per calibration cycle</td>
+        <td class="pain-col">SkyCAST model recalibration requires manual parameter uploads; there is no automated feedback loop from NRM actuals to SkyCAST, creating a 5–7 day lag in model learning</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Publish yield performance report to stakeholders</td>
+        <td class="kpi-col">Report published within 2 business days of week close; RASK vs budget variance explained for all markets &gt; ±3%</td>
+        <td class="pain-col">Manual data assembly from Altéa, NRM, and Redshift for the weekly report takes 6–8 analyst hours; no single integrated reporting layer across PSS and RM systems</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+</body>
+</html>
