@@ -154,20 +154,20 @@
           <li><strong>L3 Name:</strong> Slot Coordination &amp; Management</li>
         </ul>
         <div class="stat-row" style="margin-top:20px">
-          <div class="stat-box"><div class="num">0</div><div class="lbl">L4 Steps</div></div>
-          <div class="stat-box"><div class="num">0</div><div class="lbl">Decision Gates</div></div>
-          <div class="stat-box"><div class="num">0</div><div class="lbl">Exceptions</div></div>
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
         </div>
         <h3 style="margin-top:12px">Process Phases</h3>
-        <ul class="attr-list"><li>—</li></ul>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract schedule demand from seasonal network plan</li><li><strong>Phase 2:</strong> Extract historical slot series from IATA CRS</li><li><strong>Phase 3:</strong> Generate SSIM SCR messages in SkyWORKS</li><li><strong>Phase 4:</strong> Prepare negotiation brief with slot gap analysis</li><li><strong>Phase 5:</strong> Receive and parse confirmed SAL messages</li><li><strong>Phase 6:</strong> Monitor weekly slot utilisation during season</li></ul>
       </div>
       <div class="attr-panel">
         <h3>Roles / Swim Lanes</h3>
-        <ul class="attr-list"><li>—</li></ul>
+        <ul class="attr-list"><li>Network Planning Analyst</li><li>Schedule Coordinator</li><li>Schedule Planner</li><li>Schedule Planning Analyst</li><li>Senior Schedule Planner</li><li>VP Network Planning</li></ul>
       </div>
       <div class="attr-panel">
         <h3>Systems</h3>
-        <ul class="attr-list"><li>—</li></ul>
+        <ul class="attr-list"><li>Amadeus Altéa PSS</li><li>Amadeus SkySYM</li><li>Amadeus SkyWORKS</li><li>IATA CRS (Coordinated Reservation System)</li><li>OAG Schedule Analyser</li><li>Tableau</li></ul>
       </div>
     </div>
   </div>
@@ -186,7 +186,149 @@
   </div>
   <div class="slide-body">
     <div class="kpi-wrap">
-<p>No KPI data available.</p>
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract schedule demand from seasonal network plan</td>
+        <td class="kpi-col">Slot demand coverage ≥95% of planned rotations</td>
+        <td class="pain-col">SkyCAST demand forecasts refresh every 6 weeks; demand spikes at thin O&amp;D markets are under-modelled, causing late slot requests</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Identify IATA Level 2 and Level 3 airports</td>
+        <td class="kpi-col">100% of Level 2/3 airports flagged before SCR deadline</td>
+        <td class="pain-col">IATA coordination status can change season-to-season; OAG updates lag IATA bulletins by up to 2 weeks</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Prioritise slot request list by strategic value</td>
+        <td class="kpi-col">Must-have slots defined for ≥100% of peak-season hub rotations</td>
+        <td class="pain-col">No alliance membership limits bilateral swap leverage; slots must be won outright at IATA conference without partner support</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Extract historical slot series from IATA CRS</td>
+        <td class="kpi-col">Grandfather rights baseline coverage ≥80% of current request list</td>
+        <td class="pain-col">CRS historical data can misclassify series interrupted by force majeure (e.g. COVID waivers); manual review required to avoid wrongful loss of grandfather status</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Validate 80/20 utilisation rule compliance per series</td>
+        <td class="kpi-col">100% of series validated before IATA submission deadline</td>
+        <td class="pain-col">Disruptions (weather, ATC, COVID waivers) can erode utilisation rates below 80%; waiver applications must be filed separately and tracked manually</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>File force majeure exemption for at-risk series</td>
+        <td class="kpi-col">100% of exemption requests filed ≥10 weeks before IATA season start</td>
+        <td class="pain-col">Each airport coordinator has different evidence requirements and SLAs; no standardised API — submissions are email or portal-based, creating audit trail gaps</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Generate SSIM SCR messages in SkyWORKS</td>
+        <td class="kpi-col">0 SCR format errors on initial submission; 100% deadline compliance</td>
+        <td class="pain-col">SSIM Chapter 6 format requires exact field alignment; manual overrides in SkyWORKS for non-standard time codes introduce formatting errors caught only at coordinator end</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Submit SCR messages to airport coordinators</td>
+        <td class="kpi-col">100% of SCRs submitted before coordinator deadline (typically 8–10 weeks pre-conference)</td>
+        <td class="pain-col">IATA CRS portal is fragmented — some airports use national systems (ACL in UK, COHOR in France) with separate logins; deadline misses cause permanent loss of grandfather rights</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Review initial slot allocation against requests</td>
+        <td class="kpi-col">Slot attainment rate ≥90% on grandfather-protected series; ≥70% on new requests</td>
+        <td class="pain-col">Coordinators at capacity-constrained hubs (e.g. LHR, CDG) routinely propose off-peak alternatives that are operationally infeasible for the planned rotation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Prepare negotiation brief with slot gap analysis</td>
+        <td class="kpi-col">Negotiation brief approved by VP Network Planning ≥5 days before conference</td>
+        <td class="pain-col">SkySYM simulation of alternate slot combinations takes 3–6 hours for large networks; limited time between initial allocation receipt and conference date</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Attend IATA scheduling conference</td>
+        <td class="kpi-col">≥85% of flagged gaps addressed during conference window</td>
+        <td class="pain-col">Carrier has no Star Alliance / oneworld / SkyTeam membership — cannot leverage partner slot pools or reciprocal swap agreements available to alliance carriers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Negotiate slot swaps with peer carriers</td>
+        <td class="kpi-col">≥5 beneficial swap agreements secured per season</td>
+        <td class="pain-col">Non-alliance carrier has limited bilateral relationships; OAG data used to identify swap candidates but outreach is manual with no standardised swap marketplace</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Escalate unresolved gaps to coordinator appeal panel</td>
+        <td class="kpi-col">Appeal filed within 5 business days of conference close for all critical gaps</td>
+        <td class="pain-col">Appeal panels at slot-coordinated airports have 90-day review cycles; schedule must be provisionally published before appeal outcome, creating rework risk</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Receive and parse confirmed SAL messages</td>
+        <td class="kpi-col">100% of SAL messages loaded within 24 hours of receipt</td>
+        <td class="pain-col">SAL format varies by national coordinator — UK ACL uses proprietary fields not fully mapped by IATA CRS parser; manual reconciliation required for ~12% of slots</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Integrate confirmed slots into SkyWORKS schedule</td>
+        <td class="kpi-col">Zero slot-schedule mismatches in published SSIM; reconciliation completed ≤48hrs after SAL load</td>
+        <td class="pain-col">SkyWORKS SSIM import does not auto-flag slot breaches — planners must run manual overlap check; errors propagate to GDS and PSS if undetected</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Publish validated SSIM to GDS and Altéa PSS</td>
+        <td class="kpi-col">SSIM published ≥120 days before season start; 0 slot-violation entries in distributed file</td>
+        <td class="pain-col">Altéa PSS and GDS ingestion pipelines process SSIM sequentially; last-minute slot amendments require full re-distribution cycle, causing temporary booking inconsistencies</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Monitor weekly slot utilisation during season</td>
+        <td class="kpi-col">Slot utilisation ≥80% per series (IATA 80/20 rule); alert triggered at &lt;85% as early warning</td>
+        <td class="pain-col">ATC delays, weather diversions, and maintenance AOG events erode utilisation; real-time data from Altéa takes up to 12 hours to reflect in SkyWORKS reporting</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Return or swap underutilised slots to coordinator</td>
+        <td class="kpi-col">100% of relinquishments filed ≥6 weeks before operation date; 0 penalty notices received</td>
+        <td class="pain-col">Late relinquishments attract financial penalties from Level 3 coordinators; sub-80% utilisation without exemption causes loss of grandfather rights for following season</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Document season performance for next-cycle planning</td>
+        <td class="kpi-col">Debrief report published within 30 days of IATA season end</td>
+        <td class="pain-col">Data is spread across SkyWORKS, IATA CRS, and Altéa PSS with no unified reporting layer; Tableau consolidation is manual and time-intensive</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
     </div>
   </div>
   <div class="slide-footer">
