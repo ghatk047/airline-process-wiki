@@ -1,0 +1,43 @@
+flowchart LR
+  subgraph P1["Phase 1: Eligibility & Segmentation"]
+    A([Start]) --> B[Extract PNR upsell candidates]
+    B --> C[Score pax WTP — PROS RM]
+    C --> D{Upgrade inventory\navailable?}
+    D -- No --> C
+    D -- Yes --> E[Segment eligible pax]
+  end
+  subgraph P2["Phase 2: Dynamic Offer Pricing"]
+    E --> F[Generate personalised\nupgrade price]
+    F --> G{Price meets RM\nrevenue threshold?}
+    G -- No --> F
+    G -- Yes --> H[Bundle ancillary\nadd-ons]
+  end
+  subgraph P3["Phase 3: Offer Distribution"]
+    H --> I[Publish via NDC /\napp / kiosk channels]
+    I --> J{Customer accepts\noffer?}
+    J -- No --> K([End — no upgrade])
+  end
+  subgraph P4["Phase 4: Upgrade Fulfilment"]
+    J -- Yes --> L[Process upgrade payment]
+    L --> M{Payment\nauthorised?}
+    M -- No --> N([End — payment declined])
+    M -- Yes --> O[Reassign seat & update PNR]
+    O --> P[Provision premium services]
+  end
+  subgraph P5["Phase 5: Reporting & Recalibration"]
+    P --> Q[Aggregate upsell metrics]
+    Q --> R{Conversion below\ntarget threshold?}
+    R -- Yes --> S[Recalibrate WTP models]
+    S --> F
+    R -- No --> T([End — cycle complete])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style K fill:#003366,color:#fff,stroke:#003366
+  style N fill:#003366,color:#fff,stroke:#003366
+  style T fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-RM-06 Slides — Upgrade &amp; Upsell Revenue Optimization</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-06</span>
+    <h1>Upgrade &amp; Upsell Revenue Optimization</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-rm-06.png" alt="BPMN for NP-RM-06" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-06</span>
+    <h1>Upgrade &amp; Upsell Revenue Optimization</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-RM-06</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Revenue Management</li>
+          <li><strong>L3 Name:</strong> Upgrade &amp; Upsell Revenue Optimization</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract PNR data for upsell candidate pool</li><li><strong>Phase 2:</strong> Generate dynamic upgrade offer price per passenger</li><li><strong>Phase 3:</strong> Publish upgrade offers via web check-in and mobile</li><li><strong>Phase 4:</strong> Process upgrade payment via preferred channel</li><li><strong>Phase 5:</strong> Aggregate upsell revenue and conversion metrics</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Airport Check-in Agent</li><li>Airport Check-in Agent / Passenger (self-service)</li><li>Airport Operations Coordinator</li><li>Ancillary Revenue Manager</li><li>CRM Campaign Manager</li><li>Digital Channel Manager</li><li>Pricing Analyst</li><li>Revenue Analytics Analyst</li><li>Revenue Management Analyst</li><li>Revenue Management Manager</li><li>Revenue Management System (automated)</li><li>Revenue Optimisation Analyst</li><li>Revenue Optimisation Data Scientist</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>AWS Redshift</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>NDC API Gateway</li><li>PROS RM</li><li>SITA Airport Management System (AMS)</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-06</span>
+    <h1>Upgrade &amp; Upsell Revenue Optimization</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract PNR data for upsell candidate pool</td>
+        <td class="kpi-col">Candidate pool coverage ≥95% of eligible bookings extracted</td>
+        <td class="pain-col">Altéa PNR data exports can lag up to 15 min during peak schedule periods, narrowing the actionable upsell window for close-in departures</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Score passengers using willingness-to-pay model</td>
+        <td class="kpi-col">WTP model accuracy ≥82% (lift vs. random baseline on holdout set)</td>
+        <td class="pain-col">PROS RM WTP models trained on pre-COVID data can overestimate premium-cabin demand for leisure-heavy route clusters; requires quarterly recalibration</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Check premium cabin inventory for upgrade availability</td>
+        <td class="kpi-col">Premium cabin upgrade seat availability query response time &lt;2 sec</td>
+        <td class="pain-col">Real-time seat availability from AltéaRM can conflict with GDS inventory counts when passive segments are not cancelled promptly, creating ghost-availability errors</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Segment eligible passengers by WTP tier and route</td>
+        <td class="kpi-col">High-WTP tier (score ≥70) constitutes ≥30% of total candidate pool</td>
+        <td class="pain-col">Loyalty programme members in lower fare classes are frequently misclassified as low-WTP due to sparse ancillary purchase history in PROS RM</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Generate dynamic upgrade offer price per passenger</td>
+        <td class="kpi-col">Average upgrade offer price within 15% of O&amp;D revenue maximisation model output</td>
+        <td class="pain-col">PROS RM dynamic pricing engine does not natively ingest competitor same-day premium fare data, requiring manual competitive adjustment for price-sensitive O&amp;D markets</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Apply ATPCO fare floor and ceiling constraints</td>
+        <td class="kpi-col">100% of published upgrade offers compliant with ATPCO Cat 25 negotiated fare rules</td>
+        <td class="pain-col">ATPCO Cat 25 rule interpretation varies across PSS implementations; non-compliant upgrade offers can trigger GDS mis-pricing alerts and require emergency fare recall</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Bundle ancillary services with upgrade offer</td>
+        <td class="kpi-col">Ancillary attach rate per upgrade offer ≥40% on applicable routes</td>
+        <td class="pain-col">NDC API Gateway bundle assembly fails when ancillary inventory systems (lounge access, seat maps) return timeout errors, forcing fallback to offer-only pricing with no bundle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Publish upgrade offers via web check-in and mobile app</td>
+        <td class="kpi-col">Offer display latency &lt;3 sec for ≥98% of web check-in sessions</td>
+        <td class="pain-col">NDC API retries during high-volume check-in peaks (T-24h departure) cause duplicate offer display or blank offer panels, degrading conversion rate</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Send targeted upsell email and push notifications</td>
+        <td class="kpi-col">Email open rate ≥28%; push notification click-through rate ≥12%</td>
+        <td class="pain-col">Altéa CRM notification engine does not suppress duplicate messages when passengers have both web and mobile sessions active, leading to over-communication complaints</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Display upgrade prompts at airport check-in and kiosk</td>
+        <td class="kpi-col">Airport upgrade conversion rate ≥8% of prompted passengers</td>
+        <td class="pain-col">SITA AMS kiosk software version lag (often 2+ major releases behind) causes offer display failures on older kiosk hardware at smaller outstations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Process upgrade payment via preferred channel</td>
+        <td class="kpi-col">Payment processing success rate ≥98.5%; transaction time &lt;10 sec</td>
+        <td class="pain-col">Altéa EMD issuance for upgrade payments using loyalty currency (miles + cash) requires manual fare recalculation when the loyalty system API returns stale balance data</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Reassign seat and update PNR cabin class</td>
+        <td class="kpi-col">PNR update latency &lt;5 sec; zero duplicate seat assignment errors per 10,000 upgrades</td>
+        <td class="pain-col">Concurrent upgrade processing for the same flight can cause seat-map race conditions in Altéa when two agents process the last available premium seat simultaneously</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Provision premium cabin services and lounge access</td>
+        <td class="kpi-col">Premium service provisioning lead time ≥45 min before departure for ≥95% of upgrades</td>
+        <td class="pain-col">Catering uplift amendments post-upgrade are frequently missed when the upgrade is processed inside the catering finality window (T-2h), resulting in insufficient premium meals</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Send upgrade confirmation and boarding pass to passenger</td>
+        <td class="kpi-col">Confirmation delivery within 60 sec of PNR update for ≥99% of upgrades</td>
+        <td class="pain-col">Mobile boarding pass push fails for passengers using third-party wallet apps (non-Apple/Google Wallet) when Altéa PKPass API returns certificate validation errors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Aggregate upsell revenue and conversion metrics</td>
+        <td class="kpi-col">Upsell revenue per available seat ≥$12 on applicable routes; daily report SLA &lt;6h after day-end</td>
+        <td class="pain-col">EMD revenue attribution in AWS Redshift is delayed by up to 4h due to batch ingestion from Altéa, preventing same-day intra-day optimisation of pricing parameters</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Compare actuals vs. forecast upsell revenue targets</td>
+        <td class="kpi-col">Upsell revenue forecast accuracy within ±10% of actuals on rolling 7-day basis</td>
+        <td class="pain-col">Tableau dashboards pulling from AWS Redshift frequently timeout on full-network route-cluster queries, forcing analysts to run ad-hoc SQL instead of using governed reports</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Recalibrate WTP model and pricing parameters</td>
+        <td class="kpi-col">WTP model recalibration cycle ≤7 days after conversion target miss; post-recalibration lift ≥5%</td>
+        <td class="pain-col">PROS RM model retraining requires a minimum 90-day historical acceptance dataset; insufficient data on new routes or post-schedule-change periods degrades model quality for at least one quarter</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+</body>
+</html>
