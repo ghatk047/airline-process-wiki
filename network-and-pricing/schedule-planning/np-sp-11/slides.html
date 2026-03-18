@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SP-11 Slides — Schedule Publication &amp; GDS Loading</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-11</span>
+    <h1>Schedule Publication &amp; GDS Loading</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sp-11.png" alt="BPMN for NP-SP-11" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-11</span>
+    <h1>Schedule Publication &amp; GDS Loading</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SP-11</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Schedule Planning</li>
+          <li><strong>L3 Name:</strong> Schedule Publication &amp; GDS Loading</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">15</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">11</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Initiate seasonal schedule freeze in SkyWORKS</li><li><strong>Phase 2:</strong> Generate SSIM Chapter 7 file from frozen schedule</li><li><strong>Phase 3:</strong> Submit validated SSIM to OAG for GDS distribution</li><li><strong>Phase 4:</strong> Publish schedule to NDC API Gateway for OTA partne</li><li><strong>Phase 5:</strong> Execute cross-channel schedule parity audit</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Digital Distribution Analyst</li><li>Distribution Coordinator</li><li>Revenue Integrity Analyst</li><li>Schedule Data Analyst</li><li>Schedule Planning Manager</li><li>Slot Coordination Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Altéa PSS</li><li>Amadeus GDS</li><li>Amadeus Revenue Management (NRM)</li><li>Amadeus SkyWORKS</li><li>IATA CRS (Coordinated Reservation System)</li><li>NDC API Gateway</li><li>OAG Schedule Analyser</li><li>Sabre GDS</li><li>Travelport GDS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-11</span>
+    <h1>Schedule Publication &amp; GDS Loading</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Initiate seasonal schedule freeze in SkyWORKS</td>
+        <td class="kpi-col">Schedule frozen ≥330 days before season start per IATA standard</td>
+        <td class="pain-col">Late commercial decisions (new routes, frequency changes) force freeze date slippage, compressing the GDS loading window and risking incomplete availability at booking opening</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate schedule against airport slot constraints</td>
+        <td class="kpi-col">100% slot compliance achieved before SSIM generation; zero unresolved conflicts at freeze</td>
+        <td class="pain-col">Slot-constrained airports (LHR, JFK, CDG, NRT) require manual bilateral negotiation; automated IATA CRS checks surface conflicts but offer no resolution path, requiring scheduler intervention</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Resolve slot conflicts and revalidate schedule</td>
+        <td class="kpi-col">Slot conflict resolution within 5 business days of detection</td>
+        <td class="pain-col">Slot swaps require bilateral agreement with competing carriers; absence of a multilateral slot exchange platform means resolution depends on ad-hoc email negotiation with slot coordinators</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Generate SSIM Chapter 7 file from frozen schedule</td>
+        <td class="kpi-col">SSIM generated within 2 hours of freeze confirmation; file size validated within expected range</td>
+        <td class="pain-col">Complex codeshare and interline agreements require precise segment-level carrier attribution in SSIM records; errors in marketing vs. operating carrier fields cause booking failures across all GDS channels</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Validate SSIM file against IATA format standards</td>
+        <td class="kpi-col">Zero format errors before transmission; validation run completed in &lt;30 minutes</td>
+        <td class="pain-col">IATA SSIM Chapter 7 format is field-position-exact; minor field-length violations or non-standard aircraft type codes cause full file rejection by GDS ingest pipelines, requiring a complete regeneration cycle</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Correct SSIM errors and regenerate file</td>
+        <td class="kpi-col">Correction and regeneration cycle completed in ≤4 hours per iteration</td>
+        <td class="pain-col">Root cause of SSIM errors often lies in upstream schedule attributes (equipment codes, operating carrier flags); manual correction risks introducing new errors without an integrated diff-check tool</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Submit validated SSIM to OAG for GDS distribution</td>
+        <td class="kpi-col">SSIM submitted to OAG ≥12 months before season start for initial seasonal load; re-submissions within 4 hours of correction sign-off</td>
+        <td class="pain-col">OAG processing queue can introduce 24–48 hour delays during peak IATA schedule submission periods (March and October); cascading delay compresses the booking-open window for new routes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Monitor Sabre GDS schedule ingestion and loading</td>
+        <td class="kpi-col">Sabre schedule parity ≥99.5% within 72 hours of SSIM submission</td>
+        <td class="pain-col">Sabre&#x27;s batch processing window is nightly; intraday schedule corrections are not reflected until the following day&#x27;s run, requiring a manual Sabre support ticket for urgent changes such as flight cancellations or time shifts</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Monitor Travelport GDS schedule ingestion and loading</td>
+        <td class="kpi-col">Travelport schedule parity ≥99.5% within 72 hours; Apollo/Galileo consistency 100%</td>
+        <td class="pain-col">Travelport&#x27;s Apollo and Galileo sub-platforms have different update cadences; inconsistency between the two creates agent booking confusion and potential duplicate or missing availability for the same flight</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Monitor Amadeus GDS schedule loading across all PCCs</td>
+        <td class="kpi-col">Amadeus schedule parity ≥99.5% within 72 hours; full PCC propagation confirmed within 96 hours</td>
+        <td class="pain-col">Amadeus GDS propagation to all Pseudo City Codes can lag by 24 hours; corporate TMC agents using affected PCCs see stale or missing schedules during the propagation window, generating avoidable calls to airline sales teams</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Publish schedule to NDC API Gateway for OTA partners</td>
+        <td class="kpi-col">NDC schedule availability within 4 hours of SSIM freeze confirmation; API offer response latency &lt;200ms at P99</td>
+        <td class="pain-col">NDC schema versioning (IATA NDC 21.3) mismatches with OTA partner implementations cause silent failures where offer requests return empty results with no error surfaced to the traveller; debugging requires partner-by-partner API log analysis</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Update airline.com booking engine via Altéa PSS</td>
+        <td class="kpi-col">Direct channel schedule accuracy 100%; booking engine page response time &lt;3 seconds; availability parity with GDS within 1 hour of schedule publication</td>
+        <td class="pain-col">Altéa PSS schedule cache refresh requires a manual trigger for urgent changes; stale cache causes customers to see phantom flights or missing flights, generating misdirected bookings and call-centre volume spikes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Execute cross-channel schedule parity audit</td>
+        <td class="kpi-col">Cross-channel schedule parity ≥99.8% within 5 business days of initial load; audit covering 100% of new and changed flights</td>
+        <td class="pain-col">No real-time automated parity monitoring tool spans all five distribution channels simultaneously; manual spot-checks via OAG miss low-frequency discrepancies such as wrong equipment type or missing return leg that only manifest at specific date ranges</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Issue SSIM delta file and re-submit for channel correction</td>
+        <td class="kpi-col">Critical corrections (cancellations, departure time changes &gt;15 min) re-distributed within 4 hours; all corrections confirmed propagated within 48 hours</td>
+        <td class="pain-col">SSIM delta files require the same full validation cycle as the initial file; urgent corrections still take 24–48 hours to propagate across GDS batch pipelines, during which customers may purchase now-invalid itineraries requiring involuntary rerouting</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Notify Revenue Management and activate NRM inventory</td>
+        <td class="kpi-col">NRM inventory activation within 24 hours of schedule publication sign-off; 100% of new routes activated before booking opening date</td>
+        <td class="pain-col">NRM inventory loading following SSIM publication is not automated; the manual handoff between Schedule Planning and Revenue Management teams introduces activation delays of 1–3 days, causing new flights to go on sale without yield controls in place and exposing the airline to underpriced early bookings</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+</body>
+</html>

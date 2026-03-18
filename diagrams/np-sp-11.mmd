@@ -1,0 +1,40 @@
+flowchart LR
+  subgraph P1["Phase 1: Schedule Freeze & Validation"]
+    A([Start]) --> B[Freeze schedule\nin SkyWORKS]
+    B --> C{Slot conflicts\ndetected?}
+    C -- No --> D[Pass to SSIM gen]
+    C -- Yes --> E[Resolve slot\nconflicts] --> B
+  end
+  subgraph P2["Phase 2: SSIM File Generation"]
+    D --> F[Generate SSIM\nChapter 7 file]
+    F --> G{SSIM format\nerrors found?}
+    G -- No --> H[Submit to OAG]
+    G -- Yes --> I[Correct &\nregenerate SSIM] --> F
+  end
+  subgraph P3["Phase 3: GDS Distribution"]
+    H --> J[Monitor Sabre /\nTravelport / Amadeus]
+    J --> K{GDS parity\ncheck pass?}
+    K -- Yes --> L[Direct channel\npublication]
+    K -- No --> M[Raise GDS\ncorrection ticket] --> J
+  end
+  subgraph P4["Phase 4: Direct Channel Publication"]
+    L --> N[Publish to NDC\nAPI Gateway]
+    N --> O[Update airline.com\nvia Altéa PSS]
+    O --> P{Booking engine\nparity confirmed?}
+    P -- Yes --> Q[Run parity audit]
+    P -- No --> R[Trigger cache\nrefresh] --> O
+  end
+  subgraph P5["Phase 5: Post-Publication Audit"]
+    Q --> S{Discrepancies\nabove threshold?}
+    S -- No --> T[Notify RM /\nActivate NRM]
+    T --> U([End])
+    S -- Yes --> V[Re-submit\nSSIM delta] --> S
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
