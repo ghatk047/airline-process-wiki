@@ -23,8 +23,9 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_DIR="$(dirname "$SCRIPT_DIR")"
 DATA_DIR="$REPO_DIR/data"
-WIKI_DIR="$REPO_DIR/wiki"
+WIKI_DIR="$REPO_DIR"
 DIAGRAMS_DIR="$REPO_DIR/diagrams"
+IMG_DIR="$REPO_DIR/assets/img"
 PROCESSES_JSON="$DATA_DIR/processes.json"
 EXCEL_FILE="$DATA_DIR/Airlines_Process_Catalog.xlsx"
 LOG_FILE="$REPO_DIR/pipeline.log"
@@ -129,7 +130,7 @@ PYEOF
 run_mmdc() {
   local pid_lower="$1"
   local mmd_file="$DIAGRAMS_DIR/${pid_lower}.mmd"
-  local png_file="$WIKI_DIR/assets/img/${pid_lower}.png"
+  local png_file="$IMG_DIR/${pid_lower}.png"
 
   if ! command -v mmdc >/dev/null 2>&1; then
     log "  SKIP: mmdc not available"
@@ -141,7 +142,7 @@ run_mmdc() {
   fi
 
   log "  Running mmdc for $pid_lower..."
-  mkdir -p "$WIKI_DIR/assets/img"
+  mkdir -p "$IMG_DIR"
   mmdc -i "$mmd_file" -o "$png_file" \
        -w 1920 -H 1080 --scale 2 --backgroundColor white \
     && log "  PNG generated: $png_file" \
