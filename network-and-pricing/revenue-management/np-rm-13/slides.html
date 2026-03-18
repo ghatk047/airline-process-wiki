@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-RM-13 Slides — Revenue Integrity &amp; Ticketing Compliance</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-13</span>
+    <h1>Revenue Integrity &amp; Ticketing Compliance</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-rm-13.png" alt="BPMN for NP-RM-13" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-13</span>
+    <h1>Revenue Integrity &amp; Ticketing Compliance</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-RM-13</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Revenue Management</li>
+          <li><strong>L3 Name:</strong> Revenue Integrity &amp; Ticketing Compliance</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Scan bookings approaching ticketing time limit</li><li><strong>Phase 2:</strong> Investigate and classify integrity exception</li><li><strong>Phase 3:</strong> Process ticket void within 24-hour BSP window</li><li><strong>Phase 4:</strong> Review incoming Agency Debit Memos from GDS</li><li><strong>Phase 5:</strong> Reconcile BSP/ARC sales data against PSS ticket lo</li><li><strong>Phase 6:</strong> Generate revenue integrity KPI dashboard</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Finance Analyst</li><li>Revenue Integrity Analyst</li><li>Revenue Integrity Manager</li><li>Ticketing Agent</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>BSP Link / ARC</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Sabre GDS / Amadeus GDS</li><li>Sabre PRISM / ARC</li><li>Tableau / Power BI</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-13</span>
+    <h1>Revenue Integrity &amp; Ticketing Compliance</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Scan bookings approaching ticketing time limit</td>
+        <td class="kpi-col">TTL breach rate ≤0.5% of daily ticketed bookings</td>
+        <td class="pain-col">Altéa queue refresh latency can delay TTL alerts by 15–30 min, causing bookings to lapse before analysts act</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Flag PNRs with expired ticketing time limits</td>
+        <td class="kpi-col">100% of expired TTL PNRs queued within 5 min of breach</td>
+        <td class="pain-col">Agents in GDS (Sabre/Travelport) may rebook on new PNR to circumvent TTL, requiring cross-GDS deduplication</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate fare basis code against booked RBD</td>
+        <td class="kpi-col">Fare-RBD mismatch detection rate ≥99% within 24 hrs of ticketing</td>
+        <td class="pain-col">ATPCO Cat 25 private fare rules are not always loaded in GDS displays, causing agents to ticket on incorrect public fare basis</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Verify fare construction rules and routing compliance</td>
+        <td class="kpi-col">Routing violation cases referred to recovery ≤0.3% of international tickets</td>
+        <td class="pain-col">Complex Round-the-World or multi-carrier journeys with published interline fares lack automated combinability validation in NRM</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Investigate and classify integrity exception</td>
+        <td class="kpi-col">Mean time to classify exception ≤30 min</td>
+        <td class="pain-col">High exception queue volume during schedule irregularity events (IRROP) overwhelms 2-analyst teams, risking revenue leakage</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Decide to extend TTL or cancel non-compliant booking</td>
+        <td class="kpi-col">TTL extension approval rate ≤15% of breached PNRs (excess indicates agent abuse)</td>
+        <td class="pain-col">No automated scoring model to rank extension worthiness — decisions rely on analyst judgement, creating inconsistency across markets</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Cancel non-ticketed PNRs and release inventory</td>
+        <td class="kpi-col">Inventory released within 15 min of cancellation decision; recapture rate ≥60% on high-demand flights</td>
+        <td class="pain-col">Seat release timing relative to NRM availability update cycle can delay recapture on flights within 72 hrs of departure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Process ticket void within 24-hour BSP window</td>
+        <td class="kpi-col">Same-day void processing rate ≥98%; zero late voids submitted outside BSP cut-off</td>
+        <td class="pain-col">IATA BSP cut-off times vary by country (midnight local vs. UTC), causing agents to miss the void window on international sales</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Assess refund eligibility against fare rules</td>
+        <td class="kpi-col">Fare rule compliance on refund decisions ≥99.5%</td>
+        <td class="pain-col">ATPCO Cat 31 ticket changes rules for bundled ancillaries (seats, bags) are not consistently interpreted by Altéa auto-refund module</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Process involuntary refund for schedule change or IRROP</td>
+        <td class="kpi-col">Involuntary refund processing ≤72 hrs of passenger request; DOT 24-hr refund rule compliance = 100%</td>
+        <td class="pain-col">DOT 24-hour refund rule (14 CFR 259.5) requires next-business-day processing; Altéa batch refund jobs occasionally miss the SLA during high-IRROP periods</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Reissue ticket for voluntary fare exchange</td>
+        <td class="kpi-col">Exchange error rate ≤0.8% of reissued tickets; penalty collection accuracy 100%</td>
+        <td class="pain-col">Complex multi-carrier reissues on interline itineraries require manual fare recalculation — Altéa auto-reissue module not triggered for codeshare segments</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Review incoming Agency Debit Memos from GDS</td>
+        <td class="kpi-col">ADM review completion within 15 days of issuance (IATA resolution deadline); ADM recovery rate ≥85%</td>
+        <td class="pain-col">IATA ADM resolution deadlines (15 days) are tight; Sabre and Amadeus GDS present ADM data in different formats, requiring manual normalisation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Dispute or accept ADM within IATA resolution window</td>
+        <td class="kpi-col">Dispute win rate ≥70% of contested ADMs; zero ADMs missed past IATA 15-day window</td>
+        <td class="pain-col">Airlines cannot dispute ADMs if original error was due to their own fare filing omission in ATPCO — requires internal root-cause log to differentiate</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Escalate fraudulent booking patterns for recovery</td>
+        <td class="kpi-col">Fraud pattern detected within 48 hrs of first occurrence; zero undetected churned-inventory incidents per quarter</td>
+        <td class="pain-col">NRM does not natively flag cross-GDS duplicate booking patterns — requires manual cross-referencing of Sabre, Amadeus, and Travelport PNR exports</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Reconcile BSP/ARC sales data against PSS ticket log</td>
+        <td class="kpi-col">Reconciliation completion by T+3 business days; unmatched items ≤0.1% of gross ticket revenue</td>
+        <td class="pain-col">BSP billing files use IATA Standard Numeric Code (SNC) which must be mapped to SAP cost centre hierarchy — mapping table breaks when new routes are added without finance notification</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Resolve settlement discrepancies and post corrections</td>
+        <td class="kpi-col">Discrepancy resolution rate ≥98% within 10 business days of identification</td>
+        <td class="pain-col">Cross-currency settlement discrepancies on BSP billings (e.g., EUR vs. USD) create FX rounding differences that accumulate to material amounts over high-volume periods</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Generate revenue integrity KPI dashboard</td>
+        <td class="kpi-col">Dashboard published by Monday 09:00 each week; data freshness ≤24 hrs</td>
+        <td class="pain-col">Data pipeline from Altéa PSS to Tableau uses nightly batch export — intraday exceptions are invisible until next morning, delaying management response</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Audit agency ticketing compliance and escalate violations</td>
+        <td class="kpi-col">Agencies with error rate &gt;2% flagged for remediation within 30 days; systemic non-compliance resolved within 90 days</td>
+        <td class="pain-col">PRISM data covers ARC (US/Canada) only — non-ARC international agency compliance monitoring requires separate BSP market-by-market data pull with no consolidated view</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+</body>
+</html>

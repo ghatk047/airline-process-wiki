@@ -1,0 +1,61 @@
+flowchart LR
+  subgraph P1["Phase 1: Booking & Ticketing Validation"]
+    A([Start]) --> B[Scan bookings for TTL breach]
+    B --> C{TTL violated?}
+    C -- No --> D[Validate fare vs booked RBD]
+    C -- Yes --> E[Queue for exception review]
+    D --> F{Fare basis mismatch?}
+    F -- No --> G[Pass to settlement]
+    F -- Yes --> E
+  end
+  subgraph P2["Phase 2: Exception Queue Management"]
+    E --> H[Investigate integrity exception]
+    H --> I{Extend TTL or cancel?}
+    I -- Extend --> J[Requeue with new TTL]
+    I -- Cancel --> K[Cancel & notify agent]
+    J --> G
+  end
+  subgraph P3["Phase 3: Void, Refund & Exchange"]
+    G --> L[Process void within 24hr window]
+    L --> M{Void eligible?}
+    M -- Yes --> N[Issue void — BSP Link]
+    M -- No --> O[Assess refund eligibility]
+    O --> P{Involuntary refund?}
+    P -- Yes --> Q[Process involuntary refund]
+    P -- No --> R[Apply fare-rule refund penalty]
+  end
+  subgraph P4["Phase 4: ADM & Revenue Recovery"]
+    N & Q & R --> S[Review incoming ADMs from GDS]
+    S --> T{ADM valid?}
+    T -- Dispute --> U[File dispute via BSP Link]
+    T -- Accept --> V[Debit agency account]
+    U --> W{Dispute upheld?}
+    W -- Yes --> X[Reverse ADM charge]
+    W -- No --> V
+  end
+  subgraph P5["Phase 5: BSP/ARC Settlement"]
+    V & X --> Y[Reconcile BSP/ARC vs PSS records]
+    Y --> Z{Discrepancy found?}
+    Z -- Yes --> AA[Raise correction memo]
+    Z -- No --> AB[Submit final BSP/ARC report]
+    AA --> AB
+  end
+  subgraph P6["Phase 6: Compliance Audit & Reporting"]
+    AB --> AC[Generate integrity KPI dashboard]
+    AC --> AD{Systemic non-compliance?}
+    AD -- Yes --> AE[Escalate to Distribution Mgmt]
+    AD -- No --> AF([End — cycle complete])
+    AE --> AF
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AF fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600
+  style Z fill:#ff6600,color:#fff,stroke:#ff6600
+  style AD fill:#ff6600,color:#fff,stroke:#ff6600
