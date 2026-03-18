@@ -128,11 +128,7 @@
     <span class="meta">Slide 1 of 3 — Process Flow</span>
   </div>
   <div class="slide-body">
-
-        <div class="placeholder">
-          <p>BPMN diagram not yet generated</p>
-          <code>mmdc -i diagrams/np-sp-04.mmd -o wiki/assets/img/np-sp-04.png -w 1920 -H 1080 --scale 2 --backgroundColor white</code>
-        </div>
+<img src="../../../assets/img/np-sp-04.png" alt="BPMN for NP-SP-04" class="bpmn-full">
   </div>
   <div class="slide-footer">
     <span>Airlines Process Wiki · SAP Consulting</span>
@@ -158,20 +154,20 @@
           <li><strong>L3 Name:</strong> Slot Coordination &amp; Management</li>
         </ul>
         <div class="stat-row" style="margin-top:20px">
-          <div class="stat-box"><div class="num">0</div><div class="lbl">L4 Steps</div></div>
-          <div class="stat-box"><div class="num">0</div><div class="lbl">Decision Gates</div></div>
-          <div class="stat-box"><div class="num">0</div><div class="lbl">Exceptions</div></div>
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
         </div>
         <h3 style="margin-top:12px">Process Phases</h3>
-        <ul class="attr-list"><li>—</li></ul>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Analyse network demand vs slot inventory</li><li><strong>Phase 2:</strong> Extract historical slot series from IATA CRS</li><li><strong>Phase 3:</strong> Generate SSIM slot request messages in SkyWORKS</li><li><strong>Phase 4:</strong> Prepare slot negotiation brief for conference</li><li><strong>Phase 5:</strong> Import confirmed slots into SkyWORKS schedule</li><li><strong>Phase 6:</strong> Monitor weekly slot utilisation against 80% rule</li></ul>
       </div>
       <div class="attr-panel">
         <h3>Roles / Swim Lanes</h3>
-        <ul class="attr-list"><li>—</li></ul>
+        <ul class="attr-list"><li>Network Planning Analyst</li><li>Network Planning Manager</li><li>Schedule Distribution Analyst</li><li>Schedule Planning Analyst</li><li>Slot Compliance Analyst</li><li>Slot Coordinator</li></ul>
       </div>
       <div class="attr-panel">
         <h3>Systems</h3>
-        <ul class="attr-list"><li>—</li></ul>
+        <ul class="attr-list"><li>AWS S3 / Redshift</li><li>Amadeus Altéa PSS</li><li>Amadeus SkyCAST</li><li>Amadeus SkySYM</li><li>Amadeus SkyWORKS</li><li>IATA Slot Clearinghouse (SCR)</li></ul>
       </div>
     </div>
   </div>
@@ -190,7 +186,128 @@
   </div>
   <div class="slide-body">
     <div class="kpi-wrap">
-<p>No KPI data available.</p>
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Analyse network demand vs slot inventory</td>
+        <td class="kpi-col">Slot coverage ratio ≥95% of planned frequencies</td>
+        <td class="pain-col">SkyCAST demand signals do not automatically map to coordinator-level slot granularity; manual crosswalk required for Level 3 airports</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Prioritise slot request list by route value</td>
+        <td class="kpi-col">Top-20 revenue routes have slot requests filed within 5 days of season open</td>
+        <td class="pain-col">SkyWORKS priority ranking may conflict with network-level schedule symmetry goals, requiring manual override</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Extract historical slot series from IATA CRS</td>
+        <td class="kpi-col">Historical utilisation validated for 100% of held series within 3 business days</td>
+        <td class="pain-col">IATA CRS data latency of up to 48 h means late-returned competitor slots are invisible during initial analysis, skewing capacity view</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Assess 80/20 grandfather rights eligibility</td>
+        <td class="kpi-col">≥98% of held series retain grandfather status; at-risk flag raised ≥10 weeks before conference</td>
+        <td class="pain-col">Force majeure waiver criteria (e.g. COVID-era precedents) are interpreted inconsistently by airport coordinators, creating approval uncertainty</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>File force majeure exemption for at-risk series</td>
+        <td class="kpi-col">Exemption accepted by coordinator within 10 business days for 90% of filings</td>
+        <td class="pain-col">Coordinator acceptance rates vary by airport authority; no standardised SLA exists under IATA WSG, exposing series to arbitrary rejection</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Generate SSIM slot request messages in SkyWORKS</td>
+        <td class="kpi-col">Zero SSIM format errors on submission; ISR filed ≥8 weeks before IATA slot conference</td>
+        <td class="pain-col">SkyWORKS SSIM export does not auto-validate against airport coordinator&#x27;s declared coordination parameters (declared capacity), requiring manual cross-check</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Submit Initial Slot Requests to coordinators</td>
+        <td class="kpi-col">100% of ISRs acknowledged within 48 h of IATA deadline; no late submissions</td>
+        <td class="pain-col">Multiple national coordinators (e.g. Heathrow Airport Slots Ltd, DFW, CDG FAB) use non-standard portals alongside SCR, increasing coordination overhead</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Review coordinator initial allocation returns</td>
+        <td class="kpi-col">Gap analysis completed within 48 h of receiving allocation returns</td>
+        <td class="pain-col">Allocation returns often partially match requests with no rationale, requiring reverse-engineering of coordinator capacity logic using OAG data</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Prepare slot negotiation brief for conference</td>
+        <td class="kpi-col">Brief approved by VP Network Planning ≥5 days before conference</td>
+        <td class="pain-col">SkySYM simulation does not model competitor reaction to slot swaps, limiting predictive accuracy of negotiation scenarios</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Attend IATA slot conference and negotiate gaps</td>
+        <td class="kpi-col">≥75% of priority gap slots resolved at conference; average delta from preferred time ≤15 min</td>
+        <td class="pain-col">Airlines without alliance membership (e.g. unaligned LCCs) have reduced swap leverage at slot conferences; coordinators may favour legacy hub carriers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Escalate unresolved gaps to coordinator appeal panel</td>
+        <td class="kpi-col">Appeals filed within 24 h of conference close; ruling received within 5 business days</td>
+        <td class="pain-col">IATA World Slot Guidelines appeal process is non-binding; coordinators retain final authority, making outcomes unpredictable for non-dominant carriers</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Import confirmed slots into SkyWORKS schedule</td>
+        <td class="kpi-col">100% of confirmed slots imported without timing conflict within 2 business days of final allocation</td>
+        <td class="pain-col">Slot times confirmed post-conference may conflict with crew pairing and aircraft routing already modelled in SkyWORKS, requiring full re-optimisation cycle</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Publish confirmed SSIM to GDS and PSS</td>
+        <td class="kpi-col">SSIM published within 5 business days of slot confirmation; GDS pick-up error rate &lt;0.5%</td>
+        <td class="pain-col">NDC API Gateway does not automatically ingest SSIM updates; NDC-sourced content requires separate manual schedule push, risking content divergence</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Monitor weekly slot utilisation against 80% rule</td>
+        <td class="kpi-col">Utilisation ≥80% maintained for all series; alerts triggered if any series falls below 85% buffer</td>
+        <td class="pain-col">Altéa operational departure data lags coordinator reporting window by up to 72 h, creating risk of under-reporting in close-to-threshold series</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Return or swap underutilised slots to coordinator</td>
+        <td class="kpi-col">Returns filed ≥6 weeks before operated date; 100% of below-threshold series actioned within 48 h of flag</td>
+        <td class="pain-col">Late slot returns reduce secondary market swap opportunities; airlines that pool returns informally (Star Alliance, oneworld) gain competitive advantage unavailable to unaligned carriers</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Archive season compliance evidence for grandfather rights</td>
+        <td class="kpi-col">Archive complete within 10 business days of season end; 100% of series have supporting evidence on record</td>
+        <td class="pain-col">No industry-standard digital audit trail format exists; evidence quality varies by coordinator, creating litigation risk if grandfather rights are disputed</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
     </div>
   </div>
   <div class="slide-footer">
