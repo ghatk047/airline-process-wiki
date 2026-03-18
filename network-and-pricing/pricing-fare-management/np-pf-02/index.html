@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Crew Planning &amp; Rostering · Flight Operations · Airlines Process Wiki</title>
+<title>NP-PF-02 · Fare Distribution &amp; Publishing · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -60,7 +61,7 @@
       <a class="sidebar-l2-link" href="../../../network-and-pricing/pricing-fare-management/">Pricing &amp; Fare Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-01/"><span class="status-dot status-done"></span><span class="pid">NP-PF-01</span>Fare Construction &amp; Filing</a>
-        <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-02/"><span class="status-dot status-done"></span><span class="pid">NP-PF-02</span>Fare Distribution &amp; Publishing</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/pricing-fare-management/np-pf-02/"><span class="status-dot status-done"></span><span class="pid">NP-PF-02</span>Fare Distribution &amp; Publishing</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-03/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-03</span>Promotional Fare Design</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-04/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-04</span>Fare Rules &amp; Restriction Management</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-05/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-05</span>Dynamic Pricing Engine Management</a>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-queue"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -242,153 +243,228 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Crew Planning &amp; Rostering</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/pricing-fare-management/">Pricing &amp; Fare Management</a><span class="sep">›</span>
+  <span class="current">NP-PF-02 · Fare Distribution &amp; Publishing</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Crew Planning &amp; Rostering</h1>
-    <p>Flight Operations · 0 of 15 subprocesses complete · Updated 2026-03-18 19:26</p>
+    <h1>Fare Distribution &amp; Publishing</h1>
+    <p>Network Planning &amp; Scheduling › Pricing &amp; Fare Management · 15 L4 steps · 6 phases · 6 decision gates · Updated 2026-03-18 19:26</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-PF-02</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-01</span>Crew Pairing Optimization</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-pf-02">
+      <img src="../../../assets/img/np-pf-02.png" alt="NP-PF-02 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-pf-02').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-pf-02').style.display='flex'">
+      <div id="diag-placeholder-np-pf-02" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-01/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract approved fare constructs from RM system</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved fare change request from Pricing Strategy team</td>
+  <td style="font-size:10px">Fare constructs with cabin, booking class, and route scope ready for tariff formatting</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fare extraction accuracy ≥99.5%; extraction completed ≥48 hrs before effective date</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Map fares to ATPCO fare basis codes &amp; rule categories</td>
+  <td class="td-role">Tariff Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved fare constructs, existing tariff structure and fare family definitions</td>
+  <td style="font-size:10px">ATPCO-formatted fare records covering Categories 1–35 (advance purchase, min stay, penalties, sales restrictions)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fare basis code mapping accuracy ≥99%; Category rule coverage ≥95% automated</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Validate rule consistency, combinability &amp; blackout dates</td>
+  <td class="td-role">Tariff Analyst</td>
+  <td><span class="stag custom">ATPCO Automated Pricing and Quality Assurance (APQC)</span></td>
+  <td style="font-size:10px;color:#6b7280">Mapped ATPCO fare records</td>
+  <td style="font-size:10px">Pre-submission validation report; list of rule conflicts or blackout date clashes</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Pre-submission validation error rate &lt;2%; all errors resolved before ATPCO filing cutoff</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Submit fare tariff records to ATPCO before cutoff</td>
+  <td class="td-role">Tariff Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated ATPCO fare records; applicable effective and discontinue dates</td>
+  <td style="font-size:10px">ATPCO submission receipt with transaction IDs and filing timestamp</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Submission success rate ≥99%; filed ≥24 hrs before effective date; zero late filings during peak sale events</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Monitor ATPCO acknowledgment and error correction queue</td>
+  <td class="td-role">Tariff Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">ATPCO submission receipt and transaction IDs</td>
+  <td style="font-size:10px">Clean acknowledgment confirmation or itemised error correction list for resubmission</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ATPCO acknowledgment received within 2 hrs of submission; error correction resubmitted within 1 hr of error receipt</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Verify fare pickup and display in Sabre GDS</td>
+  <td class="td-role">Distribution Analyst</td>
+  <td><span class="stag gds">Sabre GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">ATPCO acknowledgment confirmation and effective date/time</td>
+  <td style="font-size:10px">Sabre GDS fare availability test confirmed; mismatches logged for escalation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Sabre fare pickup within 4 hrs of ATPCO effective time; display accuracy ≥99.9%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Verify fare pickup in Travelport GDS channels</td>
+  <td class="td-role">Distribution Analyst</td>
+  <td><span class="stag gds">Travelport GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">ATPCO acknowledgment confirmation</td>
+  <td style="font-size:10px">Fare availability confirmed across Travelport Apollo and Galileo subscriber segments</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Travelport fare pickup within 4 hrs of ATPCO effective time; consistent display across Apollo and Galileo ≥99%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Verify fare pickup in Amadeus GDS</td>
+  <td class="td-role">Distribution Analyst</td>
+  <td><span class="stag amadeus">Amadeus GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">ATPCO acknowledgment confirmation</td>
+  <td style="font-size:10px">Fare availability confirmed in Amadeus GDS; cache refresh status noted</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Amadeus fare pickup within 4 hrs of ATPCO effective time; zero stale-cache bookings at effective date boundary</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Activate fares for live sale across all GDS channels</td>
+  <td class="td-role">Distribution Manager</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Pickup confirmations from Sabre, Travelport, and Amadeus GDS</td>
+  <td style="font-size:10px">Fares activated for live booking across all GDS channels; channel activation log created</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Channel parity — all GDS channels display identical fares within 30 min of activation; activation completion ≥99.8%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Publish approved fares via NDC API Gateway</td>
+  <td class="td-role">NDC Integration Engineer</td>
+  <td><span class="stag custom">NDC API Gateway</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved fare constructs; GDS activation confirmation; NDC offer schema mapping</td>
+  <td style="font-size:10px">NDC AirShopping and AirPrice offer responses reflecting new fares with branded fare family attributes</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NDC offer response latency &lt;500ms at p99; NDC fare coverage parity with GDS ≥98%; NDC go-live within 2 hrs of GDS activation</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Validate fare display on direct.com and mobile app</td>
+  <td class="td-role">E-commerce Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">NDC offer API responses; direct channel pricing engine configuration</td>
+  <td style="font-size:10px">Validated fare display on airline website and mobile app with correct ancillary bundling</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Direct channel fare accuracy ≥99.9%; page load including fare display &lt;2 seconds; zero ghost-fare bookings post-filing</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Run automated fare audit against ATPCO live filing</td>
+  <td class="td-role">Pricing Quality Analyst</td>
+  <td><span class="stag custom">ATPCO Automated Pricing and Quality Assurance (APQC)</span></td>
+  <td style="font-size:10px;color:#6b7280">Live GDS fare quotes from Sabre/Travelport/Amadeus; NDC offer responses; ATPCO filed tariff records</td>
+  <td style="font-size:10px">Fare audit report with pass/fail by O&amp;D pair; mismatch list with severity classification</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fare audit pass rate ≥99.8% of sampled O&amp;D pairs; P1 mismatch detection within 30 min of effective time</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Resolve fare display or combinability errors and refile</td>
+  <td class="td-role">Tariff Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Fare audit mismatch report; GDS error details</td>
+  <td style="font-size:10px">Corrected ATPCO filing or GDS override instruction; incident log with root cause</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">P1 fare display error resolution within 4 hrs; P2 within 24 hrs; zero repeat errors from same root cause within 30 days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Monitor real-time fare parity across distribution channels</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Real-time fare quotes from GDS, NDC, OTA scrape feeds, and metasearch platforms</td>
+  <td style="font-size:10px">Channel parity dashboard; automated parity breach alerts with breach severity and channel identified</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Best Available Rate (BAR) parity compliance ≥97% across all monitored channels; parity breach alert-to-resolution SLA &lt;2 hrs for P1 breaches</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Archive fare filing records to data lake for compliance</td>
+  <td class="td-role">Tariff Analyst</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">All filed ATPCO records, GDS activation logs, NDC publication logs, and audit reports from current cycle</td>
+  <td style="font-size:10px">Archived fare filing records with timestamp, version history, and channel confirmation — retained 7 years per DOT and IATA requirements</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Audit trail completeness 100% per filing cycle; archive job SLA &lt;1 hr post-activation; retrieval latency &lt;15 min for DOT audit requests</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-02</span>Crew Rostering &amp; Bidding</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-PF-02</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network Planning &amp; Scheduling</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Pricing &amp; Fare Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Fare Distribution &amp; Publishing</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">15 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">6 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">12 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Pricing Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Tariff Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Distribution Analyst</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Distribution Manager</div><div class="swim"><div class="dot" style="background:#10b981"></div>NDC Integration Engineer</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>E-commerce Analyst</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Pricing Quality Analyst</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Revenue Management Analyst</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag amadeus">Amadeus Revenue Management (NRM)</span><span class="stag custom">ATPCO</span><span class="stag custom">ATPCO Automated Pricing and Quality Assurance (APQC)</span><span class="stag gds">Sabre GDS</span><span class="stag gds">Travelport GDS</span><span class="stag amadeus">Amadeus GDS</span><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag custom">NDC API Gateway</span><span class="stag aws">AWS S3 / Redshift</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract approved fare constructs from RM system</span><span class="kval">Fare extraction accuracy ≥99.5%; extraction completed ≥48 hrs before effective date</span></div><div class="krow"><span class="kname">Map fares to ATPCO fare basis codes &amp; rule categories</span><span class="kval">Fare basis code mapping accuracy ≥99%; Category rule coverage ≥95% automated</span></div><div class="krow"><span class="kname">Validate rule consistency, combinability &amp; blackout dates</span><span class="kval">Pre-submission validation error rate &lt;2%; all errors resolved before ATPCO filing cutoff</span></div><div class="krow"><span class="kname">Submit fare tariff records to ATPCO before cutoff</span><span class="kval">Submission success rate ≥99%; filed ≥24 hrs before effective date; zero late filings during peak sale events</span></div><div class="krow"><span class="kname">Monitor ATPCO acknowledgment and error correction queue</span><span class="kval">ATPCO acknowledgment received within 2 hrs of submission; error correction resubmitted within 1 hr of error receipt</span></div><div class="krow"><span class="kname">Verify fare pickup and display in Sabre GDS</span><span class="kval">Sabre fare pickup within 4 hrs of ATPCO effective time; display accuracy ≥99.9%</span></div><div class="krow"><span class="kname">Verify fare pickup in Travelport GDS channels</span><span class="kval">Travelport fare pickup within 4 hrs of ATPCO effective time; consistent display across Apollo and Galileo ≥99%</span></div><div class="krow"><span class="kname">Verify fare pickup in Amadeus GDS</span><span class="kval">Amadeus fare pickup within 4 hrs of ATPCO effective time; zero stale-cache bookings at effective date boundary</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">NRM fare constructs occasionally contain rule exceptions (e.g. negotiated corporate overrides) not natively expressible in ATPCO Category 15 — requires manual tariff analyst workaround adding 2–4 hrs</div><div class="risk-card">ATPCO Category 25 (penalty) and Category 15 (sales restriction) rules require manual authoring — automation covers only ~70% of rule types, increasing tariff analyst workload during peak fare events</div><div class="risk-card">Blackout date conflicts with advance purchase minimum rules cause ATPCO pre-validation rejection — affects ~5% of seasonal filings and forces same-day reruns against tight submission deadlines</div><div class="risk-card">ATPCO submission cutoff (typically 0001Z day prior to effective date) is frequently missed during peak pricing events (holiday flash sales, competitor matching) — missed cutoff delays fare availability by 24 hrs, ceding revenue to competitors</div><div class="risk-card">ATPCO batch processing delays during high-volume industry filing periods (US public holidays, IATA fare sales coordination windows) push acknowledgment beyond 4 hrs — creates uncertainty on whether fares will be live for next-day sale open</div><div class="risk-card">Sabre GDS fare filing propagation latency can exceed 6 hrs during high-volume pricing events — creates booking windows where incorrect legacy fares are sold, triggering ADM disputes and customer compensation claims</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Approved fare change request from Pricing Strategy team</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Archived fare filing records with timestamp, version history, and channel confirmation — retained 7 years per DOT and IATA requirements</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-02/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-03</span>Crew Day-of-Operations Tracking</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-04</span>Fatigue &amp; Rest Rule Compliance (FAR Part 117)</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-04/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-05</span>Crew Training &amp; Recurrency Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-06</span>Crew Licensing &amp; Medical Certification</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-07</span>Reserve Crew Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-08</span>Crew Hotel &amp; Transportation Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-09</span>Cabin Crew Service Standards &amp; Training</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-10</span>Crew Disruption Recovery &amp; Re-pairing</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-11</span>Crew Union &amp; Labour Agreement Compliance</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-12</span>Crew Recruitment &amp; Onboarding</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-13</span>Deadhead &amp; Positioning Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-14</span>Crew Performance Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-15</span>Crew Payroll &amp; Hours Tracking</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../np-pf-01/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-PF-01 · Fare Construction &amp; Filing</span></a><a class="pn-btn" href="../np-pf-03/"><span><span class="sub">Next</span>NP-PF-03 · Promotional Fare Design</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

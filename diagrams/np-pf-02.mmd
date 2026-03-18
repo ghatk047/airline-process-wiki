@@ -1,0 +1,56 @@
+flowchart LR
+  subgraph P1["Phase 1: Fare Filing Preparation"]
+    A([Start]) --> B[Extract approved\nfare constructs]
+    B --> C[Map to ATPCO fare\nbasis codes & rules]
+    C --> D{Rule consistency\n& blackout valid?}
+    D -- No --> C
+    D -- Yes --> E[Package ATPCO\nfare records]
+  end
+
+  subgraph P2["Phase 2: ATPCO Submission"]
+    E --> F[Submit tariff records\nto ATPCO]
+    F --> G{ATPCO ack\nreceived & clean?}
+    G -- No --> F
+    G -- Yes --> H[Confirm submission\ntransaction IDs]
+  end
+
+  subgraph P3["Phase 3: GDS Distribution & Activation"]
+    H --> I[Verify fare pickup\nin Sabre GDS]
+    I --> J[Verify fare pickup\nTravelport & Amadeus]
+    J --> K{All GDS channels\npicked up correctly?}
+    K -- No --> F
+    K -- Yes --> L[Activate fares for\nlive GDS sale]
+  end
+
+  subgraph P4["Phase 4: NDC & Direct Channel Publishing"]
+    L --> M[Publish fares via\nNDC API Gateway]
+    M --> N[Validate fares on\ndirect.com & mobile]
+    N --> O{NDC & direct\nchannel parity OK?}
+    O -- No --> M
+    O -- Yes --> P[Confirm channel\npublication]
+  end
+
+  subgraph P5["Phase 5: Fare Quality Assurance"]
+    P --> Q[Run automated fare\naudit via APQC]
+    Q --> R{Audit pass rate\n≥99.8%?}
+    R -- No --> S[Resolve mismatch\n& refile]
+    S --> F
+    R -- Yes --> T[Close QA gate]
+  end
+
+  subgraph P6["Phase 6: Monitoring & Compliance"]
+    T --> U[Monitor channel\nfare parity]
+    U --> V{Parity breach or\nrevenue alert?}
+    V -- Yes --> C
+    V -- No --> W[Archive fare records\nto data lake]
+    W --> X([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
