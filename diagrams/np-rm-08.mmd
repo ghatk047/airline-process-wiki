@@ -1,0 +1,45 @@
+flowchart LR
+  subgraph P1["Phase 1: Performance Monitoring"]
+    A([Start]) --> B[Extract forecast\naccuracy metrics]
+    B --> C[Identify underperforming\nO&D markets]
+    C --> D{MAPE >15% or\nrevenue var >3%?}
+    D -- No --> Z1([Continue monitoring])
+    D -- Yes --> E[Assess booking\ncurve deviations]
+  end
+  subgraph P2["Phase 2: Data Preparation"]
+    E --> F[Extract historical\nbooking data]
+    F --> G{Data quality\nscore ≥95%?}
+    G -- No --> F
+    G -- Yes --> H[Load competitive\nfare benchmarks]
+  end
+  subgraph P3["Phase 3: Model Recalibration"]
+    H --> I[Recalibrate demand\nforecast coefficients]
+    I --> J[Update price\nelasticity curves]
+    J --> K[Tune overbooking\nsafety factors]
+    K --> L{Backtest MAPE\nimprovement ≥10%?}
+    L -- No --> I
+    L -- Yes --> M[Shadow simulation\nready]
+  end
+  subgraph P4["Phase 4: Simulation & Validation"]
+    M --> N[Run shadow-mode\nsimulation]
+    N --> O[Evaluate shadow\nrevenue vs actuals]
+    O --> P{A/B revenue\nuplift ≥1.5%?}
+    P -- No --> I
+    P -- Yes --> Q[Proceed to\ndeployment]
+  end
+  subgraph P5["Phase 5: Deployment & Governance"]
+    Q --> R[Stage changes\nin UAT]
+    R --> S{RM leadership\napproval obtained?}
+    S -- No --> R
+    S -- Yes --> T[Deploy to\nproduction NRM]
+    T --> U([Monitor live KPIs])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Z1 fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
