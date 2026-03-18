@@ -1,0 +1,49 @@
+flowchart LR
+  subgraph P1["Phase 1: No-Show Modelling & Calibration"]
+    A([Start]) --> B[Extract booking & no-show history]
+    B --> C[Segment data by route/DOW/class]
+    C --> D{Model accuracy ≥95%?}
+    D -- No --> C
+    D -- Yes --> E[Baseline no-show curves confirmed]
+  end
+
+  subgraph P2["Phase 2: OB Policy Authorisation"]
+    E --> F[Generate OB factors by segment]
+    F --> G{DOT 14 CFR 250 cap met?}
+    G -- No --> F
+    G -- Yes --> H[Publish limits to PSS inventory]
+  end
+
+  subgraph P3["Phase 3: Booking Horizon Monitoring"]
+    H --> I[Monitor booking pace vs. limits]
+    I --> J{Oversale threshold breached?}
+    J -- No --> I
+    J -- Yes --> K[Adjust OB level / escalate to RM Supervisor]
+    K --> I
+  end
+
+  subgraph P4["Phase 4: Day-of-Op Oversale Resolution"]
+    I --> L[Identify oversold flights at check-in close]
+    L --> M[Solicit volunteers — AMS gate screen]
+    M --> N{Sufficient volunteers secured?}
+    N -- No --> O[Process IDB per 14 CFR 250]
+    N -- Yes --> P[Process VDB — issue compensation]
+    O --> P
+  end
+
+  subgraph P5["Phase 5: Performance Review & Compliance"]
+    P --> Q[Compile IDB/VDB statistics]
+    Q --> R{IDB rate ≤ 0.05 per 10k pax?}
+    R -- No --> S[Recalibrate OB model parameters]
+    S --> F
+    R -- Yes --> T[Submit DOT quarterly compliance report]
+    T --> U([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600

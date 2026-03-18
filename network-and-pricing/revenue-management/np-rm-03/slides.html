@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-RM-03 Slides — Overbooking Policy Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-03</span>
+    <h1>Overbooking Policy Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-rm-03.png" alt="BPMN for NP-RM-03" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-03</span>
+    <h1>Overbooking Policy Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-RM-03</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Revenue Management</li>
+          <li><strong>L3 Name:</strong> Overbooking Policy Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract booking &amp; no-show history from PSS</li><li><strong>Phase 2:</strong> Generate recommended OB factors by flight segment</li><li><strong>Phase 3:</strong> Monitor booking pace vs. authorised OB limits</li><li><strong>Phase 4:</strong> Identify oversold flights at check-in closure</li><li><strong>Phase 5:</strong> Compile post-flight IDB/VDB statistics and cost da</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Airport Gate Agent</li><li>Airport Gate Agent / Supervisor</li><li>Director of Revenue Management</li><li>RM Data Scientist</li><li>RM Supervisor</li><li>Revenue Compliance Manager</li><li>Revenue Management Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>AWS Redshift</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>DOT Air Travel Consumer Report Submission Portal</li><li>SITA Airport Management System (AMS)</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-03</span>
+    <h1>Overbooking Policy Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract booking &amp; no-show history from PSS</td>
+        <td class="kpi-col">Dataset completeness ≥99% of departed flights</td>
+        <td class="pain-col">Altéa PSS history exports require manual scheduling; ad-hoc pulls risk data truncation beyond 13-month rolling window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Segment data by route, DOW, fare class, season</td>
+        <td class="kpi-col">Minimum 90 observed flights per segment for statistical significance</td>
+        <td class="pain-col">Thin markets (&lt;5 flights/week) produce unreliable segment-level no-show rates; pooled estimates inflate overbooking risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Run no-show forecast model and validate accuracy</td>
+        <td class="kpi-col">Forecast vs. actual no-show rate MAPE ≤5%</td>
+        <td class="pain-col">NRM show-up model requires retraining after major schedule restructures; post-COVID demand patterns invalidated legacy curves for 18+ months</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Calibrate show-up curve by fare class and lead time</td>
+        <td class="kpi-col">Show-up curve refresh cycle ≤30 days for high-frequency routes; ≤90 days for seasonal routes</td>
+        <td class="pain-col">Fare class proliferation (Basic Economy vs. flexible fares) requires separate show-up curves; legacy model treats all economy as one class</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Generate recommended OB factors by flight segment</td>
+        <td class="kpi-col">Expected IDB rate ≤0.05 per 10,000 enplaned passengers (DOT Part 250 benchmark)</td>
+        <td class="pain-col">NRM OB optimiser does not natively model denied boarding compensation cost per DOT 14 CFR 250 tiers; analyst must manually adjust factors to avoid regulatory overshoot</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Apply DOT 14 CFR 250 regulatory cap and fare rule check</td>
+        <td class="kpi-col">100% of OB factors within DOT involuntary bump compensation trigger thresholds</td>
+        <td class="pain-col">Non-refundable Basic Economy fares have near-zero pre-departure cancellations, artificially inflating apparent show-up rates; ATPCO Rule 35 interactions must be hand-checked</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Approve and publish booking limits to PSS inventory</td>
+        <td class="kpi-col">Limit publication latency ≤4 hours ahead of booking horizon open; 100% of flights have an active OB limit</td>
+        <td class="pain-col">Altéa inventory control updates via batch file load — real-time limit changes mid-booking horizon require manual override in Altéa Inventory module, increasing error risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Monitor booking pace vs. authorised OB limits</td>
+        <td class="kpi-col">Alert response time ≤15 minutes of threshold breach detection</td>
+        <td class="pain-col">NRM booking pace alerts are polled every 30 minutes; fast-filling charter diversions or flash sales can exceed limits before alerts trigger</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Detect and triage oversale threshold breach</td>
+        <td class="kpi-col">False positive rate ≤10% of alerts triaged as high-risk</td>
+        <td class="pain-col">Group booking blocks held in Altéa GRP segment are excluded from NRM oversale count until confirmed, masking true capacity exposure up to T-72h</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Adjust OB level or close booking class dynamically</td>
+        <td class="kpi-col">OB adjustment applied within 30 minutes of triage decision; no flight departs with OB factor &gt;20% above baseline</td>
+        <td class="pain-col">Closing discount booking classes to reduce oversale pressure destroys revenue on price-sensitive leisure itineraries; analyst must balance IDB risk vs. yield impact</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Escalate high-risk oversale flights to RM Supervisor</td>
+        <td class="kpi-col">Escalation-to-decision cycle time ≤1 hour; 100% of high-risk flights reviewed by T-24h</td>
+        <td class="pain-col">Connecting passengers on interline itineraries (not native Altéa bookings) are not surfaced in NRM oversale count; last-minute IDB on these passengers triggers DOT reporting obligation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Identify oversold flights at check-in closure</td>
+        <td class="kpi-col">Oversold flight identification completed ≥30 minutes before departure</td>
+        <td class="pain-col">SITA AMS and Altéa DCS (Departure Control System) seat count reconciliation can diverge by 1-2 seats when upgrade or UMNR seat blocks are reassigned at gate</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Solicit and screen volunteers for VDB compensation</td>
+        <td class="kpi-col">VDB rate ≥80% of oversale situations resolved without IDB; average VDB compensation cost ≤$350</td>
+        <td class="pain-col">Compensation authority is set centrally by RM; gate agents cannot negotiate above the pre-approved cap without supervisor override, slowing volunteer acquisition on high-demand flights</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Process involuntary denied boarding per 14 CFR 250</td>
+        <td class="kpi-col">IDB processing completed ≥15 minutes before door close; 0 IDB passengers with connecting flights missed due to rebooking delay</td>
+        <td class="pain-col">DOT priority boarding rules (status, early check-in) conflict with RM desire to protect high-yield last-minute fares; applying the correct matrix under gate pressure is error-prone</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Issue compensation and confirm rebooking for IDB/VDB pax</td>
+        <td class="kpi-col">100% of IDB passengers offered confirmed rebooking within 2 hours; compensation issued at gate before passenger departs</td>
+        <td class="pain-col">Electronic voucher issuance via Altéa is not integrated with the passenger&#x27;s Rapid Rewards account; compensation is issued as a separate code, creating friction and loyalty defection risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Compile post-flight IDB/VDB statistics and cost data</td>
+        <td class="kpi-col">Report generated within 48 hours of flight departure; 100% event capture rate</td>
+        <td class="pain-col">Gate agent IDB logs in Altéa DCS are free-text fields; structured data extraction requires ETL cleanup before Redshift load, delaying post-flight analytics by up to 5 days</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Review denied boarding KPIs against policy thresholds</td>
+        <td class="kpi-col">IDB rate ≤0.05 per 10,000 enplaned passengers; VDB cost ≤$350 average per event</td>
+        <td class="pain-col">Seasonal spikes (holiday periods, irregular operations) mask underlying OB model drift; point-in-time KPI review may miss structural deterioration in show-up accuracy</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Submit DOT quarterly denied boarding compliance report</td>
+        <td class="kpi-col">100% on-time filing by DOT deadline (30 days after quarter end); zero restatements</td>
+        <td class="pain-col">DOT requires IDB figures disaggregated by aircraft size categories; Altéa fleet-type tagging must be manually reconciled against FAA registration data to ensure accurate segment classification</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+</body>
+</html>

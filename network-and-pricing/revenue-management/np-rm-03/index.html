@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Human Resources · Corporate Support Functions · Airlines Process Wiki</title>
+<title>NP-RM-03 · Overbooking Policy Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -43,7 +44,7 @@
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-01/"><span class="status-dot status-done"></span><span class="pid">NP-RM-01</span>Inventory &amp; Yield Optimization</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-02/"><span class="status-dot status-done"></span><span class="pid">NP-RM-02</span>Fare Class &amp; Bucket Management</a>
-        <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-03/"><span class="status-dot status-done"></span><span class="pid">NP-RM-03</span>Overbooking Policy Management</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/revenue-management/np-rm-03/"><span class="status-dot status-done"></span><span class="pid">NP-RM-03</span>Overbooking Policy Management</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-04/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-04</span>Demand Forecasting &amp; Modelling</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-05/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-05</span>Group Sales Revenue Management</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-06/"><span class="status-dot status-queue"></span><span class="pid">NP-RM-06</span>Upgrade &amp; Upsell Revenue Optimization</a>
@@ -213,8 +214,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-queue"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
@@ -242,54 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Corporate Support Functions</a><span class="sep">›</span>
-  <span class="current">Human Resources</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/revenue-management/">Revenue Management</a><span class="sep">›</span>
+  <span class="current">NP-RM-03 · Overbooking Policy Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Human Resources</h1>
-    <p>Corporate Support Functions · 0 of 4 subprocesses complete · Updated 2026-03-18 18:48</p>
+    <h1>Overbooking Policy Management</h1>
+    <p>Network Planning &amp; Scheduling › Revenue Management · 18 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-18 18:48</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-RM-03</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-04</span>Workforce Planning &amp; Headcount Management</h3>
-    <p>Human Resources · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-rm-03">
+      <img src="../../../assets/img/np-rm-03.png" alt="NP-RM-03 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-rm-03').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-rm-03').style.display='flex'">
+      <div id="diag-placeholder-np-rm-03" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-04/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract booking &amp; no-show history from PSS</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Departed flight records, booking logs, check-in data — rolling 24 months</td>
+  <td style="font-size:10px">Raw no-show and cancellation dataset by flight, fare class, and booking channel</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Dataset completeness ≥99% of departed flights</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Segment data by route, DOW, fare class, season</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Raw no-show dataset from Altéa PSS export</td>
+  <td style="font-size:10px">Segmented no-show rate matrix with confidence intervals per cluster</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Minimum 90 observed flights per segment for statistical significance</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Run no-show forecast model and validate accuracy</td>
+  <td class="td-role">RM Data Scientist</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Segmented no-show matrix, demand forecasts from AltéaRM</td>
+  <td style="font-size:10px">No-show show-up curve per flight cluster; model accuracy report</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Forecast vs. actual no-show rate MAPE ≤5%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Calibrate show-up curve by fare class and lead time</td>
+  <td class="td-role">RM Data Scientist</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated no-show forecast model; approved show-up curves</td>
+  <td style="font-size:10px">Calibrated show-up probability curves published to AltéaRM overbooking module</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Show-up curve refresh cycle ≤30 days for high-frequency routes; ≤90 days for seasonal routes</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Generate recommended OB factors by flight segment</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Calibrated show-up curves; target load factor ≥83%; denied boarding cost assumptions</td>
+  <td style="font-size:10px">Recommended overbooking factor per flight segment with expected IDB rate</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Expected IDB rate ≤0.05 per 10,000 enplaned passengers (DOT Part 250 benchmark)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Apply DOT 14 CFR 250 regulatory cap and fare rule check</td>
+  <td class="td-role">Revenue Compliance Manager</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Recommended OB factors; ATPCO fare conditions (refundability, cancellation fees)</td>
+  <td style="font-size:10px">Compliance-reviewed OB factor set; flag for non-refundable fare interactions</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of OB factors within DOT involuntary bump compensation trigger thresholds</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Approve and publish booking limits to PSS inventory</td>
+  <td class="td-role">Director of Revenue Management</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Compliance-reviewed OB factor set; Director sign-off</td>
+  <td style="font-size:10px">Authorised overbooking limits loaded into Altéa inventory control per flight</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Limit publication latency ≤4 hours ahead of booking horizon open; 100% of flights have an active OB limit</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Monitor booking pace vs. authorised OB limits</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Live booking feed from Altéa PSS; authorised OB limits</td>
+  <td style="font-size:10px">Booking pace dashboard with oversale risk flags per flight</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Alert response time ≤15 minutes of threshold breach detection</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Detect and triage oversale threshold breach</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Booking pace alert; current bookings vs. authorised limit</td>
+  <td style="font-size:10px">Oversale risk classification (low / medium / high) with recommended action</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">False positive rate ≤10% of alerts triaged as high-risk</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Adjust OB level or close booking class dynamically</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Oversale risk classification; updated show-up probability at current booking depth</td>
+  <td style="font-size:10px">Revised OB factor or booking class closure instruction applied to Altéa PSS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">OB adjustment applied within 30 minutes of triage decision; no flight departs with OB factor &gt;20% above baseline</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Escalate high-risk oversale flights to RM Supervisor</td>
+  <td class="td-role">RM Supervisor</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">High-risk oversale flag; passenger manifest; connecting itinerary exposure</td>
+  <td style="font-size:10px">Escalation note with recommended corrective action; decision to hold or reduce OB</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Escalation-to-decision cycle time ≤1 hour; 100% of high-risk flights reviewed by T-24h</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Identify oversold flights at check-in closure</td>
+  <td class="td-role">Airport Gate Agent</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Final check-in count; boarded passenger list; aircraft capacity</td>
+  <td style="font-size:10px">Confirmed oversale count and list of checked-in passengers eligible for VDB/IDB</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Oversold flight identification completed ≥30 minutes before departure</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Solicit and screen volunteers for VDB compensation</td>
+  <td class="td-role">Airport Gate Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Oversold count; gate board call; compensation parameters from RM Supervisor</td>
+  <td style="font-size:10px">Confirmed volunteer list with accepted compensation; rebooked itineraries in Altéa</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">VDB rate ≥80% of oversale situations resolved without IDB; average VDB compensation cost ≤$350</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Process involuntary denied boarding per 14 CFR 250</td>
+  <td class="td-role">Airport Gate Agent / Supervisor</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed oversale after VDB exhaustion; passenger priority matrix (status, fare, check-in time)</td>
+  <td style="font-size:10px">IDB passenger list; denied boarding compensation (cash/voucher at DOT-mandated 400% of OW fare, max $1,550)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">IDB processing completed ≥15 minutes before door close; 0 IDB passengers with connecting flights missed due to rebooking delay</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Issue compensation and confirm rebooking for IDB/VDB pax</td>
+  <td class="td-role">Airport Gate Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">IDB/VDB passenger list; approved compensation values; next available flight inventory</td>
+  <td style="font-size:10px">Compensation vouchers/cash issued; confirmed rebooking on next available service; IDB event logged</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of IDB passengers offered confirmed rebooking within 2 hours; compensation issued at gate before passenger departs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Compile post-flight IDB/VDB statistics and cost data</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Altéa IDB/VDB event logs; gate agent reports; compensation cost records</td>
+  <td style="font-size:10px">IDB/VDB summary report: count, cost, route, fare class, DOW breakdown</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Report generated within 48 hours of flight departure; 100% event capture rate</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Review denied boarding KPIs against policy thresholds</td>
+  <td class="td-role">Director of Revenue Management</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">IDB/VDB summary report; rolling 12-month trend; DOT Part 250 benchmark (0.05 IDB per 10k pax)</td>
+  <td style="font-size:10px">KPI review decision: policy adequate or recalibration required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">IDB rate ≤0.05 per 10,000 enplaned passengers; VDB cost ≤$350 average per event</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Submit DOT quarterly denied boarding compliance report</td>
+  <td class="td-role">Revenue Compliance Manager</td>
+  <td><span class="stag custom">DOT Air Travel Consumer Report Submission Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated IDB/VDB statistics; carrier passenger enplanement totals</td>
+  <td style="font-size:10px">Filed DOT Part 250 quarterly report; internal compliance archive record</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% on-time filing by DOT deadline (30 days after quarter end); zero restatements</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-05</span>Talent Acquisition &amp; Recruitment</h3>
-    <p>Human Resources · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-RM-03</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network Planning &amp; Scheduling</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Revenue Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Overbooking Policy Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">6 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Revenue Management Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>RM Data Scientist</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Revenue Compliance Manager</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Director of Revenue Management</div><div class="swim"><div class="dot" style="background:#10b981"></div>RM Supervisor</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Airport Gate Agent</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Airport Gate Agent / Supervisor</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag aws">AWS Redshift</span><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span><span class="stag custom">ATPCO</span><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">Tableau</span><span class="stag custom">DOT Air Travel Consumer Report Submission Portal</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract booking &amp; no-show history from PSS</span><span class="kval">Dataset completeness ≥99% of departed flights</span></div><div class="krow"><span class="kname">Segment data by route, DOW, fare class, season</span><span class="kval">Minimum 90 observed flights per segment for statistical significance</span></div><div class="krow"><span class="kname">Run no-show forecast model and validate accuracy</span><span class="kval">Forecast vs. actual no-show rate MAPE ≤5%</span></div><div class="krow"><span class="kname">Calibrate show-up curve by fare class and lead time</span><span class="kval">Show-up curve refresh cycle ≤30 days for high-frequency routes; ≤90 days for seasonal routes</span></div><div class="krow"><span class="kname">Generate recommended OB factors by flight segment</span><span class="kval">Expected IDB rate ≤0.05 per 10,000 enplaned passengers (DOT Part 250 benchmark)</span></div><div class="krow"><span class="kname">Apply DOT 14 CFR 250 regulatory cap and fare rule check</span><span class="kval">100% of OB factors within DOT involuntary bump compensation trigger thresholds</span></div><div class="krow"><span class="kname">Approve and publish booking limits to PSS inventory</span><span class="kval">Limit publication latency ≤4 hours ahead of booking horizon open; 100% of flights have an active OB limit</span></div><div class="krow"><span class="kname">Monitor booking pace vs. authorised OB limits</span><span class="kval">Alert response time ≤15 minutes of threshold breach detection</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Altéa PSS history exports require manual scheduling; ad-hoc pulls risk data truncation beyond 13-month rolling window</div><div class="risk-card">Thin markets (&lt;5 flights/week) produce unreliable segment-level no-show rates; pooled estimates inflate overbooking risk</div><div class="risk-card">NRM show-up model requires retraining after major schedule restructures; post-COVID demand patterns invalidated legacy curves for 18+ months</div><div class="risk-card">Fare class proliferation (Basic Economy vs. flexible fares) requires separate show-up curves; legacy model treats all economy as one class</div><div class="risk-card">NRM OB optimiser does not natively model denied boarding compensation cost per DOT 14 CFR 250 tiers; analyst must manually adjust factors to avoid regulatory overshoot</div><div class="risk-card">Non-refundable Basic Economy fares have near-zero pre-departure cancellations, artificially inflating apparent show-up rates; ATPCO Rule 35 interactions must be hand-checked</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Departed flight records, booking logs, check-in data — rolling 24 months</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Filed DOT Part 250 quarterly report; internal compliance archive record</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-06</span>Learning &amp; Development Management</h3>
-    <p>Human Resources · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-07</span>Labour Relations &amp; Union Negotiation</h3>
-    <p>Human Resources · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-07/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../np-rm-02/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-RM-02 · Fare Class &amp; Bucket Management</span></a><a class="pn-btn" href="../np-rm-04/"><span><span class="sub">Next</span>NP-RM-04 · Demand Forecasting &amp; Modelling</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
