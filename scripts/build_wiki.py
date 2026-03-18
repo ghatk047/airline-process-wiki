@@ -24,9 +24,9 @@ from html import escape
 SCRIPT_DIR   = Path(__file__).parent
 REPO_DIR     = SCRIPT_DIR.parent
 DATA_DIR     = REPO_DIR / "data"
-WIKI_DIR     = REPO_DIR / "wiki"
+WIKI_DIR     = REPO_DIR          # pages live at repo root, not in wiki/ subfolder
 PROCESSES    = DATA_DIR / "processes.json"
-IMG_DIR      = WIKI_DIR / "assets" / "img"
+IMG_DIR      = REPO_DIR / "assets" / "img"
 
 # ── Status helpers ─────────────────────────────────────────────────────────
 STATUS_DOT = {
@@ -139,7 +139,7 @@ def build_bpmn_section(pid, depth=3):
     img_rel = f"{root}assets/img/{pid.lower()}.png"
     mmdc_cmd = (
         f"mmdc -i diagrams/{pid.lower()}.mmd "
-        f"-o wiki/assets/img/{pid.lower()}.png "
+        f"-o assets/img/{pid.lower()}.png "
         f"-w 1920 -H 1080 --scale 2 --backgroundColor white"
     )
     img_path = IMG_DIR / f"{pid.lower()}.png"
@@ -167,6 +167,8 @@ def generate_page(proc, all_procs):
     l2s    = proc["l2_slug"]
 
     run_date = proc.get("run_date") or date.today().isoformat()
+    from datetime import datetime
+    updated_str = datetime.now().strftime("%Y-%m-%d %H:%M")
     n_steps  = len(steps)
     n_gates  = sum(1 for s in steps if s.get("decision_point") == "Y")
 
@@ -223,7 +225,7 @@ def generate_page(proc, all_procs):
       <span class="tag tag-l2">{escape(l2)}</span>
       <span class="tag">{n_steps} steps</span>
       <span class="tag">{n_gates} decision gates</span>
-      <span class="tag">Updated {run_date}</span>
+      <span class="tag">Updated {updated_str}</span>
     </div>
   </div>
 
