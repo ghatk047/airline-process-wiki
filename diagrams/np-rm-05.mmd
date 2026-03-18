@@ -1,0 +1,75 @@
+flowchart LR
+  subgraph P1["Phase 1: Request Intake & Qualification"]
+    A([Start]) --> B[Receive Group Request]
+    B --> C{Size ≥10 pax?}
+    C -- No --> Z1([Decline / Redirect to Retail])
+    C -- Yes --> D[Check Blackout & Peak Dates]
+    D --> E{Travel date blocked?}
+    E -- Yes --> F[Propose Alternate Dates]
+    F --> D
+    E -- No --> G[Confirm O&D & Itinerary]
+  end
+
+  subgraph P2["Phase 2: Capacity & Displacement Assessment"]
+    G --> H[Query O&D Inventory]
+    H --> I[Run Displacement Cost Model]
+    I --> J{Net revenue positive?}
+    J -- No --> K[Flag for RM Escalation]
+    K --> L{Override approved?}
+    L -- No --> Z2([Decline Request])
+    L -- Yes --> M[Proceed with Conditions]
+    J -- Yes --> M
+  end
+
+  subgraph P3["Phase 3: Group Pricing & Quote"]
+    M --> N[Calculate Block Fare]
+    N --> O{Within discount policy?}
+    O -- No --> P[RM Manager Review]
+    P --> N
+    O -- Yes --> Q[Generate Formal Group Quote]
+    Q --> R[Apply Name Release Schedule]
+  end
+
+  subgraph P4["Phase 4: Negotiation & Approval"]
+    R --> S[Sales Manager Review]
+    S --> T{Quote accepted by group?}
+    T -- No --> U[Counter-offer / Adjust Terms]
+    U --> Q
+    T -- Yes --> V{Approval within authority?}
+    V -- No --> W[Escalate to Director RM]
+    W --> V
+    V -- Yes --> X[Confirm Booking & Collect Deposit]
+  end
+
+  subgraph P5["Phase 5: Booking Management & Monitoring"]
+    X --> Y[Create Seat Block in PSS]
+    Y --> Z[Monitor Ticketing Deadline]
+    Z --> AA{Names submitted on time?}
+    AA -- No --> BB[Send Deadline Reminder]
+    BB --> Z
+    AA -- Yes --> CC{Completion rate ≥80%?}
+    CC -- No --> DD[Release Unsold Seats to Open Inventory]
+    DD --> EE[Adjust Availability in RM System]
+    CC -- Yes --> FF[Finalise Passenger Manifest]
+  end
+
+  subgraph P6["Phase 6: Settlement & Performance Analysis"]
+    FF --> GG[Process Final Manifest & Payment]
+    GG --> HH[Calculate Revenue vs. Forecast Variance]
+    HH --> II[Update RM Demand Forecasting Model]
+    II --> JJ([End — Outputs Fed to RM & Finance])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Z1 fill:#003366,color:#fff,stroke:#003366
+  style Z2 fill:#003366,color:#fff,stroke:#003366
+  style JJ fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
+  style AA fill:#ff6600,color:#fff,stroke:#ff6600
+  style CC fill:#ff6600,color:#fff,stroke:#ff6600

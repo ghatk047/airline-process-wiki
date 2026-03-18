@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-RM-05 Slides — Group Sales Revenue Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-05</span>
+    <h1>Group Sales Revenue Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-rm-05.png" alt="BPMN for NP-RM-05" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-05</span>
+    <h1>Group Sales Revenue Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-RM-05</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Revenue Management</li>
+          <li><strong>L3 Name:</strong> Group Sales Revenue Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">4</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive Group Booking Request</li><li><strong>Phase 2:</strong> Query Real-Time O&amp;D Inventory Availability</li><li><strong>Phase 3:</strong> Calculate Block Fare Using Group Pricing Model</li><li><strong>Phase 4:</strong> Conduct Sales Negotiation with Group Organiser</li><li><strong>Phase 5:</strong> Create Seat Block in PSS Inventory</li><li><strong>Phase 6:</strong> Process Final Passenger Manifest &amp; Settlement</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Group Sales Coordinator</li><li>Group Sales Manager</li><li>Revenue Management Analyst</li><li>Revenue Management Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM)</li><li>Sabre PRISM</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-05</span>
+    <h1>Group Sales Revenue Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive Group Booking Request</td>
+        <td class="kpi-col">Request acknowledgement within 4 business hours; ≥95% SLA compliance</td>
+        <td class="pain-col">Requests arriving via multiple channels (email, GDS PNR, SWABIZ) require manual consolidation into Altéa — no single intake API across all channels</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate Group Size Eligibility</td>
+        <td class="kpi-col">100% of sub-threshold requests correctly redirected to retail within 1 business hour</td>
+        <td class="pain-col">Groups splitting into sub-10 clusters to access retail fares while exploiting group seat release policies — requires cross-PNR duplicate-name detection</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Check Blackout &amp; Peak Period Restrictions</td>
+        <td class="kpi-col">Blackout date check completed in &lt;10 minutes; alternate date acceptance rate ≥40%</td>
+        <td class="pain-col">Peak calendars maintained manually in NRM and not automatically synced with marketing/events calendar — agents may quote blocked dates before checking</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Confirm O&amp;D, Routing &amp; Itinerary</td>
+        <td class="kpi-col">Itinerary confirmed and filed in PSS within 2 hours of initial request</td>
+        <td class="pain-col">Multi-segment itineraries require manual linking of PNRs across codeshare or interline partners — slow process for international group bookings</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Query Real-Time O&amp;D Inventory Availability</td>
+        <td class="kpi-col">Inventory query response in &lt;30 seconds; data freshness lag ≤5 minutes</td>
+        <td class="pain-col">NRM availability data can lag real-time PSS inventory by up to 5 minutes during high-volume periods — group blocks booked on stale data risk overbooking</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Run Displacement Cost Analysis</td>
+        <td class="kpi-col">Displacement model accuracy ≥88% vs. actual realised revenue; analysis completed in &lt;15 minutes</td>
+        <td class="pain-col">Displacement models rely on NRM booking curves that may not fully account for last-minute premium fare uplift potential — groups in high-demand markets routinely under-priced</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Assess Net Revenue Impact of Group Block</td>
+        <td class="kpi-col">Group acceptance rate ≥65% of qualified requests; average group yield ≥85% of displacement cost</td>
+        <td class="pain-col">Sales teams operate under volume targets that incentivise accepting revenue-negative groups — tension between group sales quota and RM yield discipline</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Calculate Block Fare Using Group Pricing Model</td>
+        <td class="kpi-col">Group fare ≥95% of minimum acceptable yield threshold; pricing turnaround ≤30 minutes</td>
+        <td class="pain-col">Group pricing model does not natively integrate with ATPCO filed fares — group quotes are manual overrides that must be cross-checked against published fare rules to avoid BSP/ARC audit exceptions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Validate Fare Against Discount Authority Matrix</td>
+        <td class="kpi-col">100% of quotes validated against authority matrix before issue; zero out-of-authority quotes issued</td>
+        <td class="pain-col">Discount authority matrices are updated quarterly in spreadsheets and manually imported into NRM — stale thresholds lead to incorrect authority-level routing</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Generate Formal Group Quote Document</td>
+        <td class="kpi-col">Quote issued within 24 hours of request receipt; quote acceptance rate ≥55%</td>
+        <td class="pain-col">Quote templates are maintained outside PSS in Word/PDF — manual population risks errors in fare amounts, deadlines, and contract terms; no audit trail within the booking system</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Conduct Sales Negotiation with Group Organiser</td>
+        <td class="kpi-col">Negotiation cycle ≤3 rounds to final agreement; average concession depth ≤5% below initial quote</td>
+        <td class="pain-col">Sales managers lack real-time competitive fare visibility during negotiation — competitors&#x27; group rates not available in PRISM, forcing reliance on OAG or manual fare searches</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Obtain Final RM Approval for Confirmed Terms</td>
+        <td class="kpi-col">Approval response within 4 business hours; ≤10% of groups requiring director-level escalation</td>
+        <td class="pain-col">Approval workflow is email-based with no system-enforced audit trail — SOX compliance reviews frequently flag missing RM sign-offs on large group bookings</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Confirm Group Booking &amp; Collect Deposit</td>
+        <td class="kpi-col">Deposit collection rate ≥98% of confirmed bookings; booking confirmation issued within 2 hours of receipt of signed contract</td>
+        <td class="pain-col">Deposit processing via bank transfer requires manual reconciliation against PNR in SAP S/4HANA Finance — 2-3 day lag between payment receipt and booking confirmation causes organiser escalations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Create Seat Block in PSS Inventory</td>
+        <td class="kpi-col">Seat block created within 1 hour of booking confirmation; zero inventory discrepancy vs. PNR</td>
+        <td class="pain-col">Hard blocks in Altéa reduce sellable capacity visible to GDS channels immediately — premature blocking of large groups in advance of name submission increases unsold seat risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Monitor Name Release &amp; Ticketing Deadlines</td>
+        <td class="kpi-col">≥90% of names submitted by first release deadline; ticketing deadline breach rate &lt;5%</td>
+        <td class="pain-col">PSS deadline alerts are not integrated with CRM or email workflows — coordinators manually track deadlines in spreadsheets, leading to missed release dates and last-minute seat block management failures</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Release Unsold Seats to Open Inventory</td>
+        <td class="kpi-col">Unsold seats released ≥72 hours before departure; recaptured revenue from released seats ≥60% of displacement cost on released units</td>
+        <td class="pain-col">Late seat release (within 72 hours of departure) significantly reduces recapture probability — NRM booking curves flatten below T-3 days, leaving released group seats unsold and generating direct revenue loss</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Process Final Passenger Manifest &amp; Settlement</td>
+        <td class="kpi-col">Final settlement completed within 5 business days post-travel; payment reconciliation accuracy ≥99.5%</td>
+        <td class="pain-col">Name changes and no-shows on group bookings trigger penalty fee calculations that must be manually computed and re-invoiced — no automated penalty engine in Altéa for group contracts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Calculate Revenue Variance vs. Forecast</td>
+        <td class="kpi-col">Forecast vs. actual variance ≤8%; group contribution to total flight revenue ≥12% on applicable routes</td>
+        <td class="pain-col">Revenue data from SAP FI and NRM actuals must be joined manually in Redshift — no automated group P&amp;L dashboard; variance analysis delayed by 2-3 days post-travel</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Update RM Demand Forecasting Model with Actuals</td>
+        <td class="kpi-col">Model update completed within 10 business days post-travel; forecast accuracy improvement of ≥0.5% per cycle</td>
+        <td class="pain-col">NRM group booking actuals are not automatically tagged separately from retail bookings — group demand is blended into overall O&amp;D forecasts, distorting unconstrained demand estimates and causing systematic over-forecasting on high-group-volume routes</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+</body>
+</html>
