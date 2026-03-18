@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SP-05 Slides — Codeshare &amp; Interline Schedule Planning</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-05</span>
+    <h1>Codeshare &amp; Interline Schedule Planning</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sp-05.png" alt="BPMN for NP-SP-05" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-05</span>
+    <h1>Codeshare &amp; Interline Schedule Planning</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SP-05</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Schedule Planning</li>
+          <li><strong>L3 Name:</strong> Codeshare &amp; Interline Schedule Planning</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Identify codeshare &amp; interline partner candidates</li><li><strong>Phase 2:</strong> Request SSIM schedule data feed from partner airli</li><li><strong>Phase 3:</strong> Configure block-space or free-sale inventory alloc</li><li><strong>Phase 4:</strong> Load codeshare designators into GDS participant ta</li><li><strong>Phase 5:</strong> Brief operations and customer service on interline</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Alliance &amp; Partnership Manager</li><li>Digital Distribution Manager</li><li>Distribution &amp; GDS Analyst</li><li>Fares &amp; Pricing Analyst</li><li>Ground Operations Manager</li><li>Interline Agreements Specialist</li><li>Network Planning Analyst</li><li>Network Planning Manager</li><li>Revenue Management Analyst</li><li>Schedule Coordination Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>Amadeus Altea PSS</li><li>Amadeus Revenue Management (NRM)</li><li>Amadeus SkyCAST</li><li>Amadeus SkyWORKS</li><li>NDC API Gateway</li><li>OAG Schedule Analyser</li><li>SAP S/4HANA Finance (FI/CO)</li><li>SITA Airport Management System (AMS)</li><li>Sabre GDS</li><li>Travelport GDS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-05</span>
+    <h1>Codeshare &amp; Interline Schedule Planning</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Identify codeshare &amp; interline partner candidates</td>
+        <td class="kpi-col">Min 5 candidate partners assessed per planning cycle</td>
+        <td class="pain-col">OAG data latency (updated weekly) may miss recent partner schedule changes; analysts must cross-check with SSIM direct feeds</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Analyse partner O&amp;D network overlap and revenue potential</td>
+        <td class="kpi-col">Projected incremental load factor contribution ≥3 ppts on thin O&amp;D routes</td>
+        <td class="pain-col">SkyCAST O&amp;D demand models assume point-to-point flows; interline connecting itineraries require manual traffic splitting adjustments</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Verify IIA and SPA agreement status with legal</td>
+        <td class="kpi-col">Agreement status verified within 2 business days of partner selection</td>
+        <td class="pain-col">IATA IIA registry updates lag actual bilateral negotiations by up to 30 days; expired SPAs may not be flagged in the finance system</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Request SSIM schedule data feed from partner airline</td>
+        <td class="kpi-col">SSIM file received and validated within 5 business days of partner agreement</td>
+        <td class="pain-col">Non-IATA partners (charter, regional) may supply non-standard SSIM variants requiring manual field mapping before SkyWORKS can import</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Validate connection times against airport MCT tables</td>
+        <td class="kpi-col">100% of proposed connect itineraries MCT-compliant before GDS loading</td>
+        <td class="pain-col">MCT tables vary by terminal and domestic/international split; SkyWORKS uses airport-level MCTs and may not reflect terminal reassignments after gate changes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Resolve schedule conflicts via SSIM SCR negotiation</td>
+        <td class="kpi-col">Schedule conflicts resolved within 10 business days; &lt;5% of proposed connections requiring rescheduling</td>
+        <td class="pain-col">Partner airlines prioritise own network optimisation; schedule adjustment requests are often rejected or delayed beyond SSIM submission deadlines (D-180)</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Confirm aligned codeshare schedule and flight numbering</td>
+        <td class="kpi-col">Codeshare flight numbers registered with IATA within 7 days of schedule confirmation</td>
+        <td class="pain-col">Duplicate flight number conflicts with own metal flights require manual deconfliction; SkyWORKS does not auto-detect cross-carrier designator clashes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Configure block-space or free-sale inventory allocation</td>
+        <td class="kpi-col">Block-space utilisation target ≥70% within 30 days of schedule launch</td>
+        <td class="pain-col">Free-sale arrangements require real-time availability sharing via IATA Type B TELETYPE or PADIS; latency &gt;500ms causes ghost availability in partner booking systems</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>File interline prorate and SPA agreements via ATPCO</td>
+        <td class="kpi-col">ATPCO filing effective within 24 hours of D-1 activation date; 0 unpriced itineraries at launch</td>
+        <td class="pain-col">ATPCO prorate amendments require 3–5 business days for GDS propagation; last-minute schedule changes can create gaps where interline fares are unresolvable</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Validate fare combinability and through-fare rules in PSS</td>
+        <td class="kpi-col">100% of marketed O&amp;D pairs have at least one priceable interline itinerary at launch</td>
+        <td class="pain-col">Global Indicator and Routing restrictions in ATPCO records frequently cause combinability failures for multi-sector interline itineraries that are not caught until passenger booking attempts</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Load codeshare designators into GDS participant tables</td>
+        <td class="kpi-col">GDS loading complete ≥14 days before first codeshare departure</td>
+        <td class="pain-col">Each GDS has separate participant-table submission portals with different lead-time requirements (Sabre: 14 days, Travelport: 10 days, Amadeus GDS: 7 days); misaligned loading creates uneven availability windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Validate end-to-end booking and ticketing path in GDS</td>
+        <td class="kpi-col">Zero pricing errors in UAT across 100% of marketed O&amp;D pairs before go-live</td>
+        <td class="pain-col">Travelport Galileo and Worldspan display codeshare availability differently from Sabre; availability masking rules may suppress partner availability in certain agencies without explicit GDS-specific configuration</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Activate NDC API connection for partner direct-channel booking</td>
+        <td class="kpi-col">NDC channel contributing ≥10% of codeshare bookings within 90 days of launch</td>
+        <td class="pain-col">Many regional and medium-haul interline partners are not NDC Level 3 certified; interline itineraries in NDC require bilateral offer/order linking that is not yet standardised across vendors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Brief operations and customer service on interline procedures</td>
+        <td class="kpi-col">100% of affected airport stations briefed ≥7 days before first codeshare departure</td>
+        <td class="pain-col">Interline baggage tag reconciliation between dissimilar PSS platforms (e.g. Altéa vs Sabre PSS) causes baggage misrouting; SITA AMS does not auto-validate cross-carrier bag tags at transfer points</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Monitor codeshare booking ramp-up and yield metrics</td>
+        <td class="kpi-col">Codeshare load factor ≥70% by week 4 post-launch; interline yield within 5% of target prorate</td>
+        <td class="pain-col">Amadeus NRM O&amp;D attribution for codeshare legs requires manual segment-level override; automated RM bid-price optimisation does not natively distinguish codeshare pax from own-metal pax in mixed itineraries</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Conduct 90-day post-launch performance review</td>
+        <td class="kpi-col">Incremental revenue per ASK (RASK) contribution ≥2% above baseline on target O&amp;D pairs</td>
+        <td class="pain-col">Prorate settlement data from IATA BSP/ACH arrives 60–90 days in arrears, making 90-day review reliant on estimated yields; actual margin impact may not be known until Q2 following launch</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+</body>
+</html>
