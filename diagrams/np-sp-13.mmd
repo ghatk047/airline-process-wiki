@@ -1,0 +1,60 @@
+flowchart LR
+  subgraph P1["Phase 1: Request Intake & Feasibility"]
+    A([Start]) --> B[Log Charter Request]
+    B --> C{Route Feasible?}
+    C -- No --> B
+    C -- Yes --> D{Fleet Available?}
+    D -- No --> B
+    D -- Yes --> E[Pass to Regulatory]
+  end
+
+  subgraph P2["Phase 2: Regulatory & Slot Compliance"]
+    E --> F[Verify ASA & Permit Needs]
+    F --> G{Permits Obtained?}
+    G -- No --> F
+    G -- Yes --> H{Slot & Handler Secured?}
+    H -- No --> F
+    H -- Yes --> I[Pass to Crew/Aircraft]
+  end
+
+  subgraph P3["Phase 3: Aircraft & Crew Assignment"]
+    I --> J[Assign Tail & MX Release]
+    J --> K{MX Conflict?}
+    K -- Yes --> J
+    K -- No --> L[Build FAR-117 Crew Pairing]
+    L --> M{Crew Within Duty Limits?}
+    M -- No --> L
+    M -- Yes --> N[Confirm Special Services]
+  end
+
+  subgraph P4["Phase 4: Pricing & Contract"]
+    N --> O[Calculate All-In Charter Price]
+    O --> P{Client Accepts Contract?}
+    P -- No --> O
+    P -- Yes --> Q[Collect Deposit & Load PSS]
+  end
+
+  subgraph P5["Phase 5: Operational Readiness"]
+    Q --> R[File ICAO Flight Plan]
+    R --> S{NOTAM/Airspace Clear?}
+    S -- No --> R
+    S -- Yes --> T[Crew Briefing & Departure]
+    T --> U[Execute Flight & Log Actuals]
+  end
+
+  subgraph P6["Phase 6: Post-Flight Reconciliation"]
+    U --> V[Reconcile Revenue & Costs in SAP]
+    V --> W[Update Charter Pricing Model]
+    W --> X([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600

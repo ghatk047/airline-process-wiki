@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SP-13 Slides — Charter &amp; Ad-Hoc Flight Planning</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-13</span>
+    <h1>Charter &amp; Ad-Hoc Flight Planning</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sp-13.png" alt="BPMN for NP-SP-13" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-13</span>
+    <h1>Charter &amp; Ad-Hoc Flight Planning</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SP-13</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Schedule Planning</li>
+          <li><strong>L3 Name:</strong> Charter &amp; Ad-Hoc Flight Planning</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive &amp; Log Charter Request</li><li><strong>Phase 2:</strong> Verify Air Service Agreements &amp; Permit Scope</li><li><strong>Phase 3:</strong> Assign Aircraft Tail &amp; Confirm MX Release</li><li><strong>Phase 4:</strong> Calculate All-In Charter Price &amp; Margin</li><li><strong>Phase 5:</strong> File ICAO Flight Plan &amp; Check NOTAMs</li><li><strong>Phase 6:</strong> Reconcile Charter Revenue &amp; Costs in SAP</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Captain / Charter Operations Coordinator</li><li>Charter Operations Coordinator</li><li>Charter Pricing Analyst</li><li>Charter Sales Manager</li><li>Crew Planning Analyst</li><li>Finance Analyst</li><li>Fleet Operations Manager</li><li>Fleet Planning Analyst</li><li>Flight Crew / NOC Dispatcher</li><li>Flight Dispatcher</li><li>Network Planning Analyst</li><li>Regulatory Affairs Manager</li><li>Revenue Management Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>AWS Redshift</li><li>Amadeus Altéa PSS</li><li>Amadeus SkyMAX</li><li>Amadeus SkySYM</li><li>Honeywell GoDirect</li><li>IATA CRS (Coordinated Reservation System)</li><li>IATA Timatic</li><li>Jeppesen Crew Management</li><li>Jeppesen FliteDeck</li><li>SAP S/4HANA Finance (FI/CO)</li><li>SITA Overflight Permit System</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-13</span>
+    <h1>Charter &amp; Ad-Hoc Flight Planning</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive &amp; Log Charter Request</td>
+        <td class="kpi-col">Request-to-quote turnaround ≤4 hours of receipt</td>
+        <td class="pain-col">No standardised intake form; requests arrive via email, phone, and broker portals with inconsistent data quality, causing re-work before feasibility can begin</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate Route &amp; Airport Feasibility</td>
+        <td class="kpi-col">Feasibility assessment completed ≤2 hours of request receipt</td>
+        <td class="pain-col">Airport infrastructure constraints (runway PCN, curfews, Category III ILS availability) not always current in SkySYM, requiring manual NOTAM and AIP cross-check</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Assess Fleet Availability for Charter Date</td>
+        <td class="kpi-col">Charter fleet utilisation rate ≥85% on confirmed charter days</td>
+        <td class="pain-col">Charter demand routinely conflicts with peak scheduled operations; no dedicated charter fleet buffer exists, forcing displacement of scheduled rotations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Verify Air Service Agreements &amp; Permit Scope</td>
+        <td class="kpi-col">Permit scope identified ≤1 business day of feasibility sign-off</td>
+        <td class="pain-col">ASA gaps for new international charter destinations; some governments (Middle East, West Africa) require 72–120 hours advance notice, invalidating short-lead requests</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Apply for Overflight &amp; Landing Permits</td>
+        <td class="kpi-col">Permit approval rate ≥95% within 48 hours of application</td>
+        <td class="pain-col">Permit rejections or multi-day delays from foreign CAAs can invalidate charter date commitments already communicated to clients; no automated status polling in SITA system</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Coordinate Airport Slot &amp; Ground Handler</td>
+        <td class="kpi-col">Slot secured ≥5 days before departure; ground handler confirmed ≥72 hours before STD</td>
+        <td class="pain-col">Ad-hoc charter requests often arrive within 48 hours of departure, leaving no slot buffer at Level 3 coordinated airports; late slots attract handling surcharges of 30–50% above standard rates</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Assign Aircraft Tail &amp; Confirm MX Release</td>
+        <td class="kpi-col">Aircraft assigned ≥72 hours before departure; MX release confirmed ≥24 hours before STD</td>
+        <td class="pain-col">Last-minute MEL findings discovered during pre-departure inspection force tail swaps after crew pairing, catering, and ground handler briefings are complete, causing cascading delays</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Build Crew Pairing Within FAR Part 117 Limits</td>
+        <td class="kpi-col">Crew assignment completed ≥48 hours before departure; 100% FAR Part 117 duty compliance</td>
+        <td class="pain-col">Charter routes often exceed standard trip lengths or require international type ratings (ETOPS or specific country approvals); limited qualified crew pool for remote or new destinations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Confirm Special Handling &amp; Catering Requirements</td>
+        <td class="kpi-col">Special service confirmation delivered ≤24 hours after crew assignment</td>
+        <td class="pain-col">VIP and government charter clients frequently request bespoke catering and in-cabin configurations incompatible with standard galley setup; last-minute changes after catering uplift incur waste costs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Calculate All-In Charter Price &amp; Margin</td>
+        <td class="kpi-col">Gross margin on charter ≥15% above direct operating cost; quote issued ≤2 hours of feasibility confirmation</td>
+        <td class="pain-col">Fuel price volatility between quote acceptance and flight date creates margin erosion; no automatic fuel surcharge adjustment mechanism is integrated into the charter pricing model</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Issue Charter Contract &amp; Collect Deposit</td>
+        <td class="kpi-col">Contract executed ≤24 hours of quote acceptance; deposit received ≥5 days before departure</td>
+        <td class="pain-col">Payment delays from charter brokers are common; deposit terms not enforced consistently; SAP AR integration gaps mean charter revenue recognition is sometimes deferred to the following month-end</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Load Charter Flight into PSS &amp; Block Inventory</td>
+        <td class="kpi-col">Flight created in PSS ≤4 hours of contract execution; zero open inventory seats on charter segment</td>
+        <td class="pain-col">Charter flights must be created as special service segments in Altéa; misclassification as scheduled flights causes revenue leakage and double-counting in RM yield reporting</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>File ICAO Flight Plan &amp; Check NOTAMs</td>
+        <td class="kpi-col">Flight plan filed ≥3 hours before STD; NOTAM briefing completed ≥90 min before STD</td>
+        <td class="pain-col">Last-minute NOTAM closures (runway, restricted airspace, volcanic ash advisories) require re-routing; no automated re-route trigger exists for charter flights outside the scheduled network</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Conduct Pre-Departure Crew &amp; Cabin Briefing</td>
+        <td class="kpi-col">Briefing completed ≥90 min before STD; 100% crew attendance confirmed</td>
+        <td class="pain-col">VIP or government charter clients sometimes request last-minute route or timing changes post-briefing, requiring flight plan amendment and potential slot forfeiture at the destination</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Execute Charter Flight &amp; Capture Actuals</td>
+        <td class="kpi-col">Block time variance ≤10 min vs. planned; fuel burn within ±3% of flight plan estimate</td>
+        <td class="pain-col">ATC delays on ad-hoc routes not automatically captured in Altéa; actual fuel and time data require manual post-flight reconciliation, creating a 24–48 hour reporting lag</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Reconcile Charter Revenue &amp; Costs in SAP</td>
+        <td class="kpi-col">Revenue recognition completed ≤5 business days of flight; invoice matching rate ≥90% automated</td>
+        <td class="pain-col">Charter cost allocation to cost centres is manual; catering and handling invoices frequently arrive 30+ days post-flight, requiring accruals that distort period-end reporting</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Update Charter Pricing Model &amp; Lessons Learned</td>
+        <td class="kpi-col">Pricing model refresh cycle: quarterly; margin forecast accuracy improvement ≥5% per cycle</td>
+        <td class="pain-col">Lessons-learned data are not systematically fed back into the charter pricing model; repeat cost overruns on the same international routes indicate a structural feedback loop gap</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+</body>
+</html>
