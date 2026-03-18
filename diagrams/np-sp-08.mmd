@@ -1,0 +1,57 @@
+flowchart LR
+  subgraph P1["Phase 1: Market Opportunity Scan"]
+    A([Start]) --> B[Scan unserved O&D\nOpportunities SkyCAST]
+    B --> C[Benchmark competitor\nschedules OAG Analyser]
+    C --> D{Min demand\n≥150 pax/day?}
+    D -- No --> B
+    D -- Yes --> E[Shortlist candidate\nmarkets Redshift]
+  end
+  subgraph P2["Phase 2: Demand & Revenue Modelling"]
+    E --> F[Forecast O&D demand\nSkyCAST]
+    F --> G[Simulate spill &\nrecapture SkySYM]
+    G --> H[Model yield &\nelasticity Amadeus NRM]
+    H --> I{RASM ≥ CASM\n+ 15% margin?}
+    I -- No --> F
+    I -- Yes --> J[Produce revenue\nforecast report]
+  end
+  subgraph P3["Phase 3: Fleet & Capacity Check"]
+    J --> K[Run fleet assignment\noptimisation SkyMAX]
+    K --> L{Network conflict\nor gauge mismatch?}
+    L -- Yes --> M[Adjust frequency\nor gauge SkyWORKS]
+    M --> K
+    L -- No --> N[Confirm aircraft\navailability SkyWORKS]
+  end
+  subgraph P4["Phase 4: Operational Feasibility"]
+    N --> O[Check slot availability\nIATA CRS]
+    O --> P[Validate gate &\nturnaround SITA AMS]
+    P --> Q[Assess crew pairing\nJeppesen Crew Mgmt]
+    Q --> R{Operational\nconstraints cleared?}
+    R -- No --> O
+    R -- Yes --> S[Document ops\nfeasibility sign-off]
+  end
+  subgraph P5["Phase 5: Financial Business Case"]
+    S --> T[Build full P&L\nSAP S/4HANA Finance]
+    T --> U[Sensitivity & break-even\nanalysis Tableau]
+    U --> V{ROIC ≥ 12% &\nbreak-even LF ≤ 75%?}
+    V -- No --> T
+    V -- Yes --> W[Finalise business\ncase deck]
+  end
+  subgraph P6["Phase 6: Approval & Launch"]
+    W --> X[Submit to Commercial\nCommittee approval]
+    X --> Y{Executive approval\ngranted?}
+    Y -- No --> Z[Revise or defer\nmarket entry]
+    Z --> A2([End — Deferred])
+    Y -- Yes --> AA[File schedule &\nslots SkyWORKS / IATA CRS]
+    AA --> AB[Publish to GDS\n& NDC Gateway]
+    AB --> AC([End — Launched])
+  end
+
+  style A  fill:#003366,color:#fff,stroke:#003366
+  style A2 fill:#003366,color:#fff,stroke:#003366
+  style AC fill:#003366,color:#fff,stroke:#003366
+  style D  fill:#ff6600,color:#fff,stroke:#ff6600
+  style I  fill:#ff6600,color:#fff,stroke:#ff6600
+  style L  fill:#ff6600,color:#fff,stroke:#ff6600
+  style R  fill:#ff6600,color:#fff,stroke:#ff6600
+  style V  fill:#ff6600,color:#fff,stroke:#ff6600
+  style Y  fill:#ff6600,color:#fff,stroke:#ff6600
