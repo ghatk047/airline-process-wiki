@@ -1,0 +1,43 @@
+flowchart LR
+  subgraph P1["Phase 1: Rate Intelligence"]
+    A([Start]) --> B[Monitor ATPCO\ntax circulars]
+    B --> C{Emergency\nfiling needed?}
+    C -- No --> D[Classify change\ntype & market scope]
+    C -- Yes --> E
+    D --> E
+  end
+  subgraph P2["Phase 2: Rate Calculation"]
+    E[Model YQ/YR\nsurcharge rates] --> F[Benchmark vs\nATPCO peer rates]
+    F --> G{Rates within\nacceptable range?}
+    G -- No --> E
+    G -- Yes --> H[Obtain pricing\nmanager sign-off]
+  end
+  subgraph P3["Phase 3: ATPCO Filing"]
+    H --> I[File YQ/YR + tax\ncodes to ATPCO]
+    I --> J{Filing accepted\nby ATPCO?}
+    J -- No --> I
+    J -- Yes --> K[Monitor GDS\ndistribution]
+  end
+  subgraph P4["Phase 4: PSS Configuration"]
+    K --> L[Update Altéa PSS\nsurcharge tables]
+    L --> M[Update NDC API\ntax rules]
+    M --> N{Test fare calc\nmatches ATPCO ref?}
+    N -- No --> L
+    N -- Yes --> O[Clear for\nlive publishing]
+  end
+  subgraph P5["Phase 5: Compliance & Reconciliation"]
+    O --> P[Audit post-effective\nfares via ATPCO]
+    P --> Q[Reconcile BSP/ARC\nsettlement data]
+    Q --> R{Revenue variance\n>1%?}
+    R -- No --> S([Compliant — log\nclosed])
+    R -- Yes --> T[Investigate &\ncorrect exceptions]
+    T --> Q
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style S fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
