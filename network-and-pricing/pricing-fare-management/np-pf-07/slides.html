@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-PF-07 Slides — Interline &amp; Codeshare Fare Proration</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-07</span>
+    <h1>Interline &amp; Codeshare Fare Proration</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-pf-07.png" alt="BPMN for NP-PF-07" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-07</span>
+    <h1>Interline &amp; Codeshare Fare Proration</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-PF-07</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Pricing &amp; Fare Management</li>
+          <li><strong>L3 Name:</strong> Interline &amp; Codeshare Fare Proration</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">14</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Load interline &amp; SPA agreement terms into RA syste</li><li><strong>Phase 2:</strong> Extract OD fare components and fare basis codes</li><li><strong>Phase 3:</strong> Generate interline billing memo for ICH submission</li><li><strong>Phase 4:</strong> Submit net interline settlement to IATA Clearing H</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Finance Analyst</li><li>Pricing Analyst</li><li>Pricing Manager</li><li>Revenue Accounting Analyst</li><li>Revenue Accounting Manager</li><li>Revenue Accounting Supervisor</li><li>Revenue Management Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO Prorate Data</li><li>ATPCO Prorate Data + Amadeus Revenue Accounting (ARA)</li><li>Amadeus Revenue Accounting (ARA)</li><li>Amadeus Revenue Accounting (ARA) + Tableau</li><li>Amadeus Revenue Accounting (ARA) — SPA Module</li><li>Amadeus Revenue Management (NRM) + SAP S/4HANA Finance (FI/CO)</li><li>IATA BSP Link / Amadeus Revenue Accounting (ARA)</li><li>IATA Clearing House (ICH)</li><li>SAP S/4HANA Finance (FI/CO)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-07</span>
+    <h1>Interline &amp; Codeshare Fare Proration</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Load interline &amp; SPA agreement terms into RA system</td>
+        <td class="kpi-col">Agreement setup lead time ≤5 business days from signature</td>
+        <td class="pain-col">No standard digital handoff format for SPA terms — analysts manually transcribe flat-rate splits and minimum guarantees into ARA, introducing keying errors that cause systematic mis-proration</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Ingest ATPCO prorate factor tables (PF Tables)</td>
+        <td class="kpi-col">Prorate table update cycle ≤24 hours after ATPCO publication date</td>
+        <td class="pain-col">ATPCO publishes 26 fare filing cycles per year; delayed ingestion causes mis-proration on interline tickets issued in the gap window — revenue impact typically discovered only at quarterly ICH reconciliation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Classify ticket as interline, codeshare, or hybrid</td>
+        <td class="kpi-col">Auto-classification rate ≥95% of interline tickets without manual intervention</td>
+        <td class="pain-col">Codeshare tickets with separate operating vs marketing carrier codes require different proration logic than pure interline; misclassification routes codeshare revenue through ICH instead of bilateral settlement, triggering partner disputes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Extract OD fare components and fare basis codes</td>
+        <td class="kpi-col">Fare extraction error rate &lt;0.5% of processed interline tickets</td>
+        <td class="pain-col">Mixed class of service within a single ticket (e.g., J class on carrier A, Y class on carrier B) complicates fare basis assignment under IATA Resolution 762 — ARA auto-extraction fails on ~8% of mixed-cabin interline itineraries requiring manual override</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Apply IATA mileage proration to derive carrier percentages</td>
+        <td class="kpi-col">Mileage calculation accuracy ≥99.5% against IATA TACT reference data</td>
+        <td class="pain-col">Mileage discrepancies between IATA TACT mileage tables and GDS-routed itineraries (reroutes, diversions) cause variance — airlines typically absorb or dispute the difference at quarterly ICH reconciliation rather than fixing source data</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Apply Special Prorate Agreement overrides where eligible</td>
+        <td class="kpi-col">SPA override application rate = 100% for all tickets on SPA-covered routes during SPA validity period</td>
+        <td class="pain-col">Airlines maintain 50–200+ active SPAs; no automated expiry alerting in ARA means analysts continue applying lapsed SPA terms, generating overpayments recovered only at annual SPA audit — average recovery lag is 14 months</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Allocate taxes and YQ/YR surcharges per carrier rules</td>
+        <td class="kpi-col">Tax allocation error rate &lt;0.1% of total ticket value across processed interline tickets</td>
+        <td class="pain-col">YQ/YR fuel surcharge allocation rules vary by bilateral agreement and route — IATA Resolution 728 defaults are frequently overridden in SPAs, and smaller partner carriers often apply inconsistent rules, causing disputed tax remittance averaging $12–18 per ticket</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Generate interline billing memo for ICH submission</td>
+        <td class="kpi-col">Billing memo submission within T+30 days of travel date per IATA Resolution 743; late filing penalty avoidance rate ≥98%</td>
+        <td class="pain-col">Late coupon status reporting from GDS partners (Sabre, Amadeus, Travelport) delays billing cycle — coupon voids and exchanges can arrive up to T+21 days, risking T+30 ICH deadline and triggering IATA Resolution 743 late-filing penalties</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Validate billing memo against ET coupon at ICH</td>
+        <td class="kpi-col">First-pass ICH billing acceptance rate ≥92% of submitted memos</td>
+        <td class="pain-col">Coupon status discrepancies (voided tickets, involuntary reroutes, ADMs already issued) between issuing and validating carrier cause ICH rejections — manual investigation averages 3 hours per rejected memo and ~2.4% of memos are rejected on first pass</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Issue ADM or ACM to resolve billing discrepancy</td>
+        <td class="kpi-col">ADM/ACM resolution within 45 days per IATA Resolution 850m; suspense account balance &lt;0.5% of monthly interline revenue</td>
+        <td class="pain-col">Partner carriers frequently contest ADMs citing different prorate factor versions — IATA Interline Dispute and Facilitation System (IDFS) resolution process can extend to 180 days, locking revenue in suspense accounts and distorting monthly revenue reporting</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Submit net interline settlement to IATA Clearing House</td>
+        <td class="kpi-col">ICH settlement submission on-time rate = 100% (ICH settlement runs on fixed monthly calendar with no grace period)</td>
+        <td class="pain-col">Errors in net calculation caused by parallel billing cycles for the same partner (current month billing + prior month ADM adjustments) generate short settlements — ICH charges 1% per month penalty on underpayment and requires supplemental submission</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Post interline settlement to SAP General Ledger</td>
+        <td class="kpi-col">GL posting within T+5 business days of ICH settlement confirmation; period-close accuracy = 100%</td>
+        <td class="pain-col">Revenue recognition timing gaps between ARA settlement date and SAP posting cause interline revenue to be recognised in the wrong accounting period — reversals required on average for 3–5% of monthly interline revenue, distorting P&amp;L and requiring CFO sign-off</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Reconcile prorated actuals against RM interline forecast</td>
+        <td class="kpi-col">Interline yield variance ≤±3% of RM forecast; routes exceeding threshold reviewed within 10 business days</td>
+        <td class="pain-col">RM systems optimise for own-metal revenue and treat interline flows as residual — interline revenue attribution to O&amp;D pairs is imprecise, causing systematic undervaluation of interline-dependent routes and suboptimal capacity allocation decisions</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Audit SPA performance and flag renegotiation triggers</td>
+        <td class="kpi-col">SPA guarantee achievement rate ≥90% of active agreements; annual SPA review completion by Q1 for all agreements expiring in the calendar year</td>
+        <td class="pain-col">No automated alerting when SPA minimum guarantees are trending below threshold — airlines detect shortfalls only at annual review, by which time the commercial window to renegotiate favourable terms has passed and the partner has already shifted volume to competing carriers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+</body>
+</html>

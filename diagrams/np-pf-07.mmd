@@ -1,0 +1,49 @@
+flowchart LR
+  subgraph P1["Phase 1: Agreement Setup"]
+    A([Start]) --> B[Load Interline\nAgreements]
+    B --> C{SPA or IATA\nStandard?}
+    C -- IATA --> D[Load ATPCO\nProrate Tables]
+    C -- SPA --> E[Configure SPA\nOverrides]
+    D --> F[Classify Ticket\nInterline vs CS]
+    E --> F
+    F --> G{Codeshare or\nPure Interline?}
+    G -- Misclassified --> F
+  end
+  subgraph P2["Phase 2: Fare Apportionment"]
+    G -- Classified --> H[Extract OD\nFare Components]
+    H --> I[Apply IATA\nMileage Proration]
+    I --> J{SPA Override\nApplicable?}
+    J -- Yes --> K[Apply SPA\nAdjustments]
+    J -- No --> L[Allocate Taxes\n& Surcharges]
+    K --> L
+    L --> M{YQ/YR to\nOperating Carrier?}
+    M -- Disputed --> L
+    M -- Confirmed --> N[Prorated Revenue\nper Carrier]
+  end
+  subgraph P3["Phase 3: Interline Billing"]
+    N --> O[Generate ICH\nBilling Memo]
+    O --> P{ICH Validation\nPassed?}
+    P -- Rejected --> Q[Issue ADM/ACM\nto Partner]
+    Q --> R{Partner Accepts\nADM?}
+    R -- Disputed --> S([IATA IDFS\nEscalation])
+    R -- Accepted --> P
+    P -- Passed --> T[Submit Net\nSettlement to ICH]
+  end
+  subgraph P4["Phase 4: Settlement & Reconciliation"]
+    T --> U[Post Revenue\nto SAP GL]
+    U --> V[Reconcile vs RM\nForecast]
+    V --> W{Yield Variance\n>3%?}
+    W -- Yes --> X[SPA Renegotiation\nReview]
+    W -- No --> Y([Complete])
+    X --> Y
+  end
+  style A fill:#003366,color:#fff,stroke:#003366
+  style S fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600
