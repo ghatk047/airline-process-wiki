@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Crew Planning &amp; Rostering · Flight Operations · Airlines Process Wiki</title>
+<title>NP-SP-14 · Competition &amp; Capacity Benchmarking · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -36,7 +37,7 @@
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-11/"><span class="status-dot status-done"></span><span class="pid">NP-SP-11</span>Schedule Publication &amp; GDS Loading</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-12/"><span class="status-dot status-done"></span><span class="pid">NP-SP-12</span>Irregular Operations Recovery Planning</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-13/"><span class="status-dot status-done"></span><span class="pid">NP-SP-13</span>Charter &amp; Ad-Hoc Flight Planning</a>
-        <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-14/"><span class="status-dot status-done"></span><span class="pid">NP-SP-14</span>Competition &amp; Capacity Benchmarking</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/schedule-planning/np-sp-14/"><span class="status-dot status-done"></span><span class="pid">NP-SP-14</span>Competition &amp; Capacity Benchmarking</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-15/"><span class="status-dot status-queue"></span><span class="pid">NP-SP-15</span>Strategic Network Planning</a>
       </div>
       <a class="sidebar-l2-link" href="../../../network-and-pricing/revenue-management/">Revenue Management</a>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-queue"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -242,153 +243,248 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Crew Planning &amp; Rostering</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a><span class="sep">›</span>
+  <span class="current">NP-SP-14 · Competition &amp; Capacity Benchmarking</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Crew Planning &amp; Rostering</h1>
-    <p>Flight Operations · 0 of 15 subprocesses complete · Updated 2026-03-18 18:42</p>
+    <h1>Competition &amp; Capacity Benchmarking</h1>
+    <p>Network Planning &amp; Scheduling › Schedule Planning · 17 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-18 18:42</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-SP-14</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-01</span>Crew Pairing Optimization</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-sp-14">
+      <img src="../../../assets/img/np-sp-14.png" alt="NP-SP-14 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-sp-14').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-sp-14').style.display='flex'">
+      <div id="diag-placeholder-np-sp-14" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-01/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract competitor schedule data from OAG feed</td>
+  <td class="td-role">Network Intelligence Analyst</td>
+  <td><span class="stag custom">OAG Schedule Analyser</span></td>
+  <td style="font-size:10px;color:#6b7280">Weekly OAG data subscription refresh (SSIM-format schedule file)</td>
+  <td style="font-size:10px">Structured competitor schedule dataset by route, frequency, and aircraft type</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data currency: schedule feed ≤7 days old; coverage ≥95% of target markets</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Ingest DOT Form 41 traffic and capacity statistics</td>
+  <td class="td-role">Network Intelligence Analyst</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">US DOT BTS Form 41 quarterly release (T-100 domestic segment data)</td>
+  <td style="font-size:10px">Market-level ASM, RPM, and enplanement records loaded to Redshift</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Ingestion completeness ≥99% of published BTS records; pipeline SLA &lt;4 hrs post-BTS release</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Pull GDS booking and availability data for share estimation</td>
+  <td class="td-role">Network Intelligence Analyst</td>
+  <td><span class="stag gds">Sabre GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">Sabre MarketIntelligence booking data extract; Amadeus GDS availability snapshot</td>
+  <td style="font-size:10px">Point-of-sale booking share estimates by O&amp;D market and carrier</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Market coverage: GDS data represents ≥70% of bookable seats on target routes</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Validate data completeness and trigger re-pull if gaps detected</td>
+  <td class="td-role">Network Intelligence Analyst</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Automated data quality report from Redshift completeness checks</td>
+  <td style="font-size:10px">Data validation sign-off or re-pull request to upstream pipeline</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data quality gate pass rate ≥98% before advancing to analysis phase</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Map competitor frequency and timing by route</td>
+  <td class="td-role">Schedule Planning Analyst</td>
+  <td><span class="stag custom">OAG Schedule Analyser</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated competitor schedule dataset from Step 1.4</td>
+  <td style="font-size:10px">Frequency matrix by competitor, route, and departure time bank</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Frequency gap identified on ≥80% of monitored routes within 5 business days of OAG refresh</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Assess competitor fleet gauge and seat capacity per route</td>
+  <td class="td-role">Schedule Planning Analyst</td>
+  <td><span class="stag custom">OAG Schedule Analyser</span></td>
+  <td style="font-size:10px;color:#6b7280">SSIM aircraft type codes from OAG feed; Amadeus SkyWORKS fleet reference table</td>
+  <td style="font-size:10px">Seat capacity report per competitor flight by route and equipment type</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Seat capacity variance vs prior period flagged within ±5% accuracy against T-100 actuals</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Identify competitive schedule gaps and overlap windows</td>
+  <td class="td-role">Schedule Planning Analyst</td>
+  <td><span class="stag amadeus">Amadeus SkySYM</span></td>
+  <td style="font-size:10px;color:#6b7280">Frequency matrix and seat capacity report from Steps 2.1–2.2</td>
+  <td style="font-size:10px">Route priority list ranked by competitive exposure score; whitespace opportunity map</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">≥5 whitespace route opportunities or ≥3 overlap-reduction candidates identified per quarterly cycle</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Determine whether material competitive threat warrants escalation</td>
+  <td class="td-role">Director of Network Planning</td>
+  <td><span class="stag amadeus">Amadeus SkySYM</span></td>
+  <td style="font-size:10px;color:#6b7280">Competitive exposure score and whitespace map from Step 2.3</td>
+  <td style="font-size:10px">Decision: escalate to capacity modelling (Y) or archive for quarterly review (N)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Escalation decision issued within 5 business days of schedule gap analysis completion</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Compute ASM and RPM trends versus industry peers</td>
+  <td class="td-role">Revenue Planning Analyst</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">T-100 records and OAG capacity data from Redshift; peer carrier selection list</td>
+  <td style="font-size:10px">Rolling 12-month ASM/RPM trend report vs peer group (e.g. Delta, United, Southwest)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ASM CAGR benchmarked against top-5 network carriers; report produced within 3 days of T-100 release</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Benchmark CASK and RASK against published Form 41 data</td>
+  <td class="td-role">Revenue Planning Analyst</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">DOT Form 41 P-12 financial schedules; internal cost allocation data from SAP S/4HANA Finance</td>
+  <td style="font-size:10px">CASK/RASK variance report with carrier ranking and gap-to-best-in-class analysis</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">RASK within ±3% of peer median; CASK gap-to-best flagged if &gt;10% adverse variance</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Evaluate whether own metrics fall below benchmark thresholds</td>
+  <td class="td-role">Director of Network Planning</td>
+  <td><span class="stag custom">Tableau / Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">CASK/RASK variance report and ASM/RPM trend analysis</td>
+  <td style="font-size:10px">Benchmark status flag: within tolerance / below threshold / critical gap</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Benchmark review cycle completed quarterly; critical gaps escalated to VP Network within 48 hrs</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Run O&amp;D traffic share analysis by market</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus SkyCAST</span></td>
+  <td style="font-size:10px;color:#6b7280">GDS booking share data; T-100 O&amp;D traffic estimates; SkyCAST demand model</td>
+  <td style="font-size:10px">Market share report by O&amp;D pair: own share vs top-3 competitors, trend over 8 quarters</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Market share tracking coverage ≥90% of top-50 O&amp;D markets by revenue; report cycle ≤10 business days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Model revenue impact of competitor capacity changes</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus SkySYM</span></td>
+  <td style="font-size:10px;color:#6b7280">Market share report; competitor capacity delta from Phase 2; SkySYM demand elasticity curves</td>
+  <td style="font-size:10px">Revenue impact model: projected incremental revenue gain/loss under each competitive scenario</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Revenue impact model completed within 5 business days; scenario accuracy validated against last 4 actuals within ±8%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Assess whether schedule response is justified by revenue model</td>
+  <td class="td-role">Director of Network Planning</td>
+  <td><span class="stag amadeus">Amadeus SkySYM</span></td>
+  <td style="font-size:10px;color:#6b7280">Revenue impact model from Step 4.2; available fleet and crew headroom data</td>
+  <td style="font-size:10px">Go/no-go decision on capacity response; disposition for each flagged route</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Decision issued within 3 business days of revenue model delivery; routes with projected NPV &gt;$500K fast-tracked to schedule change workflow</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Draft capacity response and schedule recommendations</td>
+  <td class="td-role">Schedule Planning Manager</td>
+  <td><span class="stag amadeus">Amadeus SkyWORKS</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved route disposition list from Step 4.3; current season schedule in SkyWORKS</td>
+  <td style="font-size:10px">Draft schedule change request: frequency additions, gauge upgrades, or withdrawals with effective dates</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Draft recommendations delivered within 5 business days of go-decision; SSIM-formatted change files ready for slot filing</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Cross-validate recommendations with Amadeus NRM inventory</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Draft schedule change request; NRM current fare class inventory and booking pace</td>
+  <td style="font-size:10px">NRM alignment sign-off or revised recommendation with RM-adjusted timing/frequency</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NRM review completed within 3 business days; &lt;10% of recommendations require material revision due to inventory conflict</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Submit approved schedule changes to planning queue</td>
+  <td class="td-role">Schedule Planning Manager</td>
+  <td><span class="stag amadeus">Amadeus SkyWORKS</span></td>
+  <td style="font-size:10px;color:#6b7280">NRM-approved schedule change request; IATA slot filing deadlines</td>
+  <td style="font-size:10px">Confirmed schedule change submitted to SkyWORKS production queue; IATA CRS slot filing initiated where required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of approved changes submitted within IATA CRS filing window; zero capacity responses missed due to deadline breach</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-02</span>Crew Rostering &amp; Bidding</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-SP-14</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network Planning &amp; Scheduling</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Schedule Planning</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Competition &amp; Capacity Benchmarking</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">17 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">2 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Network Intelligence Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Schedule Planning Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Director of Network Planning</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Revenue Planning Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>Revenue Management Analyst</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Schedule Planning Manager</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">OAG Schedule Analyser</span><span class="stag aws">AWS S3 / Redshift</span><span class="stag gds">Sabre GDS</span><span class="stag amadeus">Amadeus SkySYM</span><span class="stag custom">Tableau / Power BI</span><span class="stag amadeus">Amadeus SkyCAST</span><span class="stag amadeus">Amadeus SkyWORKS</span><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract competitor schedule data from OAG feed</span><span class="kval">Data currency: schedule feed ≤7 days old; coverage ≥95% of target markets</span></div><div class="krow"><span class="kname">Ingest DOT Form 41 traffic and capacity statistics</span><span class="kval">Ingestion completeness ≥99% of published BTS records; pipeline SLA &lt;4 hrs post-BTS release</span></div><div class="krow"><span class="kname">Pull GDS booking and availability data for share estimation</span><span class="kval">Market coverage: GDS data represents ≥70% of bookable seats on target routes</span></div><div class="krow"><span class="kname">Validate data completeness and trigger re-pull if gaps detected</span><span class="kval">Data quality gate pass rate ≥98% before advancing to analysis phase</span></div><div class="krow"><span class="kname">Map competitor frequency and timing by route</span><span class="kval">Frequency gap identified on ≥80% of monitored routes within 5 business days of OAG refresh</span></div><div class="krow"><span class="kname">Assess competitor fleet gauge and seat capacity per route</span><span class="kval">Seat capacity variance vs prior period flagged within ±5% accuracy against T-100 actuals</span></div><div class="krow"><span class="kname">Identify competitive schedule gaps and overlap windows</span><span class="kval">≥5 whitespace route opportunities or ≥3 overlap-reduction candidates identified per quarterly cycle</span></div><div class="krow"><span class="kname">Determine whether material competitive threat warrants escalation</span><span class="kval">Escalation decision issued within 5 business days of schedule gap analysis completion</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">OAG schedule data lags actual GDS availability by 24–72 hrs; codeshare operating vs marketing carrier misclassification inflates competitor frequency counts</div><div class="risk-card">T-100 data is released with a 60-day lag; ultra-LCC capacity additions are visible in OAG weeks before T-100 confirms actual operation</div><div class="risk-card">NDC channel bookings bypass GDS; LCC direct-channel share is structurally underrepresented, causing systematic underestimation of competitor capture rate</div><div class="risk-card">Partial OAG refreshes due to airline filing delays leave gaps for low-frequency international routes; manual gap-filling introduces analyst subjectivity</div><div class="risk-card">Ultra-LCC seasonal schedule volatility (Spirit, Frontier) makes frequency comparisons unstable; weekly snapshots miss intra-week capacity dumping tactics</div><div class="risk-card">SSIM equipment codes are often filed as generic family codes (e.g. 32A for any A320-family) making true gauge differentiation between A319/A320/A321neo unreliable</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Weekly OAG data subscription refresh (SSIM-format schedule file)</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Confirmed schedule change submitted to SkyWORKS production queue; IATA CRS slot filing initiated where required</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-02/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-03</span>Crew Day-of-Operations Tracking</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-04</span>Fatigue &amp; Rest Rule Compliance (FAR Part 117)</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-04/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-05</span>Crew Training &amp; Recurrency Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-06</span>Crew Licensing &amp; Medical Certification</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-07</span>Reserve Crew Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-08</span>Crew Hotel &amp; Transportation Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-09</span>Cabin Crew Service Standards &amp; Training</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-10</span>Crew Disruption Recovery &amp; Re-pairing</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-11</span>Crew Union &amp; Labour Agreement Compliance</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-12</span>Crew Recruitment &amp; Onboarding</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-13</span>Deadhead &amp; Positioning Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-14</span>Crew Performance Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-15</span>Crew Payroll &amp; Hours Tracking</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../np-sp-13/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-SP-13 · Charter &amp; Ad-Hoc Flight Planning</span></a><a class="pn-btn" href="../np-sp-15/"><span><span class="sub">Next</span>NP-SP-15 · Strategic Network Planning</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

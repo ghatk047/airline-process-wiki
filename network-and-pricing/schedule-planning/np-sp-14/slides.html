@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SP-14 Slides — Competition &amp; Capacity Benchmarking</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-14</span>
+    <h1>Competition &amp; Capacity Benchmarking</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sp-14.png" alt="BPMN for NP-SP-14" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-14</span>
+    <h1>Competition &amp; Capacity Benchmarking</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SP-14</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Schedule Planning</li>
+          <li><strong>L3 Name:</strong> Competition &amp; Capacity Benchmarking</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">2</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract competitor schedule data from OAG feed</li><li><strong>Phase 2:</strong> Map competitor frequency and timing by route</li><li><strong>Phase 3:</strong> Compute ASM and RPM trends versus industry peers</li><li><strong>Phase 4:</strong> Run O&amp;D traffic share analysis by market</li><li><strong>Phase 5:</strong> Draft capacity response and schedule recommendatio</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Director of Network Planning</li><li>Network Intelligence Analyst</li><li>Revenue Management Analyst</li><li>Revenue Planning Analyst</li><li>Schedule Planning Analyst</li><li>Schedule Planning Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS S3 / Redshift</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>Amadeus SkyCAST</li><li>Amadeus SkySYM</li><li>Amadeus SkyWORKS</li><li>OAG Schedule Analyser</li><li>Sabre GDS</li><li>Tableau / Power BI</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-14</span>
+    <h1>Competition &amp; Capacity Benchmarking</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract competitor schedule data from OAG feed</td>
+        <td class="kpi-col">Data currency: schedule feed ≤7 days old; coverage ≥95% of target markets</td>
+        <td class="pain-col">OAG schedule data lags actual GDS availability by 24–72 hrs; codeshare operating vs marketing carrier misclassification inflates competitor frequency counts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Ingest DOT Form 41 traffic and capacity statistics</td>
+        <td class="kpi-col">Ingestion completeness ≥99% of published BTS records; pipeline SLA &lt;4 hrs post-BTS release</td>
+        <td class="pain-col">T-100 data is released with a 60-day lag; ultra-LCC capacity additions are visible in OAG weeks before T-100 confirms actual operation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Pull GDS booking and availability data for share estimation</td>
+        <td class="kpi-col">Market coverage: GDS data represents ≥70% of bookable seats on target routes</td>
+        <td class="pain-col">NDC channel bookings bypass GDS; LCC direct-channel share is structurally underrepresented, causing systematic underestimation of competitor capture rate</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Validate data completeness and trigger re-pull if gaps detected</td>
+        <td class="kpi-col">Data quality gate pass rate ≥98% before advancing to analysis phase</td>
+        <td class="pain-col">Partial OAG refreshes due to airline filing delays leave gaps for low-frequency international routes; manual gap-filling introduces analyst subjectivity</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Map competitor frequency and timing by route</td>
+        <td class="kpi-col">Frequency gap identified on ≥80% of monitored routes within 5 business days of OAG refresh</td>
+        <td class="pain-col">Ultra-LCC seasonal schedule volatility (Spirit, Frontier) makes frequency comparisons unstable; weekly snapshots miss intra-week capacity dumping tactics</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Assess competitor fleet gauge and seat capacity per route</td>
+        <td class="kpi-col">Seat capacity variance vs prior period flagged within ±5% accuracy against T-100 actuals</td>
+        <td class="pain-col">SSIM equipment codes are often filed as generic family codes (e.g. 32A for any A320-family) making true gauge differentiation between A319/A320/A321neo unreliable</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Identify competitive schedule gaps and overlap windows</td>
+        <td class="kpi-col">≥5 whitespace route opportunities or ≥3 overlap-reduction candidates identified per quarterly cycle</td>
+        <td class="pain-col">SkySYM scenario modelling requires manual O&amp;D demand curves as input; stale demand assumptions from pre-COVID traffic models skew gap analysis in recovering thin markets</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Determine whether material competitive threat warrants escalation</td>
+        <td class="kpi-col">Escalation decision issued within 5 business days of schedule gap analysis completion</td>
+        <td class="pain-col">Threshold for &#x27;material threat&#x27; is qualitatively defined; no standardised scoring rubric causes inconsistent escalation patterns across different analyst teams</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Compute ASM and RPM trends versus industry peers</td>
+        <td class="kpi-col">ASM CAGR benchmarked against top-5 network carriers; report produced within 3 days of T-100 release</td>
+        <td class="pain-col">Peer group selection is subjective; including ULCCs in the peer set distorts unit cost benchmarks given fundamentally different cost structures and ancillary revenue models</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Benchmark CASK and RASK against published Form 41 data</td>
+        <td class="kpi-col">RASK within ±3% of peer median; CASK gap-to-best flagged if &gt;10% adverse variance</td>
+        <td class="pain-col">SAP FI/CO cost data uses internal cost centre allocations that differ from DOT Form 41 reporting categories; reconciliation requires manual mapping table maintenance</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Evaluate whether own metrics fall below benchmark thresholds</td>
+        <td class="kpi-col">Benchmark review cycle completed quarterly; critical gaps escalated to VP Network within 48 hrs</td>
+        <td class="pain-col">Power BI dashboards pull from Redshift snapshots with a 24-hr lag; real-time competitive capacity changes triggered by fare sales are invisible until next refresh cycle</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Run O&amp;D traffic share analysis by market</td>
+        <td class="kpi-col">Market share tracking coverage ≥90% of top-50 O&amp;D markets by revenue; report cycle ≤10 business days</td>
+        <td class="pain-col">SkyCAST O&amp;D demand models are calibrated on historical traffic; post-pandemic leisure demand shift to off-peak O&amp;D pairs is not yet fully reflected in SkyCAST baseline assumptions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Model revenue impact of competitor capacity changes</td>
+        <td class="kpi-col">Revenue impact model completed within 5 business days; scenario accuracy validated against last 4 actuals within ±8%</td>
+        <td class="pain-col">SkySYM demand elasticity parameters require periodic recalibration; outdated elasticities overestimate diversion from legacy network carriers and underestimate LCC price sensitivity</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Assess whether schedule response is justified by revenue model</td>
+        <td class="kpi-col">Decision issued within 3 business days of revenue model delivery; routes with projected NPV &gt;$500K fast-tracked to schedule change workflow</td>
+        <td class="pain-col">Fleet headroom data from the crew system and SkyMAX fleet assignment may reflect tentative aircraft swaps not yet confirmed; committing capacity response against uncommitted fleet creates downstream conflict</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Draft capacity response and schedule recommendations</td>
+        <td class="kpi-col">Draft recommendations delivered within 5 business days of go-decision; SSIM-formatted change files ready for slot filing</td>
+        <td class="pain-col">SkyWORKS schedule change workflow requires SSIM files to comply with IATA Season A/B slot deadlines; competitive response decisions made mid-season often miss the coordinated season window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Cross-validate recommendations with Amadeus NRM inventory</td>
+        <td class="kpi-col">NRM review completed within 3 business days; &lt;10% of recommendations require material revision due to inventory conflict</td>
+        <td class="pain-col">NRM inventory controls are set per flight departure; schedule changes that shift flights to new time slots reset booking pace baselines and require NRM recalibration, creating a 2–3 week blind spot in yield management</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Submit approved schedule changes to planning queue</td>
+        <td class="kpi-col">100% of approved changes submitted within IATA CRS filing window; zero capacity responses missed due to deadline breach</td>
+        <td class="pain-col">IATA CRS coordinated slot filings at Level 3 airports (e.g. LHR, JFK) require bilateral coordination that can delay competitive response by 3–6 months; uncoordinated airports still subject to airlines&#x27; own scheduling freeze windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+</body>
+</html>
