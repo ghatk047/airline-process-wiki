@@ -1,0 +1,52 @@
+flowchart LR
+  subgraph P1["Phase 1: Slot Demand Planning"]
+    A([Start]) --> B[Analyse demand vs slot inventory]
+    B --> C{Slot gaps identified?}
+    C -- No --> Z1([No action needed])
+    C -- Yes --> D[Prioritise slot request list]
+  end
+  subgraph P2["Phase 2: Historical Series Review"]
+    D --> E[Extract historical series — IATA CRS]
+    E --> F{80/20 rule at risk?}
+    F -- Yes --> G[File exemption — IATA CRS]
+    G --> H[Validate compliance per series]
+    F -- No --> H
+  end
+  subgraph P3["Phase 3: Request Submission"]
+    H --> I[Generate SSIM SCR files — SkyWORKS]
+    I --> J[Submit to coordinators — IATA CRS]
+    J --> K{Allocation matches request?}
+    K -- Yes --> P
+    K -- No --> L[Flag gaps for negotiation]
+  end
+  subgraph P4["Phase 4: Conference Negotiation"]
+    L --> M[Prepare negotiation brief — SkySYM]
+    M --> N[Attend IATA slot conference]
+    N --> O{Gaps resolved at conference?}
+    O -- No --> Q[Escalate to appeal panel]
+    Q --> N
+    O -- Yes --> P[Confirm slot allocation]
+  end
+  subgraph P5["Phase 5: Confirmation & Integration"]
+    P --> R[Integrate slots into SkyWORKS]
+    R --> S{Schedule reconciled?}
+    S -- No --> R
+    S -- Yes --> T[Publish SSIM to GDS & PSS]
+  end
+  subgraph P6["Phase 6: In-Season Compliance"]
+    T --> U[Monitor weekly utilisation]
+    U --> V{Usage below 80% threshold?}
+    V -- Yes --> W[Return or swap slots — IATA CRS]
+    W --> U
+    V -- No --> X([Season compliant])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Z1 fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
