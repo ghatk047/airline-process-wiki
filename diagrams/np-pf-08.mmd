@@ -1,0 +1,44 @@
+flowchart LR
+  subgraph P1["Phase 1: Fare Strategy & Trigger Analysis"]
+    A([Start]) --> B[Monitor competitive\nfare environment]
+    B --> C{Fare change\ntrigger identified?}
+    C -- No --> B
+    C -- Yes --> D{RM approval\ngranted?}
+    D -- No --> B
+    D -- Yes --> E[Approve fare\nstrategy memo]
+  end
+  subgraph P2["Phase 2: Fare Amount & Rule Construction"]
+    E --> F[Define fare amounts\n& basis codes]
+    F --> G[Code ATPCO rule\ncategories]
+    G --> H[Build routing &\nfootnote records]
+    H --> I{Validation &\nconflict check?}
+    I -- Fail --> G
+    I -- Pass --> J[Approved fare\npackage]
+  end
+  subgraph P3["Phase 3: ATPCO Submission & Error Resolution"]
+    J --> K[Submit via\nATCPO Fares Portal]
+    K --> L{Blocking errors\nfound?}
+    L -- Yes --> G
+    L -- No --> M[Confirm effective\ndate & receipt]
+  end
+  subgraph P4["Phase 4: GDS Distribution & Verification"]
+    M --> N[Verify dist. across\nSabre/Amadeus/TPT]
+    N --> O{GDS pricing\naudit passed?}
+    O -- No --> K
+    O -- Yes --> P[Activate NDC &\ndirect channels]
+  end
+  subgraph P5["Phase 5: Post-Filing Maintenance & Audit"]
+    P --> Q[Monitor competitive\nmatching activity]
+    Q --> R[Execute periodic\ntariff rule audit]
+    R --> S{Retraction or\namendment needed?}
+    S -- Yes --> G
+    S -- No --> T([End])
+  end
+  style A fill:#003366,color:#fff,stroke:#003366
+  style T fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
