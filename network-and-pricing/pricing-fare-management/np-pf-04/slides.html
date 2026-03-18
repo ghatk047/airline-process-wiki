@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-PF-04 Slides — Fare Rules &amp; Restriction Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-04</span>
+    <h1>Fare Rules &amp; Restriction Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-pf-04.png" alt="BPMN for NP-PF-04" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-04</span>
+    <h1>Fare Rules &amp; Restriction Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-PF-04</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Pricing &amp; Fare Management</li>
+          <li><strong>L3 Name:</strong> Fare Rules &amp; Restriction Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Initiate fare rule design from revenue strategy</li><li><strong>Phase 2:</strong> Code fare rules in ATPCO category format</li><li><strong>Phase 3:</strong> Submit fare rules to ATPCO for publication</li><li><strong>Phase 4:</strong> Monitor fare rule adherence in issued tickets</li><li><strong>Phase 5:</strong> Receive and triage waiver and override requests</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>ATPCO Rule Specialist</li><li>Digital Distribution Analyst</li><li>Head of Pricing</li><li>Pricing Analyst</li><li>Pricing Compliance Analyst</li><li>Revenue Analyst</li><li>Revenue Integrity Analyst</li><li>Senior Pricing Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO Online (Publisher)</li><li>ATPCO Online (Validator) / Amadeus Altéa PSS (test environment)</li><li>ATPCO Online (retrieval) / internal pricing policy database</li><li>Amadeus Altéa PSS (OSI/SSR entries) / CRM</li><li>Amadeus Altéa PSS (test environment) / PROS RM</li><li>Amadeus Altéa PSS / Revenue Integrity module</li><li>Amadeus Altéa PSS / ServiceNow</li><li>Amadeus SkyWORKS</li><li>NDC API Gateway / Airline direct booking engine</li><li>Sabre GDS / Travelport GDS / Amadeus GDS</li><li>ServiceNow (approval workflow)</li><li>Tableau / AWS Redshift</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-04</span>
+    <h1>Fare Rules &amp; Restriction Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Initiate fare rule design from revenue strategy</td>
+        <td class="kpi-col">Rule design brief turnaround ≤3 business days from strategy directive</td>
+        <td class="pain-col">Pricing strategy changes arrive without lead time, forcing reactive rule authoring that increases first-pass error rates above 5%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Define advance purchase and ticketing time limits</td>
+        <td class="kpi-col">AP/TTL restriction accuracy ≥99.5% match to approved design brief</td>
+        <td class="pain-col">ATPCO Category 5 and Category 7 interactions are not validated automatically; misconfiguration creates phantom availability windows or incorrect fare displays across all three GDS channels</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Set minimum stay, blackout dates, and seasonality</td>
+        <td class="kpi-col">Seasonal restriction accuracy ≥99%; blackout date coverage = 100% of designated periods</td>
+        <td class="pain-col">Aligning ATPCO Category 6 with Amadeus NRM inventory controls requires manual coordination — no automated sync exists between the RM system and ATPCO rule records</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Define change, cancellation, and refund rules</td>
+        <td class="kpi-col">DOT 24-hour hold/refund rule compliance = 100%; change fee accuracy ≥99.8%</td>
+        <td class="pain-col">DOT 14 CFR Part 259 requires 24-hour hold or refund capability; ATPCO rule coding must precisely match website policy or exposes the airline to DOT enforcement action and reputational risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Code fare rules in ATPCO category format</td>
+        <td class="kpi-col">First-pass coding accuracy ≥97%; coding cycle time ≤4 hours per rule set</td>
+        <td class="pain-col">ATPCO&#x27;s 35-category structure requires deep specialist knowledge; errors in Category 10 (Combinability) cause fare construction failures in GDS that are difficult to isolate and trace post-publication</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Validate rule combinability and fare construction logic</td>
+        <td class="kpi-col">Zero Category 10 combinability errors at filing; validation first-pass rate ≥95%</td>
+        <td class="pain-col">Interline combinability checks are not fully automated — manual cross-referencing against partner airline Category 10 entries is required; gaps cause booking failures on connecting itineraries and trigger agency debit memos</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Simulate fare rule impact across booking scenarios</td>
+        <td class="kpi-col">Simulation coverage ≥90% of active fare class/market combinations; revenue deviation from target ≤2%</td>
+        <td class="pain-col">PSS test environments may lag production by 24–48 hours, meaning simulation results may not reflect current inventory state or recently published competitor fares</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Obtain commercial sign-off on rule parameters</td>
+        <td class="kpi-col">Approval turnaround ≤1 business day; escalation rate &lt;5% of submissions</td>
+        <td class="pain-col">Approval bottlenecks during peak retailing periods (holiday schedule filing) can delay time-sensitive competitive fare responses by 24+ hours, eroding revenue capture</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Submit fare rules to ATPCO for publication</td>
+        <td class="kpi-col">On-time filing rate ≥98%; filing lead time ≥4 hours before effective time (ATPCO minimum)</td>
+        <td class="pain-col">ATPCO filing windows have hard deadlines; rejected records or late submissions leave new fares without valid rules in GDS, causing tickets issued without rules to trigger agency debit memos</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Monitor GDS fare rule uptake and display accuracy</td>
+        <td class="kpi-col">GDS rule display accuracy ≥99.5% within 2 hours of ATPCO effective time</td>
+        <td class="pain-col">GDS cache refresh cycles vary from 15 minutes to 4 hours across Sabre, Travelport, and Amadeus — rule updates display inconsistently during the refresh window, generating agent calls and booking errors</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Validate NDC channel fare rule presentation</td>
+        <td class="kpi-col">NDC rule display accuracy ≥99%; NDC-to-GDS rule parity ≥99.5%</td>
+        <td class="pain-col">NDC offer construction logic does not fully consume all ATPCO rule categories — partial rule implementation in NDC channels creates parity gaps that confuse travel agents and generate customer complaints and potential DOT scrutiny</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Monitor fare rule adherence in issued tickets</td>
+        <td class="kpi-col">Fare rule violation rate &lt;0.5% of issued tickets; ADM (Agency Debit Memo) rate &lt;0.1% of BSP transactions</td>
+        <td class="pain-col">Revenue integrity tools process violations in batch cycles, meaning violations are identified post-issuance; late detection increases ADM management cost and agency relationship friction</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Audit ATPCO rule records against published policy</td>
+        <td class="kpi-col">Rule accuracy vs. policy ≥99.8%; monthly audit cycle; critical discrepancy resolution ≤2 business days</td>
+        <td class="pain-col">Policy changes communicated via email or informal channels may not trigger ATPCO rule updates — misalignment is often discovered only during BSP audit or customer dispute, by which point revenue leakage has already occurred</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Receive and triage waiver and override requests</td>
+        <td class="kpi-col">Waiver triage time ≤4 hours; auto-approval rate for standard waivers ≥70%</td>
+        <td class="pain-col">Mass waiver events during IROPS or weather disruptions generate hundreds of simultaneous override requests — Altéa PSS manual queue processing becomes a critical bottleneck without automated mass-waiver tooling</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Apply approved rule override and document exception</td>
+        <td class="kpi-col">Override processing time ≤2 hours for approved waivers; 100% of exceptions documented in ServiceNow within 24 hours</td>
+        <td class="pain-col">Manual PNR-level overrides in Altéa are not linked back to the originating fare rule — tracking waiver volume and financial impact requires manual reconciliation against BSP settlement data</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Analyse exception patterns and update rule parameters</td>
+        <td class="kpi-col">Exception pattern review cycle = quarterly; rule update trigger = &gt;2% waiver rate on any single rule</td>
+        <td class="pain-col">Exception data is fragmented across Altéa, ServiceNow, and BSP with no unified dashboard — manual aggregation delays pattern recognition and allows suboptimal rule parameters to persist, increasing waiver costs</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+flowchart LR
+  subgraph P1["Phase 1: Fare Rule Design"]
+    A([Start]) --> B[Initiate rule design brief]
+    B --> C[Define AP / TTL / stay restrictions]
+    C --> D[Define change & refund rules]
+  end
+  subgraph P2["Phase 2: Coding & Validation"]
+    D --> E[Code ATPCO categories 2–35]
+    E --> F{Combinability\nconflicts?}
+    F -- Yes --> E
+    F -- No --> G[Simulate booking impact]
+    G --> H{Revenue impact\nacceptable?}
+    H -- No --> E
+    H -- Yes --> I{Commercial\nsign-off?}
+    I -- No --> C
+    I -- Yes --> J[Approved rule set]
+  end
+  subgraph P3["Phase 3: Filing & Distribution"]
+    J --> K[File rules to ATPCO]
+    K --> L{GDS display\ncorrect?}
+    L -- No --> K
+    L -- Yes --> M{NDC parity\nconfirmed?}
+    M -- No --> K
+    M -- Yes --> N[Distribution confirmed]
+  end
+  subgraph P4["Phase 4: Monitoring & Compliance"]
+    N --> O[Monitor ticket rule adherence]
+    O --> P{Violation rate\n> 0.5%?}
+    P -- Yes --> Q[Audit ATPCO vs. policy]
+    Q --> R{Discrepancies\nfound?}
+    R -- Yes --> E
+    R -- No --> S[Compliance confirmed]
+    P -- No --> S
+  end
+  subgraph P5["Phase 5: Exception Management"]
+    S --> T[Triage waiver requests]
+    T --> U{Standard waiver\ncriteria met?}
+    U -- No --> V[Escalate for manual review]
+    U -- Yes --> W[Apply override & document]
+    V --> W
+    W --> X[Analyse exception patterns]
+    X --> Y{Exception rate\n> 2%?}
+    Y -- Yes --> E
+    Y -- No --> Z([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Z fill:#003366,color:#fff,stroke:#003366
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style Y fill:#ff6600,color:#fff,stroke:#ff6600
