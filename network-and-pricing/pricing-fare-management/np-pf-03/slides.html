@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-PF-03 Slides — Promotional Fare Design</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-03</span>
+    <h1>Promotional Fare Design</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-pf-03.png" alt="BPMN for NP-PF-03" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-03</span>
+    <h1>Promotional Fare Design</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-PF-03</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Pricing &amp; Fare Management</li>
+          <li><strong>L3 Name:</strong> Promotional Fare Design</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract revenue shortfall signals by route</li><li><strong>Phase 2:</strong> Define target markets and travel windows</li><li><strong>Phase 3:</strong> Submit fare package to Pricing Committee</li><li><strong>Phase 4:</strong> File promotional fare records in ATPCO</li><li><strong>Phase 5:</strong> Activate promotional fare and initiate sale</li><li><strong>Phase 6:</strong> Pull post-campaign revenue and yield report</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Data &amp; Analytics Engineer</li><li>Digital Distribution Analyst</li><li>Director of Pricing</li><li>Distribution Analyst</li><li>Legal &amp; Regulatory Counsel</li><li>Pricing Analyst</li><li>Pricing Operations Manager</li><li>Revenue Management Analyst</li><li>Senior Pricing Manager</li><li>Tariff Filing Specialist</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>AWS Redshift</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>Amadeus SkyCAST</li><li>Amadeus SkySYM</li><li>NDC API Gateway</li><li>PROS RM</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Sabre GDS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-03</span>
+    <h1>Promotional Fare Design</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract revenue shortfall signals by route</td>
+        <td class="kpi-col">Routes identified with load factor &lt;75% at 60-day departure horizon</td>
+        <td class="pain-col">NRM O&amp;D data aggregation latency of 24 hrs can mask intra-day demand shifts on thin routes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Benchmark competitor promotional fares</td>
+        <td class="kpi-col">Competitor fare monitoring coverage ≥95% of target markets</td>
+        <td class="pain-col">ATPCO feed refresh lag up to 4 hours means recently filed competitor promos may be missed</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate demand gap and competitive case</td>
+        <td class="kpi-col">Decision cycle time &lt;2 business days from trigger</td>
+        <td class="pain-col">Demand elasticity coefficients in SkyCAST may not reflect post-COVID traveller behaviour shifts</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Define target markets and travel windows</td>
+        <td class="kpi-col">Scope document completed within 1 business day of approval</td>
+        <td class="pain-col">Point-to-point booking data cannot quantify connecting-itinerary stimulus for carriers with hub overlap</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Model promotional fare levels and AP rules</td>
+        <td class="kpi-col">Modelled incremental revenue uplift ≥8% over base forecast</td>
+        <td class="pain-col">PROS RM fare optimisation models require minimum 18 months booking history; thin routes yield unreliable elasticity estimates</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Simulate revenue and load factor impact</td>
+        <td class="kpi-col">Projected system load factor ≥83%; projected RASM ≥ current period RASM</td>
+        <td class="pain-col">SkySYM scenario runs do not model real-time competitor reaction; simulation may overstate incremental demand</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Draft detailed fare rules and blackout dates</td>
+        <td class="kpi-col">Fare rule completeness: all ATPCO mandatory categories populated before submission</td>
+        <td class="pain-col">Manual blackout date entry is error-prone; misaligned peak dates cause revenue leakage during holidays</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Submit fare package to Pricing Committee</td>
+        <td class="kpi-col">Submission to decision cycle ≤3 business days</td>
+        <td class="pain-col">Committee quorum requirements can delay approval by 3–5 days during peak planning seasons</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Conduct DOT advertising compliance review</td>
+        <td class="kpi-col">100% of promotional fares reviewed against DOT 14 CFR Part 399 before publication</td>
+        <td class="pain-col">DOT rules require all fees to be disclosed in advertised price; dynamic ancillary bundles create disclosure complexity</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Issue formal fare design approval record</td>
+        <td class="kpi-col">Approval record issued within 1 business day of final compliance clearance</td>
+        <td class="pain-col">Audit trail stored in disconnected email systems; no integrated workflow between legal review and pricing execution tools</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>File promotional fare records in ATPCO</td>
+        <td class="kpi-col">Filing-to-distribution latency &lt;4 hours; ATPCO error-free submission rate ≥99.5%</td>
+        <td class="pain-col">ATPCO Category 25 (fare by rule) errors are common when promotional fares inherit base fare conditions incorrectly</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Verify fare pickup in all GDS channels</td>
+        <td class="kpi-col">GDS pickup verified within 6 hours of ATPCO filing; parity across all 3 GDS ≥99%</td>
+        <td class="pain-col">Travelport fare pickup latency can exceed Sabre by 2+ hours; delayed availability causes agent-quoted fare mismatches</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Publish fare via NDC API Gateway and direct.com</td>
+        <td class="kpi-col">Direct channel price parity with GDS ≥99.9%; NDC offer publication latency &lt;2 hours</td>
+        <td class="pain-col">NDC offer schema versioning between airline and OTA partners frequently causes display errors for complex rule fares</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Activate promotional fare and initiate sale</td>
+        <td class="kpi-col">Sale activation within 30 minutes of planned launch time; zero mismatch between advertised and bookable fare</td>
+        <td class="pain-col">Altéa inventory class configuration must align with ATPCO filed booking codes; manual misalignment causes zero-sell errors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Monitor booking pace and load factor daily</td>
+        <td class="kpi-col">Daily booking pace within ±15% of forecast; load factor trajectory toward ≥83% at departure</td>
+        <td class="pain-col">NRM bid price recalculation triggered by promo booking surge can inadvertently close higher-yield inventory on peak flights</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Adjust inventory caps based on pace signal</td>
+        <td class="kpi-col">Intervention decision time &lt;4 hours from pace alert; yield dilution contained to &lt;3% of base fare RASM</td>
+        <td class="pain-col">Real-time cap adjustments in NRM can conflict with GDS cached availability, creating over-sell risk on thin-gauge aircraft</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Pull post-campaign revenue and yield report</td>
+        <td class="kpi-col">Report generated within 5 business days of sale close; variance from projection documented</td>
+        <td class="pain-col">Attribution of incremental revenue vs. organic demand is methodologically complex without a clean control group</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Assess yield dilution and cannibalisation</td>
+        <td class="kpi-col">Net revenue positive vs. no-promo scenario at ≥95% confidence; cannibalisation rate &lt;10%</td>
+        <td class="pain-col">SkySYM counterfactual modelling depends on baseline demand stability; external shocks (weather, competitor sale) confound results</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Archive campaign benchmarks to data lake</td>
+        <td class="kpi-col">Campaign record available in data lake within 2 business days of analysis sign-off</td>
+        <td class="pain-col">Inconsistent campaign tagging taxonomy across pricing and RM teams reduces future query accuracy</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+</body>
+</html>
