@@ -1,0 +1,48 @@
+flowchart LR
+  subgraph P1["Phase 1: Market Data Ingestion"]
+    A([Start]) --> B[Ingest ATPCO\ncompetitor fares]
+    B --> C[Load NRM\ndemand signals]
+    C --> D{Data quality\n≥95%?}
+    D -- No --> B
+    D -- Yes --> E
+  end
+  subgraph P2["Phase 2: Model Configuration"]
+    E[Configure fare\nelasticity params] --> F[Set fare\nguardrails]
+    F --> G{Config\napproved?}
+    G -- No --> E
+    G -- Yes --> H
+  end
+  subgraph P3["Phase 3: Price Optimization"]
+    H[Run PROS RM\noptimization] --> I[Apply business\nrules overlay]
+    I --> J{Guardrail\nvalidation pass?}
+    J -- No --> I
+    J -- Yes --> K
+  end
+  subgraph P4["Phase 4: Fare Publishing"]
+    K[File fares\nto ATPCO] --> L[Distribute to\nGDS + NDC]
+    L --> M{Altéa PSS\nconfirmed?}
+    M -- No --> K
+    M -- Yes --> N
+  end
+  subgraph P5["Phase 5: Override Management"]
+    N[Monitor live\nperformance] --> O{Anomaly\ndetected?}
+    O -- No --> N
+    O -- Yes --> P[Apply manual\noverride]
+    P --> K
+  end
+  subgraph P6["Phase 6: Recalibration"]
+    N --> Q[Assess model\nperformance]
+    Q --> R{Recalibration\nneeded?}
+    R -- No --> Q
+    R -- Yes --> S([Updated model\nreleased])
+    S --> E
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style S fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
