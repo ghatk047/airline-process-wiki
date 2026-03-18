@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SP-09 Slides — Alliance &amp; Partnership Network Strategy</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-09</span>
+    <h1>Alliance &amp; Partnership Network Strategy</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sp-09.png" alt="BPMN for NP-SP-09" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-09</span>
+    <h1>Alliance &amp; Partnership Network Strategy</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SP-09</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Schedule Planning</li>
+          <li><strong>L3 Name:</strong> Alliance &amp; Partnership Network Strategy</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Scan competitive landscape for partnership gaps</li><li><strong>Phase 2:</strong> Model incremental codeshare revenue per O&amp;D</li><li><strong>Phase 3:</strong> File for antitrust immunity or bilateral ASA revie</li><li><strong>Phase 4:</strong> Negotiate Interline Traffic Agreement and prorate </li><li><strong>Phase 5:</strong> Configure PSS codeshare inventory and host carrier</li><li><strong>Phase 6:</strong> Launch codeshare service and activate commercial m</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Alliance &amp; Partnerships Manager</li><li>Alliance Performance Analyst</li><li>Chief Commercial Officer</li><li>Commercial Finance Analyst</li><li>Distribution Systems Analyst</li><li>Network Strategy Analyst</li><li>PSS Configuration Specialist</li><li>Partnerships Implementation Lead</li><li>Pricing &amp; Fares Analyst</li><li>Regulatory Affairs Director</li><li>Revenue Strategy Manager</li><li>Slot Coordination Manager</li><li>VP Network Planning</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>AWS Redshift</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM)</li><li>Amadeus SkyCAST</li><li>Amadeus SkySYM</li><li>IATA CRS (Coordinated Reservation System)</li><li>OAG Schedule Analyser</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Sabre GDS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SP-09</span>
+    <h1>Alliance &amp; Partnership Network Strategy</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Scan competitive landscape for partnership gaps</td>
+        <td class="kpi-col">O&amp;D market coverage gap ≥5% of total addressable revenue identified</td>
+        <td class="pain-col">OAG data lags IATA SSIM submissions by 4–6 weeks, causing stale competitive benchmarks during fast-moving alliance negotiations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Assess network complementarity of candidate partners</td>
+        <td class="kpi-col">Incremental connecting pax potential ≥50,000 pax/year per candidate to proceed</td>
+        <td class="pain-col">SkySYM simulation accuracy degrades for thin O&amp;D markets (&lt;10 bookings/day) where demand signal is insufficient for reliable modelling</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Gate: Approve candidate shortlist for business case</td>
+        <td class="kpi-col">Shortlist decision cycle ≤10 business days from scan initiation</td>
+        <td class="pain-col">SkyCAST demand forecasts for new O&amp;D markets (no historical booking data) carry ±25% confidence intervals, creating executive pushback on go/no-go decisions</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Model incremental codeshare revenue per O&amp;D</td>
+        <td class="kpi-col">Projected revenue uplift ≥3% on affected O&amp;D markets within 12 months of go-live</td>
+        <td class="pain-col">NRM O&amp;D revenue attribution for connecting itineraries is split by leg, obscuring true contribution of partner-fed traffic; manual adjustment required</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Model interline prorate and revenue-share economics</td>
+        <td class="kpi-col">Partnership NPV ≥ $5M over 5-year horizon to proceed to regulatory review</td>
+        <td class="pain-col">IATA standard prorate methodology (IATA Resolution 850) frequently under-compensates short-haul feeder partners, leading to prolonged bilateral negotiation cycles averaging 6–9 months</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Gate: Approve business case for regulatory submission</td>
+        <td class="kpi-col">Business case approval decision ≤15 business days from financial model submission</td>
+        <td class="pain-col">Executive approval stalls when NPV is marginal (e.g. $5–8M) and downside scenarios show revenue dilution on own metal — no standardised sensitivity threshold exists</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>File for antitrust immunity or bilateral ASA review</td>
+        <td class="kpi-col">Regulatory filing submitted within 20 business days of business case approval</td>
+        <td class="pain-col">US DOT antitrust immunity reviews average 12–18 months; EU bilateral amendments require ECAA or bilateral renegotiation via member-state government, adding 6–24 months of uncertainty</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Assess slot availability at partner hub airports</td>
+        <td class="kpi-col">Required slots secured for ≥90% of planned codeshare frequency within IATA schedule season</td>
+        <td class="pain-col">Level 3 coordinated airports (e.g. LHR, JFK, CDG) have near-zero slot availability; grandfather rights are held by incumbents, making new entry dependent on costly secondary market transactions or seasonal swap negotiations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Gate: Confirm regulatory and slot approvals are obtainable</td>
+        <td class="kpi-col">Clear regulatory pathway confirmed within 30 business days of filing; slot coverage ≥90%</td>
+        <td class="pain-col">Regulatory timelines are non-deterministic; slot constraints at Level 3 airports can invalidate the entire business case after 3–6 months of investment, with no partial recovery mechanism</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Negotiate Interline Traffic Agreement and prorate rates</td>
+        <td class="kpi-col">ITA negotiation closed within 60 days of regulatory clearance; prorate floor ≥65% of published fare for feeder leg</td>
+        <td class="pain-col">Altéa interline carrier onboarding requires manual BSP/clearing house configuration (ARC/IATA) taking 4–8 weeks after ITA signing — creates gap between commercial agreement and operational readiness</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Negotiate codeshare block-space or free-sale agreement</td>
+        <td class="kpi-col">Codeshare seat utilisation ≥70% on protected block within 6 months of launch</td>
+        <td class="pain-col">Free-sale agreements create inventory cannibalisation risk when partner&#x27;s own metal competes on overlapping O&amp;D segments; NRM O&amp;D controls do not natively arbitrate between own-metal and codeshare inventory in real time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Gate: Validate agreement terms against revenue policy</td>
+        <td class="kpi-col">Agreement terms deliver ≥90% of NPV projected in approved business case</td>
+        <td class="pain-col">Late-stage concessions (e.g. prorate adjustments, block-space size reductions) during final negotiation rounds can erode NPV below approval threshold without triggering a formal re-approval cycle</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>File codeshare and interline fares via ATPCO</td>
+        <td class="kpi-col">100% of planned O&amp;D joint fares live in GDS within 14 days of agreement execution</td>
+        <td class="pain-col">ATPCO filing errors in combinability rules (Cat 10) cause GDS repricing failures, leading to customer-facing booking errors and revenue leakage; testing requires manual GDS shop verification across Sabre, Travelport, and Amadeus</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Configure PSS codeshare inventory and host carrier setup</td>
+        <td class="kpi-col">PSS configuration completed and unit-tested within 21 days of agreement execution</td>
+        <td class="pain-col">Altéa codeshare configuration requires coordination across PSS, DCS (Departure Control), and Loyalty modules; misaligned Rapid Rewards/FFP accrual rules on partner segments result in customer complaints and manual points corrections</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Configure GDS codeshare display and availability feed</td>
+        <td class="kpi-col">Codeshare itinerary display accuracy ≥99% across all three GDS within 7 days of Altéa config completion</td>
+        <td class="pain-col">GDS display logic for codeshare itineraries varies by channel (Sabre vs Travelport vs Amadeus); duplicate or ghost inventory appears when schedule changes are not propagated simultaneously across all three, requiring manual suppression</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Gate: Pass end-to-end interoperability test suite</td>
+        <td class="kpi-col">≥95% of test scenarios pass (booking, ticketing, check-in, FFP accrual, irregular ops rebooking)</td>
+        <td class="pain-col">Irregular operations (IROPS) rebooking on codeshare itineraries across PSS boundaries is the most common test failure; Altéa does not natively rebook passengers onto partner-operated flights without manual agent intervention</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Launch codeshare service and activate commercial marketing</td>
+        <td class="kpi-col">First-week codeshare booking volume ≥50% of 90-day ramp forecast</td>
+        <td class="pain-col">Launch delays caused by late regulatory clearance compress the marketing window before the IATA schedule season, reducing awareness and first-season load factors vs forecast by an average of 8–12 percentage points</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Monitor connecting yield, load factor, and prorate settlement</td>
+        <td class="kpi-col">Connecting pax yield ≥80% of model projection; prorate settlement discrepancy ≤2% of billed revenue</td>
+        <td class="pain-col">IATA BSP prorate settlement cycles are monthly with 45-day lag, making real-time revenue performance tracking dependent on booking-level proxies in Redshift rather than actual settled amounts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Gate: Annual review — expand, renegotiate, or exit partnership</td>
+        <td class="kpi-col">Annual review completed and decision issued ≤90 days before agreement renewal deadline; partnership retained if NPV reforecast ≥80% of original approval threshold</td>
+        <td class="pain-col">Exit clauses in codeshare agreements typically require 6–12 months notice; airlines that miss the review cycle are locked into underperforming partnerships for an additional year, absorbing continued prorate losses</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Schedule Planning</span>
+  </div>
+</div>
+
+</body>
+</html>

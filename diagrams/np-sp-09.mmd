@@ -1,0 +1,47 @@
+flowchart LR
+  subgraph P1["Phase 1: Opportunity Identification"]
+    A([Start]) --> B[Scan partnership landscape]
+    B --> C{Network gap filled?}
+    C -- No --> B
+    C -- Yes --> D[Shortlist candidates]
+  end
+  subgraph P2["Phase 2: Financial Modelling"]
+    D --> E[Model codeshare revenue uplift]
+    E --> F{NPV ≥ threshold?}
+    F -- No --> G([Exit / Re-scope])
+    F -- Yes --> H[Approve business case]
+  end
+  subgraph P3["Phase 3: Regulatory Review"]
+    H --> I[File antitrust & ASA review]
+    I --> J{Approvals obtainable?}
+    J -- No --> G
+    J -- Yes --> K[Slot assessment complete]
+  end
+  subgraph P4["Phase 4: Agreement Structuring"]
+    K --> L[Negotiate ITA & codeshare terms]
+    L --> M{Terms within revenue policy?}
+    M -- No --> L
+    M -- Yes --> N[File joint fares via ATPCO]
+  end
+  subgraph P5["Phase 5: System Setup & Launch"]
+    N --> O[Configure PSS & GDS codeshare]
+    O --> P{Interoperability test pass?}
+    P -- No --> O
+    P -- Yes --> Q[Go-live]
+  end
+  subgraph P6["Phase 6: Performance Monitoring"]
+    Q --> R[Monitor yield vs forecast]
+    R --> S{Meeting performance targets?}
+    S -- No --> L
+    S -- Yes --> T([Continue / Expand])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style G fill:#003366,color:#fff,stroke:#003366
+  style T fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
