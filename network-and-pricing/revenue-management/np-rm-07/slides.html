@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-RM-07 Slides — Ancillary Revenue Optimization</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-07</span>
+    <h1>Ancillary Revenue Optimization</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-rm-07.png" alt="BPMN for NP-RM-07" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-07</span>
+    <h1>Ancillary Revenue Optimization</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-RM-07</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Revenue Management</li>
+          <li><strong>L3 Name:</strong> Ancillary Revenue Optimization</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">15</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Benchmark ancillary revenue vs. peer carriers</li><li><strong>Phase 2:</strong> Configure ancillary service catalog in PSS</li><li><strong>Phase 3:</strong> Segment passengers for targeted ancillary offers</li><li><strong>Phase 4:</strong> Monitor ancillary attach rates by channel and prod</li><li><strong>Phase 5:</strong> Generate ancillary revenue performance report</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Ancillary Pricing Analyst</li><li>Ancillary Revenue Analyst</li><li>Ancillary Revenue Manager</li><li>Customer Analytics Manager</li><li>Distribution Channel Manager</li><li>Distribution Systems Analyst</li><li>Pricing Strategy Manager</li><li>Revenue Management Analyst</li><li>Revenue Management Systems Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>AWS Redshift</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>Amadeus SkyCAST</li><li>NDC API Gateway</li><li>OAG Schedule Analyser</li><li>PROS RM</li><li>Power BI</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-07</span>
+    <h1>Ancillary Revenue Optimization</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Benchmark ancillary revenue vs. peer carriers</td>
+        <td class="kpi-col">Ancillary revenue per passenger ≥ $35 (IATA LCC benchmark); report produced annually</td>
+        <td class="pain-col">IATA benchmark data lags 12–18 months; ultra-LCC peers (Spirit, Frontier) distort averages, masking true FSC comparison group and overstating apparent gap</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Analyse ancillary product mix by revenue category</td>
+        <td class="kpi-col">Top-3 categories contribute ≥70% of total ancillary revenue; data refresh ≤24 hours</td>
+        <td class="pain-col">Altéa PSS ancillary sales codes are inconsistently applied by airport agents, causing product misclassification in Redshift that distorts category-level P&amp;L</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Identify new ancillary product opportunities</td>
+        <td class="kpi-col">Minimum 3 new ancillary product candidates identified per annual review cycle</td>
+        <td class="pain-col">SkyCAST O&amp;D segmentation is designed for seat demand forecasting, not ancillary willingness-to-pay; proxy metrics must substitute for direct demand estimation, reducing confidence</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Configure ancillary service catalog in PSS</td>
+        <td class="kpi-col">100% of approved ancillaries configured and testable in Altéa within 5 business days of sign-off</td>
+        <td class="pain-col">EMD issuance rules require coordination with Finance for BSP settlement alignment; misconfigured EMD types generate revenue accounting errors and trigger BSP dispute processes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Set dynamic pricing rules for seats and baggage</td>
+        <td class="kpi-col">Elasticity model coverage ≥80% of O&amp;D pairs; yield uplift ≥8% vs. static pricing baseline</td>
+        <td class="pain-col">PROS RM dynamic ancillary pricing requires separate model training from core RM; data sparsity on thin routes produces unreliable elasticity estimates, defaulting to static fallback pricing</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Design fare family bundles with ancillary inclusions</td>
+        <td class="kpi-col">Bundle attach rate ≥40% of total bookings; bundle margin ≥ à la carte revenue equivalent</td>
+        <td class="pain-col">ATPCO Category 15 (Sales Restrictions) and Category 31 (Voluntary Changes) rules must be manually aligned with each bundle tier — a mismatch causes GDS display failures and customer refund claims</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Validate ancillary offers in NDC API test environment</td>
+        <td class="kpi-col">100% of ancillary products surfaced in NDC AirShopping response; NDC API error rate &lt; 0.5%</td>
+        <td class="pain-col">IATA NDC 21.3 schema requires ancillaries as ServiceDefinitionID objects; legacy Altéa ancillary codes must be manually mapped — mappings break on Altéa version upgrades requiring re-validation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Segment passengers for targeted ancillary offers</td>
+        <td class="kpi-col">Propensity model AUC ≥0.72 for top-3 ancillary categories; segments refreshed ≤24 hours before departure</td>
+        <td class="pain-col">Loyalty data is siloed from GDS bookings — indirect-channel passengers have sparse profiles, reducing propensity model accuracy for ~35% of bookings and defaulting to generic offers</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Configure real-time ancillary offer engine</td>
+        <td class="kpi-col">Offer generation latency &lt; 200ms per PNR; personalised offer conversion rate ≥15%</td>
+        <td class="pain-col">AltéaRM offer engine integration with PROS dynamic ancillary prices requires a custom middleware API; latency spikes during peak booking windows trigger offer timeouts and fallback to static pricing</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Deploy personalised offers via direct and GDS channels</td>
+        <td class="kpi-col">NDC channel ancillary attach rate ≥ direct channel within 6 months of launch; GDS ancillary display compliance ≥90% of enabled PCCs</td>
+        <td class="pain-col">Travelport and Sabre GDS ancillary merchandising varies by Point of Sale — not all TMC-configured PCC terminals display ancillary offers, suppressing B2B ancillary revenue from managed travel</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Monitor ancillary attach rates by channel and product</td>
+        <td class="kpi-col">Ancillary revenue as % of total revenue ≥15%; dashboard data latency &lt; 4 hours</td>
+        <td class="pain-col">Altéa PSS real-time data feed to Tableau relies on an AWS Kinesis stream — stream failures during high-volume booking periods create data gaps that delay corrective pricing actions by 8–12 hours</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Conduct ancillary price elasticity A/B testing</td>
+        <td class="kpi-col">A/B test significance ≥95% confidence interval; minimum 500 transactions per test cell</td>
+        <td class="pain-col">PROS RM A/B testing for ancillaries is not natively integrated with Altéa PSS booking flows — test cell assignment is enforced via custom middleware, increasing build and maintenance overhead</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Optimise ancillary offer placement and sequencing</td>
+        <td class="kpi-col">Incremental ancillary revenue uplift ≥5% per optimisation cycle; cycle cadence monthly</td>
+        <td class="pain-col">Post-booking ancillary upsell in the pre-check-in window is constrained by Altéa PSS notification infrastructure — push notification capability requires a third-party integration not yet fully deployed at most carriers</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Generate ancillary revenue performance report</td>
+        <td class="kpi-col">Report delivered within 3 business days of month-end; forecast accuracy ≤5% variance vs. actuals</td>
+        <td class="pain-col">SAP S/4HANA Finance GL ancillary revenue codes do not always align with Altéa PSS ancillary sales codes — reconciliation requires a manual mapping table maintained by Finance that lags product catalog changes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Review portfolio and retire underperforming products</td>
+        <td class="kpi-col">Products with &lt;0.5% attach rate and negative NPS reviewed quarterly; discontinuation decision within 30 days of review</td>
+        <td class="pain-col">Discontinuing an ancillary product in Altéa PSS requires reversal of EMD settlement rules, ATPCO filing withdrawal, and NDC schema update — cross-system coordination takes 4–6 weeks, extending underperformer lifecycles</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+</body>
+</html>

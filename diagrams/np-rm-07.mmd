@@ -1,0 +1,54 @@
+flowchart LR
+  subgraph P1["Phase 1: Portfolio Benchmarking"]
+    A([Start]) --> B[Benchmark ancillary vs. peers]
+    B --> C[Analyse product mix by category]
+    C --> D{New opportunity gap?}
+    D -- No --> C
+    D -- Yes --> E[Build ancillary roadmap]
+  end
+  subgraph P2["Phase 2: Pricing & Bundle Design"]
+    E --> F[Configure service catalog in Altéa]
+    F --> G[Set dynamic pricing — PROS RM]
+    G --> H[Design fare family bundles — ATPCO]
+    H --> I{Bundle margin meets target?}
+    I -- No --> H
+    I -- Yes --> J{NDC validation passed?}
+    J -- No --> F
+    J -- Yes --> K[Validated NDC offer schema]
+  end
+  subgraph P3["Phase 3: Personalisation & Distribution"]
+    K --> L[Segment passengers — Redshift]
+    L --> M[Configure offer engine — AltéaRM]
+    M --> N{Offer latency < 200ms?}
+    N -- No --> M
+    N -- Yes --> O{GDS parity achieved?}
+    O -- No --> M
+    O -- Yes --> P[Live offers deployed]
+  end
+  subgraph P4["Phase 4: Monitoring & Optimisation"]
+    P --> Q[Monitor attach rates — Tableau]
+    Q --> R{Attach rate below target?}
+    R -- Yes --> M
+    R -- No --> S[A/B price elasticity testing]
+    S --> T{Significant uplift found?}
+    T -- No --> S
+    T -- Yes --> U[Update offer placement rules]
+  end
+  subgraph P5["Phase 5: Reporting & Portfolio Review"]
+    U --> V[Generate monthly report — Power BI]
+    V --> W{Product underperforming?}
+    W -- No --> Q
+    W -- Yes --> X[Retire or reprice product — Redshift]
+    X --> Y([End])
+  end
+
+style A fill:#003366,color:#fff,stroke:#003366
+style Y fill:#003366,color:#fff,stroke:#003366
+style D fill:#ff6600,color:#fff,stroke:#ff6600
+style I fill:#ff6600,color:#fff,stroke:#ff6600
+style J fill:#ff6600,color:#fff,stroke:#ff6600
+style N fill:#ff6600,color:#fff,stroke:#ff6600
+style O fill:#ff6600,color:#fff,stroke:#ff6600
+style R fill:#ff6600,color:#fff,stroke:#ff6600
+style T fill:#ff6600,color:#fff,stroke:#ff6600
+style W fill:#ff6600,color:#fff,stroke:#ff6600
