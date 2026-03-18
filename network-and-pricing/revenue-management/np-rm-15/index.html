@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Crew Planning &amp; Rostering · Flight Operations · Airlines Process Wiki</title>
+<title>NP-RM-15 · LCC Competitive Pricing Strategy · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -55,7 +56,7 @@
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-12/"><span class="status-dot status-done"></span><span class="pid">NP-RM-12</span>Real-Time Availability &amp; Seat Inventory Control</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-13/"><span class="status-dot status-done"></span><span class="pid">NP-RM-13</span>Revenue Integrity &amp; Ticketing Compliance</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-14/"><span class="status-dot status-done"></span><span class="pid">NP-RM-14</span>O&amp;D Revenue Management</a>
-        <a class="sidebar-l3-link" href="../../../network-and-pricing/revenue-management/np-rm-15/"><span class="status-dot status-done"></span><span class="pid">NP-RM-15</span>LCC Competitive Pricing Strategy</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/revenue-management/np-rm-15/"><span class="status-dot status-done"></span><span class="pid">NP-RM-15</span>LCC Competitive Pricing Strategy</a>
       </div>
       <a class="sidebar-l2-link" href="../../../network-and-pricing/pricing-fare-management/">Pricing &amp; Fare Management</a>
       <div class="sidebar-l3">
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-queue"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -242,153 +243,238 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Crew Planning &amp; Rostering</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/revenue-management/">Revenue Management</a><span class="sep">›</span>
+  <span class="current">NP-RM-15 · LCC Competitive Pricing Strategy</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Crew Planning &amp; Rostering</h1>
-    <p>Flight Operations · 0 of 15 subprocesses complete · Updated 2026-03-18 19:22</p>
+    <h1>LCC Competitive Pricing Strategy</h1>
+    <p>Network Planning &amp; Scheduling › Revenue Management · 16 L4 steps · 5 phases · 6 decision gates · Updated 2026-03-18 19:22</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-RM-15</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-01</span>Crew Pairing Optimization</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-rm-15">
+      <img src="../../../assets/img/np-rm-15.png" alt="NP-RM-15 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-rm-15').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-rm-15').style.display='flex'">
+      <div id="diag-placeholder-np-rm-15" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-01/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Ingest LCC published fares from ATPCO feed</td>
+  <td class="td-role">Revenue Analyst</td>
+  <td><span class="stag custom">ATPCO Automated Competitive Intelligence (ACI)</span></td>
+  <td style="font-size:10px;color:#6b7280">Daily ATPCO fare-change notification feed across all GDS-filed LCC fares</td>
+  <td style="font-size:10px">Structured LCC fare dataset by O&amp;D pair, cabin, booking class, and advance purchase tier</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fare update latency ≤4 hours from ATPCO filing; coverage ≥80% of LCC-filed fares</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Scrape LCC direct-channel fares via fare shopping</td>
+  <td class="td-role">Revenue Analyst</td>
+  <td><span class="stag gds">Sabre PRISM Competitive Fare Shopping</span></td>
+  <td style="font-size:10px;color:#6b7280">LCC-overlap route list and 90-day departure date range</td>
+  <td style="font-size:10px">LCC web-fare matrix by route, departure date, and fare class including ancillary fee schedule</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Shopping coverage ≥95% of LCC-overlap routes completed within 24 hours; intraday refresh on routes with &gt;50 weekly LCC departures</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Flag routes exceeding LCC penetration threshold</td>
+  <td class="td-role">Revenue Strategy Manager</td>
+  <td><span class="stag amadeus">Amadeus SkyCAST</span></td>
+  <td style="font-size:10px;color:#6b7280">LCC fare matrix combined with OAG Traffic Analyser market share data</td>
+  <td style="font-size:10px">Priority route list with LCC threat tier classification (High / Medium / Low) for current and next 90-day window</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of routes with LCC market share &gt;25% flagged and tier-assigned within 48 hours of data refresh</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Calculate fully-loaded fare differential vs LCC</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Own lowest available fare per O&amp;D; LCC base fare plus published ancillary fee schedule from Step 1.2</td>
+  <td style="font-size:10px">Net fare gap report showing base-fare delta and fully-loaded delta (bag + seat assignment + change fee) per route</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fully-loaded fare gap calculated within 2 hours of trigger event; model accuracy ±5% vs actual LCC checkout price</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Assess LCC seat capacity deployment on overlap routes</td>
+  <td class="td-role">Network Revenue Analyst</td>
+  <td><span class="stag custom">OAG Schedules Analyser</span></td>
+  <td style="font-size:10px;color:#6b7280">LCC published schedules from OAG; own schedule from Amadeus SkyWORKS</td>
+  <td style="font-size:10px">Capacity share report showing seats, weekly frequencies, and ASK split by carrier for each contested O&amp;D</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Capacity share delta vs prior 4-week period reported weekly; &gt;10% capacity increase by any LCC triggers immediate alert</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Classify route competitive response mode</td>
+  <td class="td-role">Revenue Strategy Manager</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Fare gap report from Step 2.1; capacity share report from Step 2.2; route RASM from Amadeus SkyCAST</td>
+  <td style="font-size:10px">Route-level response mode classification: MATCH / STIMULATE / DIFFERENTIATE / IGNORE, with documented rationale and RASM impact estimate</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of High-tier LCC routes assigned response mode within 72 hours; response mode reviewed every 21 days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Define route fare floor against unit cost recovery</td>
+  <td class="td-role">Pricing Strategy Manager</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Route-level CASM (cost per available seat mile) from finance cost allocation module; load factor target from SkyCAST forecast</td>
+  <td style="font-size:10px">Minimum acceptable fare floor per route and cabin class, approved by Finance</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fare floor covers variable cost per seat at target load factor ≥100% on 100% of routes; floor breach rate &lt;2% of all filed competitive fares</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Construct ATPCO fare basis codes and rule conditions</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag custom">ATPCO Fare Management Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved fare level and floor from Step 3.1; target O&amp;D pairs; advance purchase and change fee structure</td>
+  <td style="font-size:10px">Draft fare record with Fare Basis Code and complete ATPCO Category 3, 5, 14, 15, and 16 rule set</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fare rule filing completeness ≥98% (zero missing ATPCO categories); internal peer review completed within 4 hours of draft creation</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Configure NRM inventory availability and bid-price thresholds</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved fare record; booking class assignment; O&amp;D demand forecast from SkyCAST</td>
+  <td style="font-size:10px">Updated booking class authorization levels (AU) and bid-price thresholds in NRM for all affected O&amp;D pairs</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Inventory control update applied within 2 hours of fare approval; AU accuracy ±2 seats vs modelled optimum at D-90</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Apply channel-specific fare availability configuration</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag custom">NDC API Gateway</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved fare record; channel distribution matrix (GDS / NDC / direct web)</td>
+  <td style="font-size:10px">Channel-differentiated fare availability configuration in NDC API Gateway and Amadeus Altéa PSS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NDC-exclusive fares available within 4 hours of ATPCO filing; GDS display parity ≥95% across Sabre, Travelport, and Amadeus within 8 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">File competitive fare in ATPCO and validate GDS mirror</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag custom">ATPCO Fare Management Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">Peer-reviewed fare record and complete rule set from Step 3.2</td>
+  <td style="font-size:10px">ATPCO filing confirmation with batch-processing timestamp; GDS mirror latency report across Sabre, Travelport, and Amadeus</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fare live in all three GDS within 8 hours of ATPCO filing; zero Category 15 validation errors; filing confirmed in ATPCO audit log</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Activate competitive fare in Amadeus Altéa PSS</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">ATPCO filing confirmation from Step 4.1; NRM authorization levels from Step 3.3</td>
+  <td style="font-size:10px">Fare live in Altéa PSS for direct and indirect bookings; PSS-NRM inventory sync confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PSS activation within 1 hour of ATPCO confirmation; zero inventory sync discrepancies between Altéa and NRM authorization levels</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Issue pricing action bulletin to sales and accounts</td>
+  <td class="td-role">Revenue Strategy Manager</td>
+  <td><span class="stag custom">Salesforce CRM</span></td>
+  <td style="font-size:10px;color:#6b7280">Activated fare details; competitive context briefing from Step 2.3 response mode classification</td>
+  <td style="font-size:10px">Pricing action bulletin distributed via Salesforce CRM to Sales, Agency Relations, and Corporate Account teams</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bulletin issued within 2 hours of fare activation; 100% of key account managers and top-50 agency contacts notified; read-receipt tracked in Salesforce</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Monitor booking velocity on LCC-contested routes</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Daily booking curves by route, fare class, and departure date from NRM booking pace module</td>
+  <td style="font-size:10px">Booking velocity report versus LCC-free baseline curve; stimulation delta by departure date and O&amp;D</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Booking pace ≥95% of target curve by D-14; seat load factor ≥83% at D-7 on High-tier LCC routes</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Compare RASM and PRASM against LCC benchmark</td>
+  <td class="td-role">Revenue Strategy Manager</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Booked revenue and ASMs flown per route; LCC benchmark fares from ATPCO ACI prior-period dataset; Amadeus SkyCAST RASM actuals</td>
+  <td style="font-size:10px">RASM versus benchmark scorecard with revenue gain or loss attribution by route and competitive response mode</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">RASM on contested routes within 5% of network average; PRASM improvement &gt;2% versus pre-strategy baseline after 21-day observation window</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Trigger strategy review or escalate to pricing committee</td>
+  <td class="td-role">Revenue Strategy Manager</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">RASM scorecard from Step 5.2; booking velocity report from Step 5.1; updated LCC fare intelligence from Step 1.1</td>
+  <td style="font-size:10px">Strategy continuation approval, or pricing committee escalation package with revised response mode recommendation and fare adjustment proposal</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Strategy review cycle completed within 21 days of activation; escalated routes resolved by pricing committee within 5 business days; route RASM restored to within 5% of network average within 45 days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-02</span>Crew Rostering &amp; Bidding</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-RM-15</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network Planning &amp; Scheduling</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Revenue Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">LCC Competitive Pricing Strategy</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">16 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">6 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">10 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Revenue Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Revenue Strategy Manager</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Pricing Analyst</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Network Revenue Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>Pricing Strategy Manager</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Revenue Management Analyst</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">ATPCO Automated Competitive Intelligence (ACI)</span><span class="stag gds">Sabre PRISM Competitive Fare Shopping</span><span class="stag amadeus">Amadeus SkyCAST</span><span class="stag amadeus">Amadeus Revenue Management (NRM)</span><span class="stag custom">OAG Schedules Analyser</span><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span><span class="stag custom">ATPCO Fare Management Portal</span><span class="stag custom">NDC API Gateway</span><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag custom">Salesforce CRM</span><span class="stag aws">AWS Redshift</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Ingest LCC published fares from ATPCO feed</span><span class="kval">Fare update latency ≤4 hours from ATPCO filing; coverage ≥80% of LCC-filed fares</span></div><div class="krow"><span class="kname">Scrape LCC direct-channel fares via fare shopping</span><span class="kval">Shopping coverage ≥95% of LCC-overlap routes completed within 24 hours; intraday refresh on routes with &gt;50 weekly LCC departures</span></div><div class="krow"><span class="kname">Flag routes exceeding LCC penetration threshold</span><span class="kval">100% of routes with LCC market share &gt;25% flagged and tier-assigned within 48 hours of data refresh</span></div><div class="krow"><span class="kname">Calculate fully-loaded fare differential vs LCC</span><span class="kval">Fully-loaded fare gap calculated within 2 hours of trigger event; model accuracy ±5% vs actual LCC checkout price</span></div><div class="krow"><span class="kname">Assess LCC seat capacity deployment on overlap routes</span><span class="kval">Capacity share delta vs prior 4-week period reported weekly; &gt;10% capacity increase by any LCC triggers immediate alert</span></div><div class="krow"><span class="kname">Classify route competitive response mode</span><span class="kval">100% of High-tier LCC routes assigned response mode within 72 hours; response mode reviewed every 21 days</span></div><div class="krow"><span class="kname">Define route fare floor against unit cost recovery</span><span class="kval">Fare floor covers variable cost per seat at target load factor ≥100% on 100% of routes; floor breach rate &lt;2% of all filed competitive fares</span></div><div class="krow"><span class="kname">Construct ATPCO fare basis codes and rule conditions</span><span class="kval">Fare rule filing completeness ≥98% (zero missing ATPCO categories); internal peer review completed within 4 hours of draft creation</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">LCC carriers increasingly use direct-channel-only fares not filed via ATPCO; ACI feed misses 20–35% of actual LCC selling prices on contested routes</div><div class="risk-card">LCC carriers revise fares multiple times per day; bot-detection mechanisms on Spirit and Frontier websites block automated scraping, requiring manual supplementation that introduces 12–24h lag</div><div class="risk-card">MIDT-sourced market share data lags 60–90 days; real-time share is modelled, not measured, creating tier misclassification risk on recently-entered LCC markets</div><div class="risk-card">LCC ancillary fee schedules are not available via any standardised data feed and change without notice; manual fee updates lag by up to one week, overstating or understating the real passenger cost differential</div><div class="risk-card">LCC carriers file schedule placeholders with inflated frequencies to hold airport slot positions; published seats overstate committed capacity by up to 15%, inflating perceived competitive threat and driving unnecessary yield dilution responses</div><div class="risk-card">Differentiation strategy (premium service, schedule convenience) is difficult to sustain on short-haul routes under 500 miles where LCC price advantage exceeds perceived product differential — risks revenue dilution without stimulation benefit materialising</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Daily ATPCO fare-change notification feed across all GDS-filed LCC fares</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Strategy continuation approval, or pricing committee escalation package with revised response mode recommendation and fare adjustment proposal</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-02/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-03</span>Crew Day-of-Operations Tracking</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-04</span>Fatigue &amp; Rest Rule Compliance (FAR Part 117)</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-04/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-05</span>Crew Training &amp; Recurrency Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-06</span>Crew Licensing &amp; Medical Certification</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-07</span>Reserve Crew Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-08</span>Crew Hotel &amp; Transportation Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-09</span>Cabin Crew Service Standards &amp; Training</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-10</span>Crew Disruption Recovery &amp; Re-pairing</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-11</span>Crew Union &amp; Labour Agreement Compliance</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-12</span>Crew Recruitment &amp; Onboarding</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-13</span>Deadhead &amp; Positioning Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-14</span>Crew Performance Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-15</span>Crew Payroll &amp; Hours Tracking</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../np-rm-14/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-RM-14 · O&amp;D Revenue Management</span></a><a class="pn-btn" href="../np-pf-01/"><span><span class="sub">Next</span>NP-PF-01 · Fare Construction &amp; Filing</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

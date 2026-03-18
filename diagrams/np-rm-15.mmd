@@ -1,0 +1,48 @@
+flowchart LR
+  subgraph P1["Phase 1: LCC Fare Surveillance"]
+    A([Start]) --> B[Ingest ATPCO\nLCC fare feed]
+    B --> C[Scrape LCC\ndirect-channel fares]
+    C --> D{LCC penetration\n>25% on route?}
+    D -- No --> Z1([Low priority\n— monitor only])
+    D -- Yes --> E
+  end
+  subgraph P2["Phase 2: Competitive Gap Analysis"]
+    E[Calculate fully-loaded\nfare differential] --> F[Assess LCC capacity\nshare vs own]
+    F --> G{RASM impact of\nprice match positive?}
+    G -- No --> H[Assign DIFFERENTIATE\nor IGNORE mode]
+    H --> Z2([Document &\nmonitor])
+    G -- Yes --> I
+  end
+  subgraph P3["Phase 3: Fare Construction"]
+    I[Define fare floor\nvs route CASM] --> J{Competitive fare\nexceeds floor?}
+    J -- No --> K([Escalate to\nVP Revenue])
+    J -- Yes --> L[Build ATPCO fare\nbasis & rules]
+    L --> M[Set NRM inventory\nAU & bid-price]
+    M --> N{All target\nchannels reachable?}
+    N -- No --> O[Resolve NDC/GDS\naccess gap]
+    O --> L
+    N -- Yes --> P
+  end
+  subgraph P4["Phase 4: Distribution Activation"]
+    P[File competitive fare\nvia ATPCO portal] --> Q[Activate fare in\nAltéa PSS inventory]
+    Q --> R[Notify Sales &\ncorporate accounts]
+  end
+  subgraph P5["Phase 5: Performance Monitoring"]
+    R --> S[Track booking velocity\nvs target pace curve]
+    S --> T[Compare RASM/PRASM\nvs LCC benchmark]
+    T --> U{RASM within 5%\nof network avg?}
+    U -- No --> V[Escalate to\npricing committee]
+    V --> I
+    U -- Yes --> W([Strategy continues\n— next review cycle])
+  end
+
+  style A  fill:#003366,color:#fff,stroke:#003366
+  style Z1 fill:#003366,color:#fff,stroke:#003366
+  style Z2 fill:#003366,color:#fff,stroke:#003366
+  style K  fill:#003366,color:#fff,stroke:#003366
+  style W  fill:#003366,color:#fff,stroke:#003366
+  style D  fill:#ff6600,color:#fff,stroke:#ff6600
+  style G  fill:#ff6600,color:#fff,stroke:#ff6600
+  style J  fill:#ff6600,color:#fff,stroke:#ff6600
+  style N  fill:#ff6600,color:#fff,stroke:#ff6600
+  style U  fill:#ff6600,color:#fff,stroke:#ff6600
