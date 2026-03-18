@@ -1,0 +1,49 @@
+flowchart LR
+  subgraph P1["Phase 1: Post-Departure Data Capture"]
+    A([Start]) --> B[Trigger PSS revenue extract]
+    B --> C[Pull ancillary revenue feeds]
+    C --> D{Data complete & timely?}
+    D -- No --> B
+    D -- Yes --> E[Validate booking vs. flown pax]
+  end
+  subgraph P2["Phase 2: Revenue Reconciliation"]
+    E --> F[Reconcile ticketed vs. flown revenue]
+    F --> G[Match interline & BSP settlements]
+    G --> H{Variance within tolerance ≤1%?}
+    H -- No --> I[Raise reconciliation exception]
+    I --> F
+    H -- Yes --> J[Confirm ancillary & upgrade capture]
+  end
+  subgraph P3["Phase 3: O&D Performance Analysis"]
+    J --> K[Aggregate O&D revenue by fare class]
+    K --> L[Calculate RASM, PRASM & load factor]
+    L --> M{Performance vs. RM forecast?}
+    M -- Significant gap --> N[Flag spoilage or dilution event]
+    N --> O[Root-cause RM decision review]
+    M -- Within threshold --> P[Mark flight analysed]
+  end
+  subgraph P4["Phase 4: Reporting & Distribution"]
+    O --> Q[Generate flight-level revenue report]
+    P --> Q
+    Q --> R[Publish variance dashboard]
+    R --> S{Stakeholder approval required?}
+    S -- Yes --> T[Route to Revenue Director]
+    T --> R
+    S -- No --> U[Distribute to RM & Finance teams]
+  end
+  subgraph P5["Phase 5: Model Feedback & Archival"]
+    U --> V[Feed actuals into Amadeus NRM]
+    V --> W{Forecast error > threshold?}
+    W -- Yes --> X[Trigger NRM recalibration job]
+    X --> Y[Archive flight revenue record]
+    W -- No --> Y
+    Y --> Z([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Z fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600

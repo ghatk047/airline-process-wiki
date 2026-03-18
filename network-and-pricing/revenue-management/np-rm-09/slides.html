@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-RM-09 Slides — Post-Departure Revenue Reporting</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-09</span>
+    <h1>Post-Departure Revenue Reporting</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-rm-09.png" alt="BPMN for NP-RM-09" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-09</span>
+    <h1>Post-Departure Revenue Reporting</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-RM-09</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Revenue Management</li>
+          <li><strong>L3 Name:</strong> Post-Departure Revenue Reporting</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Trigger post-departure PSS revenue extract</li><li><strong>Phase 2:</strong> Reconcile ticketed revenue vs. flown revenue</li><li><strong>Phase 3:</strong> Aggregate O&amp;D revenue by fare class &amp; cabin</li><li><strong>Phase 4:</strong> Generate flight-level post-departure P&amp;L report</li><li><strong>Phase 5:</strong> Feed actuals into NRM for forecast comparison</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>RM Systems Administrator</li><li>Revenue Accounting Analyst</li><li>Revenue Director</li><li>Revenue Management Analyst</li><li>Revenue Reporting Analyst</li><li>Revenue Reporting Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS S3</li><li>Amadeus Altéa Ancillary (Ancillary Services Manager)</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM)</li><li>IATA BSPlink</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-RM-09</span>
+    <h1>Post-Departure Revenue Reporting</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Trigger post-departure PSS revenue extract</td>
+        <td class="kpi-col">Extract available within 30 min of block-in; ≥99.5% flight coverage</td>
+        <td class="pain-col">Altéa extract latency spikes during high-frequency bank departures, delaying same-day reporting windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Pull ancillary revenue feeds from ancillary platform</td>
+        <td class="kpi-col">Ancillary revenue captured per passenger ≥ airline target (e.g. USD 28/pax industry benchmark)</td>
+        <td class="pain-col">Ancillary items sold via NDC API Gateway may not post to Altéa in real time, creating gaps in same-day reporting</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate booking-to-flown passenger completeness</td>
+        <td class="kpi-col">Booking-to-manifest match rate ≥99.8% before proceeding</td>
+        <td class="pain-col">Last-minute irregular operations (IROPs) create orphan booking records that misstate flown revenue</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Reconcile ticketed revenue vs. flown revenue</td>
+        <td class="kpi-col">Revenue variance tolerance ≤1% of flight revenue before exception flag</td>
+        <td class="pain-col">Multi-coupon interline tickets generate partial-revenue allocations that SAP FI cannot auto-match without manual MITA settlement codes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Match BSP &amp; interline settlement amounts</td>
+        <td class="kpi-col">BSP settlement matched within 48 hours of departure; dispute rate &lt;0.5%</td>
+        <td class="pain-col">Prorate disputes with interline partners under MITA/BIMA can take 30–90 days to resolve, overstating interim revenue</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate upgrade &amp; no-show revenue capture</td>
+        <td class="kpi-col">No-show revenue leakage &lt;0.2% of total flight revenue</td>
+        <td class="pain-col">Oversold flights with denied boarding (IDB/VDB) generate compensation cost offsets that are frequently mis-posted against revenue rather than cost accounts</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Aggregate O&amp;D revenue by fare class &amp; cabin</td>
+        <td class="kpi-col">O&amp;D attribution completeness ≥98% of total flight revenue</td>
+        <td class="pain-col">Point-to-point carriers with connecting itineraries lack native O&amp;D proration logic in Altéa; NRM must apply estimated prorate splits</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Calculate RASM, PRASM, and load factor vs. forecast</td>
+        <td class="kpi-col">RASM actuals within ±3% of pre-departure NRM forecast; load factor ≥83%</td>
+        <td class="pain-col">NRM forecast baseline uses O&amp;D demand curves that require 12+ months of history — new routes show high forecast error in first two seasons</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Identify revenue spoilage and dilution events</td>
+        <td class="kpi-col">Spoilage rate ≤4% of available seats on constrained routes; dilution rate ≤2%</td>
+        <td class="pain-col">Automated RM bid-price controls in NRM cannot retroactively explain spoilage caused by schedule irregularities or competitor fare wars without manual analyst annotation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Generate flight-level post-departure P&amp;L report</td>
+        <td class="kpi-col">Report generation within 4 hours of block-in for priority routes</td>
+        <td class="pain-col">SAP FI cost allocations for fuel and crew are posted at cost-centre level, not flight level — flight P&amp;L requires manual allocation keys that reduce accuracy</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Publish variance dashboard for RM and Finance</td>
+        <td class="kpi-col">Dashboard refresh latency ≤1 hour from report generation; stakeholder access rate ≥90%</td>
+        <td class="pain-col">Tableau data extracts from SAP and NRM use separate ETL schedules, causing dashboard columns to reflect mixed reporting periods during refresh windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Route significant variances to Revenue Director</td>
+        <td class="kpi-col">Escalation triggered within 2 hours for variances ≥5% of planned flight revenue</td>
+        <td class="pain-col">No automated escalation workflow in SAP FI — analysts rely on manual email alerts, creating inconsistent escalation timing across regions</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Distribute approved reports to RM and Finance teams</td>
+        <td class="kpi-col">Distribution to all stakeholders within 6 hours of block-in for same-day flights</td>
+        <td class="pain-col">S3 IAM access policies differ between Revenue Management and Finance teams, requiring duplicate report versions with different data masking levels</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Feed actuals into NRM for forecast comparison</td>
+        <td class="kpi-col">Actuals feed completed within 24 hours of departure; data completeness ≥99%</td>
+        <td class="pain-col">NRM actuals ingestion pipeline requires structured SSIM-aligned flight keys — IROPs-affected flights with revised flight numbers create orphan actuals that must be manually re-keyed</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Assess forecast model error vs. recalibration threshold</td>
+        <td class="kpi-col">MAPE ≤8% on 30-day rolling basis; trigger recalibration if MAPE &gt;10% for 5 consecutive days</td>
+        <td class="pain-col">NRM model recalibration jobs require 4–6 hour processing windows that temporarily freeze bid-price updates, creating yield management blind spots during peak booking periods</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Trigger NRM demand model recalibration job</td>
+        <td class="kpi-col">Recalibration job completes within 6-hour maintenance window; model improvement verified by ≥1% MAPE reduction</td>
+        <td class="pain-col">Amadeus NRM recalibration requires coordination with Amadeus managed services SLA (8-hour response window), delaying urgent corrections during high-yield periods such as holiday blocks</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.4</td>
+        <td>Archive finalised flight revenue record to data lake</td>
+        <td class="kpi-col">100% of departed flights archived within 24 hours; retention compliance per IATA Resolution 787 (7-year minimum)</td>
+        <td class="pain-col">S3 lifecycle policies must balance cost (Glacier transition) against ad-hoc audit retrieval SLAs — retrieval from Glacier takes 3–5 hours, conflicting with same-day audit requests</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Revenue Management</span>
+  </div>
+</div>
+
+</body>
+</html>
