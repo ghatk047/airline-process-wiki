@@ -24,8 +24,8 @@ SCRIPT_DIR = Path(__file__).parent
 REPO_DIR   = SCRIPT_DIR.parent
 DATA_DIR   = REPO_DIR / "data"
 PROCESSES  = DATA_DIR / "processes.json"
-WIKI_DIR   = REPO_DIR / "wiki"
-IMG_DIR    = WIKI_DIR / "assets" / "img"
+WIKI_DIR   = REPO_DIR          # pages live at repo root
+IMG_DIR    = REPO_DIR / "assets" / "img"
 
 
 def generate_slides(proc):
