@@ -1,0 +1,52 @@
+flowchart LR
+  subgraph P1["Phase 1: Eligibility Validation"]
+    A([Start]) --> B[Capture flight\ndeparture event]
+    B --> C{Member active\n& eligible?}
+    C -- No --> D[Suspend accrual,\nlog exception]
+    C -- Yes --> E{Fare basis\neligible?}
+    E -- No --> D
+    E -- Yes --> F[Retrieve distance\n& cabin class]
+  end
+  subgraph P2["Phase 2: Miles Calculation"]
+    F --> G[Calculate base\nmiles award]
+    G --> H{Active promo\napplicable?}
+    H -- Yes --> I[Apply bonus &\ntier multiplier]
+    H -- No --> J[Apply tier\nmultiplier only]
+    I --> K[Adjusted miles\nvalue confirmed]
+    J --> K
+  end
+  subgraph P3["Phase 3: Account Posting"]
+    K --> L[Post miles to\nmember account]
+    L --> M{Tier threshold\ncrossed?}
+    M -- Yes --> N[Trigger tier\nupgrade workflow]
+    M -- No --> O[Send accrual\nconfirmation]
+    N --> O
+  end
+  subgraph P4["Phase 4: Partner Accrual"]
+    O --> P[Ingest partner\nactivity file]
+    P --> Q{Member ID\nmatched?}
+    Q -- No --> R[Flag unmatched\nrecord for review]
+    Q -- Yes --> S{Rate card\nvalid?}
+    S -- No --> R
+    S -- Yes --> T[Post partner\nmiles award]
+  end
+  subgraph P5["Phase 5: Reconciliation & Dispute"]
+    T --> U[Reconcile partner\nbilling vs posted miles]
+    U --> V{Missing miles\nclaim received?}
+    V -- No --> W([End])
+    V -- Yes --> X{Claim\nverified?}
+    X -- No --> Y[Reject claim,\nnotify member]
+    X -- Yes --> Z[Post manual\nadjustment]
+    Y --> W
+    Z --> W
+  end
+  style A fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600
