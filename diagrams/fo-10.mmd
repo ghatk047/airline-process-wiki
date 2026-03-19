@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1[Phase 1: Detection and Assessment]
+    A([Start]) --> B[Monitor ACARS\nalerts]
+    B --> C[Classify emergency\ntype]
+    C --> D{Full emergency\ndeclared?}
+    D -- No --> B
+    D -- Yes --> E[Notify NOC\nController]
+  end
+
+  subgraph P2[Phase 2: Diversion Decision]
+    E --> F[Identify diversion\nalternates]
+    F --> G{Diversion\nrequired?}
+    G -- No --> H[Continue to\ndestination]
+    G -- Yes --> I[Confirm alternate\nairport]
+    I --> J[Coordinate ATC\ndiversion clearance]
+  end
+
+  subgraph P3[Phase 3: Emergency Activation]
+    J --> K[Activate Emergency\nResponse Plan]
+    K --> L[Alert ARFF and\nmedical services]
+    L --> M{Hospital\ntransfer needed?}
+    M -- Yes --> N[Coordinate EMS\nand ambulance]
+    M -- No --> O[Notify FAA/\nregulators]
+    N --> O
+  end
+
+  subgraph P4[Phase 4: Ground and Passenger Recovery]
+    O --> P[Reserve gate and\nground handling]
+    P --> Q[Arrange passenger\namenity care]
+    Q --> R{Passengers continue\non same aircraft?}
+    R -- Yes --> S[Resume ops\ncheck]
+    R -- No --> T[Rebook via PSS]
+  end
+
+  subgraph P5[Phase 5: Crew and Aircraft Recovery]
+    S --> U{Crew legal\nto continue?}
+    T --> U
+    U -- No --> V[Source relief\ncrew]
+    U -- Yes --> W[Assess aircraft\nserviceability]
+    V --> W
+    W --> X[Submit incident\nreport]
+    X --> Y([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
