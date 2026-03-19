@@ -1,0 +1,58 @@
+flowchart LR
+  subgraph P1["Phase 1: Member Enrollment & Profile Setup"]
+    A([Start]) --> B[Capture member application data]
+    B --> C{Profile\nduplicate?}
+    C -- Yes --> B
+    C -- No --> D[Assign tier & post welcome miles]
+  end
+  subgraph P2["Phase 2: Miles Accrual & Transaction Processing"]
+    D --> E[Ingest flight segment from PSS]
+    E --> F{Accrual rules\nvalid?}
+    F -- No --> E
+    F -- Yes --> G[Post miles to member account]
+    G --> H{Retro-claim\nreceived?}
+    H -- Yes --> G
+    H -- No --> I[Finalise accrual record]
+  end
+  subgraph P3["Phase 3: Tier Status & Benefits Management"]
+    I --> J[Aggregate qualifying activity]
+    J --> K{Tier change\ntriggered?}
+    K -- No --> L[Maintain current tier]
+    K -- Yes --> M[Provision tier benefits in PSS]
+    L --> N[Notify member of tier status]
+    M --> N
+  end
+  subgraph P4["Phase 4: Award Redemption Processing"]
+    N --> O[Search award availability]
+    O --> P{Miles balance\nsufficient & valid?}
+    P -- No --> O
+    P -- Yes --> Q[Process award booking & deduct miles]
+    Q --> R{Ticket issuance\nsucceeded?}
+    R -- No --> Q
+    R -- Yes --> S[Issue award e-ticket via GDS]
+  end
+  subgraph P5["Phase 5: Partner Integration & Co-brand"]
+    S --> T[Ingest partner earn transactions]
+    T --> U{Co-brand\nreconciliation OK?}
+    U -- No --> T
+    U -- Yes --> V[Invoice partner for mile liability]
+  end
+  subgraph P6["Phase 6: Member Retention & Analytics"]
+    V --> W[Segment members by engagement value]
+    W --> X{At-risk members\nidentified?}
+    X -- No --> Y[Publish programme ROI report]
+    X -- Yes --> Z[Launch targeted retention campaign]
+    Z --> Y
+    Y --> AA([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AA fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600

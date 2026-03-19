@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Flight Dispatch &amp; Control · Flight Operations · Airlines Process Wiki</title>
+<title>CX-01 · Frequent Flyer Program Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../commercial-marketing-sales/">Customer Experience &amp; Loyalty</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -96,11 +97,11 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Customer Experience &amp; Loyalty</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Customer Experience &amp; Loyalty</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/">Loyalty Programme Management</a>
       <div class="sidebar-l3">
-        <a class="sidebar-l3-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-01/"><span class="status-dot status-done"></span><span class="pid">CX-01</span>Frequent Flyer Program Management</a>
+        <a class="sidebar-l3-link active" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-01/"><span class="status-dot status-done"></span><span class="pid">CX-01</span>Frequent Flyer Program Management</a>
         <a class="sidebar-l3-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-02/"><span class="status-dot status-queue"></span><span class="pid">CX-02</span>Miles &amp; Points Accrual Management</a>
         <a class="sidebar-l3-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-03/"><span class="status-dot status-queue"></span><span class="pid">CX-03</span>Miles &amp; Points Redemption Management</a>
         <a class="sidebar-l3-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-04/"><span class="status-dot status-queue"></span><span class="pid">CX-04</span>Tier Status &amp; Upgrade Management</a>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-queue"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -242,153 +243,288 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Flight Dispatch &amp; Control</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../commercial-marketing-sales/">Customer Experience &amp; Loyalty</a><span class="sep">›</span>
+  <a href="../../../commercial-marketing-sales/customer-loyalty-crm/">Loyalty Programme Management</a><span class="sep">›</span>
+  <span class="current">CX-01 · Frequent Flyer Program Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Flight Dispatch &amp; Control</h1>
-    <p>Flight Operations · 0 of 15 subprocesses complete · Updated 2026-03-18 21:50</p>
+    <h1>Frequent Flyer Program Management</h1>
+    <p>Customer Experience &amp; Loyalty › Loyalty Programme Management · 21 L4 steps · 6 phases · 8 decision gates · Updated 2026-03-18 21:50</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CX-01</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-01</span>Flight Dispatch &amp; Release</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cx-01">
+      <img src="../../../assets/img/cx-01.png" alt="CX-01 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cx-01').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cx-01').style.display='flex'">
+      <div id="diag-placeholder-cx-01" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-01/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Capture new member application data</td>
+  <td class="td-role">Loyalty Operations Analyst</td>
+  <td><span class="stag custom">Comarch Loyalty Management</span></td>
+  <td style="font-size:10px;color:#6b7280">New member sign-up form via web, mobile app, or in-flight registration</td>
+  <td style="font-size:10px">Pending member profile record with email, name, contact details</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Enrollment completion rate ≥97%; form abandonment rate &lt;3%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Validate identity and deduplicate profile</td>
+  <td class="td-role">Loyalty Data Analyst</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Pending member profile record</td>
+  <td style="font-size:10px">Verified, deduplicated member record or merge notification</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Duplicate member rate &lt;0.5% of active member base</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Assign base tier and post welcome bonus miles</td>
+  <td class="td-role">Loyalty Operations Analyst</td>
+  <td><span class="stag custom">Comarch Loyalty Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Verified member record</td>
+  <td style="font-size:10px">Active member account with base tier, welcome bonus posted</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Welcome bonus posting accuracy 100%; account activation within 24 hours of enrollment</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Ingest flight segment data from PSS</td>
+  <td class="td-role">Loyalty Systems Engineer</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed flight manifest and boarded-passenger segment records</td>
+  <td style="font-size:10px">Raw accrual transaction records staged in Comarch queue</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Post-flight accrual data ingestion SLA ≤72 hours; segment match rate ≥99%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Calculate eligible miles per booking class</td>
+  <td class="td-role">Loyalty Rules Engine Analyst</td>
+  <td><span class="stag custom">Comarch Loyalty Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Raw accrual transaction + fare class accrual rate table</td>
+  <td style="font-size:10px">Calculated mile award amount per segment</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Accrual calculation accuracy ≥99.8%; rules table refresh within 4 hours of fare class change</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Post miles to member account</td>
+  <td class="td-role">Loyalty Operations Analyst</td>
+  <td><span class="stag custom">Comarch Loyalty Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated calculated mile award</td>
+  <td style="font-size:10px">Posted transaction on member account ledger; balance updated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Miles posting success rate ≥99.9%; failed posting retry resolution within 4 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Process retro-credit claim for missing miles</td>
+  <td class="td-role">Loyalty Customer Service Agent</td>
+  <td><span class="stag custom">Comarch Loyalty Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Member-submitted missing miles claim with booking reference and boarding pass</td>
+  <td style="font-size:10px">Approved retro-credit posting or rejection notification</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Retro-claim resolution ≤5 business days; auto-approval rate for flight claims ≥70%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Aggregate qualifying activity for tier review</td>
+  <td class="td-role">Loyalty Analytics Analyst</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">12-month rolling transaction history from Comarch Loyalty Management</td>
+  <td style="font-size:10px">Tier qualification summary per member (qualifying miles, segments, spend)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Tier calculation batch processing time &lt;4 hours for membership base ≥1M; completed by 02:00 local on qualification date</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Evaluate tier upgrade or downgrade eligibility</td>
+  <td class="td-role">Loyalty Tier Manager</td>
+  <td><span class="stag custom">Comarch Loyalty Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Tier qualification summary per member</td>
+  <td style="font-size:10px">Tier change decision (upgrade, downgrade, maintain) per member record</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Tier assignment accuracy rate 100%; exception case resolution ≤2 business days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Notify member of tier change and updated benefits</td>
+  <td class="td-role">CRM Campaign Manager</td>
+  <td><span class="stag custom">Salesforce Marketing Cloud</span></td>
+  <td style="font-size:10px;color:#6b7280">Tier change decision from Comarch Loyalty Management</td>
+  <td style="font-size:10px">Personalised tier upgrade or downgrade notification email</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Email open rate ≥35% for tier upgrade notifications; send within 2 hours of tier change</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Provision tier benefits and flags in PSS</td>
+  <td class="td-role">Loyalty Systems Engineer</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">New tier assignment from Comarch Loyalty Management</td>
+  <td style="font-size:10px">Updated member profile in Altéa with lounge access, priority boarding, and SSR flags</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Benefit provisioning SLA ≤2 hours post-tier assignment; SSR flag accuracy 100%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Search and display award flight availability</td>
+  <td class="td-role">Loyalty Member / Contact Centre Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Member redemption request with desired origin, destination, and dates</td>
+  <td style="font-size:10px">Award availability display with applicable mile costs by fare bucket</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Award availability search response time ≤3 seconds; award seat availability ≥5% of cabin capacity on operated flights</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Validate member miles balance and expiry status</td>
+  <td class="td-role">Loyalty Operations Analyst</td>
+  <td><span class="stag custom">Comarch Loyalty Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Member account query triggered by redemption request</td>
+  <td style="font-size:10px">Confirmed available balance and expiry date; warning if miles expire within 90 days</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Balance check API response time ≤1 second; expiry warning accuracy 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Process award booking and deduct miles</td>
+  <td class="td-role">Loyalty Operations Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed award selection and validated miles balance from Comarch</td>
+  <td style="font-size:10px">Award PNR in Altéa and corresponding miles deduction transaction in Comarch</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Redemption processing success rate ≥99.5%; dual-system transaction completion within 60 seconds</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Issue award ticket via GDS or NDC channel</td>
+  <td class="td-role">Ticketing Agent</td>
+  <td><span class="stag amadeus">Amadeus GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed award PNR</td>
+  <td style="font-size:10px">Issued award e-ticket with ATPCO award fare code</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Award ticket issuance within 15 minutes of booking confirmation; ticketing failure rate &lt;0.3%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Ingest partner earn transactions via SFTP or API</td>
+  <td class="td-role">Loyalty Integration Engineer</td>
+  <td><span class="stag aws">AWS S3</span></td>
+  <td style="font-size:10px;color:#6b7280">Partner transaction data files (hotel, car rental, retail) via SFTP or REST API</td>
+  <td style="font-size:10px">Staged partner transaction records in data lake for Comarch processing</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Partner file ingestion within 24 hours of transaction; data completeness rate ≥98%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Reconcile co-brand card spend accruals with bank</td>
+  <td class="td-role">Loyalty Finance Analyst</td>
+  <td><span class="stag sap">SAP S/4HANA Finance</span></td>
+  <td style="font-size:10px;color:#6b7280">Co-brand card transaction data from bank partner API and Comarch accrual ledger</td>
+  <td style="font-size:10px">Reconciled mile liability journal entry; variance report for disputes</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Reconciliation completion within 3 business days of month-end; variance rate &lt;0.1% of total miles issued</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Invoice partner for mile liability and settle AR</td>
+  <td class="td-role">Loyalty Finance Analyst</td>
+  <td><span class="stag sap">SAP S/4HANA Finance</span></td>
+  <td style="font-size:10px;color:#6b7280">Reconciled mile liability from co-brand and earn partner transactions</td>
+  <td style="font-size:10px">Partner invoice (AR document) and settlement confirmation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Invoice issued within 5 business days of month-end; DSO on partner invoices ≤30 days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Segment members by engagement and lifetime value</td>
+  <td class="td-role">Loyalty Analytics Manager</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Full member transaction, redemption, and flight history</td>
+  <td style="font-size:10px">Member segments: active, at-risk, lapsed, high-value</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Segmentation model refresh ≤weekly; at-risk identification lead time ≥30 days before predicted churn</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Design and launch targeted retention campaign</td>
+  <td class="td-role">CRM Campaign Manager</td>
+  <td><span class="stag custom">Salesforce Marketing Cloud</span></td>
+  <td style="font-size:10px;color:#6b7280">At-risk and lapsed member segment lists from AWS Redshift</td>
+  <td style="font-size:10px">Deployed retention campaign (miles bonus, status extension offer, or upgrade voucher)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Campaign redemption rate ≥8% for re-engagement offers; unsubscribe rate &lt;0.5%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.3</td>
+  <td class="td-name">Measure programme ROI and report to leadership</td>
+  <td class="td-role">Loyalty Programme Director</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Campaign results, financial data from SAP S/4HANA, and booking attribution data</td>
+  <td style="font-size:10px">Monthly programme ROI dashboard and executive summary</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Monthly ROI report delivered by day 5 of following month; programme break-even mile cost ≤$0.012 per mile issued</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-02</span>Operational Flight Plan Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CX-01</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Customer Experience &amp; Loyalty</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Loyalty Programme Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Frequent Flyer Program Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">21 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">8 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">5 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Loyalty Operations Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Loyalty Data Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Loyalty Systems Engineer</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Loyalty Rules Engine Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>Loyalty Customer Service Agent</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Loyalty Analytics Analyst</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Loyalty Tier Manager</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>CRM Campaign Manager</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Loyalty Member / Contact Centre Agent</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Ticketing Agent</div><div class="swim"><div class="dot" style="background:#f97316"></div>Loyalty Integration Engineer</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>Loyalty Finance Analyst</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Loyalty Analytics Manager</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Loyalty Programme Director</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">Comarch Loyalty Management</span><span class="stag aws">AWS Redshift</span><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag custom">Salesforce Marketing Cloud</span><span class="stag amadeus">Amadeus GDS</span><span class="stag aws">AWS S3</span><span class="stag sap">SAP S/4HANA Finance</span><span class="stag custom">Tableau</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Capture new member application data</span><span class="kval">Enrollment completion rate ≥97%; form abandonment rate &lt;3%</span></div><div class="krow"><span class="kname">Validate identity and deduplicate profile</span><span class="kval">Duplicate member rate &lt;0.5% of active member base</span></div><div class="krow"><span class="kname">Assign base tier and post welcome bonus miles</span><span class="kval">Welcome bonus posting accuracy 100%; account activation within 24 hours of enrollment</span></div><div class="krow"><span class="kname">Ingest flight segment data from PSS</span><span class="kval">Post-flight accrual data ingestion SLA ≤72 hours; segment match rate ≥99%</span></div><div class="krow"><span class="kname">Calculate eligible miles per booking class</span><span class="kval">Accrual calculation accuracy ≥99.8%; rules table refresh within 4 hours of fare class change</span></div><div class="krow"><span class="kname">Post miles to member account</span><span class="kval">Miles posting success rate ≥99.9%; failed posting retry resolution within 4 hours</span></div><div class="krow"><span class="kname">Process retro-credit claim for missing miles</span><span class="kval">Retro-claim resolution ≤5 business days; auto-approval rate for flight claims ≥70%</span></div><div class="krow"><span class="kname">Aggregate qualifying activity for tier review</span><span class="kval">Tier calculation batch processing time &lt;4 hours for membership base ≥1M; completed by 02:00 local on qualification date</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Members signing up through multiple channels (web, mobile, GDS booking) without email deduplication create duplicate records that inflate reported membership figures by up to 8%</div><div class="risk-card">GDS-sourced bookings frequently lack email address, producing orphaned accounts that cannot be auto-merged; manual resolution queues exceed 5,000 records per month at large carriers</div><div class="risk-card">Tier assignment rules not synchronised in real time between Comarch and Amadeus Altéa PSS; boarding pass may display incorrect tier for first flight taken within hours of enrollment</div><div class="risk-card">Altéa segment data may arrive with codeshare operating-carrier code mismatch, causing failed accrual lookups for interline and partner flights; exception queue can spike after irregular operations</div><div class="risk-card">Complex earning multipliers for co-brand card holders are not reflected in real time if card-link data lags from bank partner API by 24–48 hours; members earn base miles then must request adjustment</div><div class="risk-card">API timeout during peak post-travel periods (Monday 06:00–09:00 local) causes transaction queuing; backlog can delay posting beyond the 72-hour SLA, generating member service contacts</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">New member sign-up form via web, mobile app, or in-flight registration</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Monthly programme ROI dashboard and executive summary</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-02/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-03</span>Fuel Planning &amp; Tankering</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-04</span>Weight &amp; Balance Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-04/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-05</span>NOTAMs &amp; AIP Information Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-06</span>Weather Monitoring &amp; Decision Support</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-07</span>Air Traffic Control Coordination</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-08</span>Network Operations Control (NOC)</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-09</span>Delay Management &amp; Root Cause Analysis</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-10</span>Diversion &amp; Emergency Response Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-11</span>ETOPS / EDTO Operations Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-13</span>Performance &amp; FDR Data Monitoring</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-14</span>Air-to-Ground Communications Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-15</span>Dangerous Goods Load Authorization</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../np-sd-15/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-SD-15 · Sales Force Automation &amp; CRM</span></a><a class="pn-btn" href="../cx-02/"><span><span class="sub">Next</span>CX-02 · Miles &amp; Points Accrual Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

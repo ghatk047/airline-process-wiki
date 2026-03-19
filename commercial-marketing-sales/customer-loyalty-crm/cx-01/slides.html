@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-01 Slides — Frequent Flyer Program Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-01</span>
+    <h1>Frequent Flyer Program Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-01.png" alt="BPMN for CX-01" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Loyalty Programme Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-01</span>
+    <h1>Frequent Flyer Program Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-01</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Loyalty Programme Management</li>
+          <li><strong>L3 Name:</strong> Frequent Flyer Program Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">21</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Capture new member application data</li><li><strong>Phase 2:</strong> Ingest flight segment data from PSS</li><li><strong>Phase 3:</strong> Aggregate qualifying activity for tier review</li><li><strong>Phase 4:</strong> Search and display award flight availability</li><li><strong>Phase 5:</strong> Ingest partner earn transactions via SFTP or API</li><li><strong>Phase 6:</strong> Segment members by engagement and lifetime value</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>CRM Campaign Manager</li><li>Loyalty Analytics Analyst</li><li>Loyalty Analytics Manager</li><li>Loyalty Customer Service Agent</li><li>Loyalty Data Analyst</li><li>Loyalty Finance Analyst</li><li>Loyalty Integration Engineer</li><li>Loyalty Member / Contact Centre Agent</li><li>Loyalty Operations Analyst</li><li>Loyalty Programme Director</li><li>Loyalty Rules Engine Analyst</li><li>Loyalty Systems Engineer</li><li>Loyalty Tier Manager</li><li>Ticketing Agent</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift</li><li>AWS S3</li><li>Amadeus Altéa PSS</li><li>Amadeus GDS</li><li>Comarch Loyalty Management</li><li>SAP S/4HANA Finance</li><li>Salesforce Marketing Cloud</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Loyalty Programme Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-01</span>
+    <h1>Frequent Flyer Program Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Capture new member application data</td>
+        <td class="kpi-col">Enrollment completion rate ≥97%; form abandonment rate &lt;3%</td>
+        <td class="pain-col">Members signing up through multiple channels (web, mobile, GDS booking) without email deduplication create duplicate records that inflate reported membership figures by up to 8%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate identity and deduplicate profile</td>
+        <td class="kpi-col">Duplicate member rate &lt;0.5% of active member base</td>
+        <td class="pain-col">GDS-sourced bookings frequently lack email address, producing orphaned accounts that cannot be auto-merged; manual resolution queues exceed 5,000 records per month at large carriers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Assign base tier and post welcome bonus miles</td>
+        <td class="kpi-col">Welcome bonus posting accuracy 100%; account activation within 24 hours of enrollment</td>
+        <td class="pain-col">Tier assignment rules not synchronised in real time between Comarch and Amadeus Altéa PSS; boarding pass may display incorrect tier for first flight taken within hours of enrollment</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Ingest flight segment data from PSS</td>
+        <td class="kpi-col">Post-flight accrual data ingestion SLA ≤72 hours; segment match rate ≥99%</td>
+        <td class="pain-col">Altéa segment data may arrive with codeshare operating-carrier code mismatch, causing failed accrual lookups for interline and partner flights; exception queue can spike after irregular operations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Calculate eligible miles per booking class</td>
+        <td class="kpi-col">Accrual calculation accuracy ≥99.8%; rules table refresh within 4 hours of fare class change</td>
+        <td class="pain-col">Complex earning multipliers for co-brand card holders are not reflected in real time if card-link data lags from bank partner API by 24–48 hours; members earn base miles then must request adjustment</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Post miles to member account</td>
+        <td class="kpi-col">Miles posting success rate ≥99.9%; failed posting retry resolution within 4 hours</td>
+        <td class="pain-col">API timeout during peak post-travel periods (Monday 06:00–09:00 local) causes transaction queuing; backlog can delay posting beyond the 72-hour SLA, generating member service contacts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Process retro-credit claim for missing miles</td>
+        <td class="kpi-col">Retro-claim resolution ≤5 business days; auto-approval rate for flight claims ≥70%</td>
+        <td class="pain-col">Partner hotel and car-rental claims require manual verification due to absence of real-time partner transaction feeds; average handle time for partner retro-claims is 3× that of flight claims</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Aggregate qualifying activity for tier review</td>
+        <td class="kpi-col">Tier calculation batch processing time &lt;4 hours for membership base ≥1M; completed by 02:00 local on qualification date</td>
+        <td class="pain-col">Year-end tier rollover processing creates Comarch database contention; programmes with &gt;2M active members have experienced rollover jobs exceeding the maintenance window, delaying tier notifications by up to 48 hours</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Evaluate tier upgrade or downgrade eligibility</td>
+        <td class="kpi-col">Tier assignment accuracy rate 100%; exception case resolution ≤2 business days</td>
+        <td class="pain-col">Tier criteria differ between earned-status and status-match members; exceptions are managed via manual spreadsheet outside Comarch, creating audit trail gaps and occasional erroneous downgrades that drive high-value member complaints</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Notify member of tier change and updated benefits</td>
+        <td class="kpi-col">Email open rate ≥35% for tier upgrade notifications; send within 2 hours of tier change</td>
+        <td class="pain-col">Salesforce Marketing Cloud integration with Comarch runs on nightly batch; real-time tier changes (e.g., reached Gold at midnight) are not reflected in communications until the following morning, delaying member recognition</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Provision tier benefits and flags in PSS</td>
+        <td class="kpi-col">Benefit provisioning SLA ≤2 hours post-tier assignment; SSR flag accuracy 100%</td>
+        <td class="pain-col">Altéa profile update does not propagate to codeshare or interline partner carrier systems; lounge access flags may be absent on partner-operated flights, requiring manual override at airport — a top-5 elite member complaint driver</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Search and display award flight availability</td>
+        <td class="kpi-col">Award availability search response time ≤3 seconds; award seat availability ≥5% of cabin capacity on operated flights</td>
+        <td class="pain-col">Award seat inventory is managed in a separate Altéa RM bucket from revenue inventory; RM team allocation rules are not always aligned with redemption demand, resulting in sub-optimal award availability that pushes members to competitors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Validate member miles balance and expiry status</td>
+        <td class="kpi-col">Balance check API response time ≤1 second; expiry warning accuracy 100%</td>
+        <td class="pain-col">Miles expiry rules differ by programme tier and earning source; expired-miles disputes are consistently in the top-3 contact centre drivers, each requiring manual audit of the 24-month transaction ledger</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Process award booking and deduct miles</td>
+        <td class="kpi-col">Redemption processing success rate ≥99.5%; dual-system transaction completion within 60 seconds</td>
+        <td class="pain-col">Dual-system transaction (Altéa PNR creation + Comarch deduction) has no atomic rollback; if Altéa confirms the PNR but Comarch times out, miles are not deducted, creating liability; or vice versa creating orphaned PNRs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Issue award ticket via GDS or NDC channel</td>
+        <td class="kpi-col">Award ticket issuance within 15 minutes of booking confirmation; ticketing failure rate &lt;0.3%</td>
+        <td class="pain-col">ATPCO award fare filing delays can cause ticketing failures when a carrier updates its award chart mid-season without providing adequate lead time; agents must manually override fare basis codes, increasing error risk</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Ingest partner earn transactions via SFTP or API</td>
+        <td class="kpi-col">Partner file ingestion within 24 hours of transaction; data completeness rate ≥98%</td>
+        <td class="pain-col">Partner data formats are inconsistent across up to 15 active earn partners; each non-standard SFTP feed requires a bespoke ETL transform in AWS, with schema changes by partners breaking pipelines and delaying member mile postings</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Reconcile co-brand card spend accruals with bank</td>
+        <td class="kpi-col">Reconciliation completion within 3 business days of month-end; variance rate &lt;0.1% of total miles issued</td>
+        <td class="pain-col">Bank API transaction data is typically 24–48 hours delayed; real-time card spend accrual SLA commitments made to co-brand cardholders are not achievable with batch feeds, requiring liability provisioning estimates that create month-end restatements</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Invoice partner for mile liability and settle AR</td>
+        <td class="kpi-col">Invoice issued within 5 business days of month-end; DSO on partner invoices ≤30 days</td>
+        <td class="pain-col">Mile valuation disputes with hotel and retail partners are a recurring AR collection risk; no contractual SLA governs partner dispute resolution timelines, and unresolved disputes can age beyond 90 days before escalation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Segment members by engagement and lifetime value</td>
+        <td class="kpi-col">Segmentation model refresh ≤weekly; at-risk identification lead time ≥30 days before predicted churn</td>
+        <td class="pain-col">Member lifetime value model is not updated in real time; at-risk interventions may lag by up to 7 days after engagement drops, reducing campaign effectiveness for time-sensitive retention windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Design and launch targeted retention campaign</td>
+        <td class="kpi-col">Campaign redemption rate ≥8% for re-engagement offers; unsubscribe rate &lt;0.5%</td>
+        <td class="pain-col">GDPR and CCPA consent management in Salesforce Marketing Cloud is not always synchronised with Comarch consent flags; sending campaigns to members who have opted out in Comarch but not yet in SFMC creates regulatory exposure and potential fines</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Measure programme ROI and report to leadership</td>
+        <td class="kpi-col">Monthly ROI report delivered by day 5 of following month; programme break-even mile cost ≤$0.012 per mile issued</td>
+        <td class="pain-col">Revenue attribution between loyalty-driven incremental bookings and organic demand is methodologically contested; commercial, finance, and loyalty teams use different attribution models, producing materially different ROI figures that undermine programme investment decisions</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Loyalty Programme Management</span>
+  </div>
+</div>
+
+</body>
+</html>
