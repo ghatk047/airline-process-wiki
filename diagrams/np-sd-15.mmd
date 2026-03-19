@@ -1,0 +1,43 @@
+flowchart LR
+  subgraph P1["Phase 1: Lead Identification & Qualification"]
+    A([Start]) --> B[Ingest corporate lead from referral]
+    B --> C{Lead qualifies\nby spend threshold?}
+    C -- No --> B
+    C -- Yes --> D[Assign lead to sales rep]
+  end
+  subgraph P2["Phase 2: Opportunity Development & Proposal"]
+    D --> E[Create opportunity record in CRM]
+    E --> F[Build fare & volume proposal]
+    F --> G{Pricing approved\nby Revenue Mgmt?}
+    G -- No --> F
+    G -- Yes --> H[Submit proposal to client]
+  end
+  subgraph P3["Phase 3: Contract Negotiation & Execution"]
+    H --> I[Negotiate corporate agreement terms]
+    I --> J{Contract terms\nagreed?}
+    J -- No --> I
+    J -- Yes --> K[Execute contract & load in CRM]
+  end
+  subgraph P4["Phase 4: Account Onboarding & Activation"]
+    K --> L[Load fares into PSS & GDS channels]
+    L --> M{Booking tool\nintegration test pass?}
+    M -- No --> L
+    M -- Yes --> N[Activate corporate account]
+  end
+  subgraph P5["Phase 5: Performance Monitoring & Renewal"]
+    N --> O[Track booking volume vs target]
+    O --> P[Generate account performance report]
+    P --> Q{Renewal or\nrenegotiation trigger?}
+    Q -- Renegotiate --> I
+    Q -- Renew --> R[Initiate renewal workflow]
+    R --> S([End])
+    Q -- On track --> S
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style S fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
