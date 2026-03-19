@@ -1,0 +1,50 @@
+flowchart LR
+  subgraph P1["Phase 1: Intake & Triage"]
+    A([Start]) --> B[Capture complaint\nomni-channel]
+    B --> C[Auto-classify type\n& urgency tier]
+    C --> D{Safety / regulatory\ntrigger?}
+    D -- Yes --> E[Escalate to\nCompliance & Safety]
+    D -- No --> F[Assign case &\nset SLA clock]
+    E --> F
+  end
+
+  subgraph P2["Phase 2: Investigation"]
+    F --> G[Retrieve booking &\ninteraction history]
+    G --> H[Validate facts vs\nops & baggage records]
+    H --> I{Further investigation\nrequired?}
+    I -- Yes --> J[Escalate to\nspecialist team]
+    I -- No --> K[Code root cause\ncategory]
+    J --> K
+  end
+
+  subgraph P3["Phase 3: Resolution & Response"]
+    K --> L{Financial compensation\neligible?}
+    L -- Miles/Voucher --> M[Post miles or\nissue e-voucher]
+    L -- Cash refund --> N[Process refund\nvia PSS & SAP]
+    L -- No --> O[Draft & approve\ncustomer response]
+    M --> O
+    N --> O
+  end
+
+  subgraph P4["Phase 4: Closure & Escalation"]
+    O --> P{Customer satisfied\nwith resolution?}
+    P -- No --> K
+    P -- Yes --> Q[Log outcome &\nupdate CRM profile]
+  end
+
+  subgraph P5["Phase 5: Analytics & Improvement"]
+    Q --> R[Aggregate complaint\ntrend data]
+    R --> S[Measure NPS & CSAT\nvia Medallia]
+    S --> T{Cross-dept escalation\nrequired?}
+    T -- Yes --> U[Assign improvement\nowners in Jira]
+    T -- No --> V([End])
+    U --> V
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style V fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
