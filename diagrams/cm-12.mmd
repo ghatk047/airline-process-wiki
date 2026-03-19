@@ -1,0 +1,82 @@
+flowchart LR
+  subgraph P1[Phase 1: Workforce Planning]
+    A([Start]) --> B[Analyse crew headcount\ngap vs. demand forecast]
+    B --> C{Gap above\nrecruitment threshold?}
+    C -- No --> B
+    C -- Yes --> D[Submit requisition\nin SuccessFactors]
+  end
+
+  subgraph P2[Phase 2: Sourcing and Screening]
+    D --> E[Publish vacancy and\nbuild candidate pipeline]
+    E --> F[Screen vs. FAR 121\nATP minimums]
+    F --> G{Meets FAR 121.436\nATP minimums?}
+    G -- No --> Rej1([Decline])
+    G -- Yes --> H[HR pre-screen\nvideo interview]
+    H --> I{Advance to\nassessment?}
+    I -- No --> Rej1
+  end
+
+  subgraph P3[Phase 3: Selection and Assessment]
+    I -- Yes --> J[Aptitude and\npsychometric test]
+    J --> K{Score ≥ 65th\npercentile?}
+    K -- No --> Rej2([Decline])
+    K -- Yes --> L[Simulator assessment\nFFS Level D]
+    L --> M{Sim result:\npass / fail?}
+    M -- Fail --> Rej2
+    M -- Pass --> N[Panel interview\nand hire decision]
+    N --> O{Hire\napproved?}
+    O -- No --> Rej2
+  end
+
+  subgraph P4[Phase 4: Compliance and Offer]
+    O -- Yes --> P[PRIA check and\nbackground screening]
+    P --> Q{PRIA and background\nclear?}
+    Q -- No --> Hold1([Hold / Withdraw])
+    Q -- Yes --> R[Class 1 AME\nmedical exam]
+    R --> S{First-class medical\ncertificate issued?}
+    S -- No --> Hold1
+    S -- Yes --> T[TSA STA and\nE-Verify clearance]
+    T --> U{Cleared for\nemployment?}
+    U -- No --> Hold1
+    U -- Yes --> V[Issue contract\nand confirm class date]
+  end
+
+  subgraph P5[Phase 5: Initial Training]
+    V --> W[Ground school and\nsystems CBT]
+    W --> X{Systems exam\npassed ≥ 80%?}
+    X -- No --> W
+    X -- Yes --> Y[Type rating simulator\ntraining — AQP]
+    Y --> Z{All AQP FFS events\nsatisfactory?}
+    Z -- No --> Y
+    Z -- Yes --> AA[FAA checkride\nand type rating issuance]
+    AA --> AB{Checkride\npassed?}
+    AB -- No --> AA
+  end
+
+  subgraph P6[Phase 6: Line Qualification]
+    AB -- Yes --> AC[IOE line check\nwith Check Airman]
+    AC --> AD{IOE complete\nper FAR 121.434?}
+    AD -- No --> AC
+    AD -- Yes --> AE[Activate crew\nqualification record]
+    AE --> AF[Assign domicile\nand initial PBS roster]
+    AF --> AG([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AG fill:#003366,color:#fff,stroke:#003366
+  style Rej1 fill:#003366,color:#fff,stroke:#003366
+  style Rej2 fill:#003366,color:#fff,stroke:#003366
+  style Hold1 fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600
+  style Z fill:#ff6600,color:#fff,stroke:#ff6600
+  style AB fill:#ff6600,color:#fff,stroke:#ff6600
+  style AD fill:#ff6600,color:#fff,stroke:#ff6600

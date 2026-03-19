@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-12 Slides — Crew Recruitment &amp; Onboarding</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-12</span>
+    <h1>Crew Recruitment &amp; Onboarding</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-12.png" alt="BPMN for CM-12" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-12</span>
+    <h1>Crew Recruitment &amp; Onboarding</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-12</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Planning &amp; Rostering</li>
+          <li><strong>L3 Name:</strong> Crew Recruitment &amp; Onboarding</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">14</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Analyse crew headcount gap vs. demand forecast</li><li><strong>Phase 2:</strong> Publish vacancy and build candidate pipeline</li><li><strong>Phase 3:</strong> Administer aptitude and psychometric assessment</li><li><strong>Phase 4:</strong> Initiate PRIA check and criminal background screen</li><li><strong>Phase 5:</strong> Complete airline indoctrination and systems ground</li><li><strong>Phase 6:</strong> Complete Initial Operating Experience (IOE) line c</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Check Airman / Training Captain</li><li>Chief Pilot / HR Business Partner</li><li>Crew Planning Analyst</li><li>Crew Planning Analyst / New Hire Pilot</li><li>Crew Resource Manager</li><li>Crew Scheduling Analyst</li><li>FAA Designated Pilot Examiner (DPE) / AAIP Check Airman</li><li>HR Business Partner</li><li>HR Compliance Specialist</li><li>IOE Check Airman / New Hire First Officer</li><li>Talent Acquisition Specialist</li><li>Training Captain / Check Airman</li><li>Training Instructor / New Hire Pilot</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift + Amadeus SkyCAST</li><li>CAE SimuFlite FFS Level D + LOSA Observation Software</li><li>CAE SimuFlite Full-Flight Simulator (FFS Level D)</li><li>DHS E-Verify + TSA Security Threat Assessment (STA) Portal</li><li>FAA Airmen Records Clearinghouse (ARC) + HireRight Background Screening</li><li>FAA IACRA (Integrated Airman Certification and Rating Application)</li><li>FAA MedXPress + AME Network (Aviation Medical Examiner)</li><li>Hogan Assessments / Criteria Corp CCAT</li><li>Jeppesen Crew Management + IBS Software iCrew</li><li>Jeppesen Crew Management + Jeppesen FliteDeck (EFB)</li><li>Jeppesen CrewPlan + SAP SuccessFactors Onboarding</li><li>SAP SuccessFactors Learning (LMS) + Airline CBT Training Portal</li><li>SAP SuccessFactors Onboarding + DocuSign</li><li>SAP SuccessFactors Recruiting</li><li>SAP SuccessFactors Recruiting + FAA Airmen Inquiry</li><li>SAP SuccessFactors Recruiting + LinkedIn Recruiter</li><li>SAP SuccessFactors Recruiting + Microsoft Teams</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-12</span>
+    <h1>Crew Recruitment &amp; Onboarding</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Analyse crew headcount gap vs. demand forecast</td>
+        <td class="kpi-col">Forecast accuracy ±5% vs. actual recruits needed; report delivered ≥10 months ahead of class date</td>
+        <td class="pain-col">Demand forecast volatility from new route announcements and aircraft delivery slippage causes mid-cycle requisition revisions; 9–12-month type-rating lead times mean over/under-hiring is costly and hard to correct</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Submit and approve crew recruitment requisition</td>
+        <td class="kpi-col">Requisition-to-posting cycle ≤3 business days; budget approval SLA ≤5 business days</td>
+        <td class="pain-col">SAP SuccessFactors integration with Jeppesen Crew Management is manual; class date misalignment between HR and Training wastes simulator slots costing $5,000–$12,000 per unused FFS hour</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Publish vacancy and build candidate pipeline</td>
+        <td class="kpi-col">Application-to-qualified-applicant ratio ≥15%; time-to-slate ≤21 days from posting</td>
+        <td class="pain-col">FAR 121.436 ATP minimum (1,500 hours) creates a shallow qualified candidate pool; competition from cargo carriers and regional airlines for experienced pilots drives signing bonus inflation, increasing cost-per-hire beyond budget assumptions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Screen applications against FAR 121 ATP minimums</td>
+        <td class="kpi-col">Screen pass rate ≥40% of qualified applicants; false-negative rate &lt;5% on manual reviews</td>
+        <td class="pain-col">Manual logbook hour verification is time-consuming and fraud-prone; inflated or falsified total-time entries are an industry-wide risk requiring cross-check against FAA Airmen Inquiry — no automated integration exists between ATS and FAA records</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Conduct HR pre-screen video interview</td>
+        <td class="kpi-col">Pre-screen to assessment conversion rate ≥65%; no-show rate &lt;10%</td>
+        <td class="pain-col">Scheduling across time zones for international candidates and active-duty military applicants creates coordination overhead; no-show rates of 10–15% without automated two-way reminder workflows in SuccessFactors deplete pipeline faster than sourcing can replenish</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Administer aptitude and psychometric assessment</td>
+        <td class="kpi-col">Assessment completion rate ≥90%; pass threshold ≥65th percentile on cognitive battery</td>
+        <td class="pain-col">Hogan and Criteria Corp are not natively integrated with SAP SuccessFactors; scores must be manually uploaded, creating data-entry lag and gaps in the EEOC audit trail required for FAR Part 121 carrier compliance</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Conduct simulator technical assessment — FFS Level D</td>
+        <td class="kpi-col">First-attempt pass rate ≥75%; FFS simulator utilisation for recruiting ≥80% of booked slots</td>
+        <td class="pain-col">FFS Level D availability is a shared constraint between line training, recurrent training, and recruiting — unplanned FFS maintenance causes candidate rescheduling and downstream class-date delays; recruiting slots are lowest priority in most carriers&#x27; FFS allocation policies</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Conduct structured panel interview and make hire decision</td>
+        <td class="kpi-col">Offer acceptance rate ≥85%; panel-to-verbal-offer cycle ≤5 business days</td>
+        <td class="pain-col">Panel scoring without a Behaviourally Anchored Rating Scale (BARS) leads to inconsistent decisions and EEO exposure; calibration sessions between Chief Pilots and HR are ad hoc, creating inter-rater reliability risk that is difficult to defend in EEOC investigations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Initiate PRIA check and criminal background screening</td>
+        <td class="kpi-col">PRIA response turnaround ≤30 days (FAR 121.432 statutory deadline); background check completion ≤10 days; disqualification rate &lt;8%</td>
+        <td class="pain-col">FAR 121.432 PRIA requires contacting all prior aviation employers within 5 years — defunct carriers, foreign operators, and unresponsive employers can delay responses by 4–8 weeks with no regulatory enforcement mechanism, directly pushing class dates and increasing training pipeline gaps</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Schedule and complete FAA Class 1 AME medical exam</td>
+        <td class="kpi-col">First-class medical pass rate ≥88%; average AME scheduling lead time ≤10 days; medical disqualification identified pre-class ≥95% of cases</td>
+        <td class="pain-col">Candidates with undisclosed conditions (ADHD, cardiovascular history) or special issuance requirements fail at this late stage, creating class fill gaps with no time to backfill; BasicMed provisions do not apply to FAR Part 121 ATP-required operations, so no alternative pathway exists</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Verify right-to-work and obtain TSA security clearance</td>
+        <td class="kpi-col">E-Verify clearance ≤3 business days; TSA STA clearance ≤21 days; I-9 compliance rate 100%</td>
+        <td class="pain-col">TSA STA delays for candidates with extensive foreign travel history or partial name matches on government watchlists can hold class starts by 2–4 weeks; airline bears DOT liability if any revenue flying occurs before STA clears, requiring costly reallocation of training resources</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Issue employment contract and confirm class date</td>
+        <td class="kpi-col">Contract signature to class start ≥14 days buffer; offer-to-class-start cycle ≤90 days; DocuSign completion rate 100% within 3 days of issue</td>
+        <td class="pain-col">Contract terms covering domicile preference, upgrade timelines, and training bond obligations are a primary retention lever — verbal recruiter commitments that diverge from standardised contract language drive year-1 attrition; no single system of record exists to track promises made during recruitment</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Complete airline indoctrination and systems ground school</td>
+        <td class="kpi-col">Ground school exam first-attempt pass rate ≥90%; dropout or withdrawal rate &lt;5% per class</td>
+        <td class="pain-col">CBT content revision cycles lag behind avionics Service Bulletin (SB) and procedure changes by 6–12 months; new hires learn superseded procedures during ground school and require re-briefing before IOE, increasing Check Airman workload and extending qualification timelines</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Conduct type rating simulator training under AQP</td>
+        <td class="kpi-col">FFS training syllabus completion rate 100%; average event grade ≥Satisfactory on all AQP manoeuvres; FFS utilisation ≥85%</td>
+        <td class="pain-col">AQP data management is manual at many carriers — FFS event grades recorded on paper and scanned into training records, creating audit trail gaps for FAA AAIP oversight; LOSA data capture is not standardised, reducing safety data quality for SMS programmes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Administer FAA checkride and issue type rating</td>
+        <td class="kpi-col">First-attempt checkride pass rate ≥85%; temporary certificate issuance ≤2 days post-exam; permanent certificate ≤120 days per FAA Registry SLA</td>
+        <td class="pain-col">FAA DPE availability is a systemic bottleneck — nationwide DPE shortage means checkride wait times of 2–4 weeks, delaying class graduation and IOE start; airline AAIP (Airline Aviation Training Programme) designation mitigates this but requires dedicated Check Airman capacity that competes with line operations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Complete Initial Operating Experience (IOE) line check</td>
+        <td class="kpi-col">IOE completion within 90 days of type rating issuance (FAR 121.434); first-attempt line check pass rate ≥90%; IOE hours per graduate ≤25 hours</td>
+        <td class="pain-col">IOE pairing availability depends on route and equipment schedule — Jeppesen pairing optimiser does not natively prioritise IOE pairings, causing delays beyond the 90-day FAR 121.434 regulatory window; FAR Part 117 fatigue rules for Check Airmen further constrain IOE scheduling during high operational tempo periods</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Activate crew qualification record and assign domicile</td>
+        <td class="kpi-col">System activation within 24 hours of IOE sign-off; crew record data accuracy 100%; payroll activation lag ≤1 business day</td>
+        <td class="pain-col">Data synchronisation between Jeppesen crew qualification records and SAP SuccessFactors payroll is manual at most carriers — activation delays cause pay errors and crew portal access failures on day 1 of line flying, generating HR ticket volume and eroding new hire confidence</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Assign to initial PBS bid period and complete onboarding</td>
+        <td class="kpi-col">Time from IOE completion to first revenue pairing ≤5 days; onboarding task completion rate 100% by day 30; year-1 voluntary attrition ≤8%</td>
+        <td class="pain-col">New hires unfamiliar with Preferential Bidding System (PBS) mechanics consistently place suboptimal first bids, resulting in undesirable schedules and early attrition complaints; targeted PBS orientation reduces this but is rarely standardised in onboarding programmes, and Jeppesen CrewPlan offers no new-hire guided bidding mode</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+</body>
+</html>

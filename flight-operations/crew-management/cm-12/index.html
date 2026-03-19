@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Baggage Operations · Ground Operations &amp; Airport Services · Airlines Process Wiki</title>
+<title>CM-12 · Crew Recruitment &amp; Onboarding · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Crew Management</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -153,7 +154,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-09/"><span class="status-dot status-done"></span><span class="pid">CM-09</span>Cabin Crew Service Standards &amp; Training</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-10/"><span class="status-dot status-done"></span><span class="pid">CM-10</span>Crew Disruption Recovery &amp; Re-pairing</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-11/"><span class="status-dot status-done"></span><span class="pid">CM-11</span>Crew Union &amp; Labour Agreement Compliance</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-12/"><span class="status-dot status-done"></span><span class="pid">CM-12</span>Crew Recruitment &amp; Onboarding</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/crew-management/cm-12/"><span class="status-dot status-done"></span><span class="pid">CM-12</span>Crew Recruitment &amp; Onboarding</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-13/"><span class="status-dot status-queue"></span><span class="pid">CM-13</span>Deadhead &amp; Positioning Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-14/"><span class="status-dot status-queue"></span><span class="pid">CM-14</span>Crew Performance Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-15/"><span class="status-dot status-queue"></span><span class="pid">CM-15</span>Crew Payroll &amp; Hours Tracking</a>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-queue"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -242,90 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
-  <span class="current">Baggage Operations</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Crew Management</a><span class="sep">›</span>
+  <a href="../../../flight-operations/crew-management/">Crew Planning &amp; Rostering</a><span class="sep">›</span>
+  <span class="current">CM-12 · Crew Recruitment &amp; Onboarding</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Baggage Operations</h1>
-    <p>Ground Operations &amp; Airport Services · 0 of 8 subprocesses complete · Updated 2026-03-19 13:40</p>
+    <h1>Crew Recruitment &amp; Onboarding</h1>
+    <p>Crew Management › Crew Planning &amp; Rostering · 18 L4 steps · 6 phases · 14 decision gates · Updated 2026-03-19 13:40</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CM-12</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-02</span>Baggage Acceptance &amp; Handling</h3>
-    <p>Baggage Operations · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cm-12">
+      <img src="../../../assets/img/cm-12.png" alt="CM-12 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cm-12').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cm-12').style.display='flex'">
+      <div id="diag-placeholder-cm-12" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-02/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Analyse crew headcount gap vs. demand forecast</td>
+  <td class="td-role">Crew Planning Analyst</td>
+  <td><span class="stag amadeus">AWS Redshift + Amadeus SkyCAST</span></td>
+  <td style="font-size:10px;color:#6b7280">12-month schedule demand forecast, current crew establishment headcount by fleet and base</td>
+  <td style="font-size:10px">Headcount gap report segmented by fleet type, domicile, and class date window</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Forecast accuracy ±5% vs. actual recruits needed; report delivered ≥10 months ahead of class date</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Submit and approve crew recruitment requisition</td>
+  <td class="td-role">Crew Resource Manager</td>
+  <td><span class="stag sap">SAP SuccessFactors Recruiting</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved headcount gap report, budget allocation from Finance (SAP S/4HANA FI/CO)</td>
+  <td style="font-size:10px">Approved job requisition record with fleet type, domicile, target class date, and minimum qualifications</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Requisition-to-posting cycle ≤3 business days; budget approval SLA ≤5 business days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Publish vacancy and build candidate pipeline</td>
+  <td class="td-role">Talent Acquisition Specialist</td>
+  <td><span class="stag sap">SAP SuccessFactors Recruiting + LinkedIn Recruiter</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved requisition with role minimums (ATP certificate, total flight hours, type rating preferences)</td>
+  <td style="font-size:10px">Live job posting across channels; ranked candidate pipeline in ATS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Application-to-qualified-applicant ratio ≥15%; time-to-slate ≤21 days from posting</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Screen applications against FAR 121 ATP minimums</td>
+  <td class="td-role">Talent Acquisition Specialist</td>
+  <td><span class="stag noc">SAP SuccessFactors Recruiting + FAA Airmen Inquiry</span></td>
+  <td style="font-size:10px;color:#6b7280">Candidate application submissions; FAA Airmen Inquiry certificate data</td>
+  <td style="font-size:10px">Shortlisted candidates meeting FAR 121.436 ATP, total hours, and currency requirements</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Screen pass rate ≥40% of qualified applicants; false-negative rate &lt;5% on manual reviews</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Conduct HR pre-screen video interview</td>
+  <td class="td-role">Talent Acquisition Specialist</td>
+  <td><span class="stag sap">SAP SuccessFactors Recruiting + Microsoft Teams</span></td>
+  <td style="font-size:10px;color:#6b7280">Shortlisted candidate pool from application screening</td>
+  <td style="font-size:10px">Pre-screen assessment score; advance or decline decision per candidate</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Pre-screen to assessment conversion rate ≥65%; no-show rate &lt;10%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Administer aptitude and psychometric assessment</td>
+  <td class="td-role">Talent Acquisition Specialist</td>
+  <td><span class="stag custom">Hogan Assessments / Criteria Corp CCAT</span></td>
+  <td style="font-size:10px;color:#6b7280">Advance decision from pre-screen; candidate email invitation to assessment portal</td>
+  <td style="font-size:10px">Cognitive aptitude score, personality fit report, and composite recommendation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Assessment completion rate ≥90%; pass threshold ≥65th percentile on cognitive battery</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Conduct simulator technical assessment — FFS Level D</td>
+  <td class="td-role">Check Airman / Training Captain</td>
+  <td><span class="stag custom">CAE SimuFlite Full-Flight Simulator (FFS Level D)</span></td>
+  <td style="font-size:10px;color:#6b7280">Passed aptitude assessment; confirmed FFS simulator slot from training schedule</td>
+  <td style="font-size:10px">Simulator assessment gradesheet (pass / conditional / fail) per standardised evaluation form</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">First-attempt pass rate ≥75%; FFS simulator utilisation for recruiting ≥80% of booked slots</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Conduct structured panel interview and make hire decision</td>
+  <td class="td-role">Chief Pilot / HR Business Partner</td>
+  <td><span class="stag sap">SAP SuccessFactors Recruiting</span></td>
+  <td style="font-size:10px;color:#6b7280">FFS gradesheet, aptitude and psychometric scores, pre-screen interview notes</td>
+  <td style="font-size:10px">Hire or no-hire decision recorded in ATS; offer authorisation initiated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Offer acceptance rate ≥85%; panel-to-verbal-offer cycle ≤5 business days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Initiate PRIA check and criminal background screening</td>
+  <td class="td-role">HR Compliance Specialist</td>
+  <td><span class="stag noc">FAA Airmen Records Clearinghouse (ARC) + HireRight Background Screening</span></td>
+  <td style="font-size:10px;color:#6b7280">Conditional offer accepted; signed PRIA consent form from candidate</td>
+  <td style="font-size:10px">PRIA report (prior employer records, accident/incident history, drug and alcohol test records); criminal background check result</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PRIA response turnaround ≤30 days (FAR 121.432 statutory deadline); background check completion ≤10 days; disqualification rate &lt;8%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Schedule and complete FAA Class 1 AME medical exam</td>
+  <td class="td-role">HR Compliance Specialist</td>
+  <td><span class="stag noc">FAA MedXPress + AME Network (Aviation Medical Examiner)</span></td>
+  <td style="font-size:10px;color:#6b7280">Candidate personal data; completed FAA Form 8500-8 submitted via MedXPress</td>
+  <td style="font-size:10px">First-Class Medical Certificate issued by AME; MedXPress submission forwarded to FAA AMCD (Aeromedical Certification Division)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">First-class medical pass rate ≥88%; average AME scheduling lead time ≤10 days; medical disqualification identified pre-class ≥95% of cases</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Verify right-to-work and obtain TSA security clearance</td>
+  <td class="td-role">HR Compliance Specialist</td>
+  <td><span class="stag custom">DHS E-Verify + TSA Security Threat Assessment (STA) Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">Government-issued identity documents; completed I-9 form</td>
+  <td style="font-size:10px">E-Verify employment authorisation result; TSA STA clearance confirmation number</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">E-Verify clearance ≤3 business days; TSA STA clearance ≤21 days; I-9 compliance rate 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Issue employment contract and confirm class date</td>
+  <td class="td-role">HR Business Partner</td>
+  <td><span class="stag sap">SAP SuccessFactors Onboarding + DocuSign</span></td>
+  <td style="font-size:10px;color:#6b7280">All compliance checks passed; class date slot confirmed with Training Operations</td>
+  <td style="font-size:10px">Digitally signed employment contract; new hire record activated in HRIS; class start date confirmed to candidate and training department</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Contract signature to class start ≥14 days buffer; offer-to-class-start cycle ≤90 days; DocuSign completion rate 100% within 3 days of issue</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Complete airline indoctrination and systems ground school</td>
+  <td class="td-role">Training Instructor / New Hire Pilot</td>
+  <td><span class="stag sap">SAP SuccessFactors Learning (LMS) + Airline CBT Training Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">Class start date; FAR Part 121 Subpart N-approved training syllabus; aircraft systems manuals</td>
+  <td style="font-size:10px">Ground school completion certificate; aircraft systems knowledge exam result (pass threshold ≥80%)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Ground school exam first-attempt pass rate ≥90%; dropout or withdrawal rate &lt;5% per class</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Conduct type rating simulator training under AQP</td>
+  <td class="td-role">Training Captain / Check Airman</td>
+  <td><span class="stag custom">CAE SimuFlite FFS Level D + LOSA Observation Software</span></td>
+  <td style="font-size:10px;color:#6b7280">Ground school completion certificate; FAA-approved Advanced Qualification Programme (AQP) training plan</td>
+  <td style="font-size:10px">FFS event grades per AQP curriculum; simulator training records logged per FAR 121.409</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">FFS training syllabus completion rate 100%; average event grade ≥Satisfactory on all AQP manoeuvres; FFS utilisation ≥85%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Administer FAA checkride and issue type rating</td>
+  <td class="td-role">FAA Designated Pilot Examiner (DPE) / AAIP Check Airman</td>
+  <td><span class="stag noc">FAA IACRA (Integrated Airman Certification and Rating Application)</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed AQP FFS training with all events graded Satisfactory; training records package</td>
+  <td style="font-size:10px">Temporary airman certificate with type rating endorsement; IACRA application submitted to FAA Registry</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">First-attempt checkride pass rate ≥85%; temporary certificate issuance ≤2 days post-exam; permanent certificate ≤120 days per FAA Registry SLA</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Complete Initial Operating Experience (IOE) line check</td>
+  <td class="td-role">IOE Check Airman / New Hire First Officer</td>
+  <td><span class="stag custom">Jeppesen Crew Management + Jeppesen FliteDeck (EFB)</span></td>
+  <td style="font-size:10px;color:#6b7280">Type rating certificate on file; FAR 121.434 IOE syllabus; assigned IOE pairings in crew schedule</td>
+  <td style="font-size:10px">IOE completion sign-off by Check Airman; line check gradesheet; FAR 121 line qualification endorsed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">IOE completion within 90 days of type rating issuance (FAR 121.434); first-attempt line check pass rate ≥90%; IOE hours per graduate ≤25 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Activate crew qualification record and assign domicile</td>
+  <td class="td-role">Crew Scheduling Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management + IBS Software iCrew</span></td>
+  <td style="font-size:10px;color:#6b7280">IOE sign-off documentation; type rating on file; employment contract domicile preference</td>
+  <td style="font-size:10px">Active crew qualification record in Jeppesen; domicile assignment confirmed; PBS eligibility flag set in iCrew</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">System activation within 24 hours of IOE sign-off; crew record data accuracy 100%; payroll activation lag ≤1 business day</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.3</td>
+  <td class="td-name">Assign to initial PBS bid period and complete onboarding</td>
+  <td class="td-role">Crew Planning Analyst / New Hire Pilot</td>
+  <td><span class="stag sap">Jeppesen CrewPlan + SAP SuccessFactors Onboarding</span></td>
+  <td style="font-size:10px;color:#6b7280">Active crew qualification record; open roster positions for current bid period; onboarding task checklist</td>
+  <td style="font-size:10px">First PBS bid period assignment; completed onboarding compliance tasks (uniform fitting, airport ID, emergency equipment familiarisation, CBA acknowledgement)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Time from IOE completion to first revenue pairing ≤5 days; onboarding task completion rate 100% by day 30; year-1 voluntary attrition ≤8%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-03</span>Lost &amp; Found / Baggage Tracing</h3>
-    <p>Baggage Operations · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CM-12</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Crew Management</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Crew Planning &amp; Rostering</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Crew Recruitment &amp; Onboarding</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">14 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">10 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Crew Planning Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Crew Resource Manager</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Talent Acquisition Specialist</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Check Airman / Training Captain</div><div class="swim"><div class="dot" style="background:#10b981"></div>Chief Pilot / HR Business Partner</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>HR Compliance Specialist</div><div class="swim"><div class="dot" style="background:#6366f1"></div>HR Business Partner</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Training Instructor / New Hire Pilot</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Training Captain / Check Airman</div><div class="swim"><div class="dot" style="background:#ef4444"></div>FAA Designated Pilot Examiner (DPE) / AAIP Check Airman</div><div class="swim"><div class="dot" style="background:#f97316"></div>IOE Check Airman / New Hire First Officer</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>Crew Scheduling Analyst</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Crew Planning Analyst / New Hire Pilot</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag amadeus">AWS Redshift + Amadeus SkyCAST</span><span class="stag sap">SAP SuccessFactors Recruiting</span><span class="stag sap">SAP SuccessFactors Recruiting + LinkedIn Recruiter</span><span class="stag noc">SAP SuccessFactors Recruiting + FAA Airmen Inquiry</span><span class="stag sap">SAP SuccessFactors Recruiting + Microsoft Teams</span><span class="stag custom">Hogan Assessments / Criteria Corp CCAT</span><span class="stag custom">CAE SimuFlite Full-Flight Simulator (FFS Level D)</span><span class="stag noc">FAA Airmen Records Clearinghouse (ARC) + HireRight Background Screening</span><span class="stag noc">FAA MedXPress + AME Network (Aviation Medical Examiner)</span><span class="stag custom">DHS E-Verify + TSA Security Threat Assessment (STA) Portal</span><span class="stag sap">SAP SuccessFactors Onboarding + DocuSign</span><span class="stag sap">SAP SuccessFactors Learning (LMS) + Airline CBT Training Portal</span><span class="stag custom">CAE SimuFlite FFS Level D + LOSA Observation Software</span><span class="stag noc">FAA IACRA (Integrated Airman Certification and Rating Application)</span><span class="stag custom">Jeppesen Crew Management + Jeppesen FliteDeck (EFB)</span><span class="stag custom">Jeppesen Crew Management + IBS Software iCrew</span><span class="stag sap">Jeppesen CrewPlan + SAP SuccessFactors Onboarding</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Analyse crew headcount gap vs. demand forecast</span><span class="kval">Forecast accuracy ±5% vs. actual recruits needed; report delivered ≥10 months ahead of class date</span></div><div class="krow"><span class="kname">Submit and approve crew recruitment requisition</span><span class="kval">Requisition-to-posting cycle ≤3 business days; budget approval SLA ≤5 business days</span></div><div class="krow"><span class="kname">Publish vacancy and build candidate pipeline</span><span class="kval">Application-to-qualified-applicant ratio ≥15%; time-to-slate ≤21 days from posting</span></div><div class="krow"><span class="kname">Screen applications against FAR 121 ATP minimums</span><span class="kval">Screen pass rate ≥40% of qualified applicants; false-negative rate &lt;5% on manual reviews</span></div><div class="krow"><span class="kname">Conduct HR pre-screen video interview</span><span class="kval">Pre-screen to assessment conversion rate ≥65%; no-show rate &lt;10%</span></div><div class="krow"><span class="kname">Administer aptitude and psychometric assessment</span><span class="kval">Assessment completion rate ≥90%; pass threshold ≥65th percentile on cognitive battery</span></div><div class="krow"><span class="kname">Conduct simulator technical assessment — FFS Level D</span><span class="kval">First-attempt pass rate ≥75%; FFS simulator utilisation for recruiting ≥80% of booked slots</span></div><div class="krow"><span class="kname">Conduct structured panel interview and make hire decision</span><span class="kval">Offer acceptance rate ≥85%; panel-to-verbal-offer cycle ≤5 business days</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Demand forecast volatility from new route announcements and aircraft delivery slippage causes mid-cycle requisition revisions; 9–12-month type-rating lead times mean over/under-hiring is costly and hard to correct</div><div class="risk-card">SAP SuccessFactors integration with Jeppesen Crew Management is manual; class date misalignment between HR and Training wastes simulator slots costing $5,000–$12,000 per unused FFS hour</div><div class="risk-card">FAR 121.436 ATP minimum (1,500 hours) creates a shallow qualified candidate pool; competition from cargo carriers and regional airlines for experienced pilots drives signing bonus inflation, increasing cost-per-hire beyond budget assumptions</div><div class="risk-card">Manual logbook hour verification is time-consuming and fraud-prone; inflated or falsified total-time entries are an industry-wide risk requiring cross-check against FAA Airmen Inquiry — no automated integration exists between ATS and FAA records</div><div class="risk-card">Scheduling across time zones for international candidates and active-duty military applicants creates coordination overhead; no-show rates of 10–15% without automated two-way reminder workflows in SuccessFactors deplete pipeline faster than sourcing can replenish</div><div class="risk-card">Hogan and Criteria Corp are not natively integrated with SAP SuccessFactors; scores must be manually uploaded, creating data-entry lag and gaps in the EEOC audit trail required for FAR Part 121 carrier compliance</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">12-month schedule demand forecast, current crew establishment headcount by fleet and base</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">First PBS bid period assignment; completed onboarding compliance tasks (uniform fitting, airport ID, emergency equipment familiarisation, CBA acknowledgement)</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-05</span>Ramp &amp; Turnaround Operations</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-06</span>Ground Handling Vendor Management</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-07</span>Load Control &amp; Aircraft Loading</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-11</span>Cargo &amp; Mail Ground Handling</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-12</span>De-Icing &amp; Winter Operations</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-14</span>Ground Support Equipment (GSE) Management</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-14/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cm-11/"><span class="arrow">←</span><span><span class="sub">Previous</span>CM-11 · Crew Union &amp; Labour Agreement Compliance</span></a><a class="pn-btn" href="../cm-13/"><span><span class="sub">Next</span>CM-13 · Deadhead &amp; Positioning Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
