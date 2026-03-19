@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-12 Slides — Lounge &amp; Premium Experience Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-12</span>
+    <h1>Lounge &amp; Premium Experience Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-12.png" alt="BPMN for CX-12" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-12</span>
+    <h1>Lounge &amp; Premium Experience Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-12</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Customer Experience Operations</li>
+          <li><strong>L3 Name:</strong> Lounge &amp; Premium Experience Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Retrieve passenger PNR and loyalty tier status</li><li><strong>Phase 2:</strong> Forecast lounge demand from departure schedule</li><li><strong>Phase 3:</strong> Retrieve passenger profile and service preferences</li><li><strong>Phase 4:</strong> Execute lounge F&amp;B, spa, and digital amenity servi</li><li><strong>Phase 5:</strong> Capture post-lounge NPS and satisfaction scores</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Customer Experience Analyst</li><li>Lounge Agent</li><li>Lounge Concierge</li><li>Lounge Operations Manager</li><li>Lounge Operations Supervisor</li><li>Lounge Planning Analyst</li><li>Lounge Service Attendant</li><li>Premium Experience Manager</li><li>Premium Services Coordinator</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Altéa PSS</li><li>Amadeus SkyWORKS</li><li>Comarch Loyalty Management</li><li>Medallia Experience Cloud</li><li>SAP Ariba</li><li>SITA Airport Management System (AMS)</li><li>Salesforce CRM</li><li>Tableau / Power BI</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-12</span>
+    <h1>Lounge &amp; Premium Experience Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Retrieve passenger PNR and loyalty tier status</td>
+        <td class="kpi-col">Access verification time &lt; 30 seconds per passenger</td>
+        <td class="pain-col">Altéa tier-lookup latency spikes during irregular operations (IRROP) can queue 20+ passengers at peak departure banks, degrading premium brand perception</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate lounge entitlement against fare and tier</td>
+        <td class="kpi-col">Entitlement accuracy rate ≥ 99.5% (no wrongful denial or admission)</td>
+        <td class="pain-col">Misalignment between ATPCO fare class entitlement rules and Comarch loyalty tier tables causes wrongful denials for premium codeshare passengers not in airline&#x27;s own PSS</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Check real-time lounge occupancy vs. capacity cap</td>
+        <td class="kpi-col">Lounge occupancy maintained at ≤ 90% of rated capacity during peak banks</td>
+        <td class="pain-col">SITA AMS occupancy sensors in third-party contract lounges (e.g. airport operator lounges) are not integrated, requiring manual headcounts and creating data lag of 5–10 minutes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Issue digital lounge access pass or redirect passenger</td>
+        <td class="kpi-col">Guest satisfaction with access process ≥ 4.2 / 5.0 (post-visit survey)</td>
+        <td class="pain-col">No dynamic overbooking buffer in Altéa lounge module — capacity denial is binary, leading to complaints when eligible passengers are turned away 1–2 seats below hard cap</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Forecast lounge demand from departure schedule</td>
+        <td class="kpi-col">Forecast accuracy within ± 10% of actual peak occupancy</td>
+        <td class="pain-col">SkyWORKS schedule feed does not include real-time irregular-operations (IRROP) rebooking data; demand spikes from cancelled flight consolidations are not reflected until T-4 hours</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Generate staffing and F&amp;B resource plan</td>
+        <td class="kpi-col">Staff-to-guest ratio ≥ 1:15 during peak departure banks; F&amp;B stockout rate &lt; 1%</td>
+        <td class="pain-col">Resource planning is manual in spreadsheets at most stations — no integrated workforce management system feeding lounge-specific demand signals, leading to over/understaffing 30% of departure banks</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Submit F&amp;B and consumables requisition to catering</td>
+        <td class="kpi-col">Catering order fulfilment rate ≥ 98% within agreed lead time</td>
+        <td class="pain-col">SAP Ariba supplier catalogue is managed by central procurement and updated quarterly — lounge-specific seasonal menu changes or regional items cannot be added ad hoc, limiting localisation of premium experience</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Activate surge staffing protocol for high-load windows</td>
+        <td class="kpi-col">Surge activation lead time ≤ 2 hours before predicted peak; guest wait time at entry ≤ 5 minutes</td>
+        <td class="pain-col">Overflow agreements with airport operator lounges are station-specific and not codified in SITA AMS — activation requires manual phone calls, causing delays of 20–30 minutes in agreeing capacity at short notice</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Retrieve passenger profile and service preferences</td>
+        <td class="kpi-col">Profile retrieval at lounge entry &lt; 15 seconds; preference recognition rate ≥ 85% of repeat premium guests</td>
+        <td class="pain-col">Salesforce CRM preference data is updated via post-flight survey only — real-time in-flight service notes from cabin crew (e.g., passenger declined meal) are not written back to CRM, causing repeat service failures on next journey</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Flag VIP, VVIP, and special service requests on manifest</td>
+        <td class="kpi-col">100% of SSR-flagged premium passengers identified ≥ 90 minutes prior to departure</td>
+        <td class="pain-col">VVIP flags set by sales or government affairs teams are stored in a separate SharePoint list not integrated with Altéa PSS — lounge staff miss VVIPs when SharePoint is not checked manually before each departure bank</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Coordinate personalised amenity kits and premium meal setup</td>
+        <td class="kpi-col">Meal pre-selection accuracy ≥ 97%; amenity kit shortfall rate &lt; 0.5% of premium seats</td>
+        <td class="pain-col">Pre-selection data from Salesforce CRM must be manually transcribed into the catering system — no API integration between CRM preference data and catering management platform increases transcription error rate to ~3%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Activate meet-and-greet and dedicated butler for VIPs</td>
+        <td class="kpi-col">VIP meet-and-greet execution rate 100% of flagged passengers; greeting delay &lt; 5 minutes from arrival</td>
+        <td class="pain-col">Inbound flight delays not surfaced in Salesforce CRM require concierge to monitor SITA AMS separately — no unified notification when VIP inbound flight is delayed &gt; 30 minutes, leading to missed or premature meet-and-greets</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Execute lounge F&amp;B, spa, and digital amenity service</td>
+        <td class="kpi-col">F&amp;B replenishment cycle ≤ 20 minutes; spa booking wait time ≤ 10 minutes; Wi-Fi uptime ≥ 99.9%</td>
+        <td class="pain-col">Service logging is paper-based in most third-party contract lounges — consumption data is not captured digitally, preventing demand pattern analysis and cost reconciliation accuracy, leading to billing disputes with caterers</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Broadcast boarding gate notifications to lounge guests</td>
+        <td class="kpi-col">Boarding notification issued ≥ 30 minutes before STD; missed notification rate &lt; 0.1%</td>
+        <td class="pain-col">SITA AMS FIDS integration is reliable at hub stations but frequently lags at outstations (&gt; 5 minutes) — lounge staff rely on personal phone calls to gate agents for departure time confirmation at 30% of stations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Escalate and resolve in-lounge SSR requests</td>
+        <td class="kpi-col">SSR resolution within lounge: ≥ 90% within 15 minutes; escalation to operations &lt; 5% of SSRs</td>
+        <td class="pain-col">Altéa PSS SSR update requires back-office terminal access — lounge concierges using mobile devices cannot update SSR records in real time, causing duplication of effort when the same request is re-raised at the gate</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Execute no-show baggage offload for gate-close no-shows</td>
+        <td class="kpi-col">Baggage offload completion within 15 minutes of gate close; no-show offload accuracy 100%</td>
+        <td class="pain-col">Lounge no-show visibility depends on gate agent manually communicating non-boarding to the lounge — no automated Altéa trigger when a premium passenger clears lounge entry but does not scan boarding pass at gate, causing offload delays that breach 15-minute target</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Capture post-lounge NPS and satisfaction scores</td>
+        <td class="kpi-col">Survey response rate ≥ 35% of lounge visitors; Lounge NPS target ≥ 75</td>
+        <td class="pain-col">Medallia survey invitation is triggered by flight departure, not lounge exit — passengers in transit or connecting through a second lounge receive duplicate invitations, inflating response counts and skewing NPS by station</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Review KPI dashboard and trigger service recovery if below threshold</td>
+        <td class="kpi-col">KPI dashboard refresh latency ≤ 24 hours; corrective action plans issued within 48 hours of threshold breach</td>
+        <td class="pain-col">Tableau dashboards pull from multiple source systems (Medallia, SITA AMS, Altéa, SAP Ariba) with inconsistent refresh cadences — data as-of timestamps differ by up to 48 hours, making same-week service recovery decisions unreliable for fast-moving operational issues</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+flowchart LR
+  subgraph P1["Phase 1: Eligibility & Access Control"]
+    A([Start]) --> B[Retrieve PNR & loyalty tier]
+    B --> C[Validate lounge entitlement]
+    C --> D{Capacity > 90%?}
+    D -- No --> E[Issue digital access pass]
+    D -- Yes --> F[Offer voucher / priority queue]
+  end
+  subgraph P2["Phase 2: Demand Planning & Resources"]
+    G[Forecast demand from flight schedule]
+    G --> H[Generate staffing & F&B plan]
+    H --> I{High-load window > 80%?}
+    I -- Yes --> J[Activate surge staffing]
+    I -- No --> K[Standard staffing plan]
+  end
+  subgraph P3["Phase 3: Premium Personalisation"]
+    L[Retrieve passenger CRM profile]
+    L --> M[Flag VIP & SSR on manifest]
+    M --> N{VIP / VVIP identified?}
+    N -- Yes --> O[Activate meet-greet & butler]
+    N -- No --> P[Standard premium protocol]
+  end
+  subgraph P4["Phase 4: Service Delivery"]
+    Q[Execute F&B & amenity service]
+    Q --> R[Push boarding gate alerts]
+    R --> S[Handle SSR escalations]
+    S --> T{Passenger no-show at gate?}
+    T -- Yes --> U[Initiate baggage offload]
+    T -- No --> V[Close lounge for flight]
+  end
+  subgraph P5["Phase 5: Performance Monitoring"]
+    W[Capture post-lounge NPS score]
+    W --> X[Review KPI dashboard]
+    X --> Y{NPS < 75 or complaints > 2%?}
+    Y -- Yes --> Z[Trigger service recovery plan]
+    Y -- No --> ZA([End])
+    Z --> ZA
+  end
+
+  E --> G
+  F --> G
+  J --> L
+  K --> L
+  O --> Q
+  P --> Q
+  U --> W
+  V --> W
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style ZA fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style Y fill:#ff6600,color:#fff,stroke:#ff6600
