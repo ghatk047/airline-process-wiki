@@ -1,0 +1,53 @@
+flowchart LR
+  subgraph P1["Phase 1: Inquiry & Qualification"]
+    A([Start]) --> B[Log Charter Inquiry]
+    B --> C{Credit approved?}
+    C -- No --> B
+    C -- Yes --> D[Check Fleet Availability]
+    D --> E{Capacity available?}
+    E -- No --> B
+    E -- Yes --> F[Qualify Route & Scope]
+  end
+  subgraph P2["Phase 2: Pricing & Proposal"]
+    F --> G[Calculate Block-Hour Costs]
+    G --> H[Assess Displaced Revenue]
+    H --> I{RM approval?}
+    I -- No --> G
+    I -- Yes --> J[Issue Charter Proposal]
+  end
+  subgraph P3["Phase 3: Contract Negotiation"]
+    J --> K{Terms accepted?}
+    K -- No --> J
+    K -- Yes --> L[Execute Charter Contract]
+    L --> M{Deposit received?}
+    M -- No --> L
+    M -- Yes --> N[Confirm Booking]
+  end
+  subgraph P4["Phase 4: Ops Coordination"]
+    N --> O[File Permits & Slots]
+    O --> P{Permits secured?}
+    P -- No --> O
+    P -- Yes --> Q[Assign Crew & Fuel Plan]
+    Q --> R[Coordinate Ground Handling]
+  end
+  subgraph P5["Phase 5: Execution & Settlement"]
+    R --> S[Execute Charter Flight]
+    S --> T[Capture Actuals vs Estimate]
+    T --> U{Invoice within tolerance?}
+    U -- No --> T
+    U -- Yes --> V[Issue Final Invoice]
+    V --> W{Payment cleared?}
+    W -- No --> V
+    W -- Yes --> X([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600

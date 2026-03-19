@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SD-07 Slides — Charter Sales &amp; Contract Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-07</span>
+    <h1>Charter Sales &amp; Contract Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sd-07.png" alt="BPMN for NP-SD-07" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-07</span>
+    <h1>Charter Sales &amp; Contract Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SD-07</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Sales &amp; Distribution</li>
+          <li><strong>L3 Name:</strong> Charter Sales &amp; Contract Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive and log charter inquiry in CRM</li><li><strong>Phase 2:</strong> Calculate block-hour cost and fuel uplift estimate</li><li><strong>Phase 3:</strong> Negotiate charter terms and revise pricing if need</li><li><strong>Phase 4:</strong> Apply for overflight and landing permits</li><li><strong>Phase 5:</strong> Execute charter flight and record departure/arriva</li><li><strong>Phase 6:</strong> Conduct post-charter debrief and update client rec</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Charter Accounts Receivable Specialist</li><li>Charter Finance Analyst</li><li>Charter Operations Coordinator</li><li>Charter Pricing Analyst</li><li>Charter Sales Manager</li><li>Charter Sales Representative</li><li>Crew Scheduling Manager</li><li>Flight Operations Dispatcher</li><li>Revenue Management Analyst</li><li>Revenue Management Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Airport Management</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management</li><li>Amadeus SkyWORKS</li><li>DocuSign</li><li>IATA CRS</li><li>Jeppesen Crew Management</li><li>SAP S/4HANA Finance</li><li>Salesforce CRM</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-07</span>
+    <h1>Charter Sales &amp; Contract Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive and log charter inquiry in CRM</td>
+        <td class="kpi-col">Inquiry-to-quote response time ≤4 hours for Group &gt;50 pax</td>
+        <td class="pain-col">Unstructured enquiry intake (email/phone) causes data loss and delays; no dedicated charter request portal integrated with Salesforce</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate client credit standing and compliance</td>
+        <td class="kpi-col">Credit check completed within 2 hours of inquiry receipt</td>
+        <td class="pain-col">Manual credit verification via third-party tools not embedded in Salesforce; repeat credit checks for known clients due to lack of CRM integration</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Check aircraft and crew availability in schedule</td>
+        <td class="kpi-col">Availability check completed within 1 business hour; fleet utilisation conflict rate &lt;5%</td>
+        <td class="pain-col">Charter requests compete with scheduled service rotations; SkyWORKS schedule locks can prevent real-time availability reads during peak planning cycles</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Calculate block-hour cost and fuel uplift estimate</td>
+        <td class="kpi-col">Cost model accuracy vs actuals ≤5% variance on completed charters</td>
+        <td class="pain-col">Amadeus NRM is O&amp;D-optimised for scheduled service; charter block-hour cost models are maintained in offline Excel workbooks outside the RM system, creating version control risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Assess displaced scheduled revenue opportunity cost</td>
+        <td class="kpi-col">Charter net margin ≥15% above displaced scheduled service yield</td>
+        <td class="pain-col">Displaced revenue calculation requires manual extraction of RM forecast data; no automated what-if tool to compare charter vs scheduled revenue in real time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Obtain Revenue Management approval for charter pricing</td>
+        <td class="kpi-col">RM approval turnaround ≤4 hours; pricing approval SLA breach rate &lt;10%</td>
+        <td class="pain-col">No formal workflow routing for charter pricing approvals in Amadeus NRM; approvals handled via email, creating audit trail gaps for regulatory and financial compliance</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Build and transmit formal charter proposal to client</td>
+        <td class="kpi-col">Proposal issued within 6 hours of RM approval; proposal acceptance rate ≥40%</td>
+        <td class="pain-col">Proposal templates are maintained outside Salesforce; manual formatting increases turnaround time and introduces inconsistency across sales reps</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Negotiate charter terms and revise pricing if needed</td>
+        <td class="kpi-col">Negotiation rounds ≤3 before agreement or rejection; average deal close time ≤5 business days</td>
+        <td class="pain-col">Negotiation iterations not tracked in CRM opportunity stages; pricing concessions granted below floor price without RM visibility due to lack of automated guardrails</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Generate charter contract from approved terms</td>
+        <td class="kpi-col">Contract execution within 24 hours of verbal agreement; contract error rate &lt;2%</td>
+        <td class="pain-col">DocuSign not integrated with Salesforce CRM; contract data entry is manual, risking discrepancies between CRM opportunity record and signed contract terms</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Collect deposit payment and record in receivables</td>
+        <td class="kpi-col">Deposit received within 5 business days of contract execution; deposit collection rate ≥95%</td>
+        <td class="pain-col">No automated dunning workflow for charter deposit collection in SAP; manual follow-up required, and overdue deposits are not automatically flagged in Salesforce CRM</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Apply for overflight and landing permits</td>
+        <td class="kpi-col">Permit applications filed ≥10 days before departure for international routes; permit clearance rate ≥98%</td>
+        <td class="pain-col">Permit processing times vary by country (24 hours to 10+ days); no centralised permit tracking system — status monitored via email chains with handling agents, risking missed deadlines</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>File flight plan and request airport slots</td>
+        <td class="kpi-col">Slot confirmed ≥5 days before departure; slot change rate &lt;10% post-confirmation</td>
+        <td class="pain-col">Charter flights at slot-coordinated airports (IATA Level 3) compete with scheduled carriers; last-minute charter requests are often rejected, requiring costly alternative routing</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Assign crew pairing and verify duty-time compliance</td>
+        <td class="kpi-col">Crew assigned ≥72 hours before departure; FAR Part 117 violation rate = 0%</td>
+        <td class="pain-col">Charter dates often conflict with scheduled crew pairings; Jeppesen requires manual pairing creation for ad-hoc charters, and duty-time buffers may be exhausted if schedule disruptions precede the charter</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Coordinate fuel uplift, catering, and ground handling</td>
+        <td class="kpi-col">Ground handling confirmed ≥48 hours before departure; catering order accuracy ≥98%</td>
+        <td class="pain-col">Charter stations may be uncontracted airports; negotiating ad-hoc fuel and handling rates increases cost unpredictability and erodes the charter margin estimated in Phase 2</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Execute charter flight and record departure/arrival actuals</td>
+        <td class="kpi-col">Charter on-time departure (D0) ≥85%; pax manifest discrepancy rate &lt;0.5%</td>
+        <td class="pain-col">Charter pax manifests are often finalised late by clients; last-minute pax additions or removals require real-time weight &amp; balance recalculations, delaying departure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Capture actual costs and reconcile against estimate</td>
+        <td class="kpi-col">Cost reconciliation completed within 5 business days of flight; cost variance ≤8% of estimate</td>
+        <td class="pain-col">Fuel and handling invoices from ad-hoc stations arrive weeks after the flight; SAP posting cutoffs create accrual uncertainty, requiring manual re-opening of periods for charter settlements</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Issue final invoice and collect balance payment</td>
+        <td class="kpi-col">Final invoice issued within 7 business days of flight; payment collected within contract terms (net 14 days); DSO for charter ≤21 days</td>
+        <td class="pain-col">Client disputes over fuel surcharges or extras delay final payment; no automated dispute escalation workflow in SAP, requiring manual intervention by Finance and Sales teams</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Conduct post-charter debrief and update client record</td>
+        <td class="kpi-col">Debrief completed within 10 business days of flight; repeat charter conversion rate ≥30%</td>
+        <td class="pain-col">Post-charter learnings (pricing accuracy, permit delays, ground handling issues) are not systematically fed back into pricing models or permit planning checklists, causing repeated errors</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+</body>
+</html>
