@@ -1,0 +1,57 @@
+flowchart LR
+  subgraph P1[Phase 1: Check-In and Qualification Verification]
+    A([Start]) --> B[Pull daily crew duty roster]
+    B --> C[Send duty-start notifications]
+    C --> D{Crew checked in on time?}
+    D -- Yes --> E{Qualifications and currency valid?}
+    D -- No --> F[Activate standby crew]
+    F --> E
+    E -- Yes --> G[Confirm crew ready for duty]
+    E -- No --> H[Remove from schedule / find cover]
+    H --> G
+  end
+  subgraph P2[Phase 2: Duty Time and FAR 117 Monitoring]
+    G --> I[Initialize duty clock and FRMS baseline]
+    I --> J[Monitor flight/duty time vs FAR 117 limits]
+    J --> K{Approaching FAR 117 threshold?}
+    K -- No --> J
+    K -- Yes --> L[Trigger fatigue alert and calc rest window]
+    L --> J
+  end
+  subgraph P3[Phase 3: Real-Time Position Tracking]
+    J --> M[Track crew-aircraft alignment via ACARS]
+    M --> N{Crew confirmed on board?}
+    N -- Yes --> O[Update position records after each sector]
+    N -- No --> P[Investigate discrepancy / hold departure]
+    P --> M
+  end
+  subgraph P4[Phase 4: Disruption Response and Reassignment]
+    O --> Q[Receive NOC disruption alerts]
+    Q --> R{Revised schedule legal for crew?}
+    R -- Yes --> S[Update schedule in CMS]
+    R -- No --> T[Source standby / deadhead replacement]
+    T --> U{Replacement crew available?}
+    U -- Yes --> S
+    U -- No --> V[Escalate to Network Control]
+    V --> S
+    S --> W[Push reassignment notifications]
+  end
+  subgraph P5[Phase 5: Duty Close-Out and Archival]
+    W --> X[Confirm crew sign-off and record duty-out]
+    X --> Y[Recalculate 28-day cumulative fatigue hours]
+    Y --> Z{FAR 117 exceedance detected?}
+    Z -- No --> AA[Archive duty records and sync payroll feed]
+    Z -- Yes --> AB[File regulatory incident report]
+    AB --> AA
+    AA --> AC([End])
+  end
+
+  style A  fill:#003366,color:#fff,stroke:#003366
+  style AC fill:#003366,color:#fff,stroke:#003366
+  style D  fill:#ff6600,color:#fff,stroke:#ff6600
+  style E  fill:#ff6600,color:#fff,stroke:#ff6600
+  style K  fill:#ff6600,color:#fff,stroke:#ff6600
+  style N  fill:#ff6600,color:#fff,stroke:#ff6600
+  style R  fill:#ff6600,color:#fff,stroke:#ff6600
+  style U  fill:#ff6600,color:#fff,stroke:#ff6600
+  style Z  fill:#ff6600,color:#fff,stroke:#ff6600

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-03 Slides — Crew Day-of-Operations Tracking</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-03</span>
+    <h1>Crew Day-of-Operations Tracking</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-03.png" alt="BPMN for CM-03" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Day-of-Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-03</span>
+    <h1>Crew Day-of-Operations Tracking</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-03</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Day-of-Operations</li>
+          <li><strong>L3 Name:</strong> Crew Day-of-Operations Tracking</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">12</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Pull daily crew duty roster from CMS</li><li><strong>Phase 2:</strong> Initialize duty period clock &amp; FRMS baseline</li><li><strong>Phase 3:</strong> Track crew-to-aircraft assignment via ACARS OOOI d</li><li><strong>Phase 4:</strong> Receive &amp; triage crew-impacting disruption alerts </li><li><strong>Phase 5:</strong> Confirm crew sign-off &amp; record actual duty-out tim</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Crew Scheduling Controller</li><li>Crew Scheduling System (automated)</li><li>Gate Agent / Crew Scheduling Controller</li><li>Operations Control Crew Desk</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Altéa PSS</li><li>IBS Software iCrew</li><li>Jeppesen Crew Management System</li><li>SITA ACARS / Telex</li><li>SITA Airport Management System (AMS)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Day-of-Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-03</span>
+    <h1>Crew Day-of-Operations Tracking</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Pull daily crew duty roster from CMS</td>
+        <td class="kpi-col">Roster accuracy ≥99% match to published pairings; list generated ≥3 hrs before first departure</td>
+        <td class="pain-col">Late roster amendments from crew bidding workflow can cause data sync lag between Jeppesen and Altéa PSS, risking crew data mismatches at check-in during hub-complex rotations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Send automated duty-start notifications to crew</td>
+        <td class="kpi-col">Notification delivery rate ≥99.5% within 30 min of duty window opening; read-receipt confirmed for ≥90% of app-registered crew</td>
+        <td class="pain-col">Crew mobile app adoption varies across base seniority groups; SMS fallback provides no read-receipt confirmation, creating unverified notification risk for critical duty changes during irregular operations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Verify crew check-in at required report time</td>
+        <td class="kpi-col">On-time check-in rate ≥98%; no-show detection and standby activation trigger within 15 min of missed report time</td>
+        <td class="pain-col">Manual check-in verification at outstations with no dedicated crew desk compresses the standby activation window; regional airport staffing gaps mean no-shows may not be detected until gate agents escalate, often inside 60 min to departure</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Validate crew qualifications, recency &amp; type currency</td>
+        <td class="kpi-col">Zero qualified-crew-on-illegal-assignment incidents; automated compliance check runtime ≤2 min per crew member</td>
+        <td class="pain-col">Training record sync delays between the airline LMS and Jeppesen can allow stale qualification data to persist, creating regulatory exposure under FAR Part 61 if a crew member&#x27;s type rating lapse is not reflected in the CMS before duty commencement</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Initialize duty period clock &amp; FRMS baseline</td>
+        <td class="kpi-col">Duty record initialization within 5 min of check-in confirmation; FRMS baseline computed for 100% of active crew</td>
+        <td class="pain-col">FRMS models calibrated on aggregate fleet data may underestimate fatigue for crew transitioning from high-density transcontinental rotations into back-to-back short-haul turns, particularly where rest was taken across multiple time zones</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Monitor real-time duty time against FAR Part 117 limits</td>
+        <td class="kpi-col">Zero FAR Part 117 FDP exceedances; alert triggered ≥60 min before any limit breach; alert-to-action response time ≤10 min</td>
+        <td class="pain-col">ACARS timestamp delays at congested hub airports (e.g., ORD, ATL) can cause duty time calculations to lag actual operations by 5–12 min, compressing the crew controller&#x27;s response window before a legally binding FDP limit is reached</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Calculate projected rest requirement &amp; next availability</td>
+        <td class="kpi-col">Rest calculation accuracy ±0 min (regulatory requirement); hotel release notification issued within 30 min of projected rest start; ≥95% of rest-period hotel blocks confirmed before duty release</td>
+        <td class="pain-col">Hotel inventory management for irregular operations is handled outside the CMS via a separate vendor portal, requiring manual coordination that increases the risk of accommodation errors and delays crew rest commencement, eroding the legally mandated minimum rest period</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Track crew-to-aircraft assignment via ACARS OOOI data</td>
+        <td class="kpi-col">Crew position update latency ≤5 min after OOOI event; position mistrack rate &lt;0.5% of daily operated sectors</td>
+        <td class="pain-col">ACARS message dropouts in remote or oceanic airspace create position gaps; fallback to manual satellite phone verification adds 15–20 min lag, which is operationally critical for connecting crew or minimum-rest rotations at outstation overnight bases</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Confirm crew on-board status against PSS manifest</td>
+        <td class="kpi-col">Crew boarding confirmation ≥15 min before STD; zero departures with unresolved unconfirmed crew status</td>
+        <td class="pain-col">Altéa crew manifest data refresh depends on the Jeppesen–Altéa integration batch cycle; if the interface runs on a 10-min cadence, last-minute crew swaps may not be reflected in the PSS boarding system, triggering false missing-crew alerts and unnecessary departure holds</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Update crew position records after each completed sector</td>
+        <td class="kpi-col">Position record updated within 10 min of IN event; data accuracy ≥99.8% match to ACARS source timestamps</td>
+        <td class="pain-col">Multi-leg rotations with short turn times under 45 min risk position record overwrites if the prior segment&#x27;s IN event message arrives after the subsequent segment&#x27;s OUT event has already been logged, creating a phantom dual-assignment state in the CMS</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Receive &amp; triage crew-impacting disruption alerts from NOC</td>
+        <td class="kpi-col">Initial crew impact assessment within 10 min of disruption notification; zero unacknowledged disruption alerts aged &gt;15 min</td>
+        <td class="pain-col">NOC disruption data feeds into the CMS via a polling API; 5-min polling intervals can delay crew controller awareness of fast-moving ATC programs or ground stops at high-traffic hubs, shortening the window available to proactively cover downstream crew illegalities</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Assess revised schedule legality for impacted crew</td>
+        <td class="kpi-col">Legality check completed within 15 min of disruption triage; waiver utilization rate &lt;5% of disrupted operations; zero post-event FAR Part 117 violations</td>
+        <td class="pain-col">Jeppesen&#x27;s automated solver engine may time out on complex network disruptions affecting 20 or more crew simultaneously, requiring manual controller override and extending resolution time beyond the OTP recovery window, particularly during hub-wide weather events</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Source and assign replacement or standby crew</td>
+        <td class="kpi-col">Standby crew activated within 30 min of need identification; deadhead crew positioned within 2 hrs; crew coverage rate ≥97% of disrupted flights</td>
+        <td class="pain-col">Standby pool sizing is optimized for statistically expected disruption levels; severe weather events causing hub ground stops exceeding 4 hrs exhaust local standby pools, forcing cross-base deadhead that itself consumes FAR Part 117 FDP, further compressing available duty time for replacement crews</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Issue crew reassignment notifications &amp; sync downstream systems</td>
+        <td class="kpi-col">Crew notification sent within 5 min of reassignment confirmation; CMS-to-PSS sync completed before gate opens (≥30 min before STD); notification delivery confirmation rate ≥98%</td>
+        <td class="pain-col">Cascading reassignments in multi-hub disruptions generate notification storms; crew mobile app rate limits and carrier network congestion at hub airports cause delivery delays precisely during peak disruption windows when accurate crew information is most critical</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Confirm crew sign-off &amp; record actual duty-out time</td>
+        <td class="kpi-col">Duty record closed within 1 hr of crew release; sign-off discrepancy rate &lt;1% of operated duties; open duty record resolution within 4 hrs</td>
+        <td class="pain-col">Overnight outstations with no crew desk rely entirely on self-reported sign-off via mobile app; connectivity issues at regional airports cause delayed uploads, creating open duty records that block the next crew scheduling build cycle and may delay payroll processing</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Recalculate 28-day cumulative flight &amp; duty hours</td>
+        <td class="kpi-col">Fatigue record updated within 2 hrs of duty close; zero crew members scheduled before 28-day rolling total validated; cumulative total accuracy ±0 min</td>
+        <td class="pain-col">FAR Part 117 rolling window calculations across international timezone boundaries introduce date-ambiguity edge cases in legacy CMS implementations, historically requiring manual audit for transmeridian crew rotations and generating compliance review backlog during peak international operation periods</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Archive duty records &amp; sync actuals to scheduling and payroll</td>
+        <td class="kpi-col">Payroll data handoff to SAP within 24 hrs of duty close; scheduling feedback loop complete before next crew build cycle (T+48 hrs); archive integrity check ≥99.99%</td>
+        <td class="pain-col">Discrepancies between Jeppesen actual block hours and SAP payroll-recognized hours require manual reconciliation by crew admin; during irregular operations months, reconciliation volume can exceed crew administration capacity, delaying accurate payroll for 2–5% of crew members and generating grievance risk under collective bargaining agreements</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Day-of-Operations</span>
+  </div>
+</div>
+
+</body>
+</html>
