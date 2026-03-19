@@ -1,0 +1,55 @@
+flowchart LR
+  subgraph P1[Phase 1: Pre-Duty Rest Validation]
+    A([Start]) --> B[Pull crew schedule\nand rest windows]
+    B --> C{Min 10-hr rest\nand 8-hr sleep met?}
+    C -- No --> D[Escalate to\nCrew Scheduling]
+    D --> B
+    C -- Yes --> E[Confirm rest\ncompliance log]
+  end
+  subgraph P2[Phase 2: FDP Limit Calculation]
+    E --> F[Calc max FDP\nTable B/C values]
+    F --> G{Augmented ops\n3+ crew?}
+    G -- Yes --> H[Apply augmented\nFDP extension]
+    G -- No --> I{FDP within\ncomputed max?}
+    H --> I
+    I -- No --> J[Re-plan or assign\nrelief crew]
+    J --> F
+    I -- Yes --> K[Authorize FDP\nand issue brief]
+  end
+  subgraph P3[Phase 3: In-Flight Fatigue Mgmt]
+    K --> L[Monitor real-time\nduty vs limits]
+    L --> M{Fatigue declared\nor FDP breached?}
+    M -- Yes --> N[Coordinate AOC\nfor substitution]
+    N --> L
+    M -- No --> O[Log duty time\nto crew record]
+  end
+  subgraph P4[Phase 4: Cumulative Limit Tracking]
+    O --> P[Calc 60hr/168hr\n190hr/672hr limits]
+    P --> Q{Crew ≥85%\nof any limit?}
+    Q -- Yes --> R[Remove from sched\nnotify Crew Planning]
+    Q -- No --> S[Update crew\ncumulative log]
+  end
+  subgraph P5[Phase 5: FRMS Analysis]
+    S --> T[Aggregate fatigue\nevents in FRMS DB]
+    T --> U{Systemic risk\nin pairing/route?}
+    U -- Yes --> V[Revise pairings\nand notify safety]
+    V --> T
+    U -- No --> W[FRMS report\narchived]
+  end
+  subgraph P6[Phase 6: Regulatory Reporting]
+    W --> X[Generate FAR 117\ncompliance report]
+    X --> Y{Violations\ndetected?}
+    Y -- Yes --> Z[File voluntary\ndisclosure to FAA]
+    Y -- No --> AA([Complete])
+    Z --> AA
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AA fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style Y fill:#ff6600,color:#fff,stroke:#ff6600
