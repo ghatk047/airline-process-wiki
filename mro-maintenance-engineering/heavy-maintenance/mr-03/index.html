@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Flight Dispatch &amp; Control · Flight Operations · Airlines Process Wiki</title>
+<title>MR-03 · Engine Shop Maintenance Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -187,8 +188,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-done"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
@@ -206,7 +207,7 @@
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/heavy-maintenance/">Heavy Maintenance</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-02/"><span class="status-dot status-done"></span><span class="pid">MR-02</span>Heavy Maintenance (C/D Check) Planning</a>
-        <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-03/"><span class="status-dot status-done"></span><span class="pid">MR-03</span>Engine Shop Maintenance Management</a>
+        <a class="sidebar-l3-link active" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-03/"><span class="status-dot status-done"></span><span class="pid">MR-03</span>Engine Shop Maintenance Management</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-04/"><span class="status-dot status-queue"></span><span class="pid">MR-04</span>Component &amp; Parts Management</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-11/"><span class="status-dot status-queue"></span><span class="pid">MR-11</span>Structural Repair &amp; NDT Management</a>
       </div>
@@ -242,153 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Flight Dispatch &amp; Control</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/heavy-maintenance/">Engine &amp; Component Shop</a><span class="sep">›</span>
+  <span class="current">MR-03 · Engine Shop Maintenance Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Flight Dispatch &amp; Control</h1>
-    <p>Flight Operations · 15 of 15 subprocesses complete · Updated 2026-03-19 18:29</p>
+    <h1>Engine Shop Maintenance Management</h1>
+    <p>Maintenance, Repair &amp; Overhaul › Engine &amp; Component Shop · 18 L4 steps · 6 phases · 6 decision gates · Updated 2026-03-19 18:29</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">MR-03</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-01</span>Flight Dispatch &amp; Release</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 11 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-mr-03">
+      <img src="../../../assets/img/mr-03.png" alt="MR-03 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-mr-03').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-mr-03').style.display='flex'">
+      <div id="diag-placeholder-mr-03" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Receive engine from aircraft and log induction</td>
+  <td class="td-role">Engine Shop Receiving Inspector</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Engine removal notification from line maintenance or heavy check</td>
+  <td style="font-size:10px">Engine induction record with serial number, TSN, CSN, and removal reason</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Induction record created within 4 hours of engine receipt</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Perform incoming borescope inspection of engine</td>
+  <td class="td-role">Engine Borescope Inspector (Part 145)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Induction record, engine removal reason, last borescope findings</td>
+  <td style="font-size:10px">Borescope inspection report with blade condition, FOD, and erosion findings</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Borescope inspection completed within 24 hours of induction; findings logged in AMOS within 2 hours of inspection</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Determine shop visit type and open work order</td>
+  <td class="td-role">Engine Shop Planning Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Borescope report, engine removal reason, performance trend data</td>
+  <td style="font-size:10px">Shop visit classification (Performance Restoration, HSI, or On-Condition) and AMOS work order</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Work order opened and shop visit type confirmed within 8 hours of induction</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Disassemble engine modules per CMM procedures</td>
+  <td class="td-role">Engine Overhaul Mechanic (Part 145)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">AMOS work order, OEM Component Maintenance Manual (CMM), tooling list</td>
+  <td style="font-size:10px">Disassembled engine modules staged for inspection; AMOS task cards signed off</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Module teardown completed within published CMM man-hour estimate ±10%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Inspect HPC, HPT, LPT, and fan modules</td>
+  <td class="td-role">Engine Inspector / NDT Level II</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Disassembled modules, OEM Airworthiness Limitations (AWL), AD compliance matrix</td>
+  <td style="font-size:10px">Module inspection findings report; life-limited part (LLP) status updated in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% LLP cycle verification against AMOS life-limit records; inspection findings report issued within 48 hours of module receipt</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Identify AD/SB compliance gaps and raise EOs</td>
+  <td class="td-role">Engine Planning Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Module inspection report, FAA AD database, OEM service bulletin index</td>
+  <td style="font-size:10px">Engineering Orders (EOs) raised in AMOS for each open AD/SB; updated work scope</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero open mandatory ADs at engine release; all applicable SBs evaluated within 24 hours of findings report</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Classify parts as BER, serviceable, or repairable</td>
+  <td class="td-role">Engine Shop Planner</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Teardown findings report, OEM serviceability limits, repair cost benchmarks</td>
+  <td style="font-size:10px">Parts disposition list with BER (Beyond Economic Repair), serviceable, and repair-route tags in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Parts disposition completed within 48 hours of teardown; BER rate benchmarked at ≤15% of total parts count</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Check rotable parts availability in pool</td>
+  <td class="td-role">Engine Materials Controller</td>
+  <td><span class="stag custom">Boeing Toolbox / CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">Parts disposition list, rotable pool inventory records</td>
+  <td style="font-size:10px">Availability confirmation or shortage list for critical engine parts</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Rotable pool fill rate ≥85% for engine shop demand; critical part shortage identified within 4 hours of disposition</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Raise purchase orders for parts shortages</td>
+  <td class="td-role">Engine Materials Controller</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Shortage list from CAMP, approved vendor list (AVL), engine TAT deadline</td>
+  <td style="font-size:10px">SAP Ariba purchase orders for parts; expected delivery dates entered in AMOS parts tracking</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PO raised within 8 hours of shortage confirmation; expedited orders for AOG parts placed within 2 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Repair and overhaul modules per CMM</td>
+  <td class="td-role">Engine Overhaul Mechanic (Part 145)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Module inspection report, EOs, CMM repair procedures, serviceable replacement parts</td>
+  <td style="font-size:10px">Repaired modules with AMOS task cards signed; NDT records attached</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Repair man-hours within ±15% of AMOS work-order estimate; first-pass quality rate ≥92%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Apply approved modifications and service bulletins</td>
+  <td class="td-role">Engine Planning Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Open SB list from Step 2.3, OEM modification kits, Engineering Orders</td>
+  <td style="font-size:10px">Modification compliance records in AMOS; updated engine configuration baseline</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% mandatory SB incorporation confirmed before assembly; optional SB cost/benefit review completed within 4 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Reassemble engine and verify build standard</td>
+  <td class="td-role">Engine Overhaul Mechanic (Part 145)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Repaired and serviceable modules, torque specifications, build standard document</td>
+  <td style="font-size:10px">Fully assembled engine; AMOS build record with component serial numbers and final configuration</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Assembly completed within 48 hours of all parts arrival; dimensional check non-conformance rate ≤5%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Install engine on test cell and configure parameters</td>
+  <td class="td-role">Test Cell Engineer</td>
+  <td><span class="stag custom">Trax (MRO Software)</span></td>
+  <td style="font-size:10px;color:#6b7280">Assembled engine, test cell acceptance test procedure (ATP), engine spec sheet</td>
+  <td style="font-size:10px">Engine installed on test cell; baseline parameters configured in Trax test run record</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Test cell installation completed within 4 hours; test cell utilisation rate ≥80%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Run engine acceptance test per ECTM limits</td>
+  <td class="td-role">Test Cell Engineer</td>
+  <td><span class="stag custom">Trax (MRO Software)</span></td>
+  <td style="font-size:10px;color:#6b7280">OEM Acceptance Test Procedure (ATP), Engine Condition Trend Monitoring (ECTM) limits, test cell instrumentation data</td>
+  <td style="font-size:10px">Test run data report: EGT margin, fuel flow, vibration, oil consumption vs. OEM limits</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">EGT margin ≥25°C at end-of-test; vibration ≤0.5 in/sec; oil consumption ≤0.5 qt/hr</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Complete FAA 8130-3 / EASA Form 1 release docs</td>
+  <td class="td-role">Authorised Release Certificate Signatory (Part 145)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Test cell certification, AMOS work order completion data, AD/SB compliance records</td>
+  <td style="font-size:10px">FAA 8130-3 or EASA Form 1 Authorised Release Certificate; closed AMOS work order</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Release documentation completed within 8 hours of test cell sign-off; zero documentation deficiencies at FAA/EASA audit</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Update engine life history and rotable records</td>
+  <td class="td-role">Engine Records Administrator</td>
+  <td><span class="stag custom">Boeing Toolbox / CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">Closed AMOS work order, LLP cycle updates, modification compliance records</td>
+  <td style="font-size:10px">Updated engine life history in CAMP; rotable pool inventory record updated with new TSO/CSO</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Engine history updated within 4 hours of work order closure; LLP discrepancy rate ≤0.1% at next audit</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.3</td>
+  <td class="td-name">Obtain QA airworthiness release approval</td>
+  <td class="td-role">Quality Assurance Manager (Part 145)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Complete AMOS work order, release certificate, CAMP history update confirmation</td>
+  <td style="font-size:10px">QA-signed airworthiness release; engine cleared for return to rotable pool or direct fitment</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">QA release granted within 4 hours of documentation package submission; zero engines released with open corrective actions</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.4</td>
+  <td class="td-name">Return engine to rotable pool and notify planning</td>
+  <td class="td-role">Engine Shop Manager</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">QA airworthiness release, engine storage requirements, fleet demand forecast</td>
+  <td style="font-size:10px">Engine tagged serviceable in AMOS rotable pool; network planning team notified of availability</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Engine available in rotable pool within 2 hours of QA release; total shop visit TAT vs. target reported monthly</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-02</span>Operational Flight Plan Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">MR-03</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Maintenance, Repair &amp; Overhaul</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Engine &amp; Component Shop</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Engine Shop Maintenance Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">6 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">8 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Engine Shop Receiving Inspector</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Engine Borescope Inspector (Part 145)</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Engine Shop Planning Engineer</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Engine Overhaul Mechanic (Part 145)</div><div class="swim"><div class="dot" style="background:#10b981"></div>Engine Inspector / NDT Level II</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Engine Planning Engineer</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Engine Shop Planner</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Engine Materials Controller</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Test Cell Engineer</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Authorised Release Certificate Signatory (Part 145)</div><div class="swim"><div class="dot" style="background:#f97316"></div>Engine Records Administrator</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>Quality Assurance Manager (Part 145)</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Engine Shop Manager</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag custom">Boeing Toolbox / CAMP</span><span class="stag sap">SAP Ariba</span><span class="stag custom">Trax (MRO Software)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Receive engine from aircraft and log induction</span><span class="kval">Induction record created within 4 hours of engine receipt</span></div><div class="krow"><span class="kname">Perform incoming borescope inspection of engine</span><span class="kval">Borescope inspection completed within 24 hours of induction; findings logged in AMOS within 2 hours of inspection</span></div><div class="krow"><span class="kname">Determine shop visit type and open work order</span><span class="kval">Work order opened and shop visit type confirmed within 8 hours of induction</span></div><div class="krow"><span class="kname">Disassemble engine modules per CMM procedures</span><span class="kval">Module teardown completed within published CMM man-hour estimate ±10%</span></div><div class="krow"><span class="kname">Inspect HPC, HPT, LPT, and fan modules</span><span class="kval">100% LLP cycle verification against AMOS life-limit records; inspection findings report issued within 48 hours of module receipt</span></div><div class="krow"><span class="kname">Identify AD/SB compliance gaps and raise EOs</span><span class="kval">Zero open mandatory ADs at engine release; all applicable SBs evaluated within 24 hours of findings report</span></div><div class="krow"><span class="kname">Classify parts as BER, serviceable, or repairable</span><span class="kval">Parts disposition completed within 48 hours of teardown; BER rate benchmarked at ≤15% of total parts count</span></div><div class="krow"><span class="kname">Check rotable parts availability in pool</span><span class="kval">Rotable pool fill rate ≥85% for engine shop demand; critical part shortage identified within 4 hours of disposition</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Incomplete removal documentation from line stations delays accurate TSN/CSN capture, risking life-limit tracking errors in AMOS</div><div class="risk-card">FOD damage discovered at induction not captured in aircraft logbook leads to retroactive safety investigations under FAR Part 43.9 and delays work scope confirmation</div><div class="risk-card">Performance trend data from on-wing ACARS monitoring (SITA ACARS) may not sync to AMOS automatically, forcing manual EGT margin entry and introducing transcription errors</div><div class="risk-card">OEM CMM revision cycle (Boeing/CFM/GE) lags regulatory changes; AMOS document revision alerts can be suppressed by users, risking use of superseded procedures</div><div class="risk-card">LLP cycle counter discrepancies between AMOS and Boeing Toolbox / CAMP cause certification holds; reconciliation requires manual cross-check, averaging 6–8 hours per engine</div><div class="risk-card">FAA AD compliance is checked against AMOS AD library which requires manual updates; a delayed AD import (&gt;30 days) creates regulatory exposure under FAR Part 91.409 and Part 43 Appendix D</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Engine removal notification from line maintenance or heavy check</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Engine tagged serviceable in AMOS rotable pool; network planning team notified of availability</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-03</span>Fuel Planning &amp; Tankering</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-04</span>Weight &amp; Balance Management</h3>
-    <p>Flight Dispatch &amp; Control · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-05</span>NOTAMs &amp; AIP Information Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-06</span>Weather Monitoring &amp; Decision Support</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-07</span>Air Traffic Control Coordination</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-08</span>Network Operations Control (NOC)</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 10 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-09</span>Delay Management &amp; Root Cause Analysis</h3>
-    <p>Flight Dispatch &amp; Control · 19 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-10</span>Diversion &amp; Emergency Response Management</h3>
-    <p>Flight Dispatch &amp; Control · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-11</span>ETOPS / EDTO Operations Management</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-13</span>Performance &amp; FDR Data Monitoring</h3>
-    <p>Flight Dispatch &amp; Control · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-14</span>Air-to-Ground Communications Management</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-15</span>Dangerous Goods Load Authorization</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 13 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../mr-02/"><span class="arrow">←</span><span><span class="sub">Previous</span>MR-02 · Heavy Maintenance (C/D Check) Planning</span></a><a class="pn-btn" href="../mr-04/"><span><span class="sub">Next</span>MR-04 · Component &amp; Parts Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

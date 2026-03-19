@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MR-03 Slides — Engine Shop Maintenance Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-03</span>
+    <h1>Engine Shop Maintenance Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/mr-03.png" alt="BPMN for MR-03" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Engine & Component Shop</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-03</span>
+    <h1>Engine Shop Maintenance Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> MR-03</li>
+          <li><strong>L1 Domain:</strong> Maintenance, Repair &amp; Overhaul</li>
+          <li><strong>L2 Process:</strong> Engine &amp; Component Shop</li>
+          <li><strong>L3 Name:</strong> Engine Shop Maintenance Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive engine from aircraft and log induction</li><li><strong>Phase 2:</strong> Disassemble engine modules per CMM procedures</li><li><strong>Phase 3:</strong> Classify parts as BER, serviceable, or repairable</li><li><strong>Phase 4:</strong> Repair and overhaul modules per CMM</li><li><strong>Phase 5:</strong> Install engine on test cell and configure paramete</li><li><strong>Phase 6:</strong> Complete FAA 8130-3 / EASA Form 1 release docs</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Authorised Release Certificate Signatory (Part 145)</li><li>Engine Borescope Inspector (Part 145)</li><li>Engine Inspector / NDT Level II</li><li>Engine Materials Controller</li><li>Engine Overhaul Mechanic (Part 145)</li><li>Engine Planning Engineer</li><li>Engine Records Administrator</li><li>Engine Shop Manager</li><li>Engine Shop Planner</li><li>Engine Shop Planning Engineer</li><li>Engine Shop Receiving Inspector</li><li>Quality Assurance Manager (Part 145)</li><li>Test Cell Engineer</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>Boeing Toolbox / CAMP</li><li>SAP Ariba</li><li>Trax (MRO Software)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Engine & Component Shop</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-03</span>
+    <h1>Engine Shop Maintenance Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive engine from aircraft and log induction</td>
+        <td class="kpi-col">Induction record created within 4 hours of engine receipt</td>
+        <td class="pain-col">Incomplete removal documentation from line stations delays accurate TSN/CSN capture, risking life-limit tracking errors in AMOS</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Perform incoming borescope inspection of engine</td>
+        <td class="kpi-col">Borescope inspection completed within 24 hours of induction; findings logged in AMOS within 2 hours of inspection</td>
+        <td class="pain-col">FOD damage discovered at induction not captured in aircraft logbook leads to retroactive safety investigations under FAR Part 43.9 and delays work scope confirmation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Determine shop visit type and open work order</td>
+        <td class="kpi-col">Work order opened and shop visit type confirmed within 8 hours of induction</td>
+        <td class="pain-col">Performance trend data from on-wing ACARS monitoring (SITA ACARS) may not sync to AMOS automatically, forcing manual EGT margin entry and introducing transcription errors</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Disassemble engine modules per CMM procedures</td>
+        <td class="kpi-col">Module teardown completed within published CMM man-hour estimate ±10%</td>
+        <td class="pain-col">OEM CMM revision cycle (Boeing/CFM/GE) lags regulatory changes; AMOS document revision alerts can be suppressed by users, risking use of superseded procedures</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Inspect HPC, HPT, LPT, and fan modules</td>
+        <td class="kpi-col">100% LLP cycle verification against AMOS life-limit records; inspection findings report issued within 48 hours of module receipt</td>
+        <td class="pain-col">LLP cycle counter discrepancies between AMOS and Boeing Toolbox / CAMP cause certification holds; reconciliation requires manual cross-check, averaging 6–8 hours per engine</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Identify AD/SB compliance gaps and raise EOs</td>
+        <td class="kpi-col">Zero open mandatory ADs at engine release; all applicable SBs evaluated within 24 hours of findings report</td>
+        <td class="pain-col">FAA AD compliance is checked against AMOS AD library which requires manual updates; a delayed AD import (&gt;30 days) creates regulatory exposure under FAR Part 91.409 and Part 43 Appendix D</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Classify parts as BER, serviceable, or repairable</td>
+        <td class="kpi-col">Parts disposition completed within 48 hours of teardown; BER rate benchmarked at ≤15% of total parts count</td>
+        <td class="pain-col">BER decisions without OEM-approved repair data require Designated Engineering Representative (DER) approval under FAR Part 145.109, adding 3–10 days per non-standard repair route</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Check rotable parts availability in pool</td>
+        <td class="kpi-col">Rotable pool fill rate ≥85% for engine shop demand; critical part shortage identified within 4 hours of disposition</td>
+        <td class="pain-col">CAMP and AMOS rotable inventory records are not always real-time synced; double-allocation of serviceable parts across concurrent shop visits causes last-minute shortages and AOG escalations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Raise purchase orders for parts shortages</td>
+        <td class="kpi-col">PO raised within 8 hours of shortage confirmation; expedited orders for AOG parts placed within 2 hours</td>
+        <td class="pain-col">SAP Ariba approved vendor list (AVL) may not include all OEM-authorised repair vendors; purchasing outside AVL requires Finance exception approval adding 24–48 hours to critical-path parts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Repair and overhaul modules per CMM</td>
+        <td class="kpi-col">Repair man-hours within ±15% of AMOS work-order estimate; first-pass quality rate ≥92%</td>
+        <td class="pain-col">Specialised repair capabilities (e.g., HPT blade tip restore, HPC coating) often require sub-vendor routing; each external repair adds 7–21 days TAT and requires dual-release documentation under EASA Part 145.A.75</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Apply approved modifications and service bulletins</td>
+        <td class="kpi-col">100% mandatory SB incorporation confirmed before assembly; optional SB cost/benefit review completed within 4 hours</td>
+        <td class="pain-col">OEM modification kit availability is frequently constrained (CFM LEAP kits lead times 90–180 days); planning teams must lock SB scope 6+ months before shop visit to avoid TAT overruns</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Reassemble engine and verify build standard</td>
+        <td class="kpi-col">Assembly completed within 48 hours of all parts arrival; dimensional check non-conformance rate ≤5%</td>
+        <td class="pain-col">Configuration mismatch between AMOS build record and physical engine (e.g., wrong fan blade set) is not caught until test cell, costing 12–24 hours of re-teardown time</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Install engine on test cell and configure parameters</td>
+        <td class="kpi-col">Test cell installation completed within 4 hours; test cell utilisation rate ≥80%</td>
+        <td class="pain-col">Test cell scheduling conflicts between engine shop and contracted MRO customers reduce throughput; dynamic slot allocation is managed manually via spreadsheet, not integrated with AMOS shop scheduling</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Run engine acceptance test per ECTM limits</td>
+        <td class="kpi-col">EGT margin ≥25°C at end-of-test; vibration ≤0.5 in/sec; oil consumption ≤0.5 qt/hr</td>
+        <td class="pain-col">ECTM limits defined in Trax must match the engine variant spec sheet; configuration mismatch between test cell software version and OEM ATP revision causes out-of-tolerance alerts that require manual waiver processing</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Complete FAA 8130-3 / EASA Form 1 release docs</td>
+        <td class="kpi-col">Release documentation completed within 8 hours of test cell sign-off; zero documentation deficiencies at FAA/EASA audit</td>
+        <td class="pain-col">Dual-release requirements (FAA 8130-3 and EASA Form 1) for engines operated on international routes require two signatories with current authorisations; signatory availability is a recurring bottleneck, especially on night shifts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Update engine life history and rotable records</td>
+        <td class="kpi-col">Engine history updated within 4 hours of work order closure; LLP discrepancy rate ≤0.1% at next audit</td>
+        <td class="pain-col">CAMP and AMOS are not bidirectionally integrated in all configurations; manual re-entry of cycle counts from AMOS into CAMP introduces transcription errors that create airworthiness record discrepancies requiring DFP investigation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Obtain QA airworthiness release approval</td>
+        <td class="kpi-col">QA release granted within 4 hours of documentation package submission; zero engines released with open corrective actions</td>
+        <td class="pain-col">QA holds caused by incomplete corrective action evidence in AMOS (e.g., missing NDT report attachments) are the leading cause of engine release delays, averaging 6–12 hours per incident</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.4</td>
+        <td>Return engine to rotable pool and notify planning</td>
+        <td class="kpi-col">Engine available in rotable pool within 2 hours of QA release; total shop visit TAT vs. target reported monthly</td>
+        <td class="pain-col">Rotable pool engine availability is not directly visible in SkyWORKS fleet assignment planning; network and maintenance planning teams rely on manual notifications, creating misalignment between engine availability and scheduled aircraft return-to-service dates</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Engine & Component Shop</span>
+  </div>
+</div>
+
+</body>
+</html>

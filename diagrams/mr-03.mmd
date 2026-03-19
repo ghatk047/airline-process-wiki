@@ -1,0 +1,59 @@
+flowchart LR
+  subgraph P1[Phase 1: Engine Induction and Assessment]
+    A([Start]) --> B[Receive engine from\naircraft — log in AMOS]
+    B --> C[Perform incoming\nborescope inspection]
+    C --> D{Engine condition:\nshop visit warranted?}
+    D -- No --> E[Return to service\nwith minor repair]
+    D -- Yes --> F[Open shop work\norder in AMOS]
+    F --> G[Induction record\ncreated]
+  end
+  subgraph P2[Phase 2: Engine Disassembly and Teardown]
+    G --> H[Disassemble engine\nper CMM procedures]
+    H --> I[Inspect modules:\nHPC, HPT, LPT, fan]
+    I --> J{AD/SB compliance\ngaps identified?}
+    J -- Yes --> K[Raise Engineering\nOrder — AMOS EO]
+    K --> J
+    J -- No --> L[Teardown findings\nreport complete]
+  end
+  subgraph P3[Phase 3: Parts Disposition and Procurement]
+    L --> M[Classify parts: BER,\nserviceable, repairable]
+    M --> N[Check rotable pool\navailability — CAMP]
+    N --> O{Replacement parts\nconfirmed available?}
+    O -- No --> P[Raise PO for\nparts — SAP Ariba]
+    P --> O
+    O -- Yes --> Q[Parts disposition\nplan finalised]
+  end
+  subgraph P4[Phase 4: Repair, Overhaul, and Assembly]
+    Q --> R[Repair / overhaul\nmodules per CMM]
+    R --> S[Apply approved\nmods and upgrades]
+    S --> T{Module dimensional\ncheck passed?}
+    T -- No --> U[Re-work or replace\ncomponent — AMOS]
+    U --> T
+    T -- Yes --> V[Reassemble engine\nto build standard]
+  end
+  subgraph P5[Phase 5: Test Cell Validation]
+    V --> W[Install engine on\ntest cell — Trax]
+    W --> X[Run acceptance\ntest per ECTM limits]
+    X --> Y{Test cell parameters\nwithin limits?}
+    Y -- No --> Z[Diagnose fault and\nre-test — AMOS]
+    Z --> Y
+    Y -- Yes --> AA[Test cell\ncertification signed off]
+  end
+  subgraph P6[Phase 6: Documentation and Return to Service]
+    AA --> AB[Complete 8130-3 /\nEASA Form 1 — AMOS]
+    AB --> AC[Update engine\nlife history — CAMP]
+    AC --> AD{Airworthiness release\napproved by QA?}
+    AD -- No --> AE[Resolve finding —\nAMOS corrective action]
+    AE --> AD
+    AD -- Yes --> AF[Return engine to\nairline rotable pool]
+    AF --> AG([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AG fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style Y fill:#ff6600,color:#fff,stroke:#ff6600
+  style AD fill:#ff6600,color:#fff,stroke:#ff6600
