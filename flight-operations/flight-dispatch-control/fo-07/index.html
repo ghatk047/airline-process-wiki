@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Finance &amp; Accounting · Corporate Support Functions · Airlines Process Wiki</title>
+<title>FO-07 · Air Traffic Control Coordination · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Flight Operations</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -130,7 +131,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-04/"><span class="status-dot status-done"></span><span class="pid">FO-04</span>Weight &amp; Balance Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-05/"><span class="status-dot status-done"></span><span class="pid">FO-05</span>NOTAMs &amp; AIP Information Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-06/"><span class="status-dot status-done"></span><span class="pid">FO-06</span>Weather Monitoring &amp; Decision Support</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-07/"><span class="status-dot status-done"></span><span class="pid">FO-07</span>Air Traffic Control Coordination</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/flight-dispatch-control/fo-07/"><span class="status-dot status-done"></span><span class="pid">FO-07</span>Air Traffic Control Coordination</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-08/"><span class="status-dot status-queue"></span><span class="pid">FO-08</span>Network Operations Control (NOC)</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-09/"><span class="status-dot status-queue"></span><span class="pid">FO-09</span>Delay Management &amp; Root Cause Analysis</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-10/"><span class="status-dot status-queue"></span><span class="pid">FO-10</span>Diversion &amp; Emergency Response Management</a>
@@ -213,8 +214,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-queue"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
@@ -242,117 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Corporate Support Functions</a><span class="sep">›</span>
-  <span class="current">Finance &amp; Accounting</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Flight Operations</a><span class="sep">›</span>
+  <a href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a><span class="sep">›</span>
+  <span class="current">FO-07 · Air Traffic Control Coordination</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Finance &amp; Accounting</h1>
-    <p>Corporate Support Functions · 0 of 11 subprocesses complete · Updated 2026-03-18 22:51</p>
+    <h1>Air Traffic Control Coordination</h1>
+    <p>Flight Operations › Flight Dispatch &amp; Control · 18 L4 steps · 5 phases · 6 decision gates · Updated 2026-03-18 22:51</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">FO-07</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-01</span>Financial Planning &amp; Budgeting</h3>
-    <p>Finance &amp; Accounting · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-fo-07">
+      <img src="../../../assets/img/fo-07.png" alt="FO-07 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-fo-07').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-fo-07').style.display='flex'">
+      <div id="diag-placeholder-fo-07" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-01/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Obtain ATIS &amp; meteorological briefing</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Honeywell GoDirect Weather</span></td>
+  <td style="font-size:10px;color:#6b7280">Scheduled departure time, origin/destination airport pair</td>
+  <td style="font-size:10px">Current ATIS information code, wx briefing package</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Briefing completed ≥45 min before STD; 100% crew acknowledgement rate</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">File IFR flight plan with ANSP</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE Flight Planning</span></td>
+  <td style="font-size:10px;color:#6b7280">Optimised route, fuel load, aircraft type, SELCAL code</td>
+  <td style="font-size:10px">Filed ICAO flight plan (FPL message) accepted by ANSP</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Flight plan filed ≥60 min before STD per ICAO Doc 4444; acceptance rate ≥99%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Request CTOT/EDCT slot from ATFM system</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag noc">FAA Traffic Flow Management System (TFMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Filed flight plan, GDP/GS advisory for destination or en-route ARTCC</td>
+  <td style="font-size:10px">EDCT (Expect Departure Clearance Time) slot assignment</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">EDCT compliance rate ≥95%; slot deviation window ±5 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Negotiate revised slot if CTOT unacceptable</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag noc">FAA Traffic Flow Management System (TFMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Initial EDCT that conflicts with operational constraints or crew duty limits</td>
+  <td style="font-size:10px">Revised EDCT or cancellation/delay decision logged in NAVBLUE</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Slot substitution request processed within 10 min of receipt; substitution approval rate ~60% per FAA ATCSCC data</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Request IFR departure clearance from ATC</td>
+  <td class="td-role">Flight Crew / Dispatcher</td>
+  <td><span class="stag custom">Telex / SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Filed route, EDCT window, current ATIS code</td>
+  <td style="font-size:10px">ATC clearance (SID, squawk code, initial altitude, departure frequency)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Clearance received ≥15 min before EDCT; clearance readback accuracy 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Verify clearance against filed route &amp; amend if needed</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE Flight Planning</span></td>
+  <td style="font-size:10px;color:#6b7280">Received ATC clearance text, original filed IFR route</td>
+  <td style="font-size:10px">Amended flight plan accepted by ATC or confirmation of route match</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Route amendment turnaround &lt;5 min; zero departures on unapproved route</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Coordinate pushback &amp; engine start with ground ATC</td>
+  <td class="td-role">Flight Crew</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved clearance, gate status from AMS, ramp clearance</td>
+  <td style="font-size:10px">Pushback approval, engine start time logged in AMS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Pushback-to-wheels-up compliance with EDCT ±5 min; gate conflict rate &lt;2%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Obtain taxi clearance &amp; confirm runway assignment</td>
+  <td class="td-role">Flight Crew</td>
+  <td><span class="stag custom">Jeppesen FliteDeck</span></td>
+  <td style="font-size:10px;color:#6b7280">Engine start confirmation, active runways, NOTAMs from FliteDeck</td>
+  <td style="font-size:10px">Taxi route confirmed on EFB moving map; runway assignment accepted</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Taxi time within airline benchmark (e.g. ≤12 min at focus cities); runway incursion events = 0</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Monitor ATC sector handoffs &amp; frequency changes</td>
+  <td class="td-role">Flight Crew / Dispatcher</td>
+  <td><span class="stag custom">Telex / SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Departure from origin TRACON, en-route ARTCC sector list from NAVBLUE</td>
+  <td style="font-size:10px">ACARS position reports at waypoints; sector contact log</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ACARS position report every 30 min or at each waypoint; missed report alert &lt;2 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Receive &amp; assess TFMS en-route flow advisories</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag noc">FAA Traffic Flow Management System (TFMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">En-route Miles-in-Trail (MIT) restrictions, Airspace Flow Program (AFP) advisories</td>
+  <td style="font-size:10px">Compliance assessment; amended release or hold action if needed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AFP compliance rate ≥97%; dispatcher response to advisory &lt;10 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Coordinate weather deviation or reroute with ATC</td>
+  <td class="td-role">Flight Crew / Dispatcher</td>
+  <td><span class="stag custom">Honeywell GoDirect Weather</span></td>
+  <td style="font-size:10px;color:#6b7280">Onboard weather radar data, GoDirect TurbCast/convective sigmets</td>
+  <td style="font-size:10px">ATC-approved route deviation or altitude change; updated NAVBLUE flight plan</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Deviation request approval by ATC &lt;3 min after pilot request; fuel impact assessed 100% of deviations</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Obtain destination ATIS &amp; update approach briefing</td>
+  <td class="td-role">Flight Crew / Dispatcher</td>
+  <td><span class="stag custom">Honeywell GoDirect Weather</span></td>
+  <td style="font-size:10px;color:#6b7280">Current destination ATIS (D-ATIS), TAF, PIREP data from GoDirect</td>
+  <td style="font-size:10px">Updated approach briefing; alternate airport confirmed if wx below minima</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ATIS update obtained ≥30 min before TOD; alternate fuel carried 100% when wx within 3h of approach minima</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Sequence into STAR &amp; configure for arrival flow</td>
+  <td class="td-role">Flight Crew</td>
+  <td><span class="stag custom">Jeppesen FliteDeck</span></td>
+  <td style="font-size:10px;color:#6b7280">ATC-assigned STAR, speed/altitude restrictions, runway in use</td>
+  <td style="font-size:10px">FMS programmed with STAR; compliance with ATC sequence instructions confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">STAR compliance rate ≥99%; speed restriction deviation events &lt;0.5% of arrivals</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Execute holding pattern if ATC flow delay required</td>
+  <td class="td-role">Flight Crew / Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE Flight Planning</span></td>
+  <td style="font-size:10px;color:#6b7280">ATC holding instruction, current fuel state vs NAVBLUE holding fuel reserves</td>
+  <td style="font-size:10px">Holding entry flown or divert decision made; dispatcher notified of fuel state</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Holding fuel contingency ≥30 min per FAR 121.639; divert decision made before minimum divert fuel threshold</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Coordinate gate &amp; stand assignment with airport ops</td>
+  <td class="td-role">Flight Dispatcher / Station Ops</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">ETA update from ACARS, gate availability from AMS, inbound connection data</td>
+  <td style="font-size:10px">Confirmed gate assignment published in AMS; ground handling notified</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate assignment confirmed ≥20 min before ETA; gate conflict rate &lt;1%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Close flight plan &amp; confirm arrival report</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE Flight Planning</span></td>
+  <td style="font-size:10px;color:#6b7280">Block-in time from AMS, ATC arrival message</td>
+  <td style="font-size:10px">Flight plan closed in NAVBLUE; OOOI times recorded (Out/Off/On/In)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Flight plan closure within 5 min of block-in; OOOI data accuracy 100%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Review ATC communications log for deviations</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Telex / SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">ACARS message archive, crew debrief notes</td>
+  <td style="font-size:10px">Deviation log entry; flag for ASAP review if applicable</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Post-flight review completed within 2 hours of block-in for all flagged flights</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">File ASAP/MOR report for ATC deviation or incident</td>
+  <td class="td-role">Flight Dispatcher / Safety Officer</td>
+  <td><span class="stag custom">NAVBLUE Flight Planning</span></td>
+  <td style="font-size:10px;color:#6b7280">Deviation flag from step 5.2, crew narrative, ATC incident reference number</td>
+  <td style="font-size:10px">ASAP report submitted to airline safety program; MOR filed with ANSP if required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ASAP report filed within 24 hours of incident per FAA AC 120-66B; 100% of flagged deviations reported</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-02</span>Management Accounting &amp; Cost Control</h3>
-    <p>Finance &amp; Accounting · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">FO-07</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Flight Operations</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Flight Dispatch &amp; Control</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Air Traffic Control Coordination</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">6 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">5 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Flight Dispatcher</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Flight Crew / Dispatcher</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Flight Crew</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Flight Dispatcher / Station Ops</div><div class="swim"><div class="dot" style="background:#10b981"></div>Flight Dispatcher / Safety Officer</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">Honeywell GoDirect Weather</span><span class="stag custom">NAVBLUE Flight Planning</span><span class="stag noc">FAA Traffic Flow Management System (TFMS)</span><span class="stag custom">Telex / SITA ACARS</span><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">Jeppesen FliteDeck</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Obtain ATIS &amp; meteorological briefing</span><span class="kval">Briefing completed ≥45 min before STD; 100% crew acknowledgement rate</span></div><div class="krow"><span class="kname">File IFR flight plan with ANSP</span><span class="kval">Flight plan filed ≥60 min before STD per ICAO Doc 4444; acceptance rate ≥99%</span></div><div class="krow"><span class="kname">Request CTOT/EDCT slot from ATFM system</span><span class="kval">EDCT compliance rate ≥95%; slot deviation window ±5 min</span></div><div class="krow"><span class="kname">Negotiate revised slot if CTOT unacceptable</span><span class="kval">Slot substitution request processed within 10 min of receipt; substitution approval rate ~60% per FAA ATCSCC data</span></div><div class="krow"><span class="kname">Request IFR departure clearance from ATC</span><span class="kval">Clearance received ≥15 min before EDCT; clearance readback accuracy 100%</span></div><div class="krow"><span class="kname">Verify clearance against filed route &amp; amend if needed</span><span class="kval">Route amendment turnaround &lt;5 min; zero departures on unapproved route</span></div><div class="krow"><span class="kname">Coordinate pushback &amp; engine start with ground ATC</span><span class="kval">Pushback-to-wheels-up compliance with EDCT ±5 min; gate conflict rate &lt;2%</span></div><div class="krow"><span class="kname">Obtain taxi clearance &amp; confirm runway assignment</span><span class="kval">Taxi time within airline benchmark (e.g. ≤12 min at focus cities); runway incursion events = 0</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">GoDirect ATIS latency can lag live tower broadcasts by 3–5 min during high-volume periods, risking crew departure on stale altimeter settings</div><div class="risk-card">NAVBLUE route optimisation does not automatically incorporate FAA Coded Departure Routes (CDRs) during Ground Delay Programs, requiring manual dispatcher override</div><div class="risk-card">TFMS EDCT updates can arrive with &lt;15 min notice, making ground crew coordination nearly impossible during high-frequency departure banks at focus cities</div><div class="risk-card">FAA does not guarantee slot substitution approval; carriers without dedicated ATC coordination desk (like low-cost carriers) suffer higher rejection rates</div><div class="risk-card">Voice clearance delivery congestion at Class B airports (ORD, ATL, LAX) causes average 8–12 min clearance delays during push banks; PDC via ACARS not universally available</div><div class="risk-card">ATC short-notice route amendments (e.g. miles-in-trail restrictions) require rapid NAVBLUE recalculation that may invalidate pre-filed fuel load, triggering re-release</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Scheduled departure time, origin/destination airport pair</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">ASAP report submitted to airline safety program; MOR filed with ANSP if required</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-02/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-03</span>Revenue Accounting &amp; BSP Settlement</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-08</span>PSS (Passenger Service System) Management</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-09</span>Cybersecurity &amp; Threat Management</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-10</span>Data Engineering &amp; Analytics Platform</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-11</span>Strategic Sourcing &amp; Vendor Selection</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-12</span>Fuel Procurement &amp; Supply Chain</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-13</span>Aircraft Parts &amp; Consumables Procurement</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-14</span>Safety Management System (SMS)</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-15</span>Regulatory Compliance &amp; AOC Management</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../fo-06/"><span class="arrow">←</span><span><span class="sub">Previous</span>FO-06 · Weather Monitoring &amp; Decision Support</span></a><a class="pn-btn" href="../fo-08/"><span><span class="sub">Next</span>FO-08 · Network Operations Control (NOC)</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

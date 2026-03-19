@@ -1,0 +1,47 @@
+flowchart LR
+  subgraph P1[Phase 1: Pre-Departure Planning]
+    A([Start]) --> B[Obtain ATIS and wx briefing]
+    B --> C[File IFR flight plan]
+    C --> D{CTOT/EDCT slot\naccepted?}
+    D -- No --> E[Negotiate revised\nATFM slot]
+    E --> D
+    D -- Yes --> F[Confirm slot\nin dispatch system]
+  end
+  subgraph P2[Phase 2: ATC Clearance and Taxi]
+    F --> G[Request IFR\nclearance from ATC]
+    G --> H{Clearance matches\nfiled route?}
+    H -- No --> I[Update flight plan\nand re-request]
+    I --> H
+    H -- Yes --> J[Coordinate pushback\nand engine start]
+    J --> K[Obtain taxi\nclearance]
+  end
+  subgraph P3[Phase 3: En-Route ATC Management]
+    K --> L[Monitor sector\nhandoffs via ACARS]
+    L --> M{Weather deviation\nor reroute needed?}
+    M -- Yes --> N[Coordinate amended\nroute with ATC]
+    N --> M
+    M -- No --> O[Track TFMS flow\nadvisories]
+  end
+  subgraph P4[Phase 4: Approach and Arrival]
+    O --> P[Obtain destination\nATIS update]
+    P --> Q[Sequence into STAR\narrival flow]
+    Q --> R{Holding\nrequired?}
+    R -- Yes --> S[Fuel check and\nholding entry]
+    S --> R
+    R -- No --> T[Coordinate gate\nassignment with AMS]
+  end
+  subgraph P5[Phase 5: Closure and Reporting]
+    T --> U[Close flight plan\non landing]
+    U --> V{ATC incident\nor deviation?}
+    V -- Yes --> W[File ASAP/MOR\ndeviation report]
+    W --> X([End])
+    V -- No --> X
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600

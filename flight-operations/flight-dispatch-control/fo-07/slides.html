@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FO-07 Slides — Air Traffic Control Coordination</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-07</span>
+    <h1>Air Traffic Control Coordination</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/fo-07.png" alt="BPMN for FO-07" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-07</span>
+    <h1>Air Traffic Control Coordination</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> FO-07</li>
+          <li><strong>L1 Domain:</strong> Flight Operations</li>
+          <li><strong>L2 Process:</strong> Flight Dispatch &amp; Control</li>
+          <li><strong>L3 Name:</strong> Air Traffic Control Coordination</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Obtain ATIS &amp; meteorological briefing</li><li><strong>Phase 2:</strong> Request IFR departure clearance from ATC</li><li><strong>Phase 3:</strong> Monitor ATC sector handoffs &amp; frequency changes</li><li><strong>Phase 4:</strong> Obtain destination ATIS &amp; update approach briefing</li><li><strong>Phase 5:</strong> Close flight plan &amp; confirm arrival report</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Flight Crew</li><li>Flight Crew / Dispatcher</li><li>Flight Dispatcher</li><li>Flight Dispatcher / Safety Officer</li><li>Flight Dispatcher / Station Ops</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>FAA Traffic Flow Management System (TFMS)</li><li>Honeywell GoDirect Weather</li><li>Jeppesen FliteDeck</li><li>NAVBLUE Flight Planning</li><li>SITA Airport Management System (AMS)</li><li>Telex / SITA ACARS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-07</span>
+    <h1>Air Traffic Control Coordination</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Obtain ATIS &amp; meteorological briefing</td>
+        <td class="kpi-col">Briefing completed ≥45 min before STD; 100% crew acknowledgement rate</td>
+        <td class="pain-col">GoDirect ATIS latency can lag live tower broadcasts by 3–5 min during high-volume periods, risking crew departure on stale altimeter settings</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>File IFR flight plan with ANSP</td>
+        <td class="kpi-col">Flight plan filed ≥60 min before STD per ICAO Doc 4444; acceptance rate ≥99%</td>
+        <td class="pain-col">NAVBLUE route optimisation does not automatically incorporate FAA Coded Departure Routes (CDRs) during Ground Delay Programs, requiring manual dispatcher override</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Request CTOT/EDCT slot from ATFM system</td>
+        <td class="kpi-col">EDCT compliance rate ≥95%; slot deviation window ±5 min</td>
+        <td class="pain-col">TFMS EDCT updates can arrive with &lt;15 min notice, making ground crew coordination nearly impossible during high-frequency departure banks at focus cities</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Negotiate revised slot if CTOT unacceptable</td>
+        <td class="kpi-col">Slot substitution request processed within 10 min of receipt; substitution approval rate ~60% per FAA ATCSCC data</td>
+        <td class="pain-col">FAA does not guarantee slot substitution approval; carriers without dedicated ATC coordination desk (like low-cost carriers) suffer higher rejection rates</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Request IFR departure clearance from ATC</td>
+        <td class="kpi-col">Clearance received ≥15 min before EDCT; clearance readback accuracy 100%</td>
+        <td class="pain-col">Voice clearance delivery congestion at Class B airports (ORD, ATL, LAX) causes average 8–12 min clearance delays during push banks; PDC via ACARS not universally available</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Verify clearance against filed route &amp; amend if needed</td>
+        <td class="kpi-col">Route amendment turnaround &lt;5 min; zero departures on unapproved route</td>
+        <td class="pain-col">ATC short-notice route amendments (e.g. miles-in-trail restrictions) require rapid NAVBLUE recalculation that may invalidate pre-filed fuel load, triggering re-release</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Coordinate pushback &amp; engine start with ground ATC</td>
+        <td class="kpi-col">Pushback-to-wheels-up compliance with EDCT ±5 min; gate conflict rate &lt;2%</td>
+        <td class="pain-col">AMS gate conflict data and ATC ground movement frequency are separate systems with no real-time integration, causing dispatcher blind spots during congested apron operations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Obtain taxi clearance &amp; confirm runway assignment</td>
+        <td class="kpi-col">Taxi time within airline benchmark (e.g. ≤12 min at focus cities); runway incursion events = 0</td>
+        <td class="pain-col">FliteDeck moving-map airport diagrams rely on Jeppesen chart update cycle (28-day AIRAC); temporary construction NOTAMs between cycles create taxiway routing errors if crew relies solely on EFB</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Monitor ATC sector handoffs &amp; frequency changes</td>
+        <td class="kpi-col">ACARS position report every 30 min or at each waypoint; missed report alert &lt;2 min</td>
+        <td class="pain-col">ACARS coverage gaps over oceanic/remote segments require HF radio fallback (SELCAL), which many newer pilots have limited proficiency with due to shift away from HF in domestic ops</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Receive &amp; assess TFMS en-route flow advisories</td>
+        <td class="kpi-col">AFP compliance rate ≥97%; dispatcher response to advisory &lt;10 min</td>
+        <td class="pain-col">TFMS AFP advisories can affect multiple concurrent flights simultaneously; single dispatcher managing 15+ flights during an AFP event is a documented overload risk with no automated prioritisation tool</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Coordinate weather deviation or reroute with ATC</td>
+        <td class="kpi-col">Deviation request approval by ATC &lt;3 min after pilot request; fuel impact assessed 100% of deviations</td>
+        <td class="pain-col">Crew-initiated deviation requests during congested sector workload may receive delayed ATC responses; no automated conflict-free re-route suggestion pushed from ground to cockpit in real time</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Obtain destination ATIS &amp; update approach briefing</td>
+        <td class="kpi-col">ATIS update obtained ≥30 min before TOD; alternate fuel carried 100% when wx within 3h of approach minima</td>
+        <td class="pain-col">D-ATIS refresh intervals (30 min at many airports) can lag rapidly deteriorating convective conditions, creating a wx state mismatch between briefing and actual approach environment</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Sequence into STAR &amp; configure for arrival flow</td>
+        <td class="kpi-col">STAR compliance rate ≥99%; speed restriction deviation events &lt;0.5% of arrivals</td>
+        <td class="pain-col">Late STAR reassignments by TRACON (within 50 NM) require rapid FMS re-programming under high workload; FliteDeck chart page and FMS are not electronically linked, requiring dual cross-check</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Execute holding pattern if ATC flow delay required</td>
+        <td class="kpi-col">Holding fuel contingency ≥30 min per FAR 121.639; divert decision made before minimum divert fuel threshold</td>
+        <td class="pain-col">NAVBLUE fuel models do not auto-recalculate holding burn in real time from cockpit; dispatcher relies on crew verbal reports, introducing latency risk in marginal fuel scenarios</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Coordinate gate &amp; stand assignment with airport ops</td>
+        <td class="kpi-col">Gate assignment confirmed ≥20 min before ETA; gate conflict rate &lt;1%</td>
+        <td class="pain-col">ATC arrival sequencing changes (e.g. runway change) can shift ETA by 10–20 min, invalidating pre-assigned gate in AMS; no automated ATC-to-AMS ETA feed at most regional airports</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Close flight plan &amp; confirm arrival report</td>
+        <td class="kpi-col">Flight plan closure within 5 min of block-in; OOOI data accuracy 100%</td>
+        <td class="pain-col">Manual flight plan closure is required when ATC arrival message (ARR) is not auto-forwarded to NAVBLUE; missed closures generate ATC search-and-rescue alerts after 30 min per ICAO Annex 2</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Review ATC communications log for deviations</td>
+        <td class="kpi-col">Post-flight review completed within 2 hours of block-in for all flagged flights</td>
+        <td class="pain-col">ACARS stores text messages but does not archive voice ATC transmissions; voice deviations are entirely reliant on crew self-report, creating an underreporting risk for FAR Part 91/121 deviations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>File ASAP/MOR report for ATC deviation or incident</td>
+        <td class="kpi-col">ASAP report filed within 24 hours of incident per FAA AC 120-66B; 100% of flagged deviations reported</td>
+        <td class="pain-col">No direct integration between NAVBLUE deviation logs and the airline ASAP reporting portal; dispatcher must re-enter data manually, creating transcription errors and reporting delays</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+</body>
+</html>
