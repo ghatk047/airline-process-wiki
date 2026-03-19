@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SD-10 Slides — BSP Settlement &amp; IATA Billing</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-10</span>
+    <h1>BSP Settlement &amp; IATA Billing</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sd-10.png" alt="BPMN for NP-SD-10" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-10</span>
+    <h1>BSP Settlement &amp; IATA Billing</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SD-10</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Sales &amp; Distribution</li>
+          <li><strong>L3 Name:</strong> BSP Settlement &amp; IATA Billing</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">15</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract GDS/NDC ticket sales data</li><li><strong>Phase 2:</strong> Aggregate sales by agent and BSP billing period</li><li><strong>Phase 3:</strong> Submit BSP billing file to IATA via BSPlink</li><li><strong>Phase 4:</strong> Confirm clearing bank receipt from IATA BSP</li><li><strong>Phase 5:</strong> Review agent disputes on issued ADMs</li><li><strong>Phase 6:</strong> Reconcile BSP settlements with revenue GL accounts</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Accounts Receivable Analyst</li><li>Revenue Accounting Analyst</li><li>Revenue Accounting Manager</li><li>Senior Revenue Accountant</li><li>Treasury Analyst</li><li>Treasury Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Accounting</li><li>BSPlink</li><li>SAP S/4HANA Finance (FI/CO)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-10</span>
+    <h1>BSP Settlement &amp; IATA Billing</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract GDS/NDC ticket sales data</td>
+        <td class="kpi-col">Sales extract completeness ≥99.9% of all ticketed transactions captured within 2hr of BSP cut-off</td>
+        <td class="pain-col">NDC direct-connect bookings are not automatically included in legacy BSP extract jobs — manual intervention required to merge NDC settlement files, creating reconciliation gaps and delayed reporting</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate ticket stock vs. IATA BSP allocation</td>
+        <td class="kpi-col">Ticket validation error rate &lt;0.1% of transactions per BSP billing period</td>
+        <td class="pain-col">Ticket number ranges allocated across multiple GDS channels can overlap when PSS configuration changes; BSPlink does not auto-detect cross-channel duplicates, requiring manual range-conflict queries</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Decision: Completeness check — missing records?</td>
+        <td class="kpi-col">Data completeness gate passed first attempt ≥95% of BSP periods</td>
+        <td class="pain-col">GDS settlement files arrive up to 6 hours after cut-off due to Travelport file delivery SLA gaps, causing repeated re-ingestion cycles and risk of missing the BSP submission window</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Aggregate sales by agent and BSP billing period</td>
+        <td class="kpi-col">Aggregation processing completed ≤4hr after data validation; &lt;50 manual corrections per billing period</td>
+        <td class="pain-col">Sub-agents consolidated under a parent IATA code are not disaggregated in Amadeus Revenue Accounting, requiring custom SQL extracts to identify high-risk individual agents for ADM targeting</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Calculate commissions, taxes, and surcharges</td>
+        <td class="kpi-col">Tax calculation accuracy ≥99.95%; surcharge variance vs. ATPCO published rules &lt;0.05%</td>
+        <td class="pain-col">YQ/YR fuel surcharges filed in ATPCO are updated bi-weekly; Revenue Accounting must manually trigger ATPCO feed refresh — stale surcharge tables cause systematic billing errors affecting hundreds of transactions per period</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Generate Agency Debit Memos (ADMs) for discrepancies</td>
+        <td class="kpi-col">ADM issuance rate within 30 days of ticket issue date; ADM dispute rate &lt;15% of issued ADMs</td>
+        <td class="pain-col">IATA Resolution 850 ADM deadlines (within 9 months of ticket issue) are frequently missed due to backlog in Amadeus Revenue Accounting audit queues — expired ADMs result in unrecoverable revenue leakage</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Decision: Discrepancy amount exceeds $500 threshold?</td>
+        <td class="kpi-col">Threshold review completed within 1 business day; 100% of ADMs &gt;$500 reviewed by manager before submission</td>
+        <td class="pain-col">No automated threshold alerting in BSPlink — manager must manually filter ADM queue; sub-$500 items often accumulate to material amounts across an agent portfolio and are not escalated</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Submit BSP billing file to IATA via BSPlink</td>
+        <td class="kpi-col">Submission on-time rate ≥99% of billing periods; file rejection rate &lt;0.5%</td>
+        <td class="pain-col">BSPlink file format requirements (IATA Type A/Type B formats) change with each IATA resolution cycle; failure to update Revenue Accounting export templates before cut-off causes submission rejections with no same-day correction window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Receive and validate BSP settlement advice</td>
+        <td class="kpi-col">Settlement advice received within 3 business days of submission; variance analysis completed same day as receipt</td>
+        <td class="pain-col">IATA settlement advice arrives as a non-machine-readable PDF in some BSP country plans; manual re-keying into Amadeus Revenue Accounting introduces transcription errors and delays the bank reconciliation cycle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Decision: Settlement amount matches billing submission?</td>
+        <td class="kpi-col">Settlement match rate ≥98% first-pass; queries resolved within 5 business days</td>
+        <td class="pain-col">IATA BSP applies country-specific rounding rules for multi-currency settlements that differ from airline accounting system rounding — persistent $0.01–$0.05 per-ticket variances aggregate to thousands of dollars per period and are difficult to auto-clear</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Confirm clearing bank receipt from IATA BSP</td>
+        <td class="kpi-col">Bank confirmation posted within 1 business day of settlement value date; 100% of expected receipts matched</td>
+        <td class="pain-col">IATA uses country-specific clearing banks (e.g., Citi for US BSP, Barclays for UK BSP); different value date conventions and SWIFT message formats require manual mapping to SAP bank accounts, slowing auto-matching</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Post BSP settlement to airline AR accounts</td>
+        <td class="kpi-col">AR posting completed within 2 business days of settlement; open AR items from BSP &lt;3% of total AR at month-end</td>
+        <td class="pain-col">Agent IATA codes in BSPlink are not always 1:1 mapped to SAP customer master records — new agents or consolidated GSA accounts require manual SAP FI configuration before postings can clear, causing AR aging issues</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Decision: Settlement received within BSP calendar deadline?</td>
+        <td class="kpi-col">Zero late settlements from airline side; agent default escalations initiated within 24hr of missed deadline</td>
+        <td class="pain-col">BSP settlement calendars differ by country and are updated annually by IATA — treasury teams using stale calendar files have missed escalation windows, resulting in unsecured exposure to financially distressed agents</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Review agent disputes on issued ADMs</td>
+        <td class="kpi-col">Dispute acknowledgement within 5 business days per IATA Resolution 850; dispute queue cleared within 30 days</td>
+        <td class="pain-col">Agents submit bulk disputes at the 9-month IATA deadline, creating a volume spike that overwhelms the Revenue Accounting team — no automated triage in BSPlink means all disputes require manual review regardless of amount</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Investigate disputed ADM with fare/booking evidence</td>
+        <td class="kpi-col">Investigation completed within 15 business days; &lt;5% of ADMs reversed due to airline data errors</td>
+        <td class="pain-col">Historical booking records in Amadeus Altéa PSS are purged after 13 months, making it impossible to reconstruct fare basis for ADMs near the 9-month dispute deadline — leading to unwinnable disputes and revenue write-offs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Decision: ADM dispute upheld by airline?</td>
+        <td class="kpi-col">Decision communicated within 30 days of dispute receipt; ACMs issued within 5 business days of reversal decision</td>
+        <td class="pain-col">IATA dispute arbitration (if agent escalates to IATA) typically rules against the airline when documentation is incomplete — inadequate ADM issuance evidence (missing ATPCO fare snapshots at ticketing date) is the leading cause of lost arbitrations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Reconcile BSP settlements with revenue GL accounts</td>
+        <td class="kpi-col">Month-end BSP reconciliation completed by day 5 close; unreconciled items &lt;0.1% of gross BSP settlement value</td>
+        <td class="pain-col">Timing differences between Amadeus Revenue Accounting (accrual at ticket lift) and SAP FI (cash at BSP settlement) create persistent reconciling items that are difficult to clear during month-end close under tight finance calendar deadlines</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Generate IATA compliance and audit reports</td>
+        <td class="kpi-col">Compliance pack delivered within 10 business days of period close; zero IATA audit findings classed as material</td>
+        <td class="pain-col">IATA Resolution 854 compliance reporting requires data from both BSPlink and Amadeus Revenue Accounting in a specific format — no native export combining both sources forces manual assembly in Excel, introducing version control and audit-trail risks</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Close BSP period and archive transaction records</td>
+        <td class="kpi-col">Period closed within 15 business days of settlement date; 100% of records archived with retention metadata</td>
+        <td class="pain-col">BSPlink does not provide a programmatic archive export API — records must be manually downloaded and uploaded to AWS S3, creating a labour-intensive process that is frequently deprioritised, resulting in gaps in the audit archive</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+</body>
+</html>

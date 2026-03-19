@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1["Phase 1: Sales Capture & Validation"]
+    A([Start]) --> B[Extract GDS/NDC sales data]
+    B --> C{Data complete?}
+    C -- No --> B
+    C -- Yes --> D[Validate BSP ticket stock]
+  end
+  subgraph P2["Phase 2: BSP Report Preparation"]
+    D --> E[Aggregate sales by agent/period]
+    E --> F[Calculate commissions & taxes]
+    F --> G[Generate ADMs for discrepancies]
+    G --> H{Discrepancy > $500?}
+    H -- Yes --> G
+    H -- No --> I[Finalise billing file]
+  end
+  subgraph P3["Phase 3: IATA Submission & Settlement"]
+    I --> J[Submit BSP file via BSPlink]
+    J --> K[Receive settlement advice]
+    K --> L{Amount matches submission?}
+    L -- No --> J
+    L -- Yes --> M[Confirm settlement]
+  end
+  subgraph P4["Phase 4: Bank Settlement & Posting"]
+    M --> N[Confirm clearing bank receipt]
+    N --> O[Post settlement to AR]
+    O --> P{Received by BSP deadline?}
+    P -- No --> Q[Escalate to Treasury]
+    P -- Yes --> R[Reconcile bank vs. advice]
+  end
+  subgraph P5["Phase 5: Dispute Resolution"]
+    R --> S[Review agent ADM disputes]
+    S --> T{Dispute upheld?}
+    T -- No --> U[Reject dispute, confirm ADM]
+    T -- Yes --> V[Issue ACM to agent]
+    U --> W[Update dispute log]
+    V --> W
+  end
+  subgraph P6["Phase 6: Period Close & Compliance"]
+    W --> X[Reconcile settlements vs. ledger]
+    X --> Y[Generate IATA compliance reports]
+    Y --> Z[Close BSP period & archive]
+    Z --> ZZ([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style ZZ fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
