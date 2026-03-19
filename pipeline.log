@@ -2073,3 +2073,135 @@
 [10:36:47]   Rebuilding home page...
 [10:36:47]   Home page rebuilt.
 [10:36:47]   Git commit + push...
+[10:36:49]   Pushed to GitHub.
+[10:36:49] ✅ CM-08 complete.
+[10:36:49] 
+[10:36:49] ▶ Starting: CM-09
+[10:36:49]   Invoking claude CLI for CM-09...
+[10:38:58]   ERROR: claude CLI failed for CM-09 — marking Failed
+[10:38:58] 
+[10:38:58] ▶ Starting: CM-10
+[10:38:58]   Invoking claude CLI for CM-10...
+[10:39:00]   ERROR: claude CLI failed for CM-10 — marking Failed
+[10:39:00] 
+[10:39:00] ▶ Starting: CM-11
+[10:39:00]   Invoking claude CLI for CM-11...
+[10:39:01]   ERROR: claude CLI failed for CM-11 — marking Failed
+[10:39:01] 
+[10:39:01] ▶ Starting: CM-12
+[10:39:01]   Invoking claude CLI for CM-12...
+[10:39:02]   ERROR: claude CLI failed for CM-12 — marking Failed
+[10:39:02] 
+[10:39:02] ▶ Starting: CM-13
+[10:39:02]   Invoking claude CLI for CM-13...
+[10:39:03]   ERROR: claude CLI failed for CM-13 — marking Failed
+[10:39:03] 
+[10:39:03] ▶ Starting: CM-14
+[10:39:03]   Invoking claude CLI for CM-14...
+[10:39:05]   ERROR: claude CLI failed for CM-14 — marking Failed
+[10:39:05] 
+[10:39:05] ▶ Starting: CM-15
+[10:39:05]   Invoking claude CLI for CM-15...
+[10:39:06]   ERROR: claude CLI failed for CM-15 — marking Failed
+[10:39:06] 
+[10:39:06] ▶ Starting: GO-01
+[10:39:06]   Invoking claude CLI for GO-01...
+[10:39:07]   ERROR: claude CLI failed for GO-01 — marking Failed
+[10:39:07] 
+[10:39:07] ▶ Starting: GO-02
+[10:39:07]   Invoking claude CLI for GO-02...
+[10:39:08]   ERROR: claude CLI failed for GO-02 — marking Failed
+[10:39:08] 
+[10:39:08] ▶ Starting: GO-03
+[10:39:08]   Invoking claude CLI for GO-03...
+[10:39:09]   ERROR: claude CLI failed for GO-03 — marking Failed
+[10:39:09] 
+[10:39:09] ▶ Starting: GO-04
+[10:39:09]   Invoking claude CLI for GO-04...
+[10:39:10]   ERROR: claude CLI failed for GO-04 — marking Failed
+[10:39:10] 
+[10:39:10] ▶ Starting: GO-05
+[10:39:10]   Invoking claude CLI for GO-05...
+[10:39:11]   ERROR: claude CLI failed for GO-05 — marking Failed
+[10:39:11] 
+[10:39:11] ▶ Starting: GO-06
+[10:39:11]   Invoking claude CLI for GO-06...
+[10:39:12]   ERROR: claude CLI failed for GO-06 — marking Failed
+[10:39:12] 
+[10:39:12] ▶ Starting: GO-07
+[10:39:13]   Invoking claude CLI for GO-07...
+[10:39:13]   ERROR: claude CLI failed for GO-07 — marking Failed
+[10:39:14] 
+[10:39:14] ▶ Starting: GO-08
+[10:39:14]   Invoking claude CLI for GO-08...
+[10:39:15]   ERROR: claude CLI failed for GO-08 — marking Failed
+[10:39:15] 
+[10:39:15] ▶ Starting: GO-09
+[10:39:15]   Invoking claude CLI for GO-09...
+[10:39:16]   ERROR: claude CLI failed for GO-09 — marking Failed
+[10:39:16] 
+[10:39:16] ▶ Starting: GO-10
+[10:39:16]   Invoking claude CLI for GO-10...
+[10:39:17]   ERROR: claude CLI failed for GO-10 — marking Failed
+[10:39:17] 
+[10:39:17] ▶ Starting: GO-11
+[10:39:17]   Invoking claude CLI for GO-11...
+[10:39:18]   ERROR: claude CLI failed for GO-11 — marking Failed
+[10:39:18] 
+[10:39:18] ▶ Starting: GO-12
+[10:39:18]   Invoking claude CLI for GO-12...
+[10:39:19]   ERROR: claude CLI failed for GO-12 — marking Failed
+[10:39:19] 
+[10:39:19] ▶ Starting: GO-13
+[10:39:19]   Invoking claude CLI for GO-13...
+[10:39:20]   ERROR: claude CLI failed for GO-13 — marking Failed
+[10:39:21] 
+[10:39:21] ▶ Starting: GO-14
+[10:39:21]   Invoking claude CLI for GO-14...
+[10:39:22]   ERROR: claude CLI failed for GO-14 — marking Failed
+[10:39:22] 
+[10:39:22] ▶ Starting: GO-15
+[10:39:22]   Invoking claude CLI for GO-15...
+[10:39:23]   ERROR: claude CLI failed for GO-15 — marking Failed
+[10:39:23] 
+[10:39:23] ▶ Starting: MR-01
+[10:39:23]   Invoking claude CLI for MR-01...
+[10:39:24]   ERROR: claude CLI failed for MR-01 — marking Failed
+[10:39:24] 
+[10:39:24] ▶ Starting: MR-02
+[10:39:24]   Invoking claude CLI for MR-02...
+[10:39:25]   ERROR: claude CLI failed for MR-02 — marking Failed
+[10:39:25] 
+[10:39:25] ▶ Starting: MR-03
+[10:39:25]   Invoking claude CLI for MR-03...
+[10:39:26]   ERROR: claude CLI failed for MR-03 — marking Failed
+[10:39:26] 
+[10:39:26] ▶ Starting: MR-04
+[10:39:27]   Invoking claude CLI for MR-04...
+[10:39:28]   ERROR: claude CLI failed for MR-04 — marking Failed
+[10:39:28] 
+[10:39:28] ▶ Starting: MR-05
+[10:39:28]   Invoking claude CLI for MR-05...
+[10:39:29]   ERROR: claude CLI failed for MR-05 — marking Failed
+[13:30:15] ═══════════════════════════════════════
+[13:30:15]  Airlines Process Wiki Pipeline
+[13:30:15]  MAX_RUN=20  DRY_RUN=false
+[13:30:15] ═══════════════════════════════════════
+[13:30:15] Checking dependencies...
+[13:30:15] All dependencies OK.
+[13:30:15] Queue: CM-09 CM-10 CM-11 CM-12 CM-13 CM-14 CM-15 GO-01 GO-02 GO-03 GO-04 GO-05 GO-06 GO-07 GO-08 GO-09 GO-10 GO-11 GO-12 GO-13
+[13:30:15] 
+[13:30:15] ▶ Starting: CM-09
+[13:30:15]   Invoking claude CLI for CM-09...
+[13:30:40]   claude CLI completed for CM-09
+[13:30:40]   Running mmdc for cm-09...
+[13:30:42]   PNG generated: /Users/amalfidreamer/Downloads/airline-process-wiki/assets/img/cm-09.png
+[13:30:42]   Writing Excel...
+[13:30:42]   Excel updated.
+[13:30:42]   Building wiki page...
+[13:30:42]   Wiki page built.
+[13:30:42]   Building slides...
+[13:30:42]   Slides built.
+[13:30:42]   Rebuilding home page...
+[13:30:42]   Home page rebuilt.
+[13:30:42]   Git commit + push...

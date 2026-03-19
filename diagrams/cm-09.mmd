@@ -1,0 +1,44 @@
+flowchart LR
+  subgraph P1[Phase 1: Training Needs Assessment]
+    A([Start]) --> B[Identify training requirements\nfrom crew profiles]
+    B --> C[Build annual training schedule\nagainst roster windows]
+    C --> D{Slot available within\nregulatory expiry window?}
+    D -- No --> C
+    D -- Yes --> E
+  end
+  subgraph P2[Phase 2: Safety and Regulatory Training]
+    E[Deliver SEP safety and\nemergency procedures training] --> F[Aircraft type cabin\nfamiliarization]
+    F --> G[Administer safety\nknowledge assessment]
+    G --> H{Safety score ≥80%?}
+    H -- No --> E
+    H -- Yes --> I
+  end
+  subgraph P3[Phase 3: Service Standards Training]
+    I[Deliver in-flight service\nstandards curriculum] --> J[Train galley and catering\nloading procedures]
+    J --> K[Conduct mock in-flight\nservice drill]
+    K --> L{Drill performance\nmeets standard?}
+    L -- No --> I
+    L -- Yes --> M
+  end
+  subgraph P4[Phase 4: Competency Assessment]
+    M[Assign IOE line check\nflights with evaluator] --> N[Conduct line check\nobservation and scoring]
+    N --> O{Line check score\nmeets threshold?}
+    O -- No --> M
+    O -- Yes --> P[Issue FAA cabin crew\nqualification record]
+  end
+  subgraph P5[Phase 5: Records and Compliance]
+    P --> Q[Update crew training\nrecords in LMS]
+    Q --> R[Validate compliance\nagainst FAR Part 121.433]
+    R --> S{All recurrent training\ncurrent and complete?}
+    S -- No --> T[Flag crew — apply\nscheduling restriction]
+    S -- Yes --> U([End])
+    T --> U
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600

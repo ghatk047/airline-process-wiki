@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-09 Slides — Cabin Crew Service Standards &amp; Training</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-09</span>
+    <h1>Cabin Crew Service Standards &amp; Training</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-09.png" alt="BPMN for CM-09" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-09</span>
+    <h1>Cabin Crew Service Standards &amp; Training</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-09</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Planning &amp; Rostering</li>
+          <li><strong>L3 Name:</strong> Cabin Crew Service Standards &amp; Training</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Identify crew training requirements from profiles</li><li><strong>Phase 2:</strong> Deliver SEP safety &amp; emergency procedures training</li><li><strong>Phase 3:</strong> Deliver in-flight service standards curriculum</li><li><strong>Phase 4:</strong> Assign IOE line check flights with qualified evalu</li><li><strong>Phase 5:</strong> Synchronise training records across LMS and crew s</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Cabin Crew Instructor</li><li>Check Cabin Crew (Evaluator)</li><li>Crew Compliance Analyst</li><li>Crew Records Administrator</li><li>Crew Training Manager</li><li>Crew Training Planner</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>IBS Software iCrew</li><li>Jeppesen Crew Management</li><li>SAP SuccessFactors Learning</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-09</span>
+    <h1>Cabin Crew Service Standards &amp; Training</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Identify crew training requirements from profiles</td>
+        <td class="kpi-col">Training needs identified ≥90 days before regulatory expiry for 100% of crew</td>
+        <td class="pain-col">Jeppesen stores expiry dates per qualification type but does not auto-generate training demand; planners must run manual extracts, creating lead-time risk when expiry windows cluster post-peak season</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Build annual training schedule against roster windows</td>
+        <td class="kpi-col">Training schedule published ≥60 days in advance for 95% of planned events</td>
+        <td class="pain-col">SAP SuccessFactors Learning schedule does not have a real-time read of Jeppesen roster data; integration relies on nightly batch sync, causing scheduling conflicts when roster changes are made intra-day</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate training slot availability vs expiry window</td>
+        <td class="kpi-col">Zero crew members scheduled for training after regulatory expiry date</td>
+        <td class="pain-col">Facility and simulator capacity at crew training centres frequently bottlenecks slot availability, particularly for SEP training requiring full-scale cabin mock-ups — often forces costly overtime or third-party centre bookings</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Deliver SEP safety &amp; emergency procedures training</td>
+        <td class="kpi-col">SEP training completion rate ≥100% before regulatory expiry (FAR Part 121.433 mandatory); classroom session NPS ≥4.2/5.0</td>
+        <td class="pain-col">FAR Part 121.433 mandates annual SEP recurrent training; full-scale cabin mock-up availability at training centres is constrained — scheduling slippage &gt;30 days past planned date has occurred during peak hiring periods</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Conduct aircraft type-specific cabin familiarization</td>
+        <td class="kpi-col">100% of cabin crew type-qualified before first line assignment on that aircraft variant</td>
+        <td class="pain-col">Fleet mix of B737-700 (-143 seats) and B737-800/MAX 8 (-175 seats) requires separate door and evacuation drills; adding MAX 8 MCAS awareness content required unplanned syllabus revision after 2019 grounding</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Administer written safety knowledge assessment</td>
+        <td class="kpi-col">First-attempt pass rate (score ≥80%) ≥95% of cohort; average score ≥87%</td>
+        <td class="pain-col">Assessment question bank in SAP SuccessFactors Learning is not versioned against specific regulatory revision cycles; outdated questions have appeared after FAA circular updates, requiring manual audit of question pools before each cohort</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Evaluate safety assessment pass/fail and route remediation</td>
+        <td class="kpi-col">Remedial loop resolved within 14 calendar days; zero crew deployed without confirmed pass</td>
+        <td class="pain-col">Crew who fail on first attempt require additional classroom time that displaces scheduled cohorts; no automated re-booking logic in SAP SuccessFactors Learning forces manual calendar intervention</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Deliver in-flight service standards curriculum</td>
+        <td class="kpi-col">Service standards curriculum delivered to 100% of active cabin crew within annual training cycle; session completion rate ≥98%</td>
+        <td class="pain-col">Inflight product changes (e.g. menu rotations, new beverage service procedures) are communicated via separate email distribution; SAP SuccessFactors Learning course content lags by 4–6 weeks, leaving a gap where crew operate on outdated standards</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Train galley management and catering loading procedures</td>
+        <td class="kpi-col">Galley loading error rate on line flights ≤0.5% of sectors (measured via customer complaint and inflight report data)</td>
+        <td class="pain-col">B737-700 and B737-800 have different galley configurations; training material must be aircraft-type-specific but SAP SuccessFactors Learning course library does not enforce type-level prerequisites, allowing crew to complete wrong-type galley module</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Conduct mock in-flight service drill and evaluate</td>
+        <td class="kpi-col">Drill pass rate ≥90% first attempt; average service quality score ≥3.8/5.0 on evaluation rubric</td>
+        <td class="pain-col">Mock cabin facility time is shared with SEP drills; scheduling conflicts cause service drills to be shortened or deferred, resulting in crew entering IOE with incomplete practical service training</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Assign IOE line check flights with qualified evaluator</td>
+        <td class="kpi-col">IOE line check flights assigned within 10 days of practical training completion for 90% of crew</td>
+        <td class="pain-col">Qualified cabin crew evaluators (check cabin crew) are drawn from operational roster — their availability conflicts with line flying duties; Jeppesen does not distinguish check crew duty type from line duty for optimisation purposes, causing evaluator shortfalls</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Conduct IOE line check observation and scoring</td>
+        <td class="kpi-col">IOE report submitted within 24 hours of check flight; evaluation criteria coverage ≥100% of mandatory competency items</td>
+        <td class="pain-col">IOE evaluation forms are completed on paper and manually entered into IBS iCrew post-flight; transcription errors and late submissions (&gt;48 hours) have created compliance gaps identified during FAA ATOS audit cycles</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Evaluate IOE line check pass/fail threshold</td>
+        <td class="kpi-col">IOE first-attempt pass rate ≥88%; crew requiring &gt;2 IOE attempts flagged for remediation programme review</td>
+        <td class="pain-col">No automated escalation logic when crew fail second IOE attempt; Crew Training Manager must manually initiate extended remediation, which delays qualification by 3–6 weeks and increases cost per trained crew member</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Issue FAA-compliant cabin crew qualification record</td>
+        <td class="kpi-col">Qualification record issued within 48 hours of final IOE pass; zero records issued with incomplete module pre-requisites</td>
+        <td class="pain-col">FAR Part 121 requires the operator to maintain individual crew training records that are producible on FAA request within 24 hours; IBS iCrew record completeness depends on all upstream systems having posted — batch sync gaps with SAP SuccessFactors create producibility risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Synchronise training records across LMS and crew system</td>
+        <td class="kpi-col">Record reconciliation completed within 24 hours of qualification issuance; discrepancy rate between systems ≤0.5%</td>
+        <td class="pain-col">Nightly batch integration between SAP SuccessFactors Learning and IBS iCrew uses flat-file exchange without transaction-level error logging; silent failures result in qualification data appearing complete in LMS but absent in crew scheduling system, causing crew to be erroneously assigned flights</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Validate FAR Part 121.433 recurrent compliance status</td>
+        <td class="kpi-col">100% of active flying crew compliant with all FAR Part 121.433 recurrency requirements at all times; compliance dashboard accuracy ≥99.5%</td>
+        <td class="pain-col">FAR Part 121.433 recurrency window calculations require tracking multiple qualification types (SEP, type, service) with different intervals; manual tracking in spreadsheets has been used as a backup when IBS iCrew reports are slow, introducing version-control risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Apply scheduling restriction to non-compliant crew</td>
+        <td class="kpi-col">Scheduling restriction applied within 2 hours of non-compliance flag; zero non-compliant crew assigned to revenue flights</td>
+        <td class="pain-col">Jeppesen scheduling hold must be manually applied by a crew compliance analyst — there is no automated API trigger from IBS iCrew non-compliance flags; overnight non-compliance identified after Jeppesen pairing optimiser has already run can result in non-compliant pairings requiring costly last-minute rebidding</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+</body>
+</html>
