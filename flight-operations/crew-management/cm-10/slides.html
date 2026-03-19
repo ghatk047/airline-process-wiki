@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-10 Slides — Crew Disruption Recovery &amp; Re-pairing</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-10</span>
+    <h1>Crew Disruption Recovery &amp; Re-pairing</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-10.png" alt="BPMN for CM-10" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Day-of-Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-10</span>
+    <h1>Crew Disruption Recovery &amp; Re-pairing</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-10</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Day-of-Operations</li>
+          <li><strong>L3 Name:</strong> Crew Disruption Recovery &amp; Re-pairing</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Monitor flight disruption alerts</li><li><strong>Phase 2:</strong> Validate FAR Part 117 duty time status</li><li><strong>Phase 3:</strong> Run automated re-pairing optimizer</li><li><strong>Phase 4:</strong> Validate full re-pairing plan legality</li><li><strong>Phase 5:</strong> Notify affected crew via CrewConnect and ACARS</li><li><strong>Phase 6:</strong> Monitor re-pairing execution in real-time</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Chief Crew Scheduling Officer</li><li>Crew Compliance Analyst</li><li>Crew Cost Analyst</li><li>Crew Records Administrator</li><li>Crew Scheduling Controller</li><li>Reserve Crew Coordinator</li><li>Senior Crew Scheduling Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Jeppesen Crew Management</li><li>Jeppesen Crew Management + Amadeus Altéa PSS</li><li>Jeppesen Crew Management + SAP S/4HANA Finance (FI/CO)</li><li>Jeppesen Crew Management + SAP SuccessFactors</li><li>Jeppesen Crew Management + SITA Airport Management System (AMS)</li><li>Jeppesen Crew Management + airline labour relations tracking system</li><li>Jeppesen CrewConnect mobile app</li><li>Jeppesen CrewConnect mobile app + Telex/SITA ACARS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Day-of-Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-10</span>
+    <h1>Crew Disruption Recovery &amp; Re-pairing</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Monitor flight disruption alerts</td>
+        <td class="kpi-col">Detection-to-action time ≤10 min; alert integration latency ≤5 min</td>
+        <td class="pain-col">Altéa PSS and Jeppesen do not sync in real-time; 5–15 min lag in crew impact visibility causes delayed recovery initiation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Classify disruption type and scope</td>
+        <td class="kpi-col">Classification accuracy ≥95%; classification time ≤5 min</td>
+        <td class="pain-col">Weather-driven systemic disruptions affecting 50+ crew members simultaneously overwhelm manual classification; no automated severity scoring in Jeppesen</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Extract affected crew roster</td>
+        <td class="kpi-col">Roster extraction time ≤5 min; crew data accuracy ≥98%</td>
+        <td class="pain-col">Crew position data lags if crew fail to check in via mobile app; roster inaccuracies force manual verification calls adding 10–20 min</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Validate FAR Part 117 duty time status</td>
+        <td class="kpi-col">Duty time calculation accuracy 100%; 0 regulatory violations per post-flight audit</td>
+        <td class="pain-col">FAR Part 117 augmented crew provisions and cumulative fatigue risk calculations are complex; manual overrides risk non-compliance and FAA enforcement action</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Check crew qualifications and type ratings</td>
+        <td class="kpi-col">Qualification verification ≤3 min per crew member; 0 unqualified crew assigned</td>
+        <td class="pain-col">Narrowbody/widebody type rating mismatches restrict recovery options on mixed fleets; qualification database refresh latency causes stale records</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Identify available reserve crew resources</td>
+        <td class="kpi-col">Reserve utilization rate ≤85% to maintain buffer; reserve call-out success rate ≥90%</td>
+        <td class="pain-col">Reserve pool depletion during systemic weather events; seniority-driven CBA bidding limits scheduling flexibility and overrides optimizer suggestions</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Run automated re-pairing optimizer</td>
+        <td class="kpi-col">Optimizer run time ≤8 min; automated solution coverage ≥95% of disrupted pairings</td>
+        <td class="pain-col">Jeppesen optimizer produces sub-optimal solutions under tight time windows; cost parameter tuning requires experienced scheduler intervention to avoid excessive deadhead costs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Evaluate deadhead and positioning options</td>
+        <td class="kpi-col">Deadhead seat availability rate ≥70%; deadhead cost per re-pairing ≤$800</td>
+        <td class="pain-col">No automated deadhead booking integration between Jeppesen and Altéa PSS; competing passenger demand on sold-out recovery flights blocks crew positioning</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Apply manual overrides for exceptional cases</td>
+        <td class="kpi-col">Manual override rate ≤15% of total re-pairings; override documentation compliance 100%</td>
+        <td class="pain-col">Manual overrides are audit-tracked by labour unions and must be defensible under CBA; pressure to minimise them conflicts with operational necessity during major disruptions</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Validate full re-pairing plan legality</td>
+        <td class="kpi-col">100% compliance pass rate before plan activation; 0 post-departure duty violations</td>
+        <td class="pain-col">Real-time legality checks may not capture late-reported duty changes; crew self-reporting of off-system duty time creates hidden violations discoverable only at post-flight audit</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Assess CBA cost impact and premium pay flags</td>
+        <td class="kpi-col">Re-pairing cost premium ≤$1,200 per disrupted pairing; CBA rule flag accuracy ≥98%</td>
+        <td class="pain-col">CBA minimum-day compensation, missed connection pay, and hotel expense rules trigger unexpected premium costs not modelled in Jeppesen; finance reconciliation with SAP is manual</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Notify affected crew via CrewConnect and ACARS</td>
+        <td class="kpi-col">Notification delivery rate ≥98%; crew acknowledgment within 30 min for ≥85% of assignments</td>
+        <td class="pain-col">Crew connectivity gaps in airports without WiFi; ACARS coverage limited to airborne crew; personal device management policy inconsistency across crew bases</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Confirm crew acknowledgment and acceptance</td>
+        <td class="kpi-col">Crew acceptance rate on first notification ≥80%; escalation rate ≤20%</td>
+        <td class="pain-col">Crew refusals citing CBA rest-period disputes or training conflicts require union liaison review before escalation; each dispute adds 20–40 min to recovery timeline</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Escalate unresolved crew assignments</td>
+        <td class="kpi-col">Escalation resolution time ≤60 min; crew replacement sourced within 90 min of escalation</td>
+        <td class="pain-col">Union grievance procedures can extend resolution beyond the operational window; documented escalation playbooks are inconsistent across crew bases and crew categories</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Monitor re-pairing execution in real-time</td>
+        <td class="kpi-col">Re-pairing execution compliance rate ≥92%; real-time tracking lag ≤5 min</td>
+        <td class="pain-col">Multi-airport simultaneous disruptions create monitoring overload; a single controller may track 20+ active re-pairings with no auto-escalation in Jeppesen for critical deviations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Update crew records and close disruption event</td>
+        <td class="kpi-col">Record update within 2 hours of final flight completion; data accuracy ≥99.5%; pay discrepancy rate ≤0.5%</td>
+        <td class="pain-col">Jeppesen-to-SAP SuccessFactors payroll integration latency causes pay discrepancies that generate crew queries and manual reconciliation effort averaging 45 min per affected pairing</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Day-of-Operations</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Human Resources · Corporate Support Functions · Airlines Process Wiki</title>
+<title>CM-10 · Crew Disruption Recovery &amp; Re-pairing · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Crew Management</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -151,7 +152,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-07/"><span class="status-dot status-done"></span><span class="pid">CM-07</span>Reserve Crew Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-08/"><span class="status-dot status-done"></span><span class="pid">CM-08</span>Crew Hotel &amp; Transportation Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-09/"><span class="status-dot status-done"></span><span class="pid">CM-09</span>Cabin Crew Service Standards &amp; Training</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-10/"><span class="status-dot status-done"></span><span class="pid">CM-10</span>Crew Disruption Recovery &amp; Re-pairing</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/crew-management/cm-10/"><span class="status-dot status-done"></span><span class="pid">CM-10</span>Crew Disruption Recovery &amp; Re-pairing</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-11/"><span class="status-dot status-queue"></span><span class="pid">CM-11</span>Crew Union &amp; Labour Agreement Compliance</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-12/"><span class="status-dot status-queue"></span><span class="pid">CM-12</span>Crew Recruitment &amp; Onboarding</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-13/"><span class="status-dot status-queue"></span><span class="pid">CM-13</span>Deadhead &amp; Positioning Management</a>
@@ -213,8 +214,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-queue"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
@@ -242,54 +243,238 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Corporate Support Functions</a><span class="sep">›</span>
-  <span class="current">Human Resources</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Crew Management</a><span class="sep">›</span>
+  <a href="../../../flight-operations/crew-management/">Crew Day-of-Operations</a><span class="sep">›</span>
+  <span class="current">CM-10 · Crew Disruption Recovery &amp; Re-pairing</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Human Resources</h1>
-    <p>Corporate Support Functions · 0 of 4 subprocesses complete · Updated 2026-03-19 13:33</p>
+    <h1>Crew Disruption Recovery &amp; Re-pairing</h1>
+    <p>Crew Management › Crew Day-of-Operations · 16 L4 steps · 6 phases · 9 decision gates · Updated 2026-03-19 13:33</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CM-10</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-04</span>Workforce Planning &amp; Headcount Management</h3>
-    <p>Human Resources · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cm-10">
+      <img src="../../../assets/img/cm-10.png" alt="CM-10 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cm-10').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cm-10').style.display='flex'">
+      <div id="diag-placeholder-cm-10" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-04/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Monitor flight disruption alerts</td>
+  <td class="td-role">Crew Scheduling Controller</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">OTP delay/cancel alerts from airport ops or ATC; Altéa PSS flight status feed</td>
+  <td style="font-size:10px">Disruption event record opened in crew tracking system</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Detection-to-action time ≤10 min; alert integration latency ≤5 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Classify disruption type and scope</td>
+  <td class="td-role">Crew Scheduling Controller</td>
+  <td><span class="stag custom">Jeppesen Crew Management + SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Flight status updates, weather NOTAMs, ATC delay codes</td>
+  <td style="font-size:10px">Disruption classification record: type (delay/cancel/divert), scope (isolated/systemic), affected flight list</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Classification accuracy ≥95%; classification time ≤5 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Extract affected crew roster</td>
+  <td class="td-role">Crew Scheduling Controller</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Disruption classification, impacted flight list</td>
+  <td style="font-size:10px">Affected crew list with current duty status, rest period elapsed, and home base</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Roster extraction time ≤5 min; crew data accuracy ≥98%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Validate FAR Part 117 duty time status</td>
+  <td class="td-role">Crew Compliance Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Affected crew list; current cumulative duty times; rest period records</td>
+  <td style="font-size:10px">Compliance status matrix per crew member: legal / marginal / illegal with hours remaining</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Duty time calculation accuracy 100%; 0 regulatory violations per post-flight audit</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Check crew qualifications and type ratings</td>
+  <td class="td-role">Crew Scheduling Controller</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Affected crew list; aircraft types on disrupted and recovery routes</td>
+  <td style="font-size:10px">Crew qualification match matrix; list of crew with type rating mismatches</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Qualification verification ≤3 min per crew member; 0 unqualified crew assigned</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Identify available reserve crew resources</td>
+  <td class="td-role">Reserve Crew Coordinator</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Reserve crew duty board; crew availability calendar; standby call-out rules (CBA)</td>
+  <td style="font-size:10px">Available reserve crew list ranked by seniority, duty legality, and base proximity</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Reserve utilization rate ≤85% to maintain buffer; reserve call-out success rate ≥90%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Run automated re-pairing optimizer</td>
+  <td class="td-role">Crew Scheduling Controller</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Available crew pool (legal, qualified, available); disrupted pairing list; revised flight schedule</td>
+  <td style="font-size:10px">Proposed re-pairing solution set with cost scores and legality flags</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Optimizer run time ≤8 min; automated solution coverage ≥95% of disrupted pairings</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Evaluate deadhead and positioning options</td>
+  <td class="td-role">Crew Scheduling Controller</td>
+  <td><span class="stag amadeus">Jeppesen Crew Management + Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Proposed re-pairing solution; available seat inventory on required flights</td>
+  <td style="font-size:10px">Deadhead bookings confirmed or rejected; adjusted re-pairing plan with positioning costs</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Deadhead seat availability rate ≥70%; deadhead cost per re-pairing ≤$800</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Apply manual overrides for exceptional cases</td>
+  <td class="td-role">Senior Crew Scheduling Manager</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Optimizer solution gaps; exceptional crew constraints (compassionate leave, training conflicts)</td>
+  <td style="font-size:10px">Manually adjusted re-pairing with override justification log and authorisation code</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Manual override rate ≤15% of total re-pairings; override documentation compliance 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Validate full re-pairing plan legality</td>
+  <td class="td-role">Crew Compliance Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Final re-pairing plan including all manual overrides</td>
+  <td style="font-size:10px">Legality validation report with pass/fail per assignment and FAR Part 117 reference citations</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% compliance pass rate before plan activation; 0 post-departure duty violations</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Assess CBA cost impact and premium pay flags</td>
+  <td class="td-role">Crew Cost Analyst</td>
+  <td><span class="stag sap">Jeppesen Crew Management + SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved re-pairing plan; crew pay rules from collective bargaining agreement</td>
+  <td style="font-size:10px">Estimated re-pairing cost vs. baseline pairing cost; premium pay flags (missed trip, deadhead, min-day guarantee)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Re-pairing cost premium ≤$1,200 per disrupted pairing; CBA rule flag accuracy ≥98%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Notify affected crew via CrewConnect and ACARS</td>
+  <td class="td-role">Crew Scheduling Controller</td>
+  <td><span class="stag custom">Jeppesen CrewConnect mobile app + Telex/SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Finalised re-pairing assignments; crew contact details; estimated report times</td>
+  <td style="font-size:10px">Push notifications and duty change messages delivered; crew acknowledgment timer started</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Notification delivery rate ≥98%; crew acknowledgment within 30 min for ≥85% of assignments</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Confirm crew acknowledgment and acceptance</td>
+  <td class="td-role">Crew Scheduling Controller</td>
+  <td><span class="stag custom">Jeppesen CrewConnect mobile app</span></td>
+  <td style="font-size:10px;color:#6b7280">Notification delivery confirmation; crew response (accept/reject with reason code)</td>
+  <td style="font-size:10px">Confirmed duty acceptance log or rejection record with CBA reason code</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Crew acceptance rate on first notification ≥80%; escalation rate ≤20%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Escalate unresolved crew assignments</td>
+  <td class="td-role">Chief Crew Scheduling Officer</td>
+  <td><span class="stag custom">Jeppesen Crew Management + airline labour relations tracking system</span></td>
+  <td style="font-size:10px;color:#6b7280">Non-accepted assignment records; union contact roster; operational contingency options</td>
+  <td style="font-size:10px">Escalated case record; alternative crew sourced or operational contingency activated (delay/cancel flight)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Escalation resolution time ≤60 min; crew replacement sourced within 90 min of escalation</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Monitor re-pairing execution in real-time</td>
+  <td class="td-role">Crew Scheduling Controller</td>
+  <td><span class="stag custom">Jeppesen Crew Management + SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Live flight status updates; crew check-in confirmations; gate and stand assignments</td>
+  <td style="font-size:10px">Execution status dashboard with exception flags for late crew, missed check-ins, and gate conflicts</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Re-pairing execution compliance rate ≥92%; real-time tracking lag ≤5 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Update crew records and close disruption event</td>
+  <td class="td-role">Crew Records Administrator</td>
+  <td><span class="stag sap">Jeppesen Crew Management + SAP SuccessFactors</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed re-pairing execution log; final duty times; hotel and transport receipts</td>
+  <td style="font-size:10px">Updated crew records (cumulative duty, pay events, pairing history); disruption closure report with root cause tag</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Record update within 2 hours of final flight completion; data accuracy ≥99.5%; pay discrepancy rate ≤0.5%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-05</span>Talent Acquisition &amp; Recruitment</h3>
-    <p>Human Resources · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CM-10</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Crew Management</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Crew Day-of-Operations</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Crew Disruption Recovery &amp; Re-pairing</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">16 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">9 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">9 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Crew Scheduling Controller</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Crew Compliance Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Reserve Crew Coordinator</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Senior Crew Scheduling Manager</div><div class="swim"><div class="dot" style="background:#10b981"></div>Crew Cost Analyst</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Chief Crew Scheduling Officer</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Crew Records Administrator</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">Jeppesen Crew Management</span><span class="stag custom">Jeppesen Crew Management + SITA Airport Management System (AMS)</span><span class="stag amadeus">Jeppesen Crew Management + Amadeus Altéa PSS</span><span class="stag sap">Jeppesen Crew Management + SAP S/4HANA Finance (FI/CO)</span><span class="stag custom">Jeppesen CrewConnect mobile app + Telex/SITA ACARS</span><span class="stag custom">Jeppesen CrewConnect mobile app</span><span class="stag custom">Jeppesen Crew Management + airline labour relations tracking system</span><span class="stag sap">Jeppesen Crew Management + SAP SuccessFactors</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Monitor flight disruption alerts</span><span class="kval">Detection-to-action time ≤10 min; alert integration latency ≤5 min</span></div><div class="krow"><span class="kname">Classify disruption type and scope</span><span class="kval">Classification accuracy ≥95%; classification time ≤5 min</span></div><div class="krow"><span class="kname">Extract affected crew roster</span><span class="kval">Roster extraction time ≤5 min; crew data accuracy ≥98%</span></div><div class="krow"><span class="kname">Validate FAR Part 117 duty time status</span><span class="kval">Duty time calculation accuracy 100%; 0 regulatory violations per post-flight audit</span></div><div class="krow"><span class="kname">Check crew qualifications and type ratings</span><span class="kval">Qualification verification ≤3 min per crew member; 0 unqualified crew assigned</span></div><div class="krow"><span class="kname">Identify available reserve crew resources</span><span class="kval">Reserve utilization rate ≤85% to maintain buffer; reserve call-out success rate ≥90%</span></div><div class="krow"><span class="kname">Run automated re-pairing optimizer</span><span class="kval">Optimizer run time ≤8 min; automated solution coverage ≥95% of disrupted pairings</span></div><div class="krow"><span class="kname">Evaluate deadhead and positioning options</span><span class="kval">Deadhead seat availability rate ≥70%; deadhead cost per re-pairing ≤$800</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Altéa PSS and Jeppesen do not sync in real-time; 5–15 min lag in crew impact visibility causes delayed recovery initiation</div><div class="risk-card">Weather-driven systemic disruptions affecting 50+ crew members simultaneously overwhelm manual classification; no automated severity scoring in Jeppesen</div><div class="risk-card">Crew position data lags if crew fail to check in via mobile app; roster inaccuracies force manual verification calls adding 10–20 min</div><div class="risk-card">FAR Part 117 augmented crew provisions and cumulative fatigue risk calculations are complex; manual overrides risk non-compliance and FAA enforcement action</div><div class="risk-card">Narrowbody/widebody type rating mismatches restrict recovery options on mixed fleets; qualification database refresh latency causes stale records</div><div class="risk-card">Reserve pool depletion during systemic weather events; seniority-driven CBA bidding limits scheduling flexibility and overrides optimizer suggestions</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">OTP delay/cancel alerts from airport ops or ATC; Altéa PSS flight status feed</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Updated crew records (cumulative duty, pay events, pairing history); disruption closure report with root cause tag</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-06</span>Learning &amp; Development Management</h3>
-    <p>Human Resources · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-07</span>Labour Relations &amp; Union Negotiation</h3>
-    <p>Human Resources · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-07/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cm-09/"><span class="arrow">←</span><span><span class="sub">Previous</span>CM-09 · Cabin Crew Service Standards &amp; Training</span></a><a class="pn-btn" href="../cm-11/"><span><span class="sub">Next</span>CM-11 · Crew Union &amp; Labour Agreement Compliance</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

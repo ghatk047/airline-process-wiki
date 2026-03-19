@@ -1,0 +1,55 @@
+flowchart LR
+  subgraph P1[Phase 1: Disruption Detection]
+    A([Start]) --> B[Monitor disruption alerts]
+    B --> C{Systemic disruption\n>20 crew?}
+    C -- Yes --> D[Extract full roster impact]
+    C -- No --> D
+  end
+  subgraph P2[Phase 2: Crew Impact Analysis]
+    D --> E{Crew at duty\ntime limit?}
+    E -- Yes --> F[Remove from coverage pool]
+    E -- No --> G[Check qualifications\nand type ratings]
+    F --> G
+    G --> H{Reserves\nsufficient?}
+    H -- No --> I[Escalate reserve shortfall]
+    I --> H
+    H -- Yes --> J[Rank available crew pool]
+  end
+  subgraph P3[Phase 3: Re-pairing Generation]
+    J --> K[Run Jeppesen optimizer]
+    K --> L{Deadhead seats\navailable?}
+    L -- No --> M[Manual override\nby senior scheduler]
+    M --> L
+    L -- Yes --> N[Finalize re-pairing plan]
+  end
+  subgraph P4[Phase 4: Legality Validation]
+    N --> O{All pairings pass\nFAR Part 117?}
+    O -- No --> K
+    O -- Yes --> P[Assess CBA cost impact]
+  end
+  subgraph P5[Phase 5: Crew Notification]
+    P --> Q[Notify crew via\nCrewConnect and ACARS]
+    Q --> R{Crew acknowledged\nand accepted?}
+    R -- No --> S[Escalate to Chief\nCrew Scheduling]
+    S --> T{Alt crew within\nop window?}
+    T -- No --> S
+    T -- Yes --> U[Confirm new assignment]
+    R -- Yes --> U
+  end
+  subgraph P6[Phase 6: Execution and Close-out]
+    U --> V{Execution deviation\ndetected?}
+    V -- Yes --> Q
+    V -- No --> W[Update crew records\nJeppesen + SAP SF]
+    W --> X([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
