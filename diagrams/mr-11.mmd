@@ -1,0 +1,48 @@
+flowchart LR
+  subgraph P1[Phase 1: Damage Detection and Assessment]
+    A([Start]) --> B[Initiate damage finding report]
+    B --> C{Within SRM\nallowable limits?}
+    C -- Yes --> D[Define NDT scope and method]
+    C -- No --> E[Escalate to Engineering]
+  end
+
+  subgraph P2[Phase 2: Engineering Disposition]
+    E --> F[Submit damage for engineering disposition]
+    F --> G{OEM engineering\norder required?}
+    G -- Yes --> H[Request OEM/DER EO]
+    G -- No --> I[Issue Structural Repair Order]
+    H --> I
+  end
+
+  subgraph P3[Phase 3: NDT Inspection Execution]
+    D --> J[Assign Level II/III NDT inspector]
+    I --> J
+    J --> K[Execute NDT inspection\nUT / ET / RT / PT / MT]
+    K --> L{Additional damage\nbeyond initial finding?}
+    L -- Yes --> F
+    L -- No --> M[Document NDT findings]
+  end
+
+  subgraph P4[Phase 4: Structural Repair Execution]
+    M --> N[Procure certified repair\nmaterials and fasteners]
+    N --> O[Execute structural repair\nper approved data]
+    O --> P{Dimensional and\nload tolerances met?}
+    P -- No --> O
+    P -- Yes --> Q[Apply corrosion inhibitor\nand sealant compound]
+  end
+
+  subgraph P5[Phase 5: Quality Verification and RTS]
+    Q --> R[Post-repair NDT verification scan]
+    R --> S[Independent quality\ninspector sign-off]
+    S --> T{Documentation\ncomplete and compliant?}
+    T -- No --> S
+    T -- Yes --> U([RTS Authorized])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600

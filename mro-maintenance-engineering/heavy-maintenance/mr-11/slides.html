@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MR-11 Slides — Structural Repair &amp; NDT Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-11</span>
+    <h1>Structural Repair &amp; NDT Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/mr-11.png" alt="BPMN for MR-11" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Heavy Maintenance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-11</span>
+    <h1>Structural Repair &amp; NDT Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> MR-11</li>
+          <li><strong>L1 Domain:</strong> Maintenance, Repair &amp; Overhaul</li>
+          <li><strong>L2 Process:</strong> Heavy Maintenance</li>
+          <li><strong>L3 Name:</strong> Structural Repair &amp; NDT Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Initiate structural damage finding report</li><li><strong>Phase 2:</strong> Submit damage for engineering disposition review</li><li><strong>Phase 3:</strong> Assign certified NDT Level II/III inspector to tas</li><li><strong>Phase 4:</strong> Procure certified repair materials and special fas</li><li><strong>Phase 5:</strong> Perform post-repair NDT verification scan</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Aircraft Structures Inspector</li><li>Airframe Structures Mechanic (A&amp;P)</li><li>NDT Level II Inspector</li><li>NDT Level III Engineer</li><li>NDT Supervisor</li><li>Quality Assurance Inspector (Independent)</li><li>Quality Assurance Supervisor</li><li>Quality Assurance Supervisor / DMIR</li><li>Stores / Material Planning Analyst</li><li>Structures Engineer</li><li>Structures Engineering DER</li><li>Structures Inspector (Inspection Hold Point)</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>Boeing Toolbox / CAMP</li><li>Olympus OmniScan (UT/PAUT) integrated with AMOS by Swiss AviationSoftware</li><li>SAP S/4HANA Finance (FI/CO) integrated with AMOS by Swiss AviationSoftware</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Heavy Maintenance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-11</span>
+    <h1>Structural Repair &amp; NDT Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Initiate structural damage finding report</td>
+        <td class="kpi-col">DFR opened within 2 hours of discovery; 100% of findings logged before repair initiation</td>
+        <td class="pain-col">Manual damage measurement and paper sketches introduce transcription errors when uploaded to AMOS; no integrated photo capture workflow forces separate file attachment steps</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Define NDT method and inspection scope</td>
+        <td class="kpi-col">NDT scope defined within 4 hours of DFR; SRM chapter referenced on 100% of instructions</td>
+        <td class="pain-col">Boeing Toolbox revision currency lag — SRM updates from Boeing Service Bulletins (SBs) can trail physical publication by 30–60 days, risking use of superseded acceptance limits</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Evaluate damage against SRM allowable limits</td>
+        <td class="kpi-col">Disposition decision issued within 8 hours of DFR for non-AOG; 100% of beyond-limit findings escalated same shift</td>
+        <td class="pain-col">Ambiguous SRM allowable tables for compound damage (multiple adjacent findings) require engineering judgement; misclassification risk if junior structures engineers make disposition calls without Level III review</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Submit damage for engineering disposition review</td>
+        <td class="kpi-col">EDR submitted within 2 hours of beyond-limits determination; completeness score ≥95% (all required fields populated)</td>
+        <td class="pain-col">AMOS EDR workflow does not integrate directly with OEM damage disposition portals (Boeing SRM Online); engineers must duplicate data entry across two systems, increasing cycle time and error risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Evaluate repair options against approved engineering data</td>
+        <td class="kpi-col">Engineering disposition issued within 24 hours for non-AOG; 100% of dispositions reference specific SRM paragraph or approved data source</td>
+        <td class="pain-col">Recurring structural damage at frame stations may indicate systemic fatigue or corrosion issues not captured in individual DFRs; lack of fleet-level damage trending in Boeing Toolbox means repeat repairs go undetected without manual cross-referencing</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Determine if OEM or DER engineering order is required</td>
+        <td class="kpi-col">OEM referral decision made within 4 hours of disposition review; 0 instances of in-house repair where OEM EO was required by AD or AWL</td>
+        <td class="pain-col">Airlines with limited ODA (Organization Designation Authorization) scope must route repairs to Boeing, incurring 5–15 business day lead times that drive AOG extensions; DER authority matrix not always current in AMOS, causing avoidable OEM referrals</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Issue Structural Repair Order and material requirements</td>
+        <td class="kpi-col">SRO issued within 2 hours of disposition approval; material list completeness ≥98% (no unplanned AOG parts requests during repair)</td>
+        <td class="pain-col">AMOS material reservation does not lock AOG-priority alloy sheet stock, allowing concurrent heavy-check work orders to consume materials needed for structural repairs, causing unplanned procurement delays</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Assign certified NDT Level II/III inspector to task</td>
+        <td class="kpi-col">Inspector assigned within 1 hour of work instruction release; 100% of assignments verified against NAS410 certification currency</td>
+        <td class="pain-col">NDT Level II/III certifications require 24-month renewal (NAS410); gaps in recency tracking within AMOS qualification module mean expired or method-restricted inspectors may be assigned without automated block, creating FAA Part 145 compliance exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Execute NDT inspection per approved work instruction</td>
+        <td class="kpi-col">Coverage rate ≥100% of defined zone (no uninspected area); calibration performed every 4 hours or per shift change; scan data archived within 30 minutes of inspection completion</td>
+        <td class="pain-col">Phased-array UT (PAUT) equipment data files (Olympus OmniScan .evo format) are not natively ingestible by AMOS, requiring manual transcription of indication sizes and locations — primary source of sizing errors reported in ASIAS NDT occurrence database</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Assess NDT findings against work instruction acceptance criteria</td>
+        <td class="kpi-col">Level III review completed within 4 hours of inspection; 0 indications accepted beyond SRM limits without engineering sign-off</td>
+        <td class="pain-col">Secondary damage found during NDT (e.g., cracking beyond a corrosion blister) resets the engineering disposition cycle, adding 24–72 hours to check schedule with no pre-planned buffer in most C-check work packages</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Archive NDT findings and close NDT work card</td>
+        <td class="kpi-col">Work card closed within 2 hours of Level III acceptance; 100% of scan data files attached to aircraft serial number record</td>
+        <td class="pain-col">AMOS document storage size limits (per-record attachment caps) require off-system archiving of large PAUT data files to network shares, breaking single-source traceability and complicating FAA audit responses</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Procure certified repair materials and special fasteners</td>
+        <td class="kpi-col">Material kitting completed within 4 hours of SRO release for planned repairs; 100% of issued materials have traceable Certificate of Conformance</td>
+        <td class="pain-col">High-strength aluminium alloy sheet (2024-T3, 7075-T6) and titanium fasteners have long procurement lead times (8–16 weeks); inadequate buffer stock planning in SAP MRP causes AOG parts requests that extend check TAT by 3–5 days</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Execute structural repair per approved Structural Repair Order</td>
+        <td class="kpi-col">Repair step completion sign-off within SRO-defined sequence; 0 out-of-sequence step completions; fastener installation torque within ±10% of SRM specification</td>
+        <td class="pain-col">Complex composite-to-metal bonded repairs require temperature-controlled adhesive curing (120°C bond-line) with limited cure oven capacity during peak C-check input; scheduling conflicts with concurrent composites repairs delay structural repair cycle by 12–24 hours</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Verify repair dimensions and load path restoration</td>
+        <td class="kpi-col">100% of SRO-defined hold points signed before next step begins; dimensional non-conformance rate &lt;2% of structural repair work orders</td>
+        <td class="pain-col">AMOS hold-point enforcement relies on inspector discipline — system allows step sign-off without prior hold-point completion if sequences are not correctly locked, enabling inadvertent bypass of critical structural inspection gates</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Apply corrosion inhibitor and sealant compound</td>
+        <td class="kpi-col">Sealant applied within 30 minutes of surface preparation (ASTM D1002 open-time limit); cure time logged per batch number; 100% coverage of faying surfaces per SRM specification</td>
+        <td class="pain-col">Sealant pot-life management under hangar temperature variations (summer: 35°C+) accelerates cure and reduces workable window; inadequate ambient monitoring in maintenance hangars leads to sealant application beyond open-time limits, requiring removal and rework</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Perform post-repair NDT verification scan</td>
+        <td class="kpi-col">Post-repair scan coverage ≥100% of repair footprint + 25mm margin; indication-free result confirmed on 100% of primary structural repairs before inspector sign-off</td>
+        <td class="pain-col">Sealant application over fastener rows reduces PAUT coupling effectiveness, causing near-surface dead zones that may mask shallow cracking at fastener holes; no airline-standardised post-sealant scan procedure in SRM forces ad-hoc method selection by NDT Level III</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Quality inspector independent review and dual sign-off</td>
+        <td class="kpi-col">Independent QA review completed within 4 hours of last work card sign-off; QA deficiency rate &lt;1% of released structural repair work orders</td>
+        <td class="pain-col">Dual-sign requirements under FAR Part 145 and EASA Part-145 mandate independent inspection, but AMOS does not prevent the original mechanic from also serving as the independent inspector if role segregation is not enforced at the user account level — a recurring finding in FAA Part 145 audits</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Verify documentation completeness and regulatory compliance</td>
+        <td class="kpi-col">Documentation review completed within 2 hours of QA release; 0 aircraft released to service with open documentation deficiencies</td>
+        <td class="pain-col">Structural repairs subject to Airworthiness Limitation (AWL) items require recurring inspection intervals to be loaded into AMOS task scheduling at time of repair closure — failure to create the repeat task results in missed mandatory AWL inspections, a critical safety and Part 121 compliance failure</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.4</td>
+        <td>Update airworthiness records and issue RTS authorisation</td>
+        <td class="kpi-col">RTS issued within 1 hour of documentation approval; 100% of DER repairs accompanied by filed FAA Form 337 within 8 hours of RTS; AWL recurring tasks created and confirmed in AMOS for 100% of limit-item repairs</td>
+        <td class="pain-col">FAA Form 337 electronic filing via FAA ACAIS portal is not integrated with AMOS, requiring manual data re-entry and introducing 2–4 hour delays at peak check closure periods; lost or misfiled 337s create airworthiness record gaps that require costly FAA coordination to resolve</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Heavy Maintenance</span>
+  </div>
+</div>
+
+</body>
+</html>

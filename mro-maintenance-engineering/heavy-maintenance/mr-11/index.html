@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Airport &amp; Gate Management · Ground Operations &amp; Airport Services · Airlines Process Wiki</title>
+<title>MR-11 · Structural Repair &amp; NDT Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -187,8 +188,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-done"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
@@ -208,7 +209,7 @@
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-02/"><span class="status-dot status-done"></span><span class="pid">MR-02</span>Heavy Maintenance (C/D Check) Planning</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-03/"><span class="status-dot status-done"></span><span class="pid">MR-03</span>Engine Shop Maintenance Management</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-04/"><span class="status-dot status-done"></span><span class="pid">MR-04</span>Component &amp; Parts Management</a>
-        <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-11/"><span class="status-dot status-done"></span><span class="pid">MR-11</span>Structural Repair &amp; NDT Management</a>
+        <a class="sidebar-l3-link active" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-11/"><span class="status-dot status-done"></span><span class="pid">MR-11</span>Structural Repair &amp; NDT Management</a>
       </div>
     </div>
   </div>
@@ -242,81 +243,268 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
-  <span class="current">Airport &amp; Gate Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/heavy-maintenance/">Heavy Maintenance</a><span class="sep">›</span>
+  <span class="current">MR-11 · Structural Repair &amp; NDT Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Airport &amp; Gate Management</h1>
-    <p>Ground Operations &amp; Airport Services · 7 of 7 subprocesses complete · Updated 2026-03-19 19:31</p>
+    <h1>Structural Repair &amp; NDT Management</h1>
+    <p>Maintenance, Repair &amp; Overhaul › Heavy Maintenance · 19 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-19 19:31</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">MR-11</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-01</span>Passenger Check-In &amp; Boarding</h3>
-    <p>Airport &amp; Gate Management · 18 steps · 8 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-mr-11">
+      <img src="../../../assets/img/mr-11.png" alt="MR-11 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-mr-11').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-mr-11').style.display='flex'">
+      <div id="diag-placeholder-mr-11" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Initiate structural damage finding report</td>
+  <td class="td-role">Aircraft Structures Inspector</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Visual inspection finding, C-check opening discrepancy, or SRM-triggered inspection requirement</td>
+  <td style="font-size:10px">Damage Finding Report (DFR) with location, area, and initial severity classification</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">DFR opened within 2 hours of discovery; 100% of findings logged before repair initiation</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Define NDT method and inspection scope</td>
+  <td class="td-role">NDT Level III Engineer</td>
+  <td><span class="stag custom">Boeing Toolbox / CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">Damage Finding Report, Aircraft Structural Repair Manual (SRM) Chapter 51, airframe area access card</td>
+  <td style="font-size:10px">NDT Work Instruction specifying method (UT, ET, RT, PT, MT), zone boundary, and acceptance criteria</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NDT scope defined within 4 hours of DFR; SRM chapter referenced on 100% of instructions</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Evaluate damage against SRM allowable limits</td>
+  <td class="td-role">Structures Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">NDT Work Instruction, SRM allowable damage limits, measured damage dimensions</td>
+  <td style="font-size:10px">Disposition decision: within limits (proceed to NDT), beyond limits (escalate to engineering)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Disposition decision issued within 8 hours of DFR for non-AOG; 100% of beyond-limit findings escalated same shift</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Submit damage for engineering disposition review</td>
+  <td class="td-role">Structures Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Beyond-limits damage finding, DFR with measurements, photographs, and SRM chapter reference</td>
+  <td style="font-size:10px">Engineering Disposition Request (EDR) submitted to Structures Engineering queue</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">EDR submitted within 2 hours of beyond-limits determination; completeness score ≥95% (all required fields populated)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Evaluate repair options against approved engineering data</td>
+  <td class="td-role">Structures Engineering DER</td>
+  <td><span class="stag custom">Boeing Toolbox / CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">Engineering Disposition Request, SRM Chapter 51/53/57, applicable Airworthiness Directives (ADs), fleet history for recurring damage patterns</td>
+  <td style="font-size:10px">Repair scheme selection: SRM standard repair, SRM alternative repair, or DER-designed repair</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Engineering disposition issued within 24 hours for non-AOG; 100% of dispositions reference specific SRM paragraph or approved data source</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Determine if OEM or DER engineering order is required</td>
+  <td class="td-role">Structures Engineering DER</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Repair scheme assessment, FAA DER authority scope, airline DER/ODA delegation matrix</td>
+  <td style="font-size:10px">Decision: issue in-house Structural Repair Order (SRO) or submit to Boeing/OEM for Engineering Order (EO)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">OEM referral decision made within 4 hours of disposition review; 0 instances of in-house repair where OEM EO was required by AD or AWL</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Issue Structural Repair Order and material requirements</td>
+  <td class="td-role">Structures Engineering DER</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved repair scheme (SRM, in-house EO, or OEM EO), DFR, parts availability from stores</td>
+  <td style="font-size:10px">Structural Repair Order (SRO) with step-by-step instructions, material list (alloys, fasteners, sealants), tooling requirements, and inspector hold points</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">SRO issued within 2 hours of disposition approval; material list completeness ≥98% (no unplanned AOG parts requests during repair)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Assign certified NDT Level II/III inspector to task</td>
+  <td class="td-role">NDT Supervisor</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">NDT Work Instruction, inspector qualification matrix (NAS410 / EN4179 certifications), shift roster</td>
+  <td style="font-size:10px">Inspector assignment confirmed; qualification verified against required NDT method and aircraft type</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Inspector assigned within 1 hour of work instruction release; 100% of assignments verified against NAS410 certification currency</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Execute NDT inspection per approved work instruction</td>
+  <td class="td-role">NDT Level II Inspector</td>
+  <td><span class="stag custom">Olympus OmniScan (UT/PAUT) integrated with AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">NDT Work Instruction, calibration standards, aircraft access (panels removed, surface prepared), ambient condition log (temperature, humidity)</td>
+  <td style="font-size:10px">Raw NDT data file, calibration record, inspection coverage map, preliminary indication report</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Coverage rate ≥100% of defined zone (no uninspected area); calibration performed every 4 hours or per shift change; scan data archived within 30 minutes of inspection completion</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Assess NDT findings against work instruction acceptance criteria</td>
+  <td class="td-role">NDT Level III Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">NDT indication report, acceptance criteria from SRM or EO, prior repair history at location</td>
+  <td style="font-size:10px">Accept / reject determination; if additional damage found beyond initial scope, updated DFR issued</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Level III review completed within 4 hours of inspection; 0 indications accepted beyond SRM limits without engineering sign-off</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Archive NDT findings and close NDT work card</td>
+  <td class="td-role">NDT Level II Inspector</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Accepted NDT indication report, calibration records, coverage maps, inspector sign-off</td>
+  <td style="font-size:10px">Closed NDT work card with digital signature; scan data archived to aircraft records in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Work card closed within 2 hours of Level III acceptance; 100% of scan data files attached to aircraft serial number record</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Procure certified repair materials and special fasteners</td>
+  <td class="td-role">Stores / Material Planning Analyst</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO) integrated with AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Structural Repair Order material list, stores inventory status, certified material certifications (Mill Certs, C of C)</td>
+  <td style="font-size:10px">Issued materials kitted and delivered to work stand; material traceability records (batch numbers, C of C) linked to SRO in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Material kitting completed within 4 hours of SRO release for planned repairs; 100% of issued materials have traceable Certificate of Conformance</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Execute structural repair per approved Structural Repair Order</td>
+  <td class="td-role">Airframe Structures Mechanic (A&amp;P)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Structural Repair Order, approved engineering data (SRM/EO), issued materials, calibrated tooling (torque wrenches, drill jigs)</td>
+  <td style="font-size:10px">Completed repair with installed doublers/patches/fasteners per SRO specifications</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Repair step completion sign-off within SRO-defined sequence; 0 out-of-sequence step completions; fastener installation torque within ±10% of SRM specification</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Verify repair dimensions and load path restoration</td>
+  <td class="td-role">Structures Inspector (Inspection Hold Point)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed repair assembly, SRO dimensional tolerances, engineering drawing, calibrated measurement tools</td>
+  <td style="font-size:10px">Dimensional check record; pass/fail determination; rework instruction issued if out of tolerance</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of SRO-defined hold points signed before next step begins; dimensional non-conformance rate &lt;2% of structural repair work orders</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Apply corrosion inhibitor and sealant compound</td>
+  <td class="td-role">Airframe Structures Mechanic (A&amp;P)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved repair with completed dimensional check, SRM-specified sealant (PR-1422, EC-776), surface preparation requirements</td>
+  <td style="font-size:10px">Sealed repair with corrosion protection applied; sealant cure time logged; area prepared for final NDT verification</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Sealant applied within 30 minutes of surface preparation (ASTM D1002 open-time limit); cure time logged per batch number; 100% coverage of faying surfaces per SRM specification</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Perform post-repair NDT verification scan</td>
+  <td class="td-role">NDT Level II Inspector</td>
+  <td><span class="stag custom">Olympus OmniScan (UT/PAUT) integrated with AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed sealed repair, post-repair NDT Work Instruction, original pre-repair baseline scan data for comparison</td>
+  <td style="font-size:10px">Post-repair NDT report confirming no sub-surface anomalies, fastener hole integrity, and bondline continuity</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Post-repair scan coverage ≥100% of repair footprint + 25mm margin; indication-free result confirmed on 100% of primary structural repairs before inspector sign-off</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Quality inspector independent review and dual sign-off</td>
+  <td class="td-role">Quality Assurance Inspector (Independent)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed SRO work card, NDT pre- and post-repair reports, material traceability records, dimensional check records, engineering EO or SRM reference</td>
+  <td style="font-size:10px">Quality release stamp on SRO; airworthiness release authorisation issued or corrective action required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Independent QA review completed within 4 hours of last work card sign-off; QA deficiency rate &lt;1% of released structural repair work orders</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Verify documentation completeness and regulatory compliance</td>
+  <td class="td-role">Quality Assurance Supervisor</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Closed SRO with all work cards, NDT reports, material certs, dimensional records, engineer EO sign-off, QA release stamp</td>
+  <td style="font-size:10px">Documentation compliance check result; return to service approval issued or documentation deficiency log created for correction</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Documentation review completed within 2 hours of QA release; 0 aircraft released to service with open documentation deficiencies</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.4</td>
+  <td class="td-name">Update airworthiness records and issue RTS authorisation</td>
+  <td class="td-role">Quality Assurance Supervisor / DMIR</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved documentation package, recurring inspection task creation confirmation (if AWL-driven), aircraft maintenance record</td>
+  <td style="font-size:10px">Aircraft maintenance record updated; Structural Repair Register entry created; FAA Form 337 (if DER repair) filed; Return to Service (RTS) authorisation signed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">RTS issued within 1 hour of documentation approval; 100% of DER repairs accompanied by filed FAA Form 337 within 8 hours of RTS; AWL recurring tasks created and confirmed in AMOS for 100% of limit-item repairs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-04</span>Gate Management &amp; Assignment</h3>
-    <p>Airport &amp; Gate Management · 18 steps · 5 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">MR-11</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Maintenance, Repair &amp; Overhaul</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Heavy Maintenance</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Structural Repair &amp; NDT Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">19 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">7 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Aircraft Structures Inspector</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>NDT Level III Engineer</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Structures Engineer</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Structures Engineering DER</div><div class="swim"><div class="dot" style="background:#10b981"></div>NDT Supervisor</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>NDT Level II Inspector</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Stores / Material Planning Analyst</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Airframe Structures Mechanic (A&amp;P)</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Structures Inspector (Inspection Hold Point)</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Quality Assurance Inspector (Independent)</div><div class="swim"><div class="dot" style="background:#f97316"></div>Quality Assurance Supervisor</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>Quality Assurance Supervisor / DMIR</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag custom">Boeing Toolbox / CAMP</span><span class="stag custom">Olympus OmniScan (UT/PAUT) integrated with AMOS by Swiss AviationSoftware</span><span class="stag sap">SAP S/4HANA Finance (FI/CO) integrated with AMOS by Swiss AviationSoftware</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Initiate structural damage finding report</span><span class="kval">DFR opened within 2 hours of discovery; 100% of findings logged before repair initiation</span></div><div class="krow"><span class="kname">Define NDT method and inspection scope</span><span class="kval">NDT scope defined within 4 hours of DFR; SRM chapter referenced on 100% of instructions</span></div><div class="krow"><span class="kname">Evaluate damage against SRM allowable limits</span><span class="kval">Disposition decision issued within 8 hours of DFR for non-AOG; 100% of beyond-limit findings escalated same shift</span></div><div class="krow"><span class="kname">Submit damage for engineering disposition review</span><span class="kval">EDR submitted within 2 hours of beyond-limits determination; completeness score ≥95% (all required fields populated)</span></div><div class="krow"><span class="kname">Evaluate repair options against approved engineering data</span><span class="kval">Engineering disposition issued within 24 hours for non-AOG; 100% of dispositions reference specific SRM paragraph or approved data source</span></div><div class="krow"><span class="kname">Determine if OEM or DER engineering order is required</span><span class="kval">OEM referral decision made within 4 hours of disposition review; 0 instances of in-house repair where OEM EO was required by AD or AWL</span></div><div class="krow"><span class="kname">Issue Structural Repair Order and material requirements</span><span class="kval">SRO issued within 2 hours of disposition approval; material list completeness ≥98% (no unplanned AOG parts requests during repair)</span></div><div class="krow"><span class="kname">Assign certified NDT Level II/III inspector to task</span><span class="kval">Inspector assigned within 1 hour of work instruction release; 100% of assignments verified against NAS410 certification currency</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Manual damage measurement and paper sketches introduce transcription errors when uploaded to AMOS; no integrated photo capture workflow forces separate file attachment steps</div><div class="risk-card">Boeing Toolbox revision currency lag — SRM updates from Boeing Service Bulletins (SBs) can trail physical publication by 30–60 days, risking use of superseded acceptance limits</div><div class="risk-card">Ambiguous SRM allowable tables for compound damage (multiple adjacent findings) require engineering judgement; misclassification risk if junior structures engineers make disposition calls without Level III review</div><div class="risk-card">AMOS EDR workflow does not integrate directly with OEM damage disposition portals (Boeing SRM Online); engineers must duplicate data entry across two systems, increasing cycle time and error risk</div><div class="risk-card">Recurring structural damage at frame stations may indicate systemic fatigue or corrosion issues not captured in individual DFRs; lack of fleet-level damage trending in Boeing Toolbox means repeat repairs go undetected without manual cross-referencing</div><div class="risk-card">Airlines with limited ODA (Organization Designation Authorization) scope must route repairs to Boeing, incurring 5–15 business day lead times that drive AOG extensions; DER authority matrix not always current in AMOS, causing avoidable OEM referrals</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Visual inspection finding, C-check opening discrepancy, or SRM-triggered inspection requirement</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Aircraft maintenance record updated; Structural Repair Register entry created; FAA Form 337 (if DER repair) filed; Return to Service (RTS) authorisation signed</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-08</span>Passenger Disruption Handling (IRROP)</h3>
-    <p>Airport &amp; Gate Management · 19 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-09</span>Wheelchair &amp; Special Assistance Services</h3>
-    <p>Airport &amp; Gate Management · 19 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-10</span>VIP &amp; Premium Passenger Handling</h3>
-    <p>Airport &amp; Gate Management · 16 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-13</span>Airport Security Compliance (TSA/CBP)</h3>
-    <p>Airport &amp; Gate Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-15</span>Station Performance &amp; KPI Reporting</h3>
-    <p>Airport &amp; Gate Management · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../mr-10/"><span class="arrow">←</span><span><span class="sub">Previous</span>MR-10 · Spare Parts Inventory &amp; Procurement</span></a><a class="pn-btn" href="../mr-12/"><span><span class="sub">Next</span>MR-12 · Avionics &amp; Systems Modification</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
