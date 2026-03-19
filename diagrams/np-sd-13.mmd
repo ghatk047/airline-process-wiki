@@ -1,0 +1,44 @@
+flowchart LR
+  subgraph P1["Phase 1: Data Extraction & Integration"]
+    A([Start]) --> B[Extract sales data\nfrom PSS & GDS]
+    B --> C{Data quality\nthreshold ≥98%?}
+    C -- No --> B
+    C -- Yes --> D[Load to Redshift\ndata warehouse]
+  end
+  subgraph P2["Phase 2: KPI Config & Dashboard Build"]
+    D --> E[Configure KPI targets\nin Tableau/Power BI]
+    E --> F[Build channel &\nrevenue dashboards]
+    F --> G{Dashboard variance\nvs source ≤0.5%?}
+    G -- No --> E
+    G -- Yes --> H[Publish dashboards\nto stakeholders]
+  end
+  subgraph P3["Phase 3: Channel Performance Analysis"]
+    H --> I[Analyse GDS yield\n& cost-per-booking]
+    I --> J[Assess NDC/direct\nconversion rates]
+    J --> K{Account below\nrevenue threshold?}
+    K -- Yes --> L[Flag account for\ncommercial review]
+    K -- No --> M
+    L --> M[Document channel\nperformance findings]
+  end
+  subgraph P4["Phase 4: Revenue & Yield Analytics"]
+    M --> N[Analyse fare class\nmix & RASK by route]
+    N --> O{Route yield below\nnetwork target?}
+    O -- Yes --> P[Escalate to Revenue\nManagement team]
+    O -- No --> Q
+    P --> Q[Produce variance\nanalysis vs budget]
+  end
+  subgraph P5["Phase 5: Insight Delivery & Governance"]
+    Q --> R[Compile management\nreporting pack]
+    R --> S{Exceptions require\nboard escalation?}
+    S -- Yes --> T[Trigger exception\nalert to senior mgmt]
+    S -- No --> U
+    T --> U([Reports distributed\n& cycle closed])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600

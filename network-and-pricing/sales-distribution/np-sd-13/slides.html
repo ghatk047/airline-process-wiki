@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SD-13 Slides — Sales Performance Reporting &amp; Analytics</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-13</span>
+    <h1>Sales Performance Reporting &amp; Analytics</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sd-13.png" alt="BPMN for NP-SD-13" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-13</span>
+    <h1>Sales Performance Reporting &amp; Analytics</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SD-13</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Sales &amp; Distribution</li>
+          <li><strong>L3 Name:</strong> Sales Performance Reporting &amp; Analytics</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract sales transactions from PSS and GDS feeds</li><li><strong>Phase 2:</strong> Configure KPI targets and alert thresholds in BI p</li><li><strong>Phase 3:</strong> Analyse GDS channel yield and cost-per-booking</li><li><strong>Phase 4:</strong> Analyse fare class mix and RASK by route and marke</li><li><strong>Phase 5:</strong> Produce budget variance and forecast deviation ana</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Corporate Sales Manager</li><li>Distribution Analytics Analyst</li><li>Network Revenue Manager</li><li>Revenue Analytics Analyst</li><li>Sales Analytics Manager</li><li>Sales Data Analyst</li><li>Sales Data Engineer</li><li>Sales Finance Analyst</li><li>VP Sales &amp; Distribution</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Glue</li><li>AWS Redshift</li><li>AWS S3</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM)</li><li>NDC API Gateway</li><li>Power BI</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Sabre GDS</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-13</span>
+    <h1>Sales Performance Reporting &amp; Analytics</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract sales transactions from PSS and GDS feeds</td>
+        <td class="kpi-col">Data extraction completeness ≥99.5% of daily transactions</td>
+        <td class="pain-col">Altéa feed latency can delay T+1 reporting; GDS interline sales require separate reconciliation from Sabre and Travelport settlement files</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Ingest GDS booking and yield data via settlement files</td>
+        <td class="kpi-col">GDS data ingestion within 4 hours of BSP file receipt</td>
+        <td class="pain-col">Sabre PRISM and Travelport use different file formats requiring dual ETL pipelines; mismatched PNR cross-references cause ~2% of records to fail automatic join</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate data quality and apply cleansing rules</td>
+        <td class="kpi-col">Data quality score ≥98% (nulls, duplicates, invalid fare codes &lt;2%)</td>
+        <td class="pain-col">ATPCO fare basis code changes not always reflected in Altéa within same reporting cycle, causing mis-classification of fare families</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Load cleansed data to analytics data warehouse</td>
+        <td class="kpi-col">Load completion within 2 hours of data quality sign-off; zero load failures</td>
+        <td class="pain-col">Redshift cluster contention during concurrent ETL and BI query windows causes load job timeouts; workload management (WLM) tuning needed per reporting cycle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Configure KPI targets and alert thresholds in BI platform</td>
+        <td class="kpi-col">100% of approved KPI targets loaded before reporting cycle open</td>
+        <td class="pain-col">Mid-year target revisions require manual threshold updates across multiple Tableau workbooks; no automated sync from SAP S/4HANA budget module</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Build channel and revenue performance dashboards</td>
+        <td class="kpi-col">Dashboard refresh latency ≤15 minutes from data load completion</td>
+        <td class="pain-col">NDC API Gateway booking data lacks full itinerary detail compared to GDS PNRs, creating reporting asymmetry between channels that distorts yield comparisons</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate dashboard figures against source system totals</td>
+        <td class="kpi-col">Dashboard-to-SAP revenue variance ≤0.5% before stakeholder distribution</td>
+        <td class="pain-col">BSP settlement timing differences mean Altéa ticketing revenue and SAP AR recognised revenue diverge by up to 3 days, complicating same-day reconciliation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Analyse GDS channel yield and cost-per-booking</td>
+        <td class="kpi-col">GDS net yield ≥$0.08/RPM after distribution cost deduction</td>
+        <td class="pain-col">GDS incentive overrides negotiated per agency are not always reflected in PRISM reporting, causing under-reporting of true distribution cost by up to 12%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Assess NDC and direct channel conversion rates</td>
+        <td class="kpi-col">NDC channel conversion rate ≥2.8%; direct web conversion ≥4.5%</td>
+        <td class="pain-col">NDC API Gateway does not expose abandoned search data uniformly across aggregators, making full-funnel attribution incomplete for ~30% of NDC traffic</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Review corporate and TMC account performance vs contract</td>
+        <td class="kpi-col">≥90% of corporate accounts at or above 80% of contracted volume target</td>
+        <td class="pain-col">PRISM reporting lag of 48–72 hours means corporate account shortfalls are identified too late in the quarter for proactive remediation conversations with TMCs</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Analyse fare class mix and RASK by route and market</td>
+        <td class="kpi-col">Average RASK ≥$0.145; premium fare class share ≥22% of total revenue</td>
+        <td class="pain-col">NRM O&amp;D attribution for multi-segment itineraries uses pro-rate allocation that diverges from finance segment-level revenue, creating dual versions of RASK truth</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Monitor load factor and yield trends vs prior year</td>
+        <td class="kpi-col">Load factor ≥83%; yield variance to prior year within ±5%</td>
+        <td class="pain-col">Seasonal schedule changes (IATA SSIM S/W schedule swaps) cause route-level YoY comparisons to be distorted when new routes replace discontinued ones mid-period</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Identify routes and segments below revenue performance target</td>
+        <td class="kpi-col">Zero routes with RASK &lt;80% of target unaddressed beyond two consecutive reporting cycles</td>
+        <td class="pain-col">Thin O&amp;D markets with &lt;10 daily passengers produce statistically unreliable RASK readings; automated flags generate false positives requiring manual analyst review</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Produce budget variance and forecast deviation analysis</td>
+        <td class="kpi-col">Variance commentary complete for all lines deviating &gt;±3% from budget</td>
+        <td class="pain-col">SAP CO rolling forecast is updated monthly while sales actuals close weekly, creating a structural lag that makes mid-month variance analysis unreliable for operational decisions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Compile executive management reporting pack</td>
+        <td class="kpi-col">Management pack distributed by business day 5 of the following month</td>
+        <td class="pain-col">Manual consolidation from multiple source reports (Tableau, SAP, PRISM) into a single Power BI pack introduces transcription risk and is a single-point-of-failure if the analyst is absent</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Assess exceptions and determine escalation requirement</td>
+        <td class="kpi-col">100% of Red-rated KPIs reviewed within 24 hours of report distribution</td>
+        <td class="pain-col">No automated linkage between Tableau RAG alerts and calendar invites or escalation workflows; exception follow-through depends on manual distribution list hygiene</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.4</td>
+        <td>Distribute reports and archive reporting cycle artefacts</td>
+        <td class="kpi-col">100% of reports archived within 1 business day; distribution list accuracy ≥99%</td>
+        <td class="pain-col">No single authoritative distribution list; stale email groups cause reports to reach departed employees or miss new regional sales directors after org changes</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+</body>
+</html>
