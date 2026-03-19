@@ -1,0 +1,47 @@
+flowchart LR
+  subgraph P1[Phase 1: Demand Planning and GSE Assignment]
+    A([Start]) --> B[Extract flight schedule\nand compute GSE demand]
+    B --> C[Allocate GSE units\nto flights via AMS]
+    C --> D{Sufficient\nserviceable units?}
+    D -- No --> E[Request pool top-up\nor substitute unit]
+    E --> D
+    D -- Yes --> F[Confirm assignment\nto stands]
+  end
+  subgraph P2[Phase 2: Pre-Turn Positioning and Inspection]
+    F --> G[Pre-position GSE\nat assigned stand]
+    G --> H[Conduct pre-use\nwalk-around inspection]
+    H --> I{GSE passes\npre-use check?}
+    I -- No --> J[Ground unit and\nrequest replacement]
+    J --> G
+    I -- Yes --> K[Validate GPU/ACU\nelectrical output]
+  end
+  subgraph P3[Phase 3: Turnaround GSE Operations]
+    K --> L[Connect GPU on\nblock-in]
+    L --> M[Deploy belt loaders\nand tractors]
+    M --> N[Position fueling\nequipment]
+  end
+  subgraph P4[Phase 4: Defect Reporting and Repair]
+    N --> O[Log GSE defect\nwith fault code]
+    O --> P{Safety-critical\ndefect?}
+    P -- Yes --> Q[Ground unit and\nescalate to supervisor]
+    P -- No --> R[Schedule corrective\nmaintenance]
+    Q --> R
+    R --> S{Post-repair check\npassed?}
+    S -- No --> R
+    S -- Yes --> T[Update fleet\navailability status]
+  end
+  subgraph P5[Phase 5: Fleet Analytics and Procurement]
+    T --> U[Compile utilization\nand MTBF KPIs]
+    U --> V{Fleet adequacy\nthreshold breached?}
+    V -- No --> W([End — Normal Ops])
+    V -- Yes --> X[Initiate GSE\nprocurement via Ariba]
+    X --> W
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GO-14 Slides — Ground Support Equipment (GSE) Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-14</span>
+    <h1>Ground Support Equipment (GSE) Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/go-14.png" alt="BPMN for GO-14" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Ramp & Turnaround Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-14</span>
+    <h1>Ground Support Equipment (GSE) Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> GO-14</li>
+          <li><strong>L1 Domain:</strong> Ground Operations &amp; Airport Services</li>
+          <li><strong>L2 Process:</strong> Ramp &amp; Turnaround Operations</li>
+          <li><strong>L3 Name:</strong> Ground Support Equipment (GSE) Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">4</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract flight schedule &amp; compute GSE demand</li><li><strong>Phase 2:</strong> Pre-position GSE at assigned stand before block-in</li><li><strong>Phase 3:</strong> Connect GPU and switch aircraft to ground power on</li><li><strong>Phase 4:</strong> Log GSE defect in maintenance system with fault co</li><li><strong>Phase 5:</strong> Compile monthly GSE utilisation and MTBF KPIs</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Fuel Coordinator</li><li>GSE Fleet Controller</li><li>GSE Maintenance Supervisor</li><li>GSE Technician</li><li>Ground Equipment Operator</li><li>Ground Operations Analyst</li><li>Ground Operations Manager</li><li>Ground Operations Planner</li><li>Procurement Specialist</li><li>Ramp Agent</li><li>Ramp Supervisor</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>Amadeus Airport Management</li><li>Honeywell GoDirect</li><li>Ramco Aviation</li><li>SAP Ariba</li><li>SAP S/4HANA Finance (FI/CO)</li><li>SITA Airport Management System (AMS)</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Ramp & Turnaround Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-14</span>
+    <h1>Ground Support Equipment (GSE) Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract flight schedule &amp; compute GSE demand</td>
+        <td class="kpi-col">GSE demand forecast accuracy ≥95% vs actual utilisation</td>
+        <td class="pain-col">AMS schedule feeds lag 2–4 hr behind real-time slot changes; GSE demand mismatches occur at congested airports during irregular operations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Allocate GSE units to flights via AMS rules</td>
+        <td class="kpi-col">GSE assignment completion ≥60 min before first departure of each wave; compliance ≥95%</td>
+        <td class="pain-col">Manual supervisor overrides bypass AMS allocation logic, creating last-minute equipment conflicts during irregular operations and peak waves</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Confirm GSE serviceability against maintenance roster</td>
+        <td class="kpi-col">GSE fleet serviceability rate ≥92% at start of each operational day</td>
+        <td class="pain-col">AMOS maintenance records not always updated in real time by field technicians; apparent serviceability rates overstate actual availability, discovered only at stand</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Pre-position GSE at assigned stand before block-in</td>
+        <td class="kpi-col">On-stand pre-positioning compliance ≥95% of turns; late positioning incidents ≤2% per month</td>
+        <td class="pain-col">GPS-based GSE telematics not universally deployed; manual radio check-in introduces positioning errors during peak waves, causing stand conflicts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Conduct pre-use walk-around inspection per IATA AHM 913</td>
+        <td class="kpi-col">Pre-use inspection completion rate 100%; open defects from prior shift actioned before use</td>
+        <td class="pain-col">Inspection checklist compliance drops during early-morning wave peaks; IATA AHM 913 requires 100% completion but enforcement is manual and shift-dependent</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate GPU/ACU electrical output and hose integrity</td>
+        <td class="kpi-col">GPU/ACU pre-use pass rate ≥98%; voltage within ±2% of 115V AC / 400 Hz spec</td>
+        <td class="pain-col">Aging GPU units exhibit voltage fluctuations not detected by manual test protocols; risk of avionics damage if aircraft switched from APU to non-compliant ground power</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Connect GPU and switch aircraft to ground power on block-in</td>
+        <td class="kpi-col">Aircraft on ground power within 3 min of block-in; APU shutdown compliance ≥90% of turns</td>
+        <td class="pain-col">Ground power connection delays extend APU run time; each additional minute of APU operation costs ~$12–15 in fuel and increases CO₂ emissions beyond CORSIA allowances</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Deploy belt loaders and baggage tractors for cargo transfer</td>
+        <td class="kpi-col">Belt loader/tractor on-stand on-time rate ≥95%; FOD incidents attributable to GSE ≤0 per quarter</td>
+        <td class="pain-col">Belt loader height mis-calibration causes FOD risk and potential cargo damage; no automated alignment verification in SITA AMS — relies on ramp agent visual check</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Position fueling equipment and coordinate refueling start</td>
+        <td class="kpi-col">Fueling equipment on-stand within 10 min of block-in; fueling completion ≥15 min before STD</td>
+        <td class="pain-col">Fueling equipment scheduling not integrated with AMS turnaround timer; manual coordination via radio introduces sequencing delays that cascade to departure time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Log GSE defect in maintenance system with fault code</td>
+        <td class="kpi-col">Defect logged within 15 min of identification; compliance ≥98%; zero unlogged defects on end-of-day fleet check</td>
+        <td class="pain-col">Field staff reluctant to log minor defects fearing shift-end paperwork burden; systematic under-reporting creates hidden fleet degradation trends undetected until failure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Assess safety criticality and ground unit if required</td>
+        <td class="kpi-col">Safety-critical GSE grounded within 30 min of defect identification; zero safety-critical units operated beyond grounding threshold</td>
+        <td class="pain-col">No standardised IATA or ICAO safety-criticality matrix for GSE defects; airlines use proprietary criteria, creating inconsistency during auditor spot-checks and insurance reviews</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Execute corrective maintenance and post-repair check</td>
+        <td class="kpi-col">Corrective maintenance turnaround time ≤4 hr for critical GSE; ≤24 hr for non-critical; first-time fix rate ≥85%</td>
+        <td class="pain-col">Spare parts availability for aging diesel GSE (10+ yr pushback tugs, belt loaders) declining as OEMs shift to electric-only product lines; repair lead times increasing 30–60 days</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Update GSE fleet availability status in AMS</td>
+        <td class="kpi-col">Fleet availability status updated within 1 hr of repair closure; AMS–AMOS sync accuracy ≥99%</td>
+        <td class="pain-col">SITA AMS availability flags not automatically synced from AMOS work order closure; manual dual-entry required, introducing status lag and risk of re-assigning grounded units</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Compile monthly GSE utilisation and MTBF KPIs</td>
+        <td class="kpi-col">GSE MTBF ≥500 operating hr; fleet downtime rate ≤3%; dashboard published by 5th of each month</td>
+        <td class="pain-col">GSE telematics data not consistently ingested into Tableau; units lacking IoT sensors require manual log extraction, creating fleet visibility gaps in the monthly KPI pack</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Assess fleet adequacy and identify replacement candidates</td>
+        <td class="kpi-col">Fleet adequacy ratio ≥1.2× peak demand; assets beyond 10-yr economic life flagged for replacement within next budget cycle</td>
+        <td class="pain-col">Capital expenditure approval for GSE replacement requires 12–18 month lead time via SAP Ariba; aging fleet regularly operates beyond economic life, increasing failure risk and MRO cost</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Initiate GSE procurement or lease request via SAP Ariba</td>
+        <td class="kpi-col">Procurement lead time ≤90 days for standard GSE; ≤180 days for electric/specialist units</td>
+        <td class="pain-col">Airport authority GSE concession agreements at certain airports restrict airline-owned equipment, requiring third-party GSE sourcing at higher cost and lower operational control</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Ramp & Turnaround Operations</span>
+  </div>
+</div>
+
+</body>
+</html>

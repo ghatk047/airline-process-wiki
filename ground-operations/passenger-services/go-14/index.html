@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Finance &amp; Accounting · Corporate Support Functions · Airlines Process Wiki</title>
+<title>GO-14 · Ground Support Equipment (GSE) Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -182,7 +183,7 @@
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-07/"><span class="status-dot status-done"></span><span class="pid">GO-07</span>Load Control &amp; Aircraft Loading</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-11/"><span class="status-dot status-done"></span><span class="pid">GO-11</span>Cargo &amp; Mail Ground Handling</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-12/"><span class="status-dot status-done"></span><span class="pid">GO-12</span>De-Icing &amp; Winter Operations</a>
-        <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-14/"><span class="status-dot status-done"></span><span class="pid">GO-14</span>Ground Support Equipment (GSE) Management</a>
+        <a class="sidebar-l3-link active" href="../../../ground-operations/passenger-services/go-14/"><span class="status-dot status-done"></span><span class="pid">GO-14</span>Ground Support Equipment (GSE) Management</a>
       </div>
     </div>
   </div>
@@ -213,8 +214,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-queue"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
@@ -242,117 +243,238 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Corporate Support Functions</a><span class="sep">›</span>
-  <span class="current">Finance &amp; Accounting</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
+  <a href="../../../ground-operations/passenger-services/">Ramp &amp; Turnaround Operations</a><span class="sep">›</span>
+  <span class="current">GO-14 · Ground Support Equipment (GSE) Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Finance &amp; Accounting</h1>
-    <p>Corporate Support Functions · 1 of 11 subprocesses complete · Updated 2026-03-19 14:30</p>
+    <h1>Ground Support Equipment (GSE) Management</h1>
+    <p>Ground Operations &amp; Airport Services › Ramp &amp; Turnaround Operations · 16 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-19 14:30</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">GO-14</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-01</span>Financial Planning &amp; Budgeting</h3>
-    <p>Finance &amp; Accounting · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-go-14">
+      <img src="../../../assets/img/go-14.png" alt="GO-14 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-go-14').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-go-14').style.display='flex'">
+      <div id="diag-placeholder-go-14" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-01/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract flight schedule &amp; compute GSE demand</td>
+  <td class="td-role">Ground Operations Planner</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Inbound/outbound flight schedule, stand allocation plan, aircraft type mix</td>
+  <td style="font-size:10px">GSE demand matrix by stand, flight, and equipment type</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GSE demand forecast accuracy ≥95% vs actual utilisation</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Allocate GSE units to flights via AMS rules</td>
+  <td class="td-role">GSE Fleet Controller</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">GSE demand matrix, current GSE fleet registry with asset status</td>
+  <td style="font-size:10px">GSE-to-flight assignment schedule published to ramp supervisors</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GSE assignment completion ≥60 min before first departure of each wave; compliance ≥95%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Confirm GSE serviceability against maintenance roster</td>
+  <td class="td-role">GSE Maintenance Supervisor</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">GSE assignment schedule, open work orders, scheduled maintenance calendar</td>
+  <td style="font-size:10px">Confirmed serviceable GSE list; pool shortfall flag if serviceability rate below threshold</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GSE fleet serviceability rate ≥92% at start of each operational day</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Pre-position GSE at assigned stand before block-in</td>
+  <td class="td-role">Ground Equipment Operator</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed GSE assignment, inbound ETA from AMS flight information display</td>
+  <td style="font-size:10px">GSE physically staged at correct stand ≥30 min before block-in</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">On-stand pre-positioning compliance ≥95% of turns; late positioning incidents ≤2% per month</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Conduct pre-use walk-around inspection per IATA AHM 913</td>
+  <td class="td-role">Ground Equipment Operator</td>
+  <td><span class="stag custom">Ramco Aviation</span></td>
+  <td style="font-size:10px;color:#6b7280">IATA AHM 913 inspection checklist, equipment logbook from prior shift</td>
+  <td style="font-size:10px">Completed pre-use inspection record; pass/fail status logged in Ramco</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Pre-use inspection completion rate 100%; open defects from prior shift actioned before use</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Validate GPU/ACU electrical output and hose integrity</td>
+  <td class="td-role">GSE Technician</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Pre-use inspection pass record, GPU/ACU test equipment readings</td>
+  <td style="font-size:10px">Voltage/frequency validation report; unit cleared or grounded</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GPU/ACU pre-use pass rate ≥98%; voltage within ±2% of 115V AC / 400 Hz spec</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Connect GPU and switch aircraft to ground power on block-in</td>
+  <td class="td-role">Ramp Agent</td>
+  <td><span class="stag amadeus">Amadeus Airport Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Block-in confirmation from AMS, GPU readiness status</td>
+  <td style="font-size:10px">Aircraft on external ground power; APU shutdown initiated by flight crew</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Aircraft on ground power within 3 min of block-in; APU shutdown compliance ≥90% of turns</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Deploy belt loaders and baggage tractors for cargo transfer</td>
+  <td class="td-role">Ramp Supervisor</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">ULD/baggage load plan from departure control system, belt loader assignment</td>
+  <td style="font-size:10px">Belt loaders and tractors positioned and operational at aircraft doors</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Belt loader/tractor on-stand on-time rate ≥95%; FOD incidents attributable to GSE ≤0 per quarter</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Position fueling equipment and coordinate refueling start</td>
+  <td class="td-role">Fuel Coordinator</td>
+  <td><span class="stag custom">Honeywell GoDirect</span></td>
+  <td style="font-size:10px;color:#6b7280">Fuel uplift order from flight dispatch, fueling equipment availability status</td>
+  <td style="font-size:10px">Fuel truck or hydrant dispenser positioned; refueling sequence initiated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fueling equipment on-stand within 10 min of block-in; fueling completion ≥15 min before STD</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Log GSE defect in maintenance system with fault code</td>
+  <td class="td-role">Ground Equipment Operator</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Observed defect during or after turnaround, equipment ID and location</td>
+  <td style="font-size:10px">Defect record with fault code, severity, and timestamp in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Defect logged within 15 min of identification; compliance ≥98%; zero unlogged defects on end-of-day fleet check</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Assess safety criticality and ground unit if required</td>
+  <td class="td-role">GSE Maintenance Supervisor</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Defect record, safety-criticality matrix (airline-proprietary), regulatory requirements</td>
+  <td style="font-size:10px">Safety classification (critical / non-critical); out-of-service tag issued for critical units</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Safety-critical GSE grounded within 30 min of defect identification; zero safety-critical units operated beyond grounding threshold</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Execute corrective maintenance and post-repair check</td>
+  <td class="td-role">GSE Technician</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Work order from AMOS, spare parts from stores, OEM repair manual</td>
+  <td style="font-size:10px">Repaired GSE unit with completed work order; post-repair serviceability test result</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Corrective maintenance turnaround time ≤4 hr for critical GSE; ≤24 hr for non-critical; first-time fix rate ≥85%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Update GSE fleet availability status in AMS</td>
+  <td class="td-role">GSE Fleet Controller</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Work order closure in AMOS, post-repair serviceability confirmation</td>
+  <td style="font-size:10px">GSE unit status updated to &#x27;Serviceable&#x27; in AMS fleet registry</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fleet availability status updated within 1 hr of repair closure; AMS–AMOS sync accuracy ≥99%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Compile monthly GSE utilisation and MTBF KPIs</td>
+  <td class="td-role">Ground Operations Analyst</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">AMOS maintenance history, AMS utilisation logs, defect register extract</td>
+  <td style="font-size:10px">Monthly GSE performance dashboard: MTBF, downtime rate, utilisation by equipment class</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GSE MTBF ≥500 operating hr; fleet downtime rate ≤3%; dashboard published by 5th of each month</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Assess fleet adequacy and identify replacement candidates</td>
+  <td class="td-role">Ground Operations Manager</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">GSE performance dashboard, asset age register, peak-demand utilisation ratios</td>
+  <td style="font-size:10px">Fleet adequacy assessment; list of assets recommended for replacement or disposal</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fleet adequacy ratio ≥1.2× peak demand; assets beyond 10-yr economic life flagged for replacement within next budget cycle</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Initiate GSE procurement or lease request via SAP Ariba</td>
+  <td class="td-role">Procurement Specialist</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved fleet replacement list, capital budget allocation, airport authority concession terms</td>
+  <td style="font-size:10px">Purchase requisition or lease agreement raised in SAP Ariba; vendor shortlist for tender</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Procurement lead time ≤90 days for standard GSE; ≤180 days for electric/specialist units</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-02</span>Management Accounting &amp; Cost Control</h3>
-    <p>Finance &amp; Accounting · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">GO-14</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Ground Operations &amp; Airport Services</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Ramp &amp; Turnaround Operations</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Ground Support Equipment (GSE) Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">16 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">4 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Ground Operations Planner</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>GSE Fleet Controller</div><div class="swim"><div class="dot" style="background:#ec4899"></div>GSE Maintenance Supervisor</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Ground Equipment Operator</div><div class="swim"><div class="dot" style="background:#10b981"></div>GSE Technician</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Ramp Agent</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Ramp Supervisor</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Fuel Coordinator</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Ground Operations Analyst</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Ground Operations Manager</div><div class="swim"><div class="dot" style="background:#f97316"></div>Procurement Specialist</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag custom">Ramco Aviation</span><span class="stag amadeus">Amadeus Airport Management</span><span class="stag custom">Honeywell GoDirect</span><span class="stag custom">Tableau</span><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span><span class="stag sap">SAP Ariba</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract flight schedule &amp; compute GSE demand</span><span class="kval">GSE demand forecast accuracy ≥95% vs actual utilisation</span></div><div class="krow"><span class="kname">Allocate GSE units to flights via AMS rules</span><span class="kval">GSE assignment completion ≥60 min before first departure of each wave; compliance ≥95%</span></div><div class="krow"><span class="kname">Confirm GSE serviceability against maintenance roster</span><span class="kval">GSE fleet serviceability rate ≥92% at start of each operational day</span></div><div class="krow"><span class="kname">Pre-position GSE at assigned stand before block-in</span><span class="kval">On-stand pre-positioning compliance ≥95% of turns; late positioning incidents ≤2% per month</span></div><div class="krow"><span class="kname">Conduct pre-use walk-around inspection per IATA AHM 913</span><span class="kval">Pre-use inspection completion rate 100%; open defects from prior shift actioned before use</span></div><div class="krow"><span class="kname">Validate GPU/ACU electrical output and hose integrity</span><span class="kval">GPU/ACU pre-use pass rate ≥98%; voltage within ±2% of 115V AC / 400 Hz spec</span></div><div class="krow"><span class="kname">Connect GPU and switch aircraft to ground power on block-in</span><span class="kval">Aircraft on ground power within 3 min of block-in; APU shutdown compliance ≥90% of turns</span></div><div class="krow"><span class="kname">Deploy belt loaders and baggage tractors for cargo transfer</span><span class="kval">Belt loader/tractor on-stand on-time rate ≥95%; FOD incidents attributable to GSE ≤0 per quarter</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">AMS schedule feeds lag 2–4 hr behind real-time slot changes; GSE demand mismatches occur at congested airports during irregular operations</div><div class="risk-card">Manual supervisor overrides bypass AMS allocation logic, creating last-minute equipment conflicts during irregular operations and peak waves</div><div class="risk-card">AMOS maintenance records not always updated in real time by field technicians; apparent serviceability rates overstate actual availability, discovered only at stand</div><div class="risk-card">GPS-based GSE telematics not universally deployed; manual radio check-in introduces positioning errors during peak waves, causing stand conflicts</div><div class="risk-card">Inspection checklist compliance drops during early-morning wave peaks; IATA AHM 913 requires 100% completion but enforcement is manual and shift-dependent</div><div class="risk-card">Aging GPU units exhibit voltage fluctuations not detected by manual test protocols; risk of avionics damage if aircraft switched from APU to non-compliant ground power</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Inbound/outbound flight schedule, stand allocation plan, aircraft type mix</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Purchase requisition or lease agreement raised in SAP Ariba; vendor shortlist for tender</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-02/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-03</span>Revenue Accounting &amp; BSP Settlement</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-08</span>PSS (Passenger Service System) Management</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-09</span>Cybersecurity &amp; Threat Management</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-10</span>Data Engineering &amp; Analytics Platform</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-11</span>Strategic Sourcing &amp; Vendor Selection</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-12</span>Fuel Procurement &amp; Supply Chain</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-13</span>Aircraft Parts &amp; Consumables Procurement</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-14</span>Safety Management System (SMS)</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-15</span>Regulatory Compliance &amp; AOC Management</h3>
-    <p>Finance &amp; Accounting · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cs-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../go-13/"><span class="arrow">←</span><span><span class="sub">Previous</span>GO-13 · Airport Security Compliance (TSA/CBP)</span></a><a class="pn-btn" href="../go-15/"><span><span class="sub">Next</span>GO-15 · Station Performance &amp; KPI Reporting</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
