@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FO-03 Slides — Fuel Planning &amp; Tankering</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-03</span>
+    <h1>Fuel Planning &amp; Tankering</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/fo-03.png" alt="BPMN for FO-03" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-03</span>
+    <h1>Fuel Planning &amp; Tankering</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> FO-03</li>
+          <li><strong>L1 Domain:</strong> Flight Operations</li>
+          <li><strong>L2 Process:</strong> Flight Dispatch &amp; Control</li>
+          <li><strong>L3 Name:</strong> Fuel Planning &amp; Tankering</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Ingest flight plan, route &amp; forecast winds</li><li><strong>Phase 2:</strong> Query into-plane fuel prices at origin &amp; destinati</li><li><strong>Phase 3:</strong> Transmit fuel release order to into-plane supplier</li><li><strong>Phase 4:</strong> Perform pre-fuelling fuel quality sample check</li><li><strong>Phase 5:</strong> Dispatcher briefs captain on OFP fuel plan &amp; alter</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Captain (Pilot in Command)</li><li>Flight Dispatcher</li><li>Fuel Planning Analyst</li><li>Fuel Planning Analyst / Duty Manager</li><li>Fuelling Agent</li><li>Fuelling Agent / Line Maintenance Engineer</li><li>Fuelling Agent / Quality Inspector</li><li>Ground Handler / Fuelling Supervisor</li><li>Load Controller / Flight Dispatcher</li><li>Operations Controller</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware + Telex / SITA ACARS</li><li>Aircraft fuel management panel / Jeppesen FliteDeck Pro (EFB)</li><li>Aviator Fuel Intelligence (AvFuel)</li><li>Aviator Fuel Intelligence (AvFuel) / Lido/Flight by Lufthansa Systems</li><li>Aviator Fuel Intelligence (AvFuel) / SAP S/4HANA Finance (FI/CO)</li><li>Fuel Quality Management log (AMOS by Swiss AviationSoftware at MRO bases; paper logbook at outstations)</li><li>Fuel truck flow meter / Aircraft fuel gauging system (ACARS uplink)</li><li>Lido/Flight by Lufthansa Systems</li><li>Lido/Flight by Lufthansa Systems (OFP) + SITA ACARS Datalink</li><li>Lido/Flight by Lufthansa Systems + Amadeus Altéa PSS (load control module)</li><li>Lido/Flight by Lufthansa Systems + Weight &amp; Balance System</li><li>SITA ACARS Datalink + OCC Operations Dashboard (AWS-hosted)</li><li>SITA Airport Management System (AMS)</li><li>SITA FuelsManager / Telex (SITA ACARS)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-03</span>
+    <h1>Fuel Planning &amp; Tankering</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Ingest flight plan, route &amp; forecast winds</td>
+        <td class="kpi-col">Wind data currency ≤ 6 hours before STD; 100% OFP retrieval success rate</td>
+        <td class="pain-col">NWP upper-wind refresh is 6-hourly; stale data can inflate or underestimate trip fuel by 2–4%, with no automatic dispatcher alert when forecast age exceeds threshold</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Calculate trip fuel, alternate &amp; final reserve</td>
+        <td class="kpi-col">Fuel calculation accuracy ±1% vs. actual block burn; alternate fuel covers closest suitable alternate per ops spec</td>
+        <td class="pain-col">Aircraft performance deck must be updated after each engine shop visit or EFW change; stale performance model causes systematic over/under-fuelling accumulating to 0.5–1% fuel cost variance fleet-wide</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Apply regulatory minimum fuel policy</td>
+        <td class="kpi-col">100% regulatory compliance; zero dispatches with sub-minimum fuel on record</td>
+        <td class="pain-col">ETOPS 180-min routes require En-Route Alternate (ERA) fuel that must be recalculated if the ERA changes post-OFP publication due to NOTAM or weather; no automated re-trigger in Lido when ERA status changes after release</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Validate fuel load against MTOW &amp; payload limits</td>
+        <td class="kpi-col">Revenue payload protection ≥ 95% of booked payload on MTOW-limited sectors</td>
+        <td class="pain-col">MTOW-limited flights at hot/high airports (e.g. LAS in summer, BOG year-round) force late payload offload; no automated interface between Lido and PSS to surface the constraint earlier in the booking cycle</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Query into-plane fuel prices at origin &amp; destination</td>
+        <td class="kpi-col">Price data latency ≤ 24 hours; contract uplift preference achieved ≥ 95% of uplifts</td>
+        <td class="pain-col">Fuel price APIs from major suppliers (BP, Shell, World Fuel Services) vary in latency and data format; feed outages require manual extraction from supplier portals, creating price data gaps that default the model to stale contract rates</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Model tankering NPV versus weight penalty cost</td>
+        <td class="kpi-col">Tankering model accuracy: positive NPV realised ≥ 90% of cases where model predicted benefit &gt; $150</td>
+        <td class="pain-col">Weight-penalty calculation in simplified models assumes linear burn increase, but penalty is non-linear at high gross weights; simplified model can overstate tankering benefit by 5–10% on heavy flights, leading to sub-optimal decisions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Approve or reject tankering uplift quantity</td>
+        <td class="kpi-col">Tankering uplift decision issued ≥ 90 minutes before STD; decisions documented 100%</td>
+        <td class="pain-col">Late payload additions (ULD cargo, late-checked bags) post-tankering approval can invalidate the approved quantity; no automated re-trigger of the tankering model when payload changes after OFP release, requiring manual analyst intervention</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Finalise planned uplift quantity on OFP</td>
+        <td class="kpi-col">Planned vs. actual uplift variance ≤ 2%; OFP fuel release issued ≥ 60 minutes before STD</td>
+        <td class="pain-col">Dispatcher discretionary fuel additions above plan are not consistently documented with a rationale code; absence of structured data makes post-flight fuel efficiency analysis unreliable and prevents feedback into planning model to reduce systematic under-planning</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Transmit fuel release order to into-plane supplier</td>
+        <td class="kpi-col">Order transmitted ≥ 60 minutes before fuelling start; supplier ACK received ≤ 15 minutes of transmission</td>
+        <td class="pain-col">SITA FuelsManager integration is absent at smaller outstations, requiring manual phone or fax orders; gaps in electronic audit trail complicate post-flight fuel reconciliation and contract compliance reporting</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Confirm truck dispatch and stand assignment</td>
+        <td class="kpi-col">Truck on-stand ≤ 20 minutes before scheduled fuelling start; zero missed fuelling windows due to late truck</td>
+        <td class="pain-col">Late stand changes communicated via AMS cause fuel truck repositioning delays, particularly at congested hub airports; AMS–fuel truck coordination relies on VHF radio and phone at many stations rather than automated system-to-system dispatch</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Validate fuelling window against turnaround schedule</td>
+        <td class="kpi-col">Fuelling completed ≥ 20 minutes before STD; fuelling-related departure delays &lt; 0.5% of turns</td>
+        <td class="pain-col">Short-haul turn times (45–60 min) leave minimal buffer; a single fuelling delay cascades directly into a departure delay when there is no concurrent-task optimisation — fuelling, catering, and cleaning compete for the same ramp corridor</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Perform pre-fuelling fuel quality sample check</td>
+        <td class="kpi-col">100% pre-fuelling sample compliance; zero aircraft fuelled without a logged pass certificate</td>
+        <td class="pain-col">At outstations with hydrant systems, sample accountability is paper-based and not linked to AMOS; contamination events (water ingress, incorrect fuel grade) have historically been missed — Avianca 052 (1990, fuel exhaustion) and multiple near-misses underscore the cost of manual-only controls at remote stations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Execute fuel uplift to planned quantity</td>
+        <td class="kpi-col">Uplift accuracy ±1% of planned quantity; zero over/under-fuelling events per month</td>
+        <td class="pain-col">Aircraft fuel gauge tolerance is ±2% on narrow-body types (737/A320); systematic gauge bias, if uncorrected in planning assumptions, causes repeated uplift variance; most fuel planning systems do not ingest gauge correction factors from avionics maintenance records</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Record actual uplift in tech log and transmit via ACARS</td>
+        <td class="kpi-col">ACARS fuel message transmitted ≤ 5 minutes after fuelling complete; tech log discrepancy rate &lt; 1%</td>
+        <td class="pain-col">Discrepancy between flow meter and aircraft gauge requires licensed engineer sign-off, adding 5–10 minutes at outstations with limited engineering cover; paper tech logs at regional stations delay OCC visibility into actual fuel state until ACARS message is manually triggered</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Dispatcher briefs captain on OFP fuel plan &amp; alternates</td>
+        <td class="kpi-col">Dispatcher briefing completed ≥ 30 minutes before STD; zero departures without dispatcher-signed OFP</td>
+        <td class="pain-col">Late weather or NOTAM changes after OFP release require a re-issue; re-issue process in Lido is manual and time-consuming under short turns, creating pressure on dispatchers to release without capturing the latest data</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Captain accepts or requests additional discretionary fuel</td>
+        <td class="kpi-col">Average captain discretionary addition ≤ 5% of trip fuel; additions above 10% flagged for safety review</td>
+        <td class="pain-col">Captain discretionary fuel additions are unstructured — no system captures the stated rationale; without structured data, flight ops cannot distinguish legitimate tactical additions from systematic under-planning, preventing feedback loop improvement in Lido fuel models</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Finalise load sheet with captain-approved fuel figures</td>
+        <td class="kpi-col">Load sheet issued ≤ 15 minutes before STD; 100% OFP/load-sheet fuel figure consistency</td>
+        <td class="pain-col">Manual reconciliation between Lido fuel figures and Altéa load control introduces transcription error risk; most carriers lack a direct system interface between flight planning and PSS load control, requiring copy-paste of fuel figures and creating an auditable gap in the data chain</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.4</td>
+        <td>Transmit departure fuel state to Operations Control Centre</td>
+        <td class="kpi-col">OCC fuel state updated ≤ 5 minutes of block-off; 100% ACARS message delivery rate</td>
+        <td class="pain-col">ACARS VHF channel congestion at major hubs (LHR, JFK, LAX) causes message delivery failures during peak pushback windows; manual phone fallback to OCC creates audit gaps in the fuel tracking data stream used for end-of-day fuel efficiency reporting</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+</body>
+</html>

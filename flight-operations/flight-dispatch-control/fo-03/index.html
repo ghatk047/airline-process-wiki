@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Flight Dispatch &amp; Control · Flight Operations · Airlines Process Wiki</title>
+<title>FO-03 · Fuel Planning &amp; Tankering · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Flight Operations</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -126,7 +127,7 @@
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-02/"><span class="status-dot status-done"></span><span class="pid">FO-02</span>Operational Flight Plan Management</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-03/"><span class="status-dot status-done"></span><span class="pid">FO-03</span>Fuel Planning &amp; Tankering</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/flight-dispatch-control/fo-03/"><span class="status-dot status-done"></span><span class="pid">FO-03</span>Fuel Planning &amp; Tankering</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-04/"><span class="status-dot status-queue"></span><span class="pid">FO-04</span>Weight &amp; Balance Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-05/"><span class="status-dot status-queue"></span><span class="pid">FO-05</span>NOTAMs &amp; AIP Information Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-06/"><span class="status-dot status-queue"></span><span class="pid">FO-06</span>Weather Monitoring &amp; Decision Support</a>
@@ -242,153 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Flight Dispatch &amp; Control</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Flight Operations</a><span class="sep">›</span>
+  <a href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a><span class="sep">›</span>
+  <span class="current">FO-03 · Fuel Planning &amp; Tankering</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Flight Dispatch &amp; Control</h1>
-    <p>Flight Operations · 3 of 15 subprocesses complete · Updated 2026-03-18 22:39</p>
+    <h1>Fuel Planning &amp; Tankering</h1>
+    <p>Flight Operations › Flight Dispatch &amp; Control · 18 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-18 22:39</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">FO-03</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-01</span>Flight Dispatch &amp; Release</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 11 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-fo-03">
+      <img src="../../../assets/img/fo-03.png" alt="FO-03 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-fo-03').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-fo-03').style.display='flex'">
+      <div id="diag-placeholder-fo-03" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Ingest flight plan, route &amp; forecast winds</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Lido/Flight by Lufthansa Systems</span></td>
+  <td style="font-size:10px;color:#6b7280">Active OFP, SIGMET/AIRMET, upper-wind forecast (NWP model)</td>
+  <td style="font-size:10px">Route profile with fuel-burn model loaded; wind data timestamp recorded</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Wind data currency ≤ 6 hours before STD; 100% OFP retrieval success rate</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Calculate trip fuel, alternate &amp; final reserve</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Lido/Flight by Lufthansa Systems</span></td>
+  <td style="font-size:10px;color:#6b7280">Route profile, aircraft type/registration, payload estimate, alternate airport selection</td>
+  <td style="font-size:10px">Trip fuel, alternate fuel, and final reserve fuel (FRF) values in USG/kg</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fuel calculation accuracy ±1% vs. actual block burn; alternate fuel covers closest suitable alternate per ops spec</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Apply regulatory minimum fuel policy</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Lido/Flight by Lufthansa Systems</span></td>
+  <td style="font-size:10px;color:#6b7280">Trip fuel, alternate fuel, FRF; ETOPS/EDTO authorisation if applicable; company fuel policy</td>
+  <td style="font-size:10px">Regulatory minimum block fuel (FAR 121.639 / ICAO Annex 6 compliant); ETOPS ERA fuel added where required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% regulatory compliance; zero dispatches with sub-minimum fuel on record</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Validate fuel load against MTOW &amp; payload limits</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Lido/Flight by Lufthansa Systems + Weight &amp; Balance System</span></td>
+  <td style="font-size:10px;color:#6b7280">Planned fuel load, estimated payload (pax + cargo + mail), aircraft MTOW/MLW/MZFW limits</td>
+  <td style="font-size:10px">Approved fuel quantum; or payload-fuel trade decision with affected bookings flagged</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Revenue payload protection ≥ 95% of booked payload on MTOW-limited sectors</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Query into-plane fuel prices at origin &amp; destination</td>
+  <td class="td-role">Fuel Planning Analyst</td>
+  <td><span class="stag sap">Aviator Fuel Intelligence (AvFuel) / SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Flight date, origin/destination ICAO codes, fuel supplier contract references</td>
+  <td style="font-size:10px">Into-plane fuel price per USG/kg at origin and destination; contract vs. spot price flagged</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Price data latency ≤ 24 hours; contract uplift preference achieved ≥ 95% of uplifts</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Model tankering NPV versus weight penalty cost</td>
+  <td class="td-role">Fuel Planning Analyst</td>
+  <td><span class="stag custom">Aviator Fuel Intelligence (AvFuel) / Lido/Flight by Lufthansa Systems</span></td>
+  <td style="font-size:10px;color:#6b7280">Price differential (origin vs. destination), extra fuel weight, aircraft fuel-burn profile at gross weight</td>
+  <td style="font-size:10px">Net tankering value in USD per flight; break-even uplift quantity identified</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Tankering model accuracy: positive NPV realised ≥ 90% of cases where model predicted benefit &gt; $150</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Approve or reject tankering uplift quantity</td>
+  <td class="td-role">Fuel Planning Analyst / Duty Manager</td>
+  <td><span class="stag custom">Aviator Fuel Intelligence (AvFuel)</span></td>
+  <td style="font-size:10px;color:#6b7280">Tankering NPV, aircraft structural maximum fuel load, available turnaround time, payload outlook</td>
+  <td style="font-size:10px">Approved tankering quantity (USG) or &#x27;No tankering&#x27; decision recorded with rationale</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Tankering uplift decision issued ≥ 90 minutes before STD; decisions documented 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Finalise planned uplift quantity on OFP</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Lido/Flight by Lufthansa Systems</span></td>
+  <td style="font-size:10px;color:#6b7280">Regulatory minimum fuel, tankering decision, captain&#x27;s discretionary fuel allowance (if pre-authorised)</td>
+  <td style="font-size:10px">Final planned uplift quantity on signed OFP; fuel release document generated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Planned vs. actual uplift variance ≤ 2%; OFP fuel release issued ≥ 60 minutes before STD</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Transmit fuel release order to into-plane supplier</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">SITA FuelsManager / Telex (SITA ACARS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Fuel release document: planned uplift quantity, aircraft registration, parking stand, STD</td>
+  <td style="font-size:10px">Fuel order transmitted; supplier acknowledgement received with ETA</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Order transmitted ≥ 60 minutes before fuelling start; supplier ACK received ≤ 15 minutes of transmission</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Confirm truck dispatch and stand assignment</td>
+  <td class="td-role">Ground Handler / Fuelling Supervisor</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Fuel order, aircraft stand/gate assignment, turnaround schedule</td>
+  <td style="font-size:10px">Fuel truck dispatched; confirmed ETA to aircraft stand</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Truck on-stand ≤ 20 minutes before scheduled fuelling start; zero missed fuelling windows due to late truck</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Validate fuelling window against turnaround schedule</td>
+  <td class="td-role">Operations Controller</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Truck ETA, aircraft block-in time, turnaround milestones, STD</td>
+  <td style="font-size:10px">Fuelling window confirmed; or expedite request issued to handler with revised fuelling start</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fuelling completed ≥ 20 minutes before STD; fuelling-related departure delays &lt; 0.5% of turns</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Perform pre-fuelling fuel quality sample check</td>
+  <td class="td-role">Fuelling Agent / Quality Inspector</td>
+  <td><span class="stag custom">Fuel Quality Management log (AMOS by Swiss AviationSoftware at MRO bases; paper logbook at outstations)</span></td>
+  <td style="font-size:10px;color:#6b7280">Fuel sample drawn from tanker drain or hydrant pit; density meter; water-detection paste</td>
+  <td style="font-size:10px">Pass/fail quality certificate; density (kg/L) and temperature recorded; release-to-aircraft signed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% pre-fuelling sample compliance; zero aircraft fuelled without a logged pass certificate</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Execute fuel uplift to planned quantity</td>
+  <td class="td-role">Fuelling Agent</td>
+  <td><span class="stag custom">Fuel truck flow meter / Aircraft fuel gauging system (ACARS uplink)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved uplift quantity, current fuel-on-board from aircraft gauges, truck flow meter</td>
+  <td style="font-size:10px">Actual uplift quantity delivered; aircraft fuel gauges confirmed at target level</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Uplift accuracy ±1% of planned quantity; zero over/under-fuelling events per month</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Record actual uplift in tech log and transmit via ACARS</td>
+  <td class="td-role">Fuelling Agent / Line Maintenance Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware + Telex / SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Flow meter final reading, aircraft gauge reading, fueller&#x27;s delivery receipt</td>
+  <td style="font-size:10px">Actual uplift entered in aircraft tech log; ACARS fuel completion message sent to OCC and dispatcher</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ACARS fuel message transmitted ≤ 5 minutes after fuelling complete; tech log discrepancy rate &lt; 1%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Dispatcher briefs captain on OFP fuel plan &amp; alternates</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Lido/Flight by Lufthansa Systems (OFP) + SITA ACARS Datalink</span></td>
+  <td style="font-size:10px;color:#6b7280">Finalised OFP, actual fuel onboard, latest weather update, active NOTAMs, alternate aerodrome status</td>
+  <td style="font-size:10px">Captain briefed; OFP reviewed and queried or ready for signature</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Dispatcher briefing completed ≥ 30 minutes before STD; zero departures without dispatcher-signed OFP</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Captain accepts or requests additional discretionary fuel</td>
+  <td class="td-role">Captain (Pilot in Command)</td>
+  <td><span class="stag custom">Aircraft fuel management panel / Jeppesen FliteDeck Pro (EFB)</span></td>
+  <td style="font-size:10px;color:#6b7280">OFP fuel plan, personal weather/routing assessment, alternate viability, ATC restriction outlook</td>
+  <td style="font-size:10px">Captain&#x27;s fuel decision; discretionary addition quantity and rationale (if fuel added)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Average captain discretionary addition ≤ 5% of trip fuel; additions above 10% flagged for safety review</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Finalise load sheet with captain-approved fuel figures</td>
+  <td class="td-role">Load Controller / Flight Dispatcher</td>
+  <td><span class="stag amadeus">Lido/Flight by Lufthansa Systems + Amadeus Altéa PSS (load control module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Captain-approved fuel quantity, actual payload (pax + baggage + cargo), aircraft zero-fuel weight</td>
+  <td style="font-size:10px">Finalised load sheet signed; OFP fuel figures locked; departure clearance issued to captain</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Load sheet issued ≤ 15 minutes before STD; 100% OFP/load-sheet fuel figure consistency</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.4</td>
+  <td class="td-name">Transmit departure fuel state to Operations Control Centre</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag aws">SITA ACARS Datalink + OCC Operations Dashboard (AWS-hosted)</span></td>
+  <td style="font-size:10px;color:#6b7280">Final block fuel figures, actual departure time, gate/stand number</td>
+  <td style="font-size:10px">OCC fuel state record updated; block-off fuel confirmed and archived for post-flight analysis</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">OCC fuel state updated ≤ 5 minutes of block-off; 100% ACARS message delivery rate</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-02</span>Operational Flight Plan Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">FO-03</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Flight Operations</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Flight Dispatch &amp; Control</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Fuel Planning &amp; Tankering</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">6 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Flight Dispatcher</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Fuel Planning Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Fuel Planning Analyst / Duty Manager</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Ground Handler / Fuelling Supervisor</div><div class="swim"><div class="dot" style="background:#10b981"></div>Operations Controller</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Fuelling Agent / Quality Inspector</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Fuelling Agent</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Fuelling Agent / Line Maintenance Engineer</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Captain (Pilot in Command)</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Load Controller / Flight Dispatcher</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">Lido/Flight by Lufthansa Systems</span><span class="stag custom">Lido/Flight by Lufthansa Systems + Weight &amp; Balance System</span><span class="stag sap">Aviator Fuel Intelligence (AvFuel) / SAP S/4HANA Finance (FI/CO)</span><span class="stag custom">Aviator Fuel Intelligence (AvFuel) / Lido/Flight by Lufthansa Systems</span><span class="stag custom">Aviator Fuel Intelligence (AvFuel)</span><span class="stag custom">SITA FuelsManager / Telex (SITA ACARS)</span><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">Fuel Quality Management log (AMOS by Swiss AviationSoftware at MRO bases; paper logbook at outstations)</span><span class="stag custom">Fuel truck flow meter / Aircraft fuel gauging system (ACARS uplink)</span><span class="stag custom">AMOS by Swiss AviationSoftware + Telex / SITA ACARS</span><span class="stag custom">Lido/Flight by Lufthansa Systems (OFP) + SITA ACARS Datalink</span><span class="stag custom">Aircraft fuel management panel / Jeppesen FliteDeck Pro (EFB)</span><span class="stag amadeus">Lido/Flight by Lufthansa Systems + Amadeus Altéa PSS (load control module)</span><span class="stag aws">SITA ACARS Datalink + OCC Operations Dashboard (AWS-hosted)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Ingest flight plan, route &amp; forecast winds</span><span class="kval">Wind data currency ≤ 6 hours before STD; 100% OFP retrieval success rate</span></div><div class="krow"><span class="kname">Calculate trip fuel, alternate &amp; final reserve</span><span class="kval">Fuel calculation accuracy ±1% vs. actual block burn; alternate fuel covers closest suitable alternate per ops spec</span></div><div class="krow"><span class="kname">Apply regulatory minimum fuel policy</span><span class="kval">100% regulatory compliance; zero dispatches with sub-minimum fuel on record</span></div><div class="krow"><span class="kname">Validate fuel load against MTOW &amp; payload limits</span><span class="kval">Revenue payload protection ≥ 95% of booked payload on MTOW-limited sectors</span></div><div class="krow"><span class="kname">Query into-plane fuel prices at origin &amp; destination</span><span class="kval">Price data latency ≤ 24 hours; contract uplift preference achieved ≥ 95% of uplifts</span></div><div class="krow"><span class="kname">Model tankering NPV versus weight penalty cost</span><span class="kval">Tankering model accuracy: positive NPV realised ≥ 90% of cases where model predicted benefit &gt; $150</span></div><div class="krow"><span class="kname">Approve or reject tankering uplift quantity</span><span class="kval">Tankering uplift decision issued ≥ 90 minutes before STD; decisions documented 100%</span></div><div class="krow"><span class="kname">Finalise planned uplift quantity on OFP</span><span class="kval">Planned vs. actual uplift variance ≤ 2%; OFP fuel release issued ≥ 60 minutes before STD</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">NWP upper-wind refresh is 6-hourly; stale data can inflate or underestimate trip fuel by 2–4%, with no automatic dispatcher alert when forecast age exceeds threshold</div><div class="risk-card">Aircraft performance deck must be updated after each engine shop visit or EFW change; stale performance model causes systematic over/under-fuelling accumulating to 0.5–1% fuel cost variance fleet-wide</div><div class="risk-card">ETOPS 180-min routes require En-Route Alternate (ERA) fuel that must be recalculated if the ERA changes post-OFP publication due to NOTAM or weather; no automated re-trigger in Lido when ERA status changes after release</div><div class="risk-card">MTOW-limited flights at hot/high airports (e.g. LAS in summer, BOG year-round) force late payload offload; no automated interface between Lido and PSS to surface the constraint earlier in the booking cycle</div><div class="risk-card">Fuel price APIs from major suppliers (BP, Shell, World Fuel Services) vary in latency and data format; feed outages require manual extraction from supplier portals, creating price data gaps that default the model to stale contract rates</div><div class="risk-card">Weight-penalty calculation in simplified models assumes linear burn increase, but penalty is non-linear at high gross weights; simplified model can overstate tankering benefit by 5–10% on heavy flights, leading to sub-optimal decisions</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Active OFP, SIGMET/AIRMET, upper-wind forecast (NWP model)</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">OCC fuel state record updated; block-off fuel confirmed and archived for post-flight analysis</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-03</span>Fuel Planning &amp; Tankering</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-04</span>Weight &amp; Balance Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-04/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-05</span>NOTAMs &amp; AIP Information Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-06</span>Weather Monitoring &amp; Decision Support</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-07</span>Air Traffic Control Coordination</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-08</span>Network Operations Control (NOC)</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-09</span>Delay Management &amp; Root Cause Analysis</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-10</span>Diversion &amp; Emergency Response Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-11</span>ETOPS / EDTO Operations Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-13</span>Performance &amp; FDR Data Monitoring</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-14</span>Air-to-Ground Communications Management</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-15</span>Dangerous Goods Load Authorization</h3>
-    <p>Flight Dispatch &amp; Control · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="fo-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../fo-02/"><span class="arrow">←</span><span><span class="sub">Previous</span>FO-02 · Operational Flight Plan Management</span></a><a class="pn-btn" href="../fo-04/"><span><span class="sub">Next</span>FO-04 · Weight &amp; Balance Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

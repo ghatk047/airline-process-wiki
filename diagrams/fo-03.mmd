@@ -1,0 +1,52 @@
+flowchart LR
+  subgraph P1["Phase 1: Fuel Requirements Calculation"]
+    A([Start]) --> B[Ingest flight plan & forecast winds]
+    B --> C[Calculate trip, alternate & reserve fuel]
+    C --> D[Apply regulatory minimum fuel policy]
+    D --> E{MTOW / payload\ntrade required?}
+    E -- Yes --> F[Adjust payload-fuel split]
+    F --> D
+    E -- No --> G[OFP fuel requirement locked]
+  end
+  subgraph P2["Phase 2: Tankering Optimisation"]
+    G --> H[Query into-plane fuel prices at origin & dest]
+    H --> I[Model tankering NPV vs weight penalty]
+    I --> J{Tankering viable &\nstructurally compliant?}
+    J -- No --> K[Set uplift to regulatory minimum]
+    J -- Yes --> L[Add tankering qty to planned uplift]
+    K --> M[Finalise planned uplift on OFP]
+    L --> M
+  end
+  subgraph P3["Phase 3: Fuel Order & Dispatch"]
+    M --> N[Transmit fuel release order to supplier]
+    N --> O[Confirm truck dispatch & stand assignment]
+    O --> P{Fuelling window\nachievable in turn?}
+    P -- No --> Q[Issue expedite request to handler]
+    Q --> O
+    P -- Yes --> R[Fuelling window confirmed]
+  end
+  subgraph P4["Phase 4: Uplift Execution & Quality Check"]
+    R --> S[Perform pre-fuelling quality sample]
+    S --> T{Sample within\nspecification?}
+    T -- Fail --> U[Reject batch & alert supplier]
+    U --> S
+    T -- Pass --> V[Execute uplift to planned quantity]
+    V --> W[Record actual uplift in tech log & ACARS]
+  end
+  subgraph P5["Phase 5: Captain Acceptance & Departure"]
+    W --> X[Dispatcher briefs captain on OFP & fuel]
+    X --> Y{Captain accepts\nfuel load?}
+    Y -- Add fuel --> Z[Add discretionary fuel & re-brief]
+    Z --> X
+    Y -- Accepts --> AA[Finalise load sheet & lock OFP]
+    AA --> AB[Transmit departure fuel state to OCC]
+    AB --> AC([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AC fill:#003366,color:#fff,stroke:#003366
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style Y fill:#ff6600,color:#fff,stroke:#ff6600
