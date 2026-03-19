@@ -1,0 +1,50 @@
+flowchart LR
+  subgraph P1[Phase 1: Network Monitoring]
+    A([Start]) --> B[Monitor flight progress\nvia ACARS and AMS]
+    B --> C[Ingest weather, NOTAM\nand ATC flow data]
+    C --> D{Disruption\ndetected?}
+    D -- No --> B
+    D -- Yes --> E[Log disruption trigger]
+  end
+  subgraph P2[Phase 2: Disruption Triage]
+    E --> F[Classify severity\nand scope]
+    F --> G{Network-wide\nimpact?}
+    G -- No --> H[Local recovery\nworkflow]
+    G -- Yes --> I[Escalate to\nNOC Manager]
+  end
+  subgraph P3[Phase 3: Recovery Planning]
+    H --> J[Identify spare\naircraft and slots]
+    I --> J
+    J --> K[Model recovery\nscenarios via AI]
+    K --> L{Recovery\nfeasible?}
+    L -- No --> M[Cancel flight\nin Altéa PSS]
+    L -- Yes --> N[Select and approve\nrecovery plan]
+  end
+  subgraph P4[Phase 4: Resource Coordination]
+    N --> O[Coordinate crew\nreassignment]
+    M --> O
+    O --> P{Crew legally\navailable?}
+    P -- No --> Q[Source reserve\ncrew]
+    P -- Yes --> R[Coordinate maint.\naircraft release]
+    Q --> R
+  end
+  subgraph P5[Phase 5: Execution and Communication]
+    R --> S[Update schedule\nin Altéa PSS]
+    S --> T[Trigger automated\npassenger rebooking]
+    T --> U[Broadcast IROPS\nalerts to stakeholders]
+    U --> V{Recovery\non track?}
+    V -- No --> N
+    V -- Yes --> W[Document decisions\nin NOC log]
+  end
+  subgraph P6[Phase 6: Post-Event Review]
+    W --> X[Root cause analysis\nand debrief]
+    X --> Y([Complete])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600

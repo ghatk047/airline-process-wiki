@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Crew Planning &amp; Rostering · Flight Operations · Airlines Process Wiki</title>
+<title>FO-08 · Network Operations Control (NOC) · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Flight Operations</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -131,7 +132,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-05/"><span class="status-dot status-done"></span><span class="pid">FO-05</span>NOTAMs &amp; AIP Information Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-06/"><span class="status-dot status-done"></span><span class="pid">FO-06</span>Weather Monitoring &amp; Decision Support</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-07/"><span class="status-dot status-done"></span><span class="pid">FO-07</span>Air Traffic Control Coordination</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-08/"><span class="status-dot status-done"></span><span class="pid">FO-08</span>Network Operations Control (NOC)</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/flight-dispatch-control/fo-08/"><span class="status-dot status-done"></span><span class="pid">FO-08</span>Network Operations Control (NOC)</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-09/"><span class="status-dot status-queue"></span><span class="pid">FO-09</span>Delay Management &amp; Root Cause Analysis</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-10/"><span class="status-dot status-queue"></span><span class="pid">FO-10</span>Diversion &amp; Emergency Response Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-11/"><span class="status-dot status-queue"></span><span class="pid">FO-11</span>ETOPS / EDTO Operations Management</a>
@@ -242,153 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Crew Planning &amp; Rostering</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Flight Operations</a><span class="sep">›</span>
+  <a href="../../../flight-operations/flight-dispatch-control/">Network Operations Control</a><span class="sep">›</span>
+  <span class="current">FO-08 · Network Operations Control (NOC)</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Crew Planning &amp; Rostering</h1>
-    <p>Flight Operations · 0 of 15 subprocesses complete · Updated 2026-03-18 22:53</p>
+    <h1>Network Operations Control (NOC)</h1>
+    <p>Flight Operations › Network Operations Control · 18 L4 steps · 6 phases · 10 decision gates · Updated 2026-03-18 22:53</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">FO-08</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-01</span>Crew Pairing Optimization</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-fo-08">
+      <img src="../../../assets/img/fo-08.png" alt="FO-08 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-fo-08').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-fo-08').style.display='flex'">
+      <div id="diag-placeholder-fo-08" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-01/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Monitor real-time flight progress network-wide</td>
+  <td class="td-role">Network Operations Controller</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Live ACARS position reports, gate departure/arrival feeds</td>
+  <td style="font-size:10px">Real-time operational picture displayed on NOC wall board</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Flight tracking refresh rate ≤60 sec; network visibility ≥99.5% uptime</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Ingest weather and ATC flow constraint data</td>
+  <td class="td-role">Network Operations Controller</td>
+  <td><span class="stag custom">Honeywell GoDirect Weather</span></td>
+  <td style="font-size:10px;color:#6b7280">METARs, TAFs, SIGMETs, FAA TFMS/SWIM Ground Delay Programs</td>
+  <td style="font-size:10px">Weather impact overlay on network map; GDP-affected flight list</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Weather advisory ingestion latency ≤5 min from SIGMET issue</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Assess airport capacity and slot utilisation</td>
+  <td class="td-role">Network Operations Controller</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Airport slot allocations, gate availability, ground handler capacity</td>
+  <td style="font-size:10px">Slot utilisation report; gate conflict alerts</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate conflict identification ≥30 min before scheduled pushback</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Detect operational deviation and trigger disruption alert</td>
+  <td class="td-role">Network Operations Controller</td>
+  <td><span class="stag custom">Cairo AI Disruption Management Platform</span></td>
+  <td style="font-size:10px;color:#6b7280">Automated threshold breach: delay &gt;15 min, ATC hold, maintenance release flag</td>
+  <td style="font-size:10px">Disruption alert ticket with affected flight list and estimated downstream cascade</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Alert-to-triage response time ≤10 min for Severity 1 events</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Classify disruption severity and operational scope</td>
+  <td class="td-role">NOC Duty Manager</td>
+  <td><span class="stag custom">Cairo AI Disruption Management Platform</span></td>
+  <td style="font-size:10px;color:#6b7280">Disruption alert ticket; affected flight count; estimated delay propagation</td>
+  <td style="font-size:10px">Severity classification (S1 Network Crisis / S2 Station Event / S3 Single Flight)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Correct severity classification rate ≥95% vs post-event review</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Model downstream cascade impact on network</td>
+  <td class="td-role">Network Operations Analyst</td>
+  <td><span class="stag custom">Cairo AI Disruption Management Platform</span></td>
+  <td style="font-size:10px;color:#6b7280">Disruption origin flight; rotational aircraft tail assignments; crew pairings</td>
+  <td style="font-size:10px">Cascade impact map: N flights affected, estimated total delay minutes, PAX count at risk</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Cascade model produced within 5 min of S1/S2 alert; PAX-at-risk count accuracy ±5%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Escalate network-wide crisis to senior NOC leadership</td>
+  <td class="td-role">NOC Duty Manager</td>
+  <td><span class="stag custom">SITA Messaging &amp; Collaboration Platform</span></td>
+  <td style="font-size:10px;color:#6b7280">S1 severity classification; cascade impact map</td>
+  <td style="font-size:10px">Crisis bridge call initiated; senior leadership (VP Operations, VP Maintenance) notified; war room convened</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Senior leadership notified within 15 min of S1 classification</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Identify available spare aircraft for recovery</td>
+  <td class="td-role">Aircraft Routing Controller</td>
+  <td><span class="stag amadeus">Amadeus SkyWORKS</span></td>
+  <td style="font-size:10px;color:#6b7280">Current fleet status board; maintenance release schedule; spare aircraft positions</td>
+  <td style="font-size:10px">Candidate spare aircraft list with position, range capability, and availability window</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Spare aircraft identified within 20 min of disruption classification for S1/S2 events</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Model and score recovery scenario options</td>
+  <td class="td-role">Network Operations Analyst</td>
+  <td><span class="stag custom">Cairo AI Disruption Management Platform</span></td>
+  <td style="font-size:10px;color:#6b7280">Spare aircraft list; delay propagation model; crew availability matrix</td>
+  <td style="font-size:10px">Ranked recovery scenarios with cost, delay, and PAX-impact scores</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">≥3 recovery scenarios generated per S1/S2 event; scenario scoring completed within 10 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Evaluate crew duty legality for recovery assignments</td>
+  <td class="td-role">Crew Scheduling Controller</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Proposed recovery flight assignments; crew current duty start times and rest records</td>
+  <td style="font-size:10px">Legal/illegal flag per crew pairing; compliant alternatives where required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero FAR Part 117 duty-time violations in executed recovery plan; crew legality check completed within 15 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Select and approve final recovery plan</td>
+  <td class="td-role">NOC Duty Manager</td>
+  <td><span class="stag custom">Cairo AI Disruption Management Platform</span></td>
+  <td style="font-size:10px;color:#6b7280">Scored recovery scenarios; crew legality validation; cost approval authority</td>
+  <td style="font-size:10px">Approved recovery plan with assigned tail numbers, crew, and revised schedule</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Recovery plan approved and published within 30 min of S1 disruption onset</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Issue crew reassignment instructions to Crew Scheduling</td>
+  <td class="td-role">Crew Scheduling Controller</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved recovery plan; reserve crew roster; current crew positions</td>
+  <td style="font-size:10px">Crew reassignment notifications sent via CrewTrac; updated pairing records</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Crew contact-and-confirm cycle completed within 20 min; reserve activation rate ≥90% first contact</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Coordinate aircraft maintenance release with MCC</td>
+  <td class="td-role">Maintenance Control Center (MCC) Coordinator</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Recovery aircraft tail number; open deferred defects (DD) list; MEL status</td>
+  <td style="font-size:10px">Maintenance release confirmation or deferred defect deferral decision</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Aircraft release decision issued within 30 min of MCC request for non-AOG aircraft</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Issue gate changes and ground resource reallocation</td>
+  <td class="td-role">Station Operations Controller</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Revised aircraft routing; gate availability; ground handler and fuelling schedules</td>
+  <td style="font-size:10px">Gate reassignment notices; revised ground service orders to handlers</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Ground resources confirmed at revised gate ≥45 min before revised departure</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Update revised schedule and flight status in Altéa PSS</td>
+  <td class="td-role">Network Operations Controller</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved recovery plan; revised departure times; aircraft and crew assignments</td>
+  <td style="font-size:10px">Updated flight records in Altéa DCS; GDS flight status broadcast via SITA Type B messages</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Schedule update published to GDS within 10 min of plan approval; zero discrepancies between Altéa and SITA AMS flight status</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Trigger automated passenger rebooking workflow</td>
+  <td class="td-role">Passenger Operations Controller</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Cancelled/significantly delayed flights; passenger itinerary records; rebooking rules policy</td>
+  <td style="font-size:10px">Automated rebooking confirmations sent to affected PAX via email/SMS; waitlist cleared</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">≥85% of disrupted PAX rebooked within 2 hours of cancellation; EU261/DOT delay notification compliance 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Monitor recovery execution and track plan adherence</td>
+  <td class="td-role">NOC Duty Manager</td>
+  <td><span class="stag custom">Cairo AI Disruption Management Platform</span></td>
+  <td style="font-size:10px;color:#6b7280">Real-time departure/arrival feeds; crew sign-in confirmations; maintenance release updates</td>
+  <td style="font-size:10px">Recovery tracking dashboard; variance alerts when execution deviates &gt;15 min from plan</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Recovery plan adherence ≥80% of revised departure times met within ±15 min; total network delay minutes reduced ≥40% vs no-action baseline</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Document NOC event log and decision audit trail</td>
+  <td class="td-role">NOC Duty Manager</td>
+  <td><span class="stag custom">SITA Messaging &amp; Collaboration Platform</span></td>
+  <td style="font-size:10px;color:#6b7280">Chronological decision log; communications record; final recovery outcomes</td>
+  <td style="font-size:10px">Closed NOC event ticket with full audit trail; regulatory documentation for DOT/CAA if required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Event documentation completed within 4 hours of network recovery; 100% of S1 events produce a formal After-Action Report</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-02</span>Crew Rostering &amp; Bidding</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">FO-08</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Flight Operations</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Network Operations Control</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Network Operations Control (NOC)</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">10 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">8 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Network Operations Controller</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>NOC Duty Manager</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Network Operations Analyst</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Aircraft Routing Controller</div><div class="swim"><div class="dot" style="background:#10b981"></div>Crew Scheduling Controller</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Maintenance Control Center (MCC) Coordinator</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Station Operations Controller</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Passenger Operations Controller</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">Honeywell GoDirect Weather</span><span class="stag custom">Cairo AI Disruption Management Platform</span><span class="stag custom">SITA Messaging &amp; Collaboration Platform</span><span class="stag amadeus">Amadeus SkyWORKS</span><span class="stag custom">Jeppesen Crew Management</span><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag amadeus">Amadeus Altéa PSS</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Monitor real-time flight progress network-wide</span><span class="kval">Flight tracking refresh rate ≤60 sec; network visibility ≥99.5% uptime</span></div><div class="krow"><span class="kname">Ingest weather and ATC flow constraint data</span><span class="kval">Weather advisory ingestion latency ≤5 min from SIGMET issue</span></div><div class="krow"><span class="kname">Assess airport capacity and slot utilisation</span><span class="kval">Gate conflict identification ≥30 min before scheduled pushback</span></div><div class="krow"><span class="kname">Detect operational deviation and trigger disruption alert</span><span class="kval">Alert-to-triage response time ≤10 min for Severity 1 events</span></div><div class="krow"><span class="kname">Classify disruption severity and operational scope</span><span class="kval">Correct severity classification rate ≥95% vs post-event review</span></div><div class="krow"><span class="kname">Model downstream cascade impact on network</span><span class="kval">Cascade model produced within 5 min of S1/S2 alert; PAX-at-risk count accuracy ±5%</span></div><div class="krow"><span class="kname">Escalate network-wide crisis to senior NOC leadership</span><span class="kval">Senior leadership notified within 15 min of S1 classification</span></div><div class="krow"><span class="kname">Identify available spare aircraft for recovery</span><span class="kval">Spare aircraft identified within 20 min of disruption classification for S1/S2 events</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">ACARS datalink gaps over oceanic/remote sectors create blind spots; controller must cross-reference multiple screens to build situational awareness</div><div class="risk-card">FAA TFMS GDP notifications arrive via multiple channels (NAS Status, SWIM API, phone) with no single consolidated feed — manual reconciliation required</div><div class="risk-card">At slot-controlled airports (LHR, JFK), late slot returns trigger IATA WASG 80:20 use-it-or-lose-it penalties — NOC must balance recovery options against slot forfeiture risk</div><div class="risk-card">Cairo AI cascade modelling accuracy degrades when multiple simultaneous disruptions interact — controller must validate AI-generated impact scores manually for compounding events</div><div class="risk-card">No standardised severity matrix shared between NOC, Crew Scheduling, and Maintenance Control — classification disagreements delay activation of the correct recovery protocol</div><div class="risk-card">Aircraft tail swap history held in Jeppesen Crew and SITA AMS separately — reconciling rotational conflicts across systems requires manual data export and is error-prone at speed</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Live ACARS position reports, gate departure/arrival feeds</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Closed NOC event ticket with full audit trail; regulatory documentation for DOT/CAA if required</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-02/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-03</span>Crew Day-of-Operations Tracking</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-04</span>Fatigue &amp; Rest Rule Compliance (FAR Part 117)</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-04/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-05</span>Crew Training &amp; Recurrency Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-06</span>Crew Licensing &amp; Medical Certification</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-07</span>Reserve Crew Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-08</span>Crew Hotel &amp; Transportation Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-09</span>Cabin Crew Service Standards &amp; Training</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-10</span>Crew Disruption Recovery &amp; Re-pairing</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-11</span>Crew Union &amp; Labour Agreement Compliance</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-12</span>Crew Recruitment &amp; Onboarding</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-13</span>Deadhead &amp; Positioning Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-14</span>Crew Performance Management</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-15</span>Crew Payroll &amp; Hours Tracking</h3>
-    <p>Crew Planning &amp; Rostering · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cm-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../fo-07/"><span class="arrow">←</span><span><span class="sub">Previous</span>FO-07 · Air Traffic Control Coordination</span></a><a class="pn-btn" href="../fo-09/"><span><span class="sub">Next</span>FO-09 · Delay Management &amp; Root Cause Analysis</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FO-08 Slides — Network Operations Control (NOC)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-08</span>
+    <h1>Network Operations Control (NOC)</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/fo-08.png" alt="BPMN for FO-08" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Network Operations Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-08</span>
+    <h1>Network Operations Control (NOC)</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> FO-08</li>
+          <li><strong>L1 Domain:</strong> Flight Operations</li>
+          <li><strong>L2 Process:</strong> Network Operations Control</li>
+          <li><strong>L3 Name:</strong> Network Operations Control (NOC)</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Monitor real-time flight progress network-wide</li><li><strong>Phase 2:</strong> Classify disruption severity and operational scope</li><li><strong>Phase 3:</strong> Identify available spare aircraft for recovery</li><li><strong>Phase 4:</strong> Issue crew reassignment instructions to Crew Sched</li><li><strong>Phase 5:</strong> Update revised schedule and flight status in Altéa</li><li><strong>Phase 6:</strong> Document NOC event log and decision audit trail</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Aircraft Routing Controller</li><li>Crew Scheduling Controller</li><li>Maintenance Control Center (MCC) Coordinator</li><li>NOC Duty Manager</li><li>Network Operations Analyst</li><li>Network Operations Controller</li><li>Passenger Operations Controller</li><li>Station Operations Controller</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>Amadeus Altéa PSS</li><li>Amadeus SkyWORKS</li><li>Cairo AI Disruption Management Platform</li><li>Honeywell GoDirect Weather</li><li>Jeppesen Crew Management</li><li>SITA Airport Management System (AMS)</li><li>SITA Messaging &amp; Collaboration Platform</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Network Operations Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-08</span>
+    <h1>Network Operations Control (NOC)</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Monitor real-time flight progress network-wide</td>
+        <td class="kpi-col">Flight tracking refresh rate ≤60 sec; network visibility ≥99.5% uptime</td>
+        <td class="pain-col">ACARS datalink gaps over oceanic/remote sectors create blind spots; controller must cross-reference multiple screens to build situational awareness</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Ingest weather and ATC flow constraint data</td>
+        <td class="kpi-col">Weather advisory ingestion latency ≤5 min from SIGMET issue</td>
+        <td class="pain-col">FAA TFMS GDP notifications arrive via multiple channels (NAS Status, SWIM API, phone) with no single consolidated feed — manual reconciliation required</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Assess airport capacity and slot utilisation</td>
+        <td class="kpi-col">Gate conflict identification ≥30 min before scheduled pushback</td>
+        <td class="pain-col">At slot-controlled airports (LHR, JFK), late slot returns trigger IATA WASG 80:20 use-it-or-lose-it penalties — NOC must balance recovery options against slot forfeiture risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Detect operational deviation and trigger disruption alert</td>
+        <td class="kpi-col">Alert-to-triage response time ≤10 min for Severity 1 events</td>
+        <td class="pain-col">Cairo AI cascade modelling accuracy degrades when multiple simultaneous disruptions interact — controller must validate AI-generated impact scores manually for compounding events</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Classify disruption severity and operational scope</td>
+        <td class="kpi-col">Correct severity classification rate ≥95% vs post-event review</td>
+        <td class="pain-col">No standardised severity matrix shared between NOC, Crew Scheduling, and Maintenance Control — classification disagreements delay activation of the correct recovery protocol</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Model downstream cascade impact on network</td>
+        <td class="kpi-col">Cascade model produced within 5 min of S1/S2 alert; PAX-at-risk count accuracy ±5%</td>
+        <td class="pain-col">Aircraft tail swap history held in Jeppesen Crew and SITA AMS separately — reconciling rotational conflicts across systems requires manual data export and is error-prone at speed</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Escalate network-wide crisis to senior NOC leadership</td>
+        <td class="kpi-col">Senior leadership notified within 15 min of S1 classification</td>
+        <td class="pain-col">Airline-specific: post-Dec 2022 IROPS crisis, several carriers lack documented escalation runbooks — NOC managers default to ad hoc phone calls, creating coordination gaps during high-stress events</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Identify available spare aircraft for recovery</td>
+        <td class="kpi-col">Spare aircraft identified within 20 min of disruption classification for S1/S2 events</td>
+        <td class="pain-col">Unscheduled AOG maintenance removes spare aircraft without real-time update to NOC fleet board — controllers discover unavailability only when attempting to assign tail, causing recovery plan rework</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Model and score recovery scenario options</td>
+        <td class="kpi-col">≥3 recovery scenarios generated per S1/S2 event; scenario scoring completed within 10 min</td>
+        <td class="pain-col">Cairo AI optimisation is constrained by static crew legality rules embedded at implementation — dynamic FAR Part 117 duty time calculations for mixed international/domestic pairings require manual override by Crew Scheduling</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Evaluate crew duty legality for recovery assignments</td>
+        <td class="kpi-col">Zero FAR Part 117 duty-time violations in executed recovery plan; crew legality check completed within 15 min</td>
+        <td class="pain-col">Jeppesen legality engine checks planned duties but cannot pre-validate real-time operator-initiated tail swaps — illegal assignments may only surface at sign-in, causing last-minute scrambles</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Select and approve final recovery plan</td>
+        <td class="kpi-col">Recovery plan approved and published within 30 min of S1 disruption onset</td>
+        <td class="pain-col">Financial authority thresholds for ferry flights and hotel costs are not pre-delegated to NOC duty managers — approvals requiring VP sign-off during off-peak hours introduce 30–60 min delays</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Issue crew reassignment instructions to Crew Scheduling</td>
+        <td class="kpi-col">Crew contact-and-confirm cycle completed within 20 min; reserve activation rate ≥90% first contact</td>
+        <td class="pain-col">Crew contactability drops during off-hours — contactability SLA is not contractually mandated beyond 2-hour reserve callout window, limiting rapid IROPS response capability</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Coordinate aircraft maintenance release with MCC</td>
+        <td class="kpi-col">Aircraft release decision issued within 30 min of MCC request for non-AOG aircraft</td>
+        <td class="pain-col">MEL deferral decisions on borderline items require OEM (Boeing) consultation — Boeing&#x27;s 24/7 technical operations line response time can reach 60+ min for complex MEL calls, blocking aircraft release</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Issue gate changes and ground resource reallocation</td>
+        <td class="kpi-col">Ground resources confirmed at revised gate ≥45 min before revised departure</td>
+        <td class="pain-col">At contracted-handler airports, gate change notifications must be transmitted via SITA messaging — handlers operating legacy systems acknowledge with 15–30 min lag, preventing NOC from confirming readiness</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Update revised schedule and flight status in Altéa PSS</td>
+        <td class="kpi-col">Schedule update published to GDS within 10 min of plan approval; zero discrepancies between Altéa and SITA AMS flight status</td>
+        <td class="pain-col">Manual rescheduling in Altéa for &gt;10 flights simultaneously requires sequential data entry — bulk SSIM import is available but requires IT ops involvement, creating a bottleneck during mass IROPS events</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Trigger automated passenger rebooking workflow</td>
+        <td class="kpi-col">≥85% of disrupted PAX rebooked within 2 hours of cancellation; EU261/DOT delay notification compliance 100%</td>
+        <td class="pain-col">Altéa automated rebooking applies FIFO logic that ignores high-value loyalty tier passengers — premium PAX may be rebooked on worse itineraries than low-tier PAX unless NDC/API rules override is manually triggered</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Monitor recovery execution and track plan adherence</td>
+        <td class="kpi-col">Recovery plan adherence ≥80% of revised departure times met within ±15 min; total network delay minutes reduced ≥40% vs no-action baseline</td>
+        <td class="pain-col">No unified real-time recovery adherence score exists — NOC manager must manually correlate Altéa flight status, Jeppesen crew sign-ins, and SITA AMS gate data to determine if recovery is on track</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Document NOC event log and decision audit trail</td>
+        <td class="kpi-col">Event documentation completed within 4 hours of network recovery; 100% of S1 events produce a formal After-Action Report</td>
+        <td class="pain-col">Decision rationale during fast-moving IROPS is rarely captured in real time — post-event reconstruction from chat logs and ACARS data is time-consuming and incomplete, undermining root cause analysis</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Network Operations Control</span>
+  </div>
+</div>
+
+</body>
+</html>
