@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Line Maintenance · Maintenance, Repair &amp; Overhaul · Airlines Process Wiki</title>
+<title>MR-13 · Quality Assurance &amp; Safety Audits (CAMO) · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -199,7 +200,7 @@
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-09/"><span class="status-dot status-done"></span><span class="pid">MR-09</span>MRO Vendor &amp; Outsourcing Management</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-10/"><span class="status-dot status-done"></span><span class="pid">MR-10</span>Spare Parts Inventory &amp; Procurement</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-12/"><span class="status-dot status-done"></span><span class="pid">MR-12</span>Avionics &amp; Systems Modification</a>
-        <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-13/"><span class="status-dot status-done"></span><span class="pid">MR-13</span>Quality Assurance &amp; Safety Audits (CAMO)</a>
+        <a class="sidebar-l3-link active" href="../../../mro-maintenance-engineering/line-maintenance/mr-13/"><span class="status-dot status-done"></span><span class="pid">MR-13</span>Quality Assurance &amp; Safety Audits (CAMO)</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-14/"><span class="status-dot status-queue"></span><span class="pid">MR-14</span>Maintenance Cost Control &amp; KPI Reporting</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-15/"><span class="status-dot status-queue"></span><span class="pid">MR-15</span>Warranty Claim Management</a>
       </div>
@@ -242,117 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
-  <span class="current">Line Maintenance</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/line-maintenance/">Airworthiness &amp; Compliance</a><span class="sep">›</span>
+  <span class="current">MR-13 · Quality Assurance &amp; Safety Audits (CAMO)</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Line Maintenance</h1>
-    <p>Maintenance, Repair &amp; Overhaul · 9 of 11 subprocesses complete · Updated 2026-03-19 19:37</p>
+    <h1>Quality Assurance &amp; Safety Audits (CAMO)</h1>
+    <p>Maintenance, Repair &amp; Overhaul › Airworthiness &amp; Compliance · 18 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-19 19:37</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">MR-13</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-01</span>Line Maintenance Planning &amp; Execution</h3>
-    <p>Line Maintenance · 20 steps · 6 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-mr-13">
+      <img src="../../../assets/img/mr-13.png" alt="MR-13 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-mr-13').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-mr-13').style.display='flex'">
+      <div id="diag-placeholder-mr-13" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Compile CAMO annual audit programme</td>
+  <td class="td-role">Quality Assurance Manager (CAMO)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Regulatory calendar (EASA Part-CAMO / FAR Part 145), contracted MRO provider list, prior audit cycle dates</td>
+  <td style="font-size:10px">Approved annual audit schedule with provider assignments and due dates</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of Part-145 approved providers audited within 24-month cycle; schedule published ≥60 days before Q1</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Risk-score providers using performance data</td>
+  <td class="td-role">Quality Assurance Analyst</td>
+  <td><span class="stag custom">Tableau / Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">Historical finding rates, open CAR age, repeat finding history, on-time delivery metrics from AMOS</td>
+  <td style="font-size:10px">Provider risk ranking matrix (High / Medium / Low) with scoring rationale</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Risk model refresh completed ≤5 business days after each completed audit; High-risk providers flagged within 48 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Determine if expedited audit is required</td>
+  <td class="td-role">Accountable Manager (CAMO)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Provider risk score, occurrence reports filed against provider, regulatory authority safety bulletins</td>
+  <td style="font-size:10px">Audit priority decision: standard schedule maintained or expedited audit triggered</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Expedited audit commenced within 10 business days of trigger event; 0 High-risk providers left unaudited &gt;6 months</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Retrieve prior audit findings and open CARs</td>
+  <td class="td-role">Quality Assurance Analyst</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Provider ID, audit history reference, open Corrective Action Request (CAR) log</td>
+  <td style="font-size:10px">Prior finding summary report with CAR status (open / overdue / closed)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CAR retrieval completed within 1 business day; zero open Level 1 CARs permitted before new audit commences</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Generate compliance checklist from Part-145 requirements</td>
+  <td class="td-role">Lead Auditor</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">EASA Part-145 / FAR 145 regulatory requirements, airline-specific MOE (Maintenance Organisation Exposition), prior non-conformances</td>
+  <td style="font-size:10px">Structured audit checklist with regulatory reference codes and prior finding flags</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Checklist covers 100% of applicable regulatory subparts; prior repeat-finding items tagged for enhanced scrutiny</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Issue formal pre-audit notification to provider</td>
+  <td class="td-role">Quality Assurance Manager (CAMO)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved audit schedule, checklist scope, lead auditor assignment</td>
+  <td style="font-size:10px">Pre-audit notification letter with scope, dates, document request list transmitted to Part-145 provider</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Notification issued ≥14 calendar days before audit start; document request acknowledgement received within 5 business days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Confirm provider readiness and document receipt</td>
+  <td class="td-role">Lead Auditor</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Pre-audit document submission from provider (MOE, personnel licences, equipment calibration records, training records)</td>
+  <td style="font-size:10px">Readiness confirmation or audit postponement decision</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of requested documents received and reviewed before audit day 1; postponement rate &lt;10% of scheduled audits</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Conduct opening meeting and confirm audit scope</td>
+  <td class="td-role">Lead Auditor</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Audit checklist, attendee list (provider Accountable Manager, QA lead, production planning), pre-audit findings</td>
+  <td style="font-size:10px">Signed scope-confirmation record; audit log opened in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Opening meeting completed within 1 hour; scope agreed and documented before hangar/records access begins</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Audit technical records for airworthiness compliance</td>
+  <td class="td-role">Lead Auditor</td>
+  <td><span class="stag custom">CAMP by CAMP Systems International</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft technical logbooks, Airworthiness Directive (AD) compliance records, component removal/installation logs, deferred defect register</td>
+  <td style="font-size:10px">Records audit worksheet with compliance status per AD/SB and identified discrepancies</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AD compliance rate ≥99.5% across sampled aircraft tail numbers; zero unaddressed mandatory ADs permitted</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Inspect maintenance facilities, tooling, and personnel</td>
+  <td class="td-role">Lead Auditor</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Tooling calibration register, Part-66 licence currency list, hangar environment records (FOD control logs, lighting/temperature)</td>
+  <td style="font-size:10px">Facilities inspection record with pass/fail status per checklist item</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Tooling calibration current for ≥99% of items sampled; zero expired Part-66 licences on active maintenance staff</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Classify findings and identify Level 1 safety issues</td>
+  <td class="td-role">Lead Auditor</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed audit checklist, records worksheet, facilities inspection record</td>
+  <td style="font-size:10px">Preliminary finding classification (Level 1 / Level 2 / Level 3) entered in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">All findings classified within 4 hours of audit completion; Level 1 findings notified to Accountable Manager within 2 hours of identification</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.5</td>
+  <td class="td-name">Issue stop-work notice or immediate CAR for Level 1</td>
+  <td class="td-role">Accountable Manager (CAMO)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Level 1 finding record, regulatory authority contact details, affected aircraft tail numbers</td>
+  <td style="font-size:10px">Formal stop-work notice or immediate CAR issued; regulatory authority notified within 24 hours per EASA Part-CAMO M.B.902</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Regulatory authority notification within 24 hours of Level 1 finding; stop-work enforced within 2 hours on affected task</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Finalise audit report and issue CARs to provider</td>
+  <td class="td-role">Lead Auditor</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Classified finding list, provider Accountable Manager details, regulatory references per finding</td>
+  <td style="font-size:10px">Signed audit report and numbered CARs issued to provider within 5 business days of audit close</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Audit report issued within 5 business days; CAR numbering 100% traceable to audit report section</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Review and accept or reject provider CAP response</td>
+  <td class="td-role">Quality Assurance Manager (CAMO)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Provider Corrective Action Plan (CAP) with root-cause analysis, containment action, corrective action, preventive action, and target completion dates</td>
+  <td style="font-size:10px">CAP acceptance or rejection with specific deficiency comments returned to provider</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CAP response received from provider within 10 business days (Level 1) / 30 days (Level 2); first-submission acceptance rate ≥75%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Track CAP implementation and verify closure evidence</td>
+  <td class="td-role">Quality Assurance Analyst</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Accepted CAP with milestone dates, provider evidence submissions (revised procedures, training records, calibration certificates)</td>
+  <td style="font-size:10px">CAR closure record with verified evidence reference; overdue CARs escalated to Accountable Manager</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CAR on-time closure rate ≥90%; zero Level 1 CARs open beyond 30 days; Level 2 CARs closed within 90 days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Monitor fleet-wide AD and SB compliance status</td>
+  <td class="td-role">Continuing Airworthiness Engineer</td>
+  <td><span class="stag custom">CAMP by CAMP Systems International</span></td>
+  <td style="font-size:10px;color:#6b7280">FAA/EASA AD feeds, Boeing Service Bulletin library, current aircraft maintenance status from AMOS</td>
+  <td style="font-size:10px">AD/SB compliance dashboard with next-due dates and overdue alerts by tail number</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AD compliance rate ≥99.9% at fleet level; zero aircraft operated with overdue mandatory ADs; SB incorporation decisions documented within 30 days of issue</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Analyse reliability programme outputs for adverse trends</td>
+  <td class="td-role">Reliability Engineer</td>
+  <td><span class="stag custom">Tableau / Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">PIREP/MAREP data from AMOS, component removal rates, in-flight shutdown rates, delay/cancellation codes, industry benchmark data (IATA MCTM)</td>
+  <td style="font-size:10px">Monthly reliability report with control chart trend analysis and alert flag list</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Reliability report published by 5th working day of each month; alert threshold breach investigated within 10 business days; IFSD rate ≤0.02 per 1,000 engine hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Submit mandatory occurrence reports to regulator</td>
+  <td class="td-role">Safety Officer (CAMO)</td>
+  <td><span class="stag custom">ECCAIRS 2 (European Coordination Centre for Accident and Incident Reporting Systems)</span></td>
+  <td style="font-size:10px;color:#6b7280">Occurrence reports from maintenance crews, AMOS defect records, CAMO safety investigation findings</td>
+  <td style="font-size:10px">Mandatory occurrence report (MOR) submitted to EASA / national CAA within 72 hours per Regulation (EU) 376/2014; ASRS report filed for US operations</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of reportable occurrences submitted within 72-hour regulatory deadline; MOR rejection rate &lt;2%; follow-up investigation reports submitted within 30 days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-05</span>Airworthiness Directive (AD) Compliance</h3>
-    <p>Line Maintenance · 19 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">MR-13</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Maintenance, Repair &amp; Overhaul</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Airworthiness &amp; Compliance</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Quality Assurance &amp; Safety Audits (CAMO)</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">9 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Quality Assurance Manager (CAMO)</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Quality Assurance Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Accountable Manager (CAMO)</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Lead Auditor</div><div class="swim"><div class="dot" style="background:#10b981"></div>Continuing Airworthiness Engineer</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Reliability Engineer</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Safety Officer (CAMO)</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag custom">Tableau / Power BI</span><span class="stag custom">CAMP by CAMP Systems International</span><span class="stag custom">ECCAIRS 2 (European Coordination Centre for Accident and Incident Reporting Systems)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Compile CAMO annual audit programme</span><span class="kval">100% of Part-145 approved providers audited within 24-month cycle; schedule published ≥60 days before Q1</span></div><div class="krow"><span class="kname">Risk-score providers using performance data</span><span class="kval">Risk model refresh completed ≤5 business days after each completed audit; High-risk providers flagged within 48 hours</span></div><div class="krow"><span class="kname">Determine if expedited audit is required</span><span class="kval">Expedited audit commenced within 10 business days of trigger event; 0 High-risk providers left unaudited &gt;6 months</span></div><div class="krow"><span class="kname">Retrieve prior audit findings and open CARs</span><span class="kval">CAR retrieval completed within 1 business day; zero open Level 1 CARs permitted before new audit commences</span></div><div class="krow"><span class="kname">Generate compliance checklist from Part-145 requirements</span><span class="kval">Checklist covers 100% of applicable regulatory subparts; prior repeat-finding items tagged for enhanced scrutiny</span></div><div class="krow"><span class="kname">Issue formal pre-audit notification to provider</span><span class="kval">Notification issued ≥14 calendar days before audit start; document request acknowledgement received within 5 business days</span></div><div class="krow"><span class="kname">Confirm provider readiness and document receipt</span><span class="kval">100% of requested documents received and reviewed before audit day 1; postponement rate &lt;10% of scheduled audits</span></div><div class="krow"><span class="kname">Conduct opening meeting and confirm audit scope</span><span class="kval">Opening meeting completed within 1 hour; scope agreed and documented before hangar/records access begins</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">MRO provider network spans 15+ stations; manual calendar alignment in spreadsheets leads to audit gaps when contracts are added mid-year without AMOS notification trigger</div><div class="risk-card">Reliability data is siloed across AMOS and airline OTP systems; manual data extraction introduces 1–2 week lag that distorts risk scores</div><div class="risk-card">EASA/FAA safety bulletins arrive via email with no automated AMOS integration; manual triage by QA Manager creates response-time variability</div><div class="risk-card">Legacy AMOS implementations store CAR evidence as unstructured PDF attachments; keyword search across &gt;500 CARs per provider is unreliable without structured data entry discipline</div><div class="risk-card">EASA AMC amendments (e.g. 2022 Part-CAMO revision) require manual checklist updates; no automated regulatory change management feed into AMOS checklist library</div><div class="risk-card">Some third-party MRO stations (particularly overseas line stations) acknowledge notifications informally via WhatsApp rather than through AMOS supplier portal, creating audit-trail gaps</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Regulatory calendar (EASA Part-CAMO / FAR Part 145), contracted MRO provider list, prior audit cycle dates</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Mandatory occurrence report (MOR) submitted to EASA / national CAA within 72 hours per Regulation (EU) 376/2014; ASRS report filed for US operations</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-06</span>Maintenance Reliability &amp; RCM Program</h3>
-    <p>Line Maintenance · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-07</span>Aircraft Technical Records Management</h3>
-    <p>Line Maintenance · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-08</span>AOG Recovery &amp; Technical Dispatch</h3>
-    <p>Line Maintenance · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-09</span>MRO Vendor &amp; Outsourcing Management</h3>
-    <p>Line Maintenance · 16 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-10</span>Spare Parts Inventory &amp; Procurement</h3>
-    <p>Line Maintenance · 15 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-12</span>Avionics &amp; Systems Modification</h3>
-    <p>Line Maintenance · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-13</span>Quality Assurance &amp; Safety Audits (CAMO)</h3>
-    <p>Line Maintenance · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-14</span>Maintenance Cost Control &amp; KPI Reporting</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-15</span>Warranty Claim Management</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../mr-12/"><span class="arrow">←</span><span><span class="sub">Previous</span>MR-12 · Avionics &amp; Systems Modification</span></a><a class="pn-btn" href="../mr-14/"><span><span class="sub">Next</span>MR-14 · Maintenance Cost Control &amp; KPI Reporting</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

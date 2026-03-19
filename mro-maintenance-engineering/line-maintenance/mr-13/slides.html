@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MR-13 Slides — Quality Assurance &amp; Safety Audits (CAMO)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-13</span>
+    <h1>Quality Assurance &amp; Safety Audits (CAMO)</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/mr-13.png" alt="BPMN for MR-13" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Airworthiness & Compliance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-13</span>
+    <h1>Quality Assurance &amp; Safety Audits (CAMO)</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> MR-13</li>
+          <li><strong>L1 Domain:</strong> Maintenance, Repair &amp; Overhaul</li>
+          <li><strong>L2 Process:</strong> Airworthiness &amp; Compliance</li>
+          <li><strong>L3 Name:</strong> Quality Assurance &amp; Safety Audits (CAMO)</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Compile CAMO annual audit programme</li><li><strong>Phase 2:</strong> Retrieve prior audit findings and open CARs</li><li><strong>Phase 3:</strong> Conduct opening meeting and confirm audit scope</li><li><strong>Phase 4:</strong> Finalise audit report and issue CARs to provider</li><li><strong>Phase 5:</strong> Monitor fleet-wide AD and SB compliance status</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Accountable Manager (CAMO)</li><li>Continuing Airworthiness Engineer</li><li>Lead Auditor</li><li>Quality Assurance Analyst</li><li>Quality Assurance Manager (CAMO)</li><li>Reliability Engineer</li><li>Safety Officer (CAMO)</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>CAMP by CAMP Systems International</li><li>ECCAIRS 2 (European Coordination Centre for Accident and Incident Reporting Systems)</li><li>Tableau / Power BI</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Airworthiness & Compliance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-13</span>
+    <h1>Quality Assurance &amp; Safety Audits (CAMO)</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Compile CAMO annual audit programme</td>
+        <td class="kpi-col">100% of Part-145 approved providers audited within 24-month cycle; schedule published ≥60 days before Q1</td>
+        <td class="pain-col">MRO provider network spans 15+ stations; manual calendar alignment in spreadsheets leads to audit gaps when contracts are added mid-year without AMOS notification trigger</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Risk-score providers using performance data</td>
+        <td class="kpi-col">Risk model refresh completed ≤5 business days after each completed audit; High-risk providers flagged within 48 hours</td>
+        <td class="pain-col">Reliability data is siloed across AMOS and airline OTP systems; manual data extraction introduces 1–2 week lag that distorts risk scores</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Determine if expedited audit is required</td>
+        <td class="kpi-col">Expedited audit commenced within 10 business days of trigger event; 0 High-risk providers left unaudited &gt;6 months</td>
+        <td class="pain-col">EASA/FAA safety bulletins arrive via email with no automated AMOS integration; manual triage by QA Manager creates response-time variability</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Retrieve prior audit findings and open CARs</td>
+        <td class="kpi-col">CAR retrieval completed within 1 business day; zero open Level 1 CARs permitted before new audit commences</td>
+        <td class="pain-col">Legacy AMOS implementations store CAR evidence as unstructured PDF attachments; keyword search across &gt;500 CARs per provider is unreliable without structured data entry discipline</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Generate compliance checklist from Part-145 requirements</td>
+        <td class="kpi-col">Checklist covers 100% of applicable regulatory subparts; prior repeat-finding items tagged for enhanced scrutiny</td>
+        <td class="pain-col">EASA AMC amendments (e.g. 2022 Part-CAMO revision) require manual checklist updates; no automated regulatory change management feed into AMOS checklist library</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Issue formal pre-audit notification to provider</td>
+        <td class="kpi-col">Notification issued ≥14 calendar days before audit start; document request acknowledgement received within 5 business days</td>
+        <td class="pain-col">Some third-party MRO stations (particularly overseas line stations) acknowledge notifications informally via WhatsApp rather than through AMOS supplier portal, creating audit-trail gaps</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Confirm provider readiness and document receipt</td>
+        <td class="kpi-col">100% of requested documents received and reviewed before audit day 1; postponement rate &lt;10% of scheduled audits</td>
+        <td class="pain-col">AMOS document portal upload limits (50 MB per file) cause providers to split calibration certificate packages across multiple uploads, increasing pre-audit review time by 30–40%</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Conduct opening meeting and confirm audit scope</td>
+        <td class="kpi-col">Opening meeting completed within 1 hour; scope agreed and documented before hangar/records access begins</td>
+        <td class="pain-col">Remote line stations (e.g. outstation MRO) conduct opening meetings via video call; AMOS audit log does not capture video-session metadata, creating traceability gaps for regulatory inspectors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Audit technical records for airworthiness compliance</td>
+        <td class="kpi-col">AD compliance rate ≥99.5% across sampled aircraft tail numbers; zero unaddressed mandatory ADs permitted</td>
+        <td class="pain-col">CAMP airworthiness data is not always synchronised with provider&#x27;s AMOS work-order records in real time; delta between systems causes false AD non-compliance flags requiring manual reconciliation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Inspect maintenance facilities, tooling, and personnel</td>
+        <td class="kpi-col">Tooling calibration current for ≥99% of items sampled; zero expired Part-66 licences on active maintenance staff</td>
+        <td class="pain-col">Calibration certificates managed in provider&#x27;s local spreadsheet rather than AMOS; discrepancies between paper records and AMOS calibration register are a recurring Level 2 finding</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Classify findings and identify Level 1 safety issues</td>
+        <td class="kpi-col">All findings classified within 4 hours of audit completion; Level 1 findings notified to Accountable Manager within 2 hours of identification</td>
+        <td class="pain-col">EASA Level 1 / Level 2 classification criteria have grey areas (e.g. incomplete but not falsified records); inconsistent classification between auditors increases provider dispute rate and regulatory risk</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.5</td>
+        <td>Issue stop-work notice or immediate CAR for Level 1</td>
+        <td class="kpi-col">Regulatory authority notification within 24 hours of Level 1 finding; stop-work enforced within 2 hours on affected task</td>
+        <td class="pain-col">Stop-work authority at outstations requires on-call Accountable Manager approval; out-of-hours time-zone issues cause average 4-hour delay in Level 1 stop-work enforcement at overseas stations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Finalise audit report and issue CARs to provider</td>
+        <td class="kpi-col">Audit report issued within 5 business days; CAR numbering 100% traceable to audit report section</td>
+        <td class="pain-col">AMOS CAR module does not auto-populate regulatory reference citations; auditors manually copy EASA AMC text, introducing transcription errors that providers use to dispute finding validity</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Review and accept or reject provider CAP response</td>
+        <td class="kpi-col">CAP response received from provider within 10 business days (Level 1) / 30 days (Level 2); first-submission acceptance rate ≥75%</td>
+        <td class="pain-col">Providers frequently submit &#x27;5-Why&#x27; root-cause analyses that misidentify systemic causes as individual errors, leading to repeat findings in subsequent audits; AMOS has no CAP quality scoring mechanism</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Track CAP implementation and verify closure evidence</td>
+        <td class="kpi-col">CAR on-time closure rate ≥90%; zero Level 1 CARs open beyond 30 days; Level 2 CARs closed within 90 days</td>
+        <td class="pain-col">AMOS CAR closure workflow requires Accountable Manager digital signature but does not enforce two-person review; single-reviewer closure of Level 1 CARs has been flagged in EASA SAFA audits as a systemic gap</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Monitor fleet-wide AD and SB compliance status</td>
+        <td class="kpi-col">AD compliance rate ≥99.9% at fleet level; zero aircraft operated with overdue mandatory ADs; SB incorporation decisions documented within 30 days of issue</td>
+        <td class="pain-col">CAMP receives FAA AD feeds automatically but EASA ADs require manual import from EASA e-Rules portal; 24–72 hour lag creates window where a newly effective EASA AD is not yet reflected in CAMP, risking inadvertent non-compliance</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Analyse reliability programme outputs for adverse trends</td>
+        <td class="kpi-col">Reliability report published by 5th working day of each month; alert threshold breach investigated within 10 business days; IFSD rate ≤0.02 per 1,000 engine hours</td>
+        <td class="pain-col">Delay/cancellation codes entered by operations staff often misclassify maintenance-caused events as ATC or weather; data quality issues in AMOS cause reliability metrics to undercount maintenance-driven disruptions</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Submit mandatory occurrence reports to regulator</td>
+        <td class="kpi-col">100% of reportable occurrences submitted within 72-hour regulatory deadline; MOR rejection rate &lt;2%; follow-up investigation reports submitted within 30 days</td>
+        <td class="pain-col">ECCAIRS 2 taxonomy (≥1,800 occurrence categories) is complex; front-line reporters default to generic codes, reducing data quality for safety trend analysis across the European aviation safety database</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Airworthiness & Compliance</span>
+  </div>
+</div>
+
+</body>
+</html>

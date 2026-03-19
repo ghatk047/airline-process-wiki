@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1[Phase 1: Audit Planning and Risk Assessment]
+    A([Start]) --> B[Compile annual audit programme]
+    B --> C[Risk-score maintenance providers]
+    C --> D{Expedited audit\nrequired?}
+    D -- Yes --> E[Schedule expedited audit]
+    D -- No --> E
+  end
+
+  subgraph P2[Phase 2: Pre-Audit Preparation]
+    E --> F[Retrieve prior findings and CARs]
+    F --> G[Generate Part-145 checklist]
+    G --> H{Provider ready\nwithin 14 days?}
+    H -- No --> G
+    H -- Yes --> I[Issue pre-audit notification]
+  end
+
+  subgraph P3[Phase 3: Audit Execution]
+    I --> J[Opening meeting and scope confirm]
+    J --> K[Audit records and facilities]
+    K --> L{Level 1 finding\ndetected?}
+    L -- Yes --> M[Issue stop-work / immediate CAR]
+    L -- No --> N[Finalise audit report]
+    M --> N
+  end
+
+  subgraph P4[Phase 4: Corrective Action and Closure]
+    N --> O[Classify findings and issue CARs]
+    O --> P{CAP response\nacceptable?}
+    P -- No --> O
+    P -- Yes --> Q[Verify evidence and close CARs]
+  end
+
+  subgraph P5[Phase 5: Continuous Airworthiness Monitoring and Reporting]
+    Q --> R[Monitor AD/SB compliance status]
+    R --> S[Analyse reliability programme trends]
+    S --> T{Alert threshold\nbreached?}
+    T -- Yes --> U[Escalate to Engineering]
+    T -- No --> V[Submit mandatory occurrence reports]
+    U --> V
+    V --> W[Update CAMO compliance dashboard]
+    W --> X([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
