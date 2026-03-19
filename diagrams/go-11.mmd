@@ -1,0 +1,52 @@
+flowchart LR
+  subgraph P1[Phase 1: Acceptance and Documentation]
+    A([Cargo Tendered]) --> B[Validate AWB and dimensions]
+    B --> C{DG and ACAS compliant?}
+    C -- No --> B
+    C -- Yes --> D[/Shipment Accepted/]
+  end
+  subgraph P2[Phase 2: Screening and Build-Up]
+    D --> E[X-ray / ETD screening]
+    E --> F{Security cleared?}
+    F -- Fail --> G[Manual resolution]
+    G --> E
+    F -- Pass --> H[Build ULD and palletise]
+    H --> I{ULD weight within limits?}
+    I -- No --> H
+    I -- Yes --> J[/ULD Ready/]
+  end
+  subgraph P3[Phase 3: Loading and Departure]
+    J --> K[Transmit FFM to destination]
+    K --> L[Transport ULD to aircraft]
+    L --> M[Load per LIR]
+    M --> N{CG within flight envelope?}
+    N -- No --> M
+    N -- Yes --> O([Aircraft Departed])
+  end
+  subgraph P4[Phase 4: Offload and Breakdown]
+    O -.-> P([Aircraft Arrived])
+    P --> Q[Offload cargo from hold]
+    Q --> R[Break down ULD and scan pieces]
+    R --> S{Manifest count matches?}
+    S -- Discrepancy --> T[Raise cargo claim]
+    T --> U[Notify consignee of arrival]
+    S -- Match --> U
+  end
+  subgraph P5[Phase 5: Customs and Delivery]
+    U --> V[File customs e-manifest]
+    V --> W{Customs clearance granted?}
+    W -- Exam order --> X[Present for CBP examination]
+    X --> W
+    W -- Released --> Y[Deliver to consignee]
+    Y --> Z([Cargo Released])
+  end
+  style A fill:#003366,color:#fff,stroke:#003366
+  style O fill:#003366,color:#fff,stroke:#003366
+  style P fill:#003366,color:#fff,stroke:#003366
+  style Z fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600

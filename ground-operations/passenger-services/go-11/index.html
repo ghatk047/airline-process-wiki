@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Baggage Operations · Ground Operations &amp; Airport Services · Airlines Process Wiki</title>
+<title>GO-11 · Cargo &amp; Mail Ground Handling · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -180,7 +181,7 @@
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-05/"><span class="status-dot status-done"></span><span class="pid">GO-05</span>Ramp &amp; Turnaround Operations</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-06/"><span class="status-dot status-done"></span><span class="pid">GO-06</span>Ground Handling Vendor Management</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-07/"><span class="status-dot status-done"></span><span class="pid">GO-07</span>Load Control &amp; Aircraft Loading</a>
-        <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-11/"><span class="status-dot status-done"></span><span class="pid">GO-11</span>Cargo &amp; Mail Ground Handling</a>
+        <a class="sidebar-l3-link active" href="../../../ground-operations/passenger-services/go-11/"><span class="status-dot status-done"></span><span class="pid">GO-11</span>Cargo &amp; Mail Ground Handling</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-12/"><span class="status-dot status-queue"></span><span class="pid">GO-12</span>De-Icing &amp; Winter Operations</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-14/"><span class="status-dot status-queue"></span><span class="pid">GO-14</span>Ground Support Equipment (GSE) Management</a>
       </div>
@@ -242,90 +243,238 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
-  <span class="current">Baggage Operations</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
+  <a href="../../../ground-operations/passenger-services/">Baggage Operations</a><span class="sep">›</span>
+  <span class="current">GO-11 · Cargo &amp; Mail Ground Handling</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Baggage Operations</h1>
-    <p>Ground Operations &amp; Airport Services · 6 of 8 subprocesses complete · Updated 2026-03-19 14:19</p>
+    <h1>Cargo &amp; Mail Ground Handling</h1>
+    <p>Ground Operations &amp; Airport Services › Baggage Operations · 16 L4 steps · 5 phases · 9 decision gates · Updated 2026-03-19 14:19</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">GO-11</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-02</span>Baggage Acceptance &amp; Handling</h3>
-    <p>Baggage Operations · 17 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-go-11">
+      <img src="../../../assets/img/go-11.png" alt="GO-11 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-go-11').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-go-11').style.display='flex'">
+      <div id="diag-placeholder-go-11" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-02/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Receive cargo booking and AWB data</td>
+  <td class="td-role">Cargo Acceptance Agent</td>
+  <td><span class="stag custom">CHAMP Cargospot Handling</span></td>
+  <td style="font-size:10px;color:#6b7280">Air Waybill (AWB), shipper booking request, commodity declaration</td>
+  <td style="font-size:10px">Booking record created in cargo management system</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Acceptance processing time ≤15 min per shipment</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Validate AWB, weight, dimensions, and piece count</td>
+  <td class="td-role">Cargo Acceptance Agent</td>
+  <td><span class="stag custom">CHAMP Cargospot Handling</span></td>
+  <td style="font-size:10px;color:#6b7280">Physical cargo presented at acceptance counter, AWB data</td>
+  <td style="font-size:10px">Validated weight/dimension record; discrepancy notice if mismatch</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AWB discrepancy rate ≤2%; re-weigh resolution ≤10 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Screen shipment for dangerous goods compliance</td>
+  <td class="td-role">DG Acceptance Agent</td>
+  <td><span class="stag custom">Hazcheck by Exis Technologies</span></td>
+  <td style="font-size:10px;color:#6b7280">Commodity code, shipper&#x27;s DG declaration, MSDS where applicable</td>
+  <td style="font-size:10px">DG acceptance confirmation or rejection notice with IATA DGR citation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Undeclared DG detection rate = 100%; DG non-compliance rejection logged within 5 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Submit ACAS pre-screening data for US-bound cargo</td>
+  <td class="td-role">Cargo Security Supervisor</td>
+  <td><span class="stag custom">ACAS (CBP Air Cargo Advance Screening)</span></td>
+  <td style="font-size:10px;color:#6b7280">AWB data, commodity details, shipper/consignee identifiers</td>
+  <td style="font-size:10px">ACAS submission confirmation; Do Not Load (DNL) or cleared status from CBP</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ACAS submission ≥4h before departure per 19 CFR 122.48a; CBP response latency typically &lt;2 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Physically screen cargo via X-ray or ETD</td>
+  <td class="td-role">Cargo Security Officer</td>
+  <td><span class="stag custom">Smiths Detection HI-SCAN 10080 XCT</span></td>
+  <td style="font-size:10px;color:#6b7280">Accepted and DG-cleared shipment presented at screening station</td>
+  <td style="font-size:10px">Screened cargo with TSA/TCAS security clearance label</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of cargo screened before loading per TSA 12-5 CCSF programme; throughput ≥600 kg/h per lane</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Assign screened cargo to flight and ULD position</td>
+  <td class="td-role">Cargo Load Planner</td>
+  <td><span class="stag custom">IBS Software iCargo</span></td>
+  <td style="font-size:10px;color:#6b7280">Screened shipment data, aircraft load plan from load control, ULD inventory</td>
+  <td style="font-size:10px">ULD assignment record with build-up instructions and position code</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ULD utilisation ≥85% by volume; assignment issued ≥3h before STD</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Build ULD, palletise cargo, and apply labels</td>
+  <td class="td-role">Cargo Warehouse Agent</td>
+  <td><span class="stag custom">CHAMP Cargospot ULD Control</span></td>
+  <td style="font-size:10px;color:#6b7280">Build-up instructions, cargo, ULD/pallet, netting, and tiedown equipment</td>
+  <td style="font-size:10px">Completed ULD with IATA ULD tag, gross weight, and content manifest</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Build-up accuracy (correct ULD manifest) ≥98%; ULD gross weight tolerance ±0.5% of declared</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Generate and transmit final cargo manifest (FFM)</td>
+  <td class="td-role">Cargo Operations Controller</td>
+  <td><span class="stag custom">SITA e-freight</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed ULD manifest records, AWB data, flight details</td>
+  <td style="font-size:10px">FFM Cargo-IMP message transmitted to destination station, customs, and ground handler</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">FFM transmitted ≥45 min before STD per IATA Cargo-IMP MSG standard; retransmission on amendment ≤5 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Transport ULDs and bulk cargo to aircraft ramp</td>
+  <td class="td-role">Ramp Agent / Cargo Driver</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Ramp movement instruction, airside vehicle assignment, ULD ready notification</td>
+  <td style="font-size:10px">ULD delivered to aircraft position on time; vehicle movement logged</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Cargo at aircraft ≥30 min before STD; ramp vehicle utilisation ≥80%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Load cargo into aircraft hold per load instruction report</td>
+  <td class="td-role">Loadmaster / Senior Ramp Agent</td>
+  <td><span class="stag custom">Jeppesen LoadPlanner</span></td>
+  <td style="font-size:10px;color:#6b7280">Load Instruction Report (LIR) from load control, ULDs and bulk cargo on ramp</td>
+  <td style="font-size:10px">Completed loading; signed LIR returned to load control; actual weights confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Loading completion ≥15 min before STD; W&amp;B CG deviation ≤2% of planned; LIR sign-off accuracy 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Offload cargo from arriving aircraft hold</td>
+  <td class="td-role">Ramp Agent</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft arrival confirmation, inbound load manifest (FWB/FFM from origin)</td>
+  <td style="font-size:10px">Offloaded ULDs and bulk cargo staged on ramp with position labels</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ULD offload complete ≤35 min after chocks-on; bulk hold clear ≤25 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Break down inbound ULDs and scan all pieces</td>
+  <td class="td-role">Cargo Warehouse Agent</td>
+  <td><span class="stag custom">CHAMP Cargospot Handling</span></td>
+  <td style="font-size:10px;color:#6b7280">Inbound ULD with origin manifest</td>
+  <td style="font-size:10px">Individual shipment scan records; discrepancy report if count/condition mismatch</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Breakdown and scan complete ≤60 min after offload; discrepancy rate ≤1%; cargo claim initiation ≤15 min of confirmed shortage</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Transmit arrival notices to consignees and forwarders</td>
+  <td class="td-role">Cargo Customer Service Agent</td>
+  <td><span class="stag custom">IBS Software iCargo</span></td>
+  <td style="font-size:10px;color:#6b7280">Breakdown scan records, AWB consignee and notify-party contact data</td>
+  <td style="font-size:10px">Arrival Notices (ANs) transmitted via EDI/email to all notified parties</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Arrival notice sent ≤2h after breakdown; automated AN rate ≥95% of AWBs with complete contact data</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">File customs entry and e-manifest for inbound cargo</td>
+  <td class="td-role">Customs Coordinator</td>
+  <td><span class="stag custom">CargoWise One</span></td>
+  <td style="font-size:10px;color:#6b7280">AWB, commodity data, commercial invoice, country of origin certificate</td>
+  <td style="font-size:10px">Customs entry filed; Movement Reference Number (MRN) or CBP release reference received</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Customs pre-clearance filing ≥2h before aircraft arrival per EU ICS2 and CBP advance cargo rules; entry acceptance rate ≥97%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Present cargo for customs physical examination if selected</td>
+  <td class="td-role">Customs Examination Agent</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">CBP or customs authority examination order; cargo held in bonded warehouse</td>
+  <td style="font-size:10px">Cargo presented at examination bay; examination result recorded</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Cargo presented at examination bay ≤4h of exam order; examination completion ≤8h for non-complex shipments</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Release and deliver cargo to consignee upon clearance</td>
+  <td class="td-role">Cargo Delivery Agent</td>
+  <td><span class="stag custom">CHAMP Cargospot Handling</span></td>
+  <td style="font-size:10px;color:#6b7280">Customs release confirmation, consignee photo ID and delivery order</td>
+  <td style="font-size:10px">Signed delivery receipt; cargo released from airline/handler custody; AWB closed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Dwell time ≤24h for general cargo; ≤4h for perishables and pharmaceuticals (IATA CEIV Pharma benchmark); delivery receipt accuracy 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-03</span>Lost &amp; Found / Baggage Tracing</h3>
-    <p>Baggage Operations · 18 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">GO-11</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Ground Operations &amp; Airport Services</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Baggage Operations</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Cargo &amp; Mail Ground Handling</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">16 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">9 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">14 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Cargo Acceptance Agent</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>DG Acceptance Agent</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Cargo Security Supervisor</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Cargo Security Officer</div><div class="swim"><div class="dot" style="background:#10b981"></div>Cargo Load Planner</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Cargo Warehouse Agent</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Cargo Operations Controller</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Ramp Agent / Cargo Driver</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Loadmaster / Senior Ramp Agent</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Ramp Agent</div><div class="swim"><div class="dot" style="background:#f97316"></div>Cargo Customer Service Agent</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>Customs Coordinator</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Customs Examination Agent</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Cargo Delivery Agent</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">CHAMP Cargospot Handling</span><span class="stag custom">Hazcheck by Exis Technologies</span><span class="stag custom">ACAS (CBP Air Cargo Advance Screening)</span><span class="stag custom">Smiths Detection HI-SCAN 10080 XCT</span><span class="stag custom">IBS Software iCargo</span><span class="stag custom">CHAMP Cargospot ULD Control</span><span class="stag custom">SITA e-freight</span><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">Jeppesen LoadPlanner</span><span class="stag custom">CargoWise One</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Receive cargo booking and AWB data</span><span class="kval">Acceptance processing time ≤15 min per shipment</span></div><div class="krow"><span class="kname">Validate AWB, weight, dimensions, and piece count</span><span class="kval">AWB discrepancy rate ≤2%; re-weigh resolution ≤10 min</span></div><div class="krow"><span class="kname">Screen shipment for dangerous goods compliance</span><span class="kval">Undeclared DG detection rate = 100%; DG non-compliance rejection logged within 5 min</span></div><div class="krow"><span class="kname">Submit ACAS pre-screening data for US-bound cargo</span><span class="kval">ACAS submission ≥4h before departure per 19 CFR 122.48a; CBP response latency typically &lt;2 min</span></div><div class="krow"><span class="kname">Physically screen cargo via X-ray or ETD</span><span class="kval">100% of cargo screened before loading per TSA 12-5 CCSF programme; throughput ≥600 kg/h per lane</span></div><div class="krow"><span class="kname">Assign screened cargo to flight and ULD position</span><span class="kval">ULD utilisation ≥85% by volume; assignment issued ≥3h before STD</span></div><div class="krow"><span class="kname">Build ULD, palletise cargo, and apply labels</span><span class="kval">Build-up accuracy (correct ULD manifest) ≥98%; ULD gross weight tolerance ±0.5% of declared</span></div><div class="krow"><span class="kname">Generate and transmit final cargo manifest (FFM)</span><span class="kval">FFM transmitted ≥45 min before STD per IATA Cargo-IMP MSG standard; retransmission on amendment ≤5 min</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Paper-based AWBs delay IATA e-freight compliance; IATA eAWB mandate targets 100% adoption by 2026 but shipper readiness lags at ~68% globally</div><div class="risk-card">Weight/dimension discrepancy between booked and actual triggers load plan recalculation in SkyMAX; late changes within 2h of STD cause cascading W&amp;B revisions</div><div class="risk-card">Undeclared lithium batteries and aerosols remain the #1 air cargo safety risk; IATA DGR 64th Edition tightens Section II battery limits, requiring agent retraining each Jan cycle</div><div class="risk-card">Late ACAS submission or CBP DNL response with &lt;1h to departure forces cargo offload, disrupting finalised load plan and triggering FFM amendment; no automated retry on CBP system timeout</div><div class="risk-card">Dense or opaque shipments (machinery, consolidated freight) require manual ETD swab resolution, creating bottleneck at peak build-up windows (02:00–05:00 for early banks); insufficient overnight staffing at secondary airports</div><div class="risk-card">Last-minute passenger IRROP (flight cancellation/diversion) displaces belly cargo capacity, requiring full re-manifest of 15–40 shipments within 30 min with no automated re-optimisation tool in most legacy CMS configurations</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Air Waybill (AWB), shipper booking request, commodity declaration</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Signed delivery receipt; cargo released from airline/handler custody; AWB closed</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-05</span>Ramp &amp; Turnaround Operations</h3>
-    <p>Baggage Operations · 20 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-06</span>Ground Handling Vendor Management</h3>
-    <p>Baggage Operations · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-07</span>Load Control &amp; Aircraft Loading</h3>
-    <p>Baggage Operations · 20 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-11</span>Cargo &amp; Mail Ground Handling</h3>
-    <p>Baggage Operations · 16 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-12</span>De-Icing &amp; Winter Operations</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-14</span>Ground Support Equipment (GSE) Management</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-14/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../go-10/"><span class="arrow">←</span><span><span class="sub">Previous</span>GO-10 · VIP &amp; Premium Passenger Handling</span></a><a class="pn-btn" href="../go-12/"><span><span class="sub">Next</span>GO-12 · De-Icing &amp; Winter Operations</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

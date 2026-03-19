@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GO-11 Slides — Cargo &amp; Mail Ground Handling</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-11</span>
+    <h1>Cargo &amp; Mail Ground Handling</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/go-11.png" alt="BPMN for GO-11" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Baggage Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-11</span>
+    <h1>Cargo &amp; Mail Ground Handling</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> GO-11</li>
+          <li><strong>L1 Domain:</strong> Ground Operations &amp; Airport Services</li>
+          <li><strong>L2 Process:</strong> Baggage Operations</li>
+          <li><strong>L3 Name:</strong> Cargo &amp; Mail Ground Handling</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">14</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive cargo booking and AWB data</li><li><strong>Phase 2:</strong> Physically screen cargo via X-ray or ETD</li><li><strong>Phase 3:</strong> Generate and transmit final cargo manifest (FFM)</li><li><strong>Phase 4:</strong> Offload cargo from arriving aircraft hold</li><li><strong>Phase 5:</strong> File customs entry and e-manifest for inbound carg</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Cargo Acceptance Agent</li><li>Cargo Customer Service Agent</li><li>Cargo Delivery Agent</li><li>Cargo Load Planner</li><li>Cargo Operations Controller</li><li>Cargo Security Officer</li><li>Cargo Security Supervisor</li><li>Cargo Warehouse Agent</li><li>Customs Coordinator</li><li>Customs Examination Agent</li><li>DG Acceptance Agent</li><li>Loadmaster / Senior Ramp Agent</li><li>Ramp Agent</li><li>Ramp Agent / Cargo Driver</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ACAS (CBP Air Cargo Advance Screening)</li><li>CHAMP Cargospot Handling</li><li>CHAMP Cargospot ULD Control</li><li>CargoWise One</li><li>Hazcheck by Exis Technologies</li><li>IBS Software iCargo</li><li>Jeppesen LoadPlanner</li><li>SITA Airport Management System (AMS)</li><li>SITA e-freight</li><li>Smiths Detection HI-SCAN 10080 XCT</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Baggage Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-11</span>
+    <h1>Cargo &amp; Mail Ground Handling</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive cargo booking and AWB data</td>
+        <td class="kpi-col">Acceptance processing time ≤15 min per shipment</td>
+        <td class="pain-col">Paper-based AWBs delay IATA e-freight compliance; IATA eAWB mandate targets 100% adoption by 2026 but shipper readiness lags at ~68% globally</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate AWB, weight, dimensions, and piece count</td>
+        <td class="kpi-col">AWB discrepancy rate ≤2%; re-weigh resolution ≤10 min</td>
+        <td class="pain-col">Weight/dimension discrepancy between booked and actual triggers load plan recalculation in SkyMAX; late changes within 2h of STD cause cascading W&amp;B revisions</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Screen shipment for dangerous goods compliance</td>
+        <td class="kpi-col">Undeclared DG detection rate = 100%; DG non-compliance rejection logged within 5 min</td>
+        <td class="pain-col">Undeclared lithium batteries and aerosols remain the #1 air cargo safety risk; IATA DGR 64th Edition tightens Section II battery limits, requiring agent retraining each Jan cycle</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Submit ACAS pre-screening data for US-bound cargo</td>
+        <td class="kpi-col">ACAS submission ≥4h before departure per 19 CFR 122.48a; CBP response latency typically &lt;2 min</td>
+        <td class="pain-col">Late ACAS submission or CBP DNL response with &lt;1h to departure forces cargo offload, disrupting finalised load plan and triggering FFM amendment; no automated retry on CBP system timeout</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Physically screen cargo via X-ray or ETD</td>
+        <td class="kpi-col">100% of cargo screened before loading per TSA 12-5 CCSF programme; throughput ≥600 kg/h per lane</td>
+        <td class="pain-col">Dense or opaque shipments (machinery, consolidated freight) require manual ETD swab resolution, creating bottleneck at peak build-up windows (02:00–05:00 for early banks); insufficient overnight staffing at secondary airports</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Assign screened cargo to flight and ULD position</td>
+        <td class="kpi-col">ULD utilisation ≥85% by volume; assignment issued ≥3h before STD</td>
+        <td class="pain-col">Last-minute passenger IRROP (flight cancellation/diversion) displaces belly cargo capacity, requiring full re-manifest of 15–40 shipments within 30 min with no automated re-optimisation tool in most legacy CMS configurations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Build ULD, palletise cargo, and apply labels</td>
+        <td class="kpi-col">Build-up accuracy (correct ULD manifest) ≥98%; ULD gross weight tolerance ±0.5% of declared</td>
+        <td class="pain-col">Manual pallet build without automated real-time feed to weight-and-balance system means errors (overweight, CG shift) are only discovered at aircraft hold door, causing ramp delay averaging 18 min per incident</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Generate and transmit final cargo manifest (FFM)</td>
+        <td class="kpi-col">FFM transmitted ≥45 min before STD per IATA Cargo-IMP MSG standard; retransmission on amendment ≤5 min</td>
+        <td class="pain-col">Integration gaps between CMS and PSS mean late passenger rebooking changes (affecting belly payload) trigger manual FFM amendments; automated reconciliation missing in non-NDC-integrated stations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Transport ULDs and bulk cargo to aircraft ramp</td>
+        <td class="kpi-col">Cargo at aircraft ≥30 min before STD; ramp vehicle utilisation ≥80%</td>
+        <td class="pain-col">Airside congestion at hub airports (multiple simultaneous narrow-body turns) causes sequencing conflicts between cargo dollies, fuel bowsers, and catering trucks; no real-time airside traffic management at most regional stations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Load cargo into aircraft hold per load instruction report</td>
+        <td class="kpi-col">Loading completion ≥15 min before STD; W&amp;B CG deviation ≤2% of planned; LIR sign-off accuracy 100%</td>
+        <td class="pain-col">Bulk cargo dimension inconsistencies discovered at hold door during loading trigger manual re-sequencing; Jeppesen LoadPlanner does not auto-update when actual weights deviate &gt;50 kg from planned, requiring crew notification and possible taxi-back</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Offload cargo from arriving aircraft hold</td>
+        <td class="kpi-col">ULD offload complete ≤35 min after chocks-on; bulk hold clear ≤25 min</td>
+        <td class="pain-col">Combi aircraft and wide-body mixed-class configurations require sequential hold access, extending ground time; misrouted ULDs from origin (wrong station label) discovered only at offload, requiring urgent re-manifest and re-tender</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Break down inbound ULDs and scan all pieces</td>
+        <td class="kpi-col">Breakdown and scan complete ≤60 min after offload; discrepancy rate ≤1%; cargo claim initiation ≤15 min of confirmed shortage</td>
+        <td class="pain-col">ULD damage (torn nets, cracked pallets) discovered at breakdown delays customs release and inflates cargo claims cost; CHAMP exception workflow requires manual supervisor override, adding 20–45 min to resolution when supervisor unavailable overnight</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Transmit arrival notices to consignees and forwarders</td>
+        <td class="kpi-col">Arrival notice sent ≤2h after breakdown; automated AN rate ≥95% of AWBs with complete contact data</td>
+        <td class="pain-col">Incomplete or missing consignee contact data in AWB (common with e-commerce fulfilment shipments) prevents automated notification; manual agent intervention required, increasing dwell time and risk of exceeding free storage period</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>File customs entry and e-manifest for inbound cargo</td>
+        <td class="kpi-col">Customs pre-clearance filing ≥2h before aircraft arrival per EU ICS2 and CBP advance cargo rules; entry acceptance rate ≥97%</td>
+        <td class="pain-col">Incomplete commercial invoices from e-commerce shippers (missing HS codes, undervalued goods) cause customs holds and demurrage charges; ICS2 Phase 3 (2024) adds 6-digit HS code mandate that many SME shippers are not yet compliant with</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Present cargo for customs physical examination if selected</td>
+        <td class="kpi-col">Cargo presented at examination bay ≤4h of exam order; examination completion ≤8h for non-complex shipments</td>
+        <td class="pain-col">Random and targeted exam selection (10–15% of shipments at major US gateways) creates unpredictable delay and bonded storage cost; no SLA from CBP on exam completion time, causing consignee escalations and missed just-in-time delivery windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Release and deliver cargo to consignee upon clearance</td>
+        <td class="kpi-col">Dwell time ≤24h for general cargo; ≤4h for perishables and pharmaceuticals (IATA CEIV Pharma benchmark); delivery receipt accuracy 100%</td>
+        <td class="pain-col">Free storage period expiry (typically 24–48h depending on carrier tariff) triggers demurrage charges averaging $0.50–$1.50/kg/day; consignee no-shows spike on weekends and public holidays without automated SMS/email reminder integration in CHAMP delivery module</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Baggage Operations</span>
+  </div>
+</div>
+
+</body>
+</html>
