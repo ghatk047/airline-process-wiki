@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Human Resources · Corporate Support Functions · Airlines Process Wiki</title>
+<title>FO-06 · Weather Monitoring &amp; Decision Support · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Flight Operations</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -129,7 +130,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-03/"><span class="status-dot status-done"></span><span class="pid">FO-03</span>Fuel Planning &amp; Tankering</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-04/"><span class="status-dot status-done"></span><span class="pid">FO-04</span>Weight &amp; Balance Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-05/"><span class="status-dot status-done"></span><span class="pid">FO-05</span>NOTAMs &amp; AIP Information Management</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-06/"><span class="status-dot status-done"></span><span class="pid">FO-06</span>Weather Monitoring &amp; Decision Support</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/flight-dispatch-control/fo-06/"><span class="status-dot status-done"></span><span class="pid">FO-06</span>Weather Monitoring &amp; Decision Support</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-07/"><span class="status-dot status-queue"></span><span class="pid">FO-07</span>Air Traffic Control Coordination</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-08/"><span class="status-dot status-queue"></span><span class="pid">FO-08</span>Network Operations Control (NOC)</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-09/"><span class="status-dot status-queue"></span><span class="pid">FO-09</span>Delay Management &amp; Root Cause Analysis</a>
@@ -213,8 +214,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-queue"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
@@ -242,54 +243,228 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Corporate Support Functions</a><span class="sep">›</span>
-  <span class="current">Human Resources</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Flight Operations</a><span class="sep">›</span>
+  <a href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a><span class="sep">›</span>
+  <span class="current">FO-06 · Weather Monitoring &amp; Decision Support</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Human Resources</h1>
-    <p>Corporate Support Functions · 0 of 4 subprocesses complete · Updated 2026-03-18 22:46</p>
+    <h1>Weather Monitoring &amp; Decision Support</h1>
+    <p>Flight Operations › Flight Dispatch &amp; Control · 15 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-18 22:46</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">FO-06</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-04</span>Workforce Planning &amp; Headcount Management</h3>
-    <p>Human Resources · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-fo-06">
+      <img src="../../../assets/img/fo-06.png" alt="FO-06 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-fo-06').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-fo-06').style.display='flex'">
+      <div id="diag-placeholder-fo-06" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-04/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Ingest METAR/TAF feeds from NWS/NOAA</td>
+  <td class="td-role">Meteorological Dispatcher</td>
+  <td><span class="stag custom">Honeywell GoDirect Weather</span></td>
+  <td style="font-size:10px;color:#6b7280">Automated weather station transmissions from NWS ASOS/AWOS network</td>
+  <td style="font-size:10px">Normalised METAR/TAF data loaded into weather workstation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data refresh latency ≤5 min for all airports in route network</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Ingest SIGMET, AIRMET &amp; convective outlook</td>
+  <td class="td-role">Meteorological Dispatcher</td>
+  <td><span class="stag custom">The Weather Company (DTN) AviationSentry</span></td>
+  <td style="font-size:10px;color:#6b7280">NWS Aviation Weather Center SIGMET/AIRMET issuances; convective outlooks (Day 1–3)</td>
+  <td style="font-size:10px">Active SIGMET/AIRMET polygons overlaid on route map</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of active domestic SIGMETs captured within 10 min of NWS issuance</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Validate data currency and completeness</td>
+  <td class="td-role">Meteorological Dispatcher</td>
+  <td><span class="stag custom">Honeywell GoDirect Weather</span></td>
+  <td style="font-size:10px;color:#6b7280">All ingested weather feeds from steps 1.1 and 1.2</td>
+  <td style="font-size:10px">Data quality flag (Pass/Fail) per station; stale-data alerts for gaps &gt;30 min</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">≥98% of route-relevant stations reporting within 30-min window at pre-departure check</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Analyse route-specific weather hazards</td>
+  <td class="td-role">Meteorological Dispatcher</td>
+  <td><span class="stag custom">The Weather Company (DTN) AviationSentry</span></td>
+  <td style="font-size:10px;color:#6b7280">Active SIGMETs, radar composites, turbulence prog charts, icing PIREPs</td>
+  <td style="font-size:10px">Route weather hazard summary per flight: turbulence, icing, CB/convective activity, low-level wind shear flags</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Hazard assessment completed ≥45 min before scheduled departure (D-45)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Assess departure, destination &amp; alternate wx</td>
+  <td class="td-role">Meteorological Dispatcher</td>
+  <td><span class="stag custom">Jeppesen FliteDeck Pro</span></td>
+  <td style="font-size:10px;color:#6b7280">Current METAR/TAF for departure, destination, and minimum two alternates</td>
+  <td style="font-size:10px">Ceiling/visibility/wind report per airport; go/no-go flag against FAR Part 121.619 alternate minima</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Alternate airport identification completed for 100% of IFR releases within D-60</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Classify weather threat level against ops specs</td>
+  <td class="td-role">Senior Dispatcher / Duty Manager</td>
+  <td><span class="stag custom">The Weather Company (DTN) AviationSentry</span></td>
+  <td style="font-size:10px;color:#6b7280">Route hazard summary from 2.1; airport assessments from 2.2; airline ops specs (OpSpec A002/A025)</td>
+  <td style="font-size:10px">Threat classification: Green / Amber / Red per flight; Amber/Red triggers reroute or hold evaluation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero flights released into Red-classified weather corridor without Duty Manager override sign-off</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Cross-reference weather threats with flight plans</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE N-Flight Planning</span></td>
+  <td style="font-size:10px;color:#6b7280">Red/Amber threat polygons from 2.3; active flight plan waypoints and airways</td>
+  <td style="font-size:10px">Conflict list: flights whose planned route intersects active hazard polygon within ±30 NM buffer</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of active flight plans checked against current SIGMET polygons pre-departure</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Calculate fuel burn impact of weather deviations</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE N-Flight Planning</span></td>
+  <td style="font-size:10px;color:#6b7280">Proposed deviation routing around hazard polygons; aircraft performance model (B737-800/MAX 8)</td>
+  <td style="font-size:10px">Revised fuel burn delta vs. filed plan; go/no-go flag against minimum fuel uplift threshold</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fuel recalculation turnaround ≤8 min per rerouted flight to preserve D-45 release window</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Verify alternate airport weather acceptability</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Jeppesen FliteDeck Pro</span></td>
+  <td style="font-size:10px;color:#6b7280">Revised alternate candidates after route deviation; current METAR/TAF at alternate(s)</td>
+  <td style="font-size:10px">Confirmed alternate airport(s) meeting FAR 121.619 ceiling/visibility minima at ETA ±1 hr</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Alternate confirmation completed for 100% of IFR dispatch releases before crew briefing</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Issue or withhold dispatch weather release</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE N-Flight Planning</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved routing, fuel plan, and alternate from Phase 3; threat classification from 2.3</td>
+  <td style="font-size:10px">Signed dispatch release (FAR 121.663) with weather addendum; or hold notification to crew scheduling</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">≤2% of departures held &gt;30 min beyond SOBT for weather-related dispatch rework</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Brief flight crew on significant weather via EFB</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Jeppesen FliteDeck Pro (EFB)</span></td>
+  <td style="font-size:10px;color:#6b7280">Dispatch release with weather addendum; radar snapshots; SIGMET polygons; turbulence PIREPs</td>
+  <td style="font-size:10px">Weather briefing package pushed to crew EFB ≥30 min before departure; crew acknowledgment record</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Crew acknowledgment of weather briefing received for 100% of Amber/Red-classified departures</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Confirm crew acceptance of dispatch release</td>
+  <td class="td-role">Pilot-in-Command</td>
+  <td><span class="stag custom">Telex / SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Dispatch release and weather briefing from 4.2</td>
+  <td style="font-size:10px">Crew acceptance message (ACARS uplink) or crew request for amended release</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Crew acceptance ACARS message received ≥20 min before SOBT for 95% of departures</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Monitor en-route convective activity in real time</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">The Weather Company (DTN) AviationSentry</span></td>
+  <td style="font-size:10px;color:#6b7280">Airborne flight position data (ADS-B via FlightAware); updated radar mosaics refreshed every 5 min</td>
+  <td style="font-size:10px">Live flight track overlaid on convective radar; proximity alert if cell within 30 NM of track</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Dispatcher workstation refresh ≤5 min; proximity alert generated within 2 min of threshold breach</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Evaluate PIREP and crew weather deviation reports</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Telex / SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">In-flight PIREP uplinks (turbulence severity, icing level, CB observations); crew position reports</td>
+  <td style="font-size:10px">Updated route hazard picture; PIREP filed with ATC for distribution to following aircraft</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PIREP relay to NWS/ATC within 15 min of crew report for 90% of severe turbulence encounters</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Assess need for divert, reroute or amended release</td>
+  <td class="td-role">Senior Dispatcher / Duty Manager</td>
+  <td><span class="stag custom">NAVBLUE N-Flight Planning</span></td>
+  <td style="font-size:10px;color:#6b7280">Updated weather picture from 5.1 and 5.2; remaining fuel on board (ACARS fuel telemetry); nearest alternate airports</td>
+  <td style="font-size:10px">Amended dispatch release with revised routing or divert authorisation; ACARS uplink to crew</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Amended release issued within 10 min of divert-trigger threshold being met; zero diversions without prior dispatcher-crew coordination</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-05</span>Talent Acquisition &amp; Recruitment</h3>
-    <p>Human Resources · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">FO-06</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Flight Operations</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Flight Dispatch &amp; Control</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Weather Monitoring &amp; Decision Support</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">15 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">9 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Meteorological Dispatcher</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Senior Dispatcher / Duty Manager</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Flight Dispatcher</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Pilot-in-Command</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">Honeywell GoDirect Weather</span><span class="stag custom">The Weather Company (DTN) AviationSentry</span><span class="stag custom">Jeppesen FliteDeck Pro</span><span class="stag custom">NAVBLUE N-Flight Planning</span><span class="stag custom">Jeppesen FliteDeck Pro (EFB)</span><span class="stag custom">Telex / SITA ACARS</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Ingest METAR/TAF feeds from NWS/NOAA</span><span class="kval">Data refresh latency ≤5 min for all airports in route network</span></div><div class="krow"><span class="kname">Ingest SIGMET, AIRMET &amp; convective outlook</span><span class="kval">100% of active domestic SIGMETs captured within 10 min of NWS issuance</span></div><div class="krow"><span class="kname">Validate data currency and completeness</span><span class="kval">≥98% of route-relevant stations reporting within 30-min window at pre-departure check</span></div><div class="krow"><span class="kname">Analyse route-specific weather hazards</span><span class="kval">Hazard assessment completed ≥45 min before scheduled departure (D-45)</span></div><div class="krow"><span class="kname">Assess departure, destination &amp; alternate wx</span><span class="kval">Alternate airport identification completed for 100% of IFR releases within D-60</span></div><div class="krow"><span class="kname">Classify weather threat level against ops specs</span><span class="kval">Zero flights released into Red-classified weather corridor without Duty Manager override sign-off</span></div><div class="krow"><span class="kname">Cross-reference weather threats with flight plans</span><span class="kval">100% of active flight plans checked against current SIGMET polygons pre-departure</span></div><div class="krow"><span class="kname">Calculate fuel burn impact of weather deviations</span><span class="kval">Fuel recalculation turnaround ≤8 min per rerouted flight to preserve D-45 release window</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">NWS ASOS outages at smaller spoke airports create data gaps; GoDirect fallback to model-derived obs introduces ±3°C temperature error affecting performance calculations</div><div class="risk-card">International SIGMET ingestion via SADIS requires separate subscription; coverage gaps over oceanic tracks (OTS) require manual cross-check against NAT SIGMET bulletins</div><div class="risk-card">No automated alerting when upstream NWS feed drops; dispatcher must manually notice missing station data during busy multi-departure windows</div><div class="risk-card">Rapidly developing convection (pop-up cells) outpaces 1-hourly radar update cycle; AviationSentry nowcast accuracy degrades beyond +3 hr for mesoscale convective systems</div><div class="risk-card">TAF validity windows (±1 hr) create ambiguity at scheduled arrival time; low-frequency alternates may lack TAF service, requiring meteorological judgement unsupported by system data</div><div class="risk-card">OpSpec thresholds for convective avoidance (20 nm lateral separation from CBs) not programmatically enforced in AviationSentry; relies on dispatcher visual judgement of radar returns</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Automated weather station transmissions from NWS ASOS/AWOS network</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Amended dispatch release with revised routing or divert authorisation; ACARS uplink to crew</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-06</span>Learning &amp; Development Management</h3>
-    <p>Human Resources · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-07</span>Labour Relations &amp; Union Negotiation</h3>
-    <p>Human Resources · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-07/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../fo-05/"><span class="arrow">←</span><span><span class="sub">Previous</span>FO-05 · NOTAMs &amp; AIP Information Management</span></a><a class="pn-btn" href="../fo-07/"><span><span class="sub">Next</span>FO-07 · Air Traffic Control Coordination</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
