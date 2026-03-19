@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pricing &amp; Fare Management · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>FO-01 · Flight Dispatch &amp; Release · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Flight Operations</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -120,11 +121,11 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
-        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-02/"><span class="status-dot status-queue"></span><span class="pid">FO-02</span>Operational Flight Plan Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-03/"><span class="status-dot status-queue"></span><span class="pid">FO-03</span>Fuel Planning &amp; Tankering</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-04/"><span class="status-dot status-queue"></span><span class="pid">FO-04</span>Weight &amp; Balance Management</a>
@@ -242,153 +243,278 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Pricing &amp; Fare Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Flight Operations</a><span class="sep">›</span>
+  <a href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a><span class="sep">›</span>
+  <span class="current">FO-01 · Flight Dispatch &amp; Release</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Pricing &amp; Fare Management</h1>
-    <p>Network Planning &amp; Scheduling · 15 of 15 subprocesses complete · Updated 2026-03-18 22:31</p>
+    <h1>Flight Dispatch &amp; Release</h1>
+    <p>Flight Operations › Flight Dispatch &amp; Control · 20 L4 steps · 6 phases · 11 decision gates · Updated 2026-03-18 22:31</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">FO-01</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-01</span>Fare Construction &amp; Filing</h3>
-    <p>Pricing &amp; Fare Management · 16 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-fo-01">
+      <img src="../../../assets/img/fo-01.png" alt="FO-01 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-fo-01').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-fo-01').style.display='flex'">
+      <div id="diag-placeholder-fo-01" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Retrieve active flight plan from flight planning system</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE</span></td>
+  <td style="font-size:10px;color:#6b7280">Scheduled departure, route database, aircraft tail assignment</td>
+  <td style="font-size:10px">Draft Operational Flight Plan (OFP) with route, altitude, and estimated fuel</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Flight plan available ≥60 min before STD; plan accuracy within ±2% of actual fuel burn</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Pull METAR, TAF, SIGMET and PIREP weather data</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">Honeywell GoDirect Weather</span></td>
+  <td style="font-size:10px;color:#6b7280">Departure, destination, and alternate ICAO codes; planned departure time</td>
+  <td style="font-size:10px">Consolidated weather package including en-route SIGMET and PIREP overlays</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Weather package delivered ≤45 min before STD; SIGMET currency ≤6 hrs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Assess weather at origin, destination and alternate</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">Honeywell GoDirect Weather</span></td>
+  <td style="font-size:10px;color:#6b7280">Weather package, airline published operating minima, alternate requirements</td>
+  <td style="font-size:10px">Weather go/no-go recommendation with alternate aerodrome confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Destination forecast visibility and ceiling at or above published CAT I/II/III minima at ETA</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Calculate fuel uplift including contingency and alternate</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE</span></td>
+  <td style="font-size:10px;color:#6b7280">Route fuel burn, wind data, alternate distance, company fuel policy, EDCT delay estimate</td>
+  <td style="font-size:10px">Minimum regulatory fuel figure plus discretionary uplift recommendation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Planned fuel ≥ FAR 121.645 / ICAO Annex 6 minimum (trip + 5% contingency + alternate + 30 min final reserve); fuel overage ≤3% of trip fuel</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">File IFR flight plan with ATC via AFTN/SITA</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE + SITA ACARS / Telex</span></td>
+  <td style="font-size:10px;color:#6b7280">Finalized OFP route, departure time, aircraft type and registration, SELCAL</td>
+  <td style="font-size:10px">Filed FPL message (ICAO format) acknowledged by ATC; filing receipt stored</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Flight plan filed ≥30 min before EOBT; filing acknowledgment received ≤5 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Confirm ATC slot/EDCT and assess crew duty impact</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag noc">NAVBLUE + FAA TFMS / EUROCONTROL NMOC</span></td>
+  <td style="font-size:10px;color:#6b7280">Filed FPL, GDP/AFP program data, crew duty time records from Jeppesen Crew Management</td>
+  <td style="font-size:10px">Confirmed CTOT/EDCT, updated STD, crew duty compliance confirmation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">EDCT compliance rate ≥98%; crew duty limit breach rate &lt;0.5% of dispatched flights</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Select and file alternate aerodrome with fuel coverage</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE</span></td>
+  <td style="font-size:10px;color:#6b7280">Destination TAF, alternate airport ops and NOTAM status, fuel range envelope</td>
+  <td style="font-size:10px">Filed alternate ICAO code with calculated alternate fuel and regulatory compliance confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Alternate meets FAR 121.619 one-hour TAF forecast above alternate minima at ETA ±1 hr</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Check aircraft airworthiness status in MRO system</td>
+  <td class="td-role">Airline Dispatcher / Maintenance Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Tail number, scheduled departure, inbound tech log entries</td>
+  <td style="font-size:10px">Airworthiness confirmation or open deferred defect list with MEL references</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Aircraft status confirmed ≥90 min before STD; zero open airworthiness directives beyond MEL tolerance</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Review MEL and CDL items for dispatch acceptability</td>
+  <td class="td-role">Airline Dispatcher / Maintenance Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware + Boeing Toolbox</span></td>
+  <td style="font-size:10px;color:#6b7280">Open deferred defects, current MEL/CDL revision, route and operating conditions</td>
+  <td style="font-size:10px">MEL dispatch determination (go/no-go) with any operational restrictions documented</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">MEL review completed ≤60 min before STD; zero dispatches with expired MEL interval items</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Verify V-speeds and performance for current configuration</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">Jeppesen FliteDeck Performance</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft weight, MEL-driven configuration restrictions, runway condition report (SNOWTAM/RCR)</td>
+  <td style="font-size:10px">Confirmed V1/VR/V2, flap setting, derate selection, and balanced field length</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Performance calculations completed ≤45 min before STD; all V-speeds within aircraft flight manual limits</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Receive preliminary load figures from load control</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (Load Control module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Booked passenger count, checked baggage manifest, cargo booking, crew count</td>
+  <td style="font-size:10px">Preliminary Zero Fuel Weight (ZFW) and estimated Takeoff Weight (TOW)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Preliminary load sheet received ≥60 min before STD; ZFW variance from final ≤500 lbs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Calculate final takeoff weight and CG envelope</td>
+  <td class="td-role">Load Controller</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (Load Control module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Final passenger count, actual baggage weights by zone, hold cargo manifest, ballast</td>
+  <td style="font-size:10px">Final load sheet with confirmed TOW, ZFW, CG position as percentage of MAC</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CG within ±2% MAC of certified envelope limits; TOW ≤ MTOW; load sheet issued ≤40 min before STD</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Perform runway-limited weight and obstacle clearance check</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">Jeppesen FliteDeck Performance</span></td>
+  <td style="font-size:10px;color:#6b7280">Final TOW, runway conditions, OAT, pressure altitude, obstacle departure procedure</td>
+  <td style="font-size:10px">Confirmed Regulated Takeoff Weight (RTOW), required field length, net takeoff flight path</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Net takeoff flight path clears obstacles by ≥35 ft per FAR 121.189; RTOW ≥ actual TOW</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Generate Operational Flight Plan and dispatch release</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE</span></td>
+  <td style="font-size:10px;color:#6b7280">Final fuel uplift, confirmed load sheet, MEL notes, weather package, NOTAM summary</td>
+  <td style="font-size:10px">Completed Operational Flight Plan (OFP) and unsigned Dispatch Release document</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">OFP issued ≥30 min before EOBT; NOTAM safety-critical items highlighted in release</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Brief Captain on route, weather, NOTAMs and MEL status</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">SITA ACARS / Telex (or face-to-face at hub)</span></td>
+  <td style="font-size:10px;color:#6b7280">OFP, weather package, NOTAM summary, MEL items, EDCT/CTOT, fuel figure</td>
+  <td style="font-size:10px">Completed crew briefing record with dispatcher and captain acknowledgement</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Crew briefing completed ≥20 min before EOBT; briefing acknowledgment logged in dispatch system</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Captain reviews and co-signs Dispatch Release (FAR 121.663)</td>
+  <td class="td-role">Captain (PIC)</td>
+  <td><span class="stag custom">SITA ACARS (electronic signature) or paper release</span></td>
+  <td style="font-size:10px;color:#6b7280">Dispatch Release document, OFP, fuel order, weather and NOTAM briefing package</td>
+  <td style="font-size:10px">Dual-signed Dispatch Release (dispatcher + captain) confirming joint airworthiness decision</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Release co-signed ≤15 min before EOBT; 100% of departures have dual-signed release on file</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.4</td>
+  <td class="td-name">Issue final dispatch release and transmit to crew</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE + SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Co-signed Dispatch Release, confirmed fuel order, updated departure time</td>
+  <td style="font-size:10px">Transmitted final release; flight authorized to depart; release archived in dispatch system</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Release transmitted ≥10 min before EOBT; 100% compliance; ACARS delivery confirmation within 2 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Monitor departure, pushback and initial climb confirmation</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">ATC off-blocks clearance, pushback notification from ramp, ACARS OUT message</td>
+  <td style="font-size:10px">Confirmed actual off-blocks time (AOBT); flight tracker status updated to airborne</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AOBT recorded within 2 min of actual event; D0 (on-time departure) target ≥78%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Track flight en-route via ACARS position reports</td>
+  <td class="td-role">Airline Dispatcher</td>
+  <td><span class="stag custom">SITA ACARS + NAVBLUE</span></td>
+  <td style="font-size:10px;color:#6b7280">Automatic ACARS position reports (15-min intervals), ATC radar handoff confirmations</td>
+  <td style="font-size:10px">Updated ETA, fuel-remaining trend, en-route deviation log, revised destination weather check</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Position report gap ≤15 min; fuel remaining vs. plan within ±500 lbs at each waypoint</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.3</td>
+  <td class="td-name">Initiate diversion or emergency response if required</td>
+  <td class="td-role">Airline Dispatcher / SOC Controller</td>
+  <td><span class="stag custom">NAVBLUE + SITA AMS + Jeppesen FliteDeck</span></td>
+  <td style="font-size:10px;color:#6b7280">In-flight emergency notification, medical diversion request, fuel emergency, weather deterioration below minima</td>
+  <td style="font-size:10px">Diversion airport selected with fuel coverage confirmed; ATC coordination initiated; ground support activated at diversion airport</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Diversion decision communicated to crew ≤5 min from trigger event; ground support activated ≤15 min before ETA at diversion</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-02</span>Fare Distribution &amp; Publishing</h3>
-    <p>Pricing &amp; Fare Management · 15 steps · 6 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">FO-01</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Flight Operations</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Flight Dispatch &amp; Control</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Flight Dispatch &amp; Release</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">20 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">11 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">16 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Airline Dispatcher</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Airline Dispatcher / Maintenance Controller</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Load Controller</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Captain (PIC)</div><div class="swim"><div class="dot" style="background:#10b981"></div>Airline Dispatcher / SOC Controller</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">NAVBLUE</span><span class="stag custom">Honeywell GoDirect Weather</span><span class="stag custom">NAVBLUE + SITA ACARS / Telex</span><span class="stag noc">NAVBLUE + FAA TFMS / EUROCONTROL NMOC</span><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag custom">AMOS by Swiss AviationSoftware + Boeing Toolbox</span><span class="stag custom">Jeppesen FliteDeck Performance</span><span class="stag amadeus">Amadeus Altéa PSS (Load Control module)</span><span class="stag custom">SITA ACARS / Telex (or face-to-face at hub)</span><span class="stag custom">SITA ACARS (electronic signature) or paper release</span><span class="stag custom">NAVBLUE + SITA ACARS</span><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">SITA ACARS + NAVBLUE</span><span class="stag custom">NAVBLUE + SITA AMS + Jeppesen FliteDeck</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Retrieve active flight plan from flight planning system</span><span class="kval">Flight plan available ≥60 min before STD; plan accuracy within ±2% of actual fuel burn</span></div><div class="krow"><span class="kname">Pull METAR, TAF, SIGMET and PIREP weather data</span><span class="kval">Weather package delivered ≤45 min before STD; SIGMET currency ≤6 hrs</span></div><div class="krow"><span class="kname">Assess weather at origin, destination and alternate</span><span class="kval">Destination forecast visibility and ceiling at or above published CAT I/II/III minima at ETA</span></div><div class="krow"><span class="kname">Calculate fuel uplift including contingency and alternate</span><span class="kval">Planned fuel ≥ FAR 121.645 / ICAO Annex 6 minimum (trip + 5% contingency + alternate + 30 min final reserve); fuel overage ≤3% of trip fuel</span></div><div class="krow"><span class="kname">File IFR flight plan with ATC via AFTN/SITA</span><span class="kval">Flight plan filed ≥30 min before EOBT; filing acknowledgment received ≤5 min</span></div><div class="krow"><span class="kname">Confirm ATC slot/EDCT and assess crew duty impact</span><span class="kval">EDCT compliance rate ≥98%; crew duty limit breach rate &lt;0.5% of dispatched flights</span></div><div class="krow"><span class="kname">Select and file alternate aerodrome with fuel coverage</span><span class="kval">Alternate meets FAR 121.619 one-hour TAF forecast above alternate minima at ETA ±1 hr</span></div><div class="krow"><span class="kname">Check aircraft airworthiness status in MRO system</span><span class="kval">Aircraft status confirmed ≥90 min before STD; zero open airworthiness directives beyond MEL tolerance</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">NAVBLUE integration latency with ATC slot data can delay plan finalization for constrained airspace; manual re-route required for TFR-affected corridors</div><div class="risk-card">SIGMETs for en-route convection update every 4–6 hrs; late-breaking convective SIGMETs may not be captured before release window, requiring mid-dispatch reassessment</div><div class="risk-card">Rapid deterioration below CAT II minima at destination with simultaneous weather impact on primary alternate forces late alternate change, disrupting fuel calculation and ATC filing</div><div class="risk-card">EDCT ground delay burn estimates from FAA TFMS are systematically optimistic; dispatcher must manually add 10–15% buffer for GDP-affected departures, yet excess uplift increases fuel cost by ~$8/kg</div><div class="risk-card">EUROCONTROL NM slot allocation (CTOT) can force departure time change ≤2 hrs before departure, requiring immediate re-file and downstream fuel/crew duty recalculation</div><div class="risk-card">Ground Delay Programs (GDPs) can shift EDCT by 60–180 min, pushing ATD past crew rest trigger thresholds under FAR Part 117; late crew swap triggers cascading downstream cancellations</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Scheduled departure, route database, aircraft tail assignment</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Diversion airport selected with fuel coverage confirmed; ATC coordination initiated; ground support activated at diversion airport</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-03</span>Promotional Fare Design</h3>
-    <p>Pricing &amp; Fare Management · 19 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-04</span>Fare Rules &amp; Restriction Management</h3>
-    <p>Pricing &amp; Fare Management · 16 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-05</span>Dynamic Pricing Engine Management</h3>
-    <p>Pricing &amp; Fare Management · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-06</span>Surcharge &amp; Tax Management</h3>
-    <p>Pricing &amp; Fare Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-07</span>Interline &amp; Codeshare Fare Proration</h3>
-    <p>Pricing &amp; Fare Management · 14 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-08</span>ATPCO Filing &amp; Maintenance</h3>
-    <p>Pricing &amp; Fare Management · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-09</span>Currency &amp; FX Rate Management</h3>
-    <p>Pricing &amp; Fare Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-10</span>Fare Audit &amp; Compliance</h3>
-    <p>Pricing &amp; Fare Management · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-11</span>Ancillary Pricing (Bags, Seats, Meals)</h3>
-    <p>Pricing &amp; Fare Management · 15 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-12</span>Corporate Contract Pricing</h3>
-    <p>Pricing &amp; Fare Management · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-13</span>Competitive Fare Intelligence</h3>
-    <p>Pricing &amp; Fare Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-14</span>Bundled Fare Product Management</h3>
-    <p>Pricing &amp; Fare Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-15</span>Low Fare Guarantee Program Management</h3>
-    <p>Pricing &amp; Fare Management · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cx-16/"><span class="arrow">←</span><span><span class="sub">Previous</span>CX-16 · Digital Self-Service &amp; Chatbot Management</span></a><a class="pn-btn" href="../fo-02/"><span><span class="sub">Next</span>FO-02 · Operational Flight Plan Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
