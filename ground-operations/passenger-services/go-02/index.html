@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Loyalty Programme Management · Customer Experience &amp; Loyalty · Airlines Process Wiki</title>
+<title>GO-02 · Baggage Acceptance &amp; Handling · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -96,8 +97,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Customer Experience &amp; Loyalty</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Customer Experience &amp; Loyalty</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/">Loyalty Programme Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-01/"><span class="status-dot status-done"></span><span class="pid">CX-01</span>Frequent Flyer Program Management</a>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -175,7 +176,7 @@
       </div>
       <a class="sidebar-l2-link" href="../../../ground-operations/passenger-services/">Baggage Operations</a>
       <div class="sidebar-l3">
-        <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-02/"><span class="status-dot status-done"></span><span class="pid">GO-02</span>Baggage Acceptance &amp; Handling</a>
+        <a class="sidebar-l3-link active" href="../../../ground-operations/passenger-services/go-02/"><span class="status-dot status-done"></span><span class="pid">GO-02</span>Baggage Acceptance &amp; Handling</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-03/"><span class="status-dot status-queue"></span><span class="pid">GO-03</span>Lost &amp; Found / Baggage Tracing</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-05/"><span class="status-dot status-queue"></span><span class="pid">GO-05</span>Ramp &amp; Turnaround Operations</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-06/"><span class="status-dot status-queue"></span><span class="pid">GO-06</span>Ground Handling Vendor Management</a>
@@ -242,162 +243,248 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Customer Experience &amp; Loyalty</a><span class="sep">›</span>
-  <span class="current">Loyalty Programme Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
+  <a href="../../../ground-operations/passenger-services/">Baggage Operations</a><span class="sep">›</span>
+  <span class="current">GO-02 · Baggage Acceptance &amp; Handling</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Loyalty Programme Management</h1>
-    <p>Customer Experience &amp; Loyalty · 16 of 16 subprocesses complete · Updated 2026-03-19 13:54</p>
+    <h1>Baggage Acceptance &amp; Handling</h1>
+    <p>Ground Operations &amp; Airport Services › Baggage Operations · 17 L4 steps · 5 phases · 7 decision gates · Updated 2026-03-19 13:54</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">GO-02</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-01</span>Frequent Flyer Program Management</h3>
-    <p>Loyalty Programme Management · 21 steps · 8 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-go-02">
+      <img src="../../../assets/img/go-02.png" alt="GO-02 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-go-02').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-go-02').style.display='flex'">
+      <div id="diag-placeholder-go-02" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Verify passenger allowance in PSS</td>
+  <td class="td-role">Check-in Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger PNR, ticket class, frequent flyer tier</td>
+  <td style="font-size:10px">Baggage allowance entitlement confirmed; excess fee notification triggered</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Allowance lookup time ≤10 sec; fee notification accuracy ≥99%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Weigh and measure baggage at counter</td>
+  <td class="td-role">Check-in Agent</td>
+  <td><span class="stag custom">SITA Common Use Terminal Equipment (CUTE) with integrated scale</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger-presented baggage</td>
+  <td style="font-size:10px">Weight and dimension record; excess baggage charge calculated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Average bag acceptance time ≤90 sec per bag; scale accuracy ±0.1 kg</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Collect excess baggage fees</td>
+  <td class="td-role">Check-in Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS / payment terminal</span></td>
+  <td style="font-size:10px;color:#6b7280">Excess weight or piece determination from step 1.2</td>
+  <td style="font-size:10px">Fee collected and recorded in PNR; EMD (Electronic Miscellaneous Document) issued</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Excess fee collection rate ≥98% of chargeable bags</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Print bag tag and transmit BSM</td>
+  <td class="td-role">Check-in Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS / SITA BagMessage</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed weight, destination, passenger itinerary</td>
+  <td style="font-size:10px">IATA 10-digit barcode bag tag affixed; Baggage Source Message (BSM) transmitted to BHS and destination airport</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">BSM transmission accuracy ≥99.5%; BSM delivery to BHS ≤5 sec</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Induct bag into automated EDS screening</td>
+  <td class="td-role">Baggage Systems Operator</td>
+  <td><span class="stag custom">Smiths Detection CTX / L3 ProVision Explosive Detection System (EDS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Tagged bag inducted onto inline conveyor belt with BSM</td>
+  <td style="font-size:10px">Bag inducted into screening lane; screening initiated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Screening throughput ≥1,200 bags/hr per lane; induction reject rate ≤0.5%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Evaluate automated threat detection result</td>
+  <td class="td-role">TSA Screening Officer</td>
+  <td><span class="stag custom">Smiths Detection EDS console / L3 Technologies automated threat recognition (ATR)</span></td>
+  <td style="font-size:10px;color:#6b7280">CT scan image and ATR algorithm output</td>
+  <td style="font-size:10px">Clear or Suspect determination; bag status updated in screening system</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Automated clear rate ≥85%; false-positive rate ≤12%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Conduct manual bag search and resolve status</td>
+  <td class="td-role">TSA Screening Officer</td>
+  <td><span class="stag custom">TSA PARIS (Passenger and Baggage Reconciliation) / SITA WorldTracer</span></td>
+  <td style="font-size:10px;color:#6b7280">Suspect bag flagged by ATR; passenger paged if required</td>
+  <td style="font-size:10px">Cleared, held, or offloaded determination; bag status updated; airline notified</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Manual resolution time ≤15 min per bag; offload-to-notification time ≤5 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Sort bag to destination make-up area via BHS</td>
+  <td class="td-role">Baggage Systems Operator</td>
+  <td><span class="stag custom">SITA BagManager / Airport BHS (Vanderlande BAGTRAX / Siemens automated sorter)</span></td>
+  <td style="font-size:10px;color:#6b7280">BSM data, flight departure time, make-up area assignment</td>
+  <td style="font-size:10px">Bag routed to correct make-up carousel or transfer belt</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Sortation accuracy ≥99.7%; late bags to make-up ≤1% of total</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Build ULD or loose-load baggage cart</td>
+  <td class="td-role">Ramp Agent / Loader</td>
+  <td><span class="stag amadeus">SITA BagManager / Amadeus LoadPlanner</span></td>
+  <td style="font-size:10px;color:#6b7280">Sorted bags arriving at make-up area; ULD build plan from load controller</td>
+  <td style="font-size:10px">Loaded ULD or baggage cart with physical manifest; weight estimate recorded</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ULD build completion ≥30 min before scheduled departure; weight estimate variance ≤2%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Reconcile bag count against active PAX list</td>
+  <td class="td-role">Ramp Supervisor</td>
+  <td><span class="stag amadeus">SITA BagManager / Amadeus Altéa Departure Control System (DCS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Loaded ULD manifest; active (boarded + checked-in) passenger list</td>
+  <td style="font-size:10px">Bag count confirmed or discrepancy flagged for investigation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Pre-load reconciliation accuracy ≥99.5%; discrepancy resolution time ≤10 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Transport ULDs and carts to aircraft</td>
+  <td class="td-role">Ramp Agent / Tug Driver</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS) / Ramp Resource Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Departure time, gate assignment, confirmed ULD manifest</td>
+  <td style="font-size:10px">ULDs delivered to aircraft within loading window</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bags at aircraft ≥25 min before scheduled departure; tug utilisation ≥80%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Load baggage into aircraft hold per W&amp;B plan</td>
+  <td class="td-role">Loader / Ramp Agent</td>
+  <td><span class="stag custom">Jeppesen LoadPlanner / Ultramain Weight &amp; Balance System</span></td>
+  <td style="font-size:10px;color:#6b7280">ULD manifest, aircraft hold configuration, W&amp;B loading sequence</td>
+  <td style="font-size:10px">Bags loaded per load plan; hold positions recorded; loading confirmation sent to load controller</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Hold loading complete ≥15 min before departure (D-15); W&amp;B CG within ±1% of plan</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Reconcile loaded bags and offload no-shows</td>
+  <td class="td-role">Load Controller / Ramp Supervisor</td>
+  <td><span class="stag amadeus">SITA BagManager / Amadeus Altéa Departure Control System (DCS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Final loaded bag count; departure passenger list (after boarding gate closes)</td>
+  <td style="font-size:10px">Load sheet signed off; no-fly bags identified and physically offloaded; NOTOC updated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% reconciliation before door closure; unaccompanied bag offload ≤10 min from identification</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Offload baggage from aircraft on arrival</td>
+  <td class="td-role">Ramp Agent / Loader</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS) / SITA BagManager</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft block-in confirmation; hold manifest</td>
+  <td style="font-size:10px">All bags offloaded; scan event logged per IATA Resolution 753 4-point tracking requirement</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">First bag on belt ≤20 min from block-in (domestic); ≤25 min (international)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Deliver bags to assigned baggage claim belt</td>
+  <td class="td-role">Baggage Hall Operator</td>
+  <td><span class="stag custom">SITA BagManager / Airport BHS claim belt controller / FIDS</span></td>
+  <td style="font-size:10px;color:#6b7280">Offloaded bags; belt assignment from airport ops; flight arrival data</td>
+  <td style="font-size:10px">Bags on reclaim belt; passenger belt notification displayed on FIDS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Last bag on belt ≤35 min from block-in; on-time belt delivery rate ≥92%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Identify and file PIR for mishandled bags</td>
+  <td class="td-role">Baggage Services Agent</td>
+  <td><span class="stag amadeus">SITA WorldTracer / Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Unclaimed bags at belt; passenger self-report; gap in IATA Resolution 753 scan trail</td>
+  <td style="font-size:10px">Property Irregularity Report (PIR) filed in WorldTracer; passenger notified with file reference</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PIR filing time ≤10 min from passenger report; mishandling rate ≤5 per 1,000 passengers (IATA industry target)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.4</td>
+  <td class="td-name">Trace, recover and return mishandled baggage</td>
+  <td class="td-role">Baggage Tracing Agent</td>
+  <td><span class="stag custom">SITA WorldTracer / baggage delivery partner (Deliver.com / BagsVIP)</span></td>
+  <td style="font-size:10px;color:#6b7280">PIR record; scan history; last-known location from BagManager</td>
+  <td style="font-size:10px">Bag located; delivery to passenger arranged; WorldTracer case closed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">80% of mishandled bags returned within 24 hrs; permanently lost bag rate ≤0.5 per 1,000 passengers</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-02</span>Miles &amp; Points Accrual Management</h3>
-    <p>Loyalty Programme Management · 15 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">GO-02</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Ground Operations &amp; Airport Services</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Baggage Operations</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Baggage Acceptance &amp; Handling</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">17 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">7 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">15 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Check-in Agent</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Baggage Systems Operator</div><div class="swim"><div class="dot" style="background:#ec4899"></div>TSA Screening Officer</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Ramp Agent / Loader</div><div class="swim"><div class="dot" style="background:#10b981"></div>Ramp Supervisor</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Ramp Agent / Tug Driver</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Loader / Ramp Agent</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Load Controller / Ramp Supervisor</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Baggage Hall Operator</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Baggage Services Agent</div><div class="swim"><div class="dot" style="background:#f97316"></div>Baggage Tracing Agent</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag custom">SITA Common Use Terminal Equipment (CUTE) with integrated scale</span><span class="stag amadeus">Amadeus Altéa PSS / payment terminal</span><span class="stag amadeus">Amadeus Altéa PSS / SITA BagMessage</span><span class="stag custom">Smiths Detection CTX / L3 ProVision Explosive Detection System (EDS)</span><span class="stag custom">Smiths Detection EDS console / L3 Technologies automated threat recognition (ATR)</span><span class="stag custom">TSA PARIS (Passenger and Baggage Reconciliation) / SITA WorldTracer</span><span class="stag custom">SITA BagManager / Airport BHS (Vanderlande BAGTRAX / Siemens automated sorter)</span><span class="stag amadeus">SITA BagManager / Amadeus LoadPlanner</span><span class="stag amadeus">SITA BagManager / Amadeus Altéa Departure Control System (DCS)</span><span class="stag custom">SITA Airport Management System (AMS) / Ramp Resource Management</span><span class="stag custom">Jeppesen LoadPlanner / Ultramain Weight &amp; Balance System</span><span class="stag custom">SITA Airport Management System (AMS) / SITA BagManager</span><span class="stag custom">SITA BagManager / Airport BHS claim belt controller / FIDS</span><span class="stag amadeus">SITA WorldTracer / Amadeus Altéa PSS</span><span class="stag custom">SITA WorldTracer / baggage delivery partner (Deliver.com / BagsVIP)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Verify passenger allowance in PSS</span><span class="kval">Allowance lookup time ≤10 sec; fee notification accuracy ≥99%</span></div><div class="krow"><span class="kname">Weigh and measure baggage at counter</span><span class="kval">Average bag acceptance time ≤90 sec per bag; scale accuracy ±0.1 kg</span></div><div class="krow"><span class="kname">Collect excess baggage fees</span><span class="kval">Excess fee collection rate ≥98% of chargeable bags</span></div><div class="krow"><span class="kname">Print bag tag and transmit BSM</span><span class="kval">BSM transmission accuracy ≥99.5%; BSM delivery to BHS ≤5 sec</span></div><div class="krow"><span class="kname">Induct bag into automated EDS screening</span><span class="kval">Screening throughput ≥1,200 bags/hr per lane; induction reject rate ≤0.5%</span></div><div class="krow"><span class="kname">Evaluate automated threat detection result</span><span class="kval">Automated clear rate ≥85%; false-positive rate ≤12%</span></div><div class="krow"><span class="kname">Conduct manual bag search and resolve status</span><span class="kval">Manual resolution time ≤15 min per bag; offload-to-notification time ≤5 min</span></div><div class="krow"><span class="kname">Sort bag to destination make-up area via BHS</span><span class="kval">Sortation accuracy ≥99.7%; late bags to make-up ≤1% of total</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Altéa allowance rules do not sync in real-time with codeshare partner PSS, forcing manual overrides and creating revenue leakage on interline itineraries</div><div class="risk-card">Scale calibration drift at high-volume counters causes inconsistent weight readings; CUTE has no automated recalibration alert, so discrepancies are caught only during periodic QA audits</div><div class="risk-card">Agents waiving fees at discretion without supervisory approval triggers revenue leakage estimated at $30–50 per waived bag; Altéa has no mandatory approval workflow for fee waivers at Level 1 agent access</div><div class="risk-card">BSM transmission lag &gt;30 sec to downstream stations causes missed sortation windows on tight connections; IATA Resolution 753 mandates scan tracking from this point but most carriers lack RFID at check-in, relying on barcode-only</div><div class="risk-card">Legacy inline EDS at secondary airports cannot handle post-pandemic capacity surge; single-lane configurations create 20–30 min queue backlogs during peak departures, directly causing departure delays</div><div class="risk-card">CT systems generate 10–15% false-positive rates for dense consumer items (lithium batteries, laptops), driving manual inspection queues that delay affected bags by 8–15 min and disrupt sortation sequence</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Passenger PNR, ticket class, frequent flyer tier</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Bag located; delivery to passenger arranged; WorldTracer case closed</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-03</span>Miles &amp; Points Redemption Management</h3>
-    <p>Loyalty Programme Management · 18 steps · 10 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-04</span>Tier Status &amp; Upgrade Management</h3>
-    <p>Loyalty Programme Management · 20 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-05</span>Customer Complaint &amp; Feedback Management</h3>
-    <p>Loyalty Programme Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-06</span>Pre-Flight Customer Communication</h3>
-    <p>Loyalty Programme Management · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-07</span>In-Flight Service Design &amp; Standards</h3>
-    <p>Loyalty Programme Management · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-08</span>Post-Flight Survey &amp; NPS Management</h3>
-    <p>Loyalty Programme Management · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-09</span>Special Services Request (SSR) Management</h3>
-    <p>Loyalty Programme Management · 18 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-10</span>Customer Data &amp; Personalization</h3>
-    <p>Loyalty Programme Management · 17 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-11</span>IRROP Passenger Recovery</h3>
-    <p>Loyalty Programme Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-12</span>Lounge &amp; Premium Experience Management</h3>
-    <p>Loyalty Programme Management · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-13</span>Co-Brand Credit Card Partnership Management</h3>
-    <p>Loyalty Programme Management · 18 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-14</span>Loyalty Program Partnerships (Hotels/Cars/Retail)</h3>
-    <p>Loyalty Programme Management · 18 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-15</span>Customer Service Contact Centre Operations</h3>
-    <p>Loyalty Programme Management · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-15/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-16</span>Digital Self-Service &amp; Chatbot Management</h3>
-    <p>Loyalty Programme Management · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-16/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../go-01/"><span class="arrow">←</span><span><span class="sub">Previous</span>GO-01 · Passenger Check-In &amp; Boarding</span></a><a class="pn-btn" href="../go-03/"><span><span class="sub">Next</span>GO-03 · Lost &amp; Found / Baggage Tracing</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

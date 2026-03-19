@@ -1,0 +1,60 @@
+flowchart LR
+  subgraph P1[Phase 1: Acceptance and Tagging]
+    A([Start]) --> B[Verify allowance\nin Altéa PSS]
+    B --> C{Overweight /\noversized?}
+    C -- Yes --> D[Collect excess\nbaggage fee]
+    C -- No --> E[Print bag tag\nBSM to BagManager]
+    D --> E
+  end
+
+  subgraph P2[Phase 2: Security Screening]
+    E --> F[Induct into EDS\nscreening lane]
+    F --> G{Threat\ndetected?}
+    G -- Clear --> H[Bag cleared\nto BHS]
+    G -- Suspect --> I[Manual search\nand resolution]
+    I --> G
+  end
+
+  subgraph P3[Phase 3: Sortation and Build-Up]
+    H --> J[BHS sorts to\nmake-up area]
+    J --> K{Tag readable /\nsortation match?}
+    K -- Yes --> L[Build ULD /\nbaggage cart]
+    K -- No --> J
+    L --> M{Bag count\nmatches PAX list?}
+    M -- Yes --> N[ULD manifest\nconfirmed]
+    M -- No --> L
+  end
+
+  subgraph P4[Phase 4: Aircraft Loading]
+    N --> O[Transport ULD\nto aircraft]
+    O --> P[Load hold per\nWandB plan]
+    P --> Q{Unaccompanied\nbags present?}
+    Q -- No --> R[Load sheet\nsigned off]
+    Q -- Yes --> S[Offload no-show\nbags from hold]
+    S --> R
+  end
+
+  subgraph P5[Phase 5: Arrival and Recovery]
+    R --> T[Offload bags\non arrival]
+    T --> U{Belt available\nand assigned?}
+    U -- Yes --> V[Deliver to\nreclaim belt]
+    U -- No --> U
+    V --> W{Unclaimed /\nmishandled bag?}
+    W -- No --> X([End])
+    W -- Yes --> Y[File PIR in\nWorldTracer]
+    Y --> Z{Bag located\nwithin 24 hrs?}
+    Z -- Yes --> AA[Arrange delivery\nto passenger]
+    Z -- No --> Y
+    AA --> X
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600
+  style Z fill:#ff6600,color:#fff,stroke:#ff6600

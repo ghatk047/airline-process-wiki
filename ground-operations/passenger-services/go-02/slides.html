@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GO-02 Slides — Baggage Acceptance &amp; Handling</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-02</span>
+    <h1>Baggage Acceptance &amp; Handling</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/go-02.png" alt="BPMN for GO-02" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Baggage Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-02</span>
+    <h1>Baggage Acceptance &amp; Handling</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> GO-02</li>
+          <li><strong>L1 Domain:</strong> Ground Operations &amp; Airport Services</li>
+          <li><strong>L2 Process:</strong> Baggage Operations</li>
+          <li><strong>L3 Name:</strong> Baggage Acceptance &amp; Handling</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">15</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Verify passenger allowance in PSS</li><li><strong>Phase 2:</strong> Induct bag into automated EDS screening</li><li><strong>Phase 3:</strong> Sort bag to destination make-up area via BHS</li><li><strong>Phase 4:</strong> Transport ULDs and carts to aircraft</li><li><strong>Phase 5:</strong> Offload baggage from aircraft on arrival</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Baggage Hall Operator</li><li>Baggage Services Agent</li><li>Baggage Systems Operator</li><li>Baggage Tracing Agent</li><li>Check-in Agent</li><li>Load Controller / Ramp Supervisor</li><li>Loader / Ramp Agent</li><li>Ramp Agent / Loader</li><li>Ramp Agent / Tug Driver</li><li>Ramp Supervisor</li><li>TSA Screening Officer</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Altéa PSS</li><li>Amadeus Altéa PSS / SITA BagMessage</li><li>Amadeus Altéa PSS / payment terminal</li><li>Jeppesen LoadPlanner / Ultramain Weight &amp; Balance System</li><li>SITA Airport Management System (AMS) / Ramp Resource Management</li><li>SITA Airport Management System (AMS) / SITA BagManager</li><li>SITA BagManager / Airport BHS (Vanderlande BAGTRAX / Siemens automated sorter)</li><li>SITA BagManager / Airport BHS claim belt controller / FIDS</li><li>SITA BagManager / Amadeus Altéa Departure Control System (DCS)</li><li>SITA BagManager / Amadeus LoadPlanner</li><li>SITA Common Use Terminal Equipment (CUTE) with integrated scale</li><li>SITA WorldTracer / Amadeus Altéa PSS</li><li>SITA WorldTracer / baggage delivery partner (Deliver.com / BagsVIP)</li><li>Smiths Detection CTX / L3 ProVision Explosive Detection System (EDS)</li><li>Smiths Detection EDS console / L3 Technologies automated threat recognition (ATR)</li><li>TSA PARIS (Passenger and Baggage Reconciliation) / SITA WorldTracer</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Baggage Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-02</span>
+    <h1>Baggage Acceptance &amp; Handling</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Verify passenger allowance in PSS</td>
+        <td class="kpi-col">Allowance lookup time ≤10 sec; fee notification accuracy ≥99%</td>
+        <td class="pain-col">Altéa allowance rules do not sync in real-time with codeshare partner PSS, forcing manual overrides and creating revenue leakage on interline itineraries</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Weigh and measure baggage at counter</td>
+        <td class="kpi-col">Average bag acceptance time ≤90 sec per bag; scale accuracy ±0.1 kg</td>
+        <td class="pain-col">Scale calibration drift at high-volume counters causes inconsistent weight readings; CUTE has no automated recalibration alert, so discrepancies are caught only during periodic QA audits</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Collect excess baggage fees</td>
+        <td class="kpi-col">Excess fee collection rate ≥98% of chargeable bags</td>
+        <td class="pain-col">Agents waiving fees at discretion without supervisory approval triggers revenue leakage estimated at $30–50 per waived bag; Altéa has no mandatory approval workflow for fee waivers at Level 1 agent access</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Print bag tag and transmit BSM</td>
+        <td class="kpi-col">BSM transmission accuracy ≥99.5%; BSM delivery to BHS ≤5 sec</td>
+        <td class="pain-col">BSM transmission lag &gt;30 sec to downstream stations causes missed sortation windows on tight connections; IATA Resolution 753 mandates scan tracking from this point but most carriers lack RFID at check-in, relying on barcode-only</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Induct bag into automated EDS screening</td>
+        <td class="kpi-col">Screening throughput ≥1,200 bags/hr per lane; induction reject rate ≤0.5%</td>
+        <td class="pain-col">Legacy inline EDS at secondary airports cannot handle post-pandemic capacity surge; single-lane configurations create 20–30 min queue backlogs during peak departures, directly causing departure delays</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Evaluate automated threat detection result</td>
+        <td class="kpi-col">Automated clear rate ≥85%; false-positive rate ≤12%</td>
+        <td class="pain-col">CT systems generate 10–15% false-positive rates for dense consumer items (lithium batteries, laptops), driving manual inspection queues that delay affected bags by 8–15 min and disrupt sortation sequence</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Conduct manual bag search and resolve status</td>
+        <td class="kpi-col">Manual resolution time ≤15 min per bag; offload-to-notification time ≤5 min</td>
+        <td class="pain-col">No automated link between TSA PARIS resolution status and airline BHS sortation system; cleared bags require a manual phone call to ground ops to re-inject, introducing misrouting risk and operator dependency during irregular operations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Sort bag to destination make-up area via BHS</td>
+        <td class="kpi-col">Sortation accuracy ≥99.7%; late bags to make-up ≤1% of total</td>
+        <td class="pain-col">BHS sorter reading errors on damaged, bent, or folded barcoded bag tags cause misroutes; RFID fallback absent at most secondary airports despite IATA Resolution 753 requirement for 4-scan tracking — misrouted bags have no automated recovery path</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Build ULD or loose-load baggage cart</td>
+        <td class="kpi-col">ULD build completion ≥30 min before scheduled departure; weight estimate variance ≤2%</td>
+        <td class="pain-col">Manual ULD build-up has no real-time weight tracking — ramp agents estimate bag weight by handling; cumulative error causes load rebalancing at aircraft hold, adding avg 4–8 min to departure preparation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Reconcile bag count against active PAX list</td>
+        <td class="kpi-col">Pre-load reconciliation accuracy ≥99.5%; discrepancy resolution time ≤10 min</td>
+        <td class="pain-col">Disconnected systems between check-in (Altéa DCS) and ramp (BagManager) mean reconciliation relies on manual counts at make-up; count gaps widen at off-hub outstations with limited IT infrastructure and no dedicated ramp IT support</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Transport ULDs and carts to aircraft</td>
+        <td class="kpi-col">Bags at aircraft ≥25 min before scheduled departure; tug utilisation ≥80%</td>
+        <td class="pain-col">Late gate changes (≤15 min before departure) force ULD re-routing on congested apron without automated rerouting guidance; ramp agents coordinate via radio only, causing ULD queuing conflicts and delay attribution to ground ops</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Load baggage into aircraft hold per W&amp;B plan</td>
+        <td class="kpi-col">Hold loading complete ≥15 min before departure (D-15); W&amp;B CG within ±1% of plan</td>
+        <td class="pain-col">Real-time W&amp;B updates require accurate bag weights from check-in; estimated weights (used when CUTE scales drift) increase fuel burn by 0.1–0.3% per flight and may require unplanned last-minute cargo offload to maintain CG envelope</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Reconcile loaded bags and offload no-shows</td>
+        <td class="kpi-col">100% reconciliation before door closure; unaccompanied bag offload ≤10 min from identification</td>
+        <td class="pain-col">ICAO Annex 17 requires offloading bags of passengers who check in but do not board; manual hold search for no-show bags averages 8–12 min delay per occurrence and is non-negotiable — no technology currently automates the physical search</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Offload baggage from aircraft on arrival</td>
+        <td class="kpi-col">First bag on belt ≤20 min from block-in (domestic); ≤25 min (international)</td>
+        <td class="pain-col">Short-turn flights (≤45 min ground time) require simultaneous offload and inbound load operations; ramp agents coordinate only via radio with no automated sequencing tool, increasing error rate and first-bag time during high-rotation operations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Deliver bags to assigned baggage claim belt</td>
+        <td class="kpi-col">Last bag on belt ≤35 min from block-in; on-time belt delivery rate ≥92%</td>
+        <td class="pain-col">Belt assignment conflicts during irregular operations (multiple delayed arrivals simultaneously) cause commingling of bags from different flights; commingling increases WorldTracer PIR filings by ~30% during IROPS windows and triggers EC 261/2004 and DOT compensation exposure</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Identify and file PIR for mishandled bags</td>
+        <td class="kpi-col">PIR filing time ≤10 min from passenger report; mishandling rate ≤5 per 1,000 passengers (IATA industry target)</td>
+        <td class="pain-col">Missing intermediate scans (induction, sortation, or loading) leave no audit trail for liability disputes under EC 261/2004 and DOT baggage rules; WorldTracer matching fails without a complete scan history, leaving agents unable to locate bag origin or last-seen point</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.4</td>
+        <td>Trace, recover and return mishandled baggage</td>
+        <td class="kpi-col">80% of mishandled bags returned within 24 hrs; permanently lost bag rate ≤0.5 per 1,000 passengers</td>
+        <td class="pain-col">WorldTracer matching depends on accurate IATA barcode scans; damaged tags with no RFID fallback leave bags stranded in &#x27;no-read&#x27; queues at transfer hubs with no automated escalation workflow — cases age beyond 5-day threshold, triggering DOT delayed baggage compensation requirements</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Baggage Operations</span>
+  </div>
+</div>
+
+</body>
+</html>
