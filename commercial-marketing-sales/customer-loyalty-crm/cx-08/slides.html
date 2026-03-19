@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-08 Slides — Post-Flight Survey &amp; NPS Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-08</span>
+    <h1>Post-Flight Survey &amp; NPS Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-08.png" alt="BPMN for CX-08" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-08</span>
+    <h1>Post-Flight Survey &amp; NPS Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-08</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Customer Experience Operations</li>
+          <li><strong>L3 Name:</strong> Post-Flight Survey &amp; NPS Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Identify post-flight survey eligible pax</li><li><strong>Phase 2:</strong> Monitor survey response rate by flight cohort</li><li><strong>Phase 3:</strong> Classify respondents as Promoter, Passive, or Detr</li><li><strong>Phase 4:</strong> Correlate NPS scores with operational performance </li><li><strong>Phase 5:</strong> Prioritise detractor outreach by severity tier</li><li><strong>Phase 6:</strong> Publish NPS dashboard to operational stakeholders</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>CRM Data Analyst</li><li>CX Analytics Manager</li><li>CX Automation Specialist</li><li>CX Data Engineer</li><li>CX Insights Analyst</li><li>Customer Recovery Specialist</li><li>VP Customer Experience</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift</li><li>AWS S3</li><li>Amadeus Altéa PSS</li><li>Qualtrics Text iQ</li><li>Qualtrics XM</li><li>Salesforce Marketing Cloud</li><li>Salesforce Service Cloud</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-08</span>
+    <h1>Post-Flight Survey &amp; NPS Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Identify post-flight survey eligible pax</td>
+        <td class="kpi-col">Eligible pax coverage ≥ 95% of boarded passengers</td>
+        <td class="pain-col">Altéa passenger records may have missing or stale email addresses when bookings originate from OTA channels without email pass-through, reducing survey reach by up to 20%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate opt-in status and contact data</td>
+        <td class="kpi-col">Suppression accuracy 100% — zero survey sends to opted-out contacts</td>
+        <td class="pain-col">GDPR and CCPA compliance requires real-time suppression list sync between Altéa loyalty database and Salesforce Marketing Cloud; sync lag of &gt;4 hours risks regulatory breach</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Generate personalised survey link and dispatch</td>
+        <td class="kpi-col">Survey dispatch latency ≤ 24 hours post-arrival; email deliverability ≥ 97%</td>
+        <td class="pain-col">Qualtrics dynamic survey personalisation requires clean flight-level metadata from Altéa; missing cabin class data causes generic survey routing, degrading response quality for premium cabin feedback</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Monitor survey response rate by flight cohort</td>
+        <td class="kpi-col">Target survey response rate ≥ 20%; industry benchmark ~15–18%</td>
+        <td class="pain-col">Response rates on short-haul routes (&lt;90 min) are structurally lower (8–12%) due to rapid passenger disengagement post-flight; blended NPS may over-index on long-haul sentiment</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Send reminder to non-responders at 48 hours</td>
+        <td class="kpi-col">Reminder lift in response rate ≥ 5 percentage points; max 1 reminder per passenger</td>
+        <td class="pain-col">Over-surveying risk: passengers who received a complaint follow-up (CX-05) or loyalty communication (CX-01) within the same 72-hour window must be suppressed from reminder sends to avoid fatigue and NPS score inflation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate response completeness and ingest to analytics</td>
+        <td class="kpi-col">Partial response exclusion rate ≤ 5% of total submissions; ingestion latency ≤ 1 hour</td>
+        <td class="pain-col">Qualtrics partial completion records (pax abandoned mid-survey) can corrupt NPS scoring if included; no native auto-exclusion rule in Qualtrics XM without custom workflow configuration</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Classify respondents as Promoter, Passive, or Detractor</td>
+        <td class="kpi-col">NPS score = (% Promoters − % Detractors); target airline industry NPS ≥ 40</td>
+        <td class="pain-col">Qualtrics NPS calculation runs at batch rather than real-time; daily NPS score may lag 12–18 hours behind actual flight completions during peak travel periods, delaying detractor recovery initiation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Perform text analytics on verbatim comments</td>
+        <td class="kpi-col">Auto-classification accuracy ≥ 85% vs. manual coding sample; ≤ 10% uncategorised verbatims</td>
+        <td class="pain-col">Qualtrics Text iQ topic models require periodic retraining as language patterns evolve; stale models misclassify emerging complaint themes (e.g. NDC booking friction) into legacy categories, masking new failure drivers</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Flag detractor responses and route to recovery queue</td>
+        <td class="kpi-col">Detractor case creation latency ≤ 4 hours from survey submission; 100% of NPS 0–3 cases created same day</td>
+        <td class="pain-col">Qualtrics-to-Salesforce webhook integration requires stable API keys and payload schema alignment; schema drift after Qualtrics XM or Salesforce release upgrades has caused dropped detractor cases in production</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Correlate NPS scores with operational performance data</td>
+        <td class="kpi-col">Correlation analysis refresh cycle ≤ 24 hours; cover ≥ 90% of surveyed flights with ops data join</td>
+        <td class="pain-col">Altéa operational data (delay codes, actual arrival times) and Qualtrics survey responses use different flight key structures (Altéa uses PNR/flight leg ID; Qualtrics uses survey metadata); cross-system join requires a maintained flight key mapping table that breaks on schedule changes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Identify systemic failure drivers and escalate</td>
+        <td class="kpi-col">Systemic issues identified within 48 hours of NPS batch; ≥ 80% of flags routed to correct owning department</td>
+        <td class="pain-col">Cross-functional escalation path for systemic NPS drivers (e.g. catering contracted to LSG Sky Chefs, IFE operated by Panasonic Avionics) lacks SLA enforcement; owning department may dispute root cause assignment without corroborating ops data</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Generate NPS insight report for leadership</td>
+        <td class="kpi-col">Report published by Monday 08:00 local time for prior week&#x27;s flights; ≥ 95% data completeness</td>
+        <td class="pain-col">Manual Tableau report assembly from multiple AWS Redshift views causes inconsistent metric definitions across business units; finance uses different on-time threshold (D15) vs. CX team (D0), creating conflicting NPS driver narratives</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Prioritise detractor outreach by severity tier</td>
+        <td class="kpi-col">Tier 1 first contact attempt within 24 hours; Tier 2 within 72 hours</td>
+        <td class="pain-col">Salesforce Service Cloud LTV flag relies on Amadeus Altéa loyalty tier sync; sync runs nightly so recently tier-upgraded passengers are misclassified as standard for up to 24 hours, delaying priority recovery for high-value detractors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Execute personalised recovery — miles or voucher</td>
+        <td class="kpi-col">Recovery offer acceptance rate ≥ 65%; average goodwill cost per case ≤ $35 equivalent</td>
+        <td class="pain-col">Goodwill miles crediting via Altéa loyalty API requires PNR match; passengers who booked via OTA without loyalty number attached cannot receive miles recovery without manual agent intervention, increasing handle time by 12–15 minutes per case</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Confirm recovery satisfaction and close case</td>
+        <td class="kpi-col">Case resolution rate ≥ 80% within 7 days; re-escalation rate ≤ 5%</td>
+        <td class="pain-col">No automated post-recovery satisfaction check; agents manually follow up by phone or email with no structured close-loop survey, making it impossible to measure whether recovery actions actually reversed detractor sentiment</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Publish NPS dashboard to operational stakeholders</td>
+        <td class="kpi-col">Dashboard refresh latency ≤ 4 hours; ≥ 200 active monthly dashboard users across CX, Ops, and Commercial</td>
+        <td class="pain-col">Tableau Server licence costs scale with named users; CX team frequently requests ad-hoc access for seasonal staff or agency partners which requires IT procurement cycle of 5–10 business days, delaying insight access during high-disruption periods</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Update CX improvement backlog with NPS-driven initiatives</td>
+        <td class="kpi-col">≥ 3 backlog items added per monthly NPS review cycle; ≥ 60% of prior-cycle items in active delivery</td>
+        <td class="pain-col">NPS-driven improvement initiatives require cross-functional commitment from Ops, IT, and Commercial; without formal governance linking NPS driver escalation to change request prioritisation, improvement backlog items stall at department boundaries</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+</body>
+</html>

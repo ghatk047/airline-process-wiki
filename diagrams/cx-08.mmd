@@ -1,0 +1,54 @@
+flowchart LR
+  subgraph P1["Phase 1: Survey Dispatch"]
+    A([Start]) --> B[Identify eligible pax]
+    B --> C{Opt-in & contact valid?}
+    C -- No --> Z1([Suppress & log])
+    C -- Yes --> D[Send personalised survey]
+  end
+  subgraph P2["Phase 2: Response Collection"]
+    D --> E[Monitor response rate]
+    E --> F{Rate below 15%?}
+    F -- Yes --> G[Send reminder]
+    G --> E
+    F -- No --> H[Validate completeness]
+    H --> I{Complete response?}
+    I -- No --> J[Flag partial — exclude]
+    I -- Yes --> K[Ingest to analytics]
+  end
+  subgraph P3["Phase 3: NPS Scoring"]
+    K --> L[Classify Promoter / Passive / Detractor]
+    L --> M[Segment verbatims by theme]
+    M --> N{Detractor score ≤ 6?}
+    N -- Yes --> O[Flag for recovery queue]
+    N -- No --> P[Aggregate NPS by route/cabin]
+  end
+  subgraph P4["Phase 4: Root Cause Analysis"]
+    P --> Q[Correlate NPS with ops data]
+    O --> Q
+    Q --> R{Systemic issue detected?}
+    R -- Yes --> S[Escalate to Ops & CX team]
+    R -- No --> T[Generate insight report]
+    S --> T
+  end
+  subgraph P5["Phase 5: Closed-Loop Recovery"]
+    T --> U[Prioritise detractor outreach]
+    U --> V[Execute recovery — miles / voucher]
+    V --> W{Pax satisfied?}
+    W -- No --> V
+    W -- Yes --> X[Close case & log outcome]
+  end
+  subgraph P6["Phase 6: Reporting & Improvement"]
+    X --> Y[Publish NPS dashboard]
+    Y --> Z[Update CX improvement backlog]
+    Z --> END([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style END fill:#003366,color:#fff,stroke:#003366
+  style Z1 fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600
