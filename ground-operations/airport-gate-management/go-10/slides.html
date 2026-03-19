@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GO-10 Slides — VIP &amp; Premium Passenger Handling</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-10</span>
+    <h1>VIP &amp; Premium Passenger Handling</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/go-10.png" alt="BPMN for GO-10" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-10</span>
+    <h1>VIP &amp; Premium Passenger Handling</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> GO-10</li>
+          <li><strong>L1 Domain:</strong> Ground Operations &amp; Airport Services</li>
+          <li><strong>L2 Process:</strong> Airport &amp; Gate Management</li>
+          <li><strong>L3 Name:</strong> VIP &amp; Premium Passenger Handling</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Pull premium passenger manifest from Altéa PSS</li><li><strong>Phase 2:</strong> Deploy escort agent to kerb or designated arrival </li><li><strong>Phase 3:</strong> Validate lounge entitlement and execute lounge acc</li><li><strong>Phase 4:</strong> Set up priority boarding lane and verify gate read</li><li><strong>Phase 5:</strong> Detect VIP disruption and escalate for priority re</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Gate Agent</li><li>Lounge Host</li><li>Lounge Host / VIP Escort Agent</li><li>Ramp Supervisor</li><li>VIP Escort Agent</li><li>VIP Escort Agent / Gate Agent</li><li>VIP Services Coordinator</li><li>VIP Services Supervisor</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Airport Authority Fast-Track Access System (TSA/CBP portal or equivalent)</li><li>Amadeus Altéa PSS</li><li>Amadeus Altéa PSS (bag reconciliation) + SITA Baggage Reconciliation System (BRS)</li><li>Amadeus Altéa PSS (boarding control)</li><li>Amadeus Altéa PSS (boarding scan) + Jeppesen FliteDeck (EFB ground message)</li><li>Amadeus Altéa PSS (check-in and boarding module)</li><li>Amadeus Altéa PSS (mobile boarding agent app)</li><li>Amadeus Altéa PSS + SITA Airport Management System (AMS)</li><li>Amadeus Altéa PSS + Salesforce Service Cloud</li><li>LoungeKey Access Management Platform</li><li>SITA Airport Management System (AMS)</li><li>SITA Airport Management System (AMS) + Amadeus Altéa PSS</li><li>Salesforce Service Cloud</li><li>Salesforce Service Cloud (mobile CRM)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-10</span>
+    <h1>VIP &amp; Premium Passenger Handling</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Pull premium passenger manifest from Altéa PSS</td>
+        <td class="kpi-col">VIP list generated ≥3h before STD for 100% of flagged flights</td>
+        <td class="pain-col">Altéa SSR codes not consistently populated by booking agents; last-minute upgrades bypass VIP workflow trigger, causing missed service setup</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Verify VIP profile, entitlements and SSRs in CRM</td>
+        <td class="kpi-col">100% of flagged passengers have CRM profiles verified ≥2h before STD</td>
+        <td class="pain-col">CRM–PSS integration is batch-updated every 30 min; loyalty tier upgrades post-booking are not reflected in CRM until next sync cycle, causing entitlement disputes at lounge</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Assign dedicated escort agent and ground transport</td>
+        <td class="kpi-col">Dedicated escort assigned ≥2h before STD for 95% of VIP departures</td>
+        <td class="pain-col">High-volume departure banks create escort staff shortages; SITA AMS staff-allocation module is not integrated with VIP workflow, requiring manual cross-referencing</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Deploy escort agent to kerb or designated arrival point</td>
+        <td class="kpi-col">Escort on-station ≥15 min before passenger arrival for 95% of VIP movements</td>
+        <td class="pain-col">No real-time kerb vehicle arrival feed from ground transport into Altéa mobile app; agents rely on manual WhatsApp coordination, introducing timing errors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Confirm passenger identity and validate service entitlement</td>
+        <td class="kpi-col">Identity verification completed within 2 min of passenger contact; 100% compliance rate</td>
+        <td class="pain-col">Offline CRM access unreliable in terminals with poor Wi-Fi coverage; agents revert to static printed lists containing stale tier and entitlement data</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Escort passenger through fast-track security and immigration</td>
+        <td class="kpi-col">Fast-track clearance time ≤15 min for 90% of VIP passengers</td>
+        <td class="pain-col">Fast-track lane access controlled by third-party airport authority; VIP agents have no influence over TSA/CBP staffing levels; clearance times spike during IRROP events with no advance warning to escort team</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Validate lounge entitlement and execute lounge access</td>
+        <td class="kpi-col">Lounge access processing time ≤3 min for 95% of eligible passengers</td>
+        <td class="pain-col">LoungeKey API is batch-synced with PSS; real-time upgrades at check-in are not reflected in lounge access rights until next sync, generating incorrect denials and reputational risk</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Coordinate ground transport, buggy or mobility service</td>
+        <td class="kpi-col">Transport dispatched ≥25 min before STD for 95% of requested VIP movements</td>
+        <td class="pain-col">AMS ground transport module is not linked to lounge host workstations; lounge staff must radio ramp operations manually, introducing dispatch delays of 5–12 min during peak periods</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Monitor flight status and trigger lounge departure alert</td>
+        <td class="kpi-col">Departure alert issued ≥30 min before STD for 98% of VIP departures; gate change communicated within 5 min of AMS notification</td>
+        <td class="pain-col">Gate change notifications from AMS to lounge management system carry up to 8-min latency; during high-disruption periods VIP passengers have missed boarding calls due to undelivered gate change alerts</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Set up priority boarding lane and verify gate readiness</td>
+        <td class="kpi-col">Priority lane ready ≥20 min before boarding call for 100% of VIP-flagged flights</td>
+        <td class="pain-col">Gate agent allocation is driven by generic staffing schedule; premium lane setup requires a manual Altéa query for VIP passenger count — awareness is not pushed to gate agents automatically</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Pre-board VIP passenger and brief cabin crew on preferences</td>
+        <td class="kpi-col">VIP pre-board completed ≥10 min before general boarding opens for 95% of applicable flights</td>
+        <td class="pain-col">No automated CRM-to-EFB passenger profile push; escort agent must verbally relay preferences or hand-carry printed notes, creating transcription errors and missed dietary or seating requirements</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Confirm VIP baggage priority-tagged and loaded in hold</td>
+        <td class="kpi-col">VIP baggage reconciliation complete ≥10 min before aircraft door close for 100% of bags</td>
+        <td class="pain-col">SITA BRS priority flag requires a manual scan override by ramp agent; automated priority sequencing is not enforced by baggage handling systems at most outstations, defaulting to FIFO load order</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Confirm VIP boarding complete before general boarding opens</td>
+        <td class="kpi-col">VIP boarding window closed ≥5 min before general boarding for 95% of flights</td>
+        <td class="pain-col">Tight turnaround schedules (&lt;35 min ground time) compress the pre-board window; gate agents under pressure to open general boarding early, bypassing the VIP exclusivity window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Detect VIP disruption and escalate for priority recovery</td>
+        <td class="kpi-col">VIP disruption detected and escalated within 10 min of AMS notification for 100% of affected flights</td>
+        <td class="pain-col">Altéa IRROP rebooking tool does not auto-surface VIP tier during mass disruption; disrupted VIP passengers are queued alongside general passengers with no proactive priority identification</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Rebook VIP and arrange priority hotel or lounge extension</td>
+        <td class="kpi-col">VIP rebooking offered within 20 min of disruption notification for 95% of affected passengers</td>
+        <td class="pain-col">Hotel inventory access from Altéa IRROP module is limited to contracted properties; premium passengers expecting 5-star accommodation must be manually booked outside PSS, adding 15–30 min to recovery time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Log service delivery notes and quality score in CRM</td>
+        <td class="kpi-col">CRM updated for 100% of VIP interactions within 2h of flight departure</td>
+        <td class="pain-col">Post-departure CRM logging is manually triggered with no workflow enforcement; during high-volume operations coordinators defer or skip logging, creating gaps in VIP relationship history that affect retention and future service quality</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+</body>
+</html>

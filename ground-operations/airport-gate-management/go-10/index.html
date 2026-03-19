@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Schedule Planning · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>GO-10 · VIP &amp; Premium Passenger Handling · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -161,15 +162,15 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-04/"><span class="status-dot status-done"></span><span class="pid">GO-04</span>Gate Management &amp; Assignment</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-08/"><span class="status-dot status-done"></span><span class="pid">GO-08</span>Passenger Disruption Handling (IRROP)</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-09/"><span class="status-dot status-done"></span><span class="pid">GO-09</span>Wheelchair &amp; Special Assistance Services</a>
-        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-10/"><span class="status-dot status-done"></span><span class="pid">GO-10</span>VIP &amp; Premium Passenger Handling</a>
+        <a class="sidebar-l3-link active" href="../../../ground-operations/airport-gate-management/go-10/"><span class="status-dot status-done"></span><span class="pid">GO-10</span>VIP &amp; Premium Passenger Handling</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-13/"><span class="status-dot status-queue"></span><span class="pid">GO-13</span>Airport Security Compliance (TSA/CBP)</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-15/"><span class="status-dot status-queue"></span><span class="pid">GO-15</span>Station Performance &amp; KPI Reporting</a>
       </div>
@@ -242,153 +243,238 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Schedule Planning</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
+  <a href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a><span class="sep">›</span>
+  <span class="current">GO-10 · VIP &amp; Premium Passenger Handling</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Schedule Planning</h1>
-    <p>Network Planning &amp; Scheduling · 15 of 15 subprocesses complete · Updated 2026-03-19 14:15</p>
+    <h1>VIP &amp; Premium Passenger Handling</h1>
+    <p>Ground Operations &amp; Airport Services › Airport &amp; Gate Management · 16 L4 steps · 5 phases · 7 decision gates · Updated 2026-03-19 14:15</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">GO-10</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-01</span>Seasonal Schedule Construction</h3>
-    <p>Schedule Planning · 16 steps · 8 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-go-10">
+      <img src="../../../assets/img/go-10.png" alt="GO-10 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-go-10').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-go-10').style.display='flex'">
+      <div id="diag-placeholder-go-10" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Pull premium passenger manifest from Altéa PSS</td>
+  <td class="td-role">VIP Services Coordinator</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Flight departure schedule T-24h; SSR codes VIPS, MAAS, EXST</td>
+  <td style="font-size:10px">Confirmed VIP/CIP passenger list with PNRs and service flags</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">VIP list generated ≥3h before STD for 100% of flagged flights</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Verify VIP profile, entitlements and SSRs in CRM</td>
+  <td class="td-role">VIP Services Coordinator</td>
+  <td><span class="stag custom">Salesforce Service Cloud</span></td>
+  <td style="font-size:10px;color:#6b7280">PNR list and SSR flags from Altéa PSS</td>
+  <td style="font-size:10px">Verified VIP tier, lounge entitlement, dietary/mobility needs, escort preferences</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of flagged passengers have CRM profiles verified ≥2h before STD</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Assign dedicated escort agent and ground transport</td>
+  <td class="td-role">VIP Services Supervisor</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Verified VIP list, staff roster, buggy and vehicle availability in AMS</td>
+  <td style="font-size:10px">Named escort assignments and ground transport booking confirmations</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Dedicated escort assigned ≥2h before STD for 95% of VIP departures</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Deploy escort agent to kerb or designated arrival point</td>
+  <td class="td-role">VIP Escort Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (mobile boarding agent app)</span></td>
+  <td style="font-size:10px;color:#6b7280">VIP manifest, expected arrival time, ground transport ETA</td>
+  <td style="font-size:10px">Escort agent positioned at correct terminal entry with passenger itinerary loaded</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Escort on-station ≥15 min before passenger arrival for 95% of VIP movements</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Confirm passenger identity and validate service entitlement</td>
+  <td class="td-role">VIP Escort Agent</td>
+  <td><span class="stag custom">Salesforce Service Cloud (mobile CRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger boarding pass, frequent flyer card or government-issued ID</td>
+  <td style="font-size:10px">Identity confirmed, service tier validated, escort commences</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Identity verification completed within 2 min of passenger contact; 100% compliance rate</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Escort passenger through fast-track security and immigration</td>
+  <td class="td-role">VIP Escort Agent</td>
+  <td><span class="stag custom">Airport Authority Fast-Track Access System (TSA/CBP portal or equivalent)</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed identity, valid boarding pass, fast-track access credentials</td>
+  <td style="font-size:10px">Passenger cleared security and immigration, escorted airside</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fast-track clearance time ≤15 min for 90% of VIP passengers</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Validate lounge entitlement and execute lounge access</td>
+  <td class="td-role">Lounge Host / VIP Escort Agent</td>
+  <td><span class="stag custom">LoungeKey Access Management Platform</span></td>
+  <td style="font-size:10px;color:#6b7280">Verified VIP tier, flight PNR, loyalty programme status</td>
+  <td style="font-size:10px">Lounge access granted and logged; passenger introduced to lounge host</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Lounge access processing time ≤3 min for 95% of eligible passengers</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Coordinate ground transport, buggy or mobility service</td>
+  <td class="td-role">Lounge Host</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Gate assignment, STD, passenger mobility requirements from CRM</td>
+  <td style="font-size:10px">Ground buggy or wheelchair dispatched with confirmed pickup time</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Transport dispatched ≥25 min before STD for 95% of requested VIP movements</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Monitor flight status and trigger lounge departure alert</td>
+  <td class="td-role">Lounge Host</td>
+  <td><span class="stag amadeus">SITA Airport Management System (AMS) + Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Real-time departure board, gate change notifications from AMS</td>
+  <td style="font-size:10px">Departure alert issued to VIP passenger; escort confirmed at lounge door</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Departure alert issued ≥30 min before STD for 98% of VIP departures; gate change communicated within 5 min of AMS notification</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Set up priority boarding lane and verify gate readiness</td>
+  <td class="td-role">Gate Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (check-in and boarding module)</span></td>
+  <td style="font-size:10px;color:#6b7280">VIP passenger list, boarding call time, confirmed gate assignment</td>
+  <td style="font-size:10px">Priority boarding lane activated; VIP seat blocking released in Altéa</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Priority lane ready ≥20 min before boarding call for 100% of VIP-flagged flights</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Pre-board VIP passenger and brief cabin crew on preferences</td>
+  <td class="td-role">VIP Escort Agent / Gate Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (boarding scan) + Jeppesen FliteDeck (EFB ground message)</span></td>
+  <td style="font-size:10px;color:#6b7280">Boarding pass, VIP escorted to gate, CRM preference profile</td>
+  <td style="font-size:10px">Boarding scanned in Altéa; cabin crew briefed via FliteDeck; amenity kit pre-positioned</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">VIP pre-board completed ≥10 min before general boarding opens for 95% of applicable flights</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Confirm VIP baggage priority-tagged and loaded in hold</td>
+  <td class="td-role">Ramp Supervisor</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (bag reconciliation) + SITA Baggage Reconciliation System (BRS)</span></td>
+  <td style="font-size:10px;color:#6b7280">VIP bag tags from check-in, ULD load plan from weight and balance system</td>
+  <td style="font-size:10px">Priority bags confirmed loaded and reconciled in SITA BRS before door close</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">VIP baggage reconciliation complete ≥10 min before aircraft door close for 100% of bags</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Confirm VIP boarding complete before general boarding opens</td>
+  <td class="td-role">Gate Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (boarding control)</span></td>
+  <td style="font-size:10px;color:#6b7280">Boarding scan records, VIP count from pre-departure list</td>
+  <td style="font-size:10px">Gate agent confirmation that all VIPs are boarded; general boarding lane opened</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">VIP boarding window closed ≥5 min before general boarding for 95% of flights</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Detect VIP disruption and escalate for priority recovery</td>
+  <td class="td-role">VIP Services Supervisor</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS + SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Flight cancellation or delay ≥60 min notification from AMS/NOC feed</td>
+  <td style="font-size:10px">VIP disruption flag raised; supervisor notified; recovery workflow initiated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">VIP disruption detected and escalated within 10 min of AMS notification for 100% of affected flights</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Rebook VIP and arrange priority hotel or lounge extension</td>
+  <td class="td-role">VIP Services Supervisor</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS + Salesforce Service Cloud</span></td>
+  <td style="font-size:10px;color:#6b7280">Disrupted VIP passenger list, next-available flight inventory, hotel inventory feed</td>
+  <td style="font-size:10px">Confirmed rebooking on next available flight; hotel or lounge extension voucher issued</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">VIP rebooking offered within 20 min of disruption notification for 95% of affected passengers</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Log service delivery notes and quality score in CRM</td>
+  <td class="td-role">VIP Services Coordinator</td>
+  <td><span class="stag custom">Salesforce Service Cloud</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed service checklist, passenger feedback, any complaints or deviations noted during escort</td>
+  <td style="font-size:10px">CRM record updated with service quality score, issues flagged for relationship manager follow-up</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CRM updated for 100% of VIP interactions within 2h of flight departure</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-02</span>Fleet Assignment &amp; Tail Routing</h3>
-    <p>Schedule Planning · 11 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">GO-10</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Ground Operations &amp; Airport Services</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Airport &amp; Gate Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">VIP &amp; Premium Passenger Handling</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">16 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">7 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">6 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>VIP Services Coordinator</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>VIP Services Supervisor</div><div class="swim"><div class="dot" style="background:#ec4899"></div>VIP Escort Agent</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Lounge Host / VIP Escort Agent</div><div class="swim"><div class="dot" style="background:#10b981"></div>Lounge Host</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Gate Agent</div><div class="swim"><div class="dot" style="background:#6366f1"></div>VIP Escort Agent / Gate Agent</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Ramp Supervisor</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag custom">Salesforce Service Cloud</span><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag amadeus">Amadeus Altéa PSS (mobile boarding agent app)</span><span class="stag custom">Salesforce Service Cloud (mobile CRM)</span><span class="stag custom">Airport Authority Fast-Track Access System (TSA/CBP portal or equivalent)</span><span class="stag custom">LoungeKey Access Management Platform</span><span class="stag amadeus">SITA Airport Management System (AMS) + Amadeus Altéa PSS</span><span class="stag amadeus">Amadeus Altéa PSS (check-in and boarding module)</span><span class="stag amadeus">Amadeus Altéa PSS (boarding scan) + Jeppesen FliteDeck (EFB ground message)</span><span class="stag amadeus">Amadeus Altéa PSS (bag reconciliation) + SITA Baggage Reconciliation System (BRS)</span><span class="stag amadeus">Amadeus Altéa PSS (boarding control)</span><span class="stag amadeus">Amadeus Altéa PSS + SITA Airport Management System (AMS)</span><span class="stag amadeus">Amadeus Altéa PSS + Salesforce Service Cloud</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Pull premium passenger manifest from Altéa PSS</span><span class="kval">VIP list generated ≥3h before STD for 100% of flagged flights</span></div><div class="krow"><span class="kname">Verify VIP profile, entitlements and SSRs in CRM</span><span class="kval">100% of flagged passengers have CRM profiles verified ≥2h before STD</span></div><div class="krow"><span class="kname">Assign dedicated escort agent and ground transport</span><span class="kval">Dedicated escort assigned ≥2h before STD for 95% of VIP departures</span></div><div class="krow"><span class="kname">Deploy escort agent to kerb or designated arrival point</span><span class="kval">Escort on-station ≥15 min before passenger arrival for 95% of VIP movements</span></div><div class="krow"><span class="kname">Confirm passenger identity and validate service entitlement</span><span class="kval">Identity verification completed within 2 min of passenger contact; 100% compliance rate</span></div><div class="krow"><span class="kname">Escort passenger through fast-track security and immigration</span><span class="kval">Fast-track clearance time ≤15 min for 90% of VIP passengers</span></div><div class="krow"><span class="kname">Validate lounge entitlement and execute lounge access</span><span class="kval">Lounge access processing time ≤3 min for 95% of eligible passengers</span></div><div class="krow"><span class="kname">Coordinate ground transport, buggy or mobility service</span><span class="kval">Transport dispatched ≥25 min before STD for 95% of requested VIP movements</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Altéa SSR codes not consistently populated by booking agents; last-minute upgrades bypass VIP workflow trigger, causing missed service setup</div><div class="risk-card">CRM–PSS integration is batch-updated every 30 min; loyalty tier upgrades post-booking are not reflected in CRM until next sync cycle, causing entitlement disputes at lounge</div><div class="risk-card">High-volume departure banks create escort staff shortages; SITA AMS staff-allocation module is not integrated with VIP workflow, requiring manual cross-referencing</div><div class="risk-card">No real-time kerb vehicle arrival feed from ground transport into Altéa mobile app; agents rely on manual WhatsApp coordination, introducing timing errors</div><div class="risk-card">Offline CRM access unreliable in terminals with poor Wi-Fi coverage; agents revert to static printed lists containing stale tier and entitlement data</div><div class="risk-card">Fast-track lane access controlled by third-party airport authority; VIP agents have no influence over TSA/CBP staffing levels; clearance times spike during IRROP events with no advance warning to escort team</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Flight departure schedule T-24h; SSR codes VIPS, MAAS, EXST</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">CRM record updated with service quality score, issues flagged for relationship manager follow-up</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-03</span>Route Profitability Analysis</h3>
-    <p>Schedule Planning · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-04</span>Slot Coordination &amp; Management</h3>
-    <p>Schedule Planning · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-05</span>Codeshare &amp; Interline Schedule Planning</h3>
-    <p>Schedule Planning · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-06</span>Schedule Change Management</h3>
-    <p>Schedule Planning · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-07</span>Capacity Planning &amp; Utilization</h3>
-    <p>Schedule Planning · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-08</span>New Market Entry Feasibility</h3>
-    <p>Schedule Planning · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-09</span>Alliance &amp; Partnership Network Strategy</h3>
-    <p>Schedule Planning · 19 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-10</span>SSIM File Management &amp; Distribution</h3>
-    <p>Schedule Planning · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-11</span>Schedule Publication &amp; GDS Loading</h3>
-    <p>Schedule Planning · 15 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-12</span>Irregular Operations Recovery Planning</h3>
-    <p>Schedule Planning · 18 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-13</span>Charter &amp; Ad-Hoc Flight Planning</h3>
-    <p>Schedule Planning · 17 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-14</span>Competition &amp; Capacity Benchmarking</h3>
-    <p>Schedule Planning · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-15</span>Strategic Network Planning</h3>
-    <p>Schedule Planning · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../go-09/"><span class="arrow">←</span><span><span class="sub">Previous</span>GO-09 · Wheelchair &amp; Special Assistance Services</span></a><a class="pn-btn" href="../go-11/"><span><span class="sub">Next</span>GO-11 · Cargo &amp; Mail Ground Handling</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

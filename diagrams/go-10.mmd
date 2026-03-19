@@ -1,0 +1,48 @@
+flowchart LR
+  subgraph P1[Phase 1: Pre-Flight Preparation]
+    A([Start]) --> B[Pull VIP manifest\nfrom Altéa PSS]
+    B --> C{VIP profile\ncomplete and verified?}
+    C -- No --> B
+    C -- Yes --> D[Assign escort agent\nand ground transport]
+  end
+  subgraph P2[Phase 2: Arrival and Fast-Track Escort]
+    D --> E[Deploy escort to\nterminal arrival point]
+    E --> F{Entitlement\nconfirmed?}
+    F -- No --> G[Escalate to\nVIP Supervisor]
+    G --> F
+    F -- Yes --> H[Escort through\nfast-track security]
+  end
+  subgraph P3[Phase 3: Lounge and Ground Services]
+    H --> I{Lounge entitlement\nvalid?}
+    I -- No --> J[Offer premium\nalternative area]
+    J --> K[Coordinate buggy /\ntransport via AMS]
+    I -- Yes --> K
+    K --> L{Gate change\nor delay detected?}
+    L -- Yes --> M[Issue departure alert\nto passenger]
+    M --> L
+    L -- No --> N[Confirm escort\nat lounge door]
+  end
+  subgraph P4[Phase 4: Priority Boarding]
+    N --> O[Activate priority\nlane in Altéa PSS]
+    O --> P[Pre-board VIP and\nbrief cabin crew]
+    P --> Q{All VIP bags\nreconciled in BRS?}
+    Q -- No --> R[Resolve bag\ndiscrepancy]
+    R --> Q
+    Q -- Yes --> S[Boarding complete\nbefore general open]
+  end
+  subgraph P5[Phase 5: Recovery and CRM Closure]
+    S --> T{VIP disrupted\n≥60 min?}
+    T -- Yes --> U[Rebook and arrange\npriority hotel/lounge]
+    U --> V[Log service notes\nin Salesforce CRM]
+    T -- No --> V
+    V --> W([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
