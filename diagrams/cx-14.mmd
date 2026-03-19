@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1["Phase 1: Partner Qualification"]
+    A([Start]) --> B[Screen partner market fit]
+    B --> C{Meets loyalty\nfit criteria?}
+    C -- No --> B
+    C -- Yes --> D[Document partner brief]
+  end
+  subgraph P2["Phase 2: Commercial Negotiation"]
+    D --> E[Model earn/burn rates\n& liability exposure]
+    E --> F{Liability within\nthreshold?}
+    F -- No --> E
+    F -- Yes --> G[Execute partnership\nagreement]
+  end
+  subgraph P3["Phase 3: Technical Integration"]
+    G --> H[Configure partner in\nloyalty platform]
+    H --> I[Build & test\nAPI connector]
+    I --> J{UAT pass\n< 0.5% error?}
+    J -- No --> I
+    J -- Yes --> K[Enable in\nproduction]
+  end
+  subgraph P4["Phase 4: Launch & Activation"]
+    K --> L[Publish partner to\nmember portal]
+    L --> M[Launch co-marketing\ncampaign]
+    M --> N{CTR ≥ 2%?}
+    N -- No --> M
+    N -- Yes --> O[Activate full\nprogramme]
+  end
+  subgraph P5["Phase 5: Performance Monitoring"]
+    O --> P[Monitor transactions\n& points liability]
+    P --> Q{KPIs met?}
+    Q -- No --> R[Trigger performance\nimprovement plan]
+    R --> P
+    Q -- Yes --> S[Log performance\nreport]
+  end
+  subgraph P6["Phase 6: Partner Review & Renewal"]
+    S --> T[Conduct annual\nbusiness review]
+    T --> U{Renew\npartnership?}
+    U -- Renegotiate --> E
+    U -- Terminate --> V([End / Off-board Partner])
+    U -- Renew --> W([Renew Contract])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style V fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600

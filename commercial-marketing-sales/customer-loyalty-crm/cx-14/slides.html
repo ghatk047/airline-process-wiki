@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-14 Slides — Loyalty Program Partnerships (Hotels/Cars/Retail)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-14</span>
+    <h1>Loyalty Program Partnerships (Hotels/Cars/Retail)</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-14.png" alt="BPMN for CX-14" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Loyalty Programme Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-14</span>
+    <h1>Loyalty Program Partnerships (Hotels/Cars/Retail)</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-14</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Loyalty Programme Management</li>
+          <li><strong>L3 Name:</strong> Loyalty Program Partnerships (Hotels/Cars/Retail)</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Screen potential partners against loyalty fit crit</li><li><strong>Phase 2:</strong> Define earn/burn mile rates per partner category</li><li><strong>Phase 3:</strong> Configure partner profile in loyalty management sy</li><li><strong>Phase 4:</strong> Publish partner to member-facing loyalty portal an</li><li><strong>Phase 5:</strong> Monitor partner transaction volumes and error rate</li><li><strong>Phase 6:</strong> Conduct annual partner business review (ABR)</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>API Integration Engineer</li><li>Digital Product Manager — Loyalty</li><li>Legal Counsel — Commercial</li><li>Loyalty Analytics Analyst</li><li>Loyalty Commercial Manager</li><li>Loyalty Finance Analyst</li><li>Loyalty Marketing Manager</li><li>Loyalty Operations Analyst</li><li>Loyalty Partnerships Manager</li><li>Loyalty QA Analyst</li><li>Loyalty Systems Engineer</li><li>VP Loyalty &amp; Partnerships</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS API Gateway</li><li>AWS Redshift</li><li>Amadeus Altéa PSS</li><li>Comarch Loyalty Management</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Salesforce CRM</li><li>Salesforce Marketing Cloud</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Loyalty Programme Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-14</span>
+    <h1>Loyalty Program Partnerships (Hotels/Cars/Retail)</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Screen potential partners against loyalty fit criteria</td>
+        <td class="kpi-col">Minimum 20 candidates screened per category (hotel/car/retail) per quarter</td>
+        <td class="pain-col">Retail and hotel categories have inconsistent earn-per-dollar standards across IATA-affiliated programmes; benchmarking requires manual OAG and ATPCO data pulls with no automated feed</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Score partner on member overlap and revenue potential</td>
+        <td class="kpi-col">Projected incremental miles-earned revenue ≥ $500K annually per partner</td>
+        <td class="pain-col">Member spend data outside airline transactions is incomplete; reliance on third-party data append (e.g. Acxiom) adds latency of 4–6 weeks and increases data privacy compliance overhead under GDPR and CCPA</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Approve partner for commercial engagement</td>
+        <td class="kpi-col">Decision turnaround ≤ 10 business days from submission</td>
+        <td class="pain-col">Approval workflows require sign-off from Legal, Finance, and Brand teams simultaneously; lack of a unified workflow tool causes email-chain approvals that are difficult to audit</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Define earn/burn mile rates per partner category</td>
+        <td class="kpi-col">Earn rate set within ±10% of top-3 competitor benchmark to maintain programme competitiveness</td>
+        <td class="pain-col">Earn rate proposals must account for currency-of-sale variations across hotel booking platforms; multi-currency mile valuation is not natively handled in SAP FI without custom enhancement</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Model financial liability and breakage assumptions</td>
+        <td class="kpi-col">Projected breakage rate ≥ 20% to ensure programme profitability; liability exposure within approved board ceiling</td>
+        <td class="pain-col">IFRS 15 requires deferred revenue recognition for miles issued; SAP FI configuration for loyalty liability is complex and frequently requires external audit review, delaying deal closure by 2–4 weeks</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Negotiate SLA terms, data-sharing clauses, and audit rights</td>
+        <td class="kpi-col">Contract execution within 60 days of first commercial engagement; SLA uptime commitment ≥ 99.5% for transaction API</td>
+        <td class="pain-col">Hotel and car rental partners often resist audit rights on transaction data, creating reconciliation disputes; without real-time feeds, monthly batch reconciliations result in miles posting delays of up to 72 hours, breaching member-facing SLA</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Execute legally signed partnership agreement</td>
+        <td class="kpi-col">100% of executed agreements stored in CRM document vault within 24 hours of signature</td>
+        <td class="pain-col">Wet-signature requirements from some international hotel chains (particularly APAC and MEA regions) extend execution timelines; e-signature platforms (DocuSign) not universally accepted by all partners</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Configure partner profile in loyalty management system</td>
+        <td class="kpi-col">Partner configuration completed within 5 business days of contract execution</td>
+        <td class="pain-col">Comarch Loyalty rule engine requires structured XML earn-rule definitions; hotel chains with tiered earn rates (e.g. brand-tier multipliers) require multiple rule variants, increasing configuration time and regression test scope</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Build and certify partner transaction API connector</td>
+        <td class="kpi-col">API throughput ≥ 500 transactions per second; p99 latency ≤ 2 seconds</td>
+        <td class="pain-col">Car rental partners (e.g. Hertz, Enterprise) still expose legacy SOAP APIs; bridging SOAP-to-REST within AWS API Gateway adds development cycles and creates brittle transformation layers that break on partner schema updates</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Execute UAT — earn/burn transaction end-to-end test</td>
+        <td class="kpi-col">Transaction error rate &lt; 0.5%; all earn/burn scenarios in test matrix pass before production release</td>
+        <td class="pain-col">Member account linking between Amadeus Altéa PSS and partner booking engines relies on loyalty number matching; mismatched account formats (numeric vs alphanumeric) cause silent earn failures that are only detected in post-flight reconciliation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Enable partner earn/burn in production environment</td>
+        <td class="kpi-col">Zero P1 incidents in first 72 hours post-launch; real-time alert threshold set at error rate &gt; 1%</td>
+        <td class="pain-col">Production rollbacks are disruptive if a partner API sends unexpected payloads post-launch; Comarch Loyalty does not support canary releases natively, requiring full cutover with no gradual traffic ramp</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Publish partner to member-facing loyalty portal and app</td>
+        <td class="kpi-col">Partner page live within 3 business days of production enablement; page load time ≤ 2 seconds</td>
+        <td class="pain-col">Loyalty portal content management is tightly coupled to Altéa PSS member-facing APIs; content updates require IT release cycle (bi-weekly) rather than CMS self-service, slowing time-to-market for partner promotions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Launch targeted co-marketing campaign to member segments</td>
+        <td class="kpi-col">Email open rate ≥ 22%; click-through rate (CTR) ≥ 2%; campaign ROI ≥ 3:1 on miles-issued cost</td>
+        <td class="pain-col">Member communication frequency caps (set in Salesforce Marketing Cloud) limit partnership launch campaigns to one email per member per week; competing loyalty promotions from the same period suppress campaign visibility</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Monitor partner transaction volumes and error rates weekly</td>
+        <td class="kpi-col">Transaction volume within ±15% of forecast; earn posting success rate ≥ 99.5%</td>
+        <td class="pain-col">Hotel partners send batch transaction files (nightly SFTP) rather than real-time API calls; delayed posting means members do not see miles for 24–72 hours, generating inbound contact centre volume and NPS drag</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Audit points liability exposure and breakage monthly</td>
+        <td class="kpi-col">Liability reconciliation completed by business day 5 of each month; breakage rate maintained ≥ 18%</td>
+        <td class="pain-col">IFRS 15 standalone selling price (SSP) for miles must be updated quarterly; SAP CO-PA margin reporting does not natively integrate with Comarch Loyalty ledger, requiring manual extract-transform-load (ETL) via AWS Redshift</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Trigger partner performance improvement plan if KPIs missed</td>
+        <td class="kpi-col">PIP issued within 10 business days of confirmed SLA breach; partner response received within 5 business days</td>
+        <td class="pain-col">SLA penalty clauses are often commercially difficult to enforce with major hotel chains (Marriott, Hilton) due to contractual carve-outs; legal escalation stalls programme improvements and damages long-term relationship</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Conduct annual partner business review (ABR)</td>
+        <td class="kpi-col">ABR completed ≥ 90 days before contract expiry; partner NPS score ≥ +30 for renewal consideration</td>
+        <td class="pain-col">Attribution of loyalty revenue uplift to specific partners is difficult; multi-partner journeys (hotel + car + flight) where miles are earned across a trip create ambiguous incrementality data that weakens negotiation positions</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Execute contract renewal, renegotiation, or off-boarding</td>
+        <td class="kpi-col">Contract renewal signed ≥ 30 days before expiry; off-boarding completed within 45 days with zero orphaned earn transactions</td>
+        <td class="pain-col">Partner off-boarding requires coordinated deactivation across Comarch Loyalty, AWS API Gateway, Salesforce Marketing Cloud suppression lists, and Altéa PSS member portal; no single orchestration tool manages the full off-boarding workflow, creating risk of earn transactions processed after contract end</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Loyalty Programme Management</span>
+  </div>
+</div>
+
+</body>
+</html>
