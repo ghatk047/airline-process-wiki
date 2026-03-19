@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GO-08 Slides — Passenger Disruption Handling (IRROP)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-08</span>
+    <h1>Passenger Disruption Handling (IRROP)</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/go-08.png" alt="BPMN for GO-08" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-08</span>
+    <h1>Passenger Disruption Handling (IRROP)</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> GO-08</li>
+          <li><strong>L1 Domain:</strong> Ground Operations &amp; Airport Services</li>
+          <li><strong>L2 Process:</strong> Airport &amp; Gate Management</li>
+          <li><strong>L3 Name:</strong> Passenger Disruption Handling (IRROP)</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">15</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive IRROP alert from Operations Control Centre</li><li><strong>Phase 2:</strong> Extract full passenger manifest for affected fligh</li><li><strong>Phase 3:</strong> Execute automated mass rebooking via Altéa Invento</li><li><strong>Phase 4:</strong> Trigger automated SMS and email notifications to a</li><li><strong>Phase 5:</strong> Assess duty-of-care entitlements by delay duration</li><li><strong>Phase 6:</strong> Record disruption costs against flight and cost ce</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Airport Finance Controller</li><li>Airport Operations Controller</li><li>Airport Operations Manager</li><li>Passenger Services Agent</li><li>Passenger Services Supervisor</li><li>Revenue Management Analyst</li><li>Senior Passenger Services Agent</li><li>Special Assistance Coordinator</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Altéa Departure Control (DCS)</li><li>Amadeus Altéa Inventory</li><li>Amadeus Altéa PSS</li><li>Amadeus Altéa PSS (Notification Engine)</li><li>Amadeus Revenue Management (NRM)</li><li>SAP S/4HANA Finance (FI/CO)</li><li>SITA Airport Management System (AMS)</li><li>Tableau</li><li>Voucher Management System (VMS)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-08</span>
+    <h1>Passenger Disruption Handling (IRROP)</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive IRROP alert from Operations Control Centre</td>
+        <td class="kpi-col">Alert-to-acknowledgement time ≤5 min</td>
+        <td class="pain-col">SITA AMS alert feeds from multiple upstream systems (NOC, Jeppesen, Altéa) with inconsistent data latency, causing duplicate or conflicting IRROP triggers during high-volume disruption events</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Classify disruption type and assign severity tier</td>
+        <td class="kpi-col">Classification accuracy ≥95% (validated vs. final outcome)</td>
+        <td class="pain-col">Mechanical IRROPs often escalate from Tier 1 to Tier 3 mid-process due to late MX diagnosis; premature low-tier classification under-triggers rebooking resources</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Confirm affected flight status in Amadeus Altéa PSS</td>
+        <td class="kpi-col">Manifest retrieval time ≤2 min from alert</td>
+        <td class="pain-col">Altéa PSS record locking conflicts when OCC and airport teams access the same flight simultaneously; requires coordinated queue management via PSS administrator role</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Extract full passenger manifest for affected flight</td>
+        <td class="kpi-col">Manifest extraction completeness 100% of checked-in and booked passengers</td>
+        <td class="pain-col">Passengers booked via third-party OTAs often have incomplete contact data in Altéa, blocking automated notification and requiring manual agent outreach</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Flag PRM, UM, and MAAS passengers requiring priority handling</td>
+        <td class="kpi-col">100% of SSR-flagged passengers identified before rebooking batch runs</td>
+        <td class="pain-col">SSR codes entered by codeshare or interline partners are not always carried over into the operating carrier&#x27;s Altéa record, creating missed-flag risk for vulnerable passengers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Determine EU261 / DOT compensation threshold applicability</td>
+        <td class="kpi-col">Eligibility determination completed before rebooking batch execution</td>
+        <td class="pain-col">EU261 extraordinary-circumstances defence (e.g. ATC strike, severe weather) requires real-time legal review; automated rules engines in Altéa do not always capture all exemption nuances, exposing the airline to over- or under-payment</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Execute automated mass rebooking via Altéa Inventory</td>
+        <td class="kpi-col">Auto-rebook success rate ≥70% of affected PAX; batch processing time ≤15 min</td>
+        <td class="pain-col">Inventory availability for the rebooking window is often constrained by already-high load factors (industry avg ≥83%), forcing passengers onto flights departing 24–48 hrs later and increasing duty-of-care cost</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Identify and triage rebooking conflicts and seat oversells</td>
+        <td class="kpi-col">Oversell resolution time ≤30 min; upgrade/interline acceptance rate ≥60%</td>
+        <td class="pain-col">NRM inventory controls may auto-close cabin classes during the rebooking wave, preventing agents from placing passengers even when physical seats are available — requires temporary override authorisation from RM Analyst</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Manually rebook complex and unresolvable itineraries</td>
+        <td class="kpi-col">Manual rebook completion ≤60 min from conflict identification</td>
+        <td class="pain-col">Interline rebooking requires bilateral interline agreements (IIAs); if the next-available flight is on a carrier with no IIA, agents must issue refunds rather than rebooking, increasing passenger dissatisfaction scores</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Issue new boarding passes and update ancillary entitlements</td>
+        <td class="kpi-col">Boarding pass issuance ≤5 min per passenger post-rebooking confirmation</td>
+        <td class="pain-col">Ancillary transfer from disrupted to alternate flight is not fully automated in Altéa DCS; agents manually re-enter seat selections and meal preferences, adding ~3–4 min per PNR and creating ancillary revenue leakage</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Trigger automated SMS and email notifications to affected PAX</td>
+        <td class="kpi-col">Notification delivery rate ≥95% within 10 min of rebooking confirmation</td>
+        <td class="pain-col">Passengers with international mobile numbers often fail SMS delivery due to carrier routing gaps; email-only fallback is slower and has lower open rates during time-sensitive IRROP events</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Update FIDS and gate display boards with disruption status</td>
+        <td class="kpi-col">FIDS update within 3 min of disruption classification confirmation</td>
+        <td class="pain-col">SITA AMS FIDS integration with some airport authority display networks requires manual refresh at certain stations, creating information lag of 5–15 min in secondary terminals</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Brief gate agents and customer service desk on disruption status</td>
+        <td class="kpi-col">Agent briefing completion ≤10 min from IRROP classification</td>
+        <td class="pain-col">High-disruption events (weather cancellations affecting 20+ flights simultaneously) overwhelm customer service desk staffing ratios — airline contingency plans often require minimum 1:50 agent-to-passenger ratio, which is rarely met in mass IRROP scenarios</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Assess duty-of-care entitlements by delay duration and cause</td>
+        <td class="kpi-col">Entitlement assessment completed within 15 min of Tier 2/3 classification</td>
+        <td class="pain-col">EU261 duty-of-care obligations apply regardless of extraordinary-circumstances defence — airlines frequently conflate compensation exemption with duty-of-care exemption, creating regulatory exposure under EC Regulation 261/2004 Art. 9</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Issue meal and hotel vouchers to entitled passengers</td>
+        <td class="kpi-col">Voucher issuance rate ≥90% of entitled passengers within 30 min of threshold trigger</td>
+        <td class="pain-col">Many airlines operate VMS as a standalone system disconnected from Altéa PNR records; reconciling voucher costs against individual PNRs for EU261 cost recovery requires manual matching, creating audit gaps of up to 30% unreconciled spend</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Manage passenger queue flow at rebooking and check-in desks</td>
+        <td class="kpi-col">Average passenger wait time at rebooking desk ≤20 min during IRROP event</td>
+        <td class="pain-col">SITA AMS resource scheduling module does not dynamically redeploy staff from non-disrupted gates during an IRROP event — staffing reallocation depends on supervisor radio coordination, adding 15–20 min to response time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Record disruption costs against flight and cost centre in SAP</td>
+        <td class="kpi-col">IRROP cost posting completed within 24 hrs of event closure</td>
+        <td class="pain-col">Voucher costs from third-party hotel partners arrive as bulk invoices weekly, preventing real-time flight-level cost attribution in SAP CO and distorting disruption cost-per-passenger metrics</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Submit EU261 / DOT compensation claims data to legal team</td>
+        <td class="kpi-col">Claims data submitted within 48 hrs of event; EU261 response SLA ≤7 days per regulation</td>
+        <td class="pain-col">ATPCO and IATA resolution frameworks for extraordinary-circumstances documentation are not standardised; each jurisdiction&#x27;s CAA applies different evidence standards, requiring airline legal teams to maintain jurisdiction-specific defence packs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Generate IRROP performance report and update process KPIs</td>
+        <td class="kpi-col">Report published within 72 hrs; cost-per-disrupted-passenger target ≤$85 (industry benchmark)</td>
+        <td class="pain-col">Data from SITA AMS, Altéa, VMS, and SAP sit in separate schemas with no native ETL integration; Tableau dashboards rely on nightly batch feeds, preventing real-time IRROP performance monitoring during the event itself</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+</body>
+</html>

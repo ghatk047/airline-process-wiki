@@ -1,0 +1,49 @@
+flowchart LR
+  subgraph P1[Phase 1: Disruption Detection and Classification]
+    A([Start]) --> B[Receive IRROP alert\nfrom OCC via SITA AMS]
+    B --> C{Disruption type\nconfirmed?}
+    C -- No --> B
+    C -- Yes --> D[Classify severity\nand scope in Altéa]
+  end
+  subgraph P2[Phase 2: Passenger Impact Assessment]
+    D --> E[Extract affected PAX\nmanifest from Altéa]
+    E --> F{PRM / UM / MAAS\npassengers flagged?}
+    F -- Yes --> G[Escalate to\nspecial assist team]
+    F -- No --> H[Determine EU261/DOT\ncompensation thresholds]
+    G --> H
+  end
+  subgraph P3[Phase 3: Rebooking and Reaccommodation]
+    H --> I[Run mass rebooking\nAmadeus Altéa Inventory]
+    I --> J{Rebooking conflicts\nor oversells?}
+    J -- Yes --> K[Manual rebook\ncomplex itineraries]
+    K --> J
+    J -- No --> L[Issue new BPs\nvia Altéa DCS]
+  end
+  subgraph P4[Phase 4: Passenger Communication]
+    L --> M[Send SMS/email alerts\nvia Altéa Notifications]
+    M --> N[Update FIDS boards\nvia SITA AMS]
+    N --> O{All PAX\nnotified?}
+    O -- No --> M
+    O -- Yes --> P[Brief gate agents\nin AMS ops log]
+  end
+  subgraph P5[Phase 5: Duty of Care and Airport Handling]
+    P --> Q{Delay ≥2 hrs or\ncancellation?}
+    Q -- No --> R([End])
+    Q -- Yes --> S[Assess meal/hotel\nentitlements]
+    S --> T[Issue vouchers via\nVoucher Management System]
+    T --> U[Manage PAX queue\nat rebooking desks]
+  end
+  subgraph P6[Phase 6: Recovery and Closure]
+    U --> V[Record disruption costs\nin SAP S/4HANA FI]
+    V --> W[File EU261/DOT\nclaims data in Altéa]
+    W --> X[Generate IRROP report\nin Tableau]
+    X --> R([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style R fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
