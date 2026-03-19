@@ -1,0 +1,54 @@
+flowchart LR
+  subgraph P1[Phase 1: Vendor Qualification]
+    A([Start]) --> B[Identify MRO\ncapability gap]
+    B --> C[Issue RFQ via\nSAP Ariba]
+    C --> D{Part-145 approval\nvalid?}
+    D -- No --> C
+    D -- Yes --> E[Update Approved\nVendor List]
+  end
+  subgraph P2[Phase 2: Contract Scope and Negotiation]
+    E --> F[Define work scope\nand SLA — AMOS]
+    F --> G{Contract terms within\nbudget envelope?}
+    G -- No --> F
+    G -- Yes --> H[Load contract\nAriba + AMOS]
+  end
+  subgraph P3[Phase 3: Work Release and Oversight]
+    H --> I[Release aircraft\nto MRO vendor]
+    I --> J{Milestone deviation\n> 10% TAT?}
+    J -- Yes --> K[Escalate and revise\nwork plan]
+    K --> J
+    J -- No --> L{AWF within\nscope + budget?}
+    L -- No --> M[Reject / re-scope\nchange order]
+    M --> L
+    L -- Yes --> N[Approve change\norder — Ariba]
+  end
+  subgraph P4[Phase 4: Performance Monitoring]
+    N --> O[Collect vendor\nscorecard — Tableau]
+    O --> P{Performance\nbelow SLA?}
+    P -- Yes --> Q[Issue CAR —\nAMOS Quality]
+    Q --> P
+    P -- No --> R[Record quarterly\nreview minutes]
+  end
+  subgraph P5[Phase 5: Invoice Settlement]
+    R --> S{3-way match\nwithin 2%?}
+    S -- No --> T[Raise dispute —\nSAP FI/CO]
+    T --> S
+    S -- Yes --> U[Process payment\nand cost allocation]
+  end
+  subgraph P6[Phase 6: Renewal or Exit]
+    U --> V{Renew without\nre-tender?}
+    V -- No --> W[Issue re-tender\nvia SAP Ariba]
+    W --> D
+    V -- Yes --> X[Execute renewal\nor transition]
+    X --> Y([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
