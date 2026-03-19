@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MR-12 Slides — Avionics &amp; Systems Modification</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-12</span>
+    <h1>Avionics &amp; Systems Modification</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/mr-12.png" alt="BPMN for MR-12" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Airworthiness & Compliance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-12</span>
+    <h1>Avionics &amp; Systems Modification</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> MR-12</li>
+          <li><strong>L1 Domain:</strong> Maintenance, Repair &amp; Overhaul</li>
+          <li><strong>L2 Process:</strong> Airworthiness &amp; Compliance</li>
+          <li><strong>L3 Name:</strong> Avionics &amp; Systems Modification</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive and log AD/SB notice into tracking system</li><li><strong>Phase 2:</strong> Develop Engineering Order from OEM technical data</li><li><strong>Phase 3:</strong> Raise parts requisition for avionics LRUs and cons</li><li><strong>Phase 4:</strong> Remove existing avionics LRU and prepare installat</li><li><strong>Phase 5:</strong> Load approved avionics software and update configu</li><li><strong>Phase 6:</strong> Complete maintenance release and regulatory docume</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Authorized Release Certifier (ARC) / IA Inspector</li><li>Avionics Engineer</li><li>Avionics Engineer / DER</li><li>Avionics Test Technician</li><li>Continuing Airworthiness Manager</li><li>Director of Maintenance / CAMO</li><li>Licensed Avionics Technician (A&amp;P/IA)</li><li>Materials Planner</li><li>Production Planner</li><li>QA Inspector / Avionics Lead</li><li>Quality Assurance Engineer</li><li>Quality Assurance Inspector</li><li>Stores Controller / Materials Planner</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>BITE (aircraft-native Built-In Test Equipment) / Trax</li><li>Boeing TechConnect</li><li>CAMP Systems</li><li>FAA FSIMS (Flight Standards Information Management System)</li><li>Honeywell GoDirect</li><li>Trax</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Airworthiness & Compliance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-12</span>
+    <h1>Avionics &amp; Systems Modification</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive and log AD/SB notice into tracking system</td>
+        <td class="kpi-col">AD applicability assessment completed within 3 business days of issuance; 100% of ADs logged</td>
+        <td class="pain-col">AD applicability across mixed fleet configurations (different mod states, AFMS revisions) requires manual cross-check in CAMP — no automated fleet-wide applicability filter exists, creating missed-applicability risk on large fleets</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Assess compliance deadline and work priority flag</td>
+        <td class="kpi-col">100% of mandatory ADs scheduled before compliance deadline; 0% AD overrun rate</td>
+        <td class="pain-col">Short-fuse Emergency ADs (EADs) compress planning windows to less than 48 hours, forcing AOG-level priority and displacing planned line maintenance events across multiple stations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Determine mandatory vs. optional modification track</td>
+        <td class="kpi-col">Mandatory ADs never exceed compliance deadline — 0% regulatory non-compliance rate</td>
+        <td class="pain-col">Optional SBs reclassified as mandatory mid-stream (e.g., OEM safety recommendation upgrade) force reprioritization and resource reallocation from already-scheduled maintenance events</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Develop Engineering Order from OEM technical data</td>
+        <td class="kpi-col">EO development cycle 5 business days for standard modifications; 2 days for emergency ADs</td>
+        <td class="pain-col">Boeing TechConnect access latency and AMM revision currency issues cause engineers to reference outdated task data — no automated revision alert in AMOS when OEM documentation is superseded post-EO creation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Classify modification as major or minor alteration</td>
+        <td class="kpi-col">Major/minor determination documented within 1 business day of EO draft completion; 0% misclassification findings on FAA audits</td>
+        <td class="pain-col">Major vs. minor alteration boundary under FAR Part 43 Appendix A is subjective for novel avionics integrations — misclassification exposes the airline to FAA enforcement action and certificate action during oversight audits</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Submit Engineering Order to CAMO for formal approval</td>
+        <td class="kpi-col">CAMO EO approval turnaround 2 business days for standard modifications; same-day for EADs</td>
+        <td class="pain-col">AMOS approval workflow does not enforce mandatory attachment validation (SB copy, applicability data), allowing incomplete EOs to route to the shop floor and cause mid-task holds for missing documentation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Raise parts requisition for avionics LRUs and consumables</td>
+        <td class="kpi-col">Parts availability confirmed 72 hours before scheduled modification slot; on-time parts availability rate 95%</td>
+        <td class="pain-col">Avionics LRU lead times from OEM-approved suppliers (Honeywell, Collins Aerospace) can reach 60–90 days — long-range parts planning is rarely executed because modification scheduling is reactive, creating AOG parts shortages</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Verify parts serviceability, traceability, and shelf-life</td>
+        <td class="kpi-col">Parts shortage-driven deferral rate 5% of avionics work orders; counterfeit parts detection — 0 unapproved parts reaching aircraft</td>
+        <td class="pain-col">AMOS parts provenance tracking does not automate FAA AC 21-29D traceability chain verification for avionics LRUs — manual document review required, and counterfeit avionics parts remain an active industry risk (FAA SUP-04 flag)</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Reserve hangar bay, tooling, and technician staffing</td>
+        <td class="kpi-col">Avionics modification slot utilization 85%; aircraft out-of-service time within 10% of planned duration</td>
+        <td class="pain-col">Avionics modifications requiring simultaneous avionics and airframe access create hangar bay scheduling conflicts, particularly when consolidated with heavy check inputs — bay and lift equipment contention causes schedule slippage</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Remove existing avionics LRU and prepare installation zone</td>
+        <td class="kpi-col">LRU removal and serviceable tagging completed per AMM procedure; 0 FOD events per modification event</td>
+        <td class="pain-col">Trax task card completion tracking is not real-time on the hangar floor — supervisors rely on end-of-shift paper sign-offs that delay discrepancy identification and extend aircraft ground time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Install avionics modification per EO and AMM procedure</td>
+        <td class="kpi-col">Installation rework rate 2% of avionics work orders; first-time quality rate 98%</td>
+        <td class="pain-col">Wire harness modifications on older aircraft encounter undocumented prior non-standard SB wiring deviations not reflected in current AMM diagrams — creates FOD risk and requires unplanned engineering investigation, extending aircraft down time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Inspect wiring integrity, bonding, and HIRF protection</td>
+        <td class="kpi-col">Wiring inspection pass rate 96% first pass; rework cycle 4 hours; 0 HIRF non-conformances at release</td>
+        <td class="pain-col">HIRF and lightning protection bonding measurements require specialized test equipment not always available at line stations — deferred compliance testing creates a safety gap and requires ferry flight restrictions until verified</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Load approved avionics software and update configuration data</td>
+        <td class="kpi-col">Software load completion without error within 2 hours; LSAP compatibility verified against aircraft CDS 100%</td>
+        <td class="pain-col">LSAP version mismatches between aircraft Configuration Deviation Sheet (CDS) maintained in CAMP and the physical installed state cause rejected loads — manual CDS reconciliation is error-prone during high-tempo fleet-wide software campaigns</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Execute functional ground test per approved test procedure</td>
+        <td class="kpi-col">Avionics ground test pass rate 94% first run; 0 open safety-of-flight defects at release</td>
+        <td class="pain-col">BITE test coverage on older avionics line-replaceable units may not fully exercise the modification scope — supplemental manual test procedures are required but not always linked in AMOS task cards, creating coverage gaps discovered only during flight test</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Evaluate test results against acceptance criteria</td>
+        <td class="kpi-col">Discrepancy rate at final test 4%; 0 open safety-of-flight items at time of release</td>
+        <td class="pain-col">Test acceptance criteria for modified systems sometimes reference superseded test procedures — AMOS and Trax do not flag document revision status at time of test sign-off, allowing outdated acceptance limits to be applied to new configurations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Complete maintenance release and regulatory documentation</td>
+        <td class="kpi-col">Maintenance release documentation completeness 100% before aircraft release; FAA Form 337 filed within 30 days of major alteration completion</td>
+        <td class="pain-col">FAA Form 337 filing for major alterations is a paper-plus-digital hybrid process in FAA FSIMS with no automated submission confirmation — missed or late filings are only discovered during FAA Principal Inspector audits, exposing the operator to civil penalty</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Update aircraft configuration records and return to service</td>
+        <td class="kpi-col">Configuration record update completed within 24 hours of maintenance release; CAMP mod state accuracy 99.5%</td>
+        <td class="pain-col">CAMP Systems configuration record updates for multi-LRU modifications require manual entry of each modified item — bulk update capability is absent, creating data entry backlog during fleet-wide AD compliance campaigns and increasing the risk of mod state discrepancies between CAMP and physical aircraft</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Airworthiness & Compliance</span>
+  </div>
+</div>
+
+</body>
+</html>

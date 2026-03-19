@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Line Maintenance · Maintenance, Repair &amp; Overhaul · Airlines Process Wiki</title>
+<title>MR-12 · Avionics &amp; Systems Modification · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -198,7 +199,7 @@
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-08/"><span class="status-dot status-done"></span><span class="pid">MR-08</span>AOG Recovery &amp; Technical Dispatch</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-09/"><span class="status-dot status-done"></span><span class="pid">MR-09</span>MRO Vendor &amp; Outsourcing Management</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-10/"><span class="status-dot status-done"></span><span class="pid">MR-10</span>Spare Parts Inventory &amp; Procurement</a>
-        <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-12/"><span class="status-dot status-done"></span><span class="pid">MR-12</span>Avionics &amp; Systems Modification</a>
+        <a class="sidebar-l3-link active" href="../../../mro-maintenance-engineering/line-maintenance/mr-12/"><span class="status-dot status-done"></span><span class="pid">MR-12</span>Avionics &amp; Systems Modification</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-13/"><span class="status-dot status-queue"></span><span class="pid">MR-13</span>Quality Assurance &amp; Safety Audits (CAMO)</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-14/"><span class="status-dot status-queue"></span><span class="pid">MR-14</span>Maintenance Cost Control &amp; KPI Reporting</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-15/"><span class="status-dot status-queue"></span><span class="pid">MR-15</span>Warranty Claim Management</a>
@@ -242,117 +243,248 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
-  <span class="current">Line Maintenance</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/line-maintenance/">Airworthiness &amp; Compliance</a><span class="sep">›</span>
+  <span class="current">MR-12 · Avionics &amp; Systems Modification</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Line Maintenance</h1>
-    <p>Maintenance, Repair &amp; Overhaul · 8 of 11 subprocesses complete · Updated 2026-03-19 19:34</p>
+    <h1>Avionics &amp; Systems Modification</h1>
+    <p>Maintenance, Repair &amp; Overhaul › Airworthiness &amp; Compliance · 17 L4 steps · 6 phases · 5 decision gates · Updated 2026-03-19 19:34</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">MR-12</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-01</span>Line Maintenance Planning &amp; Execution</h3>
-    <p>Line Maintenance · 20 steps · 6 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-mr-12">
+      <img src="../../../assets/img/mr-12.png" alt="MR-12 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-mr-12').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-mr-12').style.display='flex'">
+      <div id="diag-placeholder-mr-12" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Receive and log AD/SB notice into tracking system</td>
+  <td class="td-role">Continuing Airworthiness Manager</td>
+  <td><span class="stag custom">CAMP Systems</span></td>
+  <td style="font-size:10px;color:#6b7280">FAA AD Federal Register notice or OEM Service Bulletin release</td>
+  <td style="font-size:10px">Applicability assessment report with fleet impact analysis</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AD applicability assessment completed within 3 business days of issuance; 100% of ADs logged</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Assess compliance deadline and work priority flag</td>
+  <td class="td-role">Continuing Airworthiness Manager</td>
+  <td><span class="stag custom">CAMP Systems</span></td>
+  <td style="font-size:10px;color:#6b7280">Applicability assessment report, AD/SB compliance timeframe, flight-hours and cycles data</td>
+  <td style="font-size:10px">Compliance deadline schedule, priority classification (EAD / mandatory / optional)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of mandatory ADs scheduled before compliance deadline; 0% AD overrun rate</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Determine mandatory vs. optional modification track</td>
+  <td class="td-role">Director of Maintenance / CAMO</td>
+  <td><span class="stag custom">CAMP Systems</span></td>
+  <td style="font-size:10px;color:#6b7280">AD/SB classification, compliance deadline, cost-benefit analysis for optional SBs</td>
+  <td style="font-size:10px">Work authorization decision: mandatory track (expedite) or optional track (standard planning)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Mandatory ADs never exceed compliance deadline — 0% regulatory non-compliance rate</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Develop Engineering Order from OEM technical data</td>
+  <td class="td-role">Avionics Engineer</td>
+  <td><span class="stag custom">Boeing TechConnect</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved SB/AD task data, AMM chapter reference, IPC part numbers</td>
+  <td style="font-size:10px">Engineering Order (EO) with task card, materials list, and tooling requirements</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">EO development cycle 5 business days for standard modifications; 2 days for emergency ADs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Classify modification as major or minor alteration</td>
+  <td class="td-role">Avionics Engineer / DER</td>
+  <td><span class="stag noc">FAA FSIMS (Flight Standards Information Management System)</span></td>
+  <td style="font-size:10px;color:#6b7280">Engineering Order draft, modification scope and system criticality assessment</td>
+  <td style="font-size:10px">Major/minor alteration determination per FAR Part 43 Appendix A; DER involvement decision</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Major/minor determination documented within 1 business day of EO draft completion; 0% misclassification findings on FAA audits</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Submit Engineering Order to CAMO for formal approval</td>
+  <td class="td-role">Quality Assurance Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed EO with DER determination, SB copy, applicability data, materials list</td>
+  <td style="font-size:10px">CAMO-approved EO, released work order number in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CAMO EO approval turnaround 2 business days for standard modifications; same-day for EADs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Raise parts requisition for avionics LRUs and consumables</td>
+  <td class="td-role">Materials Planner</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved EO materials list, IPC part numbers, supplier approved vendor list (AVL)</td>
+  <td style="font-size:10px">Purchase order or stores issue request for LRUs, connectors, wire, and consumables</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Parts availability confirmed 72 hours before scheduled modification slot; on-time parts availability rate 95%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Verify parts serviceability, traceability, and shelf-life</td>
+  <td class="td-role">Stores Controller / Materials Planner</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Parts received from stores or supplier, FAA Form 8130-3 / EASA Form 1 certificates</td>
+  <td style="font-size:10px">Go/No-Go decision for scheduled modification slot; quarantine order if parts rejected</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Parts shortage-driven deferral rate 5% of avionics work orders; counterfeit parts detection — 0 unapproved parts reaching aircraft</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Reserve hangar bay, tooling, and technician staffing</td>
+  <td class="td-role">Production Planner</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved EO, parts availability confirmation, aircraft schedule and induction date</td>
+  <td style="font-size:10px">Confirmed maintenance event: hangar bay, specialized avionics tooling, staffing plan, and ground support equipment reservation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Avionics modification slot utilization 85%; aircraft out-of-service time within 10% of planned duration</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Remove existing avionics LRU and prepare installation zone</td>
+  <td class="td-role">Licensed Avionics Technician (A&amp;P/IA)</td>
+  <td><span class="stag custom">Trax</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved EO task card, aircraft inducted into maintenance bay, tooling issued</td>
+  <td style="font-size:10px">Removed LRU tagged with part number, serial number, and removal date; cleared and inspected installation area</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">LRU removal and serviceable tagging completed per AMM procedure; 0 FOD events per modification event</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Install avionics modification per EO and AMM procedure</td>
+  <td class="td-role">Licensed Avionics Technician (A&amp;P/IA)</td>
+  <td><span class="stag custom">Trax</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved EO, new LRU with FAA Form 8130-3, wiring diagram, torque specifications</td>
+  <td style="font-size:10px">Installed avionics component with completed installation task card; connector and harness photographs</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Installation rework rate 2% of avionics work orders; first-time quality rate 98%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Inspect wiring integrity, bonding, and HIRF protection</td>
+  <td class="td-role">Quality Assurance Inspector</td>
+  <td><span class="stag custom">Trax</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed wiring installation, bonding resistance test results, HIRF test equipment readings</td>
+  <td style="font-size:10px">Wiring inspection pass/fail determination; rework order issued if failed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Wiring inspection pass rate 96% first pass; rework cycle 4 hours; 0 HIRF non-conformances at release</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Load approved avionics software and update configuration data</td>
+  <td class="td-role">Licensed Avionics Technician (A&amp;P/IA)</td>
+  <td><span class="stag custom">Honeywell GoDirect</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved software part number, Loadable Software Aircraft Part (LSAP) list, aircraft data loader</td>
+  <td style="font-size:10px">Confirmed software load complete; post-load configuration report with part number and version verification</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Software load completion without error within 2 hours; LSAP compatibility verified against aircraft CDS 100%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Execute functional ground test per approved test procedure</td>
+  <td class="td-role">Avionics Test Technician</td>
+  <td><span class="stag custom">BITE (aircraft-native Built-In Test Equipment) / Trax</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed modification, aircraft on ground power unit, approved test procedure and acceptance criteria</td>
+  <td style="font-size:10px">Functional test report with pass/fail for each test parameter; BITE fault code log</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Avionics ground test pass rate 94% first run; 0 open safety-of-flight defects at release</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Evaluate test results against acceptance criteria</td>
+  <td class="td-role">QA Inspector / Avionics Lead</td>
+  <td><span class="stag custom">Trax</span></td>
+  <td style="font-size:10px;color:#6b7280">Functional test report, BITE fault codes, acceptance criteria from EO and AMM</td>
+  <td style="font-size:10px">Airworthiness determination: proceed to release or raise defect work order for rework</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Discrepancy rate at final test 4%; 0 open safety-of-flight items at time of release</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Complete maintenance release and regulatory documentation</td>
+  <td class="td-role">Authorized Release Certifier (ARC) / IA Inspector</td>
+  <td><span class="stag custom">Trax</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed task cards, functional test report, DER approval (if major alteration), FAA Form 8130-3</td>
+  <td style="font-size:10px">Signed maintenance release; FAA Form 337 filed for major alterations; updated aircraft log entry</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Maintenance release documentation completeness 100% before aircraft release; FAA Form 337 filed within 30 days of major alteration completion</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Update aircraft configuration records and return to service</td>
+  <td class="td-role">Continuing Airworthiness Manager</td>
+  <td><span class="stag custom">CAMP Systems</span></td>
+  <td style="font-size:10px;color:#6b7280">Signed maintenance release, EO closure, modification documentation package</td>
+  <td style="font-size:10px">Updated aircraft status in CAMP (mod state, AFMS revision, AD compliance record); aircraft released to operations</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Configuration record update completed within 24 hours of maintenance release; CAMP mod state accuracy 99.5%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-05</span>Airworthiness Directive (AD) Compliance</h3>
-    <p>Line Maintenance · 19 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">MR-12</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Maintenance, Repair &amp; Overhaul</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Airworthiness &amp; Compliance</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Avionics &amp; Systems Modification</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">17 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">7 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Continuing Airworthiness Manager</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Director of Maintenance / CAMO</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Avionics Engineer</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Avionics Engineer / DER</div><div class="swim"><div class="dot" style="background:#10b981"></div>Quality Assurance Engineer</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Materials Planner</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Stores Controller / Materials Planner</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Production Planner</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Licensed Avionics Technician (A&amp;P/IA)</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Quality Assurance Inspector</div><div class="swim"><div class="dot" style="background:#f97316"></div>Avionics Test Technician</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>QA Inspector / Avionics Lead</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Authorized Release Certifier (ARC) / IA Inspector</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">CAMP Systems</span><span class="stag custom">Boeing TechConnect</span><span class="stag noc">FAA FSIMS (Flight Standards Information Management System)</span><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag custom">Trax</span><span class="stag custom">Honeywell GoDirect</span><span class="stag custom">BITE (aircraft-native Built-In Test Equipment) / Trax</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Receive and log AD/SB notice into tracking system</span><span class="kval">AD applicability assessment completed within 3 business days of issuance; 100% of ADs logged</span></div><div class="krow"><span class="kname">Assess compliance deadline and work priority flag</span><span class="kval">100% of mandatory ADs scheduled before compliance deadline; 0% AD overrun rate</span></div><div class="krow"><span class="kname">Determine mandatory vs. optional modification track</span><span class="kval">Mandatory ADs never exceed compliance deadline — 0% regulatory non-compliance rate</span></div><div class="krow"><span class="kname">Develop Engineering Order from OEM technical data</span><span class="kval">EO development cycle 5 business days for standard modifications; 2 days for emergency ADs</span></div><div class="krow"><span class="kname">Classify modification as major or minor alteration</span><span class="kval">Major/minor determination documented within 1 business day of EO draft completion; 0% misclassification findings on FAA audits</span></div><div class="krow"><span class="kname">Submit Engineering Order to CAMO for formal approval</span><span class="kval">CAMO EO approval turnaround 2 business days for standard modifications; same-day for EADs</span></div><div class="krow"><span class="kname">Raise parts requisition for avionics LRUs and consumables</span><span class="kval">Parts availability confirmed 72 hours before scheduled modification slot; on-time parts availability rate 95%</span></div><div class="krow"><span class="kname">Verify parts serviceability, traceability, and shelf-life</span><span class="kval">Parts shortage-driven deferral rate 5% of avionics work orders; counterfeit parts detection — 0 unapproved parts reaching aircraft</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">AD applicability across mixed fleet configurations (different mod states, AFMS revisions) requires manual cross-check in CAMP — no automated fleet-wide applicability filter exists, creating missed-applicability risk on large fleets</div><div class="risk-card">Short-fuse Emergency ADs (EADs) compress planning windows to less than 48 hours, forcing AOG-level priority and displacing planned line maintenance events across multiple stations</div><div class="risk-card">Optional SBs reclassified as mandatory mid-stream (e.g., OEM safety recommendation upgrade) force reprioritization and resource reallocation from already-scheduled maintenance events</div><div class="risk-card">Boeing TechConnect access latency and AMM revision currency issues cause engineers to reference outdated task data — no automated revision alert in AMOS when OEM documentation is superseded post-EO creation</div><div class="risk-card">Major vs. minor alteration boundary under FAR Part 43 Appendix A is subjective for novel avionics integrations — misclassification exposes the airline to FAA enforcement action and certificate action during oversight audits</div><div class="risk-card">AMOS approval workflow does not enforce mandatory attachment validation (SB copy, applicability data), allowing incomplete EOs to route to the shop floor and cause mid-task holds for missing documentation</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">FAA AD Federal Register notice or OEM Service Bulletin release</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Updated aircraft status in CAMP (mod state, AFMS revision, AD compliance record); aircraft released to operations</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-06</span>Maintenance Reliability &amp; RCM Program</h3>
-    <p>Line Maintenance · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-07</span>Aircraft Technical Records Management</h3>
-    <p>Line Maintenance · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-08</span>AOG Recovery &amp; Technical Dispatch</h3>
-    <p>Line Maintenance · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-09</span>MRO Vendor &amp; Outsourcing Management</h3>
-    <p>Line Maintenance · 16 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-10</span>Spare Parts Inventory &amp; Procurement</h3>
-    <p>Line Maintenance · 15 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-12</span>Avionics &amp; Systems Modification</h3>
-    <p>Line Maintenance · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="mr-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-13</span>Quality Assurance &amp; Safety Audits (CAMO)</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-14</span>Maintenance Cost Control &amp; KPI Reporting</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-15</span>Warranty Claim Management</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../mr-11/"><span class="arrow">←</span><span><span class="sub">Previous</span>MR-11 · Structural Repair &amp; NDT Management</span></a><a class="pn-btn" href="../mr-13/"><span><span class="sub">Next</span>MR-13 · Quality Assurance &amp; Safety Audits (CAMO)</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
