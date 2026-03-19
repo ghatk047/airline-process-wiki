@@ -1,0 +1,46 @@
+flowchart LR
+  subgraph P1["Phase 1: Data Ingestion"]
+    A([Start]) --> B[Ingest PSS booking data]
+    B --> C[Collect loyalty interactions]
+    C --> D[Capture digital behaviour]
+    D --> E{Data completeness\n≥95%?}
+    E -- No --> B
+  end
+  subgraph P2["Phase 2: Quality & Governance"]
+    E -- Yes --> F[Cleanse & deduplicate records]
+    F --> G[PII consent & GDPR check]
+    G --> H{Compliance\nthreshold met?}
+    H -- No --> G
+  end
+  subgraph P3["Phase 3: Profile Unification"]
+    H -- Yes --> I[Identity resolution & stitching]
+    I --> J[Compute CLV & tier classification]
+    J --> K{Profile confidence\nscore ≥80%?}
+    K -- No --> I
+  end
+  subgraph P4["Phase 4: Segmentation & Modelling"]
+    K -- Yes --> L[Run segmentation models]
+    L --> M[Build propensity scores]
+    M --> N{Model accuracy\n≥AUC 0.75?}
+    N -- No --> L
+  end
+  subgraph P5["Phase 5: Personalization Delivery"]
+    N -- Yes --> O[Generate personalised offers]
+    O --> P[Activate across channels]
+    P --> Q{Offer relevance\nscore ≥70%?}
+    Q -- No --> O
+  end
+  subgraph P6["Phase 6: Measurement & Optimisation"]
+    Q -- Yes --> R[Track redemption & conversion]
+    R --> S[A/B test analysis]
+    S --> T([End: Model retrain triggered])
+    T --> L
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style T fill:#003366,color:#fff,stroke:#003366
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-10 Slides — Customer Data &amp; Personalization</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-10</span>
+    <h1>Customer Data &amp; Personalization</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-10.png" alt="BPMN for CX-10" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-10</span>
+    <h1>Customer Data &amp; Personalization</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-10</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Customer Experience Operations</li>
+          <li><strong>L3 Name:</strong> Customer Data &amp; Personalization</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Ingest booking &amp; transaction data from PSS</li><li><strong>Phase 2:</strong> Cleanse and deduplicate customer records</li><li><strong>Phase 3:</strong> Resolve identity and stitch cross-channel profiles</li><li><strong>Phase 4:</strong> Run customer segmentation models</li><li><strong>Phase 5:</strong> Generate personalised pre-trip offer packages</li><li><strong>Phase 6:</strong> Track offer redemption and revenue attribution</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>CRM Analytics Manager</li><li>CRM Campaign Manager</li><li>Data Engineer</li><li>Data Quality Engineer</li><li>Data Scientist</li><li>Data Steward</li><li>Digital Analytics Analyst</li><li>Digital Marketing Specialist</li><li>Digital Product Manager</li><li>Privacy &amp; Compliance Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift</li><li>AWS S3 / Redshift</li><li>Adobe Analytics</li><li>Adobe Experience Platform</li><li>Amadeus Altéa PSS</li><li>Braze</li><li>OneTrust</li><li>SITA Airport Management System (AMS)</li><li>Salesforce Marketing Cloud</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-10</span>
+    <h1>Customer Data &amp; Personalization</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Ingest booking &amp; transaction data from PSS</td>
+        <td class="kpi-col">Data pipeline SLA: 100% of prior-day records ingested by 04:00 local</td>
+        <td class="pain-col">Altéa PNR schema changes on major releases can silently break field mappings, causing downstream profile gaps until the next data audit cycle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Collect loyalty programme interaction events</td>
+        <td class="kpi-col">Event capture rate ≥99% of Salesforce Marketing Cloud triggers per day</td>
+        <td class="pain-col">Loyalty tier change events arrive asynchronously from PSS; without an event-ordering layer, a customer can receive a downgrade communication before the upgrade is confirmed</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Capture web &amp; mobile behavioural data</td>
+        <td class="kpi-col">Tag coverage ≥98% of key conversion pages; session data latency ≤2 hours</td>
+        <td class="pain-col">iOS ATT (App Tracking Transparency) and Safari ITP limit cross-device identity stitching, reducing identifiable behavioural profiles by ~20–30% on Apple devices</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Validate data completeness across all sources</td>
+        <td class="kpi-col">Overall data completeness ≥95% before downstream processing proceeds</td>
+        <td class="pain-col">GDS-originated bookings (Sabre, Travelport, Amadeus GDS) often arrive with partial passenger profile fields; missing DOB or contact email breaks identity resolution</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Cleanse and deduplicate customer records</td>
+        <td class="kpi-col">Duplicate record rate ≤0.5% post-cleanse; address standardisation accuracy ≥97%</td>
+        <td class="pain-col">Passengers booking via third-party OTAs (Expedia, booking.com) often have name/email variations that resist standard matching rules, inflating duplicate counts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Verify PII consent and GDPR / CCPA compliance</td>
+        <td class="kpi-col">100% of records processed against current consent status before any marketing activation; consent sync latency ≤24 hours from collection event</td>
+        <td class="pain-col">Consent revocation must propagate to Salesforce Marketing Cloud, Adobe Experience Platform, and Braze within the 72-hour GDPR window — cross-system latency routinely misses this SLA without automated orchestration</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Enforce data retention and right-to-erasure rules</td>
+        <td class="kpi-col">Right-to-erasure requests fulfilled within 30 days per GDPR Article 17; 100% completion rate</td>
+        <td class="pain-col">Cascading deletes across Altéa PSS, Salesforce Marketing Cloud, Adobe Experience Platform, and AWS Redshift require coordinated API calls; partial deletions create residual PII exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Resolve identity and stitch cross-channel profiles</td>
+        <td class="kpi-col">Identity match rate ≥80% of known travellers; profile stitching latency ≤6 hours from data ingestion</td>
+        <td class="pain-col">Passengers using travel agent bookings have no direct loyalty ID in the PNR, requiring probabilistic name+route matching which has a ~12% false-positive rate without additional signal</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Compute customer lifetime value and tier segments</td>
+        <td class="kpi-col">CLV model R² ≥0.72; tier classification refreshed weekly; top-decile CLV customers identified for proactive retention</td>
+        <td class="pain-col">Frequent-flyer programme changes (e.g., move from segment- to revenue-based earning) invalidate historical CLV models requiring full retraining — a 3–4 week disruption to personalisation pipelines</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Run customer segmentation models</td>
+        <td class="kpi-col">Silhouette score ≥0.55 for k-means clusters; segment refresh cycle ≤7 days</td>
+        <td class="pain-col">Seasonal demand patterns (holidays, school breaks) cause segment drift that is difficult to distinguish from genuine behavioural change — misclassification drives irrelevant offers during peak booking windows</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Build propensity scores for ancillary and upgrade offers</td>
+        <td class="kpi-col">AUC ≥0.75 per propensity model; score refresh ≤48 hours before scheduled departure</td>
+        <td class="pain-col">Short-haul domestic passengers have sparse ancillary purchase histories, causing propensity models to default to population averages and suppressing personalisation lift on high-frequency leisure routes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Score churn risk for loyalty programme members</td>
+        <td class="kpi-col">Churn model recall ≥70% on held-out validation set; High-risk members flagged ≥60 days before predicted lapse</td>
+        <td class="pain-col">Alliance-free carriers have no partner accrual data to detect cross-airline defection; churn signals are visible only after the customer has already reduced flying frequency, limiting intervention window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Generate personalised pre-trip offer packages</td>
+        <td class="kpi-col">Offer relevance score ≥70% (measured by click-through proxy); ancillary attach rate uplift ≥8% vs control</td>
+        <td class="pain-col">ATPCO-filed fare class restrictions may invalidate upgrade offers at activation time — without real-time inventory checks against Amadeus NRM, irrelevant offers are served, eroding customer trust</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Activate offers across email, app push, and web</td>
+        <td class="kpi-col">Email open rate ≥28%; push notification opt-in rate ≥45%; web personalisation CTR ≥4%</td>
+        <td class="pain-col">Channel fatigue from overlapping CRM, loyalty, and operational email streams — without cross-channel frequency capping in Braze, customers in high-propensity segments receive 5–8 emails per week, driving unsubscribe rates above 0.6%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Serve real-time personalisation at airport touchpoints</td>
+        <td class="kpi-col">Kiosk upgrade conversion rate ≥5% for High-propensity customers; offer display latency ≤500ms from check-in event</td>
+        <td class="pain-col">Real-time inventory sync between Amadeus Altéa PSS and SITA AMS kiosks can lag by 2–4 minutes during peak check-in, causing declined upgrade offers that had already been verbally accepted at the counter</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Track offer redemption and revenue attribution</td>
+        <td class="kpi-col">Incremental ancillary revenue per personalised journey ≥€12 vs control; attribution model updated weekly</td>
+        <td class="pain-col">Last-click attribution in Salesforce Marketing Cloud over-credits email and under-credits app push and airport kiosk touchpoints — multi-touch attribution requires custom AWS Redshift modelling not available out-of-the-box</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Analyse A/B test results and model performance</td>
+        <td class="kpi-col">A/B test statistical significance ≥95% before rolling out winning variant; model performance reviewed bi-weekly</td>
+        <td class="pain-col">Small holdout sizes on low-frequency routes (e.g., thin regional services) prevent statistical significance from being reached within a single IATA season, forcing carry-over decisions based on directional data only</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+</body>
+</html>
