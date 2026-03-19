@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-14 Slides — Crew Performance Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-14</span>
+    <h1>Crew Performance Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-14.png" alt="BPMN for CM-14" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-14</span>
+    <h1>Crew Performance Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-14</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Planning &amp; Rostering</li>
+          <li><strong>L3 Name:</strong> Crew Performance Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">11</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Aggregate crew flight duty period records</li><li><strong>Phase 2:</strong> Validate recurrent training compliance deadlines</li><li><strong>Phase 3:</strong> Compile integrated performance scorecard per crew </li><li><strong>Phase 4:</strong> Initiate Performance Improvement Plan with union r</li><li><strong>Phase 5:</strong> Generate FAA/AQP regulatory compliance report</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Check Airman / Standards Captain</li><li>Chief Pilot / Fleet Manager</li><li>Chief Pilot / HR Business Partner</li><li>Chief Pilot / Standards Captain</li><li>Compliance Manager</li><li>Crew Performance Analyst</li><li>Crew Records Administrator</li><li>Crew Scheduling Coordinator</li><li>Safety Manager / Chief Pilot</li><li>Training Compliance Manager</li><li>Training Records Coordinator</li><li>Training Scheduling Coordinator</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift / Tableau (crew performance analytics dashboard)</li><li>AWS S3 (document archive) / SAP SuccessFactors</li><li>Amadeus Altéa PSS / Jeppesen Crew Management</li><li>CAE Simfinity (simulator booking) / Jeppesen Crew Management</li><li>CAE Simfinity Training Management</li><li>CAE Simfinity Training Management / Jeppesen Crew Management</li><li>FOQA (Flight Operational Quality Assurance platform) / ASAP tracking system</li><li>Jeppesen Crew Management</li><li>Jeppesen Crew Management (LOSA observation module)</li><li>Jeppesen Crew Management (qualification tracking module)</li><li>Jeppesen Crew Management / AWS S3 (compliance data lake)</li><li>Jeppesen Crew Management / Amadeus Altéa PSS (crew qualification module)</li><li>Jeppesen Crew Management / CASS (Crew Authorisation &amp; Scheduling System)</li><li>Medallia CX Platform / Amadeus Altéa PSS (crew-flight linkage)</li><li>SAP SuccessFactors (PIP workflow module)</li><li>SAP SuccessFactors (Performance &amp; Goals module)</li><li>SAP SuccessFactors / Jeppesen Crew Management</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-14</span>
+    <h1>Crew Performance Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Aggregate crew flight duty period records</td>
+        <td class="kpi-col">Data completeness ≥99% within 24 hrs of duty completion</td>
+        <td class="pain-col">Missing ACARS sign-on/sign-off data during irregular ops causes duty time calculation gaps requiring manual correction in Jeppesen; sync delays post-disruption inflate analyst reconciliation workload by 30–40%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Extract simulator training completion records</td>
+        <td class="kpi-col">Training record update latency ≤4 hrs post-session; record accuracy ≥99.5%</td>
+        <td class="pain-col">Third-party simulator vendor API reliability varies — CAE Simfinity batch exports rather than real-time push require overnight reconciliation; discrepancies between carrier records and CAE records require manual adjudication with vendor</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Collect in-flight LOSA &amp; IOE observation reports</td>
+        <td class="kpi-col">≥2 line observations per crew member per 12-month rolling window; observation form completion rate ≥95%</td>
+        <td class="pain-col">Check airman availability conflicts with revenue operations — scheduling a standards captain as observer removes a qualified crew member from a revenue flight; subjective scoring inconsistency across check airmen requires periodic inter-rater reliability calibration sessions (FAR Part 121.409)</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Aggregate customer satisfaction scores by crew assignment</td>
+        <td class="kpi-col">Crew-attributed NPS ≥72; cabin crew complaint rate &lt;0.3 per 1,000 PAX</td>
+        <td class="pain-col">Survey response rate &lt;15% limits statistical significance at individual crew level — scores based on &lt;5 responses are flagged as unreliable; Altéa crew-to-flight linkage requires manual reconciliation when irregular ops causes crew substitutions not captured in final manifest</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Validate recurrent training compliance deadlines</td>
+        <td class="kpi-col">Zero crew members operating with lapsed recurrent training; ≥30-day advance alert issued for 100% of expiring qualifications</td>
+        <td class="pain-col">FAR Part 121.433 recurrent training windows are crew-type specific and vary by AQP approval — Jeppesen qualification rules must be manually updated when FAA approves AQP amendments; last-minute scheduling conflicts (crew illness, irregular ops) cause near-miss compliance breaches requiring emergency simulator slots</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Review proficiency check results and competency grades</td>
+        <td class="kpi-col">First-attempt PC pass rate ≥94%; recheck completion within 30 days of initial failure</td>
+        <td class="pain-col">Inconsistent grading standards across check airmen require periodic inter-rater reliability audits — FAA ATOS inspectors have cited grading variance in Part 121 operator evaluations; simulator slot scarcity for MAX-type recurrent events (shared with new-entrant type rating candidates) causes recheck scheduling delays beyond the 30-day window</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Verify medical certificate currency and fitness-for-duty status</td>
+        <td class="kpi-col">100% medical certificate currency verified before scheduling assignment; zero FAR Part 61.23 violations</td>
+        <td class="pain-col">FAA First Class medical certificate validity (12 months under age 40, 6 months over 40) requires proactive scheduling of AME appointments — AME scarcity in crew domicile cities (especially smaller hubs) causes crew members to approach expiry without confirmed exam slots; CASS medical flag propagation to Jeppesen rostering has 2–4 hr latency creating a window for illegal assignment</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Assess type rating and route qualification currency</td>
+        <td class="kpi-col">Qualification matrix accuracy ≥99.9%; zero illegal crew assignments attributable to qualification data error</td>
+        <td class="pain-col">Dual-system qualification storage (Altéa holds PSS-level eligibility; Jeppesen holds operational crew management records) creates synchronisation risk — a qualification update applied in one system but not the other can result in illegal assignment; no real-time bidirectional API between Altéa and Jeppesen requires manual reconciliation after each qualification event</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Compile integrated performance scorecard per crew member</td>
+        <td class="kpi-col">Scorecard completion rate 100% within 30 days of quarter-end; data freshness ≤24 hrs from source systems</td>
+        <td class="pain-col">Five-source ETL pipeline (Jeppesen, CAE Simfinity, Medallia, FOQA, ASAP) requires ongoing maintenance — schema changes by any vendor break ingestion pipelines; AWS Redshift refresh latency spikes during post-irregular-ops recovery periods when data volumes are 3–5× normal</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Review FOQA exceedances and ASAP safety report history</td>
+        <td class="kpi-col">FOQA exceedance rate &lt;2.5 per 1,000 flight hours; ASAP report ERC review cycle ≤14 days</td>
+        <td class="pain-col">ASAP programme confidentiality provisions (FAA MOU requirement) restrict sharing of individual ASAP submissions with HR performance systems — safety managers must deconflict performance use of safety data from ASAP protections to avoid chilling voluntary disclosure; FOQA data volume from 800+ aircraft requires automated triage algorithm to prioritise analyst review</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Conduct formal performance appraisal interview</td>
+        <td class="kpi-col">Appraisal completion rate ≥98% within performance period; crew satisfaction with appraisal process ≥75% (internal survey)</td>
+        <td class="pain-col">SAP SuccessFactors has no native integration with Jeppesen Crew Management — crew performance data must be manually exported as CSV and uploaded to SuccessFactors before each appraisal cycle, creating data staleness risk; union CBA provisions (ALPA, AFA contracts) restrict appraisal content, frequency, and the use of ASAP/FOQA data in formal evaluations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Initiate Performance Improvement Plan with union review</td>
+        <td class="kpi-col">PIP initiation within 10 business days of appraisal decision; ≥70% PIP completion success rate (crew returns to standard performance)</td>
+        <td class="pain-col">ALPA and AFA CBAs impose strict procedural requirements on PIP content and duration — legal review adds 5–10 business days before issuance; PIP templates must differ by crew category (captain, first officer, flight attendant) due to different contractual language, increasing HR preparation workload</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Schedule targeted remedial simulator or recurrent training</td>
+        <td class="kpi-col">Remedial training scheduled within 21 days of PIP initiation; simulator slot utilisation ≥85%</td>
+        <td class="pain-col">Q4 recurrent training demand surge (driven by anniversary-month training windows clustering in autumn) competes directly with remedial training scheduling — PIP trainees are lower-priority than regulatory recurrent events, causing delays beyond the 21-day target; CAE Simfinity booking API rate limits cause queuing delays during bulk roster update events</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Monitor PIP milestone progress and conduct gate reviews</td>
+        <td class="kpi-col">Gate reviews completed on schedule ≥95%; escalation decision issued within 5 business days of missed milestone</td>
+        <td class="pain-col">SAP SuccessFactors milestone alert configuration requires manual setup per PIP — no automated trigger from Jeppesen training completion events; inconsistent documentation standards across fleet types make cross-fleet PIP outcome comparisons unreliable for HR trend analysis</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Generate FAA/AQP regulatory compliance report</td>
+        <td class="kpi-col">Regulatory report submission on-time rate 100%; zero FAA violation notices attributable to reporting failures</td>
+        <td class="pain-col">FAR Part 121 Subpart Y (AQP) reporting requires carrier-specific competency unit data formats not natively exported by Jeppesen — manual report assembly from three source systems increases error risk during FAA ATOS audit periods; AWS S3 data lake partitioning strategy for crew records requires careful schema governance to support ad-hoc FAA data requests</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Update crew qualification records in PSS and crew system</td>
+        <td class="kpi-col">Record update latency ≤4 hrs post-qualification event; dual-system sync accuracy ≥99.99%</td>
+        <td class="pain-col">Dual-system update requirement (Altéa + Jeppesen) with no real-time sync creates a window during which Altéa reflects updated qualification but Jeppesen does not (or vice versa), enabling an illegal crew assignment if a scheduling query is run in the lagging system during the sync gap</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Archive performance records per regulatory retention policy</td>
+        <td class="kpi-col">Record archival within 5 business days of period close; zero GDPR or FAR Part 121.683 retention violations</td>
+        <td class="pain-col">FAR Part 121.683 requires training records retention for the duration of employment plus 1 year, while GDPR (applicable to EU crew and EU-operated routes) mandates data minimisation and right-to-erasure — these requirements conflict for international crew records and require per-jurisdiction retention rules not supported by default AWS S3 lifecycle policies</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+</body>
+</html>

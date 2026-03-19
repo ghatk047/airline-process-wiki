@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Heavy Maintenance · Maintenance, Repair &amp; Overhaul · Airlines Process Wiki</title>
+<title>CM-14 · Crew Performance Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Crew Management</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -155,7 +156,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-11/"><span class="status-dot status-done"></span><span class="pid">CM-11</span>Crew Union &amp; Labour Agreement Compliance</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-12/"><span class="status-dot status-done"></span><span class="pid">CM-12</span>Crew Recruitment &amp; Onboarding</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-13/"><span class="status-dot status-done"></span><span class="pid">CM-13</span>Deadhead &amp; Positioning Management</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-14/"><span class="status-dot status-done"></span><span class="pid">CM-14</span>Crew Performance Management</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/crew-management/cm-14/"><span class="status-dot status-done"></span><span class="pid">CM-14</span>Crew Performance Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-15/"><span class="status-dot status-queue"></span><span class="pid">CM-15</span>Crew Payroll &amp; Hours Tracking</a>
       </div>
     </div>
@@ -187,8 +188,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-queue"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
@@ -242,54 +243,248 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
-  <span class="current">Heavy Maintenance</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Crew Management</a><span class="sep">›</span>
+  <a href="../../../flight-operations/crew-management/">Crew Planning &amp; Rostering</a><span class="sep">›</span>
+  <span class="current">CM-14 · Crew Performance Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Heavy Maintenance</h1>
-    <p>Maintenance, Repair &amp; Overhaul · 0 of 4 subprocesses complete · Updated 2026-03-19 13:45</p>
+    <h1>Crew Performance Management</h1>
+    <p>Crew Management › Crew Planning &amp; Rostering · 17 L4 steps · 5 phases · 6 decision gates · Updated 2026-03-19 13:45</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CM-14</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-02</span>Heavy Maintenance (C/D Check) Planning</h3>
-    <p>Heavy Maintenance · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cm-14">
+      <img src="../../../assets/img/cm-14.png" alt="CM-14 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cm-14').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cm-14').style.display='flex'">
+      <div id="diag-placeholder-cm-14" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-02/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Aggregate crew flight duty period records</td>
+  <td class="td-role">Crew Performance Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Published rosters, completed duty reports, ACARS sign-on/sign-off logs</td>
+  <td style="font-size:10px">Crew duty history dataset; cumulative flight hours register</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data completeness ≥99% within 24 hrs of duty completion</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Extract simulator training completion records</td>
+  <td class="td-role">Training Records Coordinator</td>
+  <td><span class="stag custom">CAE Simfinity Training Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed simulator session logs; CAE Simfinity session completion events</td>
+  <td style="font-size:10px">Training currency status per crew member; upcoming expiry alert list</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Training record update latency ≤4 hrs post-session; record accuracy ≥99.5%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Collect in-flight LOSA &amp; IOE observation reports</td>
+  <td class="td-role">Check Airman / Standards Captain</td>
+  <td><span class="stag custom">Jeppesen Crew Management (LOSA observation module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Line Operational Safety Audit (LOSA) forms; Initial Operating Experience (IOE) completion records</td>
+  <td style="font-size:10px">Standardised crew observation reports; threat-and-error management (TEM) scores per crew</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">≥2 line observations per crew member per 12-month rolling window; observation form completion rate ≥95%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Aggregate customer satisfaction scores by crew assignment</td>
+  <td class="td-role">Crew Performance Analyst</td>
+  <td><span class="stag amadeus">Medallia CX Platform / Amadeus Altéa PSS (crew-flight linkage)</span></td>
+  <td style="font-size:10px;color:#6b7280">Post-flight NPS surveys; in-flight service feedback; complaint records</td>
+  <td style="font-size:10px">Crew-attributed satisfaction scorecard; NPS and complaint rate per crew member</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Crew-attributed NPS ≥72; cabin crew complaint rate &lt;0.3 per 1,000 PAX</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Validate recurrent training compliance deadlines</td>
+  <td class="td-role">Training Compliance Manager</td>
+  <td><span class="stag custom">Jeppesen Crew Management (qualification tracking module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Crew training currency records; FAR Part 121.433 compliance calendar; carrier AQP programme schedule</td>
+  <td style="font-size:10px">Training compliance status matrix; 30/60/90-day expiry alert distribution</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero crew members operating with lapsed recurrent training; ≥30-day advance alert issued for 100% of expiring qualifications</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Review proficiency check results and competency grades</td>
+  <td class="td-role">Chief Pilot / Standards Captain</td>
+  <td><span class="stag custom">CAE Simfinity Training Management / Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed proficiency check (PC) grade sheets; simulator session recordings; AQP competency unit scores</td>
+  <td style="font-size:10px">PC pass/fail determination; graded competency assessment per AQP unit; recheck scheduling flag</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">First-attempt PC pass rate ≥94%; recheck completion within 30 days of initial failure</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Verify medical certificate currency and fitness-for-duty status</td>
+  <td class="td-role">Crew Scheduling Coordinator</td>
+  <td><span class="stag custom">Jeppesen Crew Management / CASS (Crew Authorisation &amp; Scheduling System)</span></td>
+  <td style="font-size:10px;color:#6b7280">FAA First Class medical examination reports from AME; crew qualification records</td>
+  <td style="font-size:10px">Medical currency status flag per crew member; crew legal-to-fly determination</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% medical certificate currency verified before scheduling assignment; zero FAR Part 61.23 violations</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Assess type rating and route qualification currency</td>
+  <td class="td-role">Training Records Coordinator</td>
+  <td><span class="stag amadeus">Jeppesen Crew Management / Amadeus Altéa PSS (crew qualification module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Type rating certificates; route qualification records; recency requirements per FAR Part 121.439</td>
+  <td style="font-size:10px">Crew qualification matrix; route and fleet assignment eligibility flags</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Qualification matrix accuracy ≥99.9%; zero illegal crew assignments attributable to qualification data error</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Compile integrated performance scorecard per crew member</td>
+  <td class="td-role">Crew Performance Analyst</td>
+  <td><span class="stag aws">AWS Redshift / Tableau (crew performance analytics dashboard)</span></td>
+  <td style="font-size:10px;color:#6b7280">Duty records from Jeppesen; training grades from CAE Simfinity; LOSA scores; CSAT data from Medallia; FOQA exceedance flags</td>
+  <td style="font-size:10px">Consolidated crew performance scorecard (quarterly); percentile ranking within crew category</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Scorecard completion rate 100% within 30 days of quarter-end; data freshness ≤24 hrs from source systems</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Review FOQA exceedances and ASAP safety report history</td>
+  <td class="td-role">Safety Manager / Chief Pilot</td>
+  <td><span class="stag sap">FOQA (Flight Operational Quality Assurance platform) / ASAP tracking system</span></td>
+  <td style="font-size:10px;color:#6b7280">FOQA exceedance alert reports; ASAP self-disclosure submissions; ATC incident notifications</td>
+  <td style="font-size:10px">Safety event summary per crew member; corrective action flags; ASAP ERC review outcomes</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">FOQA exceedance rate &lt;2.5 per 1,000 flight hours; ASAP report ERC review cycle ≤14 days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Conduct formal performance appraisal interview</td>
+  <td class="td-role">Chief Pilot / Fleet Manager</td>
+  <td><span class="stag sap">SAP SuccessFactors (Performance &amp; Goals module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Compiled performance scorecard; training records summary; safety event history; prior appraisal ratings</td>
+  <td style="font-size:10px">Signed performance appraisal document; development goals for next period; performance rating</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Appraisal completion rate ≥98% within performance period; crew satisfaction with appraisal process ≥75% (internal survey)</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Initiate Performance Improvement Plan with union review</td>
+  <td class="td-role">Chief Pilot / HR Business Partner</td>
+  <td><span class="stag sap">SAP SuccessFactors (PIP workflow module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Below-threshold performance appraisal; applicable CBA provisions; HR policy framework</td>
+  <td style="font-size:10px">Signed PIP document; action timeline with milestone dates; union representative notification</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PIP initiation within 10 business days of appraisal decision; ≥70% PIP completion success rate (crew returns to standard performance)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Schedule targeted remedial simulator or recurrent training</td>
+  <td class="td-role">Training Scheduling Coordinator</td>
+  <td><span class="stag custom">CAE Simfinity (simulator booking) / Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">PIP-specified training requirements; simulator capacity calendar; crew availability roster</td>
+  <td style="font-size:10px">Confirmed simulator training assignment; crew notification; updated Jeppesen training record</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Remedial training scheduled within 21 days of PIP initiation; simulator slot utilisation ≥85%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Monitor PIP milestone progress and conduct gate reviews</td>
+  <td class="td-role">Chief Pilot / HR Business Partner</td>
+  <td><span class="stag sap">SAP SuccessFactors / Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed training results; line observation scores; PIP milestone schedule</td>
+  <td style="font-size:10px">PIP progress report; pass/continue/escalate/terminate decision per gate</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate reviews completed on schedule ≥95%; escalation decision issued within 5 business days of missed milestone</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Generate FAA/AQP regulatory compliance report</td>
+  <td class="td-role">Compliance Manager</td>
+  <td><span class="stag aws">Jeppesen Crew Management / AWS S3 (compliance data lake)</span></td>
+  <td style="font-size:10px;color:#6b7280">Crew qualification records; training completion data; medical certificate currency; PC results</td>
+  <td style="font-size:10px">AQP compliance report; ATOS audit evidence package; FAA programme approval data</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Regulatory report submission on-time rate 100%; zero FAA violation notices attributable to reporting failures</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Update crew qualification records in PSS and crew system</td>
+  <td class="td-role">Training Records Coordinator</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS / Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed training events; new qualifications issued; medical certificate updates; PIP outcomes</td>
+  <td style="font-size:10px">Updated qualification eligibility flags in Altéa and Jeppesen; crew scheduling restrictions lifted or applied</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Record update latency ≤4 hrs post-qualification event; dual-system sync accuracy ≥99.99%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Archive performance records per regulatory retention policy</td>
+  <td class="td-role">Crew Records Administrator</td>
+  <td><span class="stag aws">AWS S3 (document archive) / SAP SuccessFactors</span></td>
+  <td style="font-size:10px;color:#6b7280">Performance appraisals; PIP documents; training records; safety event reports; medical records</td>
+  <td style="font-size:10px">Archived records package; retention schedule compliance confirmation; access control audit trail</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Record archival within 5 business days of period close; zero GDPR or FAR Part 121.683 retention violations</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-03</span>Engine Shop Maintenance Management</h3>
-    <p>Heavy Maintenance · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CM-14</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Crew Management</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Crew Planning &amp; Rostering</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Crew Performance Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">17 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">6 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">11 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Crew Performance Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Training Records Coordinator</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Check Airman / Standards Captain</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Training Compliance Manager</div><div class="swim"><div class="dot" style="background:#10b981"></div>Chief Pilot / Standards Captain</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Crew Scheduling Coordinator</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Safety Manager / Chief Pilot</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Chief Pilot / Fleet Manager</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Chief Pilot / HR Business Partner</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Training Scheduling Coordinator</div><div class="swim"><div class="dot" style="background:#f97316"></div>Compliance Manager</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>Crew Records Administrator</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">Jeppesen Crew Management</span><span class="stag custom">CAE Simfinity Training Management</span><span class="stag custom">Jeppesen Crew Management (LOSA observation module)</span><span class="stag amadeus">Medallia CX Platform / Amadeus Altéa PSS (crew-flight linkage)</span><span class="stag custom">Jeppesen Crew Management (qualification tracking module)</span><span class="stag custom">CAE Simfinity Training Management / Jeppesen Crew Management</span><span class="stag custom">Jeppesen Crew Management / CASS (Crew Authorisation &amp; Scheduling System)</span><span class="stag amadeus">Jeppesen Crew Management / Amadeus Altéa PSS (crew qualification module)</span><span class="stag aws">AWS Redshift / Tableau (crew performance analytics dashboard)</span><span class="stag sap">FOQA (Flight Operational Quality Assurance platform) / ASAP tracking system</span><span class="stag sap">SAP SuccessFactors (Performance &amp; Goals module)</span><span class="stag sap">SAP SuccessFactors (PIP workflow module)</span><span class="stag custom">CAE Simfinity (simulator booking) / Jeppesen Crew Management</span><span class="stag sap">SAP SuccessFactors / Jeppesen Crew Management</span><span class="stag aws">Jeppesen Crew Management / AWS S3 (compliance data lake)</span><span class="stag amadeus">Amadeus Altéa PSS / Jeppesen Crew Management</span><span class="stag aws">AWS S3 (document archive) / SAP SuccessFactors</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Aggregate crew flight duty period records</span><span class="kval">Data completeness ≥99% within 24 hrs of duty completion</span></div><div class="krow"><span class="kname">Extract simulator training completion records</span><span class="kval">Training record update latency ≤4 hrs post-session; record accuracy ≥99.5%</span></div><div class="krow"><span class="kname">Collect in-flight LOSA &amp; IOE observation reports</span><span class="kval">≥2 line observations per crew member per 12-month rolling window; observation form completion rate ≥95%</span></div><div class="krow"><span class="kname">Aggregate customer satisfaction scores by crew assignment</span><span class="kval">Crew-attributed NPS ≥72; cabin crew complaint rate &lt;0.3 per 1,000 PAX</span></div><div class="krow"><span class="kname">Validate recurrent training compliance deadlines</span><span class="kval">Zero crew members operating with lapsed recurrent training; ≥30-day advance alert issued for 100% of expiring qualifications</span></div><div class="krow"><span class="kname">Review proficiency check results and competency grades</span><span class="kval">First-attempt PC pass rate ≥94%; recheck completion within 30 days of initial failure</span></div><div class="krow"><span class="kname">Verify medical certificate currency and fitness-for-duty status</span><span class="kval">100% medical certificate currency verified before scheduling assignment; zero FAR Part 61.23 violations</span></div><div class="krow"><span class="kname">Assess type rating and route qualification currency</span><span class="kval">Qualification matrix accuracy ≥99.9%; zero illegal crew assignments attributable to qualification data error</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Missing ACARS sign-on/sign-off data during irregular ops causes duty time calculation gaps requiring manual correction in Jeppesen; sync delays post-disruption inflate analyst reconciliation workload by 30–40%</div><div class="risk-card">Third-party simulator vendor API reliability varies — CAE Simfinity batch exports rather than real-time push require overnight reconciliation; discrepancies between carrier records and CAE records require manual adjudication with vendor</div><div class="risk-card">Check airman availability conflicts with revenue operations — scheduling a standards captain as observer removes a qualified crew member from a revenue flight; subjective scoring inconsistency across check airmen requires periodic inter-rater reliability calibration sessions (FAR Part 121.409)</div><div class="risk-card">Survey response rate &lt;15% limits statistical significance at individual crew level — scores based on &lt;5 responses are flagged as unreliable; Altéa crew-to-flight linkage requires manual reconciliation when irregular ops causes crew substitutions not captured in final manifest</div><div class="risk-card">FAR Part 121.433 recurrent training windows are crew-type specific and vary by AQP approval — Jeppesen qualification rules must be manually updated when FAA approves AQP amendments; last-minute scheduling conflicts (crew illness, irregular ops) cause near-miss compliance breaches requiring emergency simulator slots</div><div class="risk-card">Inconsistent grading standards across check airmen require periodic inter-rater reliability audits — FAA ATOS inspectors have cited grading variance in Part 121 operator evaluations; simulator slot scarcity for MAX-type recurrent events (shared with new-entrant type rating candidates) causes recheck scheduling delays beyond the 30-day window</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Published rosters, completed duty reports, ACARS sign-on/sign-off logs</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Archived records package; retention schedule compliance confirmation; access control audit trail</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-04</span>Component &amp; Parts Management</h3>
-    <p>Heavy Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-04/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-11</span>Structural Repair &amp; NDT Management</h3>
-    <p>Heavy Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-11/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cm-13/"><span class="arrow">←</span><span><span class="sub">Previous</span>CM-13 · Deadhead &amp; Positioning Management</span></a><a class="pn-btn" href="../cm-15/"><span><span class="sub">Next</span>CM-15 · Crew Payroll &amp; Hours Tracking</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

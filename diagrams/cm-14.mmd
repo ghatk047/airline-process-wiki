@@ -1,0 +1,56 @@
+flowchart LR
+  subgraph P1[Phase 1: Data Collection and Baseline]
+    A([Start]) --> B[Aggregate duty and flight records]
+    B --> C[Extract simulator training data]
+    C --> D[Collect LOSA observations]
+    D --> E[Aggregate CSAT scores by crew]
+  end
+
+  subgraph P2[Phase 2: Training and Qualification Assessment]
+    E --> F[Validate recurrent training compliance]
+    F --> G{PC pass/fail?}
+    G -- Fail --> F
+    G -- Pass --> H{Medical cert current?}
+    H -- No --> I[Ground crew and reschedule AME]
+    I --> H
+    H -- Yes --> J[Assess type rating and route quals]
+  end
+
+  subgraph P3[Phase 3: Performance Review and Evaluation]
+    J --> K[Compile integrated scorecard]
+    K --> L[Review FOQA and ASAP history]
+    L --> M{Safety threshold breach?}
+    M -- Yes --> N[Escalate to Safety Manager]
+    N --> O[Conduct formal appraisal]
+    M -- No --> O
+    O --> P{Below performance threshold?}
+  end
+
+  subgraph P4[Phase 4: Corrective Action and Development]
+    P -- Yes --> Q[Initiate PIP with HR and union review]
+    P -- No --> R[Close — no action required]
+    Q --> S[Schedule remedial simulator training]
+    S --> T{PIP milestone met?}
+    T -- No --> S
+    T -- Yes --> U[PIP closed — crew returned to line]
+  end
+
+  subgraph P5[Phase 5: Regulatory Compliance and Reporting]
+    U --> V[Generate FAA/AQP compliance report]
+    R --> V
+    V --> W{Compliance gap detected?}
+    W -- Yes --> X[Correct records and resubmit]
+    X --> W
+    W -- No --> Y[Update Altéa PSS and Jeppesen records]
+    Y --> Z[Archive records per retention policy]
+    Z --> AA([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AA fill:#003366,color:#fff,stroke:#003366
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600
