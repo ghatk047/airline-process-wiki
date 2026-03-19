@@ -18719,7 +18719,7 @@
       "l2_process": "Network Operations Control",
       "l2_slug": "flight-dispatch-control",
       "l3_name": "ETOPS / EDTO Operations Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18731,7 +18731,7 @@
       "l2_process": "Flight Dispatch & Control",
       "l2_slug": "flight-dispatch-control",
       "l3_name": "Flight Crew Briefing & Pre-Departure",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18743,7 +18743,7 @@
       "l2_process": "Network Operations Control",
       "l2_slug": "flight-dispatch-control",
       "l3_name": "Performance & FDR Data Monitoring",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18755,7 +18755,7 @@
       "l2_process": "Flight Dispatch & Control",
       "l2_slug": "flight-dispatch-control",
       "l3_name": "Air-to-Ground Communications Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18767,7 +18767,7 @@
       "l2_process": "Flight Dispatch & Control",
       "l2_slug": "flight-dispatch-control",
       "l3_name": "Dangerous Goods Load Authorization",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18779,7 +18779,7 @@
       "l2_process": "Crew Planning & Rostering",
       "l2_slug": "crew-management",
       "l3_name": "Crew Pairing Optimization",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18791,7 +18791,7 @@
       "l2_process": "Crew Planning & Rostering",
       "l2_slug": "crew-management",
       "l3_name": "Crew Rostering & Bidding",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18803,7 +18803,7 @@
       "l2_process": "Crew Day-of-Operations",
       "l2_slug": "crew-management",
       "l3_name": "Crew Day-of-Operations Tracking",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18815,7 +18815,7 @@
       "l2_process": "Crew Compliance & Certification",
       "l2_slug": "crew-management",
       "l3_name": "Fatigue & Rest Rule Compliance (FAR Part 117)",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18827,7 +18827,7 @@
       "l2_process": "Crew Compliance & Certification",
       "l2_slug": "crew-management",
       "l3_name": "Crew Training & Recurrency Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18839,7 +18839,7 @@
       "l2_process": "Crew Compliance & Certification",
       "l2_slug": "crew-management",
       "l3_name": "Crew Licensing & Medical Certification",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18851,7 +18851,7 @@
       "l2_process": "Crew Day-of-Operations",
       "l2_slug": "crew-management",
       "l3_name": "Reserve Crew Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18863,7 +18863,7 @@
       "l2_process": "Crew Day-of-Operations",
       "l2_slug": "crew-management",
       "l3_name": "Crew Hotel & Transportation Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18875,7 +18875,7 @@
       "l2_process": "Crew Planning & Rostering",
       "l2_slug": "crew-management",
       "l3_name": "Cabin Crew Service Standards & Training",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18887,7 +18887,7 @@
       "l2_process": "Crew Day-of-Operations",
       "l2_slug": "crew-management",
       "l3_name": "Crew Disruption Recovery & Re-pairing",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18899,7 +18899,7 @@
       "l2_process": "Crew Compliance & Certification",
       "l2_slug": "crew-management",
       "l3_name": "Crew Union & Labour Agreement Compliance",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18911,7 +18911,7 @@
       "l2_process": "Crew Planning & Rostering",
       "l2_slug": "crew-management",
       "l3_name": "Crew Recruitment & Onboarding",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18923,7 +18923,7 @@
       "l2_process": "Crew Day-of-Operations",
       "l2_slug": "crew-management",
       "l3_name": "Deadhead & Positioning Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18935,7 +18935,7 @@
       "l2_process": "Crew Planning & Rostering",
       "l2_slug": "crew-management",
       "l3_name": "Crew Performance Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18947,7 +18947,7 @@
       "l2_process": "Crew Planning & Rostering",
       "l2_slug": "crew-management",
       "l3_name": "Crew Payroll & Hours Tracking",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18959,7 +18959,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "Passenger Check-In & Boarding",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18971,7 +18971,7 @@
       "l2_process": "Baggage Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Baggage Acceptance & Handling",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18983,7 +18983,7 @@
       "l2_process": "Baggage Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Lost & Found / Baggage Tracing",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18995,7 +18995,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "Gate Management & Assignment",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19007,7 +19007,7 @@
       "l2_process": "Ramp & Turnaround Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Ramp & Turnaround Operations",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19019,7 +19019,7 @@
       "l2_process": "Ramp & Turnaround Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Ground Handling Vendor Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19031,7 +19031,7 @@
       "l2_process": "Ramp & Turnaround Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Load Control & Aircraft Loading",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19043,7 +19043,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "Passenger Disruption Handling (IRROP)",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19055,7 +19055,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "Wheelchair & Special Assistance Services",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19067,7 +19067,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "VIP & Premium Passenger Handling",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19079,7 +19079,7 @@
       "l2_process": "Baggage Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Cargo & Mail Ground Handling",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19091,7 +19091,7 @@
       "l2_process": "Ramp & Turnaround Operations",
       "l2_slug": "passenger-services",
       "l3_name": "De-Icing & Winter Operations",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19103,7 +19103,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "Airport Security Compliance (TSA/CBP)",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19115,7 +19115,7 @@
       "l2_process": "Ramp & Turnaround Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Ground Support Equipment (GSE) Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19127,7 +19127,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "Station Performance & KPI Reporting",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19139,7 +19139,7 @@
       "l2_process": "Line Maintenance",
       "l2_slug": "line-maintenance",
       "l3_name": "Line Maintenance Planning & Execution",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19151,7 +19151,7 @@
       "l2_process": "Heavy Maintenance",
       "l2_slug": "heavy-maintenance",
       "l3_name": "Heavy Maintenance (C/D Check) Planning",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19163,7 +19163,7 @@
       "l2_process": "Engine & Component Shop",
       "l2_slug": "heavy-maintenance",
       "l3_name": "Engine Shop Maintenance Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19175,7 +19175,7 @@
       "l2_process": "Engine & Component Shop",
       "l2_slug": "heavy-maintenance",
       "l3_name": "Component & Parts Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19187,7 +19187,7 @@
       "l2_process": "Airworthiness & Compliance",
       "l2_slug": "line-maintenance",
       "l3_name": "Airworthiness Directive (AD) Compliance",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19199,7 +19199,7 @@
       "l2_process": "Airworthiness & Compliance",
       "l2_slug": "line-maintenance",
       "l3_name": "Maintenance Reliability & RCM Program",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19211,7 +19211,7 @@
       "l2_process": "Airworthiness & Compliance",
       "l2_slug": "line-maintenance",
       "l3_name": "Aircraft Technical Records Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19223,7 +19223,7 @@
       "l2_process": "Line Maintenance",
       "l2_slug": "line-maintenance",
       "l3_name": "AOG Recovery & Technical Dispatch",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19235,7 +19235,7 @@
       "l2_process": "MRO Vendor Management",
       "l2_slug": "line-maintenance",
       "l3_name": "MRO Vendor & Outsourcing Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19247,7 +19247,7 @@
       "l2_process": "MRO Vendor Management",
       "l2_slug": "line-maintenance",
       "l3_name": "Spare Parts Inventory & Procurement",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19259,7 +19259,7 @@
       "l2_process": "Heavy Maintenance",
       "l2_slug": "heavy-maintenance",
       "l3_name": "Structural Repair & NDT Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19271,7 +19271,7 @@
       "l2_process": "Airworthiness & Compliance",
       "l2_slug": "line-maintenance",
       "l3_name": "Avionics & Systems Modification",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19283,7 +19283,7 @@
       "l2_process": "Airworthiness & Compliance",
       "l2_slug": "line-maintenance",
       "l3_name": "Quality Assurance & Safety Audits (CAMO)",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19295,7 +19295,7 @@
       "l2_process": "MRO Vendor Management",
       "l2_slug": "line-maintenance",
       "l3_name": "Maintenance Cost Control & KPI Reporting",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19307,7 +19307,7 @@
       "l2_process": "MRO Vendor Management",
       "l2_slug": "line-maintenance",
       "l3_name": "Warranty Claim Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19319,7 +19319,7 @@
       "l2_process": "Finance & Accounting",
       "l2_slug": "finance-accounting",
       "l3_name": "Financial Planning & Budgeting",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19331,7 +19331,7 @@
       "l2_process": "Finance & Accounting",
       "l2_slug": "finance-accounting",
       "l3_name": "Management Accounting & Cost Control",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19343,7 +19343,7 @@
       "l2_process": "Finance & Accounting",
       "l2_slug": "finance-accounting",
       "l3_name": "Revenue Accounting & BSP Settlement",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19355,7 +19355,7 @@
       "l2_process": "Human Resources",
       "l2_slug": "human-resources",
       "l3_name": "Workforce Planning & Headcount Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19367,7 +19367,7 @@
       "l2_process": "Human Resources",
       "l2_slug": "human-resources",
       "l3_name": "Talent Acquisition & Recruitment",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19379,7 +19379,7 @@
       "l2_process": "Human Resources",
       "l2_slug": "human-resources",
       "l3_name": "Learning & Development Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19391,7 +19391,7 @@
       "l2_process": "Human Resources",
       "l2_slug": "human-resources",
       "l3_name": "Labour Relations & Union Negotiation",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19403,7 +19403,7 @@
       "l2_process": "Information Technology",
       "l2_slug": "finance-accounting",
       "l3_name": "PSS (Passenger Service System) Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19415,7 +19415,7 @@
       "l2_process": "Information Technology",
       "l2_slug": "finance-accounting",
       "l3_name": "Cybersecurity & Threat Management",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19427,7 +19427,7 @@
       "l2_process": "Information Technology",
       "l2_slug": "finance-accounting",
       "l3_name": "Data Engineering & Analytics Platform",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19439,7 +19439,7 @@
       "l2_process": "Procurement & Supply Chain",
       "l2_slug": "finance-accounting",
       "l3_name": "Strategic Sourcing & Vendor Selection",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19451,7 +19451,7 @@
       "l2_process": "Procurement & Supply Chain",
       "l2_slug": "finance-accounting",
       "l3_name": "Fuel Procurement & Supply Chain",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19463,7 +19463,7 @@
       "l2_process": "Procurement & Supply Chain",
       "l2_slug": "finance-accounting",
       "l3_name": "Aircraft Parts & Consumables Procurement",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19475,7 +19475,7 @@
       "l2_process": "Safety & Regulatory",
       "l2_slug": "finance-accounting",
       "l3_name": "Safety Management System (SMS)",
-      "status": "Failed",
+      "status": "Queued",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
