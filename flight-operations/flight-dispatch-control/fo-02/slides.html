@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FO-02 Slides — Operational Flight Plan Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-02</span>
+    <h1>Operational Flight Plan Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/fo-02.png" alt="BPMN for FO-02" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-02</span>
+    <h1>Operational Flight Plan Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> FO-02</li>
+          <li><strong>L1 Domain:</strong> Flight Operations</li>
+          <li><strong>L2 Process:</strong> Flight Dispatch &amp; Control</li>
+          <li><strong>L3 Name:</strong> Operational Flight Plan Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive OFP computation trigger from schedule</li><li><strong>Phase 2:</strong> Compute CI-optimised route — NAVBLUE</li><li><strong>Phase 3:</strong> Filter and review NOTAMs for route and aerodromes</li><li><strong>Phase 4:</strong> File ICAO FPL with ATC via SITA AFTN datalink</li><li><strong>Phase 5:</strong> Generate and transmit OFP package to crew EFB</li><li><strong>Phase 6:</strong> Monitor en-route fuel burn via ACARS position repo</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Captain (Pilot-in-Command)</li><li>Captain / Flight Dispatcher</li><li>Flight Dispatcher</li><li>Flight Dispatcher / AOC Representative</li><li>Load Control Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Altéa PSS</li><li>FAA TFMS (Traffic Flow Management System) / EUROCONTROL CFMU NM</li><li>FAA TFMS + NAVBLUE</li><li>FAA TFMS / EUROCONTROL CFMU NM Portal</li><li>FAA TFMS Flight Schedule Monitor (FSM) + EUROCONTROL CFMU NM Portal</li><li>Honeywell GoDirect Weather</li><li>Jeppesen FliteDeck</li><li>Jeppesen FliteDeck (EFB)</li><li>Jeppesen FliteDeck (EFB) + NAVBLUE</li><li>NAVBLUE</li><li>NAVBLUE + Amadeus Altéa PSS</li><li>NAVBLUE + Amadeus Altéa PSS + AWS Redshift</li><li>NAVBLUE + Jeppesen FliteDeck (EFB)</li><li>NAVBLUE + SITA ACARS</li><li>SITA ACARS + NAVBLUE</li><li>SITA ACARS / NAVBLUE FPL Filing</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-02</span>
+    <h1>Operational Flight Plan Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive OFP computation trigger from schedule</td>
+        <td class="kpi-col">OFP computation initiated ≥3 hrs before STD; 100% of flights have confirmed OFP before T-90 min</td>
+        <td class="pain-col">Late aircraft swaps or gate changes in Altéa trigger cascading OFP recomputations; absence of real-time webhook integration between Altéa and NAVBLUE forces manual re-triggers, creating a 10–20 min dispatcher workload spike per swap event</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Extract aircraft type, reg, and ZFW estimate</td>
+        <td class="kpi-col">Preliminary ZFW within ±2% of final ZFW to ensure accurate early fuel computation</td>
+        <td class="pain-col">Early-trigger OFPs (T-12 hr) carry highly uncertain load estimates; late check-in surges force ZFW and fuel recomputation within the T-1 hr window, causing ramp delays and re-fuelling events that average 18 min delay per occurrence</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Pull upper-wind, weather, and SIGMET data</td>
+        <td class="kpi-col">Weather data refresh cycle ≤1 hr before STD; SIGMET coverage 100% of planned route corridor</td>
+        <td class="pain-col">GoDirect data ingestion latency vs. real-time MWO (Meteorological Watch Office) SIGMET issuance can leave a 30–45 min gap for fast-moving convective systems; legacy dispatch integrations without automated SIGMET push alerts rely on dispatcher manual polling</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Compute CI-optimised route — NAVBLUE</td>
+        <td class="kpi-col">Fuel saving vs. fixed routing ≥1.2% per flight; cost index adherence to fleet policy (CI 20–35 narrow-body); computation time ≤90 sec</td>
+        <td class="pain-col">Aircraft performance model currency is a persistent risk — NAVBLUE performance database must be synced with aircraft modification records from AMOS; unrecorded winglet upgrades or engine modifications cause model accuracy drift of up to 0.8% fuel burn, skewing fleet-wide efficiency analytics</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Calculate trip, contingency, alternate, and reserve fuel</td>
+        <td class="kpi-col">Actual vs. planned fuel burn variance ≤±3%; zero-fuel-on-arrival (ZFOA) rate &lt;0.1% of flights</td>
+        <td class="pain-col">FAR Part 91/121 domestic alternate fuel rules differ from ICAO Annex 6 international rules; carriers operating trans-border routes must maintain dual rule-sets in NAVBLUE configuration — version drift during software updates causes compliance risk and has triggered FAA Letter of Investigation (LOI) actions at US carriers</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate fuel order within MTOW and structural limits</td>
+        <td class="kpi-col">MTOW exceedance rate 0% (hard regulatory limit); fuel reduction iteration cycles ≤2 per flight before escalation</td>
+        <td class="pain-col">High summer temperatures (ISA+15°C or above) at hot/high airports (PHX, DEN, LAS) significantly reduce MTOW-limited payload; NAVBLUE does not provide automated MTOW-constrained route re-optimisation — dispatchers perform manual iteration, averaging 4 additional minutes per constrained flight</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Filter and review NOTAMs for route and aerodromes</td>
+        <td class="kpi-col">Dispatcher NOTAM review time ≤8 min per flight; Type I/II NOTAM inclusion rate 100%</td>
+        <td class="pain-col">NOTAM data quality is a persistent industry problem — free-text, unstructured NOTAMs from certain states require manual parsing; Jeppesen Smart NOTAM keyword filtering reduces volume but has suppressed safety-critical items when taxonomy files are not updated after ICAO format revisions (ICAO Doc 8126 Annex 15 transition 2023)</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Check ATFM flow programmes and special use airspace</td>
+        <td class="kpi-col">ATFM programme impact assessment completed ≥2 hr before STD; SUA conflict detection rate 100%</td>
+        <td class="pain-col">FAA TFMS GDP data is refreshed every 15–30 min; dispatchers using static NAVBLUE routing miss late-issued GDPs and incur unplanned EDCT delays at departure; military SUA activation in the Gulf of Mexico MOA complex is issued with &lt;1 hr notice, invalidating already-filed ATC FPLs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Validate route is clear of restrictions and ATFM conflicts</td>
+        <td class="kpi-col">Reroute rate due to late SUA/flow conflicts &lt;2% of flights; reroute cycle time (detection to new FPL) ≤12 min</td>
+        <td class="pain-col">Military SUA activation notices (NOTAMs for ranges like W-151, W-168 Gulf ops) can arrive within 45 min of ETD, requiring an emergency reroute that bypasses normal NAVBLUE optimisation and may add 80–150 kg fuel burn on affected sectors</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>File ICAO FPL with ATC via SITA AFTN datalink</td>
+        <td class="kpi-col">FPL filed ≥60 min before STD (FAR 91.169 / ICAO Annex 2 requirement); FPL acceptance rate (ACK without CHG) ≥94%</td>
+        <td class="pain-col">SITA AFTN message queuing during peak traffic windows (0600–0900 hub banks) adds 5–12 min filing latency; rejected FPLs (CHG messages) require manual field correction and re-filing, consuming 8–15 min of dispatcher time and compressing the pre-departure preparation window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Assess EDCT/CTOT slot assignment from ATFM authority</td>
+        <td class="kpi-col">EDCT compliance rate ≥98%; average ATFM delay per affected flight &lt;8 min</td>
+        <td class="pain-col">Multiple overlapping GDPs (destination GDP + en-route AFP simultaneously) create conflicting EDCT windows that TFMS cannot always auto-resolve; dispatchers must manually arbitrate priority — a process with no formal FAA guidance, leading to inconsistent outcomes across carriers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Negotiate slot relief or reroute via AOC coordination</td>
+        <td class="kpi-col">Slot relief request success rate ≥30% of attempts; crew duty limit infringement due to ATFM delay &lt;0.5% of flights</td>
+        <td class="pain-col">FSM slot-swap portal requires AOC login and a dedicated coordinator — carriers without 24/7 AOC staffing (regional partners, red-eye operations) accept EDCT passively and absorb avoidable delays averaging 22 min per event</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Generate and transmit OFP package to crew EFB</td>
+        <td class="kpi-col">OFP delivery to EFB ≥T-60 min before STD; datalink transmission success rate ≥99.5%</td>
+        <td class="pain-col">NAVBLUE and Jeppesen FliteDeck EFB require matching document schema versions; version mismatches between aircraft EFB software (often on a slower certification update cycle) and NAVBLUE OFP output format cause rendering failures — crews revert to printed paper fallback, adding 10–15 min to pre-departure preparation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Captain reviews OFP fuel, route, and alternates on EFB</td>
+        <td class="kpi-col">Captain OFP review time ≤15 min; OFP acceptance without fuel change ≥82% of flights</td>
+        <td class="pain-col">Captains on specific high-variability route segments (mountain wave, oceanic NAT) routinely add conservative discretionary fuel above company minima due to low confidence in NAVBLUE model accuracy on those segments — creates 0.3–0.8% fuel burn inefficiency per sector and can push TOW toward MTOW limits on weight-critical flights</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Resolve captain commander&#x27;s discretion fuel request</td>
+        <td class="kpi-col">Commander&#x27;s discretion fuel (CDF) additions &gt;200 kg rate &lt;18% of flights; MTOW exceedance from CDF uplift 0%</td>
+        <td class="pain-col">No structured data capture of CDF rationale in NAVBLUE or FliteDeck — inability to retrospectively analyse CDF patterns by route, captain, or weather condition prevents fuel policy refinement and limits regulatory evidence-gathering under ICAO Annex 6 / EU-OPS ORO.MLR.101 fuel documentation requirements</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Monitor en-route fuel burn via ACARS position reports</td>
+        <td class="kpi-col">Fuel monitoring update interval ≤15 min oceanic / ≤5 min domestic; fuel deviation alert threshold ±5% of plan</td>
+        <td class="pain-col">ADS-C oceanic position reports over HF/SATCOM on North Atlantic and Pacific tracks have 10–30 min latency; dispatchers cannot confirm fuel state in real time for ETOPS critical fuel scenarios and rely on crew self-reporting — a single-point-of-failure monitoring model that increases diversion initiation latency when fuel deviation occurs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Assess fuel deviation and issue diversion recommendation</td>
+        <td class="kpi-col">Fuel emergency declaration rate (MAYDAY FUEL / PAN PAN FUEL) &lt;0.01% of flights; diversion for fuel exhaustion &lt;0.05% of flights</td>
+        <td class="pain-col">Dispatcher authority to recommend diversion is legally advisory-only under FAR 121.533; PIC has final authority, but late-stage diversions after dispatcher flags critical fuel state incur $40K–$120K IROPS cost per event — absence of a shared decision-making protocol between crew and dispatcher increases initiation latency by an average of 8 min</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Close flight plan and record actuals in data lake</td>
+        <td class="kpi-col">Flight plan closure within 30 min of ATA (ICAO Doc 4444 requirement); fuel burn data capture rate 100% for post-flight analytics</td>
+        <td class="pain-col">NAVBLUE actuals data is not natively streamed to the airline data lake; a manual export or scheduled ETL pipeline introduces 4–12 hr latency before actuals reach AWS Redshift — preventing same-day fuel efficiency feedback loops and delaying monthly CORSIA fuel reporting submissions</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+</body>
+</html>

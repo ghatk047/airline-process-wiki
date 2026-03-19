@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1["Phase 1: Data Acquisition"]
+    A([Start]) --> B[OFP trigger — Altéa schedule]
+    B --> C[Extract ZFW & aircraft — Altéa PSS]
+    C --> D[Pull winds & weather — GoDirect]
+  end
+  subgraph P2["Phase 2: Route & Fuel Computation"]
+    D --> E[Compute CI-optimised route — NAVBLUE]
+    E --> F[Calculate trip/contingency/reserve fuel]
+    F --> G{Fuel within MTOW\nand struct. limits?}
+    G -- No --> F
+    G -- Yes --> H[Fuel computation confirmed]
+  end
+  subgraph P3["Phase 3: NOTAM & Airspace Validation"]
+    H --> I[Review NOTAMs — FliteDeck]
+    I --> J[Check ATFM flows — FAA TFMS/CFMU]
+    J --> K{Route clear of\nrestrictions & conflicts?}
+    K -- No --> E
+    K -- Yes --> L[Route validated]
+  end
+  subgraph P4["Phase 4: ATC Filing & ATFM Coordination"]
+    L --> M[File ICAO FPL — SITA AFTN]
+    M --> N{EDCT/CTOT slot\nassigned?}
+    N -- No --> O[Proceed as filed]
+    N -- Yes --> P[Negotiate slot relief — TFMS FSM]
+    P --> O
+  end
+  subgraph P5["Phase 5: OFP Distribution & Crew Acceptance"]
+    O --> Q[Transmit OFP to crew EFB — FliteDeck]
+    Q --> R[Captain reviews fuel & route]
+    R --> S{CDF fuel uplift\nrequested?}
+    S -- No --> T[OFP accepted]
+    S -- Yes --> U[Revise fuel order — NAVBLUE]
+    U --> T
+  end
+  subgraph P6["Phase 6: En-Route Monitoring & Closure"]
+    T --> V[Monitor fuel burn — SITA ACARS]
+    V --> W{Fuel deviation >5%\nor diversion required?}
+    W -- No --> X[Close flight plan — NAVBLUE]
+    W -- Yes --> Y[Issue amendment/diversion — NAVBLUE]
+    Y --> X
+    X --> Z([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Z fill:#003366,color:#fff,stroke:#003366
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600
