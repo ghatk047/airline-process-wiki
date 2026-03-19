@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MR-14 Slides — Maintenance Cost Control &amp; KPI Reporting</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-14</span>
+    <h1>Maintenance Cost Control &amp; KPI Reporting</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/mr-14.png" alt="BPMN for MR-14" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › MRO Vendor Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-14</span>
+    <h1>Maintenance Cost Control &amp; KPI Reporting</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> MR-14</li>
+          <li><strong>L1 Domain:</strong> Maintenance, Repair &amp; Overhaul</li>
+          <li><strong>L2 Process:</strong> MRO Vendor Management</li>
+          <li><strong>L3 Name:</strong> Maintenance Cost Control &amp; KPI Reporting</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract historical MRO spend from SAP S/4HANA</li><li><strong>Phase 2:</strong> Record labour and material costs to work orders</li><li><strong>Phase 3:</strong> Receive and register vendor invoices in SAP Ariba</li><li><strong>Phase 4:</strong> Extract cost and utilisation data for KPI calculat</li><li><strong>Phase 5:</strong> Conduct root-cause analysis for cost overruns</li><li><strong>Phase 6:</strong> Prepare monthly MRO cost report for leadership</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Accounts Payable Specialist</li><li>Director of MRO</li><li>MRO Contract Manager</li><li>MRO Data Analyst</li><li>MRO Finance Controller</li><li>MRO Procurement Analyst</li><li>Maintenance Planner</li><li>VP Engineering &amp; Maintenance</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>AWS S3 / Redshift</li><li>Power BI</li><li>SAP Ariba</li><li>SAP S/4HANA Finance (FI/CO)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › MRO Vendor Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-14</span>
+    <h1>Maintenance Cost Control &amp; KPI Reporting</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract historical MRO spend from SAP S/4HANA</td>
+        <td class="kpi-col">Baseline accuracy ≥98% vs audited actuals</td>
+        <td class="pain-col">AMOS work order costs and SAP cost centres may not be fully reconciled if interface mappings were altered during AMOS upgrades, producing baseline gaps</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate cost centre structure for MRO domains</td>
+        <td class="kpi-col">100% of AMOS work order types mapped to SAP cost centre before budget lock</td>
+        <td class="pain-col">New regulatory requirements (EASA Part-145, FAR Part 145) occasionally introduce new work-scope categories with no corresponding SAP cost centre, delaying budget submission</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Set annual MRO budget targets by category</td>
+        <td class="kpi-col">Budget submission on time (T-60 days before fiscal year start)</td>
+        <td class="pain-col">Fleet utilisation assumptions from Amadeus SkyWORKS schedule plan may diverge from finance model, requiring manual reconciliation loop between Planning and Engineering</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Record labour and material costs to work orders</td>
+        <td class="kpi-col">Work order cost closure within 48 hours of task completion; &lt;2% late-closure rate</td>
+        <td class="pain-col">Technician time entries in AMOS depend on line-station connectivity; remote outstations with poor VPN links accumulate backlog of uncosted work orders, distorting weekly cost reports</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Allocate vendor costs to work orders via SAP Ariba</td>
+        <td class="kpi-col">100% of vendor POs linked to a work order before invoice approval</td>
+        <td class="pain-col">Ad-hoc AOG purchases placed verbally and backed by emergency POs are frequently missing work order references, requiring retrospective allocation that delays month-end close by 3–5 days</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate work order cost allocation completeness</td>
+        <td class="kpi-col">≤1% of period spend unallocated at month-end close</td>
+        <td class="pain-col">AMOS does not enforce mandatory cost-centre fields on all work order types; engineering change orders may slip through without allocation flags</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Receive and register vendor invoices in SAP Ariba</td>
+        <td class="kpi-col">Invoice registration within 24 hours of receipt; e-invoice adoption ≥70% of MRO vendors</td>
+        <td class="pain-col">Many smaller MRO vendors (especially AOG parts suppliers) still submit paper invoices or non-standard PDF formats; manual data entry introduces keying errors that fail automated matching</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Execute 3-way match: PO vs GRN vs invoice</td>
+        <td class="kpi-col">First-pass 3-way match success rate ≥85%; invoice cycle time ≤10 days</td>
+        <td class="pain-col">Component exchange transactions (core returns) create credit/debit timing mismatches between AMOS goods receipt and vendor invoice, routinely failing automated matching and requiring manual intervention</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Validate invoice scope against approved work order</td>
+        <td class="kpi-col">Invoice dispute rate ≤5% of total MRO invoices per month</td>
+        <td class="pain-col">Vendors frequently invoice for additional scope discovered during shop visits (beyond approved estimate), and contracts that lack not-to-exceed clauses result in uncontrolled cost escalation; AMOS scope change workflow is not always enforced before additional work begins</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Post approved vendor invoices in SAP AP</td>
+        <td class="kpi-col">On-time payment rate ≥95%; early payment discount capture ≥80% where applicable</td>
+        <td class="pain-col">Payment terms negotiated in SAP Ariba contracts are not always replicated accurately in SAP vendor master, resulting in missed early-payment discounts and occasional late-payment penalties</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Extract cost and utilisation data for KPI calculation</td>
+        <td class="kpi-col">Data pipeline refresh completed by Day 3 of month following reporting period</td>
+        <td class="pain-col">AMOS and SAP use different fiscal period boundaries; the one-day offset between AMOS maintenance close and SAP financial close creates period-boundary mismatches that require manual correction macros in the ETL pipeline</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Calculate CPFH, cost-per-cycle and maintenance cost ratio</td>
+        <td class="kpi-col">CPFH variance vs budget ≤±5%; maintenance cost ratio ≤15% of total operating cost</td>
+        <td class="pain-col">Jeppesen FliteDeck flight data is updated at block-off; last-minute flight diversions or technical returns can shift utilisation hours after the KPI snapshot has been taken, requiring a restatement process</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Publish KPI dashboard to Power BI for stakeholders</td>
+        <td class="kpi-col">Dashboard published by Day 5 of the following month; stakeholder satisfaction score ≥4/5</td>
+        <td class="pain-col">Row-level security in Power BI requires separate maintenance when new vendor contracts are onboarded; security configuration delays occasionally result in vendors seeing each other&#x27;s cost data</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Review KPIs against thresholds and alert on breaches</td>
+        <td class="kpi-col">All Red-threshold KPIs reviewed and actioned within 5 business days</td>
+        <td class="pain-col">Threshold parameters are set at contract signing and rarely reviewed; fleet age progression and inflationary pressures mean legacy thresholds become misleading benchmarks that suppress appropriate escalation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Conduct root-cause analysis for cost overruns</td>
+        <td class="kpi-col">Root-cause report issued within 10 business days of period close</td>
+        <td class="pain-col">AMOS work order comments are free-text with no structured categorisation, making automated root-cause clustering difficult; analysts must manually review hundreds of work orders to isolate systemic issues</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Issue corrective action plan and assign owners</td>
+        <td class="kpi-col">CAP issued within 5 business days of root-cause sign-off; ≥80% of CAP actions closed on time</td>
+        <td class="pain-col">No dedicated CAP tracking module in AMOS or SAP; action tracking is managed in spreadsheets, causing loss of accountability and making it difficult to evidence closure during EASA audits</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Update rolling MRO cost forecast in SAP CO</td>
+        <td class="kpi-col">Forecast accuracy (latest estimate vs actual at year-end) ≤±3%</td>
+        <td class="pain-col">Utilisation forecast from Amadeus SkyWORKS is updated weekly but SAP CO planning cycles are monthly; mid-month schedule revisions (e.g. aircraft AOG grounding) are not reflected until next month&#x27;s forecast, inflating CPFH variances</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Prepare monthly MRO cost report for leadership</td>
+        <td class="kpi-col">Report distributed by Day 7 of following month to CFO, VP Engineering, and CEO</td>
+        <td class="pain-col">Manual narrative writing for executive commentary is time-consuming; inconsistent framing between monthly reports reduces readability and makes period-over-period trend comparison difficult</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › MRO Vendor Management</span>
+  </div>
+</div>
+
+</body>
+</html>
