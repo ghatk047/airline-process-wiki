@@ -1,0 +1,59 @@
+flowchart LR
+  subgraph P1["Phase 1: Aircraft Config & Pre-Planning"]
+    A([Start]) --> B[Pull DOW/DOI from AMOS]
+    B --> C[Retrieve fuel uplift — Lido/Flight]
+    C --> D[Calc structural limits — SITA LoadManager]
+    D --> E{Estimated payload\nexceeds structural limit?}
+    E -- Yes --> F[Offload or restrict traffic load]
+    F --> D
+    E -- No --> G[Underload & limits confirmed]
+  end
+  subgraph P2["Phase 2: Passenger & Baggage Capture"]
+    G --> H[Extract PAX counts at cutoff — Altéa PSS]
+    H --> I[Apply IATA standard weights — SITA LoadManager]
+    I --> J{Charter/special flight?\nActual weights required?}
+    J -- Yes --> K[Collect actual weights at gate]
+    K --> L[Capture baggage weights — SITA BagManager]
+    J -- No --> L
+    L --> M[Process special PAX SSRs — Altéa PSS]
+  end
+  subgraph P3["Phase 3: Cargo & Special Load Positioning"]
+    M --> N[Receive cargo manifest — CargoWise/SITA AMS]
+    N --> O{Cargo exceeds bay\nweight or volume limit?}
+    O -- Yes --> P[Offload excess cargo, update manifest]
+    P --> O
+    O -- No --> Q[Process DG NOTOC — Cargospot]
+    Q --> R{DG requires\nsegregation or exception?}
+    R -- Yes --> S[Amend DG stowage position]
+    S --> R
+    R -- No --> T[Allocate hold bays — SITA LoadManager]
+  end
+  subgraph P4["Phase 4: Load Sheet & CG Validation"]
+    T --> U[Generate preliminary e-LoadSheet — SITA LoadManager]
+    U --> V{CG within certified\nflight envelope?}
+    V -- No --> W[Redistribute load / apply trim ballast]
+    W --> U
+    V -- Yes --> X[Calculate stab trim — SITA LoadManager + FliteDeck]
+    X --> Y[Transmit load sheet via ACARS/EFB]
+  end
+  subgraph P5["Phase 5: Captain Acceptance & Dispatch"]
+    Y --> Z{Captain accepts\nload sheet?}
+    Z -- No --> AA[Amend load sheet, recalculate]
+    AA --> Y
+    Z -- Yes --> AB[Issue final load instruction — SITA AMS]
+    AB --> AC{Late PAX offload\nafter hold closure?}
+    AC -- Yes --> AD[Pull bag, redo CG validation]
+    AD --> U
+    AC -- No --> AE[Transmit LDM — SITA LoadManager/ACARS]
+    AE --> AF([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AF fill:#003366,color:#fff,stroke:#003366
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
+  style Z fill:#ff6600,color:#fff,stroke:#ff6600
+  style AC fill:#ff6600,color:#fff,stroke:#ff6600
