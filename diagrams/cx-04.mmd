@@ -1,0 +1,55 @@
+flowchart LR
+  subgraph P1["Phase 1: Activity Ingestion & Earning Validation"]
+    A([Start]) --> B[Ingest PSS flight transactions]
+    B --> C{Fare class eligible?}
+    C -- No --> B2[Log non-qualifying activity]
+    C -- Yes --> D[Post qualifying credits to ledger]
+    B2 --> D
+  end
+
+  subgraph P2["Phase 2: Tier Progress Monitoring"]
+    D --> E[Aggregate credits vs tier thresholds]
+    E --> F[Apply partner & CC multipliers]
+    F --> G[Flag members within 10% of threshold]
+    G --> H{Tier threshold met?}
+    H -- No --> E
+  end
+
+  subgraph P3["Phase 3: Status Award & Provisioning"]
+    H -- Yes --> I[Award new tier in Altéa Loyalty]
+    I --> J[Provision upgrade coupons & lounge in PSS]
+    J --> K[Send tier upgrade congratulation]
+  end
+
+  subgraph P4["Phase 4: Upgrade Entitlement Processing"]
+    K --> L[Receive upgrade request at booking/check-in]
+    L --> M{Upgrade inventory available?}
+    M -- No --> N[Place on upgrade waitlist]
+    N --> M
+    M -- Yes --> O[Process upgrade & reissue boarding pass]
+  end
+
+  subgraph P5["Phase 5: Dispute & Status Match Resolution"]
+    O --> P[Log tier dispute / status match in CRM]
+    P --> Q{Dispute approved?}
+    Q -- No --> R[Notify member — rejection rationale]
+    Q -- Yes --> S[Apply manual tier adjustment in Altéa Loyalty]
+    R --> T
+    S --> T
+  end
+
+  subgraph P6["Phase 6: Annual Qualification Review"]
+    T[Run end-of-year qualifying period batch] --> U{Requalification threshold met?}
+    U -- Yes --> V[Renew or extend tier status]
+    U -- No --> W[Process tier downgrade notification]
+    V --> X([End])
+    W --> X
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600

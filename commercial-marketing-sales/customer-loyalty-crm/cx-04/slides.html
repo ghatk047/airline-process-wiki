@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-04 Slides — Tier Status &amp; Upgrade Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-04</span>
+    <h1>Tier Status &amp; Upgrade Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-04.png" alt="BPMN for CX-04" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-04</span>
+    <h1>Tier Status &amp; Upgrade Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-04</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Customer Experience Operations</li>
+          <li><strong>L3 Name:</strong> Tier Status &amp; Upgrade Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">20</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">15</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Ingest flight activity from PSS transaction feed</li><li><strong>Phase 2:</strong> Aggregate qualifying credits against tier threshol</li><li><strong>Phase 3:</strong> Award new tier status in Amadeus Altéa Loyalty</li><li><strong>Phase 4:</strong> Receive upgrade request at booking or check-in gat</li><li><strong>Phase 5:</strong> Log tier dispute or competitive status match claim</li><li><strong>Phase 6:</strong> Run end-of-qualifying-period tier review batch job</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Automated Upgrade Engine / Check-In Agent</li><li>Check-In Agent / Reservations Agent</li><li>Check-In Agent / Self-Service Kiosk</li><li>Loyalty CRM Manager</li><li>Loyalty Customer Service Agent</li><li>Loyalty Data Analyst</li><li>Loyalty Fulfilment Analyst</li><li>Loyalty Operations Analyst</li><li>Loyalty Platform Engineer</li><li>Reservations Agent / Automated Upgrade Engine</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO Fare Data</li><li>AWS Redshift</li><li>Amadeus Altéa Loyalty</li><li>Amadeus Altéa PSS</li><li>Salesforce CRM</li><li>Salesforce Marketing Cloud</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-04</span>
+    <h1>Tier Status &amp; Upgrade Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Ingest flight activity from PSS transaction feed</td>
+        <td class="kpi-col">Transaction ingestion latency ≤4 hours post-departure; error rate &lt;0.1%</td>
+        <td class="pain-col">PSS transaction feeds use EDIFACT format; schema mismatches between Altéa versions cause silent drop of codeshare and interline segments, under-crediting elite members</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate fare class earning eligibility vs ATPCO rules</td>
+        <td class="kpi-col">Eligibility rule coverage ≥99.5% of active fare families; &lt;0.5% manual review rate</td>
+        <td class="pain-col">ATPCO fare rules update fortnightly; loyalty rule tables often lag by 1–2 cycles, causing incorrect non-qualifying flags on newly filed promotional fares and generating member complaints</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Post qualifying miles/segments/spend to member ledger</td>
+        <td class="kpi-col">Ledger posting accuracy ≥99.9%; retro-credit request rate &lt;2% of eligible transactions</td>
+        <td class="pain-col">Partner airline codeshare miles require a separate interline settlement file; delays of up to 72 hours in partner data delivery create visible ledger gaps that prompt unnecessary member calls to contact centre</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Aggregate qualifying credits against tier thresholds</td>
+        <td class="kpi-col">Batch refresh cycle ≤6 hours; member progress accuracy vs ledger ±0 credits</td>
+        <td class="pain-col">Real-time tier progress is surfaced via mobile app; Redshift batch latency causes app to show stale progress bars, triggering trust complaints from high-value members after qualifying flights</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Apply partner airline and credit card earning multipliers</td>
+        <td class="kpi-col">Multiplier application accuracy ≥99.8%; promotional credit disputes &lt;0.3% of bonus transactions</td>
+        <td class="pain-col">Co-branded credit card spend multipliers are fed by card issuer APIs on a monthly settlement cycle; mid-month tier assessments cannot include unsettled spend, causing members to miss tier upgrades they would have earned had the spend posted on time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Flag members within 10% of next tier threshold</td>
+        <td class="kpi-col">Nudge email open rate ≥35%; incremental qualifying activity uplift ≥8% among nudged cohort</td>
+        <td class="pain-col">Personalisation tokens for nudge emails pull live balance from Altéa Loyalty API; API rate limits during peak send windows cause token failures, resulting in generic messages that undermine member engagement</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Assess whether tier upgrade threshold has been met</td>
+        <td class="kpi-col">Tier threshold assessment latency ≤1 hour of qualifying transaction posting; false-positive rate &lt;0.01%</td>
+        <td class="pain-col">Concurrent qualifying flights on the same calendar day can create race conditions in the threshold check, causing duplicate tier upgrade events that provision double benefit sets until a nightly reconciliation job corrects them</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Award new tier status in Amadeus Altéa Loyalty</td>
+        <td class="kpi-col">Tier award processing time ≤30 minutes from trigger; tier award error rate &lt;0.05%</td>
+        <td class="pain-col">Tier validity date logic varies by programme (calendar-year vs rolling-12-month); incorrect configuration during programme rule changes has granted tier status with wrong expiry dates, requiring costly retroactive corrections</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Provision upgrade coupons and lounge access in PSS</td>
+        <td class="kpi-col">Benefit provisioning completion ≤2 hours of tier award; coupon redemption error rate at airport &lt;0.5%</td>
+        <td class="pain-col">Benefit provisioning relies on Altéa OSI/SSR message injection into the PNR; check-in agents at third-party handling stations without direct Altéa access may not see provisioned benefits, causing lounge access denials and escalations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Dispatch tier upgrade congratulation and benefit summary</td>
+        <td class="kpi-col">Email delivery within 2 hours of tier award; delivery success rate ≥98%; unsubscribe rate &lt;0.2%</td>
+        <td class="pain-col">Physical elite card production is outsourced; card delivery SLA of 10 business days conflicts with member expectation of immediate tangible recognition, generating contact centre calls in the interim window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Receive upgrade request at booking or check-in gate</td>
+        <td class="kpi-col">Upgrade request capture rate ≥99% of eligible members; request queue processing time ≤60 seconds</td>
+        <td class="pain-col">Upgrade request channels (online check-in, kiosk, agent) do not share a single priority queue; the same coupon can be presented simultaneously across channels, creating duplicate upgrade requests that consume inventory incorrectly</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Check upgrade class seat inventory availability in PSS</td>
+        <td class="kpi-col">Upgrade clearance rate for top-tier members ≥70% on eligible routes; waitlist clear rate ≥50% by T-24h</td>
+        <td class="pain-col">Upgrade inventory buckets are controlled by Revenue Management; RM teams frequently close upgrade classes on high-demand flights up to T-72h, leaving top-tier members waitlisted on routes where premium seats are visible but commercially blocked</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Process upgrade rebook or manage waitlist clearance</td>
+        <td class="kpi-col">Upgrade processing time ≤5 minutes at check-in; coupon deduction accuracy 100%</td>
+        <td class="pain-col">Automated upgrade engines do not always respect manual override priorities set by premium service desks for VVIP members; automated processing can displace a manually held upgrade, requiring agent correction under time pressure at the gate</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Reissue boarding pass with new cabin assignment</td>
+        <td class="kpi-col">Boarding pass reissue time ≤2 minutes; boarding document error rate &lt;0.01%</td>
+        <td class="pain-col">Mobile boarding pass updates via Altéa&#x27;s push mechanism require the member&#x27;s app to be online at time of upgrade; offline devices display the original boarding pass, creating security lane discrepancies and boarding delays</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Log tier dispute or competitive status match claim in CRM</td>
+        <td class="kpi-col">Case creation time ≤5 minutes; first response SLA ≤4 business hours for elite members</td>
+        <td class="pain-col">Status match requests from competing programme members require manual verification of competitor tier documentation; no automated data exchange with competing programmes means agents must visually verify screenshots, which are easily manipulated</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Review documentation and approve or reject dispute</td>
+        <td class="kpi-col">Dispute resolution time ≤5 business days; first-contact resolution rate ≥80%; approval accuracy vs policy ≥99%</td>
+        <td class="pain-col">Agents lack a single-screen view joining Salesforce case data with Altéa Loyalty transaction history; switching between systems to verify activity increases handle time and introduces manual transcription errors in the resolution record</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Apply manual tier or credit adjustment in loyalty system</td>
+        <td class="kpi-col">Adjustment posting accuracy 100%; case closure within 1 business day of approval</td>
+        <td class="pain-col">Manual tier adjustments bypass the standard threshold assessment workflow, meaning benefit provisioning in the PSS must also be triggered manually; agents without elevated permissions cannot complete both steps, creating a handoff gap where tier is awarded but benefits are not yet active</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Run end-of-qualifying-period tier review batch job</td>
+        <td class="kpi-col">Batch job completion within 4-hour overnight window; zero failed member records; data reconciliation variance &lt;0.01%</td>
+        <td class="pain-col">Annual batch job processes millions of member records in a single overnight window; AWS Redshift cluster scaling has historically underestimated job duration, causing batch overruns that delay morning check-in benefit reads at airports on the first day of the new programme year</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Assess requalification threshold met or missed</td>
+        <td class="kpi-col">Requalification assessment accuracy ≥99.99%; zero incorrect downgrades of members who requalified</td>
+        <td class="pain-col">Grace period eligibility rules (e.g., extended status for members within 500 miles of requalification) are configured manually in Altéa; rule misconfiguration during programme refreshes has incorrectly downgraded members who should have received a grace extension, resulting in high-value member attrition</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Execute tier renewal, downgrade, or extension notification</td>
+        <td class="kpi-col">Notification delivery within 24 hours of batch completion; downgrade appeal rate &lt;5% among downgraded members</td>
+        <td class="pain-col">Downgrade communications must be carefully sequenced to avoid triggering opt-outs; generic downgrade emails sent without personalised re-earn incentives have historically caused measurable NPS drops among former top-tier members who subsequently churn to competitor programmes</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+</body>
+</html>
