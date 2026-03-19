@@ -1,0 +1,55 @@
+flowchart LR
+  subgraph P1["Phase 1: Accreditation & Onboarding"]
+    A([Start]) --> B[Validate IATA/ARC\nAccreditation]
+    B --> C{Accreditation\nValid?}
+    C -- No --> B
+    C -- Yes --> D[Credit Risk\nAssessment]
+    D --> E{Credit Risk\nAcceptable?}
+    E -- Fail --> REJ([Reject Application])
+    E -- Pass --> F[Create Agency\nProfile in PSS]
+  end
+  subgraph P2["Phase 2: Commercial Agreement"]
+    F --> G[Negotiate Agreement\n& Commission Terms]
+    G --> H[Configure GDS\nIncentive Tiers]
+    H --> I{Commission Config\nValidated?}
+    I -- No --> H
+    I -- Yes --> J[File Private Fares\nvia ATPCO]
+  end
+  subgraph P3["Phase 3: Content Distribution"]
+    J --> K[Configure GDS\nAccess & PCC Rules]
+    K --> L[Provision NDC\nAPI for TMC]
+    L --> M{NDC Channel\nLive & Verified?}
+    M -- No --> L
+    M -- Yes --> N[Validate Fare\nDisplay Accuracy]
+  end
+  subgraph P4["Phase 4: Performance Monitoring"]
+    N --> O[Track Booking\nVolume & Channel Mix]
+    O --> P[Monitor GDS\nSegment Fee Exposure]
+    P --> Q{Fee Threshold\nExceeded?}
+    Q -- Yes --> O
+    Q -- No --> R[Generate TMC\nScorecard via PRISM]
+  end
+  subgraph P5["Phase 5: Settlement & Commission"]
+    R --> S[Process BSP/ARC\nWeekly Settlement]
+    S --> T{Settlement\nDiscrepancy?}
+    T -- Yes --> U[Resolve Debit\nMemo Dispute]
+    U --> S
+    T -- No --> V[Disburse Incentive\nCommissions]
+  end
+  subgraph P6["Phase 6: Annual Review & Renewal"]
+    V --> W[Annual Agency\nPerformance Review]
+    W --> X{Contract\nRenewal Approved?}
+    X -- Renew --> G
+    X -- Terminate --> Y([Terminate Agreement])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style REJ fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600

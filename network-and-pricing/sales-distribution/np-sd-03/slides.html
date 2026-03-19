@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SD-03 Slides — Travel Agency &amp; TMC Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-03</span>
+    <h1>Travel Agency &amp; TMC Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sd-03.png" alt="BPMN for NP-SD-03" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-03</span>
+    <h1>Travel Agency &amp; TMC Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SD-03</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Sales &amp; Distribution</li>
+          <li><strong>L3 Name:</strong> Travel Agency &amp; TMC Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Validate IATA/ARC Accreditation Status</li><li><strong>Phase 2:</strong> Negotiate Preferred Agency Agreement Terms</li><li><strong>Phase 3:</strong> Configure GDS Agency Access &amp; Booking Rules</li><li><strong>Phase 4:</strong> Track Agency Booking Volume &amp; Channel Mix</li><li><strong>Phase 5:</strong> Process BSP/ARC Weekly Settlement Run</li><li><strong>Phase 6:</strong> Conduct Annual Agency Performance Review</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Commercial Account Manager</li><li>Commercial Analytics Manager</li><li>Commercial Distribution Analyst</li><li>Commercial Finance Analyst</li><li>Digital Distribution Manager</li><li>Distribution Operations Specialist</li><li>Distribution QA Analyst</li><li>Pricing Analyst</li><li>Revenue Accounting Specialist</li><li>VP Commercial Distribution</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>Amadeus Altéa PSS</li><li>Amadeus GDS / Sabre GDS / Travelport GDS</li><li>IATA BSP Link / SAP S/4HANA Finance (FI/AR)</li><li>IATA Customer Portal / ARC Agency Reporting Corporation</li><li>NDC API Gateway</li><li>SAP Ariba (contract authoring module)</li><li>SAP Ariba / Amadeus Altéa PSS</li><li>SAP S/4HANA Finance (FI/AP)</li><li>SAP S/4HANA Finance (FI/AR)</li><li>SAP S/4HANA Finance (FI/AR) / IATA BSP Link</li><li>SAP S/4HANA Finance (FI/CO) / Tableau</li><li>Sabre GDS (Agency Private Fares) / Travelport GDS (SmartFares)</li><li>Sabre GDS / Amadeus GDS / Travelport GDS / NDC API Gateway</li><li>Sabre PRISM</li><li>Sabre PRISM / Tableau</li><li>Tableau / SAP Ariba</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-03</span>
+    <h1>Travel Agency &amp; TMC Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Validate IATA/ARC Accreditation Status</td>
+        <td class="kpi-col">Accreditation validation completed within 2 business days of application receipt</td>
+        <td class="pain-col">No API integration with IATA Customer Portal; analysts perform manual lookups causing 2–5 day delays and risk of using stale accreditation data</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Conduct Credit Risk &amp; Financial Assessment</td>
+        <td class="kpi-col">100% of new agency applications assessed before contract execution; zero post-activation credit defaults</td>
+        <td class="pain-col">Small TMCs may carry insufficient bond coverage for peak-period ticketing volumes; ARC debit memo recovery can take 60+ days, creating significant AR exposure</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Create Agency &amp; TMC Master Profile in PSS</td>
+        <td class="kpi-col">PSS profile activation within 1 business day of credit approval; profile accuracy rate ≥99%</td>
+        <td class="pain-col">Duplicate IATA numbers across multiple GDS office IDs (PCCs) cause mis-attributed booking data and commission calculation errors that require manual reconciliation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Negotiate Preferred Agency Agreement Terms</td>
+        <td class="kpi-col">Contract cycle time ≤15 business days from first proposal to execution; ≥90% of tier-1 TMCs under signed agreement</td>
+        <td class="pain-col">IATA Resolution 814 caps base commission at 0% in most markets, forcing complex incentive structures that are difficult to model and audit; legal review backlogs extend cycle times</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Configure Commission &amp; Incentive Tiers in GDS Backend</td>
+        <td class="kpi-col">Configuration live within 3 business days of contract signing; incentive calculation accuracy ≥99.5%</td>
+        <td class="pain-col">Incentive tier configuration must be replicated independently across three GDS platforms (Sabre, Travelport, Amadeus), tripling the manual workload and creating divergence risk if one platform update is missed</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>File Agency-Specific Private Fares via ATPCO</td>
+        <td class="kpi-col">Private fare filing completed within 24 hours of contract activation; zero Category 35 fare rule violations on ATPCO audit</td>
+        <td class="pain-col">ATPCO Category 35 private fare rules are complex and proprietary; misconfigured rules can expose negotiated rates to the public GDS display, a contractual breach that can result in agency clawback demands</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Configure GDS Agency Access &amp; Booking Rules</td>
+        <td class="kpi-col">GDS rule configuration completed within 2 business days of agreement activation; zero unauthorised fare-display incidents in 90-day post-activation audit</td>
+        <td class="pain-col">Maintaining consistent booking rule sets across three GDS environments is manual and error-prone; a mis-set point-of-sale rule in one GDS can allow an agency to ticket on an expired or wrong-market fare</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Provision NDC API Credentials for TMC Self-Serve</td>
+        <td class="kpi-col">NDC channel live within 10 business days of TMC API onboarding request; NDC booking share ≥15% of managed corporate channel within 12 months</td>
+        <td class="pain-col">Many mid-market TMCs lack in-house API development capability, stalling NDC adoption; OBT (online booking tool) compatibility with NDC ancillaries (seat, bag, lounge) varies widely, fragmenting the corporate traveller experience</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Validate Fare Display Accuracy Across All Channels</td>
+        <td class="kpi-col">Fare parity across GDS and NDC channels ≥98%; critical parity failures (public rate shown as private) resolved within 4 hours</td>
+        <td class="pain-col">GDS cache refresh cycles (typically 20–30 minutes) mean new fare filings are not immediately visible, causing short-term channel inconsistency that generates agent complaints and mis-sells</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Track Agency Booking Volume &amp; Channel Mix</td>
+        <td class="kpi-col">Monthly reporting cycle completed by day 5 of following month; GDS booking data completeness ≥99.5%</td>
+        <td class="pain-col">Sabre PRISM captures Sabre bookings natively but requires manual data aggregation for Travelport and Amadeus segments, creating a consolidated view that is typically 5–7 days stale</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Monitor GDS Segment Fee Exposure</td>
+        <td class="kpi-col">GDS segment fee cost as % of distribution revenue ≤3.5%; NDC deflection saving ≥$1.20 per deflected segment</td>
+        <td class="pain-col">GDS full-content agreements (FCAs) lock the airline into fee-per-segment structures even when NDC alternatives exist; renegotiating FCAs mid-term requires regulatory approval in some markets (EU, Australia)</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Generate TMC Quarterly Scorecard &amp; QBR Pack</td>
+        <td class="kpi-col">QBR delivered to top-20 TMCs within 15 days of quarter-end; ≥80% of TMCs achieve at least Tier 1 incentive threshold</td>
+        <td class="pain-col">Corporate travel managers increasingly demand NDC-sourced data in QBR reports; Sabre PRISM does not natively include NDC transaction data, requiring manual data joining that adds 2–3 days to production cycle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Process BSP/ARC Weekly Settlement Run</td>
+        <td class="kpi-col">BSP settlement reconciliation completed within 2 business days of remittance receipt; reconciliation accuracy ≥99.8%</td>
+        <td class="pain-col">BSP processing timelines vary by country (weekly in most markets, bi-weekly in some); multi-currency remittances create FX exposure that must be hedged in SAP — hedging mismatches can misstate revenue by 0.5–1%</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Resolve Debit Memo Disputes with Agencies</td>
+        <td class="kpi-col">ADM dispute resolution cycle ≤30 days; ADM acceptance rate ≥85% without IATA panel escalation</td>
+        <td class="pain-col">IATA Resolution 850 requires airlines to issue ADMs within strict time windows (typically 9 months of ticket issue); late ADMs are automatically rejected by agencies, creating unrecoverable revenue leakage</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Calculate &amp; Disburse Incentive Commission Payments</td>
+        <td class="kpi-col">Incentive payments disbursed within 30 days of quarter-end; payment accuracy ≥99.9% vs contracted incentive schedule</td>
+        <td class="pain-col">Manual incentive tier calculations in spreadsheets are audit-vulnerable; tier attainment disputes with agencies delay payment and strain commercial relationships, particularly for top-50 TMCs during year-end close</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Conduct Annual Agency Performance Review</td>
+        <td class="kpi-col">Annual reviews completed for 100% of preferred agency contracts before contract expiry; ≥90% of top-20 TMCs retained at renewal</td>
+        <td class="pain-col">Airline-TMC relationships are increasingly contested as TMCs push for NDC surcharges to offset GDS revenue loss; failure to renew top TMC agreements risks losing 8–15% of managed corporate revenue overnight</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Renegotiate Terms or Execute Contract Termination</td>
+        <td class="kpi-col">Contract renewal executed ≥30 days before expiry to avoid lapse; termination-to-deactivation cycle ≤5 business days to prevent unauthorised ticketing</td>
+        <td class="pain-col">Terminated agencies may continue issuing tickets against an active PSS profile if deactivation is delayed, creating ticketing liability; multi-GDS deactivation must be coordinated simultaneously to prevent exploits through alternate channels</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+</body>
+</html>
