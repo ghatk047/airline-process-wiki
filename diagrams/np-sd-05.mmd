@@ -1,0 +1,56 @@
+flowchart LR
+  subgraph P1["Phase 1: NDC Certification"]
+    A([Start]) --> B[Enrol in IATA NDC Registry]
+    B --> C[Select NDC schema version]
+    C --> D{Schema covers\n≥80% aggregators?}
+    D -- No --> C
+    D -- Yes --> E[Configure AWS API endpoint\n& OAuth 2.0 auth]
+    E --> F{IATA certification\ntest passed?}
+    F -- Fail --> E
+    F -- Pass --> G([Certified])
+  end
+  subgraph P2["Phase 2: Offer Content Config"]
+    G --> H[Build ancillary\nservices catalogue]
+    H --> I[Configure branded fares\nvia ATPCO UPA]
+    I --> J{Fares validated\nvs ATPCO filing?}
+    J -- No --> I
+    J -- Yes --> K[Map RM dynamic pricing\nto AirShopping API]
+    K --> L{Staging UAT\nzero P0/P1 defects?}
+    L -- No --> K
+    L -- Yes --> M([Content Ready])
+  end
+  subgraph P3["Phase 3: Aggregator Onboarding"]
+    M --> N[Register aggregator\nin API gateway]
+    N --> O[Run end-to-end NDC\nbooking flow UAT]
+    O --> P{UAT booking\nflow passed?}
+    P -- No --> O
+    P -- Yes --> Q[Configure agency\nincentive scheme]
+    Q --> R([Live])
+  end
+  subgraph P4["Phase 4: API Operations"]
+    R --> S[Monitor API health\nvia CloudWatch/Datadog]
+    S --> T{SLA thresholds\nbreached?}
+    T -- No --> S
+    T -- Yes --> U[Investigate & resolve\nbooking exceptions]
+    U --> S
+  end
+  subgraph P5["Phase 5: Schema Governance"]
+    S --> V[Plan NDC schema\nversion migration]
+    V --> W{All aggregators\nready to migrate?}
+    W -- No --> V
+    W -- Yes --> X[Report NDC adoption\nmetrics to leadership]
+    X --> Y([Done])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style G fill:#003366,color:#fff,stroke:#003366
+  style M fill:#003366,color:#fff,stroke:#003366
+  style R fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600

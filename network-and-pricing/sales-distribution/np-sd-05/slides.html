@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SD-05 Slides — NDC Content &amp; API Distribution</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-05</span>
+    <h1>NDC Content &amp; API Distribution</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sd-05.png" alt="BPMN for NP-SD-05" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-05</span>
+    <h1>NDC Content &amp; API Distribution</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SD-05</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Sales &amp; Distribution</li>
+          <li><strong>L3 Name:</strong> NDC Content &amp; API Distribution</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">15</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Enrol airline in IATA NDC Registry</li><li><strong>Phase 2:</strong> Build ancillary services catalogue for NDC</li><li><strong>Phase 3:</strong> Register NDC aggregator in API gateway</li><li><strong>Phase 4:</strong> Monitor NDC API transaction health and SLA complia</li><li><strong>Phase 5:</strong> Plan and execute NDC schema version migration</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>API Architect</li><li>API Operations Engineer</li><li>Ancillary Revenue Manager</li><li>Distribution Analytics Manager</li><li>Distribution Operations Analyst</li><li>Distribution Partnerships Manager</li><li>Distribution Technology Manager</li><li>Pricing Analyst</li><li>QA Engineer</li><li>Revenue Management Analyst</li><li>Sales Strategy Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO Routehappy Rich Content (UPA / Ancillary Optimizer)</li><li>AWS API Gateway</li><li>AWS API Gateway (API key and usage plan management)</li><li>AWS CloudWatch / Datadog</li><li>AWS CloudWatch Logs; Amadeus Altéa PSS (order reconciliation module)</li><li>Accelya Offer &amp; Order Management</li><li>Accelya Offer &amp; Order Management (Farelogix FLX)</li><li>Accelya Offer &amp; Order Management; IATA NDC Change Log</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>IATA NDC Certification Tool</li><li>IATA NDC Registry Portal</li><li>NDC API Gateway; Amadeus Travel API (aggregator side)</li><li>PROS Smart CPQ (commercial incentive management)</li><li>Postman / SoapUI (API testing); NDC API Gateway staging environment</li><li>Tableau / Power BI; AWS Redshift (data warehouse)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-05</span>
+    <h1>NDC Content &amp; API Distribution</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Enrol airline in IATA NDC Registry</td>
+        <td class="kpi-col">IATA NDC Level 4 certification achieved; registration completed within 10 business days of approval</td>
+        <td class="pain-col">IATA NDC certification is tiered (Levels 1–4) — most airlines must iterate through lower tiers before reaching Level 4 (full offer &amp; order), adding 3–6 months to NDC launch timelines</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Select NDC API schema version and message set</td>
+        <td class="kpi-col">Selected schema version covers ≥80% of target aggregator ecosystem by booking volume</td>
+        <td class="pain-col">Schema version fragmentation — Amadeus, Sabre, and Travelport aggregators each support different NDC versions; a version covering the full ecosystem may not yet exist, forcing the airline to maintain parallel schema support</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Configure NDC API endpoint and authentication</td>
+        <td class="kpi-col">API endpoint availability SLA ≥99.9%; OAuth token issuance latency ≤200ms</td>
+        <td class="pain-col">Airlines with legacy PSS (non-NDC-native Amadeus Altéa or Sabre) must build an EDIFACT-to-NDC translation middleware layer — this adapter introduces latency and is a single point of failure between NDC offer requests and live inventory</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Submit NDC API for IATA certification testing</td>
+        <td class="kpi-col">Certification pass rate ≥95% of mandatory test scenarios on first submission; resubmission cycle ≤15 business days</td>
+        <td class="pain-col">IATA certification test harness does not cover all real-world aggregator edge cases — airlines frequently pass IATA tests but encounter message interpretation failures in live aggregator connectivity, requiring post-certification fixes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Build ancillary services catalogue for NDC</td>
+        <td class="kpi-col">Ancillary catalogue completeness ≥90% of available products accessible via NDC ServiceList; content refresh cycle ≤48 hours</td>
+        <td class="pain-col">Ancillary catalogue updates in PSS do not auto-sync to NDC ServiceList — product pricing or availability changes in Amadeus Altéa must be manually reflected in the NDC layer, causing offer inconsistency during peak sale windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Configure branded fare families in NDC OfferPrice</td>
+        <td class="kpi-col">Branded fare NDC display parity with GDS content ≥98% of fare families; ATPCO UPA filing-to-NDC sync ≤24 hours</td>
+        <td class="pain-col">ATPCO UPA content must be filed separately from NDC fare data — dual-filing increases operational overhead and creates version drift between GDS branded fare display and NDC OfferPrice responses, exposing the airline to consumer-facing inconsistencies</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Map RM dynamic pricing to NDC AirShopping response</td>
+        <td class="kpi-col">AirShopping API response time ≤800ms at p95; dynamic pricing accuracy vs RM system ≥99.5%; availability sync lag ≤30 seconds</td>
+        <td class="pain-col">NDC AirShopping calls trigger real-time RM inventory lookups — aggregator shopping bots generating &gt;500 req/sec can saturate RM system capacity if not rate-limited, causing availability query failures that surface as blank NDC offer grids to agencies</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Validate NDC offer-to-order round trip in staging</td>
+        <td class="kpi-col">Zero P0/P1 defects before aggregator onboarding gate; ≤5 P2 defects accepted with documented workaround</td>
+        <td class="pain-col">NDC OrderCreate-to-PSS PNR translation errors cause silent booking failures — bookings appear confirmed in the NDC order layer but no PNR is created in Amadeus Altéa, resulting in passengers presenting at check-in with no reservation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Register NDC aggregator in API gateway</td>
+        <td class="kpi-col">Aggregator API credentials provisioned within 5 business days of commercial agreement execution</td>
+        <td class="pain-col">Aggregator onboarding requires simultaneous legal, commercial, and technical sign-off across three separate airline departments — cross-team coordination delays average 15–20 business days beyond the contractual 5-day SLA in practice</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Conduct end-to-end NDC booking flow UAT with aggregator</td>
+        <td class="kpi-col">End-to-end booking flow success rate ≥99% in UAT; ancillary attachment and retrieval validated across all test scenarios</td>
+        <td class="pain-col">Even IATA-certified aggregators interpret NDC message schemas differently — the airline must maintain aggregator-specific message transformation rules in a compatibility layer, increasing maintenance cost linearly with the number of connected aggregators</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Configure NDC agency incentive and cost model</td>
+        <td class="kpi-col">NDC booking share of total indirect bookings ≥25% within 12 months of aggregator go-live; NDC cost-per-segment &lt;GDS segment fee by ≥30%</td>
+        <td class="pain-col">Airlines with GDS &#x27;full content&#x27; agreements face contractual penalties for offering NDC-exclusive fares — withholding content from traditional GDS to drive NDC adoption may trigger financial penalties that exceed short-term NDC savings</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Monitor NDC API transaction health and SLA compliance</td>
+        <td class="kpi-col">NDC API uptime ≥99.9%; AirShopping p95 latency ≤800ms; transaction error rate ≤0.5% of all NDC calls</td>
+        <td class="pain-col">NDC API errors are not always surfaced to booking agents — silent failures in AirShopping or OfferPrice cause agency tools to silently fall back to GDS EDIFACT content, masking NDC availability problems from operations teams until SLA reports are reviewed</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Investigate and resolve NDC booking exceptions</td>
+        <td class="kpi-col">NDC booking exception resolution ≤4 hours for P1 (passenger impacted at airport); ≤24 hours for P2 (booking error, no immediate travel)</td>
+        <td class="pain-col">NDC OrderCreate failures that partially commit to PSS create &#x27;ghost bookings&#x27; — passenger holds payment confirmation but no PNR exists, requiring manual reconciliation between the NDC order layer and Amadeus Altéa that can take hours during high-traffic periods</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Plan and execute NDC schema version migration</td>
+        <td class="kpi-col">Schema migration completed within 6 months of IATA deprecation notice; ≤2 aggregators requiring extended dual-version support beyond migration deadline</td>
+        <td class="pain-col">IATA NDC schema versions are deprecated on 18-month cycles — airlines with large aggregator ecosystems must coordinate simultaneous upgrades across 10+ partners, each with their own development calendars, creating a migration window where both old and new schemas must be supported in parallel at significant infrastructure cost</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Report NDC adoption metrics to commercial leadership</td>
+        <td class="kpi-col">NDC booking cost-per-segment &lt;GDS segment fee; NDC ancillary attach rate ≥GDS equivalent; report delivered monthly within 5 business days of month-end close</td>
+        <td class="pain-col">Airline NDC analytics require joining data from the NDC order management layer, GDS PNR feeds, and PSS — absence of a unified booking data model means NDC performance is routinely understated or double-counted, undermining the business case for continued NDC investment</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+</body>
+</html>
