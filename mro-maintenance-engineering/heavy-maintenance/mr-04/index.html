@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sales &amp; Distribution · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>MR-04 · Component &amp; Parts Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -187,8 +188,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-done"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
@@ -207,7 +208,7 @@
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-02/"><span class="status-dot status-done"></span><span class="pid">MR-02</span>Heavy Maintenance (C/D Check) Planning</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-03/"><span class="status-dot status-done"></span><span class="pid">MR-03</span>Engine Shop Maintenance Management</a>
-        <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-04/"><span class="status-dot status-done"></span><span class="pid">MR-04</span>Component &amp; Parts Management</a>
+        <a class="sidebar-l3-link active" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-04/"><span class="status-dot status-done"></span><span class="pid">MR-04</span>Component &amp; Parts Management</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-11/"><span class="status-dot status-queue"></span><span class="pid">MR-11</span>Structural Repair &amp; NDT Management</a>
       </div>
     </div>
@@ -242,153 +243,278 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Sales &amp; Distribution</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/heavy-maintenance/">Engine &amp; Component Shop</a><span class="sep">›</span>
+  <span class="current">MR-04 · Component &amp; Parts Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Sales &amp; Distribution</h1>
-    <p>Network Planning &amp; Scheduling · 15 of 15 subprocesses complete · Updated 2026-03-19 18:32</p>
+    <h1>Component &amp; Parts Management</h1>
+    <p>Maintenance, Repair &amp; Overhaul › Engine &amp; Component Shop · 20 L4 steps · 6 phases · 8 decision gates · Updated 2026-03-19 18:32</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">MR-04</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-01</span>GDS Channel Management</h3>
-    <p>Sales &amp; Distribution · 14 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-mr-04">
+      <img src="../../../assets/img/mr-04.png" alt="MR-04 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-mr-04').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-mr-04').style.display='flex'">
+      <div id="diag-placeholder-mr-04" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Generate parts demand forecast from maintenance programme</td>
+  <td class="td-role">Materials Planning Analyst</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved maintenance programme, fleet utilisation plan, AD/SB list</td>
+  <td style="font-size:10px">12-month rolling parts demand forecast by P/N</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Forecast accuracy ≥85% (MAPE ≤15%)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Validate forecast against consumption history and ADs</td>
+  <td class="td-role">Materials Planning Analyst</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">24-month parts consumption history, current AD/SB revision delta</td>
+  <td style="font-size:10px">Validated demand plan with confidence bands; exception list for manual override</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Forecast review cycle completed within 5 business days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Submit demand plan to procurement and finance for budget approval</td>
+  <td class="td-role">Materials Planning Manager</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated demand plan, prior-year actuals</td>
+  <td style="font-size:10px">Approved materials budget, MRP requirements released to procurement</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Budget approval lead time ≤10 business days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Check stock availability against net demand requirements</td>
+  <td class="td-role">Materials Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved demand plan, real-time inventory snapshot</td>
+  <td style="font-size:10px">Net requirements list with buy / borrow / exchange decisions per P/N</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Stock-out rate ≤2% for critical AOG-flagged parts</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Source parts from approved vendor list via RFQ</td>
+  <td class="td-role">Procurement Specialist</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Net requirements list, approved vendor master, contract pricing</td>
+  <td style="font-size:10px">RFQ issued to ≥2 approved suppliers per part number</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Vendor lead time compliance ≥90%; RFQ issued within 1 business day of requirement</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Evaluate supplier quotes and select preferred source</td>
+  <td class="td-role">Procurement Specialist</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Supplier quotes, cost and lead-time matrix, AOG flag</td>
+  <td style="font-size:10px">Awarded PO, supplier selection rationale documented</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PO cycle time ≤3 business days (AOG: ≤4 hours)</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Issue purchase order and confirm supplier delivery commitment</td>
+  <td class="td-role">Procurement Manager</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Awarded quote, budget confirmation, delivery address</td>
+  <td style="font-size:10px">PO issued with confirmed expected receipt date and freight tracking reference</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PO-to-delivery on-time rate ≥88%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Receive parts shipment and verify airworthiness documentation</td>
+  <td class="td-role">Stores Receiving Inspector</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Inbound shipment, packing list, FAA 8130-3 or EASA Form 1</td>
+  <td style="font-size:10px">Goods receipt logged in AMOS; documents scanned and attached to part record</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Receiving processing time ≤4 hours for AOG-flagged parts; ≤24 hours for routine receipts</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Inspect parts for airworthiness and serviceable condition</td>
+  <td class="td-role">Quality Inspector (Part 145 authorised)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Physical part, airworthiness release certificate, inspection checklist</td>
+  <td style="font-size:10px">Inspection record; pass/fail determination recorded against part in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Inspection turn-time ≤8 hours; incoming rejection rate ≤3%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Quarantine non-conforming parts and raise supplier NCR</td>
+  <td class="td-role">Quality Inspector</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Failed inspection record, non-conformance details</td>
+  <td style="font-size:10px">Quarantine tag applied, Non-Conformance Report raised, supplier notified</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NCR resolution cycle ≤15 business days; quarantined parts segregated within 1 hour of rejection</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Assign bin location and update AMOS inventory record</td>
+  <td class="td-role">Stores Clerk</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Accepted and inspected part, warehouse bin map</td>
+  <td style="font-size:10px">Part binned, inventory record updated with location, quantity, and batch traceability</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Inventory location accuracy ≥99.5%; bin assignment completed within 2 hours of acceptance</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Monitor shelf-life, expiry dates, and life-limited part counters</td>
+  <td class="td-role">Materials Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Part life data, calendar expiry dates, flight-cycle counters from OEM CMM</td>
+  <td style="font-size:10px">Expiry alerts actioned; scrapping orders raised for time-expired or cycle-expired parts</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Shelf-life compliance 100%; zero expired parts issued from serviceable stock</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Conduct periodic cycle counts and reconcile inventory discrepancies</td>
+  <td class="td-role">Stores Supervisor</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Cycle count schedule, physical count results, AMOS on-hand quantities</td>
+  <td style="font-size:10px">Reconciled inventory record; adjustment or write-off requests submitted to Finance</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Inventory accuracy post-count ≥99%; cycle count variance ≤1% by value</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Receive and validate parts request from maintenance work order</td>
+  <td class="td-role">Materials Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Work order task card, illustrated parts catalogue reference, parts list</td>
+  <td style="font-size:10px">Validated picking list generated in AMOS; estimated staging time confirmed to technician</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Parts picking initiated within 30 minutes of WO request submission</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Kit and stage parts at work centre before task start</td>
+  <td class="td-role">Stores Clerk</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated picking list, bin locations, task start time</td>
+  <td style="font-size:10px">Kitted parts trolley staged at work centre; all P/Ns and quantities verified</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Kitting accuracy ≥99%; kit staged ≥1 hour before scheduled task start</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Issue parts to technician and record WO consumption in AMOS</td>
+  <td class="td-role">Stores Clerk</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Kitted parts, technician badge and signature, work order number</td>
+  <td style="font-size:10px">Parts issued; WO consumption record updated; removed serviceable/unserviceable parts tagged and returned to stores</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Parts issuance documentation completeness 100%; removed parts tagged within 1 hour of removal</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Tag and track removed unserviceable rotable in AMOS</td>
+  <td class="td-role">Maintenance Technician</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Removed component, completed work order removal record</td>
+  <td style="font-size:10px">Unserviceable tag applied; unit status set to U/S in AMOS rotable tracking module with part history appended</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Rotable U/S tagging compliance 100%; AMOS update completed within 4 hours of removal</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Assess repair viability against BER threshold</td>
+  <td class="td-role">Component Engineering Manager</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Unserviceable rotable, OEM Component Maintenance Manual, preliminary repair cost estimate</td>
+  <td style="font-size:10px">Repair or BER decision documented; repair order raised in AMOS or scrapping order approved</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">BER rate ≤8% of annual rotable pool; average repair cost vs. new-unit cost ≤60%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.3</td>
+  <td class="td-name">Ship core to approved repair agency and track shop visit TAT</td>
+  <td class="td-role">Rotables Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Raised repair order, serviceable-to-repair shipping documentation, export/import permits</td>
+  <td style="font-size:10px">Core shipped with AMOS shop visit opened; TAT clock started; interim exchange unit sourced if required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Repair TAT ≤30 days for avionics LRUs; ≤60 days for engine accessory components</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.4</td>
+  <td class="td-name">Receive repaired rotable and return to serviceable stock</td>
+  <td class="td-role">Stores Receiving Inspector</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Repaired unit, MRO shop work order, EASA Form 1 or FAA 8130-3, updated part history</td>
+  <td style="font-size:10px">Rotable returned to serviceable stock in AMOS; shop visit closed; cost posted to SAP asset record</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Rotable pool availability rate ≥92%; receiving and return-to-stock processing ≤4 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-02</span>Direct Channel Management (Web &amp; App)</h3>
-    <p>Sales &amp; Distribution · 16 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">MR-04</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Maintenance, Repair &amp; Overhaul</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Engine &amp; Component Shop</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Component &amp; Parts Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">20 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">8 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">9 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Materials Planning Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Materials Planning Manager</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Materials Controller</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Procurement Specialist</div><div class="swim"><div class="dot" style="background:#10b981"></div>Procurement Manager</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Stores Receiving Inspector</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Quality Inspector (Part 145 authorised)</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Quality Inspector</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Stores Clerk</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Stores Supervisor</div><div class="swim"><div class="dot" style="background:#f97316"></div>Maintenance Technician</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>Component Engineering Manager</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Rotables Controller</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span><span class="stag sap">SAP Ariba</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Generate parts demand forecast from maintenance programme</span><span class="kval">Forecast accuracy ≥85% (MAPE ≤15%)</span></div><div class="krow"><span class="kname">Validate forecast against consumption history and ADs</span><span class="kval">Forecast review cycle completed within 5 business days</span></div><div class="krow"><span class="kname">Submit demand plan to procurement and finance for budget approval</span><span class="kval">Budget approval lead time ≤10 business days</span></div><div class="krow"><span class="kname">Check stock availability against net demand requirements</span><span class="kval">Stock-out rate ≤2% for critical AOG-flagged parts</span></div><div class="krow"><span class="kname">Source parts from approved vendor list via RFQ</span><span class="kval">Vendor lead time compliance ≥90%; RFQ issued within 1 business day of requirement</span></div><div class="krow"><span class="kname">Evaluate supplier quotes and select preferred source</span><span class="kval">PO cycle time ≤3 business days (AOG: ≤4 hours)</span></div><div class="krow"><span class="kname">Issue purchase order and confirm supplier delivery commitment</span><span class="kval">PO-to-delivery on-time rate ≥88%</span></div><div class="krow"><span class="kname">Receive parts shipment and verify airworthiness documentation</span><span class="kval">Receiving processing time ≤4 hours for AOG-flagged parts; ≤24 hours for routine receipts</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Fleet mix changes (737 MAX vs 737-800 intermix) cause demand volatility; AMOS forecast module requires manual adjustment for new-type introductions where consumption history is sparse</div><div class="risk-card">Sporadic demand items (rotables with &lt;4 removals/year) produce unreliable AMOS statistical forecasts; manual override requires SME judgement and is not auditable within AMOS</div><div class="risk-card">No native AMOS–SAP interface at many carriers; demand plan must be manually re-keyed into SAP MRP, introducing transcription errors and plan drift between systems</div><div class="risk-card">Inventory accuracy degrades when technicians issue parts without closing work orders in AMOS; phantom stock causes missed AOG events and emergency buys that erode savings from planned procurement</div><div class="risk-card">FAA/EASA Part 145 approved supplier list is slow to update; unapproved parts risk is highest on spot-market buys where non-qualified vendors are used to satisfy urgent demand</div><div class="risk-card">AOG situations force bypass of normal sourcing controls; expedited buys from non-preferred vendors increase counterfeit-part risk and undermine FAR Part 145 traceability requirements</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Approved maintenance programme, fleet utilisation plan, AD/SB list</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Rotable returned to serviceable stock in AMOS; shop visit closed; cost posted to SAP asset record</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-03</span>Travel Agency &amp; TMC Management</h3>
-    <p>Sales &amp; Distribution · 17 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-04</span>Corporate Account Sales Management</h3>
-    <p>Sales &amp; Distribution · 16 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-05</span>NDC Content &amp; API Distribution</h3>
-    <p>Sales &amp; Distribution · 15 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-06</span>Group Sales Management</h3>
-    <p>Sales &amp; Distribution · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-07</span>Charter Sales &amp; Contract Management</h3>
-    <p>Sales &amp; Distribution · 18 steps · 10 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-08</span>Commission &amp; Incentive Management</h3>
-    <p>Sales &amp; Distribution · 17 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-09</span>Interline &amp; Codeshare Ticketing</h3>
-    <p>Sales &amp; Distribution · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-10</span>BSP Settlement &amp; IATA Billing</h3>
-    <p>Sales &amp; Distribution · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-11</span>Online Travel Agency (OTA) Management</h3>
-    <p>Sales &amp; Distribution · 16 steps · 11 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-12</span>Metasearch &amp; Comparison Site Management</h3>
-    <p>Sales &amp; Distribution · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-13</span>Sales Performance Reporting &amp; Analytics</h3>
-    <p>Sales &amp; Distribution · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-14</span>Distribution Cost Optimization</h3>
-    <p>Sales &amp; Distribution · 16 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-15</span>Sales Force Automation &amp; CRM</h3>
-    <p>Sales &amp; Distribution · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../mr-03/"><span class="arrow">←</span><span><span class="sub">Previous</span>MR-03 · Engine Shop Maintenance Management</span></a><a class="pn-btn" href="../mr-05/"><span><span class="sub">Next</span>MR-05 · Airworthiness Directive (AD) Compliance</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

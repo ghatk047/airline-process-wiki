@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MR-04 Slides — Component &amp; Parts Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-04</span>
+    <h1>Component &amp; Parts Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/mr-04.png" alt="BPMN for MR-04" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Engine & Component Shop</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-04</span>
+    <h1>Component &amp; Parts Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> MR-04</li>
+          <li><strong>L1 Domain:</strong> Maintenance, Repair &amp; Overhaul</li>
+          <li><strong>L2 Process:</strong> Engine &amp; Component Shop</li>
+          <li><strong>L3 Name:</strong> Component &amp; Parts Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">20</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Generate parts demand forecast from maintenance pr</li><li><strong>Phase 2:</strong> Check stock availability against net demand requir</li><li><strong>Phase 3:</strong> Receive parts shipment and verify airworthiness do</li><li><strong>Phase 4:</strong> Assign bin location and update AMOS inventory reco</li><li><strong>Phase 5:</strong> Receive and validate parts request from maintenanc</li><li><strong>Phase 6:</strong> Tag and track removed unserviceable rotable in AMO</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Component Engineering Manager</li><li>Maintenance Technician</li><li>Materials Controller</li><li>Materials Planning Analyst</li><li>Materials Planning Manager</li><li>Procurement Manager</li><li>Procurement Specialist</li><li>Quality Inspector</li><li>Quality Inspector (Part 145 authorised)</li><li>Rotables Controller</li><li>Stores Clerk</li><li>Stores Receiving Inspector</li><li>Stores Supervisor</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>SAP Ariba</li><li>SAP S/4HANA Finance (FI/CO)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Engine & Component Shop</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-04</span>
+    <h1>Component &amp; Parts Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Generate parts demand forecast from maintenance programme</td>
+        <td class="kpi-col">Forecast accuracy ≥85% (MAPE ≤15%)</td>
+        <td class="pain-col">Fleet mix changes (737 MAX vs 737-800 intermix) cause demand volatility; AMOS forecast module requires manual adjustment for new-type introductions where consumption history is sparse</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate forecast against consumption history and ADs</td>
+        <td class="kpi-col">Forecast review cycle completed within 5 business days</td>
+        <td class="pain-col">Sporadic demand items (rotables with &lt;4 removals/year) produce unreliable AMOS statistical forecasts; manual override requires SME judgement and is not auditable within AMOS</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Submit demand plan to procurement and finance for budget approval</td>
+        <td class="kpi-col">Budget approval lead time ≤10 business days</td>
+        <td class="pain-col">No native AMOS–SAP interface at many carriers; demand plan must be manually re-keyed into SAP MRP, introducing transcription errors and plan drift between systems</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Check stock availability against net demand requirements</td>
+        <td class="kpi-col">Stock-out rate ≤2% for critical AOG-flagged parts</td>
+        <td class="pain-col">Inventory accuracy degrades when technicians issue parts without closing work orders in AMOS; phantom stock causes missed AOG events and emergency buys that erode savings from planned procurement</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Source parts from approved vendor list via RFQ</td>
+        <td class="kpi-col">Vendor lead time compliance ≥90%; RFQ issued within 1 business day of requirement</td>
+        <td class="pain-col">FAA/EASA Part 145 approved supplier list is slow to update; unapproved parts risk is highest on spot-market buys where non-qualified vendors are used to satisfy urgent demand</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Evaluate supplier quotes and select preferred source</td>
+        <td class="kpi-col">PO cycle time ≤3 business days (AOG: ≤4 hours)</td>
+        <td class="pain-col">AOG situations force bypass of normal sourcing controls; expedited buys from non-preferred vendors increase counterfeit-part risk and undermine FAR Part 145 traceability requirements</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Issue purchase order and confirm supplier delivery commitment</td>
+        <td class="kpi-col">PO-to-delivery on-time rate ≥88%</td>
+        <td class="pain-col">International freight delays for OEM parts (Boeing, CFM International); post-2022 supply chain disruption continues to affect lead times for 737 MAX-specific components, inflating AOG exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Receive parts shipment and verify airworthiness documentation</td>
+        <td class="kpi-col">Receiving processing time ≤4 hours for AOG-flagged parts; ≤24 hours for routine receipts</td>
+        <td class="pain-col">Incomplete or missing FAA 8130-3 / EASA Form 1 is common on spot-market purchases; quarantine and supplier chase delays average 3–5 days, directly extending AOG events</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Inspect parts for airworthiness and serviceable condition</td>
+        <td class="kpi-col">Inspection turn-time ≤8 hours; incoming rejection rate ≤3%</td>
+        <td class="pain-col">Counterfeit parts detection requires detailed visual and dimensional checks; AMOS quality module lacks integration with industry counterfeit databases (IATA TACT, EASA SACA) forcing manual cross-reference</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Quarantine non-conforming parts and raise supplier NCR</td>
+        <td class="kpi-col">NCR resolution cycle ≤15 business days; quarantined parts segregated within 1 hour of rejection</td>
+        <td class="pain-col">Quarantine storage space is constrained at line stations; disposal of life-limited parts requires documented destruction to prevent re-entry into supply chain per FAA Order 8120.11</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Assign bin location and update AMOS inventory record</td>
+        <td class="kpi-col">Inventory location accuracy ≥99.5%; bin assignment completed within 2 hours of acceptance</td>
+        <td class="pain-col">Barcode label degradation in hangar environments (heat, hydraulic fluid) causes scan failures and phantom inventory; manual overrides bypass AMOS audit trail, creating traceability gaps</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Monitor shelf-life, expiry dates, and life-limited part counters</td>
+        <td class="kpi-col">Shelf-life compliance 100%; zero expired parts issued from serviceable stock</td>
+        <td class="pain-col">Elastomeric seals and composite consumables have 12–24 month shelf lives; AMOS expiry alerts require manual acknowledgement — risk of expired parts being issued if alert is dismissed without action</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Conduct periodic cycle counts and reconcile inventory discrepancies</td>
+        <td class="kpi-col">Inventory accuracy post-count ≥99%; cycle count variance ≤1% by value</td>
+        <td class="pain-col">High-velocity consumables (O-rings, safety wire, lockwire) are difficult to count accurately; inventory write-offs require Finance (SAP FI) approval causing multi-day delays before AMOS quantities are corrected</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Receive and validate parts request from maintenance work order</td>
+        <td class="kpi-col">Parts picking initiated within 30 minutes of WO request submission</td>
+        <td class="pain-col">Late parts requests from technicians (defects discovered mid-task) disrupt shop flow; AMOS WO-to-stores interface requires sub-task closure before parts issuance, slowing technician access during time-critical events</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Kit and stage parts at work centre before task start</td>
+        <td class="kpi-col">Kitting accuracy ≥99%; kit staged ≥1 hour before scheduled task start</td>
+        <td class="pain-col">Last-minute P/N substitutions (alternate part approved for use) require a Quality Inspector re-verification before issuance; kitting errors discovered at point-of-use cause unplanned AOG delays averaging 2–4 hours</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Issue parts to technician and record WO consumption in AMOS</td>
+        <td class="kpi-col">Parts issuance documentation completeness 100%; removed parts tagged within 1 hour of removal</td>
+        <td class="pain-col">Technicians informally borrowing parts without AMOS issuance record causes inventory inaccuracy and traceability failures — a regulatory non-compliance risk under FAR Part 43 and EASA Part 145.A.42</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Tag and track removed unserviceable rotable in AMOS</td>
+        <td class="kpi-col">Rotable U/S tagging compliance 100%; AMOS update completed within 4 hours of removal</td>
+        <td class="pain-col">Missing part histories on purchased used rotables from secondary market; AMOS rotable module requires manual re-entry of pre-purchase records from prior operators, with no standardised data exchange format</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Assess repair viability against BER threshold</td>
+        <td class="kpi-col">BER rate ≤8% of annual rotable pool; average repair cost vs. new-unit cost ≤60%</td>
+        <td class="pain-col">OEM shop visit pricing (especially CFM International LEAP engine components) is non-transparent and has risen &gt;25% since 2022 due to supply shortages; BER thresholds require quarterly recalibration to remain accurate</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Ship core to approved repair agency and track shop visit TAT</td>
+        <td class="kpi-col">Repair TAT ≤30 days for avionics LRUs; ≤60 days for engine accessory components</td>
+        <td class="pain-col">Third-party MRO shop visit visibility is limited; AMOS shop visit module does not receive real-time status feeds from external MRO providers — manual status chasing required, with average 10-day response lag inflating fleet-level rotable pool size</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.4</td>
+        <td>Receive repaired rotable and return to serviceable stock</td>
+        <td class="kpi-col">Rotable pool availability rate ≥92%; receiving and return-to-stock processing ≤4 hours</td>
+        <td class="pain-col">Repaired units occasionally returned at a different modification standard or with higher-than-quoted cost; configuration mismatch requires re-inspection and potential work-order revision, delaying return to pool by 1–3 days</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Engine & Component Shop</span>
+  </div>
+</div>
+
+</body>
+</html>

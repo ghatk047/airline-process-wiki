@@ -1,0 +1,48 @@
+flowchart LR
+  subgraph P1[Phase 1: Demand Planning and Forecasting]
+    A([Start]):::navy --> B[Generate parts demand forecast]
+    B --> C{Variance >20% vs prior?}:::orange
+    C -- Yes --> B
+    C -- No --> D[Submit demand plan to budget]
+  end
+  subgraph P2[Phase 2: Procurement and Sourcing]
+    D --> E{Part in own stock?}:::orange
+    E -- Yes --> J
+    E -- No --> F[Source from approved vendor list]
+    F --> G{AOG or routine?}:::orange
+    G -- AOG --> H[Expedite PO — 4hr SLA]
+    G -- Routine --> I[Issue standard PO]
+    H --> J[PO confirmed to supplier]
+    I --> J
+  end
+  subgraph P3[Phase 3: Receiving and Inspection]
+    J --> K[Receive shipment and verify docs]
+    K --> L{Airworthy and docs complete?}:::orange
+    L -- No --> M[Quarantine and raise NCR]
+    M --> L
+    L -- Yes --> N[Accept part to stock]
+  end
+  subgraph P4[Phase 4: Inventory Management]
+    N --> O[Assign bin location in AMOS]
+    O --> P{Within shelf-life / cycle limit?}:::orange
+    P -- No --> Q[Scrap or return to supplier]
+    P -- Yes --> R[Cycle count and reconcile stock]
+  end
+  subgraph P5[Phase 5: Issuance and Kitting]
+    R --> S[Receive WO parts request]
+    S --> T{All parts available in stock?}:::orange
+    T -- No --> U[AOG source or defer WO]
+    T -- Yes --> V[Kit and issue to technician]
+  end
+  subgraph P6[Phase 6: Rotable Management and Repair Loop]
+    V --> W[Tag removed U/S rotable in AMOS]
+    W --> X{Within BER threshold?}:::orange
+    X -- No --> Y([Scrap and document]):::navy
+    X -- Yes --> Z[Ship core to repair agency]
+    Z --> AA{Config matches spec on return?}:::orange
+    AA -- No --> Z
+    AA -- Yes --> AB([Return to serviceable stock]):::navy
+  end
+
+  classDef orange fill:#ff6600,color:#fff,stroke:#ff6600
+  classDef navy fill:#003366,color:#fff,stroke:#003366
