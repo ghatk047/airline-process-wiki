@@ -1,0 +1,45 @@
+flowchart LR
+  subgraph P1["Phase 1: Market Data Ingestion"]
+    A([Start]) --> B[Ingest competitor\nfares — OAG Analyser]
+    B --> C[Pull GDS availability\n& pricing — Sabre]
+    C --> D{Data quality\nthreshold met?}
+    D -- Fail --> B
+    D -- Pass --> E[Load to fare\ndata lake — Redshift]
+  end
+  subgraph P2["Phase 2: Competitive Benchmarking"]
+    E --> F[Map competitor fare\nfamilies — PROS RM]
+    F --> G[Calculate price\nindex by O&D]
+    G --> H{Material fare\ngap detected?}
+    H -- No gap --> I[Schedule next\nmonitoring cycle]
+    H -- Gap detected --> J[Flag O&Ds for\nrepositioning — NRM]
+  end
+  subgraph P3["Phase 3: Demand & Elasticity Analysis"]
+    J --> K[Segment demand\nelasticity — SkyCAST]
+    K --> L[Model revenue\nimpact of reposition]
+    L --> M{Revenue uplift\nexceeds threshold?}
+    M -- No --> N[Adjust scope\nor shelve]
+    M -- Yes --> O[Build repricing\nrecommendation]
+  end
+  subgraph P4["Phase 4: Approval & Filing"]
+    O --> P[Route to pricing\ncommittee — Tableau]
+    P --> Q{Repricing\napproved?}
+    Q -- Rejected --> O
+    Q -- Approved --> R[File fare changes\nvia ATPCO]
+    R --> S[Load fares\nin Altéa PSS]
+  end
+  subgraph P5["Phase 5: Monitoring & Feedback"]
+    S --> T[Monitor booked-fare\nmix — Amadeus NRM]
+    T --> U{Competitive\nposition restored?}
+    U -- Not restored --> J
+    U -- Restored --> V([Cycle complete])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style I fill:#003366,color:#fff,stroke:#003366
+  style N fill:#003366,color:#fff,stroke:#003366
+  style V fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
