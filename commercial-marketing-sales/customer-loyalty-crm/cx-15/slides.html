@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-15 Slides — Customer Service Contact Centre Operations</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-15</span>
+    <h1>Customer Service Contact Centre Operations</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-15.png" alt="BPMN for CX-15" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Service Contact Centre</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-15</span>
+    <h1>Customer Service Contact Centre Operations</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-15</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Customer Service Contact Centre</li>
+          <li><strong>L3 Name:</strong> Customer Service Contact Centre Operations</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive inbound contact via omnichannel</li><li><strong>Phase 2:</strong> Authenticate customer identity</li><li><strong>Phase 3:</strong> Categorise and diagnose customer issue</li><li><strong>Phase 4:</strong> Assess service recovery compensation eligibility</li><li><strong>Phase 5:</strong> Confirm resolution and close case</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>CRM Automation</li><li>Customer Service Agent</li><li>Customer Service Supervisor</li><li>IVR System / Virtual Agent</li><li>Quality Assurance Analyst</li><li>Tier 2 Specialist / Back-Office Agent</li><li>Virtual Agent</li><li>Workforce Management Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Altéa PSS</li><li>Genesys Cloud CX</li><li>Genesys Cloud CX (AI Bot)</li><li>Loyalty Management Platform</li><li>Medallia</li><li>NICE CXone</li><li>NICE CXone (Quality Management)</li><li>Salesforce Service Cloud</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Service Contact Centre</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-15</span>
+    <h1>Customer Service Contact Centre Operations</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive inbound contact via omnichannel</td>
+        <td class="kpi-col">First contact resolution (FCR) rate ≥75%</td>
+        <td class="pain-col">Channel fragmentation — voice, chat, email, and social handled by separate queues, driving repeat contacts and inflated contact volume</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Attempt IVR / AI chatbot self-service</td>
+        <td class="kpi-col">Self-service containment rate ≥40%; bot CSAT ≥3.8/5.0</td>
+        <td class="pain-col">IVR containment collapses during IRROP events; customers bypass bot with repeated keypress-zero, spiking live agent demand by up to 300%</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Route contact to skilled agent queue</td>
+        <td class="kpi-col">Average Speed of Answer (ASA) ≤90 seconds; abandonment rate ≤5%</td>
+        <td class="pain-col">Skill-tag mismatches in WFM routing rules direct contacts to wrong specialisms (e.g. loyalty queries to general-service agents), increasing Average Handle Time by 20–35%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Authenticate customer identity</td>
+        <td class="kpi-col">Authentication success rate ≥98%; failed authentication escalation rate ≤1%</td>
+        <td class="pain-col">PCI-DSS compliance prohibits agents from handling raw card data; non-FFP member identity verification has no single standard, causing inconsistent agent behaviour and potential fraud exposure</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Retrieve PNR and loyalty profile from PSS</td>
+        <td class="kpi-col">PNR retrieval response time ≤5 seconds; PSS availability ≥99.9%</td>
+        <td class="pain-col">Codeshare or interline itineraries may not surface fully in Altéa; agent must switch to a partner portal or call partner CLC, adding 3–5 minutes per contact</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Create or update CRM case record</td>
+        <td class="kpi-col">Mandatory field completion rate ≥99%; case creation accuracy ≥97%</td>
+        <td class="pain-col">Inconsistent reason-code taxonomy in Salesforce yields corrupted trend reporting; root-cause signals for systemic issues (e.g. baggage carousel failures) go undetected for hours</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Categorise and diagnose customer issue</td>
+        <td class="kpi-col">First-call categorisation accuracy ≥90%; misroute rate ≤3%</td>
+        <td class="pain-col">IRROP-related contact spikes arrive before NOC disruption alerts propagate to Salesforce; agents categorise manually without system-side context, slowing diagnosis</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Apply Tier 1 resolution per service policy</td>
+        <td class="kpi-col">Average Handle Time (AHT) ≤7 minutes; FCR ≥75%</td>
+        <td class="pain-col">Agents must toggle between Altéa and Salesforce with no unified desktop; dual-screen context switching increases AHT by 15–20% and introduces data-entry errors</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Rebook or modify flight in PSS</td>
+        <td class="kpi-col">Rebooking completion rate ≥95%; change-fee waiver audit compliance 100%</td>
+        <td class="pain-col">Involuntary rebooking fare-difference calculations require manual ATPCO fare rule lookup — no automated waiver logic in Altéa — leading to over- or under-collection and regulatory exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Escalate unresolved case to Tier 2 specialist</td>
+        <td class="kpi-col">Escalation rate ≤15%; Tier 2 resolution within 24 hours ≥90%</td>
+        <td class="pain-col">Case context is frequently lost during warm transfers; Tier 2 agents ask customers to repeat information, reducing CSAT by an average of 0.4 points per repeat</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Assess service recovery compensation eligibility</td>
+        <td class="kpi-col">Compensation decision accuracy ≥98%; EC261 regulatory compliance 100%</td>
+        <td class="pain-col">EC261 applicability for EU-origin flights requires manual legal review — no automated rule engine in Salesforce; agents under volume pressure make incorrect eligibility decisions, creating regulatory liability</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Issue compensation — miles, voucher, or refund</td>
+        <td class="kpi-col">Miles crediting accuracy 100%; voucher issuance within 24 hours; DOT-mandated cash refund within 7 business days</td>
+        <td class="pain-col">Miles issuance, voucher generation, and PSS refund initiation are in three separate systems with no unified API; dual-entry requirement creates a 2–3% error rate on high-volume disruption days</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Process policy exception with supervisor approval</td>
+        <td class="kpi-col">Exception approval turnaround ≤10 minutes; monthly exception rate tracked as % of total contacts</td>
+        <td class="pain-col">Supervisor approval queue backs up during IRROP events; customers placed on hold &gt;5 minutes, reducing Customer Effort Score (CES) and increasing call abandonment</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Confirm resolution and close case</td>
+        <td class="kpi-col">Same-day case closure rate ≥85%; after-call work (ACW) time ≤90 seconds</td>
+        <td class="pain-col">Agents under volume pressure skip ACW documentation; incomplete case notes degrade QA coaching effectiveness and root-cause trending by up to 30%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Trigger post-contact NPS / CSAT survey</td>
+        <td class="kpi-col">Survey response rate ≥20%; NPS ≥45; CSAT ≥4.2/5.0</td>
+        <td class="pain-col">Survey fatigue among frequent flyers who receive multiple survey requests per journey leg; opt-out rate rising 3–5% per quarter, eroding feedback sample size</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>QA review, score, and coach agent</td>
+        <td class="kpi-col">QA sample rate ≥10% of all contacts; QA score ≥85%; coaching session within 5 business days of flag</td>
+        <td class="pain-col">Manual QA sampling misses systemic issues; AI-assisted speech analytics available in NICE CXone but not fully deployed across all contact types, leaving compliance blind spots</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Service Contact Centre</span>
+  </div>
+</div>
+
+</body>
+</html>

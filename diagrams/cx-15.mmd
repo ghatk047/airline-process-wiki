@@ -1,0 +1,49 @@
+flowchart LR
+  subgraph P1["Phase 1: Contact Intake & Routing"]
+    A([Contact Received]) --> B[IVR / chatbot\nself-service attempt]
+    B --> C{Self-service\nresolved?}
+    C -- Yes --> Z([End: Deflected])
+    C -- No --> D[Skills-based routing\nto agent queue]
+  end
+  subgraph P2["Phase 2: Authentication & Case Init"]
+    D --> E{Identity\nverified?}
+    E -- No --> E
+    E -- Yes --> F[Retrieve PNR &\nloyalty profile]
+    F --> G[Create CRM\ncase record]
+  end
+  subgraph P3["Phase 3: Issue Diagnosis & Resolution"]
+    G --> H[Categorise &\ndiagnose issue]
+    H --> I[Apply Tier 1\nresolution]
+    I --> J{Resolved\nat Tier 1?}
+    J -- No --> K[Escalate to\nTier 2 specialist]
+    K --> J
+    J -- Yes --> L[Rebook / modify\nflight in PSS]
+  end
+  subgraph P4["Phase 4: Service Recovery"]
+    L --> M{Compensation\neligible?}
+    M -- Yes --> N[Issue miles /\nvoucher / refund]
+    M -- No --> O[Policy exception\nrequest]
+    O --> P{Exception\napproved?}
+    P -- Yes --> N
+    P -- No --> Q[Document denial &\ninform customer]
+  end
+  subgraph P5["Phase 5: Case Closure & QA"]
+    N --> R[Confirm resolution\n& close case]
+    Q --> R
+    R --> S[Send NPS/CSAT\nsurvey via Medallia]
+    S --> T[QA review &\nagent coaching]
+    T --> U{QA score\nbelow threshold?}
+    U -- Yes --> V[Coaching escalation\nflagged in WFM]
+    V --> T
+    U -- No --> W([Process End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Z fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
