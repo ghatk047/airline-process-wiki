@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MR-07 Slides — Aircraft Technical Records Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-07</span>
+    <h1>Aircraft Technical Records Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/mr-07.png" alt="BPMN for MR-07" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Airworthiness & Compliance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-07</span>
+    <h1>Aircraft Technical Records Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> MR-07</li>
+          <li><strong>L1 Domain:</strong> Maintenance, Repair &amp; Overhaul</li>
+          <li><strong>L2 Process:</strong> Airworthiness &amp; Compliance</li>
+          <li><strong>L3 Name:</strong> Aircraft Technical Records Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Capture work order completion data in MRO system</li><li><strong>Phase 2:</strong> Cross-reference task against approved AMM/SRM data</li><li><strong>Phase 3:</strong> Update component life-tracking and next-due dates</li><li><strong>Phase 4:</strong> Archive work orders per FAA retention schedule</li><li><strong>Phase 5:</strong> Compile records package for FAA/authority audit</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Aircraft Maintenance Technician (AMT)</li><li>Airworthiness Compliance Manager</li><li>Certifying Staff / Licensed AME</li><li>Director of Quality Assurance</li><li>Quality Assurance Inspector</li><li>Records Control Clerk</li><li>Technical Records Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>AWS S3 (Long-Term Document Archive)</li><li>Boeing Toolbox (Technical Document Management)</li><li>CAMP Systems (Continuous Airworthiness Monitoring Programme)</li><li>FAA DragonWave / FAA PTRS (Programme Tracking &amp; Reporting Subsystem)</li><li>Tableau (BI &amp; Reporting)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Airworthiness & Compliance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-07</span>
+    <h1>Aircraft Technical Records Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Capture work order completion data in MRO system</td>
+        <td class="kpi-col">Work order closure within 2 hours of task completion; &gt;98% same-shift closure rate</td>
+        <td class="pain-col">Paper-based job cards still used at some line stations — manual re-keying into AMOS introduces transcription errors and delays record closure past the shift boundary</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Ingest aircraft technical logbook entries</td>
+        <td class="kpi-col">100% of ATL entries ingested before next departure; ETL integration uptime ≥99.5%</td>
+        <td class="pain-col">ETL interfaces to PSS (Amadeus Altéa) are non-standardised across fleet sub-types; legacy B737-700 may lack ETL hardware, requiring manual paper log reconciliation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate record completeness against work order schema</td>
+        <td class="kpi-col">Record completeness rate ≥99.5%; incomplete records resolved within 4 hours</td>
+        <td class="pain-col">AMOS mandatory-field validation rules vary by maintenance type (line vs. heavy); misconfigured validation profiles cause false-pass records that fail FAA audit spot-checks</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Cross-reference task against approved AMM/SRM data</td>
+        <td class="kpi-col">Zero maintenance releases citing a superseded AMM revision; 100% AMM revision currency per Boeing Service Letter cycle</td>
+        <td class="pain-col">Boeing Toolbox AMM revision pushes can lag up to 72 hours behind FAA-approval date; tasks executed on interim revisions may require retroactive re-documentation, increasing rework cost</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Verify certifying technician licence and authorisation</td>
+        <td class="kpi-col">Zero maintenance releases by technicians with expired or out-of-scope ratings; authorisation check automated for 100% of closures</td>
+        <td class="pain-col">AMOS authorisation matrix must be kept synchronised with FAA A&amp;P licence renewals and airline-specific OJT records; manual update lag creates windows where expired ratings are not flagged</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Confirm maintenance release and CRS sign-off</td>
+        <td class="kpi-col">CRS issued within 30 minutes of final inspection; 100% of CRS statements traceable to FAR Part 43 / EASA Part-145 signatory</td>
+        <td class="pain-col">Dual-registry aircraft (operating under both FAA and EASA authority) require CRS language compliant with both regulations; AMOS templates are not always jurisdiction-aware, requiring manual text override</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Update component life-tracking and next-due dates</td>
+        <td class="kpi-col">Component record updated within 8 hours of part installation; life-limit threshold accuracy ±0 flight hours/cycles</td>
+        <td class="pain-col">CAMP synchronisation with AMOS relies on nightly batch feeds; intraday part swaps on critical life-limited parts (LLPs) may not appear in CAMP until next morning, creating a brief compliance exposure window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Link AD/SB compliance closure record to aircraft serial</td>
+        <td class="kpi-col">100% of applicable ADs reflected in CAMP within 24 hours of task closure; zero open ADs past compliance deadline</td>
+        <td class="pain-col">FAA AD effectivity determination for mixed-variant fleets (737-700/800/MAX 8) is complex; incorrect variant mapping in CAMP can result in ADs being erroneously marked not-applicable, triggering FAA enforcement action</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Identify overdue or near-threshold compliance items</td>
+        <td class="kpi-col">Zero items entering the overdue state; 100% of near-threshold items actioned ≥7 days before due date</td>
+        <td class="pain-col">High-frequency short-haul operations (4–6 sector days) can erode compliance buffers faster than weekly planning cycles anticipate; CAMP threshold alerts must be tuned to fleet utilisation intensity to avoid false urgency fatigue</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Escalate critical airworthiness findings to MCC and Planning</td>
+        <td class="kpi-col">MCC notified within 2 hours of threshold breach identification; grounding avoided in ≥95% of escalations through proactive slot allocation</td>
+        <td class="pain-col">MCC operational priority (avoiding flight cancellations) conflicts with airworthiness deadline compliance; without a formal escalation SLA in AMOS, airworthiness items can be deferred repeatedly until a hard grounding is unavoidable</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Archive work orders per FAA retention schedule</td>
+        <td class="kpi-col">100% of closed work orders archived within 24 hours; retention period ≥24 months per FAR Part 121.380 for routine tasks, ≥life of aircraft for major repairs</td>
+        <td class="pain-col">FAR Part 121.380 retention tiers (24-month vs. life-of-aircraft) require automated classification at point of archival; miscategorisation of major repairs as routine tasks has resulted in premature record purges discovered only during aircraft sale due diligence</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Generate aircraft technical status summary report</td>
+        <td class="kpi-col">ATSR published weekly for all active tails; zero data discrepancies between ATSR and AMOS/CAMP source systems</td>
+        <td class="pain-col">Tableau dashboards pull from AMOS and CAMP via separate API connectors with different refresh cadences; stale data in one source can make the ATSR appear current while masking an overdue item</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Validate archived record format for regulatory compliance</td>
+        <td class="kpi-col">100% of sampled records pass PDF/A validation; zero records with missing mandatory metadata fields; hash verification failure rate 0%</td>
+        <td class="pain-col">PDF/A conversion from AMOS native format occasionally strips embedded digital signatures required by FAA AC 120-78B for electronic records; silent conversion failures are only detected during authority audit</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Compile records package for FAA/authority audit</td>
+        <td class="kpi-col">Audit package delivered within 5 business days of FAA request; zero findings of missing required records in formal audit</td>
+        <td class="pain-col">Cross-system evidence assembly (AMOS + CAMP + AWS S3 + Boeing Toolbox) is manual; no single orchestration tool exists to compile a complete audit package automatically, creating significant labour cost and risk of omissions under tight FAA timelines</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Respond to AD compliance queries from airworthiness authority</td>
+        <td class="kpi-col">AD compliance query response within 10 business days; 100% of responses supported by primary source documentation traceable to original work order</td>
+        <td class="pain-col">CAMP AD compliance reports are formatted for internal use; exporting in FAA-specified formats (e.g., 8130-3 data elements) requires manual reformatting that introduces transcription risk and delays formal response</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Submit airworthiness certificate renewal documentation</td>
+        <td class="kpi-col">Certificate renewal submitted ≥30 days before expiry; zero aircraft operated with lapsed airworthiness certificate; discrepancy resolution within 15 business days</td>
+        <td class="pain-col">FAA FSDO processing times are variable and outside airline control; late submission driven by internal records gaps can result in aircraft AOG during the renewal window, incurring significant revenue loss and customer disruption</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Airworthiness & Compliance</span>
+  </div>
+</div>
+
+</body>
+</html>

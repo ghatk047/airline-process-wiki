@@ -1,0 +1,43 @@
+flowchart LR
+  subgraph P1[Phase 1: Record Capture and Ingestion]
+    A([Start]) --> B[Capture Work Order Completion]
+    B --> C[Ingest Logbook Entries]
+    C --> D{Record Complete?}
+    D -- No --> C
+    D -- Yes --> E[Records Ingested]
+  end
+  subgraph P2[Phase 2: Verification and Validation]
+    E --> F[Cross-Ref AMM/SRM Data]
+    F --> G[Verify Tech Licence and Auth]
+    G --> H{Sign-Off Valid?}
+    H -- No --> F
+    H -- Yes --> I[Record Verified]
+  end
+  subgraph P3[Phase 3: Airworthiness Compliance Tracking]
+    I --> J[Update Life-Tracking and Due Dates]
+    J --> K[Link AD Closure to A/C Serial]
+    K --> L{Items Overdue/Near Limit?}
+    L -- Yes --> M[Escalate to MCC and Planning]
+    M --> J
+    L -- No --> N[Compliance Current]
+  end
+  subgraph P4[Phase 4: Archiving and Retention]
+    N --> O[Archive per FAA Retention Schedule]
+    O --> P[Generate Aircraft Tech Status Rpt]
+    P --> Q{Archive Format Regulatory-Compliant?}
+    Q -- No --> O
+    Q -- Yes --> R[Records Archived]
+  end
+  subgraph P5[Phase 5: Audit and Regulatory Reporting]
+    R --> S[Compile Authority Audit Package]
+    S --> T[Respond to AD Compliance Queries]
+    T --> U[Submit CofA Renewal Documentation]
+    U --> V([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style V fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
