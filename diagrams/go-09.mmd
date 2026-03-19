@@ -1,0 +1,57 @@
+flowchart LR
+  subgraph P1[Phase 1: SSR Capture and Validation]
+    A([Start]) --> B[Ingest WCHR/WCHC/WCHS SSR codes]
+    B --> C{Valid IATA\nAIRIMP code?}
+    C -- No --> B
+    C -- Yes --> D{MEDA/OXYG\nflag present?}
+    D -- Yes --> E[Request medical clearance]
+    D -- No --> G
+    E --> G
+  end
+  subgraph P2[Phase 2: Resource Planning and Brief]
+    G[Generate WCHR manifest] --> H[Allocate equipment and staff]
+    H --> I{Sufficient\nresources?}
+    I -- No --> H
+    I -- Yes --> J[Brief agents on SSR pax]
+  end
+  subgraph P3[Phase 3: Landside Assistance]
+    J --> K[Meet pax at curbside/check-in]
+    K --> L[Priority check-in and seat assign]
+    L --> M{Accessible seat\navailable?}
+    M -- No --> L
+    M -- Yes --> N[Escort through security]
+  end
+  subgraph P4[Phase 4: Boarding and Device Stow]
+    N --> O[Pre-board WCHR passengers]
+    O --> P[Transfer to aisle chair at gate]
+    P --> Q{Mobility device\nfor hold stow?}
+    Q -- Yes --> R[Tag and stow mobility device]
+    Q -- No --> S[Confirm seating and call bell]
+    R --> S
+  end
+  subgraph P5[Phase 5: Arrival and Deplaning]
+    S --> T[Transmit WCHR count to dest. station]
+    T --> U[Deplane WCHR pax — coordinated]
+    U --> V{Device return\nlocation?}
+    V -- Aircraft door --> W[Return device at door]
+    V -- Baggage claim --> X[Return at baggage claim]
+  end
+  subgraph P6[Phase 6: Compliance and Closure]
+    W --> Y[Log assistance events in SITA AMS]
+    X --> Y
+    Y --> Z{DOT Part 382\ncompliant?}
+    Z -- No --> AA[Escalate to CX and Regulatory]
+    Z -- Yes --> AB[Archive compliance record]
+    AA --> AB
+    AB --> AC([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AC fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
+  style Z fill:#ff6600,color:#fff,stroke:#ff6600

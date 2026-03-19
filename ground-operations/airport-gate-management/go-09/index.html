@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Crew Planning &amp; Rostering · Flight Operations · Airlines Process Wiki</title>
+<title>GO-09 · Wheelchair &amp; Special Assistance Services · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -161,14 +162,14 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-04/"><span class="status-dot status-done"></span><span class="pid">GO-04</span>Gate Management &amp; Assignment</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-08/"><span class="status-dot status-done"></span><span class="pid">GO-08</span>Passenger Disruption Handling (IRROP)</a>
-        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-09/"><span class="status-dot status-done"></span><span class="pid">GO-09</span>Wheelchair &amp; Special Assistance Services</a>
+        <a class="sidebar-l3-link active" href="../../../ground-operations/airport-gate-management/go-09/"><span class="status-dot status-done"></span><span class="pid">GO-09</span>Wheelchair &amp; Special Assistance Services</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-10/"><span class="status-dot status-queue"></span><span class="pid">GO-10</span>VIP &amp; Premium Passenger Handling</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-13/"><span class="status-dot status-queue"></span><span class="pid">GO-13</span>Airport Security Compliance (TSA/CBP)</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-15/"><span class="status-dot status-queue"></span><span class="pid">GO-15</span>Station Performance &amp; KPI Reporting</a>
@@ -242,153 +243,268 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Crew Planning &amp; Rostering</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
+  <a href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a><span class="sep">›</span>
+  <span class="current">GO-09 · Wheelchair &amp; Special Assistance Services</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Crew Planning &amp; Rostering</h1>
-    <p>Flight Operations · 15 of 15 subprocesses complete · Updated 2026-03-19 14:12</p>
+    <h1>Wheelchair &amp; Special Assistance Services</h1>
+    <p>Ground Operations &amp; Airport Services › Airport &amp; Gate Management · 19 L4 steps · 6 phases · 9 decision gates · Updated 2026-03-19 14:12</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">GO-09</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-01</span>Crew Pairing Optimization</h3>
-    <p>Crew Planning &amp; Rostering · 16 steps · 8 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-go-09">
+      <img src="../../../assets/img/go-09.png" alt="GO-09 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-go-09').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-go-09').style.display='flex'">
+      <div id="diag-placeholder-go-09" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Ingest WCHR/WCHC/WCHS/WCHB SSR codes from PNR</td>
+  <td class="td-role">Reservations Agent / Check-in Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger booking request or PNR with special assistance SSR codes</td>
+  <td style="font-size:10px">SSR codes attached to PNR and transmitted to ground handling agents via SITA Type B message</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">SSR capture rate ≥99% of passengers self-identifying as requiring assistance</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Validate SSR codes against IATA AIRIMP definitions</td>
+  <td class="td-role">Ground Services Coordinator</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">SSR codes from PNR (WCHR, WCHC, WCHB, WCHS, DEAF, BLND, UMNR)</td>
+  <td style="font-size:10px">Validated or corrected SSR categorisation confirmed in PNR</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">SSR validation accuracy ≥98% completed ≥24 hours before scheduled departure</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Flag MEDA/OXYG/LEGL cases for medical clearance</td>
+  <td class="td-role">Ground Services Supervisor</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS + MedAire Medical Clearance Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">SSR codes including MEDA (medical case), OXYG (oxygen), LEGL (stretcher), INCAD</td>
+  <td style="font-size:10px">Medical clearance decision or deferral notice attached to PNR</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Medical clearance decision issued ≤4 hours before departure; MEDA clearance rate tracked monthly</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Generate special assistance manifest for flight</td>
+  <td class="td-role">Ground Services Coordinator</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Finalised SSR list pushed from Amadeus Altéa PSS, flight departure schedule</td>
+  <td style="font-size:10px">Special assistance manifest: pax count by category, seat numbers, mobility device details</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Manifest accuracy ≥97% verified at gate against actual presenting passengers</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Allocate wheelchair equipment and trained staff</td>
+  <td class="td-role">Ground Operations Manager</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS) + Workforce Management System (Jeppesen Crew Management)</span></td>
+  <td style="font-size:10px;color:#6b7280">Special assistance manifest, available equipment inventory, staff roster</td>
+  <td style="font-size:10px">Staff assignments confirmed, wheelchair and aisle chair allocation per flight logged in AMS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">WCHR equipment availability ≥99.5% at departure time; staff-to-WCHR ratio ≥1:3</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Brief check-in, gate, and lounge staff on SSR pax</td>
+  <td class="td-role">Ground Services Supervisor</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS) + Airline Ops Communication App</span></td>
+  <td style="font-size:10px;color:#6b7280">Staff duty roster, special assistance manifest, gate assignments</td>
+  <td style="font-size:10px">Pre-departure briefing confirmed, staff aware of individual passenger needs and mobility restrictions</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Briefing completion ≥90 minutes before scheduled departure for all WCHR flights</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Meet and greet passenger at curbside or check-in</td>
+  <td class="td-role">Special Assistance Agent</td>
+  <td><span class="stag amadeus">SITA Airport Management System (AMS) + Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger arrival at airport, WCHR manifest from Phase 2</td>
+  <td style="font-size:10px">Passenger confirmed on manifest, escort service initiated and logged in AMS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Meet-and-greet wait time ≤5 minutes from passenger arrival notification; missed meet rate &lt;1%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Process priority check-in and accessible seat assignment</td>
+  <td class="td-role">Special Assistance Agent / Check-in Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">PNR, validated SSR category, mobility device dimensions and weight</td>
+  <td style="font-size:10px">Boarding pass issued, bulkhead or aisle seat assigned, mobility device tagged for gate-check or cargo</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Priority check-in processing time ≤10 minutes; accessible seat assignment compliance ≥100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Escort passenger through security checkpoint</td>
+  <td class="td-role">Special Assistance Agent</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS) + TSA PreCheck / Airport Security System</span></td>
+  <td style="font-size:10px;color:#6b7280">Boarding pass, passenger with personal mobility device</td>
+  <td style="font-size:10px">Passenger cleared through security, mobility device screened and returned, security escort time logged</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Security escort completion ≤20 minutes; extended screening incidents &lt;5% of WCHR escorts</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Pre-board WCHR passengers ahead of general boarding</td>
+  <td class="td-role">Gate Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (boarding control) + SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">WCHR manifest, gate assignment, boarding gate opening time</td>
+  <td style="font-size:10px">WCHR passengers boarded before general boarding commences, boarding scan logged in Altéa</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Pre-boarding initiation ≥20 minutes before scheduled departure; WCHR pre-board completion rate ≥98%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Transfer passenger to aisle chair at jet bridge threshold</td>
+  <td class="td-role">Special Assistance Agent (Aisle Chair Trained)</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS) + Airline Aisle Chair Inventory System</span></td>
+  <td style="font-size:10px;color:#6b7280">WCHC or WCHB passenger at gate, aisle chair staged at jet bridge</td>
+  <td style="font-size:10px">Passenger safely transferred to aisle chair and escorted to assigned seat</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Aisle chair transfer completion ≤8 minutes per passenger; transfer injury rate 0%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Tag, stow, or gate-check personal mobility device</td>
+  <td class="td-role">Ramp Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (baggage tagging) + SITA Baggage Reconciliation System (BRS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Personal wheelchair, power scooter, or walker; baggage tag from check-in</td>
+  <td style="font-size:10px">Mobility device tagged, stowed gate-check or in cargo hold, recorded in SITA BRS with return location flag</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Mobility device stow without damage ≥99.8%; aircraft-door return ≥90% of WCHC/WCHB cases</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Confirm seating, call bell, and lavatory access briefing</td>
+  <td class="td-role">Cabin Crew / Special Assistance Agent</td>
+  <td><span class="stag custom">Aircraft Cabin Systems (IFE / Seat Control) + SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger seated, boarding in progress, pre-departure checklist</td>
+  <td style="font-size:10px">Passenger briefed on accessible IFE, call bell, and lavatory access; assistance closure logged in AMS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Passenger safety and accessibility briefing completion 100% before door close</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Transmit WCHR count and SSR detail to destination station</td>
+  <td class="td-role">Departure Station Ground Coordinator</td>
+  <td><span class="stag amadeus">SITA Messaging (Type B / IATA AHM) + Amadeus Altéa PSS (SSR relay)</span></td>
+  <td style="font-size:10px;color:#6b7280">SSR manifest, confirmed pax list, flight ETA</td>
+  <td style="font-size:10px">LDM/PSM/IATA AHM 140 PRM advice message transmitted to destination with WCHR count and categories</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">SSR transmission to destination ≥60 minutes before ETA; message accuracy ≥99%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Deplane WCHR passengers in coordinated sequence</td>
+  <td class="td-role">Cabin Crew + Arrival Special Assistance Agent</td>
+  <td><span class="stag amadeus">SITA Airport Management System (AMS) + Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft at blocks-on, WCHR manifest from arrival station, aisle chair staged at jet bridge</td>
+  <td style="font-size:10px">WCHR passengers deplaned safely, arrival assistance confirmed and logged in SITA AMS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">WCHR deplaning completion within 15 minutes of blocks-on; missed assist rate &lt;0.5% of WCHR arrivals</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Return mobility device at aircraft door or baggage claim</td>
+  <td class="td-role">Ramp Agent + Special Assistance Agent</td>
+  <td><span class="stag custom">SITA Baggage Reconciliation System (BRS) + SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Tagged mobility device retrieved from cargo hold, arrival WCHR manifest</td>
+  <td style="font-size:10px">Device returned to passenger in original condition; damage inspection completed and logged</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Device return at aircraft door ≥90% (DOT ACAA requirement); mobility device damage rate &lt;0.1 per 1,000 devices handled</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Log completed assistance events in SITA AMS</td>
+  <td class="td-role">Ground Services Coordinator</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Assistance completion confirmations from agents, timestamps, staff IDs</td>
+  <td style="font-size:10px">Digital event log of WCHR assistance with timestamps, pax IDs, staff IDs, and outcomes</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Assistance event logging rate ≥99% within 30 minutes of flight departure or arrival blocks-on</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Audit DOT Part 382 / ACAA compliance metrics</td>
+  <td class="td-role">Disability Access Compliance Officer</td>
+  <td><span class="stag custom">Tableau / Power BI (Compliance Dashboard) + SITA AMS Data Export</span></td>
+  <td style="font-size:10px;color:#6b7280">Assistance event logs, complaint records, mobility device damage and delay reports</td>
+  <td style="font-size:10px">Monthly DOT Part 382 compliance scorecard, gap analysis, corrective action register</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">DOT ACAA complaint rate &lt;0.5 per 10,000 passengers; mobility device damage claims &lt;0.1%; complaint resolution within 30 days ≥95%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.3</td>
+  <td class="td-name">Escalate unresolved complaints to CX and Regulatory Affairs</td>
+  <td class="td-role">Customer Experience Manager / Regulatory Affairs Director</td>
+  <td><span class="stag custom">Salesforce Service Cloud (CRM) + SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Open DOT/ACAA complaints, device damage claims, missed assist incident reports</td>
+  <td style="font-size:10px">Escalation ticket created in Salesforce, root cause analysis completed, process improvement recommendation issued</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Complaint resolution within 30 days ≥95% (DOT Part 382 §382.155 requirement); repeat incident rate reduction target ≥20% quarter-over-quarter</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-02</span>Crew Rostering &amp; Bidding</h3>
-    <p>Crew Planning &amp; Rostering · 15 steps · 8 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">GO-09</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Ground Operations &amp; Airport Services</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Airport &amp; Gate Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Wheelchair &amp; Special Assistance Services</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">19 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">9 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">8 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Reservations Agent / Check-in Agent</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Ground Services Coordinator</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Ground Services Supervisor</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Ground Operations Manager</div><div class="swim"><div class="dot" style="background:#10b981"></div>Special Assistance Agent</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Special Assistance Agent / Check-in Agent</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Gate Agent</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Special Assistance Agent (Aisle Chair Trained)</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Ramp Agent</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Cabin Crew / Special Assistance Agent</div><div class="swim"><div class="dot" style="background:#f97316"></div>Departure Station Ground Coordinator</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>Cabin Crew + Arrival Special Assistance Agent</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Ramp Agent + Special Assistance Agent</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Disability Access Compliance Officer</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Customer Experience Manager / Regulatory Affairs Director</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag amadeus">Amadeus Altéa PSS + MedAire Medical Clearance Portal</span><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">SITA Airport Management System (AMS) + Workforce Management System (Jeppesen Crew Management)</span><span class="stag custom">SITA Airport Management System (AMS) + Airline Ops Communication App</span><span class="stag amadeus">SITA Airport Management System (AMS) + Amadeus Altéa PSS</span><span class="stag custom">SITA Airport Management System (AMS) + TSA PreCheck / Airport Security System</span><span class="stag amadeus">Amadeus Altéa PSS (boarding control) + SITA Airport Management System (AMS)</span><span class="stag custom">SITA Airport Management System (AMS) + Airline Aisle Chair Inventory System</span><span class="stag amadeus">Amadeus Altéa PSS (baggage tagging) + SITA Baggage Reconciliation System (BRS)</span><span class="stag custom">Aircraft Cabin Systems (IFE / Seat Control) + SITA Airport Management System (AMS)</span><span class="stag amadeus">SITA Messaging (Type B / IATA AHM) + Amadeus Altéa PSS (SSR relay)</span><span class="stag custom">SITA Baggage Reconciliation System (BRS) + SITA Airport Management System (AMS)</span><span class="stag custom">Tableau / Power BI (Compliance Dashboard) + SITA AMS Data Export</span><span class="stag custom">Salesforce Service Cloud (CRM) + SITA Airport Management System (AMS)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Ingest WCHR/WCHC/WCHS/WCHB SSR codes from PNR</span><span class="kval">SSR capture rate ≥99% of passengers self-identifying as requiring assistance</span></div><div class="krow"><span class="kname">Validate SSR codes against IATA AIRIMP definitions</span><span class="kval">SSR validation accuracy ≥98% completed ≥24 hours before scheduled departure</span></div><div class="krow"><span class="kname">Flag MEDA/OXYG/LEGL cases for medical clearance</span><span class="kval">Medical clearance decision issued ≤4 hours before departure; MEDA clearance rate tracked monthly</span></div><div class="krow"><span class="kname">Generate special assistance manifest for flight</span><span class="kval">Manifest accuracy ≥97% verified at gate against actual presenting passengers</span></div><div class="krow"><span class="kname">Allocate wheelchair equipment and trained staff</span><span class="kval">WCHR equipment availability ≥99.5% at departure time; staff-to-WCHR ratio ≥1:3</span></div><div class="krow"><span class="kname">Brief check-in, gate, and lounge staff on SSR pax</span><span class="kval">Briefing completion ≥90 minutes before scheduled departure for all WCHR flights</span></div><div class="krow"><span class="kname">Meet and greet passenger at curbside or check-in</span><span class="kval">Meet-and-greet wait time ≤5 minutes from passenger arrival notification; missed meet rate &lt;1%</span></div><div class="krow"><span class="kname">Process priority check-in and accessible seat assignment</span><span class="kval">Priority check-in processing time ≤10 minutes; accessible seat assignment compliance ≥100%</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">SSR codes entered via third-party OTA bookings (Sabre/Travelport GDS) frequently omit WCHR detail level — WCHR vs WCHC vs WCHB require different staffing and equipment, forcing manual re-verification at check-in</div><div class="risk-card">WCHR (ambulatory, needs chair to/from aircraft), WCHC (immobile), WCHB (on-board transfer only), WCHS (steps only) have distinct handling requirements — conflation causes resource misallocation and DOT ACAA exposure</div><div class="risk-card">MEDA cases require physician sign-off via MedAire or equivalent — no standardised PSS-to-medical portal API; clearance requests are manual email/phone, creating decision latency that can strand medically complex passengers</div><div class="risk-card">Real-time SSR updates from late bookers and day-of upgrades are not always pushed from Altéa to SITA AMS — agents frequently work off stale manifests, missing newly added WCHR requests</div><div class="risk-card">Shared wheelchair pool across concurrent bank departures causes equipment shortfalls — no real-time IoT tracking of wheelchair/aisle chair location at most airports; agents spend 10–15 min locating equipment</div><div class="risk-card">High turnover in ground handling contractor staff means briefings are the primary knowledge transfer channel — no structured digital briefing delivery to ramp contractor teams; verbal-only handoffs cause information loss at shift changes</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Passenger booking request or PNR with special assistance SSR codes</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Escalation ticket created in Salesforce, root cause analysis completed, process improvement recommendation issued</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-03</span>Crew Day-of-Operations Tracking</h3>
-    <p>Crew Planning &amp; Rostering · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-04</span>Fatigue &amp; Rest Rule Compliance (FAR Part 117)</h3>
-    <p>Crew Planning &amp; Rostering · 19 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-05</span>Crew Training &amp; Recurrency Management</h3>
-    <p>Crew Planning &amp; Rostering · 18 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-06</span>Crew Licensing &amp; Medical Certification</h3>
-    <p>Crew Planning &amp; Rostering · 19 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-07</span>Reserve Crew Management</h3>
-    <p>Crew Planning &amp; Rostering · 18 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-08</span>Crew Hotel &amp; Transportation Management</h3>
-    <p>Crew Planning &amp; Rostering · 14 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-09</span>Cabin Crew Service Standards &amp; Training</h3>
-    <p>Crew Planning &amp; Rostering · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-10</span>Crew Disruption Recovery &amp; Re-pairing</h3>
-    <p>Crew Planning &amp; Rostering · 16 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-11</span>Crew Union &amp; Labour Agreement Compliance</h3>
-    <p>Crew Planning &amp; Rostering · 20 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-12</span>Crew Recruitment &amp; Onboarding</h3>
-    <p>Crew Planning &amp; Rostering · 18 steps · 14 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-13</span>Deadhead &amp; Positioning Management</h3>
-    <p>Crew Planning &amp; Rostering · 15 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-14</span>Crew Performance Management</h3>
-    <p>Crew Planning &amp; Rostering · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CM-15</span>Crew Payroll &amp; Hours Tracking</h3>
-    <p>Crew Planning &amp; Rostering · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cm-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../go-08/"><span class="arrow">←</span><span><span class="sub">Previous</span>GO-08 · Passenger Disruption Handling (IRROP)</span></a><a class="pn-btn" href="../go-10/"><span><span class="sub">Next</span>GO-10 · VIP &amp; Premium Passenger Handling</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

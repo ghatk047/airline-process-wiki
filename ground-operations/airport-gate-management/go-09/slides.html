@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GO-09 Slides — Wheelchair &amp; Special Assistance Services</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-09</span>
+    <h1>Wheelchair &amp; Special Assistance Services</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/go-09.png" alt="BPMN for GO-09" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-09</span>
+    <h1>Wheelchair &amp; Special Assistance Services</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> GO-09</li>
+          <li><strong>L1 Domain:</strong> Ground Operations &amp; Airport Services</li>
+          <li><strong>L2 Process:</strong> Airport &amp; Gate Management</li>
+          <li><strong>L3 Name:</strong> Wheelchair &amp; Special Assistance Services</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Ingest WCHR/WCHC/WCHS/WCHB SSR codes from PNR</li><li><strong>Phase 2:</strong> Generate special assistance manifest for flight</li><li><strong>Phase 3:</strong> Meet and greet passenger at curbside or check-in</li><li><strong>Phase 4:</strong> Pre-board WCHR passengers ahead of general boardin</li><li><strong>Phase 5:</strong> Transmit WCHR count and SSR detail to destination </li><li><strong>Phase 6:</strong> Log completed assistance events in SITA AMS</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Cabin Crew + Arrival Special Assistance Agent</li><li>Cabin Crew / Special Assistance Agent</li><li>Customer Experience Manager / Regulatory Affairs Director</li><li>Departure Station Ground Coordinator</li><li>Disability Access Compliance Officer</li><li>Gate Agent</li><li>Ground Operations Manager</li><li>Ground Services Coordinator</li><li>Ground Services Supervisor</li><li>Ramp Agent</li><li>Ramp Agent + Special Assistance Agent</li><li>Reservations Agent / Check-in Agent</li><li>Special Assistance Agent</li><li>Special Assistance Agent (Aisle Chair Trained)</li><li>Special Assistance Agent / Check-in Agent</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Aircraft Cabin Systems (IFE / Seat Control) + SITA Airport Management System (AMS)</li><li>Amadeus Altéa PSS</li><li>Amadeus Altéa PSS (baggage tagging) + SITA Baggage Reconciliation System (BRS)</li><li>Amadeus Altéa PSS (boarding control) + SITA Airport Management System (AMS)</li><li>Amadeus Altéa PSS + MedAire Medical Clearance Portal</li><li>SITA Airport Management System (AMS)</li><li>SITA Airport Management System (AMS) + Airline Aisle Chair Inventory System</li><li>SITA Airport Management System (AMS) + Airline Ops Communication App</li><li>SITA Airport Management System (AMS) + Amadeus Altéa PSS</li><li>SITA Airport Management System (AMS) + TSA PreCheck / Airport Security System</li><li>SITA Airport Management System (AMS) + Workforce Management System (Jeppesen Crew Management)</li><li>SITA Baggage Reconciliation System (BRS) + SITA Airport Management System (AMS)</li><li>SITA Messaging (Type B / IATA AHM) + Amadeus Altéa PSS (SSR relay)</li><li>Salesforce Service Cloud (CRM) + SITA Airport Management System (AMS)</li><li>Tableau / Power BI (Compliance Dashboard) + SITA AMS Data Export</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-09</span>
+    <h1>Wheelchair &amp; Special Assistance Services</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Ingest WCHR/WCHC/WCHS/WCHB SSR codes from PNR</td>
+        <td class="kpi-col">SSR capture rate ≥99% of passengers self-identifying as requiring assistance</td>
+        <td class="pain-col">SSR codes entered via third-party OTA bookings (Sabre/Travelport GDS) frequently omit WCHR detail level — WCHR vs WCHC vs WCHB require different staffing and equipment, forcing manual re-verification at check-in</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate SSR codes against IATA AIRIMP definitions</td>
+        <td class="kpi-col">SSR validation accuracy ≥98% completed ≥24 hours before scheduled departure</td>
+        <td class="pain-col">WCHR (ambulatory, needs chair to/from aircraft), WCHC (immobile), WCHB (on-board transfer only), WCHS (steps only) have distinct handling requirements — conflation causes resource misallocation and DOT ACAA exposure</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Flag MEDA/OXYG/LEGL cases for medical clearance</td>
+        <td class="kpi-col">Medical clearance decision issued ≤4 hours before departure; MEDA clearance rate tracked monthly</td>
+        <td class="pain-col">MEDA cases require physician sign-off via MedAire or equivalent — no standardised PSS-to-medical portal API; clearance requests are manual email/phone, creating decision latency that can strand medically complex passengers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Generate special assistance manifest for flight</td>
+        <td class="kpi-col">Manifest accuracy ≥97% verified at gate against actual presenting passengers</td>
+        <td class="pain-col">Real-time SSR updates from late bookers and day-of upgrades are not always pushed from Altéa to SITA AMS — agents frequently work off stale manifests, missing newly added WCHR requests</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Allocate wheelchair equipment and trained staff</td>
+        <td class="kpi-col">WCHR equipment availability ≥99.5% at departure time; staff-to-WCHR ratio ≥1:3</td>
+        <td class="pain-col">Shared wheelchair pool across concurrent bank departures causes equipment shortfalls — no real-time IoT tracking of wheelchair/aisle chair location at most airports; agents spend 10–15 min locating equipment</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Brief check-in, gate, and lounge staff on SSR pax</td>
+        <td class="kpi-col">Briefing completion ≥90 minutes before scheduled departure for all WCHR flights</td>
+        <td class="pain-col">High turnover in ground handling contractor staff means briefings are the primary knowledge transfer channel — no structured digital briefing delivery to ramp contractor teams; verbal-only handoffs cause information loss at shift changes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Meet and greet passenger at curbside or check-in</td>
+        <td class="kpi-col">Meet-and-greet wait time ≤5 minutes from passenger arrival notification; missed meet rate &lt;1%</td>
+        <td class="pain-col">No reliable mechanism for passengers to pre-notify airport of their actual arrival time — agents use scheduled departure window as proxy, causing missed meets for passengers arriving &gt;90 min early or late</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Process priority check-in and accessible seat assignment</td>
+        <td class="kpi-col">Priority check-in processing time ≤10 minutes; accessible seat assignment compliance ≥100%</td>
+        <td class="pain-col">Altéa seat maps do not surface DOT Part 382-mandated accessible seats (bulkhead with movable armrests) separately from general inventory — agents must manually cross-check airline accessible seating policy to avoid assigning window or obstructed seats</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Escort passenger through security checkpoint</td>
+        <td class="kpi-col">Security escort completion ≤20 minutes; extended screening incidents &lt;5% of WCHR escorts</td>
+        <td class="pain-col">TSA screening of power wheelchairs with lithium batteries (&gt;300Wh) triggers extended secondary screening — no pre-clearance pathway between airline SSR data and TSA PreCheck; battery removal for screening adds 15–20 minutes and requires specialised TSA training</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Pre-board WCHR passengers ahead of general boarding</td>
+        <td class="kpi-col">Pre-boarding initiation ≥20 minutes before scheduled departure; WCHR pre-board completion rate ≥98%</td>
+        <td class="pain-col">Gate changes issued via Amadeus AMS real-time updates do not automatically trigger re-dispatch of staged WCHR escort teams — agents must manually monitor FIDS for gate swaps, causing missed pre-boards when late gate changes occur</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Transfer passenger to aisle chair at jet bridge threshold</td>
+        <td class="kpi-col">Aisle chair transfer completion ≤8 minutes per passenger; transfer injury rate 0%</td>
+        <td class="pain-col">Narrow-body aircraft (737, A320 family) require airline-specific aisle chair dimensions — third-party ground handling company equipment is frequently incompatible; DOT Air Carrier Access Act mandates two trained staff for transfers, but solo escorts are common at smaller stations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Tag, stow, or gate-check personal mobility device</td>
+        <td class="kpi-col">Mobility device stow without damage ≥99.8%; aircraft-door return ≥90% of WCHC/WCHB cases</td>
+        <td class="pain-col">Power wheelchair lithium batteries &gt;300Wh require IATA DGR Section 3.3.1 special handling — ramp agents are not universally IATA DGR certified; battery removal adds 15–20 min dwell time and risks damage to chair electronics if improperly handled</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Confirm seating, call bell, and lavatory access briefing</td>
+        <td class="kpi-col">Passenger safety and accessibility briefing completion 100% before door close</td>
+        <td class="pain-col">Single-aisle narrow-body aircraft (737-800, A320) have no onboard accessible lavatory — WCHR passengers on sectors &gt;3 hours require a pre-departure lavatory visit; this is frequently omitted when boarding is behind schedule, resulting in DOT ACAA complaints</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Transmit WCHR count and SSR detail to destination station</td>
+        <td class="kpi-col">SSR transmission to destination ≥60 minutes before ETA; message accuracy ≥99%</td>
+        <td class="pain-col">Not all carriers use structured IATA AHM 140 (PRM advice) messaging — some destination stations rely on informal teletype or email, causing missed meet-and-greets at remote or outstations with minimal ground handling staff</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Deplane WCHR passengers in coordinated sequence</td>
+        <td class="kpi-col">WCHR deplaning completion within 15 minutes of blocks-on; missed assist rate &lt;0.5% of WCHR arrivals</td>
+        <td class="pain-col">Remote stands (bus gates) require two-stage transfer: aisle chair → ambulift → terminal wheelchair — ambulift availability is not tracked in SITA AMS; unplanned remote stand assignments cause 20–30 min assistance delays and DOT ACAA complaint exposure</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Return mobility device at aircraft door or baggage claim</td>
+        <td class="kpi-col">Device return at aircraft door ≥90% (DOT ACAA requirement); mobility device damage rate &lt;0.1 per 1,000 devices handled</td>
+        <td class="pain-col">DOT Air Carrier Access Act requires power wheelchair return at aircraft door — carriers routinely return at baggage claim due to cargo door sequencing constraints; each violation exposes the carrier to DOT fines of up to $35,000 per incident</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Log completed assistance events in SITA AMS</td>
+        <td class="kpi-col">Assistance event logging rate ≥99% within 30 minutes of flight departure or arrival blocks-on</td>
+        <td class="pain-col">Manual data entry creates compliance gaps — paper-based backup processes at smaller outstations mean event logs are incomplete; data aggregation for monthly DOT Part 382 reporting requires manual reconciliation across 8–12 station formats</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Audit DOT Part 382 / ACAA compliance metrics</td>
+        <td class="kpi-col">DOT ACAA complaint rate &lt;0.5 per 10,000 passengers; mobility device damage claims &lt;0.1%; complaint resolution within 30 days ≥95%</td>
+        <td class="pain-col">DOT Part 382 requires individual written complaint response within 30 days — complaint tracking spans CX, legal, and ground ops with no single integrated system; manual status reconciliation between Salesforce CRM and SITA AMS takes 2–3 hours per month per station</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Escalate unresolved complaints to CX and Regulatory Affairs</td>
+        <td class="kpi-col">Complaint resolution within 30 days ≥95% (DOT Part 382 §382.155 requirement); repeat incident rate reduction target ≥20% quarter-over-quarter</td>
+        <td class="pain-col">No direct integration between SITA AMS ground ops incident logs and Salesforce CRM — staff must manually recreate incident context in Salesforce tickets, causing information loss and duplicate investigative effort; recurring root causes (e.g. remote stand ambulift gaps) are not systematically fed back into resource planning</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+</body>
+</html>
