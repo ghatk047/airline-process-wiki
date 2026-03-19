@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-02 Slides — Crew Rostering &amp; Bidding</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-02</span>
+    <h1>Crew Rostering &amp; Bidding</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-02.png" alt="BPMN for CM-02" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-02</span>
+    <h1>Crew Rostering &amp; Bidding</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-02</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Planning &amp; Rostering</li>
+          <li><strong>L3 Name:</strong> Crew Rostering &amp; Bidding</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">15</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">13</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Import approved pairings into rostering module</li><li><strong>Phase 2:</strong> Publish bid package to crew self-service portal</li><li><strong>Phase 3:</strong> Run automated seniority-based bid award algorithm</li><li><strong>Phase 4:</strong> Review and adjudicate crew bid award protests</li><li><strong>Phase 5:</strong> Obtain final compliance sign-off and lock roster</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Crew Compliance Analyst</li><li>Crew Compliance Manager</li><li>Crew Planning Analyst</li><li>Crew Planning Manager</li><li>Crew Scheduling Coordinator</li><li>Flight Crew (Pilots / Flight Attendants)</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Jeppesen Crew Management</li><li>Jeppesen Crew Management (CrewPortal / mobile app)</li><li>Jeppesen Crew Management (CrewPortal)</li><li>Jeppesen Crew Management (CrewPortal) + airline push-notification service</li><li>Jeppesen Crew Management (FRMS module)</li><li>Jeppesen Crew Management (Rostering Optimiser)</li><li>Jeppesen Crew Management (Trip Trade module)</li><li>Jeppesen Crew Management (regulatory rules engine)</li><li>Jeppesen Crew Management + AWS S3 / Redshift (compliance audit log)</li><li>Jeppesen Crew Management + Boeing Toolbox / CAMP</li><li>Jeppesen Crew Management + SITA Airport Management System (AMS)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-02</span>
+    <h1>Crew Rostering &amp; Bidding</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Import approved pairings into rostering module</td>
+        <td class="kpi-col">100% of approved pairings imported with zero data loss; import completed ≤2 hours after CM-01 sign-off</td>
+        <td class="pain-col">Pairing handoff format mismatches between Jeppesen pairing and rostering modules cause silent truncation of augmented-crew flags — manual audit required for long-haul pairings</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Configure bid period parameters and CBA rules</td>
+        <td class="kpi-col">Bid package published ≥21 days before period start per CBA; 0 rule-configuration errors at bid launch</td>
+        <td class="pain-col">CBA rule amendments require manual reconfiguration of Jeppesen constraint tables — no automated ingestion from contract management system; misconfigurations discovered only when crew protests are filed</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate crew qualification and fleet eligibility</td>
+        <td class="kpi-col">0 unqualified crew included in bid package; eligibility validation completed ≥25 days before period start</td>
+        <td class="pain-col">Qualification expiry records in Boeing Toolbox / CAMP sync to Jeppesen with a 24–48-hour lag — risk of including crew whose type-rating or medical lapses within the bid window</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Publish bid package to crew self-service portal</td>
+        <td class="kpi-col">Bid package live ≥21 days before bid close; 0 incorrect or duplicate pairings in published package</td>
+        <td class="pain-col">Late schedule changes after bid publication require reissuing the full package, compressing crew bid time below the CBA-mandated minimum — triggers grievance filings and OCC planning disruption</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Capture ranked bid preferences from crew members</td>
+        <td class="kpi-col">Bid submission rate ≥95% by deadline; average ranking depth ≥15 preferences per crew member</td>
+        <td class="pain-col">Mobile app version fragmentation causes intermittent bid submission failures for crew on older devices — preference loss occurs without error confirmation, leading to unintended default-assignment triggers</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate bid completeness and close bidding window</td>
+        <td class="kpi-col">100% bid validation completed within 2 hours of bid close; non-bidder list issued to planning team within 1 hour</td>
+        <td class="pain-col">Non-bidders assigned by reserve default rules increase reserve utilisation pressure during high-absence periods (holidays, training blocks), reducing buffer for day-of-operations coverage</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Run automated seniority-based bid award algorithm</td>
+        <td class="kpi-col">Automated award covers ≥85% of pairings without manual intervention; optimisation run completes &lt;3 hours</td>
+        <td class="pain-col">Seniority-driven award algorithm creates systematic clustering — junior crew receive chronically undesirable pairings, driving grievance filings and attrition at base cities with high seniority concentration</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Apply FRMS fatigue constraints to draft roster</td>
+        <td class="kpi-col">0 crew assigned duties with predicted fatigue index &gt;70 (Jeppesen FRMS 0–100 scale); FRMS validation completed &lt;2 hours</td>
+        <td class="pain-col">FRMS scoring relies on self-reported rest periods logged in CrewPortal — inaccurate entries produce false-compliant rosters that trigger FRMS alerts only on the day of operation when it is too late to rebalance</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Check FAR Part 117 duty and rest compliance</td>
+        <td class="kpi-col">0 FAR Part 117 violations in roster at publication; compliance check completed &lt;4 hours</td>
+        <td class="pain-col">Augmented-crew provisions under FAR Part 117 §117.21 are not fully parameterised in Jeppesen — ultra-long-range pairings require manual override and legal review, adding 24–48 hours to the rostering cycle</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Resolve uncovered pairings via reserve assignment</td>
+        <td class="kpi-col">0 uncovered pairings at draft finalisation; reserve utilisation ≤30% of available reserve pool</td>
+        <td class="pain-col">Reserve pool insufficiency during peak holiday bid periods forces voluntary overtime — CBA premium-pay triggers create budget variance of up to 15% above planned crew cost in Q4</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Review and adjudicate crew bid award protests</td>
+        <td class="kpi-col">100% of bid protests resolved within 5 business days per CBA; protest rate &lt;2% of total crew bids</td>
+        <td class="pain-col">Seniority disputes requiring CBA interpretation escalate to labor relations, extending resolution timelines and delaying roster finalisation — unresolved protests at publication date force provisional assignments</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Incorporate pre-approved trip trades and swaps</td>
+        <td class="kpi-col">Trip trade approval cycle ≤48 hours; 0 qualification violations resulting from approved trades</td>
+        <td class="pain-col">Trip trades approved outside Jeppesen via email bypass the system&#x27;s built-in qualification check — latent safety risk discovered only at crew sign-in when crew tracking flags the mismatch</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Obtain final compliance sign-off and lock roster</td>
+        <td class="kpi-col">Compliance sign-off completed ≥5 days before period start; 0 open violations at sign-off</td>
+        <td class="pain-col">Compliance audit trail stored in a separate AWS S3/Redshift data lake has no direct linkage to the Jeppesen roster record — reconstructing evidence for FAA audit queries requires manual correlation across two systems</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Publish final roster and notify crew via portal</td>
+        <td class="kpi-col">100% of crew notified within 1 hour of publication; crew acknowledgment rate ≥90% within 48 hours of release</td>
+        <td class="pain-col">Push-notification delivery rates drop to ~70% for crew on international layovers with low cellular connectivity — crew risk missing roster start dates, forcing manual telephone outreach by crew scheduling</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Distribute final roster data feed to OCC</td>
+        <td class="kpi-col">Roster data available in OCC within 30 minutes of publication; 0 data-sync errors in first 24 hours</td>
+        <td class="pain-col">Roster-to-OCC data feed uses legacy SFTP batch transfer rather than a real-time API — the resulting 30-minute lag means OCC operates on stale crew assignments during the handoff window, creating conflict risk for back-to-back duty pairings</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+</body>
+</html>

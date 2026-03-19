@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Flight Dispatch &amp; Control · Flight Operations · Airlines Process Wiki</title>
+<title>CM-02 · Crew Rostering &amp; Bidding · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Crew Management</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -143,7 +144,7 @@
       <a class="sidebar-l2-link" href="../../../flight-operations/crew-management/">Crew Planning &amp; Rostering</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-01/"><span class="status-dot status-done"></span><span class="pid">CM-01</span>Crew Pairing Optimization</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-02/"><span class="status-dot status-done"></span><span class="pid">CM-02</span>Crew Rostering &amp; Bidding</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/crew-management/cm-02/"><span class="status-dot status-done"></span><span class="pid">CM-02</span>Crew Rostering &amp; Bidding</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-03/"><span class="status-dot status-queue"></span><span class="pid">CM-03</span>Crew Day-of-Operations Tracking</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-04/"><span class="status-dot status-queue"></span><span class="pid">CM-04</span>Fatigue &amp; Rest Rule Compliance (FAR Part 117)</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-05/"><span class="status-dot status-queue"></span><span class="pid">CM-05</span>Crew Training &amp; Recurrency Management</a>
@@ -242,153 +243,228 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Flight Dispatch &amp; Control</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Crew Management</a><span class="sep">›</span>
+  <a href="../../../flight-operations/crew-management/">Crew Planning &amp; Rostering</a><span class="sep">›</span>
+  <span class="current">CM-02 · Crew Rostering &amp; Bidding</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Flight Dispatch &amp; Control</h1>
-    <p>Flight Operations · 15 of 15 subprocesses complete · Updated 2026-03-19 10:19</p>
+    <h1>Crew Rostering &amp; Bidding</h1>
+    <p>Crew Management › Crew Planning &amp; Rostering · 15 L4 steps · 5 phases · 8 decision gates · Updated 2026-03-19 10:19</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CM-02</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-01</span>Flight Dispatch &amp; Release</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 11 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cm-02">
+      <img src="../../../assets/img/cm-02.png" alt="CM-02 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cm-02').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cm-02').style.display='flex'">
+      <div id="diag-placeholder-cm-02" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Import approved pairings into rostering module</td>
+  <td class="td-role">Crew Planning Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved crew pairing solution exported from CM-01 pairing optimisation</td>
+  <td style="font-size:10px">Pairing library loaded into rostering module for the bid period</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of approved pairings imported with zero data loss; import completed ≤2 hours after CM-01 sign-off</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Configure bid period parameters and CBA rules</td>
+  <td class="td-role">Crew Planning Manager</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Flight schedule, collective bargaining agreement (CBA), bidding calendar, vacation approval list</td>
+  <td style="font-size:10px">Bid period configuration: dates, block-hour limits, vacation slots, trip-trade eligibility rules</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bid package published ≥21 days before period start per CBA; 0 rule-configuration errors at bid launch</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Validate crew qualification and fleet eligibility</td>
+  <td class="td-role">Crew Planning Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management + Boeing Toolbox / CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">Crew qualification records, recurrent training schedule, expiry dates from training tracking system</td>
+  <td style="font-size:10px">Eligible crew list segmented by fleet type and seat position for bid period</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">0 unqualified crew included in bid package; eligibility validation completed ≥25 days before period start</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Publish bid package to crew self-service portal</td>
+  <td class="td-role">Crew Scheduling Coordinator</td>
+  <td><span class="stag custom">Jeppesen Crew Management (CrewPortal)</span></td>
+  <td style="font-size:10px;color:#6b7280">Finalized pairing library, bid period configuration, eligible crew list</td>
+  <td style="font-size:10px">Published bid package accessible to all eligible crew via CrewPortal and mobile app</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bid package live ≥21 days before bid close; 0 incorrect or duplicate pairings in published package</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Capture ranked bid preferences from crew members</td>
+  <td class="td-role">Flight Crew (Pilots / Flight Attendants)</td>
+  <td><span class="stag custom">Jeppesen Crew Management (CrewPortal / mobile app)</span></td>
+  <td style="font-size:10px;color:#6b7280">Published bid package, personal scheduling preferences, personal rest requirements</td>
+  <td style="font-size:10px">Ranked preference list submitted per crew member; system timestamp of each submission</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bid submission rate ≥95% by deadline; average ranking depth ≥15 preferences per crew member</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Validate bid completeness and close bidding window</td>
+  <td class="td-role">Crew Scheduling Coordinator</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Submitted crew bids, bid deadline, CBA late-bid rules</td>
+  <td style="font-size:10px">Validated bid dataset; list of non-bidders flagged for reserve-rule default assignment</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% bid validation completed within 2 hours of bid close; non-bidder list issued to planning team within 1 hour</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Run automated seniority-based bid award algorithm</td>
+  <td class="td-role">Crew Planning Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management (Rostering Optimiser)</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated crew bids, seniority list, pairing library, block-hour limits per crew</td>
+  <td style="font-size:10px">Draft roster with bid awards allocated by seniority order; uncovered-pairing exception list</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Automated award covers ≥85% of pairings without manual intervention; optimisation run completes &lt;3 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Apply FRMS fatigue constraints to draft roster</td>
+  <td class="td-role">Crew Planning Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management (FRMS module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Draft roster, crew duty history for prior 90 days, rest period records</td>
+  <td style="font-size:10px">FRMS-validated roster with per-crew fatigue index scores; list of crew flagged above threshold</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">0 crew assigned duties with predicted fatigue index &gt;70 (Jeppesen FRMS 0–100 scale); FRMS validation completed &lt;2 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Check FAR Part 117 duty and rest compliance</td>
+  <td class="td-role">Crew Compliance Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management (regulatory rules engine)</span></td>
+  <td style="font-size:10px;color:#6b7280">FRMS-validated draft roster, FAR Part 117 / EASA FTL rule set, augmented-crew designation flags</td>
+  <td style="font-size:10px">Compliance report per crew member; list of FAR Part 117 violations with step-number reference</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">0 FAR Part 117 violations in roster at publication; compliance check completed &lt;4 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Resolve uncovered pairings via reserve assignment</td>
+  <td class="td-role">Crew Scheduling Coordinator</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Uncovered pairing list, qualified reserve crew availability, CBA reserve-call rules</td>
+  <td style="font-size:10px">Fully covered draft roster with reserve assignments documented; updated reserve utilisation report</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">0 uncovered pairings at draft finalisation; reserve utilisation ≤30% of available reserve pool</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Review and adjudicate crew bid award protests</td>
+  <td class="td-role">Crew Planning Manager</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Crew grievance and protest submissions, draft roster, CBA seniority and award rules</td>
+  <td style="font-size:10px">Adjudicated roster with documented award rationale per disputed assignment</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of bid protests resolved within 5 business days per CBA; protest rate &lt;2% of total crew bids</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Incorporate pre-approved trip trades and swaps</td>
+  <td class="td-role">Crew Scheduling Coordinator</td>
+  <td><span class="stag custom">Jeppesen Crew Management (Trip Trade module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Pre-approved trip trade requests, adjudicated roster, qualification matrix</td>
+  <td style="font-size:10px">Updated roster with pre-period swaps incorporated; qualification validation report for all traded duties</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Trip trade approval cycle ≤48 hours; 0 qualification violations resulting from approved trades</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Obtain final compliance sign-off and lock roster</td>
+  <td class="td-role">Crew Compliance Manager</td>
+  <td><span class="stag aws">Jeppesen Crew Management + AWS S3 / Redshift (compliance audit log)</span></td>
+  <td style="font-size:10px;color:#6b7280">Final roster, FAR Part 117 compliance report, FRMS validation summary</td>
+  <td style="font-size:10px">Signed compliance certificate; roster record locked against further edits; audit log entry written to AWS data lake</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Compliance sign-off completed ≥5 days before period start; 0 open violations at sign-off</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Publish final roster and notify crew via portal</td>
+  <td class="td-role">Crew Scheduling Coordinator</td>
+  <td><span class="stag custom">Jeppesen Crew Management (CrewPortal) + airline push-notification service</span></td>
+  <td style="font-size:10px;color:#6b7280">Locked compliant roster, crew contact preferences</td>
+  <td style="font-size:10px">Published roster visible in CrewPortal; push notifications sent to crew mobile devices; acknowledgment tracking open</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of crew notified within 1 hour of publication; crew acknowledgment rate ≥90% within 48 hours of release</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Distribute final roster data feed to OCC</td>
+  <td class="td-role">Crew Scheduling Coordinator</td>
+  <td><span class="stag custom">Jeppesen Crew Management + SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Published final roster</td>
+  <td style="font-size:10px">Crew roster data feed ingested by OCC systems; gate and stand planning inputs updated with crew assignments</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Roster data available in OCC within 30 minutes of publication; 0 data-sync errors in first 24 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-02</span>Operational Flight Plan Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CM-02</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Crew Management</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Crew Planning &amp; Rostering</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Crew Rostering &amp; Bidding</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">15 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">8 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">13 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Crew Planning Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Crew Planning Manager</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Crew Scheduling Coordinator</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Flight Crew (Pilots / Flight Attendants)</div><div class="swim"><div class="dot" style="background:#10b981"></div>Crew Compliance Analyst</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Crew Compliance Manager</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">Jeppesen Crew Management</span><span class="stag custom">Jeppesen Crew Management + Boeing Toolbox / CAMP</span><span class="stag custom">Jeppesen Crew Management (CrewPortal)</span><span class="stag custom">Jeppesen Crew Management (CrewPortal / mobile app)</span><span class="stag custom">Jeppesen Crew Management (Rostering Optimiser)</span><span class="stag custom">Jeppesen Crew Management (FRMS module)</span><span class="stag custom">Jeppesen Crew Management (regulatory rules engine)</span><span class="stag custom">Jeppesen Crew Management (Trip Trade module)</span><span class="stag aws">Jeppesen Crew Management + AWS S3 / Redshift (compliance audit log)</span><span class="stag custom">Jeppesen Crew Management (CrewPortal) + airline push-notification service</span><span class="stag custom">Jeppesen Crew Management + SITA Airport Management System (AMS)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Import approved pairings into rostering module</span><span class="kval">100% of approved pairings imported with zero data loss; import completed ≤2 hours after CM-01 sign-off</span></div><div class="krow"><span class="kname">Configure bid period parameters and CBA rules</span><span class="kval">Bid package published ≥21 days before period start per CBA; 0 rule-configuration errors at bid launch</span></div><div class="krow"><span class="kname">Validate crew qualification and fleet eligibility</span><span class="kval">0 unqualified crew included in bid package; eligibility validation completed ≥25 days before period start</span></div><div class="krow"><span class="kname">Publish bid package to crew self-service portal</span><span class="kval">Bid package live ≥21 days before bid close; 0 incorrect or duplicate pairings in published package</span></div><div class="krow"><span class="kname">Capture ranked bid preferences from crew members</span><span class="kval">Bid submission rate ≥95% by deadline; average ranking depth ≥15 preferences per crew member</span></div><div class="krow"><span class="kname">Validate bid completeness and close bidding window</span><span class="kval">100% bid validation completed within 2 hours of bid close; non-bidder list issued to planning team within 1 hour</span></div><div class="krow"><span class="kname">Run automated seniority-based bid award algorithm</span><span class="kval">Automated award covers ≥85% of pairings without manual intervention; optimisation run completes &lt;3 hours</span></div><div class="krow"><span class="kname">Apply FRMS fatigue constraints to draft roster</span><span class="kval">0 crew assigned duties with predicted fatigue index &gt;70 (Jeppesen FRMS 0–100 scale); FRMS validation completed &lt;2 hours</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Pairing handoff format mismatches between Jeppesen pairing and rostering modules cause silent truncation of augmented-crew flags — manual audit required for long-haul pairings</div><div class="risk-card">CBA rule amendments require manual reconfiguration of Jeppesen constraint tables — no automated ingestion from contract management system; misconfigurations discovered only when crew protests are filed</div><div class="risk-card">Qualification expiry records in Boeing Toolbox / CAMP sync to Jeppesen with a 24–48-hour lag — risk of including crew whose type-rating or medical lapses within the bid window</div><div class="risk-card">Late schedule changes after bid publication require reissuing the full package, compressing crew bid time below the CBA-mandated minimum — triggers grievance filings and OCC planning disruption</div><div class="risk-card">Mobile app version fragmentation causes intermittent bid submission failures for crew on older devices — preference loss occurs without error confirmation, leading to unintended default-assignment triggers</div><div class="risk-card">Non-bidders assigned by reserve default rules increase reserve utilisation pressure during high-absence periods (holidays, training blocks), reducing buffer for day-of-operations coverage</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Approved crew pairing solution exported from CM-01 pairing optimisation</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Crew roster data feed ingested by OCC systems; gate and stand planning inputs updated with crew assignments</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-03</span>Fuel Planning &amp; Tankering</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-04</span>Weight &amp; Balance Management</h3>
-    <p>Flight Dispatch &amp; Control · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-05</span>NOTAMs &amp; AIP Information Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-06</span>Weather Monitoring &amp; Decision Support</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-07</span>Air Traffic Control Coordination</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-08</span>Network Operations Control (NOC)</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 10 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-09</span>Delay Management &amp; Root Cause Analysis</h3>
-    <p>Flight Dispatch &amp; Control · 19 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-10</span>Diversion &amp; Emergency Response Management</h3>
-    <p>Flight Dispatch &amp; Control · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-11</span>ETOPS / EDTO Operations Management</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-13</span>Performance &amp; FDR Data Monitoring</h3>
-    <p>Flight Dispatch &amp; Control · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-14</span>Air-to-Ground Communications Management</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-15</span>Dangerous Goods Load Authorization</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 13 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cm-01/"><span class="arrow">←</span><span><span class="sub">Previous</span>CM-01 · Crew Pairing Optimization</span></a><a class="pn-btn" href="../cm-03/"><span><span class="sub">Next</span>CM-03 · Crew Day-of-Operations Tracking</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
