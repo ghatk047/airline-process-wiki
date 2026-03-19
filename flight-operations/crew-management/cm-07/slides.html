@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-07 Slides — Reserve Crew Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-07</span>
+    <h1>Reserve Crew Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-07.png" alt="BPMN for CM-07" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Day-of-Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-07</span>
+    <h1>Reserve Crew Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-07</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Day-of-Operations</li>
+          <li><strong>L3 Name:</strong> Reserve Crew Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">11</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Compute reserve coverage requirements by base</li><li><strong>Phase 2:</strong> Detect open crew position from absence or IROPS</li><li><strong>Phase 3:</strong> Validate FAR Part 117 rest requirements</li><li><strong>Phase 4:</strong> Assign reserve crew to open duty in system</li><li><strong>Phase 5:</strong> Monitor reserve pool utilization in real time</li><li><strong>Phase 6:</strong> Update FTL and fatigue counters post-reserve duty</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Crew Dispatcher</li><li>Crew Planning Analyst</li><li>Crew Planning Manager</li><li>Crew Records Analyst</li><li>Crew Scheduler</li><li>Crew Scheduling Manager</li><li>Director of Crew Scheduling</li><li>Jeppesen Crew Management (automated)</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift + Tableau</li><li>IBS Software iCrew (automated callout module)</li><li>IBS Software iCrew (mobile crew app)</li><li>IBS Software iCrew (open-time posting) + Jeppesen Crew Management</li><li>Jeppesen Crew Management</li><li>Jeppesen Crew Management (legality engine)</li><li>Jeppesen Crew Management (live dashboard)</li><li>Jeppesen Crew Management (qualifications module)</li><li>Jeppesen FliteDeck (EFB)</li><li>SITA Airport Management System (AMS) + NOC Operations Board</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Day-of-Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-07</span>
+    <h1>Reserve Crew Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Compute reserve coverage requirements by base</td>
+        <td class="kpi-col">Reserve callout success rate ≥95% within 60 min; reserve buffer ≥110% of forecast open duties</td>
+        <td class="pain-col">Historical sick-call rates underestimate demand during seasonal IROPS surges; model recalibration requires manual analyst intervention — no auto-refresh in Jeppesen planning module</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Allocate reserve positions per CBA obligations</td>
+        <td class="kpi-col">CBA compliance rate 100%; reserve allocation published ≥72 hours before period start</td>
+        <td class="pain-col">CBA restrictions on reserve obligation days limit scheduling flexibility; union grievances filed when allocation violates contractual reserve windows or exceeds maximum days-on-call</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate reserve pool adequacy vs. coverage model</td>
+        <td class="kpi-col">Reserve pool adequacy score ≥90% across all bases; gap closure within 48 hours of identification</td>
+        <td class="pain-col">Coverage model accuracy degrades during network-wide weather events; no predictive depletion forecast natively in Jeppesen — requires manual scenario modelling in spreadsheets</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Detect open crew position from absence or IROPS</td>
+        <td class="kpi-col">Open duty detection latency ≤10 min from absence notification; 100% of open duties logged before T-90 min departure</td>
+        <td class="pain-col">Sick-call surges during IROPS overwhelm scheduler capacity; legacy Jeppesen alert queues do not auto-triage by urgency, forcing manual prioritisation under time pressure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Query available reserve crew by qualification match</td>
+        <td class="kpi-col">Query response time ≤2 min; shortlist generated for 100% of open duties before callout initiation</td>
+        <td class="pain-col">Jeppesen does not automatically apply all CBA tie-breaker rules in the sort order; schedulers manually override, introducing errors and exposing airline to union grievances</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Initiate automated reserve callout sequence</td>
+        <td class="kpi-col">Reserve answer rate ≥85% within 30 min of first callout; callout-to-assignment cycle ≤45 min</td>
+        <td class="pain-col">Crew unreachable on personal phones during off-duty sleep periods; no regulatory mandate requiring reserve crew to answer within a defined window in all jurisdictions, creating unpredictable response latency</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Escalate to secondary reserve or open-time board</td>
+        <td class="kpi-col">Secondary escalation resolution ≤45 min; open-time fill rate ≥70% within 60 min of posting</td>
+        <td class="pain-col">Reserve pool exhaustion during cascading IROPS requires manager authorisation to use voluntary overtime; CBA overtime budgets frequently exhausted mid-event, forcing flight cancellations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Validate FAR Part 117 rest requirements</td>
+        <td class="kpi-col">Legality check completion ≤1 min per crew member; 0 illegal pairings assigned per month</td>
+        <td class="pain-col">Rest period calculations for reserve crews differ from lineholder rules under FAR 117; system may not correctly flag cumulative fatigue across split reserve periods (FAR 117.25), requiring manual secondary checks</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Verify aircraft type currency and recency</td>
+        <td class="kpi-col">Zero misassignment events due to lapsed currency; qualification check latency ≤1 min</td>
+        <td class="pain-col">Currency lapses during extended reserve periods not proactively surfaced; recency tracking in Jeppesen relies on accurate and timely training record feeds from the LMS — data latency causes stale qualification status</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Confirm route-specific qualifications (ETOPS/special airports)</td>
+        <td class="kpi-col">Zero ETOPS qualification violations; 100% route compliance rate</td>
+        <td class="pain-col">ETOPS qualification status not always current in crew tracking system due to training record feed delays; manual cross-check with training department adds 10–15 min to assignment cycle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Assign reserve crew to open duty in system</td>
+        <td class="kpi-col">Assignment completion ≤5 min from legality confirmation; roster visibility propagated to all systems ≤2 min post-assignment</td>
+        <td class="pain-col">Simultaneous assignment attempts by multiple schedulers during IROPS cause optimistic locking conflicts in Jeppesen; failed writes require manual retry, adding delay during time-critical coverage windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Notify reserve crew via mobile push notification</td>
+        <td class="kpi-col">Notification delivery ≤2 min of assignment; crew acknowledgment receipt rate ≥92% within 15 min</td>
+        <td class="pain-col">Notification failures when crew device is offline or app version is outdated; no guaranteed delivery SLA from mobile OS push services (APNs/FCM) — silent failures require fallback SMS or phone call</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Brief crew on flight plan, NOTAMs, and special conditions</td>
+        <td class="kpi-col">Briefing completion ≥30 min prior to departure for 100% of reserve activations; zero regulatory briefing compliance failures</td>
+        <td class="pain-col">Reserve crew unfamiliar with last-minute route changes or unfamiliar destination airports; time pressure in IROPS degrades briefing thoroughness, increasing risk of operating with incomplete situational awareness</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Monitor reserve pool utilization in real time</td>
+        <td class="kpi-col">Alert triggered when available reserves ≤20% of pool; dashboard refresh interval ≤5 min</td>
+        <td class="pain-col">Dashboard refresh latency during high-volume IROPS masks true pool depletion until critically low; Jeppesen base module lacks predictive depletion forecast — operational awareness depends on manual monitoring</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Post voluntary extension offer to open-time board</td>
+        <td class="kpi-col">Voluntary coverage fill rate ≥70% within 60 min of posting; overtime authorisation cycle ≤15 min</td>
+        <td class="pain-col">CBA limits on forced extensions restrict scheduler options during IROPS; voluntary overtime budget frequently exhausted during prolonged disruptions, leaving residual open duties uncovered</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Escalate unresolved open duties to NOC for cancellation decision</td>
+        <td class="kpi-col">Escalation-to-decision cycle ≤30 min; cancellation decision communicated to all stakeholders ≤10 min post-decision</td>
+        <td class="pain-col">NOC cancellation decisions during cascading IROPS require simultaneous crew, aircraft, and gate inputs — single-system views in SITA AMS delay decision quality; lack of integrated crew-aircraft-gate dashboard extends resolution time</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Update FTL and fatigue counters post-reserve duty</td>
+        <td class="kpi-col">FTL record update SLA ≤4 hours post-duty completion; 100% record accuracy verified by audit</td>
+        <td class="pain-col">Late inbound flight data delays FTL record updates; accumulated entry errors trigger false legality alerts in the next scheduling cycle, blocking legal crew assignments and requiring manual override</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Analyse reserve utilisation metrics for planning feedback</td>
+        <td class="kpi-col">Monthly report delivered within 5 business days of period close; callout success rate trend ≥95%; report consumed in next planning cycle within 30 days</td>
+        <td class="pain-col">Analytics data latency from Jeppesen to the data warehouse (AWS Redshift) averages 6–12 hours; IROPS events skew utilisation metrics and must be manually isolated from baseline planning to avoid over-provisioning reserve pools</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Day-of-Operations</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+flowchart LR
+  subgraph P1[Phase 1: Reserve Pool Planning]
+    A([Start]) --> B[Compute reserve\ncoverage requirements]
+    B --> C[Allocate reserves\nby base and fleet]
+    C --> D{Pool adequate\nfor coverage?}
+    D -- No --> B
+    D -- Yes --> E[Approve reserve\npool]
+  end
+  subgraph P2[Phase 2: Open Duty and Callout]
+    E --> F[Detect open\ncrew position]
+    F --> G[Query available\nreserves by qual]
+    G --> H[Initiate automated\nreserve callout]
+    H --> I{Reserve answered\nand accepted?}
+    I -- No --> J[Escalate to secondary\nreserve / open time]
+    J --> K{Secondary reserve\navailable?}
+    K -- No --> L([Escalate to NOC])
+    K -- Yes --> M
+    I -- Yes --> M[Proceed to\nlegality check]
+  end
+  subgraph P3[Phase 3: Legality and Qualification]
+    M --> N{FAR 117 rest\nrequirements met?}
+    N -- No --> G
+    N -- Yes --> O{Currency and\nrecency valid?}
+    O -- No --> G
+    O -- Yes --> P[Confirm route\nqualifications]
+  end
+  subgraph P4[Phase 4: Assignment and Briefing]
+    P --> Q[Assign crew to\nopen duty in system]
+    Q --> R[Push notification\nto crew mobile app]
+    R --> S{Crew acknowledged\nassignment?}
+    S -- No --> R
+    S -- Yes --> T[Brief crew on flight\nplan and NOTAMs]
+  end
+  subgraph P5[Phase 5: Reserve Pool Monitoring]
+    T --> U[Monitor reserve\npool utilization]
+    U --> V{Pool below\n20% threshold?}
+    V -- Yes --> W[Post voluntary\nextension offer]
+    W --> X{Voluntary coverage\nsecured?}
+    X -- No --> L
+    X -- Yes --> Y[Continue ops]
+    V -- No --> Y
+  end
+  subgraph P6[Phase 6: Post-Duty Reconciliation]
+    Y --> Z[Update FTL and\nfatigue records]
+    Z --> AA[Analyze reserve\nutilization metrics]
+    AA --> AB([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AB fill:#003366,color:#fff,stroke:#003366
+  style L fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600
