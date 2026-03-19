@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1[Phase 1: Crew Sign-In and Setup]
+    A([Start]) --> B[Sign in and validate\nduty/FTL hours]
+    B --> C{FTL / fatigue\ncheck pass?}
+    C -- Fail --> D([Crew relief /\nflight delay])
+    C -- Pass --> E[Retrieve crew\nbriefing package]
+  end
+
+  subgraph P2[Phase 2: Weather and NOTAM Analysis]
+    E --> F[Review METAR /\nTAF / SIGMETs]
+    F --> G[Assess alternate\nairport requirements]
+    G --> H{Weather acceptable\nfor departure?}
+    H -- No --> I[Request delay\nor reroute]
+    I --> F
+    H -- Yes --> J[Confirm alternate\nselection]
+  end
+
+  subgraph P3[Phase 3: Dispatch Release Review]
+    J --> K[Review dispatch\nrelease and fuel plan]
+    K --> L{Dispatch release\naccepted by crew?}
+    L -- No --> M[Raise amendment\nwith Dispatcher]
+    M --> K
+    L -- Yes --> N[Co-sign dispatch\nrelease]
+  end
+
+  subgraph P4[Phase 4: MEL and Safety Compliance]
+    N --> O[Review MEL / CDL\ndeferred items]
+    O --> P{MEL items\noperationally OK?}
+    P -- No --> Q([Ground aircraft /\nmaintenance hold])
+    P -- Yes --> R[Confirm airworthiness\nstatus]
+  end
+
+  subgraph P5[Phase 5: Aircraft Acceptance and Departure]
+    R --> S[Conduct pre-flight\nwalk-around]
+    S --> T[Confirm final WandB\nload sheet]
+    T --> U[Obtain ATC clearance\nand departure slot]
+    U --> V{Aircraft ready\nfor departure?}
+    V -- No --> W[Hold and resolve\ndiscrepancy]
+    W --> T
+    V -- Yes --> X([Departure\nauthorised])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style D fill:#003366,color:#fff,stroke:#003366
+  style Q fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600

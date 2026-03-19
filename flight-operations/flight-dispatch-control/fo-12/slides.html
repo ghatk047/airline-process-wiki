@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FO-12 Slides — Flight Crew Briefing &amp; Pre-Departure</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-12</span>
+    <h1>Flight Crew Briefing &amp; Pre-Departure</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/fo-12.png" alt="BPMN for FO-12" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-12</span>
+    <h1>Flight Crew Briefing &amp; Pre-Departure</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> FO-12</li>
+          <li><strong>L1 Domain:</strong> Flight Operations</li>
+          <li><strong>L2 Process:</strong> Flight Dispatch &amp; Control</li>
+          <li><strong>L3 Name:</strong> Flight Crew Briefing &amp; Pre-Departure</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">15</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Crew sign-in and duty period validation</li><li><strong>Phase 2:</strong> Review METAR, TAF, and SIGMET reports</li><li><strong>Phase 3:</strong> Review computerised flight plan and fuel load</li><li><strong>Phase 4:</strong> Review NOTAM package for departure and en-route</li><li><strong>Phase 5:</strong> Conduct pre-flight exterior walk-around</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Captain</li><li>Captain / Crew Scheduling</li><li>Captain / Dispatcher</li><li>Captain / First Officer</li><li>Captain / Licensed Dispatcher</li><li>Captain / Load Control</li><li>Captain / Maintenance Control</li><li>First Officer / Captain</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>Amadeus Altéa PSS</li><li>Boeing Toolbox / CAMP</li><li>Honeywell GoDirect</li><li>Jeppesen Crew Management</li><li>Jeppesen FliteDeck</li><li>NAVBLUE</li><li>SITA ACARS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-12</span>
+    <h1>Flight Crew Briefing &amp; Pre-Departure</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Crew sign-in and duty period validation</td>
+        <td class="kpi-col">Sign-in completion ≥30 min prior to departure; FTL compliance 100%</td>
+        <td class="pain-col">FAR Part 117 / EASA FTL limits require real-time cumulative duty tracking across time zones — late roster updates in Jeppesen Crew Management can create compliance gaps at sign-in</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate fatigue risk and FTL compliance</td>
+        <td class="kpi-col">FTL violation rate &lt;0.1% of monthly departures</td>
+        <td class="pain-col">Fatigue Risk Management System (FRMS) data is not always integrated with real-time crew tracking; manual overrides by Crew Scheduling introduce compliance risk during IROPS</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Retrieve and open crew briefing package</td>
+        <td class="kpi-col">Briefing package retrieval within 2 min of sign-in; package currency ≤60 min old at review</td>
+        <td class="pain-col">EFB synchronisation delays on congested airport Wi-Fi (especially at hub gates) can result in crews accessing stale briefing data — no automatic staleness alert in FliteDeck</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Review METAR, TAF, and SIGMET reports</td>
+        <td class="kpi-col">Weather briefing completed ≥20 min before STD; 100% SIGMET acknowledgement logged</td>
+        <td class="pain-col">Rapidly evolving convective SIGMETs issued by NOAA Aviation Weather Center can be uploaded to GoDirect with 10–15 min latency — crew may depart with outdated convective picture</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Assess destination and alternate minima</td>
+        <td class="kpi-col">Correct alternate selected per ICAO Annex 2 / FAR 121.619; fuel-to-alternate margin ≥45 min</td>
+        <td class="pain-col">Low-visibility operations (Cat II/III) require special OpSpecs approval in FAA WebOPSS; not all airports in the network have current CAT II/III plates loaded in FliteDeck for all aircraft types</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Confirm weather acceptable for planned departure</td>
+        <td class="kpi-col">Weather-related departure decision communicated to OCC ≥15 min before STD</td>
+        <td class="pain-col">Dispatcher and Captain may reach independent weather conclusions using different data sources (GoDirect vs airline wx feed) with no reconciliation workflow — leads to coordination delays at the gate</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Review computerised flight plan and fuel load</td>
+        <td class="kpi-col">Flight plan review complete ≥15 min before STD; fuel uplift variance ≤2% vs planned</td>
+        <td class="pain-col">NAVBLUE flight plan generation relies on current NOTAM and airspace restriction feeds; late TFR activations (military, VIP) can invalidate the planned route after the plan has been generated but before crew signs off</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Review dispatch release for regulatory compliance</td>
+        <td class="kpi-col">Dispatch release co-sign rate without amendment ≥92%; amendment resolution time ≤10 min</td>
+        <td class="pain-col">Dispatch releases generated in NAVBLUE are not dynamically linked to MEL deferral records in Boeing Toolbox — Captain must manually cross-check deferred items against the release, increasing error risk under time pressure</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Co-sign dispatch release with Dispatcher</td>
+        <td class="kpi-col">Dispatch release signed ≥10 min before STD; 100% digital co-signature audit trail</td>
+        <td class="pain-col">FAR 121.663 requires both Captain and Dispatcher to hold the release jointly — paper-based release at remote stations without NAVBLUE access creates audit trail gaps and scan-to-file delays</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Review NOTAM package for departure and en-route</td>
+        <td class="kpi-col">NOTAM review complete prior to departure; safety-critical NOTAMs (runway closures, ILS unserviceable) flagged 100%</td>
+        <td class="pain-col">NOTAM volume has increased &gt;300% since 2010 (FAA data); FliteDeck&#x27;s automated filtering still surfaces 80–120 NOTAMs per flight, creating information overload and risk that critical items are missed</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Review MEL and CDL deferred item list</td>
+        <td class="kpi-col">MEL review completion rate 100% prior to boarding; deferral-related delays &lt;0.5% of departures</td>
+        <td class="pain-col">MEL records in Boeing Toolbox are updated by Maintenance Control but real-time sync to crew EFB (FliteDeck) is not guaranteed — crews may board an aircraft unaware of a late deferral logged after their briefing</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Confirm airworthiness release from Maintenance</td>
+        <td class="kpi-col">Maintenance release issued ≥45 min before STD; 100% release traceability in AMOS</td>
+        <td class="pain-col">Maintenance release signature workflows in AMOS require LMB engineer to physically sign the tech log — at outstations without AMOS connectivity, paper tech logs create a digitisation lag and potential duplicate entry errors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Conduct pre-flight exterior walk-around</td>
+        <td class="kpi-col">Walk-around completed ≥30 min before STD; defect-to-report time ≤5 min</td>
+        <td class="pain-col">FliteDeck EFB walk-around checklists are not connected to AMOS defect recording — items found during walk-around must be re-entered manually in the aircraft tech log, creating duplication and potential omission</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Confirm final weight &amp; balance load sheet</td>
+        <td class="kpi-col">Load sheet issued ≤15 min before STD; CG deviation from plan &lt;0.5% MAC</td>
+        <td class="pain-col">Last-minute passenger no-shows or late cargo add-ons require load sheet recalculation in Altéa — under the 10-min gate departure pressure window, rushed W&amp;B recalculations increase the risk of CG errors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Obtain ATC clearance and departure slot</td>
+        <td class="kpi-col">Clearance received ≥5 min before pushback; ATFM slot adherence ≥94%</td>
+        <td class="pain-col">ATFM slot allocations from EUROCONTROL NMOC (or FAA EDCT in North America) are issued dynamically and can shift within the last 10 min — ACARS delivery to cockpit adds latency vs. VHF voice clearance, risking slot miss</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+</body>
+</html>
