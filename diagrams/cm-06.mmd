@@ -1,0 +1,52 @@
+flowchart LR
+  subgraph P1[Phase 1: License Currency Monitoring]
+    A([Start]) --> B[Ingest airman cert data\nfrom FAA IACRA]
+    B --> C{Certificate data\ncurrent and complete?}
+    C -- No --> B
+    C -- Yes --> D[Risk-rank crew by\nexpiry proximity]
+    D --> E[Issue automated\ncrew renewal alert]
+  end
+  subgraph P2[Phase 2: Medical Certificate Management]
+    E --> F[Crew submits MedXpress\nAME application]
+    F --> G[Conduct Class 1\nAME examination]
+    G --> H{Medical cert valid\nunder FAR Part 67?}
+    H -- No --> I[Flag crew for\ngrounding hold]
+    H -- Yes --> J[Upload cert to\nJeppesen crew record]
+  end
+  subgraph P3[Phase 3: Type Rating and Recency Check]
+    J --> K[Query type rating currency\nin Jeppesen Crew Mgmt]
+    K --> L{Recency requirements\nmet per FAR 61.57?}
+    L -- No --> M[Schedule simulator\nproficiency check]
+    M --> L
+    L -- Yes --> N[Confirm qualification\nactive in system]
+  end
+  subgraph P4[Phase 4: Regulatory Cross-Check]
+    N --> O[Cross-ref certs with\nFAA IACRA Airmen Inquiry]
+    O --> P{All certs valid and\nSI conditions cleared?}
+    P -- No --> I
+    P -- Yes --> Q[Update qualification\nmatrix in Jeppesen CM]
+  end
+  subgraph P5[Phase 5: Grounding and Reinstatement]
+    I --> R[Remove crew from active\nschedule in Jeppesen CM]
+    R --> S[Track remediation and\ncert renewal progress]
+    S --> T{Compliance\nrestored?}
+    T -- No --> S
+    T -- Yes --> Q
+  end
+  subgraph P6[Phase 6: Compliance Reporting]
+    Q --> U[Generate certification\ncompliance dashboard]
+    U --> V{Compliance rate\n≥99% threshold met?}
+    V -- No --> W[Flag deficiencies to\nCrew Compliance Mgr]
+    V -- Yes --> X[Export FAA audit\npackage from Tableau]
+    W --> X
+    X --> Y([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600

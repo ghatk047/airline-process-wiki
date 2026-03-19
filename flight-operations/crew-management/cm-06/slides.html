@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-06 Slides — Crew Licensing &amp; Medical Certification</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-06</span>
+    <h1>Crew Licensing &amp; Medical Certification</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-06.png" alt="BPMN for CM-06" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Compliance & Certification</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-06</span>
+    <h1>Crew Licensing &amp; Medical Certification</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-06</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Compliance &amp; Certification</li>
+          <li><strong>L3 Name:</strong> Crew Licensing &amp; Medical Certification</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">12</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Ingest airman certificate data from FAA IACRA</li><li><strong>Phase 2:</strong> Submit MedXpress application for AME examination</li><li><strong>Phase 3:</strong> Query aircraft type rating currency in Jeppesen CM</li><li><strong>Phase 4:</strong> Cross-reference certificates with FAA IACRA Airmen</li><li><strong>Phase 5:</strong> Flag non-compliant crew and initiate grounding hol</li><li><strong>Phase 6:</strong> Generate certification compliance dashboard in Tab</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Aviation Medical Examiner (AME)</li><li>Crew Compliance Analyst</li><li>Crew Compliance Manager</li><li>Crew Compliance System (automated)</li><li>Crew Scheduling Controller</li><li>Crew Training Coordinator</li><li>Flight Crew Member</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>FAA IACRA (Integrated Airman Certification and Rating Application)</li><li>FAA MedXpress</li><li>Jeppesen Crew Management</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Compliance & Certification</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-06</span>
+    <h1>Crew Licensing &amp; Medical Certification</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Ingest airman certificate data from FAA IACRA</td>
+        <td class="kpi-col">Data sync completion rate ≥99.5%; sync latency &lt;4 hours</td>
+        <td class="pain-col">FAA IACRA API throttling during peak batch windows causes stale cert data; no real-time push — polling-only model creates up to 24-hour lag for urgent status changes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Risk-rank crew by certification expiry proximity</td>
+        <td class="kpi-col">100% of crew with expiry &lt;30 days flagged Red; zero missed flags</td>
+        <td class="pain-col">Jeppesen CM risk-ranking logic does not account for Special Issuance (SI) medical conditions with shorter validity windows, causing under-flagging of affected crew</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Issue automated crew renewal notification</td>
+        <td class="kpi-col">Notification delivery rate ≥99%; crew acknowledgement within 5 business days</td>
+        <td class="pain-col">Crew members on extended international layovers or LOA may miss email alerts; no SMS or push notification fallback in current Jeppesen CM configuration</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Submit MedXpress application for AME examination</td>
+        <td class="kpi-col">MedXpress submission completed ≥21 days before certificate expiry</td>
+        <td class="pain-col">MedXpress portal outages during FAA system maintenance windows block submission; crew booking AME appointments within &lt;14 days of expiry creates duty-coverage gaps</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Conduct Class 1 AME physical examination</td>
+        <td class="kpi-col">First-attempt Class 1 pass rate ≥92%; examination cycle time &lt;2 hours</td>
+        <td class="pain-col">Age-40 rule requires captains over 40 to hold Class 1 medical renewed every 6 months (vs. 12 months under 40), doubling administrative burden for senior captain cohort; resource-intensive for AME network</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate medical certificate against FAR Part 67</td>
+        <td class="kpi-col">Validation processing time &lt;24 hours post-examination; Special Issuance cases escalated within 4 hours</td>
+        <td class="pain-col">FAR Part 67 Special Issuance (SI) for conditions such as hypertension or AASM-treated OSA requires FAA Regional Flight Surgeon review averaging 30–90 days, creating extended grounding risk for borderline cases</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Upload validated medical certificate to crew record</td>
+        <td class="kpi-col">Record update latency &lt;2 hours post-certificate issue; zero scheduling errors attributable to stale medical data</td>
+        <td class="pain-col">Manual PDF upload to Jeppesen CM creates transcription error risk; no automated IACRA-to-Jeppesen integration for medical records means dual-entry is required</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Query aircraft type rating currency in Jeppesen CM</td>
+        <td class="kpi-col">Query response time &lt;30 seconds; currency data accuracy ≥99.9% vs. FAA IACRA record</td>
+        <td class="pain-col">B737 MAX 8 return-to-service post-2020 grounding introduced new FCTM differences training requirement tracked outside standard type rating schema in Jeppesen CM, causing manual gap-check overhead</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Verify FAR 61.57 recency requirements for flight ops</td>
+        <td class="kpi-col">100% of crew checked for recency currency before schedule publication; zero recency violations detected post-assignment</td>
+        <td class="pain-col">FAR 61.57(d) instrument currency requires 6 approaches in 6 months; crew returning from extended medical leave frequently have lapsed IFR currency not flagged until check-in, requiring last-minute schedule swaps</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Schedule simulator proficiency check for lapsed recency</td>
+        <td class="kpi-col">Simulator slot secured within 10 business days of recency lapse identified; no-show rate &lt;3%</td>
+        <td class="pain-col">Simulator capacity at airline training centres is shared with initial qualification training; short-notice recency check bookings are frequently bumped, extending grounding duration and creating crew shortage risk on high-frequency routes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Cross-reference certificates with FAA IACRA Airmen Inquiry</td>
+        <td class="kpi-col">100% of active crew cross-referenced monthly; discrepancy detection rate &gt;95% vs. manual audit</td>
+        <td class="pain-col">IACRA Airmen Inquiry public API does not expose enforcement action flags or certificate surrender status in real time; airlines must rely on PRIA (Pilot Records Improvement Act) database for hiring but have no automated ongoing pull for current employees</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Verify Special Issuance conditions and SODA exemptions</td>
+        <td class="kpi-col">100% of crew with active SI conditions reviewed quarterly; zero SI deadline breaches</td>
+        <td class="pain-col">Special Issuance conditions (e.g., post-cardiac event, CPAP therapy compliance) carry individual FAA-imposed timelines and monitoring requirements; tracking these in a generic crew management system without structured SI workflow fields leads to missed review deadlines</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Update crew qualification matrix with verified certifications</td>
+        <td class="kpi-col">Qualification matrix updated within 4 hours of verification completion; scheduling system sync lag &lt;1 hour</td>
+        <td class="pain-col">Qualification matrix updates in Jeppesen CM do not automatically propagate to codeshare partner crew systems, requiring manual data exchange for any interline or wet-lease arrangements</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Flag non-compliant crew and initiate grounding hold</td>
+        <td class="kpi-col">Grounding hold applied within 2 hours of compliance failure detection; zero non-compliant crew departing on scheduled flights</td>
+        <td class="pain-col">Grounding holds in Jeppesen CM do not automatically trigger crew pay adjustment workflow in SAP SuccessFactors; manual payroll correction required for grounded crew on paid leave status, creating HR disputes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Remove crew from active schedule and source replacement</td>
+        <td class="kpi-col">Replacement crew sourced within 3 hours of grounding notification; schedule disruption rate &lt;1% attributable to certification grounding</td>
+        <td class="pain-col">Reserve crew pools sized for weather/irregular operations events — simultaneous grounding of multiple crew for certification non-compliance (e.g., post-audit sweep) can exhaust reserve capacity on thin-coverage focus city stations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Track remediation progress and certification renewal</td>
+        <td class="kpi-col">Average grounding duration &lt;14 days for medical renewal cases; &lt;7 days for recency cases</td>
+        <td class="pain-col">Jeppesen CM has no structured remediation workflow module; compliance analysts track grounding cases in spreadsheets outside the system, creating audit trail gaps and no automated escalation if remediation stalls beyond SLA</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.4</td>
+        <td>Restore crew to active status and release scheduling block</td>
+        <td class="kpi-col">Reinstatement processing time &lt;2 hours after compliance confirmed; zero scheduling errors on reinstatement day</td>
+        <td class="pain-col">Reinstatement requires manual dual-approval (Crew Compliance Manager + Chief Pilot) with no digital workflow; paper sign-off process creates delays when approvers are on-duty in different time zones</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Generate certification compliance dashboard in Tableau</td>
+        <td class="kpi-col">Dashboard refresh latency &lt;4 hours; fleet-wide certification compliance rate KPI target ≥99.0%</td>
+        <td class="pain-col">Tableau dashboard relies on manual Jeppesen CM data exports rather than live API feed; stale data during audits or regulatory inspections undermines credibility with FAA Principal Operations Inspector (POI)</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Export FAA regulatory audit package and file deviations</td>
+        <td class="kpi-col">Audit package prepared within 24 hours of FAA request; zero open compliance findings older than 30 days</td>
+        <td class="pain-col">Aviation Safety Action Program (ASAP) event reporting for certification deviations is voluntary and narrative-based; without structured data capture in Jeppesen CM, root cause trending across deviation events requires labour-intensive manual analysis</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Compliance & Certification</span>
+  </div>
+</div>
+
+</body>
+</html>

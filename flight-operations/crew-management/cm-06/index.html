@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Human Resources · Corporate Support Functions · Airlines Process Wiki</title>
+<title>CM-06 · Crew Licensing &amp; Medical Certification · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Crew Management</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -147,7 +148,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-03/"><span class="status-dot status-done"></span><span class="pid">CM-03</span>Crew Day-of-Operations Tracking</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-04/"><span class="status-dot status-done"></span><span class="pid">CM-04</span>Fatigue &amp; Rest Rule Compliance (FAR Part 117)</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-05/"><span class="status-dot status-done"></span><span class="pid">CM-05</span>Crew Training &amp; Recurrency Management</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-06/"><span class="status-dot status-done"></span><span class="pid">CM-06</span>Crew Licensing &amp; Medical Certification</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/crew-management/cm-06/"><span class="status-dot status-done"></span><span class="pid">CM-06</span>Crew Licensing &amp; Medical Certification</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-07/"><span class="status-dot status-queue"></span><span class="pid">CM-07</span>Reserve Crew Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-08/"><span class="status-dot status-queue"></span><span class="pid">CM-08</span>Crew Hotel &amp; Transportation Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-09/"><span class="status-dot status-queue"></span><span class="pid">CM-09</span>Cabin Crew Service Standards &amp; Training</a>
@@ -213,8 +214,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-queue"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
@@ -242,54 +243,268 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Corporate Support Functions</a><span class="sep">›</span>
-  <span class="current">Human Resources</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Crew Management</a><span class="sep">›</span>
+  <a href="../../../flight-operations/crew-management/">Crew Compliance &amp; Certification</a><span class="sep">›</span>
+  <span class="current">CM-06 · Crew Licensing &amp; Medical Certification</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Human Resources</h1>
-    <p>Corporate Support Functions · 0 of 4 subprocesses complete · Updated 2026-03-19 10:30</p>
+    <h1>Crew Licensing &amp; Medical Certification</h1>
+    <p>Crew Management › Crew Compliance &amp; Certification · 19 L4 steps · 6 phases · 6 decision gates · Updated 2026-03-19 10:30</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CM-06</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-04</span>Workforce Planning &amp; Headcount Management</h3>
-    <p>Human Resources · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cm-06">
+      <img src="../../../assets/img/cm-06.png" alt="CM-06 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cm-06').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cm-06').style.display='flex'">
+      <div id="diag-placeholder-cm-06" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-04/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Ingest airman certificate data from FAA IACRA</td>
+  <td class="td-role">Crew Compliance Analyst</td>
+  <td><span class="stag noc">FAA IACRA (Integrated Airman Certification and Rating Application)</span></td>
+  <td style="font-size:10px;color:#6b7280">Scheduled nightly sync trigger from FAA IACRA API</td>
+  <td style="font-size:10px">Refreshed airman certificate dataset with ATP, type rating, and medical records</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data sync completion rate ≥99.5%; sync latency &lt;4 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Risk-rank crew by certification expiry proximity</td>
+  <td class="td-role">Crew Compliance Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Refreshed IACRA certificate dataset; crew scheduling horizon (90-day window)</td>
+  <td style="font-size:10px">Risk-ranked crew list: Red (expiry &lt;30 days), Amber (30–60 days), Green (&gt;60 days)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of crew with expiry &lt;30 days flagged Red; zero missed flags</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Issue automated crew renewal notification</td>
+  <td class="td-role">Crew Compliance System (automated)</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Risk-ranked crew list with Red/Amber flags</td>
+  <td style="font-size:10px">Automated email and in-app notification to crew member and Chief Pilot with renewal deadlines and action links</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Notification delivery rate ≥99%; crew acknowledgement within 5 business days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Submit MedXpress application for AME examination</td>
+  <td class="td-role">Flight Crew Member</td>
+  <td><span class="stag noc">FAA MedXpress</span></td>
+  <td style="font-size:10px;color:#6b7280">Crew renewal notification; upcoming medical certificate expiry date</td>
+  <td style="font-size:10px">Completed FAA Form 8500-8 application submitted to designated AME; confirmation number issued</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">MedXpress submission completed ≥21 days before certificate expiry</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Conduct Class 1 AME physical examination</td>
+  <td class="td-role">Aviation Medical Examiner (AME)</td>
+  <td><span class="stag noc">FAA MedXpress</span></td>
+  <td style="font-size:10px;color:#6b7280">FAA Form 8500-8; crew member presenting at AME office</td>
+  <td style="font-size:10px">Completed physical examination; AME determination recorded in MedXpress</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">First-attempt Class 1 pass rate ≥92%; examination cycle time &lt;2 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Validate medical certificate against FAR Part 67</td>
+  <td class="td-role">Crew Compliance Analyst</td>
+  <td><span class="stag noc">FAA MedXpress</span></td>
+  <td style="font-size:10px;color:#6b7280">AME examination result and MedXpress determination</td>
+  <td style="font-size:10px">Medical certificate issued (valid) or Special Issuance referral / denial issued</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Validation processing time &lt;24 hours post-examination; Special Issuance cases escalated within 4 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Upload validated medical certificate to crew record</td>
+  <td class="td-role">Crew Compliance Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Issued FAA First-Class medical certificate PDF; validation confirmation from MedXpress</td>
+  <td style="font-size:10px">Updated crew qualification record in Jeppesen CM with new medical expiry date; scheduling constraints lifted</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Record update latency &lt;2 hours post-certificate issue; zero scheduling errors attributable to stale medical data</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Query aircraft type rating currency in Jeppesen CM</td>
+  <td class="td-role">Crew Compliance Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Updated crew record; assigned aircraft type (B737-700 / B737-800 / B737 MAX 8)</td>
+  <td style="font-size:10px">Type rating currency report showing rating issue date, expiry, and recency event log</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Query response time &lt;30 seconds; currency data accuracy ≥99.9% vs. FAA IACRA record</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Verify FAR 61.57 recency requirements for flight ops</td>
+  <td class="td-role">Crew Compliance Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Type rating currency report; recent flight log data from crew tracking module</td>
+  <td style="font-size:10px">Recency compliance determination: compliant or lapsed for each currency category (takeoff/landing, IFR, PIC)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of crew checked for recency currency before schedule publication; zero recency violations detected post-assignment</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Schedule simulator proficiency check for lapsed recency</td>
+  <td class="td-role">Crew Training Coordinator</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Recency lapse determination; simulator availability calendar</td>
+  <td style="font-size:10px">Simulator proficiency check event booked in Jeppesen CM; crew notified with date, location, and evaluator</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Simulator slot secured within 10 business days of recency lapse identified; no-show rate &lt;3%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Cross-reference certificates with FAA IACRA Airmen Inquiry</td>
+  <td class="td-role">Crew Compliance Analyst</td>
+  <td><span class="stag noc">FAA IACRA (Integrated Airman Certification and Rating Application)</span></td>
+  <td style="font-size:10px;color:#6b7280">Crew qualification records from Jeppesen CM; FAA certificate numbers</td>
+  <td style="font-size:10px">IACRA cross-reference report confirming or flagging discrepancies in ATP, type rating, and medical certificate status</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of active crew cross-referenced monthly; discrepancy detection rate &gt;95% vs. manual audit</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Verify Special Issuance conditions and SODA exemptions</td>
+  <td class="td-role">Crew Compliance Manager</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">IACRA cross-reference report; crew medical history flags; FAA SI letter on file</td>
+  <td style="font-size:10px">SI compliance verification: conditions met, or deviation requiring FAA Regional Flight Surgeon follow-up identified</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of crew with active SI conditions reviewed quarterly; zero SI deadline breaches</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Update crew qualification matrix with verified certifications</td>
+  <td class="td-role">Crew Compliance Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">IACRA cross-reference report; SI compliance verification; proficiency check results</td>
+  <td style="font-size:10px">Fully updated crew qualification matrix; scheduling system reflects current authorised aircraft types and positions</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Qualification matrix updated within 4 hours of verification completion; scheduling system sync lag &lt;1 hour</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Flag non-compliant crew and initiate grounding hold</td>
+  <td class="td-role">Crew Compliance Manager</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Compliance failure flag from certification validation or IACRA cross-reference</td>
+  <td style="font-size:10px">Grounding hold applied in Jeppesen CM; crew member status set to NOT QUALIFIED; Chief Pilot and Crew Scheduling notified</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Grounding hold applied within 2 hours of compliance failure detection; zero non-compliant crew departing on scheduled flights</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Remove crew from active schedule and source replacement</td>
+  <td class="td-role">Crew Scheduling Controller</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Grounding hold notification; affected flight assignments; available reserve crew list</td>
+  <td style="font-size:10px">Affected flights reassigned or covered by reserve crew; operational disruption minimised</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Replacement crew sourced within 3 hours of grounding notification; schedule disruption rate &lt;1% attributable to certification grounding</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Track remediation progress and certification renewal</td>
+  <td class="td-role">Crew Compliance Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Grounding hold record; crew member self-reported remediation milestones; AME/simulator confirmations</td>
+  <td style="font-size:10px">Remediation tracking log with milestone dates; estimated return-to-duty date communicated to Crew Scheduling</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Average grounding duration &lt;14 days for medical renewal cases; &lt;7 days for recency cases</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.4</td>
+  <td class="td-name">Restore crew to active status and release scheduling block</td>
+  <td class="td-role">Crew Compliance Manager</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed certification compliance from remediation tracking; updated qualification matrix</td>
+  <td style="font-size:10px">Grounding hold lifted; crew status restored to QUALIFIED; crew available for scheduling from next bid period or immediate standby</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Reinstatement processing time &lt;2 hours after compliance confirmed; zero scheduling errors on reinstatement day</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Generate certification compliance dashboard in Tableau</td>
+  <td class="td-role">Crew Compliance Manager</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Qualification matrix export from Jeppesen CM; grounding event log; remediation tracking data</td>
+  <td style="font-size:10px">Live certification compliance dashboard showing fleet-wide expiry profile, grounding incidents, and trend lines by certificate type</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Dashboard refresh latency &lt;4 hours; fleet-wide certification compliance rate KPI target ≥99.0%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Export FAA regulatory audit package and file deviations</td>
+  <td class="td-role">Crew Compliance Manager</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Certification compliance dashboard; grounding and reinstatement event log; corrective action records</td>
+  <td style="font-size:10px">Regulatory audit package (PDF + CSV) ready for FAA POI review; deviation reports filed via ASAP program if compliance threshold breached</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Audit package prepared within 24 hours of FAA request; zero open compliance findings older than 30 days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-05</span>Talent Acquisition &amp; Recruitment</h3>
-    <p>Human Resources · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CM-06</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Crew Management</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Crew Compliance &amp; Certification</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Crew Licensing &amp; Medical Certification</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">19 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">6 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">12 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Crew Compliance Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Crew Compliance System (automated)</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Flight Crew Member</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Aviation Medical Examiner (AME)</div><div class="swim"><div class="dot" style="background:#10b981"></div>Crew Training Coordinator</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Crew Compliance Manager</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Crew Scheduling Controller</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag noc">FAA IACRA (Integrated Airman Certification and Rating Application)</span><span class="stag custom">Jeppesen Crew Management</span><span class="stag noc">FAA MedXpress</span><span class="stag custom">Tableau</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Ingest airman certificate data from FAA IACRA</span><span class="kval">Data sync completion rate ≥99.5%; sync latency &lt;4 hours</span></div><div class="krow"><span class="kname">Risk-rank crew by certification expiry proximity</span><span class="kval">100% of crew with expiry &lt;30 days flagged Red; zero missed flags</span></div><div class="krow"><span class="kname">Issue automated crew renewal notification</span><span class="kval">Notification delivery rate ≥99%; crew acknowledgement within 5 business days</span></div><div class="krow"><span class="kname">Submit MedXpress application for AME examination</span><span class="kval">MedXpress submission completed ≥21 days before certificate expiry</span></div><div class="krow"><span class="kname">Conduct Class 1 AME physical examination</span><span class="kval">First-attempt Class 1 pass rate ≥92%; examination cycle time &lt;2 hours</span></div><div class="krow"><span class="kname">Validate medical certificate against FAR Part 67</span><span class="kval">Validation processing time &lt;24 hours post-examination; Special Issuance cases escalated within 4 hours</span></div><div class="krow"><span class="kname">Upload validated medical certificate to crew record</span><span class="kval">Record update latency &lt;2 hours post-certificate issue; zero scheduling errors attributable to stale medical data</span></div><div class="krow"><span class="kname">Query aircraft type rating currency in Jeppesen CM</span><span class="kval">Query response time &lt;30 seconds; currency data accuracy ≥99.9% vs. FAA IACRA record</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">FAA IACRA API throttling during peak batch windows causes stale cert data; no real-time push — polling-only model creates up to 24-hour lag for urgent status changes</div><div class="risk-card">Jeppesen CM risk-ranking logic does not account for Special Issuance (SI) medical conditions with shorter validity windows, causing under-flagging of affected crew</div><div class="risk-card">Crew members on extended international layovers or LOA may miss email alerts; no SMS or push notification fallback in current Jeppesen CM configuration</div><div class="risk-card">MedXpress portal outages during FAA system maintenance windows block submission; crew booking AME appointments within &lt;14 days of expiry creates duty-coverage gaps</div><div class="risk-card">Age-40 rule requires captains over 40 to hold Class 1 medical renewed every 6 months (vs. 12 months under 40), doubling administrative burden for senior captain cohort; resource-intensive for AME network</div><div class="risk-card">FAR Part 67 Special Issuance (SI) for conditions such as hypertension or AASM-treated OSA requires FAA Regional Flight Surgeon review averaging 30–90 days, creating extended grounding risk for borderline cases</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Scheduled nightly sync trigger from FAA IACRA API</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Regulatory audit package (PDF + CSV) ready for FAA POI review; deviation reports filed via ASAP program if compliance threshold breached</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-06</span>Learning &amp; Development Management</h3>
-    <p>Human Resources · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-07</span>Labour Relations &amp; Union Negotiation</h3>
-    <p>Human Resources · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-07/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cm-05/"><span class="arrow">←</span><span><span class="sub">Previous</span>CM-05 · Crew Training &amp; Recurrency Management</span></a><a class="pn-btn" href="../cm-07/"><span><span class="sub">Next</span>CM-07 · Reserve Crew Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
