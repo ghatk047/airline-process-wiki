@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-PF-11 Slides — Ancillary Pricing (Bags, Seats, Meals)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-11</span>
+    <h1>Ancillary Pricing (Bags, Seats, Meals)</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-pf-11.png" alt="BPMN for NP-PF-11" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-11</span>
+    <h1>Ancillary Pricing (Bags, Seats, Meals)</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-PF-11</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Pricing &amp; Fare Management</li>
+          <li><strong>L3 Name:</strong> Ancillary Pricing (Bags, Seats, Meals)</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">15</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Benchmark competitor ancillary fee schedule</li><li><strong>Phase 2:</strong> Define ancillary product catalogue</li><li><strong>Phase 3:</strong> Prepare ATPCO Optional Services (OS) filing</li><li><strong>Phase 4:</strong> Configure ancillary upsell flows on .com and app</li><li><strong>Phase 5:</strong> Monitor ancillary attach rates and revenue daily</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Ancillary Product Manager</li><li>Ancillary Revenue Analyst</li><li>Digital Product Manager</li><li>Distribution IT Analyst</li><li>Fare Filing Analyst</li><li>Fare Filing Analyst / IT Distribution Analyst</li><li>Head of Ancillary Revenue</li><li>Head of Ancillary Revenue / Pricing Analyst</li><li>Revenue Accounting Analyst</li><li>Revenue Management Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO Filing Portal</li><li>ATPCO Filing Portal (Optional Services module)</li><li>ATPCO Insights / OAG Schedule Analyser</li><li>AWS Redshift / Tableau</li><li>AWS Redshift / Tableau / ATPCO Filing Portal</li><li>Amadeus Altéa PSS (Service Catalogue module)</li><li>Amadeus Altéa PSS / NDC API Gateway</li><li>Amadeus Revenue Management (NRM)</li><li>Amadeus Revenue Management (NRM) / Amadeus Altéa PSS</li><li>IATA BSP Link / ARC (US domestic) / Amadeus Altéa PSS</li><li>Microsoft PowerPoint / SharePoint (strategy documentation)</li><li>NDC API Gateway / Sabre GDS / Travelport GDS / Amadeus GDS</li><li>Sabre TQT / Travelport Smartpoint (test environments)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-11</span>
+    <h1>Ancillary Pricing (Bags, Seats, Meals)</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Benchmark competitor ancillary fee schedule</td>
+        <td class="kpi-col">Coverage of ≥10 competitive carriers; report delivered within 5 business days of cycle start</td>
+        <td class="pain-col">ATPCO OS data does not always reflect actual displayed fees — airlines use waivers and loyalty exemptions that are not filed, understating true competitive price levels</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Analyse ancillary revenue performance by category</td>
+        <td class="kpi-col">Ancillary revenue per passenger ≥$35 (IATA industry benchmark); dashboard refreshed daily</td>
+        <td class="pain-col">EMD settlement data from GDS channels lags 24–48 hrs; real-time ancillary revenue visibility is unavailable, complicating intra-cycle performance management</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Define ancillary pricing strategy and targets</td>
+        <td class="kpi-col">Strategy approved by Revenue Committee within 5 business days; targets set for all three ancillary categories</td>
+        <td class="pain-col">Ancillary pricing strategy must align with fare bundle strategy — misalignment (e.g., raising bag fees while lowering bundle price) causes customer confusion and internal revenue dilution</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Define ancillary product catalogue</td>
+        <td class="kpi-col">Product catalogue covers ≥95% of ancillary revenue categories; catalogue configuration change lead time ≤7 calendar days</td>
+        <td class="pain-col">Altéa Service Catalogue configuration changes require IT change-request tickets — average lead time of 5–7 days restricts rapid ancillary product launches or emergency price corrections</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Configure dynamic seat pricing tiers</td>
+        <td class="kpi-col">Seat ancillary attach rate ≥30% of eligible bookings; seat revenue uplift ≥5% vs prior pricing cycle</td>
+        <td class="pain-col">Dynamic seat pricing rules in Altéa are statically mapped per fare class — true O&amp;D-based dynamic seat pricing requires NRM integration that is not available across all GDS distribution channels, creating channel price inconsistency</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Design ancillary bundle offers (fare + ancillary)</td>
+        <td class="kpi-col">Bundle attach rate ≥20% of total bookings; bundle revenue uplift ≥8% vs unbundled equivalent</td>
+        <td class="pain-col">NDC bundle content is not consistently rendered in legacy GDS channels — Sabre and Travelport display gaps force manual workarounds and create a two-tier customer experience that advantages direct channel</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Prepare ATPCO Optional Services (OS) filing</td>
+        <td class="kpi-col">ATPCO OS filing accuracy ≥99.5% (zero mis-filed sub-codes); filing submitted ≥3 business days before effective date</td>
+        <td class="pain-col">ATPCO OS sub-code taxonomy covers 500+ codes; incorrect sub-code selection causes downstream EMD settlement failures, revenue leakage, and potential debit memos from GDS interline partners</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Validate OS filing for GDS EMD compatibility</td>
+        <td class="kpi-col">EMD test pass rate 100% across all three GDS environments before production go-live</td>
+        <td class="pain-col">EMD settlement rules differ between Sabre and Travelport — an OS code that settles correctly in Sabre may require a separate S7 record variant in Travelport, requiring duplicate filing effort and extended test cycles</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Publish ancillary OS records to effective date</td>
+        <td class="kpi-col">Effective date accuracy 100%; publication lead time compliance 100% (minimum 3-day ATPCO advance notice)</td>
+        <td class="pain-col">ATPCO publish-to-effective minimum lead time is 3 business days — last-minute commercial decisions (e.g., flash promotional bag fee waivers) cannot be accommodated through standard ATPCO filing, requiring PSS-side workarounds</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Configure ancillary upsell flows on .com and app</td>
+        <td class="kpi-col">.com ancillary attach rate ≥45% of web bookings; mobile app attach rate ≥35%</td>
+        <td class="pain-col">A/B testing ancillary upsell placement requires a separate web analytics platform — correlation with PSS ancillary sales data is manual, making attribution of revenue lift to specific UX changes unreliable</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Load ancillary offers via NDC API for OTA/TMC</td>
+        <td class="kpi-col">NDC ancillary offer API response time ≤800 ms p95; NDC ancillary availability to connected agencies ≥90%</td>
+        <td class="pain-col">NDC adoption by TMCs remains below 30% industry-wide — the majority of corporate bookings still flow via EDIFACT GDS with limited ancillary display, creating a structural ancillary revenue gap in the corporate channel</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Configure EMD-S/A settlement in BSP and ARC</td>
+        <td class="kpi-col">EMD settlement error rate &lt;0.1% of issued EMDs; EMD reconciliation completed within 48 hrs of issuance</td>
+        <td class="pain-col">EMD-A (associated with a ticket coupon) vs EMD-S (standalone) distinction is frequently misconfigured — incorrect type selection causes revenue leakage, reimbursement disputes with travel agents, and regulatory non-compliance with IATA Resolution 722f</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Monitor ancillary attach rates and revenue daily</td>
+        <td class="kpi-col">Ancillary revenue per passenger ≥$35; bag attach rate ≥55%; seat attach rate ≥30%; meal pre-order attach rate ≥10% on eligible routes</td>
+        <td class="pain-col">EMD data reconciliation between PSS and BSP/ARC settlement takes 48–72 hrs — ancillary revenue reporting is not real-time, delaying detection of attach rate drops or pricing anomalies until the following business day</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Apply dynamic seat pricing adjustments by flight</td>
+        <td class="kpi-col">Seat ancillary revenue per ASM uplift ≥5% vs static pricing baseline; dynamic rule execution latency ≤15 min post load-factor update</td>
+        <td class="pain-col">NRM dynamic seat pricing recommendations require manual implementation in Altéa for live flights — automated rule execution is not available, creating a lag between RM recommendation and price update that reduces revenue capture on high-demand departures</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Conduct quarterly ancillary price review</td>
+        <td class="kpi-col">Quarterly review completed within 10 business days of quarter end; approved price changes implemented within 5 business days</td>
+        <td class="pain-col">Frequent ancillary price changes require repeated individual ATPCO OS sub-code filings — no bulk-update mechanism exists, making large-scale fee restructures (e.g., repricing all 500+ OS sub-codes) operationally prohibitive within standard review cycles</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+</body>
+</html>

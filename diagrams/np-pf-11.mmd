@@ -1,0 +1,48 @@
+flowchart LR
+  subgraph P1["Phase 1: Strategy & Benchmarking"]
+    A([Start]) --> B[Benchmark competitor\nancillary fees]
+    B --> C[Analyse ancillary\nrevenue by category]
+    C --> D{Strategy approved\nby Rev Committee?}
+    D -- No --> C
+    D -- Yes --> E[Ancillary pricing\nstrategy document]
+  end
+  subgraph P2["Phase 2: Product & Bundle Design"]
+    E --> F[Define product\ncatalogue]
+    F --> G{Seat pricing within\napproved range?}
+    G -- No --> F
+    G -- Yes --> H[Design ancillary\nbundle offers]
+  end
+  subgraph P3["Phase 3: ATPCO Filing & Compliance"]
+    H --> I[Prepare ATPCO OS\nfiling — S5/S7/T183]
+    I --> J{Sub-codes correctly\nmapped?}
+    J -- No --> I
+    J -- Yes --> K[Validate EMD\nGDS compatibility]
+    K --> L{EMD tests passed\nall channels?}
+    L -- No --> I
+    L -- Yes --> M[Publish OS records\nto effective date]
+  end
+  subgraph P4["Phase 4: Channel Distribution"]
+    M --> N[Configure .com/app\nupsell flows]
+    N --> O{NDC schema valid\nvs IATA 21.3?}
+    O -- No --> N
+    O -- Yes --> P[Configure EMD-S/A\nBSP/ARC settlement]
+  end
+  subgraph P5["Phase 5: Dynamic Pricing & Optimisation"]
+    P --> Q[Monitor attach rates\n& ancillary revenue]
+    Q --> R{Seat price within\nmin/max guardrails?}
+    R -- No --> Q
+    R -- Yes --> S[Quarterly ancillary\nprice review]
+    S --> T{Price change\napproved?}
+    T -- No --> S
+    T -- Yes --> U([End: ATPCO\nre-filing])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
