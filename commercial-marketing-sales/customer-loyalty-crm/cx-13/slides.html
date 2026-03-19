@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-13 Slides — Co-Brand Credit Card Partnership Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-13</span>
+    <h1>Co-Brand Credit Card Partnership Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-13.png" alt="BPMN for CX-13" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Loyalty Programme Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-13</span>
+    <h1>Co-Brand Credit Card Partnership Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-13</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Loyalty Programme Management</li>
+          <li><strong>L3 Name:</strong> Co-Brand Credit Card Partnership Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">12</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Evaluate co-brand bank partner candidates</li><li><strong>Phase 2:</strong> Define card tier earn rates and bonus categories</li><li><strong>Phase 3:</strong> Receive daily transaction file from bank partner</li><li><strong>Phase 4:</strong> Execute co-brand card acquisition campaign</li><li><strong>Phase 5:</strong> Reconcile miles sold to bank vs miles posted</li><li><strong>Phase 6:</strong> Generate quarterly partnership performance report</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Loyalty Analytics Manager</li><li>Loyalty Data Engineer</li><li>Loyalty Finance Analyst</li><li>Loyalty Marketing Manager</li><li>Loyalty Operations Analyst</li><li>Loyalty Partnerships Director</li><li>Loyalty Product Manager</li><li>Loyalty QA Analyst</li><li>Loyalty Systems Engineer</li><li>Loyalty Technology Lead</li><li>VP Loyalty &amp; Commercial Partnerships</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift</li><li>AWS S3</li><li>Amadeus Altéa PSS</li><li>Comarch Loyalty Management</li><li>NDC API Gateway</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Salesforce CRM</li><li>Salesforce Marketing Cloud</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Loyalty Programme Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-13</span>
+    <h1>Co-Brand Credit Card Partnership Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Evaluate co-brand bank partner candidates</td>
+        <td class="kpi-col">Partner evaluation cycle ≤60 days; minimum 3 candidates scored</td>
+        <td class="pain-col">Airline loyalty platforms (e.g., Comarch Loyalty) lack native RFP workflow tooling — scoring is manual in spreadsheets, creating audit gaps for legal review</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Negotiate revenue-share and miles pricing terms</td>
+        <td class="kpi-col">Miles CPM negotiated ≥$0.011 per mile; sign-up bonus cost per card ≤$120</td>
+        <td class="pain-col">Breakage assumptions differ between airline actuary and bank models — misalignment inflates miles liability on SAP S/4HANA FI balance sheet by up to 15%</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Execute partnership agreement and integration SLA</td>
+        <td class="kpi-col">Contract execution ≤90 days from term sheet; SLA uptime commitment ≥99.5%</td>
+        <td class="pain-col">PCI-DSS and GDPR/CCPA data-sharing clauses require iterative legal review — delays frequently push launch dates 4–8 weeks beyond plan</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Define card tier earn rates and bonus categories</td>
+        <td class="kpi-col">Earn rate design approved by actuary within 10 business days; ≥3 spend bonus categories defined</td>
+        <td class="pain-col">Earn rule complexity (dining, travel, grocery multipliers) creates combinatorial edge cases in Comarch rule engine — insufficient QA leads to overpayment incidents</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Configure earn rules in loyalty management platform</td>
+        <td class="kpi-col">Rule configuration UAT pass rate ≥98%; zero overpayment defects in regression suite</td>
+        <td class="pain-col">BIN range changes during card reissue cycles (e.g., chip migration) are not proactively communicated by Visa/Mastercard — stale BIN mapping causes missed miles posts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate earn rules against PSS booking data</td>
+        <td class="kpi-col">Miles earn accuracy ≥99.9% in UAT; &lt;5 exception cases per 1,000 test transactions</td>
+        <td class="pain-col">Altéa loyalty module integration requires custom API adapter for co-brand transactions — adapter versioning lags Altéa PSS upgrades, causing earn rule regressions post-patch</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Certify integration with bank card processor</td>
+        <td class="kpi-col">Certification completed ≤30 days; API response latency ≤200ms p99</td>
+        <td class="pain-col">Bank processor certification environments are infrequently refreshed — test data does not reflect production edge cases, leading to post-launch transaction failures</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Receive daily transaction file from bank partner</td>
+        <td class="kpi-col">File receipt by 06:00 local time daily; file completeness ≥99.95% of expected records</td>
+        <td class="pain-col">Bank SFTP file delivery SLAs are frequently breached (5–10 min late) — cascading delay into daily miles posting batch impacts member experience for same-day redemptions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Match cardholder to loyalty programme member</td>
+        <td class="kpi-col">Member match rate ≥99.2%; unmatched queue resolved within 48 hours</td>
+        <td class="pain-col">Name discrepancies between bank card embossing (legal name) and loyalty profile (preferred name) cause false negatives — no automated fuzzy-match in current Comarch-Redshift pipeline</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Calculate miles earned per matched transaction</td>
+        <td class="kpi-col">Miles calculation accuracy ≥99.99%; batch processing completed within 2 hours of file receipt</td>
+        <td class="pain-col">MCC mapping inconsistencies from Visa/Mastercard network (e.g., new fintech merchants with catch-all MCCs) result in incorrect bonus tier application — no real-time MCC correction feed</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Post miles to member loyalty account</td>
+        <td class="kpi-col">Miles posting within 24 hours of transaction date; member notification sent ≤1 hour post-post</td>
+        <td class="pain-col">Suspended accounts (fraud hold by bank) do not trigger Comarch status sync — miles post to suspended accounts creating redemption liability that cannot be fulfilled</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Execute co-brand card acquisition campaign</td>
+        <td class="kpi-col">Campaign conversion rate ≥2.5% of targeted members; cost per new card account ≤$85</td>
+        <td class="pain-col">Boarding pass insert channel requires coordination with PSS vendor (Altéa) for printing logic — lead time is 6 weeks, making last-minute promotional changes impossible</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Validate welcome bonus eligibility for new cardholders</td>
+        <td class="kpi-col">Welcome bonus activation within 5 business days of threshold met; ≤0.1% erroneous bonus grants</td>
+        <td class="pain-col">Bank spend threshold data arrives in arrears (T+3 days) — members who query missing welcome bonus generate high CSAT complaints before data is available</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Activate welcome bonus miles for eligible cardholders</td>
+        <td class="kpi-col">Welcome bonus credited ≤24 hours of eligibility approval; zero duplicate grants in batch</td>
+        <td class="pain-col">Idempotency controls in Comarch bonus posting API are not enforced at the bank feed layer — duplicate activation events from bank cause double-grant incidents requiring costly manual reversal</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Reconcile miles sold to bank vs miles posted</td>
+        <td class="kpi-col">Monthly reconciliation variance ≤0.05% of total miles posted; reconciliation completed by day 5 of following month</td>
+        <td class="pain-col">SAP FI miles liability account uses standard cost per mile — market-rate fluctuations in miles CPM are not reflected until year-end revaluation, distorting monthly P&amp;L by up to $2M</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Invoice bank partner for miles purchased</td>
+        <td class="kpi-col">Invoice issued within 3 business days of reconciliation sign-off; DSO ≤35 days</td>
+        <td class="pain-col">Bank disputes over MCC-categorised bonus miles (billed at higher CPM) are frequent — lack of automated MCC audit trail in SAP AR module prolongs dispute resolution to 60+ days</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Generate quarterly partnership performance report</td>
+        <td class="kpi-col">Active cardholder rate ≥65% (spent in last 90 days); miles revenue per active card ≥$180/yr</td>
+        <td class="pain-col">No single source of truth for &#x27;active cardholder&#x27; definition — Comarch, Altéa, and bank definitions diverge, causing QBR figures to be challenged by bank partner and delaying review sign-off</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Conduct annual contract review and renegotiation</td>
+        <td class="kpi-col">Contract renewal completed ≥90 days before expiry; CPM improvement ≥3% vs prior term</td>
+        <td class="pain-col">Airline bargaining leverage is limited without alliance membership — bank partners benchmark co-brand terms against carriers with larger frequent flyer bases, compressing CPM improvement potential</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Loyalty Programme Management</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+flowchart LR
+  subgraph P1["Phase 1: Partnership Strategy & Contracting"]
+    A([Start]) --> B[Evaluate bank partner candidates]
+    B --> C{Partner meets criteria?}
+    C -- No --> B
+    C -- Yes --> D[Negotiate revenue-share & miles price]
+    D --> E{Terms agreed?}
+    E -- No --> D
+    E -- Yes --> F[Execute partnership agreement & SLA]
+  end
+  subgraph P2["Phase 2: Product Design & Configuration"]
+    F --> G[Define card tier earn rates]
+    G --> H[Configure earn rules in loyalty platform]
+    H --> I{Earn rules validated vs PSS?}
+    I -- No --> H
+    I -- Yes --> J[Certify integration with bank processor]
+  end
+  subgraph P3["Phase 3: Earn Processing & Miles Posting"]
+    J --> K[Receive daily transaction file from bank]
+    K --> L{Member match found?}
+    L -- No --> M[Flag unmatched — exception queue]
+    M --> L
+    L -- Yes --> N[Calculate & post miles to member account]
+  end
+  subgraph P4["Phase 4: Marketing & Member Acquisition"]
+    N --> O[Execute co-brand acquisition campaign]
+    O --> P{Welcome bonus eligibility met?}
+    P -- No --> Q[Hold bonus — monitor spend threshold]
+    Q --> P
+    P -- Yes --> R[Activate welcome bonus miles]
+  end
+  subgraph P5["Phase 5: Financial Reconciliation"]
+    R --> S[Reconcile miles sold vs posted]
+    S --> T{Discrepancy within tolerance?}
+    T -- No --> U[Raise dispute with bank partner]
+    U --> T
+    T -- Yes --> V[Invoice bank for miles purchased]
+  end
+  subgraph P6["Phase 6: Performance Review & Renewal"]
+    V --> W[Generate quarterly performance report]
+    W --> X{KPIs meet contract thresholds?}
+    X -- No --> Y[Escalate remediation plan to partner]
+    Y --> X
+    X -- Yes --> Z[Conduct annual contract renewal review]
+    Z --> ZA([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style ZA fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600
