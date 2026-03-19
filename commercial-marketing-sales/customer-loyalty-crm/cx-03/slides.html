@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-03 Slides — Miles &amp; Points Redemption Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-03</span>
+    <h1>Miles &amp; Points Redemption Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+
+        <div class="placeholder">
+          <p>BPMN diagram not yet generated</p>
+          <code>mmdc -i diagrams/cx-03.mmd -o wiki/assets/img/cx-03.png -w 1920 -H 1080 --scale 2 --backgroundColor white</code>
+        </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Loyalty Programme Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-03</span>
+    <h1>Miles &amp; Points Redemption Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-03</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Loyalty Programme Management</li>
+          <li><strong>L3 Name:</strong> Miles &amp; Points Redemption Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">11</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Member Initiates Redemption via Digital Channel</li><li><strong>Phase 2:</strong> Query Award Seat Inventory in PSS</li><li><strong>Phase 3:</strong> Calculate Miles Required &amp; Applicable Taxes</li><li><strong>Phase 4:</strong> Issue Award Ticket or E-Voucher</li><li><strong>Phase 5:</strong> Reconcile Miles Deducted vs Tickets Issued</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Loyalty CRM Analyst</li><li>Loyalty Finance Analyst</li><li>Loyalty Fulfilment Agent</li><li>Loyalty Partnerships Manager</li><li>Loyalty Pricing Analyst</li><li>Loyalty Programme Manager</li><li>Loyalty Programme Member</li><li>Loyalty Systems Analyst</li><li>Revenue Management Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift (Loyalty Data Warehouse)</li><li>Airline Mobile App / Web Self-Service Portal</li><li>Airline Payment Gateway (Stripe / Cybersource)</li><li>Amadeus Altéa Inventory</li><li>Amadeus Altéa Loyalty</li><li>Amadeus Altéa Ticketing</li><li>Amadeus Revenue Management (NRM / AltéaRM)</li><li>NDC API Gateway / Partner Redemption API</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Salesforce Marketing Cloud</li><li>Tableau / Power BI (connected to AWS Redshift)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Loyalty Programme Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-03</span>
+    <h1>Miles &amp; Points Redemption Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Member Initiates Redemption via Digital Channel</td>
+        <td class="kpi-col">Digital channel redemption rate ≥85% of all award transactions</td>
+        <td class="pain-col">Session timeout during multi-step redemption causes abandoned requests; no mid-session save capability in legacy web portals</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate Member Account Status &amp; Tier</td>
+        <td class="kpi-col">Account validation response time &lt;2 seconds (99th percentile)</td>
+        <td class="pain-col">Members with disputed fraud flags are incorrectly blocked; manual review queue SLA averages 4 business days, causing member complaints</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Verify Miles Balance Sufficiency</td>
+        <td class="kpi-col">Real-time balance accuracy ≥99.95% (no stale cache reads)</td>
+        <td class="pain-col">Miles balance caching latency of up to 15 minutes causes members to see inflated balances post-accrual, leading to failed redemption attempts at checkout</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Query Award Seat Inventory in PSS</td>
+        <td class="kpi-col">Award seat search response time &lt;3 seconds; award seat availability ≥10% of total cabin capacity on published routes</td>
+        <td class="pain-col">Award inventory buckets are statically defined and rarely recalibrated; high-demand routes show zero award availability 6+ months out despite low commercial load</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Apply Award Inventory Control Rules</td>
+        <td class="kpi-col">Award inventory utilisation rate ≥72% of allocated buckets per quarter</td>
+        <td class="pain-col">Blackout date logic is manually maintained in a spreadsheet outside the RM system; discrepancies between RM rules and loyalty portal display cause member-facing availability errors</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Check Partner Award Availability</td>
+        <td class="kpi-col">Partner API availability ≥99.5% uptime; catalogue refresh latency &lt;24 hours</td>
+        <td class="pain-col">Partner APIs use non-standard schemas; mapping failures cause 3–5% of partner redemption requests to error silently without member notification</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Hold Award Seat or Partner Slot</td>
+        <td class="kpi-col">Hold-to-booking conversion rate ≥78%; hold timeout abandonment rate &lt;22%</td>
+        <td class="pain-col">15-minute TTL is insufficient for members using screen readers or with accessibility needs; no TTL extension capability exists in the current PSS configuration</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Calculate Miles Required &amp; Applicable Taxes</td>
+        <td class="kpi-col">Pricing calculation accuracy 100% (zero mis-priced awards issued)</td>
+        <td class="pain-col">Government-imposed departure taxes and carrier surcharges are inconsistently applied to award tickets; manual overrides required for certain markets increase processing time by 40%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Collect Cash Co-Pay for Taxes &amp; Surcharges</td>
+        <td class="kpi-col">Payment authorisation success rate ≥97.5%; fraud decline rate &lt;0.8%</td>
+        <td class="pain-col">PCI-DSS tokenisation scope forces redirect to external payment page, breaking the redemption flow and increasing cart abandonment by an estimated 12%</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Member Confirms Award Booking</td>
+        <td class="kpi-col">Confirmation completion rate ≥80% of members who reach review screen</td>
+        <td class="pain-col">Members presented with unexpected surcharge totals at confirmation abandon at a 35% rate; no pre-checkout surcharge estimate is shown earlier in the funnel</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Deduct Miles from Member Account</td>
+        <td class="kpi-col">Miles deduction posting time &lt;5 seconds; deduction error rate &lt;0.01%</td>
+        <td class="pain-col">Concurrent redemption requests from the same account (e.g., via app and web simultaneously) can cause double-deduction if idempotency checks are not enforced at the API layer</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Issue Award Ticket or E-Voucher</td>
+        <td class="kpi-col">Ticket issuance success rate ≥99.8%; issuance time &lt;30 seconds</td>
+        <td class="pain-col">Award tickets on interline itineraries require manual segment-by-segment ticketing in Altéa; automation gap adds 20–45 minutes per complex itinerary and scales poorly during peak redemption periods</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Transmit Partner Booking via API</td>
+        <td class="kpi-col">Partner booking API success rate ≥98.5%; confirmation delivery time &lt;2 minutes</td>
+        <td class="pain-col">Real-time partner booking APIs cover only 60% of partners; remaining 40% use batch file exchange with 24-hour confirmation lag, leaving members without instant booking confirmation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Send E-Ticket &amp; Booking Confirmation to Member</td>
+        <td class="kpi-col">Confirmation delivery rate ≥99.2%; delivery time &lt;5 minutes of ticket issuance</td>
+        <td class="pain-col">Members who update contact preferences in the loyalty portal mid-session may receive confirmations to a stale email address due to CRM sync latency of up to 6 hours</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Update Member Redemption History</td>
+        <td class="kpi-col">Ledger update latency &lt;10 seconds; history record accuracy 100%</td>
+        <td class="pain-col">Partner redemption events written by the NDC gateway use a different transaction format than PSS award tickets; consolidation into a single view requires nightly batch job, preventing real-time statement accuracy</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Reconcile Miles Deducted vs Tickets Issued</td>
+        <td class="kpi-col">Reconciliation match rate ≥99.9%; exception resolution within 2 business days</td>
+        <td class="pain-col">Ticketing system and loyalty ledger use different timestamps (UTC vs local departure time); timezone mismatch causes ~0.3% of daily transactions to appear as exceptions requiring manual investigation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Report Liability Reduction to Finance</td>
+        <td class="kpi-col">Monthly loyalty liability reporting accuracy ±0.5% variance vs actuals; posted within 3 business days of month-end</td>
+        <td class="pain-col">CPM (cost per mile) used for liability valuation is updated quarterly; interim month fluctuations in redemption mix (premium vs economy) create material variance in reported liability that is not visible until quarter-end</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Analyse Redemption Patterns for Programme Optimisation</td>
+        <td class="kpi-col">Award seat utilisation rate ≥75%; partner redemption share ≥20% of total redemptions</td>
+        <td class="pain-col">Redemption data from partner ecosystems arrives with 48-hour delay and inconsistent granularity; analytics dashboards cannot provide same-day programme performance visibility needed for dynamic award pricing decisions</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Loyalty Programme Management</span>
+  </div>
+</div>
+
+</body>
+</html>

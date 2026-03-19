@@ -1,0 +1,60 @@
+flowchart LR
+  subgraph P1["Phase 1: Request & Eligibility"]
+    A([Start]) --> B[Member submits\nredemption request]
+    B --> C{Account active\n& not frozen?}
+    C -- No --> D[Reject request,\nnotify member]
+    C -- Yes --> E{Miles balance\nsufficient?}
+    E -- No --> D
+    E -- Yes --> F[Confirm redemption\ntype & category]
+  end
+  subgraph P2["Phase 2: Award Inventory Check"]
+    F --> G[Query award seat\navailability]
+    G --> H{Award inventory\navailable?}
+    H -- No --> I[Offer waitlist\nor alternative date]
+    I -- Accept --> G
+    I -- Decline --> D
+    H -- Yes --> J{Partner redemption\nor ancillary?]
+    J -- Yes --> K[Query partner\naward catalogue]
+    J -- No --> L[Hold award seat\nin PSS]
+    K --> L
+  end
+  subgraph P3["Phase 3: Pricing & Confirmation"]
+    L --> M[Calculate miles\nrequired + fees]
+    M --> N{Cash co-pay\nrequired?}
+    N -- Yes --> O[Collect payment\nvia digital channel]
+    N -- No --> P[Member confirms\naward booking]
+    O --> P
+    P --> Q{Member confirms\nwithin timeout?}
+    Q -- No --> R[Release held\ninventory]
+    R --> D
+    Q -- Yes --> S[Deduct miles\nfrom account]
+  end
+  subgraph P4["Phase 4: Ticketing & Fulfillment"]
+    S --> T[Issue award ticket\nor e-voucher]
+    T --> U{Ticket issued\nsuccessfully?}
+    U -- No --> V[Restore miles,\nraise ops incident]
+    U -- Yes --> W[Send e-ticket &\nconfirmation to member]
+    W --> X{Partner booking\nrequired?}
+    X -- Yes --> Y[Transmit booking\nto partner via API]
+    X -- No --> Z[Update member\nredemption history]
+    Y --> Z
+  end
+  subgraph P5["Phase 5: Reconciliation & Liability"]
+    Z --> AA[Reconcile miles\ndeducted vs tickets]
+    AA --> AB{Discrepancy\ndetected?}
+    AB -- Yes --> AC[Investigate &\ncorrect ledger]
+    AC --> AA
+    AB -- No --> AD[Report liability\nreduction to Finance]
+    AD --> AE([End])
+  end
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AE fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600
+  style AB fill:#ff6600,color:#fff,stroke:#ff6600
