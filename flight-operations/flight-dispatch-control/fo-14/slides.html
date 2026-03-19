@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FO-14 Slides — Air-to-Ground Communications Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-14</span>
+    <h1>Air-to-Ground Communications Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/fo-14.png" alt="BPMN for FO-14" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-14</span>
+    <h1>Air-to-Ground Communications Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> FO-14</li>
+          <li><strong>L1 Domain:</strong> Flight Operations</li>
+          <li><strong>L2 Process:</strong> Flight Dispatch &amp; Control</li>
+          <li><strong>L3 Name:</strong> Air-to-Ground Communications Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">20</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">13</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Load ACARS datalink frequencies for planned route</li><li><strong>Phase 2:</strong> Transmit OUT and OFF OOOI messages via ACARS</li><li><strong>Phase 3:</strong> Monitor automated ACARS position reports en-route</li><li><strong>Phase 4:</strong> Receive and acknowledge D-ATIS update via datalink</li><li><strong>Phase 5:</strong> Download and archive ACARS message logs post-fligh</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Flight Crew</li><li>Flight Dispatcher</li><li>Flight Operations Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS S3 / Redshift</li><li>Honeywell GoDirect</li><li>Jeppesen FliteDeck</li><li>NAVBLUE</li><li>SITA ACARS</li><li>Telex / SITA ACARS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-14</span>
+    <h1>Air-to-Ground Communications Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Load ACARS datalink frequencies for planned route</td>
+        <td class="kpi-col">Datalink configuration complete ≥15 min before departure</td>
+        <td class="pain-col">ACARS frequency gaps over oceanic or remote continental segments require fallback to HF voice, increasing dispatcher workload by 40%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Assign and verify SELCAL code for aircraft</td>
+        <td class="kpi-col">SELCAL assignment accuracy 100%; no duplicate codes per sector</td>
+        <td class="pain-col">SELCAL code conflicts across shared fleet pools cause missed ATC calls; manual cross-check process has no automated deconfliction in legacy ACARS ground system</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Test ACARS uplink connectivity with Operations Control</td>
+        <td class="kpi-col">Uplink test round-trip &lt;90 seconds; link quality ≥95% message delivery</td>
+        <td class="pain-col">Gate-to-aircraft ACARS connectivity failures affect ~3% of departures; ground crew must physically confirm avionics status with no automated alert to dispatch</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Activate voice backup if ACARS uplink fails</td>
+        <td class="kpi-col">Voice backup activation within 5 min of confirmed datalink failure</td>
+        <td class="pain-col">Voice backup coordination relies on manual frequency lookups; no integrated fallback workflow in dispatch system creates inconsistent crew briefing quality</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Transmit OUT and OFF OOOI messages via ACARS</td>
+        <td class="kpi-col">OOOI transmission latency &lt;30 seconds of triggering event; 99.5% capture rate</td>
+        <td class="pain-col">Automatic OOOI triggering depends on door-closure sensor accuracy; carrier-specific wiring faults on ageing narrowbodies cause delayed or missed OUT messages, distorting OTP metrics</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Send initial position report and fuel state to dispatch</td>
+        <td class="kpi-col">Initial report transmitted within 10 min of wheels-off</td>
+        <td class="pain-col">Manual crew entry of FOB in FliteDeck creates transcription errors; no automated FMS-to-ACARS fuel bridge in older EFB configurations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Evaluate departure delay or route amendment requirement</td>
+        <td class="kpi-col">Route amendment decision issued ≥5 min before off-block when ATC delay &gt;15 min</td>
+        <td class="pain-col">ATC ground delay programmes (GDPs) issued with &lt;10 min notice require simultaneous reroute and crew notification; NAVBLUE slot management tool lacks real-time GDP ingestion from FAA TFMS</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Uplink revised route clearance or holding instructions</td>
+        <td class="kpi-col">Crew acknowledgement received within 3 min of uplink; amendment compliance 100%</td>
+        <td class="pain-col">CPDLC message formatting errors between airline system and FAA FANS-1/A avionics create rejected uplinks requiring voice re-confirmation, adding 4–8 min average delay</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Monitor automated ACARS position reports en-route</td>
+        <td class="kpi-col">Position report receipt interval ≤30 min; missed report alert within 5 min of overdue</td>
+        <td class="pain-col">ACARS position reporting gaps over North Atlantic and Pacific oceanic tracks require manual ADS-C polling; latency up to 15 min leaves dispatch with stale situational awareness</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Process and acknowledge dispatch uplink messages</td>
+        <td class="kpi-col">Uplink acknowledgement within 5 min for operational messages; 100% receipt confirmation</td>
+        <td class="pain-col">High-volume uplink queues during irregular operations (IRROPs) overload crew attention; no message priority ranking in FliteDeck causes safety-critical messages to queue behind routine updates</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Execute HF radio handoff for oceanic or remote operations</td>
+        <td class="kpi-col">HF contact established within 10 min of oceanic FIR entry; first-call success rate ≥90%</td>
+        <td class="pain-col">HF propagation variability in high-latitude routes (NAT track system) causes failed initial contacts; airlines without SATCOM-equipped fleets have no reliable backup, risking SLOP deviation reporting failures</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Assess weather deviation or emergency communication need</td>
+        <td class="kpi-col">Dispatcher response to crew deviation request &lt;2 min; emergency acknowledgement &lt;1 min</td>
+        <td class="pain-col">Weather deviation requests during oceanic segments require simultaneous ATC and OCC coordination over SATCOM and ACARS; latency in SATCOM voice degrades timely clearance issuance</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.5</td>
+        <td>Coordinate weather deviation or emergency with ATC and OCC</td>
+        <td class="kpi-col">Deviation clearance loop closed (crew request → ATC clearance → crew confirmation) &lt;15 min</td>
+        <td class="pain-col">Multi-party coordination chain (crew → dispatch → ATC → dispatch → crew) has no single-system view; handoffs via separate ACARS and voice systems create documentation gaps for post-event safety review</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Receive and acknowledge D-ATIS update via datalink</td>
+        <td class="kpi-col">D-ATIS received ≥30 min before destination ETA; ATIS currency check at top of descent</td>
+        <td class="pain-col">Airports without D-ATIS capability require VHF voice ATIS, adding crew workload; ATIS letter change between receipt and landing causes approach briefing invalidation with no automated crew alert</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Transmit final ETA and fuel state to dispatch and OCC</td>
+        <td class="kpi-col">ETA accuracy ±3 min versus actual on-blocks; fuel state report within 1 min of TOD</td>
+        <td class="pain-col">FMS ETA drift in RVSM/RNP environments caused by ATC tactical vectoring is not automatically pushed to ACARS; dispatcher uses stale ETA for gate planning, causing downstream turnaround delays</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Confirm destination availability with dispatch</td>
+        <td class="kpi-col">Go/no-go decision for destination communicated to crew ≥20 min before ETA</td>
+        <td class="pain-col">NAVBLUE NOTAM integration does not ingest real-time runway contamination SNOWTAM data; dispatchers must manually cross-check ATIS and ATC PIREPs, creating decision latency in winter operations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Coordinate diversion to alternate airport if required</td>
+        <td class="kpi-col">Alternate airport decision and crew uplink &lt;5 min of diversion trigger; fuel sufficient for alternate + 30 min holding confirmed</td>
+        <td class="pain-col">Alternate airport ATIS and gate availability data not integrated in NAVBLUE; dispatcher must manually contact destination OCC and alternate airport ops, adding 8–12 min to diversion coordination loop</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Download and archive ACARS message logs post-flight</td>
+        <td class="kpi-col">100% of ACARS logs archived within 2 hours of on-blocks; retention period ≥24 months per ICAO Annex 6</td>
+        <td class="pain-col">SITA ACARS ground system purges raw message buffers after 72 hours; airlines without automated archive pipelines lose communications audit trails required for accident investigation and FAA inspection</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Review post-flight communications for anomalies or gaps</td>
+        <td class="kpi-col">Post-flight communications review completed within 24 hours of arrival; anomaly detection rate ≥95% vs manual audit</td>
+        <td class="pain-col">No automated anomaly detection across ACARS and voice logs; analysts manually cross-reference two separate systems, limiting review throughput to ~30 flights/analyst/day</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>File ATC communications deviation or irregularity report</td>
+        <td class="kpi-col">Deviation report filed within 48 hours of event per FAR Part 121.711; 100% compliance with ASAP/ASRS voluntary reporting where applicable</td>
+        <td class="pain-col">Dispatcher irregularity reporting workflow is disconnected from ACARS archive system; manual re-entry of message evidence into SMS creates transcription errors and delays in safety trend analysis</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+</body>
+</html>

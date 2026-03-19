@@ -1,0 +1,46 @@
+flowchart LR
+  subgraph P1[Phase 1: Datalink Configuration]
+    A([Start]) --> B[Load ACARS route\nfrequencies]
+    B --> C[Assign and verify\nSELCAL code]
+    C --> D{ACARS uplink\nconfirmed?}
+    D -- Yes --> E[OCC connectivity\nestablished]
+    D -- No --> B
+  end
+  subgraph P2[Phase 2: Departure Communications]
+    E --> F[Transmit OUT/OFF\nOOOI messages]
+    F --> G{Route change\nor delay?}
+    G -- Yes --> H[Uplink revised\nclearance]
+    G -- No --> I[Initial position\nreport sent]
+    H --> I
+  end
+  subgraph P3[Phase 3: En-Route Management]
+    I --> J[Monitor ACARS\nposition reports]
+    J --> K[HF radio\noceanic handoff]
+    K --> L{Weather deviation\nor emergency?}
+    L -- Yes --> M[Coordinate with\nATC and OCC]
+    L -- No --> N[Process routine\ndispatch messages]
+    M --> N
+  end
+  subgraph P4[Phase 4: Arrival Coordination]
+    N --> O[Receive D-ATIS\nvia datalink]
+    O --> P[Transmit ETA\nand fuel state]
+    P --> Q{Destination\navailable?}
+    Q -- Yes --> R[Normal approach\ncontinues]
+    Q -- No --> S[Coordinate\ndiversion to alternate]
+    S --> R
+  end
+  subgraph P5[Phase 5: Post-Flight Compliance]
+    R --> T[Archive ACARS\nmessage logs]
+    T --> U{Anomaly or\ndeviation found?}
+    U -- Yes --> V[File irregularity\nreport]
+    U -- No --> W([End])
+    V --> W
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600

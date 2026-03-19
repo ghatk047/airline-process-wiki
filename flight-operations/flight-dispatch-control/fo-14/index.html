@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sales &amp; Distribution · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>FO-14 · Air-to-Ground Communications Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Flight Operations</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -137,7 +138,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-11/"><span class="status-dot status-done"></span><span class="pid">FO-11</span>ETOPS / EDTO Operations Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-12/"><span class="status-dot status-done"></span><span class="pid">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-13/"><span class="status-dot status-done"></span><span class="pid">FO-13</span>Performance &amp; FDR Data Monitoring</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-14/"><span class="status-dot status-done"></span><span class="pid">FO-14</span>Air-to-Ground Communications Management</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/flight-dispatch-control/fo-14/"><span class="status-dot status-done"></span><span class="pid">FO-14</span>Air-to-Ground Communications Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-15/"><span class="status-dot status-queue"></span><span class="pid">FO-15</span>Dangerous Goods Load Authorization</a>
       </div>
       <a class="sidebar-l2-link" href="../../../flight-operations/crew-management/">Crew Planning &amp; Rostering</a>
@@ -242,153 +243,278 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Sales &amp; Distribution</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Flight Operations</a><span class="sep">›</span>
+  <a href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a><span class="sep">›</span>
+  <span class="current">FO-14 · Air-to-Ground Communications Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Sales &amp; Distribution</h1>
-    <p>Network Planning &amp; Scheduling · 15 of 15 subprocesses complete · Updated 2026-03-19 10:09</p>
+    <h1>Air-to-Ground Communications Management</h1>
+    <p>Flight Operations › Flight Dispatch &amp; Control · 20 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-19 10:09</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">FO-14</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-01</span>GDS Channel Management</h3>
-    <p>Sales &amp; Distribution · 14 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-fo-14">
+      <img src="../../../assets/img/fo-14.png" alt="FO-14 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-fo-14').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-fo-14').style.display='flex'">
+      <div id="diag-placeholder-fo-14" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Load ACARS datalink frequencies for planned route</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Filed flight plan with route and frequency plan</td>
+  <td style="font-size:10px">ACARS datalink profile loaded for flight</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Datalink configuration complete ≥15 min before departure</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Assign and verify SELCAL code for aircraft</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft tail number, route segment with HF requirement</td>
+  <td style="font-size:10px">Confirmed SELCAL code entered in flight plan and crew briefing</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">SELCAL assignment accuracy 100%; no duplicate codes per sector</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Test ACARS uplink connectivity with Operations Control</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft powered-on ACARS avionics, OCC datalink server status</td>
+  <td style="font-size:10px">Two-way ACARS test message acknowledged; link quality confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Uplink test round-trip &lt;90 seconds; link quality ≥95% message delivery</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Activate voice backup if ACARS uplink fails</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Telex / SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Failed ACARS uplink test result</td>
+  <td style="font-size:10px">VHF Company frequency and phone patch number issued to crew; failure logged</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Voice backup activation within 5 min of confirmed datalink failure</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Transmit OUT and OFF OOOI messages via ACARS</td>
+  <td class="td-role">Flight Crew</td>
+  <td><span class="stag custom">SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft door close and wheels-off events from FMS</td>
+  <td style="font-size:10px">OUT/OFF timestamps transmitted to OCC and airline operations system</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">OOOI transmission latency &lt;30 seconds of triggering event; 99.5% capture rate</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Send initial position report and fuel state to dispatch</td>
+  <td class="td-role">Flight Crew</td>
+  <td><span class="stag custom">Jeppesen FliteDeck</span></td>
+  <td style="font-size:10px;color:#6b7280">Departure fuel uplift, FMS waypoint sequence, ATC initial clearance</td>
+  <td style="font-size:10px">Position report with fuel on board (FOB) and cleared altitude uplinked to OCC</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Initial report transmitted within 10 min of wheels-off</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Evaluate departure delay or route amendment requirement</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE</span></td>
+  <td style="font-size:10px;color:#6b7280">ATC slot allocation, departure ATIS, updated SIGMET/AIRMET data</td>
+  <td style="font-size:10px">Decision: standard departure confirmed or amended clearance required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Route amendment decision issued ≥5 min before off-block when ATC delay &gt;15 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Uplink revised route clearance or holding instructions</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">ATC revised clearance or GDP holding instruction</td>
+  <td style="font-size:10px">Amended route or holding fix uplinked and crew-acknowledged via ACARS CPDLC</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Crew acknowledgement received within 3 min of uplink; amendment compliance 100%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Monitor automated ACARS position reports en-route</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">FMS periodic position reports (10–30 min intervals per route type)</td>
+  <td style="font-size:10px">Real-time flight track displayed in OCC; anomalies flagged for dispatcher review</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Position report receipt interval ≤30 min; missed report alert within 5 min of overdue</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Process and acknowledge dispatch uplink messages</td>
+  <td class="td-role">Flight Crew</td>
+  <td><span class="stag custom">Jeppesen FliteDeck</span></td>
+  <td style="font-size:10px;color:#6b7280">Weather updates, NOTAM amendments, fuel revised calculations from dispatch</td>
+  <td style="font-size:10px">Crew acknowledgement sent; updated parameters loaded in FMS as required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Uplink acknowledgement within 5 min for operational messages; 100% receipt confirmation</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Execute HF radio handoff for oceanic or remote operations</td>
+  <td class="td-role">Flight Crew</td>
+  <td><span class="stag custom">Honeywell GoDirect</span></td>
+  <td style="font-size:10px;color:#6b7280">Oceanic entry waypoint, assigned HF frequencies from route briefing</td>
+  <td style="font-size:10px">HF contact established with Oceanic ATC or ARINC/SITA HF network</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">HF contact established within 10 min of oceanic FIR entry; first-call success rate ≥90%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Assess weather deviation or emergency communication need</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Honeywell GoDirect</span></td>
+  <td style="font-size:10px;color:#6b7280">PIREPs, SIGMET updates, crew request for deviation or emergency declaration</td>
+  <td style="font-size:10px">Decision: routine ops continue OR deviation/emergency coordination initiated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Dispatcher response to crew deviation request &lt;2 min; emergency acknowledgement &lt;1 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.5</td>
+  <td class="td-name">Coordinate weather deviation or emergency with ATC and OCC</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Crew deviation request, SIGMET polygon, alternate routing from NAVBLUE</td>
+  <td style="font-size:10px">ATC deviation clearance relayed to crew; OCC fuel and alternate analysis completed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Deviation clearance loop closed (crew request → ATC clearance → crew confirmation) &lt;15 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Receive and acknowledge D-ATIS update via datalink</td>
+  <td class="td-role">Flight Crew</td>
+  <td><span class="stag custom">SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Destination airport D-ATIS broadcast (IATA code, ATIS identifier letter)</td>
+  <td style="font-size:10px">Current ATIS letter confirmed in crew acknowledgement; approach brief updated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">D-ATIS received ≥30 min before destination ETA; ATIS currency check at top of descent</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Transmit final ETA and fuel state to dispatch and OCC</td>
+  <td class="td-role">Flight Crew</td>
+  <td><span class="stag custom">Jeppesen FliteDeck</span></td>
+  <td style="font-size:10px;color:#6b7280">FMS top-of-descent calculations, current FOB, ATC ETA slot</td>
+  <td style="font-size:10px">ETA and FOB report uplinked; OCC arrival planning triggered</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ETA accuracy ±3 min versus actual on-blocks; fuel state report within 1 min of TOD</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Confirm destination availability with dispatch</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE</span></td>
+  <td style="font-size:10px;color:#6b7280">Destination NOTAMs, RVR, field condition report, ATC ATIS status</td>
+  <td style="font-size:10px">Decision: destination available for landing OR diversion to alternate required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Go/no-go decision for destination communicated to crew ≥20 min before ETA</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Coordinate diversion to alternate airport if required</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE</span></td>
+  <td style="font-size:10px;color:#6b7280">Diversion trigger (weather, NOTAM, fuel state), alternate airport list from flight plan</td>
+  <td style="font-size:10px">Alternate airport confirmed; revised routing, fuel check, and crew notification completed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Alternate airport decision and crew uplink &lt;5 min of diversion trigger; fuel sufficient for alternate + 30 min holding confirmed</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Download and archive ACARS message logs post-flight</td>
+  <td class="td-role">Flight Operations Analyst</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Full ACARS message thread for completed flight (uplinks and downlinks)</td>
+  <td style="font-size:10px">Archived communications log stored in data lake; indexed by flight ID and date</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of ACARS logs archived within 2 hours of on-blocks; retention period ≥24 months per ICAO Annex 6</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Review post-flight communications for anomalies or gaps</td>
+  <td class="td-role">Flight Operations Analyst</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Archived ACARS log, OOOI timestamps, dispatcher notes from flight</td>
+  <td style="font-size:10px">Anomaly report or clean-flight confirmation; flagged items routed for investigation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Post-flight communications review completed within 24 hours of arrival; anomaly detection rate ≥95% vs manual audit</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">File ATC communications deviation or irregularity report</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Anomaly flag from post-flight review, dispatcher event notes</td>
+  <td style="font-size:10px">Mandatory irregularity report filed; safety management system (SMS) notification sent</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Deviation report filed within 48 hours of event per FAR Part 121.711; 100% compliance with ASAP/ASRS voluntary reporting where applicable</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-02</span>Direct Channel Management (Web &amp; App)</h3>
-    <p>Sales &amp; Distribution · 16 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">FO-14</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Flight Operations</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Flight Dispatch &amp; Control</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Air-to-Ground Communications Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">20 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">13 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Flight Dispatcher</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Flight Crew</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Flight Operations Analyst</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">SITA ACARS</span><span class="stag custom">Telex / SITA ACARS</span><span class="stag custom">Jeppesen FliteDeck</span><span class="stag custom">NAVBLUE</span><span class="stag custom">Honeywell GoDirect</span><span class="stag aws">AWS S3 / Redshift</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Load ACARS datalink frequencies for planned route</span><span class="kval">Datalink configuration complete ≥15 min before departure</span></div><div class="krow"><span class="kname">Assign and verify SELCAL code for aircraft</span><span class="kval">SELCAL assignment accuracy 100%; no duplicate codes per sector</span></div><div class="krow"><span class="kname">Test ACARS uplink connectivity with Operations Control</span><span class="kval">Uplink test round-trip &lt;90 seconds; link quality ≥95% message delivery</span></div><div class="krow"><span class="kname">Activate voice backup if ACARS uplink fails</span><span class="kval">Voice backup activation within 5 min of confirmed datalink failure</span></div><div class="krow"><span class="kname">Transmit OUT and OFF OOOI messages via ACARS</span><span class="kval">OOOI transmission latency &lt;30 seconds of triggering event; 99.5% capture rate</span></div><div class="krow"><span class="kname">Send initial position report and fuel state to dispatch</span><span class="kval">Initial report transmitted within 10 min of wheels-off</span></div><div class="krow"><span class="kname">Evaluate departure delay or route amendment requirement</span><span class="kval">Route amendment decision issued ≥5 min before off-block when ATC delay &gt;15 min</span></div><div class="krow"><span class="kname">Uplink revised route clearance or holding instructions</span><span class="kval">Crew acknowledgement received within 3 min of uplink; amendment compliance 100%</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">ACARS frequency gaps over oceanic or remote continental segments require fallback to HF voice, increasing dispatcher workload by 40%</div><div class="risk-card">SELCAL code conflicts across shared fleet pools cause missed ATC calls; manual cross-check process has no automated deconfliction in legacy ACARS ground system</div><div class="risk-card">Gate-to-aircraft ACARS connectivity failures affect ~3% of departures; ground crew must physically confirm avionics status with no automated alert to dispatch</div><div class="risk-card">Voice backup coordination relies on manual frequency lookups; no integrated fallback workflow in dispatch system creates inconsistent crew briefing quality</div><div class="risk-card">Automatic OOOI triggering depends on door-closure sensor accuracy; carrier-specific wiring faults on ageing narrowbodies cause delayed or missed OUT messages, distorting OTP metrics</div><div class="risk-card">Manual crew entry of FOB in FliteDeck creates transcription errors; no automated FMS-to-ACARS fuel bridge in older EFB configurations</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Filed flight plan with route and frequency plan</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Mandatory irregularity report filed; safety management system (SMS) notification sent</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-03</span>Travel Agency &amp; TMC Management</h3>
-    <p>Sales &amp; Distribution · 17 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-04</span>Corporate Account Sales Management</h3>
-    <p>Sales &amp; Distribution · 16 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-05</span>NDC Content &amp; API Distribution</h3>
-    <p>Sales &amp; Distribution · 15 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-06</span>Group Sales Management</h3>
-    <p>Sales &amp; Distribution · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-07</span>Charter Sales &amp; Contract Management</h3>
-    <p>Sales &amp; Distribution · 18 steps · 10 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-08</span>Commission &amp; Incentive Management</h3>
-    <p>Sales &amp; Distribution · 17 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-09</span>Interline &amp; Codeshare Ticketing</h3>
-    <p>Sales &amp; Distribution · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-10</span>BSP Settlement &amp; IATA Billing</h3>
-    <p>Sales &amp; Distribution · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-11</span>Online Travel Agency (OTA) Management</h3>
-    <p>Sales &amp; Distribution · 16 steps · 11 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-12</span>Metasearch &amp; Comparison Site Management</h3>
-    <p>Sales &amp; Distribution · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-13</span>Sales Performance Reporting &amp; Analytics</h3>
-    <p>Sales &amp; Distribution · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-14</span>Distribution Cost Optimization</h3>
-    <p>Sales &amp; Distribution · 16 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-15</span>Sales Force Automation &amp; CRM</h3>
-    <p>Sales &amp; Distribution · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../fo-13/"><span class="arrow">←</span><span><span class="sub">Previous</span>FO-13 · Performance &amp; FDR Data Monitoring</span></a><a class="pn-btn" href="../fo-15/"><span><span class="sub">Next</span>FO-15 · Dangerous Goods Load Authorization</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
