@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Human Resources · Corporate Support Functions · Airlines Process Wiki</title>
+<title>FO-09 · Delay Management &amp; Root Cause Analysis · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Flight Operations</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -132,7 +133,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-06/"><span class="status-dot status-done"></span><span class="pid">FO-06</span>Weather Monitoring &amp; Decision Support</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-07/"><span class="status-dot status-done"></span><span class="pid">FO-07</span>Air Traffic Control Coordination</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-08/"><span class="status-dot status-done"></span><span class="pid">FO-08</span>Network Operations Control (NOC)</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-09/"><span class="status-dot status-done"></span><span class="pid">FO-09</span>Delay Management &amp; Root Cause Analysis</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/flight-dispatch-control/fo-09/"><span class="status-dot status-done"></span><span class="pid">FO-09</span>Delay Management &amp; Root Cause Analysis</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-10/"><span class="status-dot status-queue"></span><span class="pid">FO-10</span>Diversion &amp; Emergency Response Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-11/"><span class="status-dot status-queue"></span><span class="pid">FO-11</span>ETOPS / EDTO Operations Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-12/"><span class="status-dot status-queue"></span><span class="pid">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</a>
@@ -213,8 +214,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-queue"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
@@ -242,54 +243,268 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Corporate Support Functions</a><span class="sep">›</span>
-  <span class="current">Human Resources</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Flight Operations</a><span class="sep">›</span>
+  <a href="../../../flight-operations/flight-dispatch-control/">Network Operations Control</a><span class="sep">›</span>
+  <span class="current">FO-09 · Delay Management &amp; Root Cause Analysis</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Human Resources</h1>
-    <p>Corporate Support Functions · 0 of 4 subprocesses complete · Updated 2026-03-18 22:55</p>
+    <h1>Delay Management &amp; Root Cause Analysis</h1>
+    <p>Flight Operations › Network Operations Control · 19 L4 steps · 6 phases · 7 decision gates · Updated 2026-03-18 22:55</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">FO-09</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-04</span>Workforce Planning &amp; Headcount Management</h3>
-    <p>Human Resources · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-fo-09">
+      <img src="../../../assets/img/fo-09.png" alt="FO-09 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-fo-09').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-fo-09').style.display='flex'">
+      <div id="diag-placeholder-fo-09" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-04/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Monitor flight status vs published schedule</td>
+  <td class="td-role">NOC Network Controller</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Real-time gate departure feeds, OPS messages, ACARS pushback events</td>
+  <td style="font-size:10px">Live flight status dashboard with variance-from-schedule flag</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">On-time departure (D0) ≥78%; delay detection latency &lt;2 min of STD</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Apply IATA delay threshold trigger rule</td>
+  <td class="td-role">NOC Network Controller</td>
+  <td><span class="stag amadeus">Amadeus Altéa Operations Control (OC)</span></td>
+  <td style="font-size:10px;color:#6b7280">Actual vs scheduled departure time delta from AMS feed</td>
+  <td style="font-size:10px">Delay event record opened in Altéa OC with severity tier (Minor &lt;15 min / Moderate 15–60 min / Severe &gt;60 min)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of delays ≥15 min captured within 3 min of threshold breach</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Assign IATA AHM 730 delay code to event</td>
+  <td class="td-role">NOC Network Controller</td>
+  <td><span class="stag amadeus">Amadeus Altéa Operations Control (OC)</span></td>
+  <td style="font-size:10px;color:#6b7280">Initial cause report from handling agent, crew, or ATC</td>
+  <td style="font-size:10px">Primary IATA two-digit delay code + sub-code entered in Altéa OC event record</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Delay code accuracy rate ≥94% (validated at post-ops audit); code entry within 10 min of ETD revision</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Map downstream flight propagation impact</td>
+  <td class="td-role">Network Operations Controller</td>
+  <td><span class="stag amadeus">Amadeus SkyWORKS (Schedule Edit module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Delay event record from Altéa OC; rotational aircraft tail number; planned schedule SSIM</td>
+  <td style="font-size:10px">Propagation impact list — all subsequent flights on same tail affected with estimated knock-on delay per flight</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Propagation analysis completed within 5 min of delay event creation; ≥95% of knock-on delays correctly identified</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Check crew duty time legality under FAR Part 117</td>
+  <td class="td-role">Crew Coordinator — NOC</td>
+  <td><span class="stag custom">Jeppesen Crew Management Suite (CMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Crew pairing records, revised ETD/ETA, accumulated flight duty period (FDP) totals</td>
+  <td style="font-size:10px">Crew legality status per affected flight: Legal / At-limit / Illegal flag with exact remaining FDP minutes</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero FAR Part 117 exceedances; crew illegality flag generated within 3 min of delay event propagation</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Identify passenger misconnection risk</td>
+  <td class="td-role">Passenger Services Controller</td>
+  <td><span class="stag amadeus">Amadeus Altéa Departure Control (DCS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger booking itineraries with MCT data; revised inbound ETA; connecting flight boarding-complete times</td>
+  <td style="font-size:10px">At-risk passenger list with booking reference, connection flight, and protection options (next available / hotel voucher eligible)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Misconnect identification completed before inbound landing (≥30 min ahead); protected reaccommodation rate ≥88% same-day</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Assess whether delay qualifies for EC 261 compensation</td>
+  <td class="td-role">Passenger Services Controller</td>
+  <td><span class="stag amadeus">Amadeus Altéa Customer Management (ACM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Delay magnitude; origin/destination country pair; delay cause classification (extraordinary vs controllable)</td>
+  <td style="font-size:10px">EC 261 / DOT eligibility flag per affected booking; duty-of-care obligations triggered (meal voucher, hotel, rebooking rights)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">EC 261 eligibility flag applied within 5 min of 3-hour delay threshold; 100% of entitled passengers notified before next boarding call</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Generate recovery options — swap, absorb, or cancel</td>
+  <td class="td-role">Network Operations Controller</td>
+  <td><span class="stag amadeus">Amadeus SkyWORKS (Recovery Workspace)</span></td>
+  <td style="font-size:10px;color:#6b7280">Propagation impact list; available spare aircraft inventory; crew availability matrix from Jeppesen CMS</td>
+  <td style="font-size:10px">Ranked recovery scenario list with estimated schedule recovery time (SRT) and cost-of-delay score per option</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">≥3 ranked scenarios generated within 10 min of escalation trigger; SRT ≤45 min for Moderate tier delays</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Evaluate aircraft swap feasibility in SkyMAX</td>
+  <td class="td-role">Fleet Assignment Controller</td>
+  <td><span class="stag amadeus">Amadeus SkyMAX (Fleet Assignment Optimiser)</span></td>
+  <td style="font-size:10px;color:#6b7280">Candidate spare aircraft; required range and seat configuration; next-maintenance-due date from AMOS</td>
+  <td style="font-size:10px">Feasibility verdict: Swap approved / blocked (maintenance hold, wrong config, insufficient range) with reason code</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Aircraft swap evaluation completed within 8 min; maintenance-hold conflicts identified before physical repositioning begins</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Coordinate revised gate and slot with airport ops</td>
+  <td class="td-role">Airport Liaison — NOC</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS) + IATA SLOT coordination message (SSR/SIR)</span></td>
+  <td style="font-size:10px;color:#6b7280">Revised ETD; new aircraft tail; gate resource availability from AMS; slot window from airport coordinator</td>
+  <td style="font-size:10px">Confirmed gate assignment and revised slot time acknowledged by airport; updated in Altéa OC</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate confirmation received ≥30 min before revised ETD; slot revision accepted at slot-controlled airports within IATA SSIM Chapter 8 tolerance window</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Approve and lock recovery plan</td>
+  <td class="td-role">NOC Duty Manager</td>
+  <td><span class="stag amadeus">Amadeus Altéa Operations Control (OC)</span></td>
+  <td style="font-size:10px;color:#6b7280">Ranked recovery scenarios; crew legality confirmation from Jeppesen CMS; gate confirmation from AMS</td>
+  <td style="font-size:10px">Approved recovery plan locked in Altéa OC; task assignments dispatched to ground handling, crew, and ramp teams</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Recovery plan approved and communicated ≥25 min before revised ETD; 0% plan revisions after lock (lock discipline metric)</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Broadcast revised ETD to all operational stakeholders</td>
+  <td class="td-role">NOC Network Controller</td>
+  <td><span class="stag amadeus">SITA ACARS + Telex; Amadeus Altéa OC automated notification</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved recovery plan with locked revised ETD; stakeholder distribution list (crew, ramp, catering, fuelling, ATC)</td>
+  <td style="font-size:10px">ACARS ETD revision uplink to cockpit; AMS gate board update; SMS/email alerts to ground handlers</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ETD update reaches all stakeholders within 2 min of plan lock; 100% of downstream flights updated in Altéa OC within 5 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Monitor recovery execution against revised milestones</td>
+  <td class="td-role">NOC Network Controller</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Recovery plan milestones (boarding-complete, doors-close, pushback); real-time gate event feeds</td>
+  <td style="font-size:10px">Milestone adherence scorecard updated in real time; red flag alert if any milestone slips by &gt;5 min</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Pushback within 3 min of revised ETD for ≥80% of recovery flights; milestone slip detection latency &lt;90 sec</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Close recovery loop and update schedule actuals</td>
+  <td class="td-role">NOC Network Controller</td>
+  <td><span class="stag amadeus">Amadeus Altéa Operations Control (OC)</span></td>
+  <td style="font-size:10px;color:#6b7280">ACARS airborne message (ATD); gate actual out/off events; confirmed delay duration</td>
+  <td style="font-size:10px">Delay event record closed in Altéa OC with actual block times; downstream schedule actuals updated; SSIM actual file entry created</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of closed delay events have IATA delay code confirmed within 30 min of ATD; actual block time accuracy ±1 min vs ACARS</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Aggregate delay evidence and system event logs</td>
+  <td class="td-role">Operations Performance Analyst</td>
+  <td><span class="stag aws">AWS S3 / Amazon Redshift (Operations Data Lake)</span></td>
+  <td style="font-size:10px;color:#6b7280">Altéa OC event records; AMS gate logs; ACARS messages; Jeppesen crew duty records; weather METAR/SIGMET archive</td>
+  <td style="font-size:10px">Consolidated delay evidence package in Redshift: one row per delay event with all contributing data sources joined</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Evidence package assembled within 24 hours of flight ops; data completeness ≥97% (all events have linked ACARS record)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Attribute delay causes per IATA AHM 780 methodology</td>
+  <td class="td-role">Operations Performance Analyst</td>
+  <td><span class="stag custom">Tableau (connected to Redshift delay evidence layer)</span></td>
+  <td style="font-size:10px;color:#6b7280">Consolidated evidence package; IATA AHM 780 attribution rules; airline-defined delay ownership matrix</td>
+  <td style="font-size:10px">Final delay attribution record: primary cause code, contributing cause codes, responsible department/vendor, accountable cost estimate</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Attribution accuracy ≥94% (audited quarterly by Quality); attribution completed within 48 hours of event for all Severe-tier delays</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Detect systemic delay patterns across rolling 30-day window</td>
+  <td class="td-role">Operations Performance Analyst</td>
+  <td><span class="stag custom">Tableau / Power BI (Delay Analytics Dashboard)</span></td>
+  <td style="font-size:10px;color:#6b7280">30-day delay attribution dataset from Redshift; threshold rules (≥3 events same root cause = systemic flag)</td>
+  <td style="font-size:10px">Systemic pattern alert: cause code, frequency, affected routes/aircraft type, responsible team, trend direction</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Systemic patterns identified within 5 business days of 3rd occurrence; false-positive pattern rate &lt;10%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Publish delay performance report to operations leadership</td>
+  <td class="td-role">Operations Performance Analyst</td>
+  <td><span class="stag custom">Power BI (Ops Performance Portal)</span></td>
+  <td style="font-size:10px;color:#6b7280">Final attribution records; systemic pattern alerts; benchmarks (OAG industry OTP data; IATA Annual Review)</td>
+  <td style="font-size:10px">Weekly delay report: OTP vs target, top-5 delay codes, cost-of-delay by category, systemic patterns open/closed, trend vs prior 4 weeks</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Report published by 08:00 Monday; OTP data currency within 12 hours of end of reporting week</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Submit delay cost attribution to Finance for accrual</td>
+  <td class="td-role">Operations Director</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI-CO) — Cost Centre Accounting</span></td>
+  <td style="font-size:10px;color:#6b7280">Final delay attribution records with responsible department; estimated cost-of-delay by category (crew, ground handling, passenger compensation, fuel burn)</td>
+  <td style="font-size:10px">Cost centre journal entries in SAP FI; EC 261 compensation accrual posted; month-end delay cost reconciliation file</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of Severe-tier delay costs accrued in SAP FI within 5 business days of event; variance between estimated and actual delay cost &lt;15%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-05</span>Talent Acquisition &amp; Recruitment</h3>
-    <p>Human Resources · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">FO-09</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Flight Operations</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Network Operations Control</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Delay Management &amp; Root Cause Analysis</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">19 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">7 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">7 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>NOC Network Controller</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Network Operations Controller</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Crew Coordinator — NOC</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Passenger Services Controller</div><div class="swim"><div class="dot" style="background:#10b981"></div>Fleet Assignment Controller</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Airport Liaison — NOC</div><div class="swim"><div class="dot" style="background:#6366f1"></div>NOC Duty Manager</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Operations Performance Analyst</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Operations Director</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag amadeus">Amadeus Altéa Operations Control (OC)</span><span class="stag amadeus">Amadeus SkyWORKS (Schedule Edit module)</span><span class="stag custom">Jeppesen Crew Management Suite (CMS)</span><span class="stag amadeus">Amadeus Altéa Departure Control (DCS)</span><span class="stag amadeus">Amadeus Altéa Customer Management (ACM)</span><span class="stag amadeus">Amadeus SkyWORKS (Recovery Workspace)</span><span class="stag amadeus">Amadeus SkyMAX (Fleet Assignment Optimiser)</span><span class="stag custom">SITA Airport Management System (AMS) + IATA SLOT coordination message (SSR/SIR)</span><span class="stag amadeus">SITA ACARS + Telex; Amadeus Altéa OC automated notification</span><span class="stag aws">AWS S3 / Amazon Redshift (Operations Data Lake)</span><span class="stag custom">Tableau (connected to Redshift delay evidence layer)</span><span class="stag custom">Tableau / Power BI (Delay Analytics Dashboard)</span><span class="stag custom">Power BI (Ops Performance Portal)</span><span class="stag sap">SAP S/4HANA Finance (FI-CO) — Cost Centre Accounting</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Monitor flight status vs published schedule</span><span class="kval">On-time departure (D0) ≥78%; delay detection latency &lt;2 min of STD</span></div><div class="krow"><span class="kname">Apply IATA delay threshold trigger rule</span><span class="kval">100% of delays ≥15 min captured within 3 min of threshold breach</span></div><div class="krow"><span class="kname">Assign IATA AHM 730 delay code to event</span><span class="kval">Delay code accuracy rate ≥94% (validated at post-ops audit); code entry within 10 min of ETD revision</span></div><div class="krow"><span class="kname">Map downstream flight propagation impact</span><span class="kval">Propagation analysis completed within 5 min of delay event creation; ≥95% of knock-on delays correctly identified</span></div><div class="krow"><span class="kname">Check crew duty time legality under FAR Part 117</span><span class="kval">Zero FAR Part 117 exceedances; crew illegality flag generated within 3 min of delay event propagation</span></div><div class="krow"><span class="kname">Identify passenger misconnection risk</span><span class="kval">Misconnect identification completed before inbound landing (≥30 min ahead); protected reaccommodation rate ≥88% same-day</span></div><div class="krow"><span class="kname">Assess whether delay qualifies for EC 261 compensation</span><span class="kval">EC 261 eligibility flag applied within 5 min of 3-hour delay threshold; 100% of entitled passengers notified before next boarding call</span></div><div class="krow"><span class="kname">Generate recovery options — swap, absorb, or cancel</span><span class="kval">≥3 ranked scenarios generated within 10 min of escalation trigger; SRT ≤45 min for Moderate tier delays</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">ACARS position reports lag by 90–120 sec on older aircraft, masking initial delay onset until gate hold is already confirmed</div><div class="risk-card">Altéa OC severity tiers are configurable per airline but default thresholds may not align with local slot-loss rules at congested airports such as LHR or JFK</div><div class="risk-card">Controllers under workload pressure default to code 93 (unknown) or airline-internal codes; post-ops correction consumes analyst time and distorts monthly reporting</div><div class="risk-card">SkyWORKS propagation engine requires manual tail-number linkage for ad-hoc swaps executed earlier in the day; stale tail assignments cause phantom impact estimates</div><div class="risk-card">Jeppesen CMS and Altéa OC use separate crew-to-flight linkage tables; sync latency of up to 8 min means early illegality flags can appear after the aircraft has already pushed</div><div class="risk-card">Altéa DCS minimum connect time (MCT) tables require manual update when airports revise terminal layouts; outdated MCTs cause under- or over-protection triggering either rebooking churn or missed misconnects</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Real-time gate departure feeds, OPS messages, ACARS pushback events</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Cost centre journal entries in SAP FI; EC 261 compensation accrual posted; month-end delay cost reconciliation file</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-06</span>Learning &amp; Development Management</h3>
-    <p>Human Resources · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-07</span>Labour Relations &amp; Union Negotiation</h3>
-    <p>Human Resources · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-07/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../fo-08/"><span class="arrow">←</span><span><span class="sub">Previous</span>FO-08 · Network Operations Control (NOC)</span></a><a class="pn-btn" href="../fo-10/"><span><span class="sub">Next</span>FO-10 · Diversion &amp; Emergency Response Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

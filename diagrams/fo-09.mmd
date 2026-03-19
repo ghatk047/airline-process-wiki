@@ -1,0 +1,54 @@
+flowchart LR
+  subgraph P1[Phase 1: Delay Detection and Classification]
+    A([Start]) --> B[Monitor flight status vs schedule]
+    B --> C{Delay ≥15 min\nor ATC hold?}
+    C -- No --> B
+    C -- Yes --> D[Assign IATA delay code]
+  end
+
+  subgraph P2[Phase 2: Impact and Propagation Assessment]
+    D --> E[Map downstream flight impacts]
+    E --> F[Check crew legality and duty limits]
+    F --> G{Misconnect or\ncrew illegal?}
+    G -- No --> H[Log minor delay — no action]
+    G -- Yes --> I[Quantify pax and crew exposure]
+  end
+
+  subgraph P3[Phase 3: Recovery Planning]
+    I --> J[Generate swap / delay / cancel options]
+    J --> K[Evaluate aircraft swap via SkyMAX]
+    K --> L{Recovery plan\napproved?}
+    L -- No --> J
+    L -- Yes --> M[Reserve gate and coordinate slot change]
+  end
+
+  subgraph P4[Phase 4: Execution and Monitoring]
+    M --> N[Broadcast revised ETD via ACARS]
+    N --> O[Monitor recovery execution in AMS]
+    O --> P{Recovery\non track?}
+    P -- No --> J
+    P -- Yes --> Q[Close recovery loop — update Altéa]
+  end
+
+  subgraph P5[Phase 5: Root Cause Analysis]
+    Q --> R[Collect system logs and evidence]
+    R --> S[Attribute delay per IATA AHM 780]
+    S --> T{Systemic pattern\ndetected?}
+    T -- No --> U[File single-event delay report]
+    T -- Yes --> V[Escalate to ops improvement workstream]
+  end
+
+  subgraph P6[Phase 6: Reporting and Improvement]
+    U --> W[Publish delay performance dashboard]
+    V --> W
+    W --> X[Submit cost attribution to SAP FI]
+    X --> Y([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
