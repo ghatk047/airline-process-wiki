@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-16 Slides — Digital Self-Service &amp; Chatbot Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-16</span>
+    <h1>Digital Self-Service &amp; Chatbot Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-16.png" alt="BPMN for CX-16" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Service Contact Centre</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-16</span>
+    <h1>Digital Self-Service &amp; Chatbot Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-16</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Customer Service Contact Centre</li>
+          <li><strong>L3 Name:</strong> Digital Self-Service &amp; Chatbot Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">2</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Define digital channel scope &amp; use-case catalogue</li><li><strong>Phase 2:</strong> Receive &amp; parse inbound digital interaction</li><li><strong>Phase 3:</strong> Detect escalation trigger &amp; package conversation c</li><li><strong>Phase 4:</strong> Ingest low-confidence &amp; failed interaction logs</li><li><strong>Phase 5:</strong> Monitor containment rate, CSAT &amp; escalation KPIs</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Automated — ACD Router</li><li>Automated — Chatbot Runtime</li><li>Automated — Identity Verification</li><li>Automated — NLU Engine</li><li>Automated — Orchestration Layer</li><li>Automated — Transaction Engine</li><li>Contact Centre Agent</li><li>Contact Centre Analytics Manager</li><li>Contact Centre Operations Manager</li><li>Conversational AI Analyst</li><li>Conversational AI Engineer</li><li>Digital Channel Analyst</li><li>Digital Product Owner</li><li>Knowledge Manager</li><li>ML Engineer</li><li>QA Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS S3 / Redshift</li><li>Amadeus Altéa PSS</li><li>Confluence</li><li>Genesys Cloud CX</li><li>Google Contact Center AI (CCAI)</li><li>Salesforce Knowledge</li><li>Salesforce Service Cloud</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Service Contact Centre</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-16</span>
+    <h1>Digital Self-Service &amp; Chatbot Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Define digital channel scope &amp; use-case catalogue</td>
+        <td class="kpi-col">Use-case coverage ≥70% of top contact drivers</td>
+        <td class="pain-col">Airlines frequently undercount automatable intents by excluding irregular operations (IRROP) scenarios, leaving high-volume disruption contacts undeflected</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Configure NLU intents, entities &amp; training utterances</td>
+        <td class="kpi-col">Intent recognition accuracy ≥88% in offline evaluation</td>
+        <td class="pain-col">Airline-specific entities (IATA airport codes, fare basis codes, PNR formats) require custom entity extractors not available in generic NLU libraries; training data is sparse for low-frequency intents</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Set containment thresholds &amp; escalation routing rules</td>
+        <td class="kpi-col">Mis-escalation rate &lt;5% (contacts escalated that chatbot could have resolved)</td>
+        <td class="pain-col">Overly aggressive confidence thresholds during IRROP events flood live agent queues; Genesys routing rules require manual override during declared irregular operations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>UAT regression test chatbot flows &amp; approve release</td>
+        <td class="kpi-col">UAT pass rate ≥95% across all intent test cases before prod deployment</td>
+        <td class="pain-col">Regression testing is manual and time-consuming; no automated test harness exists for end-to-end chatbot + PSS API integration paths, increasing release cycle to 3–4 weeks</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Receive &amp; parse inbound digital interaction</td>
+        <td class="kpi-col">Channel availability ≥99.9% uptime; median response latency &lt;800 ms</td>
+        <td class="pain-col">WhatsApp Business API throughput is capped by Meta rate limits during high-demand periods (e.g., weather events); fallback to web chat is not seamlessly communicated to passengers</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Classify intent &amp; extract booking / loyalty entities</td>
+        <td class="kpi-col">Live intent accuracy ≥85%; confidence score logged for every interaction</td>
+        <td class="pain-col">Code-switching (multilingual passengers mixing English with Spanish or Portuguese) degrades CCAI intent accuracy by 10–15%; no per-language model version management currently in place</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Authenticate customer for transactional self-service</td>
+        <td class="kpi-col">Authentication success rate ≥92% on first attempt; failed auth rate &lt;3%</td>
+        <td class="pain-col">Passengers frequently misquote 6-character PNR (alpha-numeric confusion); Altéa PSS timeout during peak load causes auth failures that appear as customer errors, inflating escalation rate</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Execute self-service task via PSS &amp; loyalty APIs</td>
+        <td class="kpi-col">Self-service transaction completion rate ≥80% for eligible intents; API error rate &lt;1%</td>
+        <td class="pain-col">Altéa PSS fare recalculation during voluntary rebooking via API does not always honour same-day change waiver rules, causing incorrect fare difference charges that require manual agent correction</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Detect escalation trigger &amp; package conversation context</td>
+        <td class="kpi-col">Context transfer completeness ≥98% (no dropped transcripts); escalation routing latency &lt;5 s</td>
+        <td class="pain-col">During IRROP events, simultaneous escalation spikes overwhelm Genesys routing capacity; lack of dynamic queue prioritisation means high-value (elite tier) passengers wait alongside general queue</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Route escalation to live agent by skill &amp; priority</td>
+        <td class="kpi-col">Average speed to answer (ASA) for escalated contacts &lt;90 s; first-contact resolution ≥75%</td>
+        <td class="pain-col">Skills-based routing matrix requires manual update when agents are cross-trained; stale routing tables during shift changes cause mis-routing and repeat transfers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Agent reviews transcript &amp; resumes resolution</td>
+        <td class="kpi-col">Agent handle time for escalated digital contacts &lt;8 min; re-open rate &lt;5%</td>
+        <td class="pain-col">Agents frequently restart from scratch when CCAI transcript is truncated or context payload exceeds Salesforce Service Cloud screen-pop character limit, negating chatbot deflection savings</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Ingest low-confidence &amp; failed interaction logs</td>
+        <td class="kpi-col">Log ingestion SLA &lt;24 h post-interaction; coverage 100% of chatbot sessions</td>
+        <td class="pain-col">CCAI logs are stored in raw JSON requiring ETL transformation before analysis; no real-time intent failure alerting exists, meaning new failure patterns go undetected for 24–48 h</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Update training utterances &amp; FAQ knowledge content</td>
+        <td class="kpi-col">Knowledge article freshness: 100% reviewed within 30 days of policy change; new utterances ≥20 per reclassified intent</td>
+        <td class="pain-col">No automated trigger connects policy change management (e.g., baggage fee updates, new fare rules) to knowledge base update workflow; stale FAQ content causes chatbot to quote superseded policies</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Retrain, validate &amp; promote NLU model to production</td>
+        <td class="kpi-col">New model accuracy ≥baseline +2%; no regression on existing intents; staging validation pass rate 100%</td>
+        <td class="pain-col">CCAI model versioning is not integrated with airline CI/CD pipeline; manual promotion steps increase risk of deploying untested models to production, with no instant rollback capability</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Monitor containment rate, CSAT &amp; escalation KPIs</td>
+        <td class="kpi-col">Chatbot containment rate ≥65%; digital CSAT ≥4.0/5.0; escalation rate &lt;35%</td>
+        <td class="pain-col">Containment rate calculation methodology varies between Genesys and CCAI reporting, creating discrepancies of 5–8 percentage points that obscure true self-service performance</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Identify intent gaps &amp; journey abandonment patterns</td>
+        <td class="kpi-col">Journey abandonment rate &lt;15% per intent flow; report produced within 5 business days of KPI breach</td>
+        <td class="pain-col">Session-level journey analytics require joining Genesys session IDs with CCAI interaction IDs and Salesforce case IDs — three separate identity namespaces with no unified customer journey ID</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Prioritise &amp; schedule chatbot enhancement backlog</td>
+        <td class="kpi-col">Backlog groomed and sprint-planned within 10 business days of KPI breach; enhancement cycle ≤6 weeks end-to-end</td>
+        <td class="pain-col">Enhancement prioritisation is often driven by loudest stakeholder rather than quantified passenger impact; lack of a shared ROI model (cost-per-contact avoided) means high-value deflection improvements are deprioritised</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Service Contact Centre</span>
+  </div>
+</div>
+
+</body>
+</html>

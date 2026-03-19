@@ -1,0 +1,59 @@
+flowchart LR
+  subgraph P1["Phase 1: Channel Design & Configuration"]
+    A([Start]) --> B[Define channel scope\n& use-case catalogue]
+    B --> C[Configure NLU intents\n& training utterances]
+    C --> D[Set containment thresholds\n& escalation routing]
+    D --> E{Config approved\nin UAT?}
+    E -- No --> C
+    E -- Yes --> F[Publish to prod\ndigital channels]
+  end
+  subgraph P2["Phase 2: Interaction & Intent Processing"]
+    F --> G[Receive inbound\ndigital interaction]
+    G --> H{Confidence score\n≥ threshold?}
+    H -- No --> I[Request clarification\nor rephrase prompt]
+    I --> H
+    H -- Yes --> J{Authentication\nrequired?}
+    J -- Yes --> K[Verify customer via\nPNR / loyalty ID]
+    K --> L{Auth\nsuccessful?}
+    L -- No --> M[Fallback: email\nverification loop]
+    M --> L
+    L -- Yes --> N[Execute self-service\ntask via PSS API]
+    J -- No --> N
+  end
+  subgraph P3["Phase 3: Escalation & Agent Handoff"]
+    N --> O{Resolved by\nchatbot?}
+    O -- Yes --> P([End: Deflected])
+    O -- No --> Q[Detect escalation\ntrigger & package context]
+    Q --> R{Live agent\navailable?}
+    R -- No --> S[Queue callback\nor async channel]
+    S --> R
+    R -- Yes --> T[Transfer transcript\nto agent workspace]
+  end
+  subgraph P4["Phase 4: Knowledge & NLU Maintenance"]
+    T --> U[Ingest low-confidence\n& failed interaction logs]
+    U --> V[Update training utterances\n& FAQ content]
+    V --> W[Retrain & validate\nNLU model]
+    W --> X{Model accuracy\n≥ baseline?}
+    X -- No --> V
+    X -- Yes --> Y[Deploy updated model\nto staging then prod]
+  end
+  subgraph P5["Phase 5: Performance Analytics & Optimisation"]
+    Y --> Z[Monitor containment\nrate, CSAT & escalation]
+    Z --> AA{KPI below\ntarget?}
+    AA -- Yes --> AB[Identify intent gaps\n& abandonment patterns]
+    AB --> AC[Prioritise & schedule\nchatbot enhancements]
+    AC --> C
+    AA -- No --> AD([Process End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style P fill:#003366,color:#fff,stroke:#003366
+  style AD fill:#003366,color:#fff,stroke:#003366
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600
+  style AA fill:#ff6600,color:#fff,stroke:#ff6600

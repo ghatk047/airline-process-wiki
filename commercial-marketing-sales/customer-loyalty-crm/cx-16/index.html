@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Baggage Operations · Ground Operations &amp; Airport Services · Airlines Process Wiki</title>
+<title>CX-16 · Digital Self-Service &amp; Chatbot Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../commercial-marketing-sales/">Customer Experience &amp; Loyalty</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -96,8 +97,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Customer Experience &amp; Loyalty</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Customer Experience &amp; Loyalty</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/">Loyalty Programme Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-01/"><span class="status-dot status-done"></span><span class="pid">CX-01</span>Frequent Flyer Program Management</a>
@@ -115,7 +116,7 @@
         <a class="sidebar-l3-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-13/"><span class="status-dot status-done"></span><span class="pid">CX-13</span>Co-Brand Credit Card Partnership Management</a>
         <a class="sidebar-l3-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-14/"><span class="status-dot status-done"></span><span class="pid">CX-14</span>Loyalty Program Partnerships (Hotels/Cars/Retail)</a>
         <a class="sidebar-l3-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-15/"><span class="status-dot status-done"></span><span class="pid">CX-15</span>Customer Service Contact Centre Operations</a>
-        <a class="sidebar-l3-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-16/"><span class="status-dot status-done"></span><span class="pid">CX-16</span>Digital Self-Service &amp; Chatbot Management</a>
+        <a class="sidebar-l3-link active" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-16/"><span class="status-dot status-done"></span><span class="pid">CX-16</span>Digital Self-Service &amp; Chatbot Management</a>
       </div>
     </div>
   </div>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-queue"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -242,90 +243,248 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
-  <span class="current">Baggage Operations</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../commercial-marketing-sales/">Customer Experience &amp; Loyalty</a><span class="sep">›</span>
+  <a href="../../../commercial-marketing-sales/customer-loyalty-crm/">Customer Service Contact Centre</a><span class="sep">›</span>
+  <span class="current">CX-16 · Digital Self-Service &amp; Chatbot Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Baggage Operations</h1>
-    <p>Ground Operations &amp; Airport Services · 0 of 8 subprocesses complete · Updated 2026-03-18 22:28</p>
+    <h1>Digital Self-Service &amp; Chatbot Management</h1>
+    <p>Customer Experience &amp; Loyalty › Customer Service Contact Centre · 17 L4 steps · 5 phases · 7 decision gates · Updated 2026-03-18 22:28</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CX-16</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-02</span>Baggage Acceptance &amp; Handling</h3>
-    <p>Baggage Operations · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cx-16">
+      <img src="../../../assets/img/cx-16.png" alt="CX-16 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cx-16').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cx-16').style.display='flex'">
+      <div id="diag-placeholder-cx-16" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-02/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Define digital channel scope &amp; use-case catalogue</td>
+  <td class="td-role">Digital Product Owner</td>
+  <td><span class="stag custom">Confluence</span></td>
+  <td style="font-size:10px;color:#6b7280">Contact centre volume reports, top-10 call driver analysis from Genesys Cloud CX</td>
+  <td style="font-size:10px">Approved use-case catalogue listing automatable intents (flight status, rebooking, refund, baggage, check-in)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Use-case coverage ≥70% of top contact drivers</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Configure NLU intents, entities &amp; training utterances</td>
+  <td class="td-role">Conversational AI Engineer</td>
+  <td><span class="stag custom">Google Contact Center AI (CCAI)</span></td>
+  <td style="font-size:10px;color:#6b7280">Use-case catalogue, historical chat transcripts from Salesforce Service Cloud</td>
+  <td style="font-size:10px">NLU model with ≥50 utterances per intent, entity extraction rules for PNR, flight number, date, airport code</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Intent recognition accuracy ≥88% in offline evaluation</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Set containment thresholds &amp; escalation routing rules</td>
+  <td class="td-role">Contact Centre Operations Manager</td>
+  <td><span class="stag custom">Genesys Cloud CX</span></td>
+  <td style="font-size:10px;color:#6b7280">NLU confidence score ranges, queue capacity SLAs, skills-based routing matrix</td>
+  <td style="font-size:10px">Escalation policy: confidence &lt;0.70 → clarification prompt; &lt;0.55 → live agent; authenticated transaction failure → priority queue</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Mis-escalation rate &lt;5% (contacts escalated that chatbot could have resolved)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">UAT regression test chatbot flows &amp; approve release</td>
+  <td class="td-role">QA Analyst</td>
+  <td><span class="stag custom">Google Contact Center AI (CCAI)</span></td>
+  <td style="font-size:10px;color:#6b7280">Configured NLU model, test script covering all use-case catalogue scenarios including exception paths</td>
+  <td style="font-size:10px">UAT sign-off report; failed flows returned to step 1.2 for remediation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">UAT pass rate ≥95% across all intent test cases before prod deployment</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Receive &amp; parse inbound digital interaction</td>
+  <td class="td-role">Automated — Chatbot Runtime</td>
+  <td><span class="stag custom">Genesys Cloud CX</span></td>
+  <td style="font-size:10px;color:#6b7280">Customer message via web chat, mobile app, WhatsApp Business API, or Facebook Messenger</td>
+  <td style="font-size:10px">Normalised interaction record with channel source, session ID, timestamp, and raw utterance</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Channel availability ≥99.9% uptime; median response latency &lt;800 ms</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Classify intent &amp; extract booking / loyalty entities</td>
+  <td class="td-role">Automated — NLU Engine</td>
+  <td><span class="stag custom">Google Contact Center AI (CCAI)</span></td>
+  <td style="font-size:10px;color:#6b7280">Normalised customer utterance</td>
+  <td style="font-size:10px">Top intent label with confidence score, extracted entities (PNR, flight number, date, loyalty tier)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Live intent accuracy ≥85%; confidence score logged for every interaction</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Authenticate customer for transactional self-service</td>
+  <td class="td-role">Automated — Identity Verification</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Customer-supplied PNR + last name, or loyalty member ID + PIN via Salesforce Service Cloud identity service</td>
+  <td style="font-size:10px">Authenticated session token; customer profile (booking history, loyalty tier, contact preferences) retrieved</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Authentication success rate ≥92% on first attempt; failed auth rate &lt;3%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Execute self-service task via PSS &amp; loyalty APIs</td>
+  <td class="td-role">Automated — Transaction Engine</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Authenticated session, validated intent (rebooking, refund request, seat selection, check-in, baggage add-on, flight status)</td>
+  <td style="font-size:10px">Transaction confirmation (new PNR, refund reference, boarding pass, baggage receipt) or structured error response</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Self-service transaction completion rate ≥80% for eligible intents; API error rate &lt;1%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Detect escalation trigger &amp; package conversation context</td>
+  <td class="td-role">Automated — Orchestration Layer</td>
+  <td><span class="stag custom">Genesys Cloud CX</span></td>
+  <td style="font-size:10px;color:#6b7280">CCAI confidence score below threshold, customer explicit escalation request (&quot;speak to agent&quot;), or transaction API failure flag</td>
+  <td style="font-size:10px">Escalation event with full conversation transcript, intent history, authentication status, and customer tier</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Context transfer completeness ≥98% (no dropped transcripts); escalation routing latency &lt;5 s</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Route escalation to live agent by skill &amp; priority</td>
+  <td class="td-role">Automated — ACD Router</td>
+  <td><span class="stag custom">Genesys Cloud CX</span></td>
+  <td style="font-size:10px;color:#6b7280">Escalation event, agent skill matrix (language, fare complexity, loyalty tier authorisation), real-time queue depth</td>
+  <td style="font-size:10px">Agent assignment with conversation context pre-loaded in Salesforce Service Cloud agent console</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Average speed to answer (ASA) for escalated contacts &lt;90 s; first-contact resolution ≥75%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Agent reviews transcript &amp; resumes resolution</td>
+  <td class="td-role">Contact Centre Agent</td>
+  <td><span class="stag custom">Salesforce Service Cloud</span></td>
+  <td style="font-size:10px;color:#6b7280">Full chatbot transcript, customer profile (PNR, loyalty tier, prior cases), CCAI-suggested resolution from agent assist</td>
+  <td style="font-size:10px">Case updated in Salesforce; resolution actioned in Amadeus Altéa PSS (rebooking, waiver, compensation)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Agent handle time for escalated digital contacts &lt;8 min; re-open rate &lt;5%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Ingest low-confidence &amp; failed interaction logs</td>
+  <td class="td-role">Conversational AI Analyst</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Daily CCAI interaction logs exported via Genesys Data Actions; confidence scores, unmatched utterances, fallback counts</td>
+  <td style="font-size:10px">Curated dataset of misclassified and unresolved intents ranked by volume and customer impact</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Log ingestion SLA &lt;24 h post-interaction; coverage 100% of chatbot sessions</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Update training utterances &amp; FAQ knowledge content</td>
+  <td class="td-role">Knowledge Manager</td>
+  <td><span class="stag custom">Salesforce Knowledge</span></td>
+  <td style="font-size:10px;color:#6b7280">Prioritised intent gap list, agent feedback on frequently asked questions, product/policy change notifications</td>
+  <td style="font-size:10px">Updated intent training dataset uploaded to CCAI; revised FAQ articles published in Salesforce Knowledge</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Knowledge article freshness: 100% reviewed within 30 days of policy change; new utterances ≥20 per reclassified intent</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Retrain, validate &amp; promote NLU model to production</td>
+  <td class="td-role">ML Engineer</td>
+  <td><span class="stag custom">Google Contact Center AI (CCAI)</span></td>
+  <td style="font-size:10px;color:#6b7280">Updated training dataset, baseline model accuracy benchmarks from last release</td>
+  <td style="font-size:10px">Validated NLU model version; A/B test report comparing new vs. current model on held-out test set</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">New model accuracy ≥baseline +2%; no regression on existing intents; staging validation pass rate 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Monitor containment rate, CSAT &amp; escalation KPIs</td>
+  <td class="td-role">Digital Channel Analyst</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Genesys Cloud CX interaction data, Medallia post-interaction CSAT survey results, AWS Redshift chatbot analytics</td>
+  <td style="font-size:10px">Weekly digital channel performance dashboard: containment rate, CSAT, escalation rate, top unresolved intents</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Chatbot containment rate ≥65%; digital CSAT ≥4.0/5.0; escalation rate &lt;35%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Identify intent gaps &amp; journey abandonment patterns</td>
+  <td class="td-role">Contact Centre Analytics Manager</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Tableau dashboard KPI alerts, session path analysis, drop-off rates by intent and step</td>
+  <td style="font-size:10px">Root-cause analysis report identifying top 5 intent gaps and highest-abandonment journey points</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Journey abandonment rate &lt;15% per intent flow; report produced within 5 business days of KPI breach</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Prioritise &amp; schedule chatbot enhancement backlog</td>
+  <td class="td-role">Digital Product Owner</td>
+  <td><span class="stag custom">Confluence</span></td>
+  <td style="font-size:10px;color:#6b7280">Root-cause analysis report, capacity estimates from Conversational AI Engineering team, commercial priority from Revenue Management</td>
+  <td style="font-size:10px">Prioritised enhancement backlog in Confluence; sprint plan for next NLU model training cycle (step 1.2)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Backlog groomed and sprint-planned within 10 business days of KPI breach; enhancement cycle ≤6 weeks end-to-end</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-03</span>Lost &amp; Found / Baggage Tracing</h3>
-    <p>Baggage Operations · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CX-16</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Customer Experience &amp; Loyalty</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Customer Service Contact Centre</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Digital Self-Service &amp; Chatbot Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">17 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">7 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">2 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Digital Product Owner</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Conversational AI Engineer</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Contact Centre Operations Manager</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>QA Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>Automated — Chatbot Runtime</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Automated — NLU Engine</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Automated — Identity Verification</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Automated — Transaction Engine</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Automated — Orchestration Layer</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Automated — ACD Router</div><div class="swim"><div class="dot" style="background:#f97316"></div>Contact Centre Agent</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>Conversational AI Analyst</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Knowledge Manager</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>ML Engineer</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Digital Channel Analyst</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Contact Centre Analytics Manager</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">Confluence</span><span class="stag custom">Google Contact Center AI (CCAI)</span><span class="stag custom">Genesys Cloud CX</span><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag custom">Salesforce Service Cloud</span><span class="stag aws">AWS S3 / Redshift</span><span class="stag custom">Salesforce Knowledge</span><span class="stag custom">Tableau</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Define digital channel scope &amp; use-case catalogue</span><span class="kval">Use-case coverage ≥70% of top contact drivers</span></div><div class="krow"><span class="kname">Configure NLU intents, entities &amp; training utterances</span><span class="kval">Intent recognition accuracy ≥88% in offline evaluation</span></div><div class="krow"><span class="kname">Set containment thresholds &amp; escalation routing rules</span><span class="kval">Mis-escalation rate &lt;5% (contacts escalated that chatbot could have resolved)</span></div><div class="krow"><span class="kname">UAT regression test chatbot flows &amp; approve release</span><span class="kval">UAT pass rate ≥95% across all intent test cases before prod deployment</span></div><div class="krow"><span class="kname">Receive &amp; parse inbound digital interaction</span><span class="kval">Channel availability ≥99.9% uptime; median response latency &lt;800 ms</span></div><div class="krow"><span class="kname">Classify intent &amp; extract booking / loyalty entities</span><span class="kval">Live intent accuracy ≥85%; confidence score logged for every interaction</span></div><div class="krow"><span class="kname">Authenticate customer for transactional self-service</span><span class="kval">Authentication success rate ≥92% on first attempt; failed auth rate &lt;3%</span></div><div class="krow"><span class="kname">Execute self-service task via PSS &amp; loyalty APIs</span><span class="kval">Self-service transaction completion rate ≥80% for eligible intents; API error rate &lt;1%</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Airlines frequently undercount automatable intents by excluding irregular operations (IRROP) scenarios, leaving high-volume disruption contacts undeflected</div><div class="risk-card">Airline-specific entities (IATA airport codes, fare basis codes, PNR formats) require custom entity extractors not available in generic NLU libraries; training data is sparse for low-frequency intents</div><div class="risk-card">Overly aggressive confidence thresholds during IRROP events flood live agent queues; Genesys routing rules require manual override during declared irregular operations</div><div class="risk-card">Regression testing is manual and time-consuming; no automated test harness exists for end-to-end chatbot + PSS API integration paths, increasing release cycle to 3–4 weeks</div><div class="risk-card">WhatsApp Business API throughput is capped by Meta rate limits during high-demand periods (e.g., weather events); fallback to web chat is not seamlessly communicated to passengers</div><div class="risk-card">Code-switching (multilingual passengers mixing English with Spanish or Portuguese) degrades CCAI intent accuracy by 10–15%; no per-language model version management currently in place</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Contact centre volume reports, top-10 call driver analysis from Genesys Cloud CX</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Prioritised enhancement backlog in Confluence; sprint plan for next NLU model training cycle (step 1.2)</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-05</span>Ramp &amp; Turnaround Operations</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-06</span>Ground Handling Vendor Management</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-07</span>Load Control &amp; Aircraft Loading</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-11</span>Cargo &amp; Mail Ground Handling</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-12</span>De-Icing &amp; Winter Operations</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-14</span>Ground Support Equipment (GSE) Management</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-14/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cx-15/"><span class="arrow">←</span><span><span class="sub">Previous</span>CX-15 · Customer Service Contact Centre Operations</span></a><a class="pn-btn" href="../fo-01/"><span><span class="sub">Next</span>FO-01 · Flight Dispatch &amp; Release</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
