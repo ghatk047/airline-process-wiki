@@ -1,0 +1,56 @@
+flowchart LR
+  subgraph P1[Phase 1: AOG Detection and Assessment]
+    A([AOG Event]) --> B[Receive defect via ACARS/logbook]
+    B --> C{MEL/CDL relief\napplicable?}
+    C -- Yes --> D[Apply MEL and dispatch]
+    C -- No --> E[Classify AOG severity]
+  end
+
+  subgraph P2[Phase 2: MCC Mobilisation]
+    E --> F[Notify MCC and alert station]
+    F --> G[Mobilise line tech to aircraft]
+    G --> H{Parts available\nat station?}
+  end
+
+  subgraph P3[Phase 3: Fault Isolation]
+    H -- Yes --> I[Access AMM/IPC in AMOS]
+    H -- No --> J[Activate AOG Desk]
+    I --> K{Fault isolated\nby AMM procedure?}
+    K -- No --> L[Request OEM engineering support]
+    L --> K
+  end
+
+  subgraph P4[Phase 4: AOG Parts Sourcing]
+    J --> M[Search AOG pool in AMOS]
+    M --> N{Part sourced\nwithin RTA?}
+    N -- No --> O[Loan/borrow via AOG network]
+    O --> N
+    N -- Yes --> P[Expedite shipment to station]
+  end
+
+  subgraph P5[Phase 5: Repair and Return to Service]
+    K -- Yes --> Q[Execute repair per AMM]
+    P --> Q
+    Q --> R[Functional test and inspection]
+    R --> S{Airworthy?\nAll defects cleared?}
+    S -- No --> Q
+    S -- Yes --> T[Issue CRS in AMOS/Trax]
+  end
+
+  subgraph P6[Phase 6: Documentation and Close-Out]
+    D --> U([Aircraft Released])
+    T --> V[Update tech log and delay report]
+    V --> W{Recurring\ndefect?}
+    W -- Yes --> X[Raise RCA in AMOS Reliability]
+    W -- No --> U
+    X --> U
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600

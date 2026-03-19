@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MR-08 Slides — AOG Recovery &amp; Technical Dispatch</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-08</span>
+    <h1>AOG Recovery &amp; Technical Dispatch</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/mr-08.png" alt="BPMN for MR-08" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Line Maintenance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-08</span>
+    <h1>AOG Recovery &amp; Technical Dispatch</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> MR-08</li>
+          <li><strong>L1 Domain:</strong> Maintenance, Repair &amp; Overhaul</li>
+          <li><strong>L2 Process:</strong> Line Maintenance</li>
+          <li><strong>L3 Name:</strong> AOG Recovery &amp; Technical Dispatch</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive AOG defect notification</li><li><strong>Phase 2:</strong> Classify AOG severity and estimate RTA</li><li><strong>Phase 3:</strong> Perform initial inspection and fault isolation</li><li><strong>Phase 4:</strong> Activate AOG desk for emergency parts sourcing</li><li><strong>Phase 5:</strong> Execute repair or LRU replacement per AMM</li><li><strong>Phase 6:</strong> Update tech log, delay code, and disruption report</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Certifying LAME (Type-rated, authorisation current)</li><li>LAME</li><li>LAME (Certifying Engineer) + Independent Inspector</li><li>LAME + Avionics / Structures Technician</li><li>LAME / MCC Operations Controller</li><li>Licensed Aircraft Maintenance Engineer (LAME)</li><li>MCC AOG Parts Coordinator</li><li>MCC Analyst</li><li>MCC Duty Manager</li><li>MCC Technical Engineer</li><li>Maintenance Control Centre (MCC) Analyst</li><li>Reliability Engineer</li><li>Station Stores Technician</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS (Inventory / Warehouse Management module)</li><li>AMOS (Loan/Borrow module) + direct AOG desk contact</li><li>AMOS (Purchasing / AOG Order module) + ILS Partsbase</li><li>AMOS (Reliability / Occurrence Reporting module)</li><li>AMOS (Sign-off / Dual-inspection workflow)</li><li>AMOS (Work Order / Task Card module)</li><li>AMOS + Amadeus Altéa Operations (Delay/Disruption module)</li><li>AMOS + DHL / FedEx AOG courier portal</li><li>AMOS by Swiss AviationSoftware (AOG workflow module)</li><li>AMOS by Swiss AviationSoftware (CRS / Tech Log module)</li><li>AMOS by Swiss AviationSoftware (MEL module)</li><li>AMOS by Swiss AviationSoftware + Amadeus Altéa Operations</li><li>Boeing AeroExchange / Airbus AiRTHM OEM AOG Desk portal</li><li>Boeing Toolbox / Airbus AiRTHM / Trax (document integration)</li><li>Jeppesen FliteDeck / OEM Fault Isolation Manual (FIM)</li><li>SITA ACARS / Airline Crew Communication Platform</li><li>SITA ACARS / Electronic Technical Log (ETL)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Line Maintenance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-08</span>
+    <h1>AOG Recovery &amp; Technical Dispatch</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive AOG defect notification</td>
+        <td class="kpi-col">Defect receipt-to-acknowledgement &lt; 5 minutes</td>
+        <td class="pain-col">ETL systems at outstations may lack real-time ACARS integration, forcing phone-based defect relay that delays MCC awareness by 10–20 min</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Assess defect against MEL / CDL</td>
+        <td class="kpi-col">MEL assessment completed &lt; 15 minutes of defect receipt</td>
+        <td class="pain-col">MEL revision cycles lag OEM amendments by up to 30 days if airline OpSpec approval is delayed, leaving engineers working from printed fallback copies</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Apply MEL relief and replan dispatch</td>
+        <td class="kpi-col">MEL-cleared aircraft released within 30 minutes of defect; on-time departure recovery ≥ 85%</td>
+        <td class="pain-col">Altéa Operations and AMOS operate as separate systems; MEL deferrals must be manually mirrored to flight release, creating risk of dispatching crew without restriction awareness</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Classify AOG severity and estimate RTA</td>
+        <td class="kpi-col">AOG classification completed &lt; 10 minutes of MEL decision; RTA estimate accuracy ± 1 hour for 80% of events</td>
+        <td class="pain-col">RTA estimates at remote outstations with limited history are often optimistic; underestimation cascades into multiple re-protection waves, amplifying passenger disruption costs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Alert station maintenance and mobilise team</td>
+        <td class="kpi-col">First engineer on aircraft within 20 minutes of AOG declaration at main bases; 45 minutes at outstations</td>
+        <td class="pain-col">Outstations with single contracted line maintenance providers may have engineers committed to concurrent turnarounds, delaying AOG response beyond contractual SLA by 15–30 minutes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Check local parts availability for likely defect</td>
+        <td class="kpi-col">Station first-time fill rate ≥ 60% for top-20 AOG consumable part numbers</td>
+        <td class="pain-col">Inventory data in AMOS at outstations can be up to 4 hours stale if warehouse staff have not confirmed physical receipts; MCC dispatches engineers expecting parts that are not present</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Perform initial inspection and fault isolation</td>
+        <td class="kpi-col">Fault isolated within 45 minutes for 90% of LRU-level defects</td>
+        <td class="pain-col">BITE data on older aircraft variants (e.g. A320 CFM56 legacy FDR) requires cross-referencing paper FIM charts; digital FIM integration with AMOS is not universal across fleet types</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Access AMM / IPC repair procedures</td>
+        <td class="kpi-col">Correct AMM revision accessible within 5 minutes; zero deferred task cards performed on superseded revisions</td>
+        <td class="pain-col">AMM revision synchronisation between OEM publication dates and airline-approved libraries lags by 15–45 days; engineers at outstations may access a local cached version that pre-dates a critical service bulletin</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Escalate to OEM engineering support if unresolved</td>
+        <td class="kpi-col">OEM first response &lt; 2 hours (AOG priority); disposition received &lt; 4 hours for 85% of escalations</td>
+        <td class="pain-col">OEM AOG support SLAs differ by aircraft type and contract tier; low-utilisation carriers on basic support contracts wait up to 8 hours for dispositions, extending AOG duration into multi-day events</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Activate AOG desk for emergency parts sourcing</td>
+        <td class="kpi-col">AOG PO raised &lt; 15 minutes of parts shortage confirmation; vendor acknowledgement &lt; 1 hour</td>
+        <td class="pain-col">ILS Partsbase and AMOS purchasing are not natively integrated; coordinators toggle between platforms increasing error risk in part number / revision level transcription</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Coordinate cross-fleet loan or borrow with partner airline</td>
+        <td class="kpi-col">Loan agreement confirmed &lt; 2 hours of initial AOG desk activation; traceability documents received before part installation</td>
+        <td class="pain-col">Loan/borrow transactions require bilateral airworthiness approval (EASA Form 1 or FAA 8130-3); delays in receiving signed release documentation from partner engineers hold up installation even when part is physically available</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Arrange priority shipment to AOG station</td>
+        <td class="kpi-col">Shipment uplift confirmed &lt; 3 hours of part readiness; ETA accuracy ± 30 minutes for 90% of AOG shipments</td>
+        <td class="pain-col">Same-day AOG courier capacity from remote OEM/distributor locations is limited; belly-freight dependencies on airline own schedule may add 6–12 hours versus charter courier option, but cost approval thresholds slow decision</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Execute repair or LRU replacement per AMM</td>
+        <td class="kpi-col">Task execution time within ± 20% of AMM estimated man-hours for 80% of LRU replacements</td>
+        <td class="pain-col">Tooling calibration records held in a separate AMOS tooling sub-module are not always linked to the active task card; engineers must manually verify calibration status, adding 10–15 min per specialist tool</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Perform functional test and duplicate inspection</td>
+        <td class="kpi-col">Functional test pass rate ≥ 97% first attempt; zero releases without mandatory duplicate inspection where required by AMM</td>
+        <td class="pain-col">At minimum-staffed outstations only one LAME may be on duty; duplicate inspection requirement cannot be fulfilled locally, forcing a flight-to-base or ferry-for-maintenance decision which adds hours to disruption</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Issue Certificate of Release to Service (CRS)</td>
+        <td class="kpi-col">CRS issued &lt; 30 minutes of functional test pass; zero CRS issued against open critical defects</td>
+        <td class="pain-col">AMOS user authorisation matrix must reflect the certifying engineer&#x27;s current type rating and licence scope; expired or incorrectly scoped authorisations are not always flagged at CRS sign-off, creating a regulatory compliance gap (CAR 145)</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Update tech log, delay code, and disruption report</td>
+        <td class="kpi-col">Delay code accuracy ≥ 98% (audited quarterly); disruption report filed within 2 hours of aircraft departure</td>
+        <td class="pain-col">IATA AHM 780 delay codes for technical events require judgment calls that are inconsistently applied across MCC shifts; downstream performance analytics are therefore unreliable for root cause trending</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Trigger reliability review for recurring defect</td>
+        <td class="kpi-col">Recurring defect detection rate ≥ 95% within 3 occurrences; RCA report issued within 10 working days</td>
+        <td class="pain-col">AMOS reliability trending requires consistent ATA coding across events; MCC coding variance (see step 6.1) means recurring defects are mis-binned into different ATA sub-chapters, masking the recurrence pattern and delaying corrective action</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Line Maintenance</span>
+  </div>
+</div>
+
+</body>
+</html>
