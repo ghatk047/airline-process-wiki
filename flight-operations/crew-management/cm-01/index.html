@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Flight Dispatch &amp; Control · Flight Operations · Airlines Process Wiki</title>
+<title>CM-01 · Crew Pairing Optimization · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Crew Management</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -142,7 +143,7 @@
       </div>
       <a class="sidebar-l2-link" href="../../../flight-operations/crew-management/">Crew Planning &amp; Rostering</a>
       <div class="sidebar-l3">
-        <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-01/"><span class="status-dot status-done"></span><span class="pid">CM-01</span>Crew Pairing Optimization</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/crew-management/cm-01/"><span class="status-dot status-done"></span><span class="pid">CM-01</span>Crew Pairing Optimization</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-02/"><span class="status-dot status-queue"></span><span class="pid">CM-02</span>Crew Rostering &amp; Bidding</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-03/"><span class="status-dot status-queue"></span><span class="pid">CM-03</span>Crew Day-of-Operations Tracking</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-04/"><span class="status-dot status-queue"></span><span class="pid">CM-04</span>Fatigue &amp; Rest Rule Compliance (FAR Part 117)</a>
@@ -242,153 +243,238 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Flight Dispatch &amp; Control</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Crew Management</a><span class="sep">›</span>
+  <a href="../../../flight-operations/crew-management/">Crew Planning &amp; Rostering</a><span class="sep">›</span>
+  <span class="current">CM-01 · Crew Pairing Optimization</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Flight Dispatch &amp; Control</h1>
-    <p>Flight Operations · 15 of 15 subprocesses complete · Updated 2026-03-19 10:16</p>
+    <h1>Crew Pairing Optimization</h1>
+    <p>Crew Management › Crew Planning &amp; Rostering · 16 L4 steps · 5 phases · 8 decision gates · Updated 2026-03-19 10:16</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CM-01</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-01</span>Flight Dispatch &amp; Release</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 11 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cm-01">
+      <img src="../../../assets/img/cm-01.png" alt="CM-01 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cm-01').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cm-01').style.display='flex'">
+      <div id="diag-placeholder-cm-01" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract published flight schedule for pairing input</td>
+  <td class="td-role">Crew Planning Analyst</td>
+  <td><span class="stag amadeus">Amadeus SkyWORKS</span></td>
+  <td style="font-size:10px;color:#6b7280">Published SSIM flight schedule file for planning period</td>
+  <td style="font-size:10px">Validated flight activity file loaded into crew system</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Schedule completeness ≥99.5% of planned departures loaded</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Load FAR Part 117 and CBA constraint parameters</td>
+  <td class="td-role">Crew Planning Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">FAR Part 117 regulation set, current Collective Bargaining Agreement</td>
+  <td style="font-size:10px">Legal constraint rule set activated in optimization engine</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% rule compliance across all published pairings</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Validate fleet type and crew qualification matrix</td>
+  <td class="td-role">Crew Planning Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Fleet assignment file, crew qualification and currency database</td>
+  <td style="font-size:10px">Qualified crew pool confirmed per aircraft type and domicile</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero unqualified crew assignments at publish; qualification data currency ≥99%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Generate candidate duty periods from flight activity</td>
+  <td class="td-role">Crew Planning Systems Specialist</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated flight activity file, crew base and domicile data</td>
+  <td style="font-size:10px">Candidate duty period library (50,000+ pairings)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Generate ≥50,000 candidate pairings per iteration; generation run time &lt;30 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Filter candidate pairings against FAR Part 117 limits</td>
+  <td class="td-role">Crew Planning Systems Specialist</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Candidate duty period library, FAR Part 117 duty and rest limits</td>
+  <td style="font-size:10px">Legally filtered duty period library</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of retained pairings FAR Part 117 compliant; filter pass rate logged</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Enforce crew base and domicile deadhead constraints</td>
+  <td class="td-role">Crew Planning Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">FAR-filtered duty periods, crew base capacity allocations</td>
+  <td style="font-size:10px">Domicile-constrained pairing set with deadhead cost estimates</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Deadhead ratio ≤3.5% of total pairing block hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Execute integer programming pairing optimization</td>
+  <td class="td-role">Crew Planning Systems Specialist</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Filtered pairing library, cost objective (minimize hotel, deadhead, duty cost)</td>
+  <td style="font-size:10px">Optimized pairing solution with full flight coverage</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Pairing cost per block hour ≤$22 benchmark; solver convergence within 2 hrs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Validate 100% flight coverage in optimized solution</td>
+  <td class="td-role">Crew Planning Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Optimized pairing solution</td>
+  <td style="font-size:10px">Coverage validation report; list of uncovered flights if any</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% flight coverage — zero uncovered departures at validation</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Assess hotel and per-diem cost against budget targets</td>
+  <td class="td-role">Crew Cost Analyst</td>
+  <td><span class="stag sap">Jeppesen Crew Management + SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Optimized pairing plan, hotel contract rate file, CBA per-diem schedule</td>
+  <td style="font-size:10px">Crew cost estimate vs. budget variance report</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Layover hotel cost ≤$85/night average; total pairing cost within 5% of budget</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Run CBA work rule validation on all pairings</td>
+  <td class="td-role">Labor Relations Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Optimized pairing set, CBA rules library (versioned)</td>
+  <td style="font-size:10px">CBA compliance report with pass/fail per pairing</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CBA violation rate &lt;0.5% at initial validation run</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Resolve CBA violations via manual pairing edit</td>
+  <td class="td-role">Crew Planning Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">CBA violation report, flagged pairings</td>
+  <td style="font-size:10px">Corrected pairings with no CBA violations</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">All violations resolved within 4 hrs; zero violations at final publish</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Build crew roster lines from approved pairing set</td>
+  <td class="td-role">Crew Rostering Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved pairing set, roster period calendar, CBA day-off requirements</td>
+  <td style="font-size:10px">Draft roster lines with guaranteed time, days off, and pairing assignments</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Average monthly guaranteed-time utilization ≥82% of CBA contractual maximum</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Allocate reserve crew coverage by domicile</td>
+  <td class="td-role">Crew Rostering Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Draft roster lines, 12-month historical disruption and sick-call rates</td>
+  <td style="font-size:10px">Reserve crew allocation plan per domicile and day type</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Reserve coverage ratio ≥110% of projected daily sick/IRROP requirement</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Publish bid package to crew self-service portal</td>
+  <td class="td-role">Crew Scheduling Manager</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Finalized roster lines, reserve allocation, CBA bid lead-time requirement</td>
+  <td style="font-size:10px">Bid package published for crew seniority-based self-bidding</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bid package published ≥21 days before period start per CBA; 100% of lines posted</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.4</td>
+  <td class="td-name">Process crew bids and award by seniority</td>
+  <td class="td-role">Crew Scheduling Manager</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Submitted crew bids, current seniority list</td>
+  <td style="font-size:10px">Awarded roster assignments per crew member</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bid award accuracy ≥99.9%; zero seniority inversion errors</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.5</td>
+  <td class="td-name">Publish final rosters and sync to PSS</td>
+  <td class="td-role">Crew Scheduling Manager</td>
+  <td><span class="stag amadeus">Jeppesen Crew Management + Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Awarded bid assignments, PSS crew manifest interface</td>
+  <td style="font-size:10px">Published crew rosters; crew manifest updated in Altéa PSS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Roster publication ≥14 days before period start; PSS sync completed within 1 hr</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-02</span>Operational Flight Plan Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CM-01</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Crew Management</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Crew Planning &amp; Rostering</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Crew Pairing Optimization</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">16 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">8 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">11 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Crew Planning Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Crew Planning Systems Specialist</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Crew Cost Analyst</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Labor Relations Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>Crew Rostering Analyst</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Crew Scheduling Manager</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag amadeus">Amadeus SkyWORKS</span><span class="stag custom">Jeppesen Crew Management</span><span class="stag sap">Jeppesen Crew Management + SAP S/4HANA Finance (FI/CO)</span><span class="stag amadeus">Jeppesen Crew Management + Amadeus Altéa PSS</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract published flight schedule for pairing input</span><span class="kval">Schedule completeness ≥99.5% of planned departures loaded</span></div><div class="krow"><span class="kname">Load FAR Part 117 and CBA constraint parameters</span><span class="kval">100% rule compliance across all published pairings</span></div><div class="krow"><span class="kname">Validate fleet type and crew qualification matrix</span><span class="kval">Zero unqualified crew assignments at publish; qualification data currency ≥99%</span></div><div class="krow"><span class="kname">Generate candidate duty periods from flight activity</span><span class="kval">Generate ≥50,000 candidate pairings per iteration; generation run time &lt;30 min</span></div><div class="krow"><span class="kname">Filter candidate pairings against FAR Part 117 limits</span><span class="kval">100% of retained pairings FAR Part 117 compliant; filter pass rate logged</span></div><div class="krow"><span class="kname">Enforce crew base and domicile deadhead constraints</span><span class="kval">Deadhead ratio ≤3.5% of total pairing block hours</span></div><div class="krow"><span class="kname">Execute integer programming pairing optimization</span><span class="kval">Pairing cost per block hour ≤$22 benchmark; solver convergence within 2 hrs</span></div><div class="krow"><span class="kname">Validate 100% flight coverage in optimized solution</span><span class="kval">100% flight coverage — zero uncovered departures at validation</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Schedule changes from network planning arriving &lt;72 hrs before month close disrupt pairing optimization cycles and require costly re-runs</div><div class="risk-card">CBA rule amendments negotiated mid-planning cycle require manual rule re-entry into Jeppesen and full re-optimization, adding 8–12 hrs to the planning cycle</div><div class="risk-card">Mixed-fleet type-rating transitions (e.g., 737-800 to MAX) create temporary qualification bottlenecks that reduce eligible crew pools by up to 15% during conversion windows</div><div class="risk-card">Combinatorial explosion in dense network segments (e.g., 200+ daily departures from hub bases) causes candidate generation times exceeding 4 hrs, compressing the optimization window</div><div class="risk-card">Augmented crew rules for ultra-long-haul operations add rule complexity that standard Jeppesen rule builds handle inconsistently without custom coding, requiring manual legal audit</div><div class="risk-card">Unbalanced base staffing at thin-market domiciles forces excessive deadheading; Jeppesen does not dynamically rebalance base headcount, requiring manual planner intervention</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Published SSIM flight schedule file for planning period</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Published crew rosters; crew manifest updated in Altéa PSS</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-03</span>Fuel Planning &amp; Tankering</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-04</span>Weight &amp; Balance Management</h3>
-    <p>Flight Dispatch &amp; Control · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-05</span>NOTAMs &amp; AIP Information Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-06</span>Weather Monitoring &amp; Decision Support</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-07</span>Air Traffic Control Coordination</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-08</span>Network Operations Control (NOC)</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 10 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-09</span>Delay Management &amp; Root Cause Analysis</h3>
-    <p>Flight Dispatch &amp; Control · 19 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-10</span>Diversion &amp; Emergency Response Management</h3>
-    <p>Flight Dispatch &amp; Control · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-11</span>ETOPS / EDTO Operations Management</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-13</span>Performance &amp; FDR Data Monitoring</h3>
-    <p>Flight Dispatch &amp; Control · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-14</span>Air-to-Ground Communications Management</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-15</span>Dangerous Goods Load Authorization</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 13 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../fo-15/"><span class="arrow">←</span><span><span class="sub">Previous</span>FO-15 · Dangerous Goods Load Authorization</span></a><a class="pn-btn" href="../cm-02/"><span><span class="sub">Next</span>CM-02 · Crew Rostering &amp; Bidding</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

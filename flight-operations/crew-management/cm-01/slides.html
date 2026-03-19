@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-01 Slides — Crew Pairing Optimization</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-01</span>
+    <h1>Crew Pairing Optimization</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-01.png" alt="BPMN for CM-01" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-01</span>
+    <h1>Crew Pairing Optimization</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-01</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Planning &amp; Rostering</li>
+          <li><strong>L3 Name:</strong> Crew Pairing Optimization</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">11</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract published flight schedule for pairing inpu</li><li><strong>Phase 2:</strong> Generate candidate duty periods from flight activi</li><li><strong>Phase 3:</strong> Execute integer programming pairing optimization</li><li><strong>Phase 4:</strong> Run CBA work rule validation on all pairings</li><li><strong>Phase 5:</strong> Build crew roster lines from approved pairing set</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Crew Cost Analyst</li><li>Crew Planning Analyst</li><li>Crew Planning Systems Specialist</li><li>Crew Rostering Analyst</li><li>Crew Scheduling Manager</li><li>Labor Relations Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus SkyWORKS</li><li>Jeppesen Crew Management</li><li>Jeppesen Crew Management + Amadeus Altéa PSS</li><li>Jeppesen Crew Management + SAP S/4HANA Finance (FI/CO)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-01</span>
+    <h1>Crew Pairing Optimization</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract published flight schedule for pairing input</td>
+        <td class="kpi-col">Schedule completeness ≥99.5% of planned departures loaded</td>
+        <td class="pain-col">Schedule changes from network planning arriving &lt;72 hrs before month close disrupt pairing optimization cycles and require costly re-runs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Load FAR Part 117 and CBA constraint parameters</td>
+        <td class="kpi-col">100% rule compliance across all published pairings</td>
+        <td class="pain-col">CBA rule amendments negotiated mid-planning cycle require manual rule re-entry into Jeppesen and full re-optimization, adding 8–12 hrs to the planning cycle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate fleet type and crew qualification matrix</td>
+        <td class="kpi-col">Zero unqualified crew assignments at publish; qualification data currency ≥99%</td>
+        <td class="pain-col">Mixed-fleet type-rating transitions (e.g., 737-800 to MAX) create temporary qualification bottlenecks that reduce eligible crew pools by up to 15% during conversion windows</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Generate candidate duty periods from flight activity</td>
+        <td class="kpi-col">Generate ≥50,000 candidate pairings per iteration; generation run time &lt;30 min</td>
+        <td class="pain-col">Combinatorial explosion in dense network segments (e.g., 200+ daily departures from hub bases) causes candidate generation times exceeding 4 hrs, compressing the optimization window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Filter candidate pairings against FAR Part 117 limits</td>
+        <td class="kpi-col">100% of retained pairings FAR Part 117 compliant; filter pass rate logged</td>
+        <td class="pain-col">Augmented crew rules for ultra-long-haul operations add rule complexity that standard Jeppesen rule builds handle inconsistently without custom coding, requiring manual legal audit</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Enforce crew base and domicile deadhead constraints</td>
+        <td class="kpi-col">Deadhead ratio ≤3.5% of total pairing block hours</td>
+        <td class="pain-col">Unbalanced base staffing at thin-market domiciles forces excessive deadheading; Jeppesen does not dynamically rebalance base headcount, requiring manual planner intervention</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Execute integer programming pairing optimization</td>
+        <td class="kpi-col">Pairing cost per block hour ≤$22 benchmark; solver convergence within 2 hrs</td>
+        <td class="pain-col">Column-generation solver can converge to local optima on irregular or charter-heavy schedules, requiring manual seed pairing injection and re-run, which add 3–5 hrs to cycle time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Validate 100% flight coverage in optimized solution</td>
+        <td class="kpi-col">100% flight coverage — zero uncovered departures at validation</td>
+        <td class="pain-col">Last-minute schedule insertions post-optimization leave uncovered flights requiring manual pairing construction; no automated re-trigger exists in current Jeppesen deployment</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Assess hotel and per-diem cost against budget targets</td>
+        <td class="kpi-col">Layover hotel cost ≤$85/night average; total pairing cost within 5% of budget</td>
+        <td class="pain-col">Hotel contract gaps at thin-market outstations force use of non-preferred vendors exceeding CBA per-diem caps; contract database in SAP not always current with Jeppesen cost model</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Run CBA work rule validation on all pairings</td>
+        <td class="kpi-col">CBA violation rate &lt;0.5% at initial validation run</td>
+        <td class="pain-col">CBA rules for minimum rest, trip rig provisions, and max monthly hours are version-controlled; mismatches between Jeppesen rule builds and actual contract language cause violations that trigger formal grievances</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Resolve CBA violations via manual pairing edit</td>
+        <td class="kpi-col">All violations resolved within 4 hrs; zero violations at final publish</td>
+        <td class="pain-col">Manual edits to resolve CBA violations frequently create secondary coverage gaps or cost overruns, requiring iterative re-optimization loops that compress downstream rostering windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Build crew roster lines from approved pairing set</td>
+        <td class="kpi-col">Average monthly guaranteed-time utilization ≥82% of CBA contractual maximum</td>
+        <td class="pain-col">Constructing balanced roster lines that satisfy min/max flying-time guarantees across all domiciles while meeting productivity targets is highly constrained during holiday and off-peak schedule reductions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Allocate reserve crew coverage by domicile</td>
+        <td class="kpi-col">Reserve coverage ratio ≥110% of projected daily sick/IRROP requirement</td>
+        <td class="pain-col">Reserve sizing driven by IRROP scenarios requires holding excess reserves above minimum-legal levels, increasing direct crew costs by ~8%; Jeppesen reserve modelling does not natively simulate multi-day disruption cascades</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Publish bid package to crew self-service portal</td>
+        <td class="kpi-col">Bid package published ≥21 days before period start per CBA; 100% of lines posted</td>
+        <td class="pain-col">Delays in schedule finalization from network planning compress bid publication windows; missing the 21-day CBA requirement triggers grievance procedures and potential arbitration costs</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.4</td>
+        <td>Process crew bids and award by seniority</td>
+        <td class="kpi-col">Bid award accuracy ≥99.9%; zero seniority inversion errors</td>
+        <td class="pain-col">Seniority list discrepancies from SAP SuccessFactors HR integration can cause bid inversions; manual corrections require re-award runs and generate formal grievances under the CBA</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.5</td>
+        <td>Publish final rosters and sync to PSS</td>
+        <td class="kpi-col">Roster publication ≥14 days before period start; PSS sync completed within 1 hr</td>
+        <td class="pain-col">Roster-to-PSS sync failures cause crew check-in discrepancies at airports; bidirectional reconciliation between Jeppesen and Altéa is not fully automated, requiring manual exception clearing</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+</body>
+</html>
