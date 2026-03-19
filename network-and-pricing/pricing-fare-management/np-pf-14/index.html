@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Baggage Operations · Ground Operations &amp; Airport Services · Airlines Process Wiki</title>
+<title>NP-PF-14 · Bundled Fare Product Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -72,7 +73,7 @@
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-11/"><span class="status-dot status-done"></span><span class="pid">NP-PF-11</span>Ancillary Pricing (Bags, Seats, Meals)</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-12/"><span class="status-dot status-done"></span><span class="pid">NP-PF-12</span>Corporate Contract Pricing</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-13/"><span class="status-dot status-done"></span><span class="pid">NP-PF-13</span>Competitive Fare Intelligence</a>
-        <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-14/"><span class="status-dot status-done"></span><span class="pid">NP-PF-14</span>Bundled Fare Product Management</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/pricing-fare-management/np-pf-14/"><span class="status-dot status-done"></span><span class="pid">NP-PF-14</span>Bundled Fare Product Management</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-15/"><span class="status-dot status-queue"></span><span class="pid">NP-PF-15</span>Low Fare Guarantee Program Management</a>
       </div>
       <a class="sidebar-l2-link" href="../../../network-and-pricing/sales-distribution/">Sales &amp; Distribution</a>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-queue"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -242,90 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
-  <span class="current">Baggage Operations</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/pricing-fare-management/">Pricing &amp; Fare Management</a><span class="sep">›</span>
+  <span class="current">NP-PF-14 · Bundled Fare Product Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Baggage Operations</h1>
-    <p>Ground Operations &amp; Airport Services · 0 of 8 subprocesses complete · Updated 2026-03-18 21:11</p>
+    <h1>Bundled Fare Product Management</h1>
+    <p>Network Planning &amp; Scheduling › Pricing &amp; Fare Management · 18 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-18 21:11</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-PF-14</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-02</span>Baggage Acceptance &amp; Handling</h3>
-    <p>Baggage Operations · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-pf-14">
+      <img src="../../../assets/img/np-pf-14.png" alt="NP-PF-14 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-pf-14').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-pf-14').style.display='flex'">
+      <div id="diag-placeholder-np-pf-14" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-02/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Benchmark competitor bundle structures</td>
+  <td class="td-role">Revenue Analyst</td>
+  <td><span class="stag custom">OAG Schedule Analyser</span></td>
+  <td style="font-size:10px;color:#6b7280">Competitor fare filings, ATPCO branded fare data, OAG market intelligence</td>
+  <td style="font-size:10px">Competitor bundle benchmarking report with component matrix</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Coverage of top 10 competing carriers ≥100%; refresh cycle ≤30 days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Analyse ancillary revenue by product category</td>
+  <td class="td-role">Revenue Analyst</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Ancillary sales transactions, EMD issuance data, booking class mix reports</td>
+  <td style="font-size:10px">Ancillary revenue heatmap by route, cabin, and product type</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Ancillary revenue per passenger ≥$28; data completeness ≥98%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Model bundle demand &amp; willingness-to-pay scenarios</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag custom">PROS RM</span></td>
+  <td style="font-size:10px;color:#6b7280">Ancillary revenue heatmap, competitor benchmark, customer survey data</td>
+  <td style="font-size:10px">WTP model with recommended bundle price bands per tier and market</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Model R² ≥0.85; scenario output covers ≥3 price points per tier</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Approve bundle business case for launch</td>
+  <td class="td-role">Director of Pricing</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">WTP model output, incremental revenue projection, implementation cost estimate</td>
+  <td style="font-size:10px">Signed business case approval with target launch date and bundle tier scope</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Projected ancillary revenue uplift ≥12% within 6 months of launch</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Define bundle tier hierarchy and component matrix</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved business case, ancillary service catalogue, cabin class mapping</td>
+  <td style="font-size:10px">Bundle tier design document: tier names, included services, exclusions, upgrade rules</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Component matrix covers ≥3 distinct tiers (e.g. Basic, Standard, Flex)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Assign fare basis codes per bundle tier and cabin</td>
+  <td class="td-role">Pricing Systems Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Bundle tier design document, existing fare basis code registry</td>
+  <td style="font-size:10px">Fare basis code matrix mapped to each bundle tier, cabin, and market group</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero duplicate fare basis code conflicts; code assignment completed within 3 business days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Configure EMD-A ancillary service codes in PSS</td>
+  <td class="td-role">Pricing Systems Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Fare basis code matrix, IATA PADIS service type codes, bundle component list</td>
+  <td style="font-size:10px">EMD-A service definitions activated in Altéa, linked to fare basis codes</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of bundle ancillary components mapped to valid IATA PADIS service codes; zero orphaned EMD records</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Validate bundle configuration in Altéa staging</td>
+  <td class="td-role">QA Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">EMD-A service definitions, fare basis codes, test booking scenarios</td>
+  <td style="font-size:10px">Staging validation report: pass/fail per test case, defect list</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Test pass rate ≥95% before promotion to production; critical defects = 0</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">File bundle fares and conditions in ATPCO</td>
+  <td class="td-role">Tariff Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated fare basis codes, price points from WTP model, market scope</td>
+  <td style="font-size:10px">ATPCO fare filing submission: fare amounts, Cat 1–35 conditions, market applicability</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Filing submission-to-activation time ≤24 hrs; zero rejected categories on first submission</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Configure branded fare rule categories in ATPCO</td>
+  <td class="td-role">Tariff Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Bundle tier names, service inclusions/exclusions, brand attributes</td>
+  <td style="font-size:10px">ATPCO branded fare programme records with attribute icons and tier labels</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Branded fare attributes display correctly in ≥95% of GDS certified pricing responses</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Validate GDS fare display and auto-pricing accuracy</td>
+  <td class="td-role">Tariff Analyst</td>
+  <td><span class="stag gds">Sabre GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">Filed ATPCO fares, branded fare records, GDS test booking scripts</td>
+  <td style="font-size:10px">GDS fare display validation report across Sabre, Travelport, and Amadeus GDS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Pricing accuracy ≥99.9% vs. filed fare; branded attribute display rate ≥95% across all three GDS</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Build NDC offer templates with bundle attributes</td>
+  <td class="td-role">NDC Developer</td>
+  <td><span class="stag custom">NDC API Gateway</span></td>
+  <td style="font-size:10px;color:#6b7280">Bundle tier design, IATA NDC 21.3 offer schema, fare basis code matrix</td>
+  <td style="font-size:10px">NDC OfferItem definitions with BundleAttributeList populated per tier</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NDC offer response time ≤800 ms (p95); bundle attributes present in 100% of eligible offer responses</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Configure bundle merchandising on direct booking channel</td>
+  <td class="td-role">Digital Product Manager</td>
+  <td><span class="stag custom">NDC API Gateway</span></td>
+  <td style="font-size:10px;color:#6b7280">NDC offer templates, brand asset library, A/B test configuration</td>
+  <td style="font-size:10px">Direct channel bundle upsell flows live in staging: tier comparison UI, bundle highlights</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bundle comparison widget load time ≤1.2 s; A/B test variant coverage ≥20% of eligible sessions</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Execute end-to-end booking regression tests</td>
+  <td class="td-role">QA Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Staging NDC offer templates, direct channel UI, GDS test scripts</td>
+  <td style="font-size:10px">Regression test report: full booking-to-ticket flow per tier across all channels</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero P1/P2 defects in booking-to-ticket flow; regression suite ≥150 test cases</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Activate bundle offer across all channels</td>
+  <td class="td-role">Revenue Manager</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Signed go-live approval, regression test sign-off, change management notice</td>
+  <td style="font-size:10px">Bundle tiers live in production: ATPCO fares active, NDC offers published, GDS updated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Channel activation completed within 4-hour go-live window; rollback plan tested</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Monitor bundle attach rate and incremental revenue</td>
+  <td class="td-role">Revenue Analyst</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Live booking transactions, EMD-A issuance feed, channel attribution data</td>
+  <td style="font-size:10px">Daily bundle performance dashboard: attach rate by tier, channel, market, and cabin</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bundle attach rate ≥18% within 30 days of launch; incremental ancillary revenue uplift ≥12%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Review bundle performance vs. targets at 30/60/90 days</td>
+  <td class="td-role">Director of Pricing</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Bundle performance dashboard, competitive intelligence update, customer NPS data</td>
+  <td style="font-size:10px">Performance review memo: targets met/missed, root cause analysis, recommended actions</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Review cadence: D+30, D+60, D+90; action items assigned within 5 business days of review</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.4</td>
+  <td class="td-name">Adjust bundle composition or pricing based on performance</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag custom">PROS RM</span></td>
+  <td style="font-size:10px;color:#6b7280">Performance review memo, updated WTP model, revised competitive benchmark</td>
+  <td style="font-size:10px">Change order: updated ATPCO filing, revised NDC offer templates, amended EMD-A config</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Change cycle time from decision to live ≤10 business days; pricing adjustments within ±15% of original price points without full re-approval</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-03</span>Lost &amp; Found / Baggage Tracing</h3>
-    <p>Baggage Operations · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-PF-14</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network Planning &amp; Scheduling</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Pricing &amp; Fare Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Bundled Fare Product Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">7 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Revenue Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Pricing Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Director of Pricing</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Pricing Systems Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>QA Analyst</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Tariff Analyst</div><div class="swim"><div class="dot" style="background:#6366f1"></div>NDC Developer</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Digital Product Manager</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Revenue Manager</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">OAG Schedule Analyser</span><span class="stag aws">AWS Redshift</span><span class="stag custom">PROS RM</span><span class="stag custom">Tableau</span><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag custom">ATPCO</span><span class="stag gds">Sabre GDS</span><span class="stag custom">NDC API Gateway</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Benchmark competitor bundle structures</span><span class="kval">Coverage of top 10 competing carriers ≥100%; refresh cycle ≤30 days</span></div><div class="krow"><span class="kname">Analyse ancillary revenue by product category</span><span class="kval">Ancillary revenue per passenger ≥$28; data completeness ≥98%</span></div><div class="krow"><span class="kname">Model bundle demand &amp; willingness-to-pay scenarios</span><span class="kval">Model R² ≥0.85; scenario output covers ≥3 price points per tier</span></div><div class="krow"><span class="kname">Approve bundle business case for launch</span><span class="kval">Projected ancillary revenue uplift ≥12% within 6 months of launch</span></div><div class="krow"><span class="kname">Define bundle tier hierarchy and component matrix</span><span class="kval">Component matrix covers ≥3 distinct tiers (e.g. Basic, Standard, Flex)</span></div><div class="krow"><span class="kname">Assign fare basis codes per bundle tier and cabin</span><span class="kval">Zero duplicate fare basis code conflicts; code assignment completed within 3 business days</span></div><div class="krow"><span class="kname">Configure EMD-A ancillary service codes in PSS</span><span class="kval">100% of bundle ancillary components mapped to valid IATA PADIS service codes; zero orphaned EMD records</span></div><div class="krow"><span class="kname">Validate bundle configuration in Altéa staging</span><span class="kval">Test pass rate ≥95% before promotion to production; critical defects = 0</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">ATPCO branded fare data can lag 48–72 hrs post-filing; indirect bundle components (lounge, hotels) not visible in GDS fare displays</div><div class="risk-card">EMD-A revenue attributed to originating flight only; connecting itinerary ancillary splits require custom Redshift query logic</div><div class="risk-card">PROS WTP modelling requires minimum 12 months of ancillary transaction history; new routes have insufficient training data</div><div class="risk-card">Approval cycles involving Revenue Management, IT, and Distribution teams average 3–5 weeks; misaligned incentives between RM (yield) and Pricing (volume) can stall sign-off</div><div class="risk-card">Altéa PSS service catalogue constraints limit ancillary bundling to pre-defined EMD-A service types; custom inclusions (e.g. lounge access) require workaround fare conditions text</div><div class="risk-card">ATPCO fare basis codes limited to 8 alphanumeric characters; encoding tier, cabin, and market group within this constraint requires strict naming convention governance</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Competitor fare filings, ATPCO branded fare data, OAG market intelligence</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Change order: updated ATPCO filing, revised NDC offer templates, amended EMD-A config</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-05</span>Ramp &amp; Turnaround Operations</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-06</span>Ground Handling Vendor Management</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-07</span>Load Control &amp; Aircraft Loading</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-11</span>Cargo &amp; Mail Ground Handling</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-12</span>De-Icing &amp; Winter Operations</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-14</span>Ground Support Equipment (GSE) Management</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-14/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../np-pf-13/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-PF-13 · Competitive Fare Intelligence</span></a><a class="pn-btn" href="../np-pf-15/"><span><span class="sub">Next</span>NP-PF-15 · Low Fare Guarantee Program Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

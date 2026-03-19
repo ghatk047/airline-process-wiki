@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-PF-14 Slides — Bundled Fare Product Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-14</span>
+    <h1>Bundled Fare Product Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-pf-14.png" alt="BPMN for NP-PF-14" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-14</span>
+    <h1>Bundled Fare Product Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-PF-14</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Pricing &amp; Fare Management</li>
+          <li><strong>L3 Name:</strong> Bundled Fare Product Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Benchmark competitor bundle structures</li><li><strong>Phase 2:</strong> Define bundle tier hierarchy and component matrix</li><li><strong>Phase 3:</strong> File bundle fares and conditions in ATPCO</li><li><strong>Phase 4:</strong> Build NDC offer templates with bundle attributes</li><li><strong>Phase 5:</strong> Activate bundle offer across all channels</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Digital Product Manager</li><li>Director of Pricing</li><li>NDC Developer</li><li>Pricing Analyst</li><li>Pricing Systems Analyst</li><li>QA Analyst</li><li>Revenue Analyst</li><li>Revenue Manager</li><li>Tariff Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>AWS Redshift</li><li>Amadeus Altéa PSS</li><li>NDC API Gateway</li><li>OAG Schedule Analyser</li><li>PROS RM</li><li>Sabre GDS</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-14</span>
+    <h1>Bundled Fare Product Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Benchmark competitor bundle structures</td>
+        <td class="kpi-col">Coverage of top 10 competing carriers ≥100%; refresh cycle ≤30 days</td>
+        <td class="pain-col">ATPCO branded fare data can lag 48–72 hrs post-filing; indirect bundle components (lounge, hotels) not visible in GDS fare displays</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Analyse ancillary revenue by product category</td>
+        <td class="kpi-col">Ancillary revenue per passenger ≥$28; data completeness ≥98%</td>
+        <td class="pain-col">EMD-A revenue attributed to originating flight only; connecting itinerary ancillary splits require custom Redshift query logic</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Model bundle demand &amp; willingness-to-pay scenarios</td>
+        <td class="kpi-col">Model R² ≥0.85; scenario output covers ≥3 price points per tier</td>
+        <td class="pain-col">PROS WTP modelling requires minimum 12 months of ancillary transaction history; new routes have insufficient training data</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Approve bundle business case for launch</td>
+        <td class="kpi-col">Projected ancillary revenue uplift ≥12% within 6 months of launch</td>
+        <td class="pain-col">Approval cycles involving Revenue Management, IT, and Distribution teams average 3–5 weeks; misaligned incentives between RM (yield) and Pricing (volume) can stall sign-off</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Define bundle tier hierarchy and component matrix</td>
+        <td class="kpi-col">Component matrix covers ≥3 distinct tiers (e.g. Basic, Standard, Flex)</td>
+        <td class="pain-col">Altéa PSS service catalogue constraints limit ancillary bundling to pre-defined EMD-A service types; custom inclusions (e.g. lounge access) require workaround fare conditions text</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Assign fare basis codes per bundle tier and cabin</td>
+        <td class="kpi-col">Zero duplicate fare basis code conflicts; code assignment completed within 3 business days</td>
+        <td class="pain-col">ATPCO fare basis codes limited to 8 alphanumeric characters; encoding tier, cabin, and market group within this constraint requires strict naming convention governance</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Configure EMD-A ancillary service codes in PSS</td>
+        <td class="kpi-col">100% of bundle ancillary components mapped to valid IATA PADIS service codes; zero orphaned EMD records</td>
+        <td class="pain-col">IATA PADIS service type catalogue does not cover all airline-specific bundle inclusions; non-standard services require free-text SubCode which is not machine-readable in GDS displays</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Validate bundle configuration in Altéa staging</td>
+        <td class="kpi-col">Test pass rate ≥95% before promotion to production; critical defects = 0</td>
+        <td class="pain-col">Altéa staging environment refresh lags production data by up to 7 days; edge cases involving interline itineraries cannot be fully simulated in staging</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>File bundle fares and conditions in ATPCO</td>
+        <td class="kpi-col">Filing submission-to-activation time ≤24 hrs; zero rejected categories on first submission</td>
+        <td class="pain-col">ATPCO Cat 15 (sales restrictions) and Cat 25 (fare combinations) rules for bundles are complex to encode; errors trigger GDS pricing failures that are difficult to trace back to specific category conflicts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Configure branded fare rule categories in ATPCO</td>
+        <td class="kpi-col">Branded fare attributes display correctly in ≥95% of GDS certified pricing responses</td>
+        <td class="pain-col">ATPCO Branded Fares standard (BF categories) adoption varies by GDS; Travelport and Amadeus GDS render branded attributes differently, requiring separate QA validation per channel</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Validate GDS fare display and auto-pricing accuracy</td>
+        <td class="kpi-col">Pricing accuracy ≥99.9% vs. filed fare; branded attribute display rate ≥95% across all three GDS</td>
+        <td class="pain-col">GDS fare calculation engines interpret ATPCO combination rules differently; a rule that prices correctly in Sabre may misprice in Travelport due to differing Cat 25 implementation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Build NDC offer templates with bundle attributes</td>
+        <td class="kpi-col">NDC offer response time ≤800 ms (p95); bundle attributes present in 100% of eligible offer responses</td>
+        <td class="pain-col">IATA NDC 21.3 schema&#x27;s BundleAttributeList does not support dynamic bundle composition at booking time; real-time ancillary availability (seat maps, bag slots) must be pre-fetched and cached, creating staleness risk on high-load routes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Configure bundle merchandising on direct booking channel</td>
+        <td class="kpi-col">Bundle comparison widget load time ≤1.2 s; A/B test variant coverage ≥20% of eligible sessions</td>
+        <td class="pain-col">Airline.com front-end rendering of bundle tier comparisons requires bespoke UI development outside NDC scope; coordination between Pricing, IT, and UX teams is a recurring bottleneck</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Execute end-to-end booking regression tests</td>
+        <td class="kpi-col">Zero P1/P2 defects in booking-to-ticket flow; regression suite ≥150 test cases</td>
+        <td class="pain-col">Regression suite must cover GDS, NDC, and direct channel permutations; manual test execution across three GDS takes 4–6 days without automation; automation tooling investment often deprioritised</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Activate bundle offer across all channels</td>
+        <td class="kpi-col">Channel activation completed within 4-hour go-live window; rollback plan tested</td>
+        <td class="pain-col">Coordinated go-live across ATPCO (batch distribution), NDC API (real-time), and Altéa (inventory) is error-prone; ATPCO distribution to all GDS can take up to 48 hrs, creating pricing inconsistency window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Monitor bundle attach rate and incremental revenue</td>
+        <td class="kpi-col">Bundle attach rate ≥18% within 30 days of launch; incremental ancillary revenue uplift ≥12%</td>
+        <td class="pain-col">EMD issuance data and PNR booking data arrive in Redshift via different ETL pipelines with up to 6-hour latency mismatch; attribution of bundle revenue to specific marketing or pricing actions is imprecise</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Review bundle performance vs. targets at 30/60/90 days</td>
+        <td class="kpi-col">Review cadence: D+30, D+60, D+90; action items assigned within 5 business days of review</td>
+        <td class="pain-col">Causal attribution is difficult — attach rate changes may reflect pricing, competitor moves, or seasonal demand shifts; Tableau dashboards lack statistical significance testing natively</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.4</td>
+        <td>Adjust bundle composition or pricing based on performance</td>
+        <td class="kpi-col">Change cycle time from decision to live ≤10 business days; pricing adjustments within ±15% of original price points without full re-approval</td>
+        <td class="pain-col">Minor bundle component changes (e.g. swap checked bag for seat selection) require re-filing in ATPCO, Altéa EMD config update, and NDC offer template revision — three separate systems with no single orchestration layer</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+</body>
+</html>

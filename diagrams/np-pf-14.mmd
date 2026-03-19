@@ -1,0 +1,43 @@
+flowchart LR
+  subgraph P1["Phase 1: Bundle Strategy"]
+    A([Start]) --> B[Benchmark competitor\nbundle structures]
+    B --> C[Analyse ancillary\nrevenue by category]
+    C --> D[Model bundle demand\n& WTP scenarios]
+    D --> E{Business case\napproved?}
+    E -- No --> B
+    E -- Yes --> F
+  end
+  subgraph P2["Phase 2: Product Design"]
+    F[Define bundle tiers\n& component matrix] --> G[Assign fare basis\ncodes per tier]
+    G --> H[Configure EMD-A\nancillary service codes]
+    H --> I{Staging config\nvalid?}
+    I -- No --> F
+    I -- Yes --> J
+  end
+  subgraph P3["Phase 3: Fare Filing"]
+    J[File bundle fares\nin ATPCO] --> K[Configure branded\nfare rule categories]
+    K --> L{GDS fare display\n& pricing valid?}
+    L -- No --> J
+    L -- Yes --> M
+  end
+  subgraph P4["Phase 4: NDC & Direct Channel"]
+    M[Build NDC offer\ntemplates] --> N[Configure direct-channel\nbundle merchandising]
+    N --> O{Booking regression\ntests passed?}
+    O -- No --> M
+    O -- Yes --> P
+  end
+  subgraph P5["Phase 5: Launch & Monitor"]
+    P[Activate bundle\nacross all channels] --> Q[Monitor attach rate\n& incremental revenue]
+    Q --> R{Performance meets\ntargets?}
+    R -- No --> S[Adjust bundle\ncomposition / price]
+    S --> Q
+    R -- Yes --> T([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style T fill:#003366,color:#fff,stroke:#003366
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
