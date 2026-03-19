@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Flight Dispatch &amp; Control · Flight Operations · Airlines Process Wiki</title>
+<title>CM-11 · Crew Union &amp; Labour Agreement Compliance · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Crew Management</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -152,7 +153,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-08/"><span class="status-dot status-done"></span><span class="pid">CM-08</span>Crew Hotel &amp; Transportation Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-09/"><span class="status-dot status-done"></span><span class="pid">CM-09</span>Cabin Crew Service Standards &amp; Training</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-10/"><span class="status-dot status-done"></span><span class="pid">CM-10</span>Crew Disruption Recovery &amp; Re-pairing</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-11/"><span class="status-dot status-done"></span><span class="pid">CM-11</span>Crew Union &amp; Labour Agreement Compliance</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/crew-management/cm-11/"><span class="status-dot status-done"></span><span class="pid">CM-11</span>Crew Union &amp; Labour Agreement Compliance</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-12/"><span class="status-dot status-queue"></span><span class="pid">CM-12</span>Crew Recruitment &amp; Onboarding</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-13/"><span class="status-dot status-queue"></span><span class="pid">CM-13</span>Deadhead &amp; Positioning Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-14/"><span class="status-dot status-queue"></span><span class="pid">CM-14</span>Crew Performance Management</a>
@@ -242,153 +243,278 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Flight Dispatch &amp; Control</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Crew Management</a><span class="sep">›</span>
+  <a href="../../../flight-operations/crew-management/">Crew Compliance &amp; Certification</a><span class="sep">›</span>
+  <span class="current">CM-11 · Crew Union &amp; Labour Agreement Compliance</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Flight Dispatch &amp; Control</h1>
-    <p>Flight Operations · 15 of 15 subprocesses complete · Updated 2026-03-19 13:36</p>
+    <h1>Crew Union &amp; Labour Agreement Compliance</h1>
+    <p>Crew Management › Crew Compliance &amp; Certification · 20 L4 steps · 5 phases · 6 decision gates · Updated 2026-03-19 13:36</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CM-11</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-01</span>Flight Dispatch &amp; Release</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 11 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cm-11">
+      <img src="../../../assets/img/cm-11.png" alt="CM-11 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cm-11').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cm-11').style.display='flex'">
+      <div id="diag-placeholder-cm-11" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Ingest ratified CBA language into rule repository</td>
+  <td class="td-role">Labour Relations Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Ratified CBA document or amendment notice from union</td>
+  <td style="font-size:10px">Rule change requests logged in Jeppesen crew scheduling rule library</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CBA rule ingestion initiated within 5 business days of ratification</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Configure duty/rest limits in scheduling engine</td>
+  <td class="td-role">Crew Scheduling Systems Administrator</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">CBA duty/rest rule change requests; FAR Part 117 regulatory minimums</td>
+  <td style="font-size:10px">Updated Jeppesen rule set with CBA contractual duty time and rest limits</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of CBA rest rules coded and tested within 10 business days of ratification</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Configure premium pay triggers and trip rig rules</td>
+  <td class="td-role">Crew Pay &amp; Labour Systems Analyst</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">CBA pay schedule, premium pay provisions, trip rig and guarantee rules</td>
+  <td style="font-size:10px">Configured pay rules in SAP with all premium triggers (IROPS reassignment, hotel substitution, min-day guarantee)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Pay rule configuration accuracy ≥99.5%; zero retroactive pay adjustments attributable to misconfiguration in first post-implementation payroll cycle</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Validate rule configuration against CBA source text</td>
+  <td class="td-role">Labour Relations Manager</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Configured Jeppesen scheduling rules and SAP pay rules; original CBA text</td>
+  <td style="font-size:10px">Validation sign-off memo or change request list</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero CBA violations attributable to misconfiguration within 90 days of new rule deployment</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Run pre-publication CBA compliance scan on draft schedule</td>
+  <td class="td-role">Crew Scheduling Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Draft pairing solution from Jeppesen optimizer</td>
+  <td style="font-size:10px">Compliance report flagging CBA rule violations by article and step number</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Compliance scan completed ≥2 hours before schedule publication deadline; scan must cover 100% of published pairings</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Adjudicate violations and determine waiver or remediation</td>
+  <td class="td-role">Labour Relations Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Compliance scan violation report</td>
+  <td style="font-size:10px">Decision per violation: remediate, obtain union waiver, or escalate</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of violations resolved or formally waived before schedule publication; adjudication cycle ≤4 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Remediate non-compliant pairings or assignments</td>
+  <td class="td-role">Crew Scheduling Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">List of violations requiring remediation; available crew pool and reserve positions</td>
+  <td style="font-size:10px">Revised compliant pairings or crew assignments</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Remediation cycle ≤90 minutes; crew coverage maintained ≥97% post-remediation</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Monitor real-time crew duty times and rest windows</td>
+  <td class="td-role">Crew Tracking Specialist</td>
+  <td><span class="stag custom">IBS Software iCrew</span></td>
+  <td style="font-size:10px;color:#6b7280">Live flight departure/arrival data; crew check-in and check-out events via ACARS</td>
+  <td style="font-size:10px">Real-time duty time dashboard; automated alerts for crews approaching CBA or FAR Part 117 limits</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Duty limit alerts triggered ≥60 minutes before contractual limit; zero post-facto exceedances reported in monthly audit</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.5</td>
+  <td class="td-name">Decide on duty extension or crew replacement during IROPS</td>
+  <td class="td-role">Duty Manager</td>
+  <td><span class="stag custom">IBS Software iCrew</span></td>
+  <td style="font-size:10px;color:#6b7280">Duty limit alert; flight delay status; qualified reserve availability at station</td>
+  <td style="font-size:10px">Documented decision: CBA extension invoked with crew consent, or replacement crew assigned</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Crew replacement or extension decision made ≥45 minutes before departure; 100% of CBA waiver invocations logged with timestamp and crew consent reference</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Log and acknowledge crew grievance within CBA window</td>
+  <td class="td-role">Labour Relations Coordinator</td>
+  <td><span class="stag sap">SAP SuccessFactors (Employee Central)</span></td>
+  <td style="font-size:10px;color:#6b7280">Written grievance submitted by crew member or union representative</td>
+  <td style="font-size:10px">Grievance case record with CBA article citation, incident timestamp, and acknowledgement sent to filer</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of grievances logged within 24 hours of receipt; formal acknowledgement delivered within CBA Step 1 filing window (typically 72 hours)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Investigate grievance and retrieve corroborating data</td>
+  <td class="td-role">Labour Relations Analyst</td>
+  <td><span class="stag custom">IBS Software iCrew</span></td>
+  <td style="font-size:10px;color:#6b7280">Grievance case record; referenced duty period, flight, or pay event</td>
+  <td style="font-size:10px">Investigation dossier with duty logs, pay records, system-generated timestamps, and CBA article analysis</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Investigation completed within CBA Step 1 response window (typically 14 calendar days); 100% data retrieval from duty records for incidents ≤24 months old</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Assess grievance merit and issue management response</td>
+  <td class="td-role">Labour Relations Manager</td>
+  <td><span class="stag sap">SAP SuccessFactors (Employee Central)</span></td>
+  <td style="font-size:10px;color:#6b7280">Investigation dossier; CBA articles cited in grievance</td>
+  <td style="font-size:10px">Merit assessment and formal Step 1 management response delivered to union</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Management response delivered within CBA Step 1 deadline 100% of the time; grievance upheld rate ≤15%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Escalate unresolved grievance to arbitration</td>
+  <td class="td-role">Labour Relations Director</td>
+  <td><span class="stag sap">SAP SuccessFactors (Employee Central)</span></td>
+  <td style="font-size:10px;color:#6b7280">Grievance not resolved at Steps 1–3; arbitration demand notice from union</td>
+  <td style="font-size:10px">Arbitration brief, hearing schedule confirmed, award recorded in case management system</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Arbitration win/settlement rate ≥60%; average cost per arbitration case ≤$15,000</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Execute monthly CBA compliance audit across all domiciles</td>
+  <td class="td-role">Labour Compliance Auditor</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Prior month&#x27;s schedule execution data, payroll run outputs, duty logs from iCrew</td>
+  <td style="font-size:10px">Monthly compliance dashboard showing violation rate by CBA article, crew category, and domicile</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Audit completed by day 5 of the following month; CBA violation rate ≤0.5% of all duty periods in scope</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Distribute compliance report to union per CBA schedule</td>
+  <td class="td-role">Labour Relations Manager</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Monthly compliance dashboard from AWS Redshift</td>
+  <td style="font-size:10px">Formatted union-facing compliance report delivered by CBA-stipulated deadline</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Report delivered by 10th of the month 100% of the time; zero data discrepancies disputed by union within 30 days of delivery</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Determine if corrective action plan is required</td>
+  <td class="td-role">Labour Relations Manager</td>
+  <td><span class="stag sap">SAP SuccessFactors (Employee Central)</span></td>
+  <td style="font-size:10px;color:#6b7280">Monthly compliance report; union objections or formal notices if any</td>
+  <td style="font-size:10px">Corrective Action Plan (CAP) initiated or formal closure memo issued</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CAP initiated within 5 business days of audit finding confirmation; 100% of open CAPs closed within 60 days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Trigger CBA expiry alert and negotiation readiness review</td>
+  <td class="td-role">Labour Relations Director</td>
+  <td><span class="stag sap">SAP SuccessFactors (Employee Central)</span></td>
+  <td style="font-size:10px;color:#6b7280">CBA expiry date calendar alert (18-month advance trigger)</td>
+  <td style="font-size:10px">Negotiation readiness checklist; data extraction scope and timeline defined</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Negotiation preparation formally initiated ≥18 months before CBA expiry; zero missed expiry dates across all bargaining units</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Extract historical compliance and cost data for bargaining</td>
+  <td class="td-role">Labour Analytics Specialist</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">3-year historical duty records, grievance case data, payroll actuals, IATA peer benchmarks</td>
+  <td style="font-size:10px">Bargaining data package: cost impact modelling of proposed rule changes, violation trend analysis, peer carrier benchmarks</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data package completed ≥12 months before CBA expiry; benchmark dataset covers ≥5 comparable peer carriers</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Validate bargaining data package for negotiation</td>
+  <td class="td-role">Labour Relations Director</td>
+  <td><span class="stag custom">Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">Draft bargaining data package from Labour Analytics</td>
+  <td style="font-size:10px">Approved bargaining data package or supplemental data extraction requests</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data package formally approved ≥10 months before CBA expiry; zero material data gaps surfaced at the bargaining table</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.4</td>
+  <td class="td-name">Implement ratified CBA rules in scheduling and pay systems</td>
+  <td class="td-role">Crew Scheduling Systems Administrator</td>
+  <td><span class="stag custom">Jeppesen Crew Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Ratified new or amended CBA document; confirmed effective date</td>
+  <td style="font-size:10px">Updated Jeppesen scheduling rules and SAP pay configuration; parallel-run test results; go-live sign-off</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">System implementation completed ≥14 calendar days before CBA effective date; zero pay errors attributable to new CBA rules in first post-implementation payroll cycle</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-02</span>Operational Flight Plan Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CM-11</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Crew Management</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Crew Compliance &amp; Certification</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Crew Union &amp; Labour Agreement Compliance</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">20 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">6 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">4 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Labour Relations Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Crew Scheduling Systems Administrator</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Crew Pay &amp; Labour Systems Analyst</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Labour Relations Manager</div><div class="swim"><div class="dot" style="background:#10b981"></div>Crew Scheduling Analyst</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Crew Tracking Specialist</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Duty Manager</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Labour Relations Coordinator</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Labour Relations Director</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Labour Compliance Auditor</div><div class="swim"><div class="dot" style="background:#f97316"></div>Labour Analytics Specialist</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">Jeppesen Crew Management</span><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span><span class="stag custom">IBS Software iCrew</span><span class="stag sap">SAP SuccessFactors (Employee Central)</span><span class="stag aws">AWS Redshift</span><span class="stag custom">Tableau</span><span class="stag custom">Power BI</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Ingest ratified CBA language into rule repository</span><span class="kval">CBA rule ingestion initiated within 5 business days of ratification</span></div><div class="krow"><span class="kname">Configure duty/rest limits in scheduling engine</span><span class="kval">100% of CBA rest rules coded and tested within 10 business days of ratification</span></div><div class="krow"><span class="kname">Configure premium pay triggers and trip rig rules</span><span class="kval">Pay rule configuration accuracy ≥99.5%; zero retroactive pay adjustments attributable to misconfiguration in first post-implementation payroll cycle</span></div><div class="krow"><span class="kname">Validate rule configuration against CBA source text</span><span class="kval">Zero CBA violations attributable to misconfiguration within 90 days of new rule deployment</span></div><div class="krow"><span class="kname">Run pre-publication CBA compliance scan on draft schedule</span><span class="kval">Compliance scan completed ≥2 hours before schedule publication deadline; scan must cover 100% of published pairings</span></div><div class="krow"><span class="kname">Adjudicate violations and determine waiver or remediation</span><span class="kval">100% of violations resolved or formally waived before schedule publication; adjudication cycle ≤4 hours</span></div><div class="krow"><span class="kname">Remediate non-compliant pairings or assignments</span><span class="kval">Remediation cycle ≤90 minutes; crew coverage maintained ≥97% post-remediation</span></div><div class="krow"><span class="kname">Monitor real-time crew duty times and rest windows</span><span class="kval">Duty limit alerts triggered ≥60 minutes before contractual limit; zero post-facto exceedances reported in monthly audit</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Manual translation of legal CBA language into Jeppesen-readable scheduling constraints requires specialist knowledge; misinterpretation of trip rig, rest augmentation, or bidding period provisions is common</div><div class="risk-card">FAR Part 117 regulatory minimums and CBA contractual minimums differ by crew position (Captain vs F/O vs Flight Attendant); dual-layer rule stacking in Jeppesen increases configuration complexity and regression testing cycles</div><div class="risk-card">CBA premium pay provisions (e.g., reassignment pay, deadhead premium, per diem differentials) are frequently misinterpreted; configuration errors are not detected until payroll run, creating retroactive liability</div><div class="risk-card">No automated cross-reference tooling between CBA legal article numbers and Jeppesen rule IDs; validation is entirely manual and relies on individual analyst expertise, creating key-person dependency</div><div class="risk-card">Late schedule changes driven by aircraft swaps or demand reforecast force rescan within 30-minute windows; Jeppesen batch compliance jobs may not complete in time, leaving residual violations undetected</div><div class="risk-card">Some CBA violations require mutual union agreement for waiver (e.g., minimum rest reduction below contractual floor); union contact SLAs are not always met in real-time operations, creating publication holds</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Ratified CBA document or amendment notice from union</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Updated Jeppesen scheduling rules and SAP pay configuration; parallel-run test results; go-live sign-off</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-03</span>Fuel Planning &amp; Tankering</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-04</span>Weight &amp; Balance Management</h3>
-    <p>Flight Dispatch &amp; Control · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-05</span>NOTAMs &amp; AIP Information Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-06</span>Weather Monitoring &amp; Decision Support</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-07</span>Air Traffic Control Coordination</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-08</span>Network Operations Control (NOC)</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 10 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-09</span>Delay Management &amp; Root Cause Analysis</h3>
-    <p>Flight Dispatch &amp; Control · 19 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-10</span>Diversion &amp; Emergency Response Management</h3>
-    <p>Flight Dispatch &amp; Control · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-11</span>ETOPS / EDTO Operations Management</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-13</span>Performance &amp; FDR Data Monitoring</h3>
-    <p>Flight Dispatch &amp; Control · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-14</span>Air-to-Ground Communications Management</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-15</span>Dangerous Goods Load Authorization</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 13 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cm-10/"><span class="arrow">←</span><span><span class="sub">Previous</span>CM-10 · Crew Disruption Recovery &amp; Re-pairing</span></a><a class="pn-btn" href="../cm-12/"><span><span class="sub">Next</span>CM-12 · Crew Recruitment &amp; Onboarding</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

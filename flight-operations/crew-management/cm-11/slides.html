@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-11 Slides — Crew Union &amp; Labour Agreement Compliance</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-11</span>
+    <h1>Crew Union &amp; Labour Agreement Compliance</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-11.png" alt="BPMN for CM-11" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Compliance & Certification</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-11</span>
+    <h1>Crew Union &amp; Labour Agreement Compliance</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-11</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Compliance &amp; Certification</li>
+          <li><strong>L3 Name:</strong> Crew Union &amp; Labour Agreement Compliance</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">20</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">4</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Ingest ratified CBA language into rule repository</li><li><strong>Phase 2:</strong> Run pre-publication CBA compliance scan on draft s</li><li><strong>Phase 3:</strong> Log and acknowledge crew grievance within CBA wind</li><li><strong>Phase 4:</strong> Execute monthly CBA compliance audit across all do</li><li><strong>Phase 5:</strong> Trigger CBA expiry alert and negotiation readiness</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Crew Pay &amp; Labour Systems Analyst</li><li>Crew Scheduling Analyst</li><li>Crew Scheduling Systems Administrator</li><li>Crew Tracking Specialist</li><li>Duty Manager</li><li>Labour Analytics Specialist</li><li>Labour Compliance Auditor</li><li>Labour Relations Analyst</li><li>Labour Relations Coordinator</li><li>Labour Relations Director</li><li>Labour Relations Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift</li><li>IBS Software iCrew</li><li>Jeppesen Crew Management</li><li>Power BI</li><li>SAP S/4HANA Finance (FI/CO)</li><li>SAP SuccessFactors (Employee Central)</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Compliance & Certification</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-11</span>
+    <h1>Crew Union &amp; Labour Agreement Compliance</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Ingest ratified CBA language into rule repository</td>
+        <td class="kpi-col">CBA rule ingestion initiated within 5 business days of ratification</td>
+        <td class="pain-col">Manual translation of legal CBA language into Jeppesen-readable scheduling constraints requires specialist knowledge; misinterpretation of trip rig, rest augmentation, or bidding period provisions is common</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Configure duty/rest limits in scheduling engine</td>
+        <td class="kpi-col">100% of CBA rest rules coded and tested within 10 business days of ratification</td>
+        <td class="pain-col">FAR Part 117 regulatory minimums and CBA contractual minimums differ by crew position (Captain vs F/O vs Flight Attendant); dual-layer rule stacking in Jeppesen increases configuration complexity and regression testing cycles</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Configure premium pay triggers and trip rig rules</td>
+        <td class="kpi-col">Pay rule configuration accuracy ≥99.5%; zero retroactive pay adjustments attributable to misconfiguration in first post-implementation payroll cycle</td>
+        <td class="pain-col">CBA premium pay provisions (e.g., reassignment pay, deadhead premium, per diem differentials) are frequently misinterpreted; configuration errors are not detected until payroll run, creating retroactive liability</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Validate rule configuration against CBA source text</td>
+        <td class="kpi-col">Zero CBA violations attributable to misconfiguration within 90 days of new rule deployment</td>
+        <td class="pain-col">No automated cross-reference tooling between CBA legal article numbers and Jeppesen rule IDs; validation is entirely manual and relies on individual analyst expertise, creating key-person dependency</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Run pre-publication CBA compliance scan on draft schedule</td>
+        <td class="kpi-col">Compliance scan completed ≥2 hours before schedule publication deadline; scan must cover 100% of published pairings</td>
+        <td class="pain-col">Late schedule changes driven by aircraft swaps or demand reforecast force rescan within 30-minute windows; Jeppesen batch compliance jobs may not complete in time, leaving residual violations undetected</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Adjudicate violations and determine waiver or remediation</td>
+        <td class="kpi-col">100% of violations resolved or formally waived before schedule publication; adjudication cycle ≤4 hours</td>
+        <td class="pain-col">Some CBA violations require mutual union agreement for waiver (e.g., minimum rest reduction below contractual floor); union contact SLAs are not always met in real-time operations, creating publication holds</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Remediate non-compliant pairings or assignments</td>
+        <td class="kpi-col">Remediation cycle ≤90 minutes; crew coverage maintained ≥97% post-remediation</td>
+        <td class="pain-col">Remediation options are constrained by qualified reserve availability at domicile; fixing one CBA violation can cascade into secondary violations for adjacent pairings, triggering iterative rescan loops</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Monitor real-time crew duty times and rest windows</td>
+        <td class="kpi-col">Duty limit alerts triggered ≥60 minutes before contractual limit; zero post-facto exceedances reported in monthly audit</td>
+        <td class="pain-col">ACARS data latency can delay duty-on/duty-off timestamp capture by 5–15 minutes, creating a window of undetected limit approach; iCrew alert thresholds must be manually calibrated per CBA article and crew category</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.5</td>
+        <td>Decide on duty extension or crew replacement during IROPS</td>
+        <td class="kpi-col">Crew replacement or extension decision made ≥45 minutes before departure; 100% of CBA waiver invocations logged with timestamp and crew consent reference</td>
+        <td class="pain-col">CBA duty extensions require individual crew member consent; crew refusals during IROPS with no available replacement create cascading departure delays; iCrew has no automated consent-capture mechanism, exposing airline to grievance risk</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Log and acknowledge crew grievance within CBA window</td>
+        <td class="kpi-col">100% of grievances logged within 24 hours of receipt; formal acknowledgement delivered within CBA Step 1 filing window (typically 72 hours)</td>
+        <td class="pain-col">CBA grievance filing windows (commonly 10–30 days from incident) require precise date/time stamping of the triggering event; SAP SuccessFactors case management is not purpose-built for CBA article-based aviation grievance workflows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Investigate grievance and retrieve corroborating data</td>
+        <td class="kpi-col">Investigation completed within CBA Step 1 response window (typically 14 calendar days); 100% data retrieval from duty records for incidents ≤24 months old</td>
+        <td class="pain-col">Historical duty and pay records span Jeppesen, iCrew, and SAP — three separate systems with no unified query interface; cross-system data extraction for grievance investigations is manual and can take 2–5 days, compressing response timelines</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Assess grievance merit and issue management response</td>
+        <td class="kpi-col">Management response delivered within CBA Step 1 deadline 100% of the time; grievance upheld rate ≤15%</td>
+        <td class="pain-col">Inconsistent management responses across crew domiciles create arbitration precedents that constrain future positions; absence of a centralised CBA case law repository means analysts are unaware of prior rulings on identical fact patterns</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Escalate unresolved grievance to arbitration</td>
+        <td class="kpi-col">Arbitration win/settlement rate ≥60%; average cost per arbitration case ≤$15,000</td>
+        <td class="pain-col">Arbitration preparation requires multi-year historical data retrieval; poor data quality from legacy crew system migrations (pre-2023) degrades management&#x27;s evidentiary position and increases settlement risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Execute monthly CBA compliance audit across all domiciles</td>
+        <td class="kpi-col">Audit completed by day 5 of the following month; CBA violation rate ≤0.5% of all duty periods in scope</td>
+        <td class="pain-col">ETL pipelines aggregating data from Jeppesen, iCrew, and SAP into Redshift are fragile; data latency or pipeline failures cause the audit to miss late-adjusted duties and produce understated violation counts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Distribute compliance report to union per CBA schedule</td>
+        <td class="kpi-col">Report delivered by 10th of the month 100% of the time; zero data discrepancies disputed by union within 30 days of delivery</td>
+        <td class="pain-col">CBA may require specific tabular formats or certified audit trail attachments not natively supported by Tableau; manual reformatting prior to union delivery introduces transcription errors and reputational risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Determine if corrective action plan is required</td>
+        <td class="kpi-col">CAP initiated within 5 business days of audit finding confirmation; 100% of open CAPs closed within 60 days</td>
+        <td class="pain-col">Systemic violations (e.g., recurring pay calculation errors, scheduling rule misapplication) require IT system changes with 4–8 week lead times; union may file class grievances covering the entire affected population while the CAP is open</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Trigger CBA expiry alert and negotiation readiness review</td>
+        <td class="kpi-col">Negotiation preparation formally initiated ≥18 months before CBA expiry; zero missed expiry dates across all bargaining units</td>
+        <td class="pain-col">Multiple CBAs (pilots, flight attendants, dispatchers, ground operations) carry staggered expiry dates; tracking across contracts in SAP SuccessFactors requires custom calendar configuration that is not standard in the SuccessFactors Employee Central module</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Extract historical compliance and cost data for bargaining</td>
+        <td class="kpi-col">Data package completed ≥12 months before CBA expiry; benchmark dataset covers ≥5 comparable peer carriers</td>
+        <td class="pain-col">Historical data quality degrades beyond 24 months due to crew system migrations; IATA labour cost benchmarks are published on 12–18 month lag cycles, reducing relevance of peer comparisons at the bargaining table</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Validate bargaining data package for negotiation</td>
+        <td class="kpi-col">Data package formally approved ≥10 months before CBA expiry; zero material data gaps surfaced at the bargaining table</td>
+        <td class="pain-col">Union may dispute the airline&#x27;s data methodology or system-of-record selection; absence of a jointly agreed data framework creates credibility risk and can stall early bargaining sessions</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.4</td>
+        <td>Implement ratified CBA rules in scheduling and pay systems</td>
+        <td class="kpi-col">System implementation completed ≥14 calendar days before CBA effective date; zero pay errors attributable to new CBA rules in first post-implementation payroll cycle</td>
+        <td class="pain-col">CBA ratification often occurs within days of the contractual effective date, leaving insufficient time for Jeppesen rule testing cycles and SAP parallel pay run validation; compressed timelines increase risk of live-environment misconfiguration</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Compliance & Certification</span>
+  </div>
+</div>
+
+</body>
+</html>

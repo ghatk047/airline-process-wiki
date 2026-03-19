@@ -1,0 +1,56 @@
+flowchart LR
+  subgraph P1[Phase 1: CBA Ingestion and System Config]
+    A([Start]) --> B[Parse CBA duty/rest rules]
+    B --> C[Configure scheduling constraints]
+    C --> D[Configure pay and premium rules]
+    D --> E{Config matches CBA text?}
+    E -- No --> C
+    E -- Yes --> F([Config signed off])
+  end
+  subgraph P2[Phase 2: Schedule and Roster Compliance]
+    F --> G[Run pre-publication scan]
+    G --> H{Violations found?}
+    H -- Yes --> I[Remediate pairings]
+    I --> G
+    H -- No --> J[Monitor real-time duty limits]
+    J --> K{Duty limit approaching?}
+    K -- No --> J
+    K -- Yes --> L[Extend or replace crew]
+  end
+  subgraph P3[Phase 3: Grievance and Dispute Resolution]
+    L --> M[Log grievance and retrieve duty data]
+    M --> N{Grievance substantiated?}
+    N -- No --> O[Issue management response]
+    N -- Yes --> P[Uphold and remediate]
+    P --> Q{Resolved at Step 1?}
+    Q -- Yes --> O
+    Q -- No --> R[Escalate to arbitration]
+    R --> O
+  end
+  subgraph P4[Phase 4: Compliance Audit and Reporting]
+    O --> S[Execute monthly compliance audit]
+    S --> T[Distribute union report]
+    T --> U{Corrective action required?}
+    U -- No --> V([Audit closed])
+    U -- Yes --> W[Implement corrective action plan]
+    W --> V
+  end
+  subgraph P5[Phase 5: Negotiation Support and Renewal]
+    V --> X[Monitor CBA expiry — 18-month alert]
+    X --> Y[Extract bargaining data package]
+    Y --> Z{Data package sufficient?}
+    Z -- No --> Y
+    Z -- Yes --> AA[Implement ratified CBA in systems]
+    AA --> AB([New CBA live])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style F fill:#003366,color:#fff,stroke:#003366
+  style AB fill:#003366,color:#fff,stroke:#003366
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style Z fill:#ff6600,color:#fff,stroke:#ff6600
