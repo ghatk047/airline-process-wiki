@@ -1,0 +1,47 @@
+flowchart LR
+  subgraph P1["Phase 1: Channel Strategy & Platform Setup"]
+    A([Start]) --> B[Define direct channel KPI targets]
+    B --> C[Configure NDC API Gateway offer types]
+    C --> D{NDC or legacy EDIFACT?}
+    D -- NDC --> E[Publish NDC 21.3 offer schema]
+    D -- EDIFACT --> F[Configure legacy booking engine]
+    E --> G[Integrate Altéa PSS availability feed]
+    F --> G
+  end
+  subgraph P2["Phase 2: Offer & Content Management"]
+    G --> H[Load fares & ancillary catalog to web engine]
+    H --> I[Apply dynamic pricing rules — direct channel]
+    I --> J{Fare display compliant?}
+    J -- No --> I
+    J -- Yes --> K[Publish offers to web & mobile app]
+  end
+  subgraph P3["Phase 3: Booking Flow & Conversion"]
+    K --> L[Monitor funnel metrics in Amplitude]
+    L --> M{Conversion rate ≥ 3.5%?}
+    M -- No --> N[Run A/B test on UX variant]
+    N --> M
+    M -- Yes --> O[Optimise ancillary upsell prompts]
+  end
+  subgraph P4["Phase 4: Payment & Fraud Screening"]
+    O --> P[Submit payment via CyberSource gateway]
+    P --> Q{Payment & fraud check passed?}
+    Q -- No --> R[Decline & notify customer]
+    R --> P
+    Q -- Yes --> S[Confirm PNR in Amadeus Altéa PSS]
+  end
+  subgraph P5["Phase 5: Post-Booking & Performance"]
+    S --> T[Accrue Rapid Rewards miles — direct booking]
+    T --> U[Generate direct channel performance dashboard]
+    U --> V{Direct share ≥ 65% target?}
+    V -- No --> W[Escalate to Distribution Strategy team]
+    W --> B
+    V -- Yes --> X([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
