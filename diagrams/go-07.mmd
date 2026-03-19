@@ -1,0 +1,48 @@
+flowchart LR
+  subgraph P1[Phase 1: Pre-Load Planning]
+    A([Start]) --> B[Retrieve pax and baggage data]
+    B --> C[Calculate prelim WandB]
+    C --> D{DG declarations\nvalid?}
+    D -- No --> B
+    D -- Yes --> E[Generate LIR]
+  end
+  subgraph P2[Phase 2: Cargo and Baggage Build-Up]
+    E --> F[Sort and route baggage\nto make-up area]
+    F --> G[Build ULD / container\nper load plan]
+    G --> H[Weigh completed ULD]
+    H --> I{ULD weight within\nstructural limit?}
+    I -- No --> G
+    I -- Yes --> J[Confirm ULD build OK]
+  end
+  subgraph P3[Phase 3: Aircraft Loading]
+    J --> K[Position GSE\nat aircraft]
+    K --> L[Load holds per\nLIR bay assignment]
+    L --> M[Load special /\npriority cargo]
+    M --> N{Loading sequence\nmatches LIR?}
+    N -- No --> L
+    N -- Yes --> O[Loading complete]
+  end
+  subgraph P4[Phase 4: WandB Finalization]
+    O --> P[Record actual hold\nweights]
+    P --> Q[Compute final ZFW,\nTOW and CG]
+    Q --> R{CG within certified\nenvelope?}
+    R -- No --> S[Rebalance load]
+    S --> P
+    R -- Yes --> T[Generate final\nloadsheet]
+  end
+  subgraph P5[Phase 5: Departure Clearance]
+    T --> U[Transmit loadsheet\nvia ACARS]
+    U --> V{Crew acknowledges\nloadsheet?}
+    V -- No --> U
+    V -- Yes --> W[Issue LMC if\nrequired]
+    W --> X[Close cargo doors\nand station clearance]
+    X --> Y([Departure ready])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
