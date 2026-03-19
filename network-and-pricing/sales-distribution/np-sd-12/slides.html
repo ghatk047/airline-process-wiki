@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SD-12 Slides — Metasearch &amp; Comparison Site Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-12</span>
+    <h1>Metasearch &amp; Comparison Site Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sd-12.png" alt="BPMN for NP-SD-12" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-12</span>
+    <h1>Metasearch &amp; Comparison Site Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SD-12</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Sales &amp; Distribution</li>
+          <li><strong>L3 Name:</strong> Metasearch &amp; Comparison Site Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Execute metasearch partner agreement &amp; API onboard</li><li><strong>Phase 2:</strong> Publish fare cache to metasearch price index</li><li><strong>Phase 3:</strong> Define CPC bid strategy by route and market segmen</li><li><strong>Phase 4:</strong> Generate deep-link redirect URL to booking engine</li><li><strong>Phase 5:</strong> Aggregate metasearch channel performance data</li><li><strong>Phase 6:</strong> Reconcile metasearch partner click invoices vs tra</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Accounts Payable Analyst</li><li>Digital Marketing Analyst</li><li>Digital Marketing Manager</li><li>Distribution Analyst</li><li>Distribution Analytics Manager</li><li>Distribution Partnerships Manager</li><li>Distribution Technology Engineer</li><li>Finance Analyst – Distribution</li><li>Revenue Management Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO Routehappy / NDC API Gateway</li><li>AWS Redshift / Google Analytics 4</li><li>AWS Redshift / Tableau</li><li>Amadeus Altéa PSS / Sabre GDS</li><li>Amadeus NRM / ATPCO</li><li>Google Flights Ads Console / AWS Redshift</li><li>Google Flights Ads Console / PROS RM</li><li>Google Flights Hotel Ads Console / Kayak Partner Portal</li><li>NDC API Gateway</li><li>NDC API Gateway / Amadeus Altéa PSS</li><li>NDC API Gateway / Postman API Testing Suite</li><li>SAP Ariba / Partner Dispute Portal</li><li>SAP S/4HANA Finance (FI/CO) / AWS Redshift</li><li>SAP S/4HANA Finance (FI/CO) / SAP Ariba</li><li>Sabre PRISM / Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-12</span>
+    <h1>Metasearch &amp; Comparison Site Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Execute metasearch partner agreement &amp; API onboarding</td>
+        <td class="kpi-col">Partner onboarding lead time ≤30 days from contract signature</td>
+        <td class="pain-col">Each metasearch partner requires bespoke API configurations; NDC schema versioning mismatches between partners cause silent feed failures with no error surfaced to airline</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Configure fare &amp; schedule feed for metasearch ingestion</td>
+        <td class="kpi-col">Feed configuration accuracy ≥99% (zero critical field mappings missing)</td>
+        <td class="pain-col">ATPCO filing propagation latency (up to 24h) means published fares lag dynamic pricing changes in Amadeus NRM, creating an arbitrage window exploited by OTAs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate feed quality &amp; schema compliance</td>
+        <td class="kpi-col">Zero critical schema errors before go-live; feed round-trip response ≤2s (p95)</td>
+        <td class="pain-col">NDC 21.3 vs 17.2 schema incompatibility across metasearch partners; several comparison sites (Momondo, Kayak) accept only legacy EDIFACT/GDS feeds, forcing dual-channel maintenance</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Publish fare cache to metasearch price index</td>
+        <td class="kpi-col">Fare cache refresh latency ≤15 minutes; stale fare rate &lt;2%</td>
+        <td class="pain-col">Fare cache staleness causes price disparity between metasearch display price and booking engine checkout; leads to consumer complaints and potential EU261/ATPCO fare filing violations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Sync real-time seat availability via NDC/GDS</td>
+        <td class="kpi-col">Availability accuracy ≥98.5% vs Altéa live booking class status</td>
+        <td class="pain-col">GDS RBD (Reservation Booking Designator) mapping inconsistencies between Altéa and Sabre GDS cause availability discrepancies; sold-out fare classes displayed as available on Skyscanner, generating &#x27;sorry, fare unavailable&#x27; errors at checkout</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Perform fare parity audit across distribution channels</td>
+        <td class="kpi-col">Fare parity compliance ≥95% across monitored routes; exception resolution ≤4 hours</td>
+        <td class="pain-col">Dynamic pricing adjustments in Amadeus NRM create unintentional fare disparities across channels; corporate/negotiated fares inadvertently surfaced on public metasearch breach TMC contract confidentiality clauses</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Define CPC bid strategy by route and market segment</td>
+        <td class="kpi-col">Target CPC ≤$0.45 domestic routes; ≤$1.20 international routes</td>
+        <td class="pain-col">Metasearch auction dynamics require continuous bid optimisation; static bid tables lose price competitiveness within hours during peak booking windows (holiday periods, fare sales)</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Monitor click-through rates and impression share</td>
+        <td class="kpi-col">CTR ≥1.8% on primary routes; impression share ≥40% for top 20 O&amp;D markets</td>
+        <td class="pain-col">Metasearch partner APIs throttle reporting data refresh to 6-hour intervals; bid adjustments based on stale data reduce campaign ROI during intraday demand spikes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Adjust bids using demand signals and competitor fares</td>
+        <td class="kpi-col">ROAS (return on ad spend) ≥4.5x on metasearch channel; bid update turnaround ≤2 hours</td>
+        <td class="pain-col">PROS RM demand signals are not natively integrated with Google Flights bid management console; manual data transfer introduces 24-hour lag, blunting competitive responsiveness</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Generate deep-link redirect URL to booking engine</td>
+        <td class="kpi-col">Deep-link generation latency ≤800ms (p95); link validity ≥99.9%</td>
+        <td class="pain-col">Session parameter passing between metasearch redirect and booking engine breaks on Safari/iOS mobile browsers due to ITP cookie restrictions; causes booking abandonment rate &gt;35% on mobile</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Track metasearch click-to-confirmed-booking conversion</td>
+        <td class="kpi-col">Metasearch-to-booking conversion ≥2.5%; cart abandonment ≤65%</td>
+        <td class="pain-col">Cross-domain tracking gaps between metasearch redirect and airline.com booking funnel cause 20–30% attribution loss; inflates apparent cost-per-booking and understates true metasearch channel value</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Aggregate metasearch channel performance data</td>
+        <td class="kpi-col">Data pipeline freshness ≤4 hours; dashboard availability ≥99.5%</td>
+        <td class="pain-col">Each metasearch partner (Google Flights, Kayak, Skyscanner, Momondo) exposes proprietary reporting APIs with incompatible schemas; ETL pipeline maintenance requires dedicated engineering resource</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Calculate cost-per-booking and channel contribution margin</td>
+        <td class="kpi-col">Metasearch cost-per-booking ≤$8.50 domestic; ≤$18.00 international</td>
+        <td class="pain-col">Attribution of ancillary revenue (checked bags, seat upgrades, travel insurance) to the originating metasearch channel is inconsistent across reporting systems, systematically understating true channel margin contribution</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Reconcile metasearch partner click invoices vs tracked clicks</td>
+        <td class="kpi-col">Invoice match rate ≥97%; dispute raised within 10 business days of invoice receipt</td>
+        <td class="pain-col">Discrepancies between partner-reported clicks and airline-side tracking arise from differing bot/invalid-traffic filtering rules; Google Flights click audit process takes 45–90 days, creating cash flow exposure on disputed amounts</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Raise formal dispute with metasearch partner for excess clicks</td>
+        <td class="kpi-col">Dispute resolution ≤30 days; credit recovery rate ≥90% of disputed amount</td>
+        <td class="pain-col">Absence of a neutral click audit standard across metasearch platforms means dispute outcomes depend on partner goodwill; airlines with low traffic volume have limited negotiating leverage</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Process approved metasearch invoices for payment</td>
+        <td class="kpi-col">Payment processed within contract terms (Net 30/Net 45); zero late payment penalties</td>
+        <td class="pain-col">Multi-currency CPC invoices (USD, EUR, GBP) require FX rate alignment between SAP FI and partner billing systems; rate discrepancies &gt;0.5% trigger re-approval workflows, delaying payment and risking vendor relationship</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+</body>
+</html>

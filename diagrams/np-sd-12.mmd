@@ -1,0 +1,59 @@
+flowchart LR
+  subgraph P1["Phase 1: Partner Onboarding"]
+    A([Start]) --> B[Execute partner agreement]
+    B --> C[Configure fare/NDC feed]
+    C --> D{Feed passes validation?}
+    D -- No --> C
+    D -- Yes --> E([Feed live])
+  end
+  subgraph P2["Phase 2: Fare & Avail Publishing"]
+    E --> F[Publish fare cache]
+    F --> G[Sync live availability]
+    G --> H{Fare parity breach?}
+    H -- Yes --> F
+    H -- No --> I([Fares published])
+  end
+  subgraph P3["Phase 3: Bid Management"]
+    I --> J[Define CPC bid strategy]
+    J --> K[Monitor CTR & impressions]
+    K --> L{CPC ROI below target?}
+    L -- Yes --> M[Adjust bids on demand signals]
+    M --> K
+    L -- No --> N([Bids optimised])
+  end
+  subgraph P4["Phase 4: Redirect & Conversion"]
+    N --> O[Generate deep-link redirect]
+    O --> P[Track click-to-booking]
+    P --> Q{Conversion below threshold?}
+    Q -- Yes --> O
+    Q -- No --> R([Booking confirmed])
+  end
+  subgraph P5["Phase 5: Performance Analytics"]
+    R --> S[Aggregate channel data]
+    S --> T[Calc cost-per-booking]
+    T --> U{Channel margin below floor?}
+    U -- Yes --> J
+    U -- No --> V([Analytics reported])
+  end
+  subgraph P6["Phase 6: Invoice Reconciliation"]
+    V --> W[Reconcile click invoices]
+    W --> X{Discrepancy >3%?}
+    X -- Yes --> Y[Raise dispute with partner]
+    Y --> W
+    X -- No --> Z[Process payment in SAP]
+    Z --> AA([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AA fill:#003366,color:#fff,stroke:#003366
+  style E fill:#003366,color:#fff,stroke:#003366
+  style I fill:#003366,color:#fff,stroke:#003366
+  style N fill:#003366,color:#fff,stroke:#003366
+  style R fill:#003366,color:#fff,stroke:#003366
+  style V fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600
