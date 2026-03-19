@@ -1,0 +1,52 @@
+flowchart LR
+  subgraph P1["Phase 1: Enquiry & Qualification"]
+    A([Start]) --> B[Receive group travel request]
+    B --> C{Group ≥10 pax & \nwithin policy?}
+    C -- No --> B
+    C -- Yes --> D[Check seat availability]
+  end
+
+  subgraph P2["Phase 2: Quotation & Pricing"]
+    D --> E[Calculate group fare \nand discount tier]
+    E --> F{Yield impact \nacceptable?}
+    F -- No --> G[Revise fare / \nnegotiate terms]
+    G --> F
+    F -- Yes --> H[Issue formal group quote]
+  end
+
+  subgraph P3["Phase 3: Contract & Confirmation"]
+    H --> I[Send group contract \nwith deposit schedule]
+    I --> J{Deposit received \nby deadline?}
+    J -- No --> K[Send payment reminder]
+    K --> J
+    J -- Yes --> L[Create provisional \ngroup booking in PSS]
+  end
+
+  subgraph P4["Phase 4: Name Collection & Changes"]
+    L --> M[Collect passenger \nname list — PNL]
+    M --> N{Name count matches \ncontracted seats?}
+    N -- No --> O[Chase agency / \ncorporate for names]
+    O --> N
+    N -- Yes --> P[Process name changes \nwithin tolerance]
+    P --> Q{Change within \npolicy tolerance?}
+    Q -- No --> R[Apply change fees \nor reject excess]
+    R --> Q
+    Q -- Yes --> S[Finalise booking \nand seat block]
+  end
+
+  subgraph P5["Phase 5: Ticketing & Settlement"]
+    S --> T[Issue final tickets \nand collect balance]
+    T --> U{Payment cleared \nbefore deadline?}
+    U -- No --> V[Cancel unpaid seats \nand release inventory]
+    U -- Yes --> W[Reconcile group \nrevenue vs. forecast]
+    W --> X([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
