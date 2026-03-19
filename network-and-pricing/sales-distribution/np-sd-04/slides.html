@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SD-04 Slides — Corporate Account Sales Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-04</span>
+    <h1>Corporate Account Sales Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sd-04.png" alt="BPMN for NP-SD-04" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-04</span>
+    <h1>Corporate Account Sales Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SD-04</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Sales &amp; Distribution</li>
+          <li><strong>L3 Name:</strong> Corporate Account Sales Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract corporate travel-spend leads from market d</li><li><strong>Phase 2:</strong> Receive and register incoming corporate RFP</li><li><strong>Phase 3:</strong> Negotiate discount tiers and volume commitments wi</li><li><strong>Phase 4:</strong> File corporate private fare codes in PSS</li><li><strong>Phase 5:</strong> Generate monthly performance report vs. volume com</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Corporate Account Manager</li><li>Corporate Pricing Analyst</li><li>Corporate Sales Analyst</li><li>Corporate Sales Manager</li><li>Corporate Sales Representative</li><li>Distribution &amp; Fares Specialist</li><li>Head of Corporate Sales</li><li>Legal Counsel — Commercial</li><li>Revenue &amp; Pricing Analyst</li><li>Revenue Management Director</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM)</li><li>NDC API Gateway</li><li>SAP Ariba Contracts</li><li>Sabre PRISM</li><li>Salesforce CRM</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-04</span>
+    <h1>Corporate Account Sales Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract corporate travel-spend leads from market data</td>
+        <td class="kpi-col">Pipeline coverage ratio ≥ 3× annual revenue target; ≥ 50 qualified prospects per quarter</td>
+        <td class="pain-col">BSP spend data lags 6–8 weeks, making real-time competitive displacement difficult to detect; no direct feed from GDS booking data into CRM</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Score and qualify accounts by revenue potential</td>
+        <td class="kpi-col">Account qualification cycle ≤ 5 business days; ≥ 80% of Strategic-tier accounts contacted within 10 days</td>
+        <td class="pain-col">Scoring model relies on estimated spend; actual managed-travel programme size only revealed during RFP — leads to misallocation of senior sales resources</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Assign account to sales rep and log in CRM</td>
+        <td class="kpi-col">Account assignment completed within 2 business days of qualification; CRM data completeness ≥ 95%</td>
+        <td class="pain-col">Territory conflicts arise when a corporate HQ and subsidiary are in different rep territories — no automated duplicate-account detection in Salesforce configuration</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Receive and register incoming corporate RFP</td>
+        <td class="kpi-col">RFP acknowledgement to client within 24 hours; 100% of RFPs logged in CRM on day of receipt</td>
+        <td class="pain-col">Large corporates increasingly issue RFPs via e-sourcing platforms (SAP Ariba, Jaggaer) that require separate supplier portals — manual data re-entry into Salesforce increases error risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Analyse client O&amp;D patterns and incumbent carrier share</td>
+        <td class="kpi-col">Analysis completed within 3 business days of RFP receipt; ≥ 90% of client O&amp;D pairs matched to served routes</td>
+        <td class="pain-col">Clients on unmanaged or partially managed programmes cannot provide clean PNR data — analyst must reconcile multiple credit-card and agency feeds, adding 1–2 days to analysis cycle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Build tiered discount and incentive fare proposal</td>
+        <td class="kpi-col">Proposal build cycle ≤ 4 business days; proposed fares within ±5% of approved discount floor</td>
+        <td class="pain-col">ATPCO Cat-35 private fare filing requires airline-side ATPCO access and a structured ticketing agreement — errors in Cat-35 setup can expose private fares publicly, creating revenue leakage</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Validate proposal profitability against revenue floor</td>
+        <td class="kpi-col">Review turnaround ≤ 2 business days; 100% of proposals above revenue floor before submission</td>
+        <td class="pain-col">NRM optimises individual O&amp;D segments — corporate block commitments can conflict with open-market yield maximisation, requiring manual override negotiation between Sales and RM teams</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Negotiate discount tiers and volume commitments with client</td>
+        <td class="kpi-col">Negotiation cycle ≤ 15 business days from proposal submission; win rate on competitive bids ≥ 35%</td>
+        <td class="pain-col">Lack of alliance membership (not Star Alliance / Oneworld / SkyTeam) limits ability to offer interline or codeshare benefits demanded by globally travelling corporates — significant competitive disadvantage vs. network carriers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Route contract for legal and compliance review</td>
+        <td class="kpi-col">Legal review cycle ≤ 5 business days for standard agreements; 100% of contracts reviewed before execution</td>
+        <td class="pain-col">EU-headquartered corporates require GDPR-compliant data processing addenda; PNR data sharing with Sabre PRISM must be covered by DPA — legal review backlog can delay contract execution by 2–4 weeks</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Execute signed corporate agreement and archive</td>
+        <td class="kpi-col">Contract execution within 5 business days of legal approval; 100% of executed contracts uploaded to Ariba within 24 hours</td>
+        <td class="pain-col">DocuSign/wet-signature mismatches delay effective date confirmation; contract start date in Ariba must align exactly with PSS fare validity window to avoid fare not found (FNF) errors at ticketing</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>File corporate private fare codes in PSS</td>
+        <td class="kpi-col">Fare codes live within 3 business days of contract execution; zero FNF errors in first 30 days post-launch</td>
+        <td class="pain-col">Cat-35 private fare distribution requires individual negotiated agreements with each GDS — if a corporate TMC uses a non-preferred GDS, fares may not be visible, forcing off-channel bookings</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Onboard corporate travellers to booking portal</td>
+        <td class="kpi-col">Portal onboarding completed within 5 business days; ≥ 90% of eligible travellers active within 30 days</td>
+        <td class="pain-col">NDC adoption by corporate booking tools (Concur Travel, Cytric) remains uneven — some OBT versions do not support full NDC offer/order flow, forcing fallback to GDS PNR path and losing ancillary upsell capability</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Brief designated TMC on account parameters and reporting</td>
+        <td class="kpi-col">TMC briefing completed before contract effective date; PRISM reporting activated within 5 days of go-live</td>
+        <td class="pain-col">Sabre PRISM only captures GDS-booked segments — direct NDC and website bookings are excluded from standard market-share reports, understating channel performance and inflating apparent GDS share</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Generate monthly performance report vs. volume commitment</td>
+        <td class="kpi-col">Report published by day 5 of following month; data reconciliation variance ≤ 1% between PRISM and PSS</td>
+        <td class="pain-col">Multi-source data reconciliation (PRISM + Altéa PSS + AWS Redshift) is manual and error-prone — discrepancies between GDS-reported and PSS-confirmed revenue take up to 10 days to resolve, delaying remediation action</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Conduct quarterly business review with client</td>
+        <td class="kpi-col">QBR completed within 30 days of quarter end; ≥ 85% of Strategic accounts reviewed each quarter</td>
+        <td class="pain-col">Clients increasingly demand real-time sustainability reporting (CO₂ per segment) — airline CO₂ data is not yet standardised across CORSIA and IATA Clean Flying framework, making accurate reporting manually intensive</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Evaluate contract renewal, renegotiation, or exit</td>
+        <td class="kpi-col">Renewal decision made ≥ 90 days before contract expiry; corporate account retention rate ≥ 80% for Strategic tier</td>
+        <td class="pain-col">Volume shortfall remediation clauses (clawback provisions) are difficult to enforce when underperformance is caused by airline schedule changes or cancellations — legal disputes can strain client relationship and delay renewal</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+</body>
+</html>

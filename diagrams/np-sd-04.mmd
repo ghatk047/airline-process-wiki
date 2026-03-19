@@ -1,0 +1,47 @@
+flowchart LR
+  subgraph P1["Phase 1: Account Identification"]
+    A([Start]) --> B[Extract travel-spend\nleads from market data]
+    B --> C{Spend threshold\n≥ $250K/yr?}
+    C -- No --> B
+    C -- Yes --> D[Assign account\nto sales rep]
+  end
+  subgraph P2["Phase 2: RFP & Proposal"]
+    D --> E[Receive / initiate\ncorporate RFP]
+    E --> F[Analyse O&D travel\npatterns & incumbents]
+    F --> G[Build tiered\nfare proposal]
+    G --> H{Margin ≥ floor\n& competitive?}
+    H -- No --> G
+    H -- Yes --> I[Submit proposal\nto prospect]
+  end
+  subgraph P3["Phase 3: Negotiation & Execution"]
+    I --> J[Negotiate discount\ntiers & volume targets]
+    J --> K{Legal & Revenue\nApproval?}
+    K -- No --> J
+    K -- Yes --> L[Execute signed\ncorporate agreement]
+  end
+  subgraph P4["Phase 4: Onboarding & Setup"]
+    L --> M[File corporate\nfare codes in PSS]
+    M --> N[Onboard company\nto booking portal]
+    N --> O{Portal access\n& booking verified?}
+    O -- No --> N
+    O -- Yes --> P[Brief TMC on\naccount parameters]
+  end
+  subgraph P5["Phase 5: Performance & Renewal"]
+    P --> Q[Monthly performance\nreporting vs targets]
+    Q --> R{Volume commitment\non track?}
+    R -- No --> S[Remediation &\naccount review]
+    S --> Q
+    R -- Yes --> T[Quarterly business\nreview with client]
+    T --> U{Contract renewal\nor expansion?}
+    U -- Renew/Expand --> J
+    U -- Lapse --> V([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style V fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
