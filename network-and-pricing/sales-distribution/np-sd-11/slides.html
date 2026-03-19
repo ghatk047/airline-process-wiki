@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SD-11 Slides — Online Travel Agency (OTA) Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-11</span>
+    <h1>Online Travel Agency (OTA) Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sd-11.png" alt="BPMN for NP-SD-11" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-11</span>
+    <h1>Online Travel Agency (OTA) Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SD-11</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Sales &amp; Distribution</li>
+          <li><strong>L3 Name:</strong> Online Travel Agency (OTA) Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">11</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">11</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Evaluate OTA partnership opportunities</li><li><strong>Phase 2:</strong> File fares and fare rules to ATPCO</li><li><strong>Phase 3:</strong> Process OTA-originated bookings in PSS</li><li><strong>Phase 4:</strong> Reconcile OTA bookings against flown revenue</li><li><strong>Phase 5:</strong> Analyse OTA channel performance vs. targets</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Ancillary Revenue Manager</li><li>BSP Settlement Analyst</li><li>Channel Performance Analyst</li><li>Customer Support Agent / OTA Liaison</li><li>Distribution Compliance Analyst</li><li>Distribution Finance Analyst</li><li>Distribution Strategy Manager</li><li>Distribution Technology Engineer</li><li>Head of Distribution Partnerships</li><li>Pricing Analyst</li><li>Reservations System Analyst</li><li>Revenue Accounting Analyst</li><li>Revenue Management Analyst</li><li>Ticketing Control Analyst</li><li>VP Distribution / Head of Revenue</li><li>VP Distribution / Legal Counsel</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>AWS Redshift / Tableau</li><li>Amadeus Altéa PSS</li><li>Amadeus Altéa PSS / Amadeus Revenue Management (NRM)</li><li>Amadeus Altéa PSS / IATA BSP Link</li><li>IATA BSP Link / ARC (Airlines Reporting Corporation)</li><li>NDC API Gateway</li><li>NDC API Gateway / Sabre GDS</li><li>SAP Ariba</li><li>SAP Ariba / Tableau</li><li>SAP S/4HANA Finance (AP)</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Sabre PRISM / OAG Schedule Analyser</li><li>Tableau / Power BI</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-11</span>
+    <h1>Online Travel Agency (OTA) Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Evaluate OTA partnership opportunities</td>
+        <td class="kpi-col">OTA channel revenue contribution ≥25% of total passenger revenue</td>
+        <td class="pain-col">OTA market consolidation (Expedia/Booking.com duopoly) limits airline negotiating leverage on commission rates and parity terms</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Negotiate OTA commercial agreement terms</td>
+        <td class="kpi-col">Commission rate negotiated ≤12% of ticket value; override incentive thresholds agreed within 45 days</td>
+        <td class="pain-col">OTAs demand last-look pricing rights and rate parity clauses that directly conflict with airline direct channel strategy and dynamic pricing</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Execute OTA distribution agreement</td>
+        <td class="kpi-col">Contract execution cycle ≤45 days from term sheet agreement</td>
+        <td class="pain-col">Jurisdictional complexity across markets (EU Package Travel Directive 2015/2302, US DOT full-fare advertising rule 14 CFR Part 399) extends legal review and requires market-specific agreement variants</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Configure OTA technical connectivity</td>
+        <td class="kpi-col">API connectivity test pass rate 100% before go-live; integration delivery ≤30 days</td>
+        <td class="pain-col">OTA NDC adoption remains below 40% industry-wide; most connections still use legacy GDS EDIFACT, limiting ancillary upsell capability and real-time inventory access</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>File fares and fare rules to ATPCO</td>
+        <td class="kpi-col">Fare filing lead time ≥72h before sale date per ATPCO SOTI schedule; filing error rate ≤0.1%</td>
+        <td class="pain-col">ATPCO filing windows create pricing latency vs. direct channel dynamic pricing; competitors using NDC bypass ATPCO for OTA-specific private offers, gaining speed-to-market advantage</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Configure OTA channel fare availability in PSS</td>
+        <td class="kpi-col">Fare availability accuracy ≥99.5% vs. ATPCO published fares; inventory update latency ≤15 minutes</td>
+        <td class="pain-col">Altéa inventory caching can lag up to 15 minutes on high-demand routes during peak booking windows, causing OTA booking failures, GDS error messages, and lost revenue on price-sensitive leisure routes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Distribute ancillary content to OTA channels</td>
+        <td class="kpi-col">Ancillary attach rate via OTA ≥18% of bookings; NDC ancillary revenue per booking ≥$22</td>
+        <td class="pain-col">Non-NDC OTAs cannot render structured ancillary offers; EDIFACT-connected OTAs display ancillaries as free-text remarks only, reducing attach rate to &lt;5% and suppressing ancillary revenue on high-volume OTA channels</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Monitor OTA content parity compliance</td>
+        <td class="kpi-col">Price parity violations ≤0.5% of sampled OTA fares per weekly audit cycle</td>
+        <td class="pain-col">OTAs apply opaque loyalty discounts, packaging, and credit card rewards to undercut direct channel pricing, remaining technically parity-compliant while effectively bypassing parity agreements and eroding direct channel value proposition</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Process OTA-originated bookings in PSS</td>
+        <td class="kpi-col">OTA booking acceptance rate ≥99.8%; booking confirmation latency ≤3 seconds via GDS, ≤1.5 seconds via NDC</td>
+        <td class="pain-col">GDS booking surcharge of $3–$7 per segment raises airline cost of distribution vs. direct channel; carriers absorb cost to maintain OTA relationship but margin erodes on low-yield leisure itineraries</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Validate OTA ticket issuance and EMD generation</td>
+        <td class="kpi-col">Ticket issuance within BSP ticketing time limit 100%; EMD issuance error rate ≤0.2%</td>
+        <td class="pain-col">OTA back-office systems frequently breach ticketing time limits due to payment processing delays, triggering automatic PNR cancellation in Altéa without customer notification — generating rebooking costs, customer complaints, and CSAT impact</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Handle OTA booking modifications and cancellations</td>
+        <td class="kpi-col">OTA modification fulfilment rate ≥98%; refund processing ≤5 business days per IATA Resolution 824</td>
+        <td class="pain-col">Non-NDC OTAs cannot submit structured order changes via API; refund workflows are manual when OTA uses EDIFACT, creating backlogs of 10,000+ cases during irregular operations (IROPS) events such as severe weather or ATC strikes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Reconcile OTA bookings against flown revenue</td>
+        <td class="kpi-col">Reconciliation completion within 3 business days of month close; revenue variance ≤0.1% of OTA channel revenue</td>
+        <td class="pain-col">OTA booking data arrives in multiple formats — BSP XML, ARC ACH files, and direct NDC API logs — requiring manual transformation and mapping before SAP ingestion, extending the month-close cycle by 1–2 days</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Process BSP/ARC settlement for OTA bookings</td>
+        <td class="kpi-col">BSP settlement on-time rate 100%; settlement discrepancy rate ≤0.05% of billed amount</td>
+        <td class="pain-col">OTA agents with multiple IATA numbers split bookings across sub-entities to stay below BSP credit limits, creating reconciliation gaps, default risk exposure, and triggering IATA credit management review processes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Audit and pay OTA commission and override incentives</td>
+        <td class="kpi-col">Commission payment accuracy ≥99.9%; override incentive payment within 30 days of quarter close</td>
+        <td class="pain-col">Manual commission calculation for multi-tier OTA override structures (base + volume override + market development funds) is error-prone; disputes with large OTAs (Expedia, Booking.com) over override eligibility can delay payments 60+ days and damage commercial relationships</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Analyse OTA channel performance vs. targets</td>
+        <td class="kpi-col">OTA revenue contribution vs. plan ±5%; cost of distribution per ticket ≤$15 including GDS fees and commissions</td>
+        <td class="pain-col">OTA data-sharing agreements vary significantly — major OTAs withhold passenger-level booking data citing GDPR and commercial confidentiality, preventing complete channel profitability analysis and obscuring true margin contribution by OTA partner</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Review OTA contract performance and renewal decision</td>
+        <td class="kpi-col">OTA contracts reviewed annually; renewal or renegotiation decision finalised ≥90 days before expiry date</td>
+        <td class="pain-col">Bilateral OTA contracts frequently lack performance clawback provisions; underperforming OTAs retain preferred commission rates and override eligibility without meeting volume commitments, reducing airline&#x27;s ability to redirect inventory to higher-yield channels</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+</body>
+</html>

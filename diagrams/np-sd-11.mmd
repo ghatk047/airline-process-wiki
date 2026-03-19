@@ -1,0 +1,61 @@
+flowchart LR
+  subgraph P1["Phase 1: OTA Contracting & Onboarding"]
+    A([Start]) --> B[Evaluate OTA partners]
+    B --> C{Terms within\napproved range?}
+    C -- No --> B
+    C -- Yes --> D[Execute OTA agreement]
+    D --> E{Legal approval\ngranted?}
+    E -- No --> D
+    E -- Yes --> F{NDC or GDS\nconnectivity?}
+  end
+  subgraph P2["Phase 2: Fare & Content Distribution"]
+    F --> G[File fares to ATPCO]
+    G --> H{Open OTA\ninventory?}
+    H -- No --> H
+    H -- Yes --> I{OTA NDC-\ncertified?}
+    I -- No --> J[GDS ancillary\nonly]
+    I -- Yes --> K[Full NDC\nancillary]
+    J --> L{Parity violation\nexceeds threshold?}
+    K --> L
+  end
+  subgraph P3["Phase 3: Booking & Ticketing"]
+    L -- No --> M[Process OTA booking\nin Altéa PSS]
+    L -- Yes --> M
+    M --> N{Ticket issued\nwithin time limit?}
+    N -- No --> O[Auto-cancel PNR\n— rebook]
+    N -- Yes --> P{Modification or\ncancellation request?}
+    O --> M
+    P -- Yes --> Q[Process refund\nor credit voucher]
+    P -- No --> R[Booking confirmed]
+    Q --> R
+  end
+  subgraph P4["Phase 4: Settlement & Commission"]
+    R --> S[Reconcile OTA revenue\nin SAP Finance]
+    S --> T{BSP amount\nmatches records?}
+    T -- No --> S
+    T -- Yes --> U{Override tier\nthreshold met?}
+    U -- Yes --> V[Pay base commission\n+ override incentive]
+    U -- No --> W[Pay base\ncommission only]
+  end
+  subgraph P5["Phase 5: Performance & Renewal"]
+    V --> X[Analyse OTA channel\nKPIs in Tableau]
+    W --> X
+    X --> Y{Volume commitment\nmet per contract?}
+    Y -- No --> Z[Renegotiate terms\nor terminate]
+    Y -- Yes --> AA([Renew contract])
+    Z --> AA
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AA fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style Y fill:#ff6600,color:#fff,stroke:#ff6600
