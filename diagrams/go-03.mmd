@@ -1,0 +1,59 @@
+flowchart LR
+  subgraph P1[Phase 1: PIR Capture and Local Search]
+    A([Start]) --> B[Capture PIR at arrival hall]
+    B --> C[Verify PNR and bag tag via Altéa]
+    C --> D{Bag found\non carousel?}
+    D -- Yes --> Z([End — Immediate Return])
+    D -- No --> E[Log AHL/OHD in WorldTracer]
+  end
+
+  subgraph P2[Phase 2: WorldTracer Tracing]
+    E --> F[Query BRS scan logs\nfor last known location]
+    F --> G{WorldTracer match\nwithin 24 hrs?}
+    G -- Yes --> H[Confirm bag at\nremote station]
+    G -- No --> I[Escalate to manual\nstation canvass]
+    I --> G
+  end
+
+  subgraph P3[Phase 3: Recovery and Forward Shipment]
+    H --> J[Send FWD message\nto holding station]
+    J --> K{Bag confirmed\nshipped within 4 hrs?}
+    K -- No --> J
+    K -- Yes --> L[Track forward\nshipment via BagJourney]
+  end
+
+  subgraph P4[Phase 4: Delivery Coordination]
+    L --> M[Confirm passenger\ndelivery preference]
+    M --> N[Schedule courier\nvia delivery partner API]
+    N --> O{Delivered within\n24 hrs of location?}
+    O -- No --> P[Notify passenger\nof delay — offer airport pickup]
+    P --> O
+    O -- Yes --> Q[Obtain POD and\nclose WorldTracer file]
+  end
+
+  subgraph P5[Phase 5: Claims and Compensation]
+    Q --> R[Assess Montreal Convention\nliability — 1,288 SDR cap]
+    R --> S{Interim expenses\nclaimed?}
+    S -- Yes --> T[Process reimbursement\nvia SAP S/4HANA Finance]
+    S -- No --> U[Close claim — no payment]
+    T --> U
+  end
+
+  subgraph P6[Phase 6: Unclaimed Disposal]
+    E --> V[Transfer to storage\nafter 5-day trace]
+    V --> W{Owner identified\nwithin 21 days?}
+    W -- Yes --> H
+    W -- No --> X[Dispose per unclaimed\nproperty regulation]
+    X --> Y([End — Case Closed])
+    U --> Y
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Z fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600

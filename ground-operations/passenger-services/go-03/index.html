@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Revenue Management · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>GO-03 · Lost &amp; Found / Baggage Tracing · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -176,7 +177,7 @@
       <a class="sidebar-l2-link" href="../../../ground-operations/passenger-services/">Baggage Operations</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-02/"><span class="status-dot status-done"></span><span class="pid">GO-02</span>Baggage Acceptance &amp; Handling</a>
-        <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-03/"><span class="status-dot status-done"></span><span class="pid">GO-03</span>Lost &amp; Found / Baggage Tracing</a>
+        <a class="sidebar-l3-link active" href="../../../ground-operations/passenger-services/go-03/"><span class="status-dot status-done"></span><span class="pid">GO-03</span>Lost &amp; Found / Baggage Tracing</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-05/"><span class="status-dot status-queue"></span><span class="pid">GO-05</span>Ramp &amp; Turnaround Operations</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-06/"><span class="status-dot status-queue"></span><span class="pid">GO-06</span>Ground Handling Vendor Management</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-07/"><span class="status-dot status-queue"></span><span class="pid">GO-07</span>Load Control &amp; Aircraft Loading</a>
@@ -242,153 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Revenue Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
+  <a href="../../../ground-operations/passenger-services/">Baggage Operations</a><span class="sep">›</span>
+  <span class="current">GO-03 · Lost &amp; Found / Baggage Tracing</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Revenue Management</h1>
-    <p>Network Planning &amp; Scheduling · 15 of 15 subprocesses complete · Updated 2026-03-19 13:56</p>
+    <h1>Lost &amp; Found / Baggage Tracing</h1>
+    <p>Ground Operations &amp; Airport Services › Baggage Operations · 18 L4 steps · 6 phases · 7 decision gates · Updated 2026-03-19 13:56</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">GO-03</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-01</span>Inventory &amp; Yield Optimization</h3>
-    <p>Revenue Management · 18 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-go-03">
+      <img src="../../../assets/img/go-03.png" alt="GO-03 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-go-03').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-go-03').style.display='flex'">
+      <div id="diag-placeholder-go-03" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Capture Property Irregularity Report at arrival hall</td>
+  <td class="td-role">Baggage Service Agent</td>
+  <td><span class="stag custom">SITA WorldTracer</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger complaint at baggage claim; flight arrival manifest</td>
+  <td style="font-size:10px">PIR reference number; AHL (mishandled bag) file opened in WorldTracer</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PIR captured within 20 min of carousel clearance ≥98%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Verify PNR and bag tag details in Altéa</td>
+  <td class="td-role">Baggage Service Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger boarding pass or booking reference; PIR form</td>
+  <td style="font-size:10px">Confirmed bag tag number(s), itinerary, and contact details linked to PIR</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PNR match rate ≥99.5%; missing bag tag resolved via passenger description within 15 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Search local carousel, offload area, and left baggage</td>
+  <td class="td-role">Ramp Supervisor</td>
+  <td><span class="stag custom">SITA BagManager</span></td>
+  <td style="font-size:10px;color:#6b7280">Bag tag number; flight load manifest from BRS</td>
+  <td style="font-size:10px">Physical search result; BagManager scan log confirming whether bag was offloaded locally</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Local recovery rate ≥35% within 30 min of PIR opening</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Assess local scan log — bag present at station?</td>
+  <td class="td-role">Baggage Service Agent</td>
+  <td><span class="stag custom">SITA BagManager</span></td>
+  <td style="font-size:10px;color:#6b7280">BRS sortation scan history for bag tag</td>
+  <td style="font-size:10px">Decision: bag located locally (return immediately) or escalate to WorldTracer trace</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Same-day resolution for locally present bags ≥95%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Create AHL/OHD/DPR tracing message in WorldTracer</td>
+  <td class="td-role">Baggage Tracing Agent</td>
+  <td><span class="stag custom">SITA WorldTracer</span></td>
+  <td style="font-size:10px;color:#6b7280">PIR reference; confirmed bag tag, description, and itinerary</td>
+  <td style="font-size:10px">WorldTracer AHL file broadcast to all stations on itinerary; OHD files requested from origin and transit stations</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AHL file created within 2 hrs of PIR ≥99%; OHD response from partner stations ≤4 hrs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Query BRS scan history for last known bag location</td>
+  <td class="td-role">Baggage Tracing Agent</td>
+  <td><span class="stag custom">SITA BagJourney</span></td>
+  <td style="font-size:10px;color:#6b7280">Bag tag number; WorldTracer AHL reference</td>
+  <td style="font-size:10px">Chronological scan event log identifying last confirmed airport and handler</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Last-scan data available within 5 min for ≥95% of bags with electronic tags</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Evaluate WorldTracer match within 24-hour window</td>
+  <td class="td-role">Baggage Tracing Supervisor</td>
+  <td><span class="stag custom">SITA WorldTracer</span></td>
+  <td style="font-size:10px;color:#6b7280">AHL file; incoming OHD and FWD messages; BagJourney scan log</td>
+  <td style="font-size:10px">Match confirmed or escalation to manual canvass; WorldTracer case status updated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">First match rate within 24 hrs ≥72% (IATA Resolution 743 target); escalation triggered &lt;28%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Send FWD message to station holding located bag</td>
+  <td class="td-role">Baggage Tracing Agent</td>
+  <td><span class="stag custom">SITA WorldTracer</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed bag location from WorldTracer OHD/match; passenger delivery address</td>
+  <td style="font-size:10px">FWD telex dispatched; holding station instructed to ship bag on next available service</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">FWD message sent within 30 min of match confirmation ≥98%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Confirm bag shipped and track via BagJourney</td>
+  <td class="td-role">Baggage Service Agent</td>
+  <td><span class="stag custom">SITA BagJourney</span></td>
+  <td style="font-size:10px;color:#6b7280">FWD message acknowledgment; airway bill or rush tag number</td>
+  <td style="font-size:10px">Real-time shipment tracking record; passenger notified of estimated arrival</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Forward shipment confirmed (scan at origin) within 4 hrs of FWD message ≥90%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Receive forwarded bag at destination and verify condition</td>
+  <td class="td-role">Ramp Agent</td>
+  <td><span class="stag custom">SITA BagManager</span></td>
+  <td style="font-size:10px;color:#6b7280">Inbound bag with rush tag; WorldTracer FWD reference</td>
+  <td style="font-size:10px">Bag receipt confirmed in BagManager; condition noted; WorldTracer status updated to RFL (ready for delivery)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bag condition documented at receipt ≥99%; damaged bags flagged for claims within 1 hr</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Contact passenger to confirm delivery preference</td>
+  <td class="td-role">Baggage Service Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger contact details from PNR; bag RFL status in WorldTracer</td>
+  <td style="font-size:10px">Confirmed delivery address or airport pickup slot; passenger notified via SMS/email</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Passenger contacted within 1 hr of RFL status ≥95%; delivery preference captured ≥98%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Schedule courier delivery via third-party delivery API</td>
+  <td class="td-role">Baggage Service Agent</td>
+  <td><span class="stag custom">WorldTracer Delivery Manager (SITA)</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger delivery address; bag dimensions and weight; service SLA</td>
+  <td style="font-size:10px">Courier booking confirmation; tracking number shared with passenger</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Courier dispatched within 2 hrs of passenger confirmation ≥92%; delivery within 24 hrs of dispatch ≥85%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Confirm delivery and obtain proof of receipt</td>
+  <td class="td-role">Baggage Service Agent</td>
+  <td><span class="stag custom">WorldTracer Delivery Manager (SITA)</span></td>
+  <td style="font-size:10px;color:#6b7280">Courier delivery confirmation or passenger airport pickup signature</td>
+  <td style="font-size:10px">Proof of delivery (POD) attached to WorldTracer file; file status updated to CLO (closed)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">POD captured and attached to WorldTracer within 24 hrs of delivery ≥99%; WorldTracer file closed within 48 hrs of delivery</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Assess interim expense claim under Montreal Convention</td>
+  <td class="td-role">Baggage Claims Agent</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger expense receipts; days without bag; Montreal Convention Article 19 liability schedule</td>
+  <td style="font-size:10px">Approved interim expense amount (capped at 1,288 SDR); claim reference created in SAP</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Interim claim assessed within 48 hrs of PIR ≥90%; average claim processing time ≤5 business days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Process approved compensation payment via SAP Finance</td>
+  <td class="td-role">Baggage Claims Supervisor</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved claim amount; passenger bank/card details; SAP vendor master record</td>
+  <td style="font-size:10px">Payment processed; remittance advice sent to passenger; WorldTracer file updated with settlement amount</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Payment executed within 7 business days of approval ≥95%; zero unapproved payments exceeding liability cap</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Transfer unmatched bag to lost baggage storage at day 5</td>
+  <td class="td-role">Baggage Tracing Supervisor</td>
+  <td><span class="stag custom">SITA WorldTracer</span></td>
+  <td style="font-size:10px;color:#6b7280">WorldTracer AHL file with no match after 5-day active trace; physical bag in holding area</td>
+  <td style="font-size:10px">WorldTracer status changed to STO (storage); bag catalogued with photo in WorldTracer Found Bag module</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of unmatched bags transferred to STO status by day 5; storage catalogue photo quality ≥95% usable</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Conduct extended 21-day owner identification search</td>
+  <td class="td-role">Baggage Tracing Agent</td>
+  <td><span class="stag custom">SITA WorldTracer</span></td>
+  <td style="font-size:10px;color:#6b7280">STO bag record; WorldTracer auto-match; passenger-initiated trace enquiries</td>
+  <td style="font-size:10px">Owner identified and reunited (return to step 3.1) or case escalated to unclaimed disposal</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Overall bag reunification rate within 21 days ≥97% (IATA Baggage Report benchmark); unclaimed rate &lt;3%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.3</td>
+  <td class="td-name">Dispose of unclaimed bag per property regulation</td>
+  <td class="td-role">Baggage Service Manager</td>
+  <td><span class="stag custom">SITA WorldTracer</span></td>
+  <td style="font-size:10px;color:#6b7280">Unclaimed STO bag at day 22+; local unclaimed property legislation requirements</td>
+  <td style="font-size:10px">Bag disposed (donated, auctioned, or destroyed) per local law; WorldTracer file closed with disposal notation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of disposed bags documented with disposal method and date; zero regulatory non-compliance events</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-02</span>Fare Class &amp; Bucket Management</h3>
-    <p>Revenue Management · 18 steps · 9 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">GO-03</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Ground Operations &amp; Airport Services</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Baggage Operations</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Lost &amp; Found / Baggage Tracing</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">7 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">5 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Baggage Service Agent</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Ramp Supervisor</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Baggage Tracing Agent</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Baggage Tracing Supervisor</div><div class="swim"><div class="dot" style="background:#10b981"></div>Ramp Agent</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Baggage Claims Agent</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Baggage Claims Supervisor</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Baggage Service Manager</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">SITA WorldTracer</span><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag custom">SITA BagManager</span><span class="stag custom">SITA BagJourney</span><span class="stag custom">WorldTracer Delivery Manager (SITA)</span><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Capture Property Irregularity Report at arrival hall</span><span class="kval">PIR captured within 20 min of carousel clearance ≥98%</span></div><div class="krow"><span class="kname">Verify PNR and bag tag details in Altéa</span><span class="kval">PNR match rate ≥99.5%; missing bag tag resolved via passenger description within 15 min</span></div><div class="krow"><span class="kname">Search local carousel, offload area, and left baggage</span><span class="kval">Local recovery rate ≥35% within 30 min of PIR opening</span></div><div class="krow"><span class="kname">Assess local scan log — bag present at station?</span><span class="kval">Same-day resolution for locally present bags ≥95%</span></div><div class="krow"><span class="kname">Create AHL/OHD/DPR tracing message in WorldTracer</span><span class="kval">AHL file created within 2 hrs of PIR ≥99%; OHD response from partner stations ≤4 hrs</span></div><div class="krow"><span class="kname">Query BRS scan history for last known bag location</span><span class="kval">Last-scan data available within 5 min for ≥95% of bags with electronic tags</span></div><div class="krow"><span class="kname">Evaluate WorldTracer match within 24-hour window</span><span class="kval">First match rate within 24 hrs ≥72% (IATA Resolution 743 target); escalation triggered &lt;28%</span></div><div class="krow"><span class="kname">Send FWD message to station holding located bag</span><span class="kval">FWD message sent within 30 min of match confirmation ≥98%</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">High passenger volumes at hub airports cause PIR queue backlogs; agents default to paper forms that delay WorldTracer entry by 2–4 hrs</div><div class="risk-card">Passengers without digital boarding passes cannot self-serve via kiosk; paper bag tags occasionally unreadable after sortation damage</div><div class="risk-card">BagManager scan coverage gaps at outstations mean bags offloaded to wrong belt go undetected until next carousel audit</div><div class="risk-card">BRS scan logs not always synchronised with WorldTracer in real time; 5–10 min latency causes duplicate PIRs</div><div class="risk-card">Interline itineraries with non-Altéa carriers require manual telex; SITA messaging delays to some outstations exceed 30 min</div><div class="risk-card">RFID read rates vary by airport — legacy barcode-only stations provide no scan after check-in, forcing inference from load messages</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Passenger complaint at baggage claim; flight arrival manifest</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Bag disposed (donated, auctioned, or destroyed) per local law; WorldTracer file closed with disposal notation</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-03</span>Overbooking Policy Management</h3>
-    <p>Revenue Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-04</span>Demand Forecasting &amp; Modelling</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-05</span>Group Sales Revenue Management</h3>
-    <p>Revenue Management · 19 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-06</span>Upgrade &amp; Upsell Revenue Optimization</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-07</span>Ancillary Revenue Optimization</h3>
-    <p>Revenue Management · 15 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-08</span>RM System Calibration &amp; Tuning</h3>
-    <p>Revenue Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-09</span>Post-Departure Revenue Reporting</h3>
-    <p>Revenue Management · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-10</span>Competitive Fare Monitoring &amp; Response</h3>
-    <p>Revenue Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-11</span>Corporate &amp; Negotiated Rate Management</h3>
-    <p>Revenue Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-12</span>Real-Time Availability &amp; Seat Inventory Control</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-13</span>Revenue Integrity &amp; Ticketing Compliance</h3>
-    <p>Revenue Management · 18 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-14</span>O&amp;D Revenue Management</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-15</span>LCC Competitive Pricing Strategy</h3>
-    <p>Revenue Management · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../go-02/"><span class="arrow">←</span><span><span class="sub">Previous</span>GO-02 · Baggage Acceptance &amp; Handling</span></a><a class="pn-btn" href="../go-04/"><span><span class="sub">Next</span>GO-04 · Gate Management &amp; Assignment</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
