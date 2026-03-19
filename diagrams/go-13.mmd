@@ -1,0 +1,52 @@
+flowchart LR
+  subgraph P1[Phase 1: Security Planning]
+    A([Start]) --> B[Pull TSA Directives]
+    B --> C[Configure Secure Flight PSS]
+    C --> D[Verify ASP Readiness]
+  end
+  subgraph P2[Phase 2: Secure Flight Screening]
+    D --> E[Transmit SFPD to TSA]
+    E --> F[Receive BPPR from TSA]
+    F --> G{SSSS / No-Fly?}
+    G -- Yes --> H[Escalate to TSA Liaison]
+    H --> F
+    G -- No --> I[Proceed to ID Check]
+  end
+  subgraph P3[Phase 3: Document Verification]
+    I --> J[Verify ID at Gate]
+    J --> K{REAL ID Compliant?}
+    K -- No --> L[Handle REAL ID Exception]
+    L --> K
+    K -- Yes --> M[Proceed to Baggage]
+  end
+  subgraph P4[Phase 4: Baggage and Hold Security]
+    M --> N[Submit Bags to EDS Screening]
+    N --> O[Pax-Bag Reconciliation]
+    O --> P{Unaccompanied Bag?}
+    P -- Yes --> Q[Remove and Re-screen Bag]
+    Q --> O
+    P -- No --> R[Proceed to CBP]
+  end
+  subgraph P5[Phase 5: CBP / APIS Compliance]
+    R --> S[Transmit eAPIS to CBP]
+    S --> T[Receive CBP Response]
+    T --> U{No-Board Order?}
+    U -- Yes --> V[Offload Pax and Bags]
+    V --> T
+    U -- No --> W[Cleared for Departure]
+  end
+  subgraph P6[Phase 6: Incident and Audit]
+    W --> X[Report Incidents to TSA]
+    X --> Y[Post-Departure Audit]
+    Y --> Z{Exceptions Found?}
+    Z -- Yes --> AA[Issue Corrective Actions]
+    Z -- No --> AB([End])
+    AA --> AB
+  end
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AB fill:#003366,color:#fff,stroke:#003366
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style Z fill:#ff6600,color:#fff,stroke:#ff6600

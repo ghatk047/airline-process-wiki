@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Heavy Maintenance · Maintenance, Repair &amp; Overhaul · Airlines Process Wiki</title>
+<title>GO-13 · Airport Security Compliance (TSA/CBP) · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -170,7 +171,7 @@
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-08/"><span class="status-dot status-done"></span><span class="pid">GO-08</span>Passenger Disruption Handling (IRROP)</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-09/"><span class="status-dot status-done"></span><span class="pid">GO-09</span>Wheelchair &amp; Special Assistance Services</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-10/"><span class="status-dot status-done"></span><span class="pid">GO-10</span>VIP &amp; Premium Passenger Handling</a>
-        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-13/"><span class="status-dot status-done"></span><span class="pid">GO-13</span>Airport Security Compliance (TSA/CBP)</a>
+        <a class="sidebar-l3-link active" href="../../../ground-operations/airport-gate-management/go-13/"><span class="status-dot status-done"></span><span class="pid">GO-13</span>Airport Security Compliance (TSA/CBP)</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-15/"><span class="status-dot status-queue"></span><span class="pid">GO-15</span>Station Performance &amp; KPI Reporting</a>
       </div>
       <a class="sidebar-l2-link" href="../../../ground-operations/passenger-services/">Baggage Operations</a>
@@ -187,8 +188,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-queue"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
@@ -242,54 +243,238 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
-  <span class="current">Heavy Maintenance</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
+  <a href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a><span class="sep">›</span>
+  <span class="current">GO-13 · Airport Security Compliance (TSA/CBP)</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Heavy Maintenance</h1>
-    <p>Maintenance, Repair &amp; Overhaul · 0 of 4 subprocesses complete · Updated 2026-03-19 14:25</p>
+    <h1>Airport Security Compliance (TSA/CBP)</h1>
+    <p>Ground Operations &amp; Airport Services › Airport &amp; Gate Management · 16 L4 steps · 6 phases · 5 decision gates · Updated 2026-03-19 14:25</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">GO-13</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-02</span>Heavy Maintenance (C/D Check) Planning</h3>
-    <p>Heavy Maintenance · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-go-13">
+      <img src="../../../assets/img/go-13.png" alt="GO-13 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-go-13').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-go-13').style.display='flex'">
+      <div id="diag-placeholder-go-13" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-02/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Pull TSA Security Directive updates from portal</td>
+  <td class="td-role">Airport Security Coordinator</td>
+  <td><span class="stag custom">TSA Secure Flight Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">Daily TSA operational bulletin and Security Directive notifications</td>
+  <td style="font-size:10px">Updated security parameters and procedural changes for departure day</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Directive review completion 100% by 04:00 local; zero missed directives</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Configure Secure Flight data elements in PSS</td>
+  <td class="td-role">Airport Security Coordinator</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Updated TSA directive, PNR database for day-of-departure flights</td>
+  <td style="font-size:10px">Secure Flight data fields (name, DOB, gender, redress number) enabled and validated for all active PNRs</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Secure Flight data completeness ≥99.5% of PNRs before check-in window opens</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Verify Airport Security Program compliance readiness</td>
+  <td class="td-role">Station Security Manager</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">TSA-approved Airport Security Program (ASP) document, staffing roster, certification records</td>
+  <td style="font-size:10px">Compliance readiness checklist signed off; uncertified staff removed from security-sensitive positions</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ASP readiness sign-off ≥60 min before first departure; 100% rostered security staff TSA-certified</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Transmit Secure Flight Passenger Data Records to TSA</td>
+  <td class="td-role">Departure Control Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (Secure Flight module)</span></td>
+  <td style="font-size:10px;color:#6b7280">PNR passenger name, date of birth, gender, redress number (if held)</td>
+  <td style="font-size:10px">Secure Flight data batch transmitted to TSA; transmission acknowledgement logged</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Transmission ≥72 hours before departure for advance bookings; 100% transmitted before check-in opens for same-day bookings</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Receive Boarding Pass Print Result from TSA</td>
+  <td class="td-role">Departure Control Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (Secure Flight module)</span></td>
+  <td style="font-size:10px;color:#6b7280">TSA BPPR response codes: OK, SSSS (enhanced screening), or Inhibited (no-fly)</td>
+  <td style="font-size:10px">Boarding authorization flag applied to each PNR in Altéa; inhibited passengers flagged for escalation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">BPPR response received within 2 min per passenger; 100% BPPR statuses resolved before check-in closes</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Escalate SSSS or No-Fly result to TSA liaison</td>
+  <td class="td-role">Airport Security Coordinator</td>
+  <td><span class="stag custom">TSA Secure Flight Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">SSSS or Inhibited BPPR flag from Altéa, passenger PNR details</td>
+  <td style="font-size:10px">TSA case reference number issued; SSSS passenger directed to enhanced screening lane; no-fly passenger offloaded and PNR annotated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">SSSS coordination completed ≥45 min before departure; no-fly offload confirmed ≥30 min before departure; 100% SSSS passengers cleared or offloaded before gate close</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Verify passenger identity document at gate</td>
+  <td class="td-role">Gate Agent</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Government-issued photo ID, boarding pass scan, REAL ID enforcement flag</td>
+  <td style="font-size:10px">Identity verified and documented; boarding pass scanned; PNR boarding status updated in AMS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate document check throughput &lt;45 sec per passenger; REAL ID non-compliance interception rate 100%; boarding completion ≥10 min before departure</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Handle REAL ID non-compliance exception at gate</td>
+  <td class="td-role">Gate Agent / Airport Security Coordinator</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Non-compliant ID flagged at gate scan; TSA alternate acceptable ID list</td>
+  <td style="font-size:10px">Passenger offered TSA-approved alternate documents; denied boarding if no acceptable ID presented; denial documented in Altéa PNR remarks</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">REAL ID exception resolution &lt;5 min; denied boarding documented in Altéa within 15 min of incident; zero passengers boarded without TSA-acceptable ID</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Submit hold baggage manifest to TSA EDS screening</td>
+  <td class="td-role">Ramp Operations Supervisor</td>
+  <td><span class="stag custom">SITA BagManager</span></td>
+  <td style="font-size:10px;color:#6b7280">Checked baggage tags, weight manifest, passenger count for flight</td>
+  <td style="font-size:10px">Baggage screening manifest submitted; TSA EDS queue populated with all bag tags</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of hold bags submitted to EDS before ramp loading begins; EDS screening throughput ≥300 bags/hr at Level 1</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Execute passenger-baggage reconciliation check</td>
+  <td class="td-role">Ramp Operations Supervisor</td>
+  <td><span class="stag custom">SITA BagManager</span></td>
+  <td style="font-size:10px;color:#6b7280">Checked-in passenger list from Altéa DCS vs. boarded passenger scan list from gate</td>
+  <td style="font-size:10px">Reconciliation report: matched, unmatched, and flagged bags; departure hold issued if mismatch found</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Reconciliation completed ≥15 min before scheduled departure; mismatched bag rate &lt;0.1% of loaded bags</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Remove and re-screen unaccompanied baggage</td>
+  <td class="td-role">Ramp Operations Supervisor / TSA Officer</td>
+  <td><span class="stag custom">SITA BagManager + TSA EDS Console</span></td>
+  <td style="font-size:10px;color:#6b7280">Unmatched bag tag identified in reconciliation report; TSA officer tasking request</td>
+  <td style="font-size:10px">Bag located, off-loaded, quarantined, and re-screened; departure hold issued; BagManager updated with off-load record</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Unaccompanied bag off-load completed &lt;10 min of identification; zero unaccompanied bags loaded; off-load documented 100% in BagManager</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Transmit eAPIS passenger manifest to CBP</td>
+  <td class="td-role">International Operations Agent</td>
+  <td><span class="stag custom">CBP eAPIS (Advance Passenger Information System)</span></td>
+  <td style="font-size:10px;color:#6b7280">PNR passport and visa data, crew manifest, flight departure details</td>
+  <td style="font-size:10px">eAPIS manifest transmitted to CBP; acknowledgement receipt logged with timestamp</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Manifest transmitted ≥60 min before international departure per 19 CFR 122.49a; 100% transmission rate; CBP acknowledgement within 10 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Receive and action CBP pre-departure APIS response</td>
+  <td class="td-role">International Operations Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS + CBP eAPIS Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">CBP per-passenger clearance or no-board response codes</td>
+  <td style="font-size:10px">No-board orders applied to PNR and flagged in Altéa; cleared passengers proceed to boarding</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CBP no-board response processed ≤10 min of receipt; 100% no-board orders actioned before gate close</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Offload CBP no-board passenger and associated bags</td>
+  <td class="td-role">Gate Agent / Ramp Operations Supervisor</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS + SITA BagManager</span></td>
+  <td style="font-size:10px;color:#6b7280">CBP no-board order with passenger PNR and all associated baggage tag numbers</td>
+  <td style="font-size:10px">Passenger denied boarding; all associated bags located, off-loaded, and quarantined; CBP case number logged in Altéa PNR</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">No-board offload completed &lt;15 min of order receipt; 100% associated baggage removed before departure; CBP case number documented in PNR</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Report security incident to TSA Operations Center</td>
+  <td class="td-role">Station Security Manager</td>
+  <td><span class="stag custom">TSA eFile Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">Incident type classification, timestamp, affected passenger PNR, witness statements, gate CCTV reference</td>
+  <td style="font-size:10px">TSA incident report filed; case reference number issued; station log updated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Initial report filed within 4 hours of occurrence per 49 CFR Part 1544.305; 100% incident capture with zero unreported events</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Conduct post-departure security compliance audit</td>
+  <td class="td-role">Station Security Manager</td>
+  <td><span class="stag amadeus">SITA Airport Management System (AMS) + Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Boarding records, Secure Flight BPPR logs, BagManager reconciliation reports, ID check gate logs</td>
+  <td style="font-size:10px">Daily security compliance audit report; exception list with root-cause annotations for corrective action; submitted to airline security compliance team</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Audit report completed within 2 hours of last departure; security exception rate &lt;1% of daily passengers processed; 100% exceptions assigned corrective owner</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-03</span>Engine Shop Maintenance Management</h3>
-    <p>Heavy Maintenance · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">GO-13</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Ground Operations &amp; Airport Services</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Airport &amp; Gate Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Airport Security Compliance (TSA/CBP)</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">16 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">13 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Airport Security Coordinator</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Station Security Manager</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Departure Control Agent</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Gate Agent</div><div class="swim"><div class="dot" style="background:#10b981"></div>Gate Agent / Airport Security Coordinator</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Ramp Operations Supervisor</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Ramp Operations Supervisor / TSA Officer</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>International Operations Agent</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Gate Agent / Ramp Operations Supervisor</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">TSA Secure Flight Portal</span><span class="stag amadeus">Amadeus Altéa PSS</span><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag amadeus">Amadeus Altéa PSS (Secure Flight module)</span><span class="stag custom">SITA BagManager</span><span class="stag custom">SITA BagManager + TSA EDS Console</span><span class="stag custom">CBP eAPIS (Advance Passenger Information System)</span><span class="stag amadeus">Amadeus Altéa PSS + CBP eAPIS Portal</span><span class="stag amadeus">Amadeus Altéa PSS + SITA BagManager</span><span class="stag custom">TSA eFile Portal</span><span class="stag amadeus">SITA Airport Management System (AMS) + Amadeus Altéa PSS</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Pull TSA Security Directive updates from portal</span><span class="kval">Directive review completion 100% by 04:00 local; zero missed directives</span></div><div class="krow"><span class="kname">Configure Secure Flight data elements in PSS</span><span class="kval">Secure Flight data completeness ≥99.5% of PNRs before check-in window opens</span></div><div class="krow"><span class="kname">Verify Airport Security Program compliance readiness</span><span class="kval">ASP readiness sign-off ≥60 min before first departure; 100% rostered security staff TSA-certified</span></div><div class="krow"><span class="kname">Transmit Secure Flight Passenger Data Records to TSA</span><span class="kval">Transmission ≥72 hours before departure for advance bookings; 100% transmitted before check-in opens for same-day bookings</span></div><div class="krow"><span class="kname">Receive Boarding Pass Print Result from TSA</span><span class="kval">BPPR response received within 2 min per passenger; 100% BPPR statuses resolved before check-in closes</span></div><div class="krow"><span class="kname">Escalate SSSS or No-Fly result to TSA liaison</span><span class="kval">SSSS coordination completed ≥45 min before departure; no-fly offload confirmed ≥30 min before departure; 100% SSSS passengers cleared or offloaded before gate close</span></div><div class="krow"><span class="kname">Verify passenger identity document at gate</span><span class="kval">Gate document check throughput &lt;45 sec per passenger; REAL ID non-compliance interception rate 100%; boarding completion ≥10 min before departure</span></div><div class="krow"><span class="kname">Handle REAL ID non-compliance exception at gate</span><span class="kval">REAL ID exception resolution &lt;5 min; denied boarding documented in Altéa within 15 min of incident; zero passengers boarded without TSA-acceptable ID</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">TSA directives arrive with minimal lead time and no automated push — coordinator must manually poll the portal daily; late directives received after briefings require real-time re-briefing of ramp and gate teams</div><div class="risk-card">Missing Secure Flight data from OTA and indirect bookings (name misspellings, missing DOB) requires last-minute PNR remediation calls to passengers — average 4–6 incidents per hub departure bank</div><div class="risk-card">High turnover at outstations leads to uncertified agents being inadvertently rostered in AOA access roles — TSA civil penalties up to $25,000 per violation; AMS roster does not flag certification expiry automatically</div><div class="risk-card">Altéa Secure Flight module timeout during high-volume morning bank causes batch retransmission queues; TSA SLA requires 2-min response window — backlog during irregular operations extends to 15+ min, blocking boarding pass issuance</div><div class="risk-card">TSA BPPR &#x27;Inhibited&#x27; status returned without explanation — agent must call TSA help desk with average hold time of 8–12 min; no case tracking integration between Altéa and TSA portal causes duplicate escalation calls</div><div class="risk-card">Redress number mismatches cause false positives for passengers with common names — average 3–4 false positives per week at major hubs; each requires DHS TRIP form initiation and manual TSA override, averaging 20 min per incident</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Daily TSA operational bulletin and Security Directive notifications</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Daily security compliance audit report; exception list with root-cause annotations for corrective action; submitted to airline security compliance team</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-04</span>Component &amp; Parts Management</h3>
-    <p>Heavy Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-04/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-11</span>Structural Repair &amp; NDT Management</h3>
-    <p>Heavy Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-11/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../go-12/"><span class="arrow">←</span><span><span class="sub">Previous</span>GO-12 · De-Icing &amp; Winter Operations</span></a><a class="pn-btn" href="../go-14/"><span><span class="sub">Next</span>GO-14 · Ground Support Equipment (GSE) Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

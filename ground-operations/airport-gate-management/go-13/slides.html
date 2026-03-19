@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GO-13 Slides — Airport Security Compliance (TSA/CBP)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-13</span>
+    <h1>Airport Security Compliance (TSA/CBP)</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/go-13.png" alt="BPMN for GO-13" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-13</span>
+    <h1>Airport Security Compliance (TSA/CBP)</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> GO-13</li>
+          <li><strong>L1 Domain:</strong> Ground Operations &amp; Airport Services</li>
+          <li><strong>L2 Process:</strong> Airport &amp; Gate Management</li>
+          <li><strong>L3 Name:</strong> Airport Security Compliance (TSA/CBP)</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">13</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Pull TSA Security Directive updates from portal</li><li><strong>Phase 2:</strong> Transmit Secure Flight Passenger Data Records to T</li><li><strong>Phase 3:</strong> Verify passenger identity document at gate</li><li><strong>Phase 4:</strong> Submit hold baggage manifest to TSA EDS screening</li><li><strong>Phase 5:</strong> Transmit eAPIS passenger manifest to CBP</li><li><strong>Phase 6:</strong> Report security incident to TSA Operations Center</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Airport Security Coordinator</li><li>Departure Control Agent</li><li>Gate Agent</li><li>Gate Agent / Airport Security Coordinator</li><li>Gate Agent / Ramp Operations Supervisor</li><li>International Operations Agent</li><li>Ramp Operations Supervisor</li><li>Ramp Operations Supervisor / TSA Officer</li><li>Station Security Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Altéa PSS</li><li>Amadeus Altéa PSS (Secure Flight module)</li><li>Amadeus Altéa PSS + CBP eAPIS Portal</li><li>Amadeus Altéa PSS + SITA BagManager</li><li>CBP eAPIS (Advance Passenger Information System)</li><li>SITA Airport Management System (AMS)</li><li>SITA Airport Management System (AMS) + Amadeus Altéa PSS</li><li>SITA BagManager</li><li>SITA BagManager + TSA EDS Console</li><li>TSA Secure Flight Portal</li><li>TSA eFile Portal</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-13</span>
+    <h1>Airport Security Compliance (TSA/CBP)</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Pull TSA Security Directive updates from portal</td>
+        <td class="kpi-col">Directive review completion 100% by 04:00 local; zero missed directives</td>
+        <td class="pain-col">TSA directives arrive with minimal lead time and no automated push — coordinator must manually poll the portal daily; late directives received after briefings require real-time re-briefing of ramp and gate teams</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Configure Secure Flight data elements in PSS</td>
+        <td class="kpi-col">Secure Flight data completeness ≥99.5% of PNRs before check-in window opens</td>
+        <td class="pain-col">Missing Secure Flight data from OTA and indirect bookings (name misspellings, missing DOB) requires last-minute PNR remediation calls to passengers — average 4–6 incidents per hub departure bank</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Verify Airport Security Program compliance readiness</td>
+        <td class="kpi-col">ASP readiness sign-off ≥60 min before first departure; 100% rostered security staff TSA-certified</td>
+        <td class="pain-col">High turnover at outstations leads to uncertified agents being inadvertently rostered in AOA access roles — TSA civil penalties up to $25,000 per violation; AMS roster does not flag certification expiry automatically</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Transmit Secure Flight Passenger Data Records to TSA</td>
+        <td class="kpi-col">Transmission ≥72 hours before departure for advance bookings; 100% transmitted before check-in opens for same-day bookings</td>
+        <td class="pain-col">Altéa Secure Flight module timeout during high-volume morning bank causes batch retransmission queues; TSA SLA requires 2-min response window — backlog during irregular operations extends to 15+ min, blocking boarding pass issuance</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Receive Boarding Pass Print Result from TSA</td>
+        <td class="kpi-col">BPPR response received within 2 min per passenger; 100% BPPR statuses resolved before check-in closes</td>
+        <td class="pain-col">TSA BPPR &#x27;Inhibited&#x27; status returned without explanation — agent must call TSA help desk with average hold time of 8–12 min; no case tracking integration between Altéa and TSA portal causes duplicate escalation calls</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Escalate SSSS or No-Fly result to TSA liaison</td>
+        <td class="kpi-col">SSSS coordination completed ≥45 min before departure; no-fly offload confirmed ≥30 min before departure; 100% SSSS passengers cleared or offloaded before gate close</td>
+        <td class="pain-col">Redress number mismatches cause false positives for passengers with common names — average 3–4 false positives per week at major hubs; each requires DHS TRIP form initiation and manual TSA override, averaging 20 min per incident</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Verify passenger identity document at gate</td>
+        <td class="kpi-col">Gate document check throughput &lt;45 sec per passenger; REAL ID non-compliance interception rate 100%; boarding completion ≥10 min before departure</td>
+        <td class="pain-col">No automated integration between AMS ID scanner and Altéa PNR — agent must manually annotate non-compliance; inconsistent REAL ID passenger awareness creates gate-queue backlog averaging 4 min per non-compliant incident</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Handle REAL ID non-compliance exception at gate</td>
+        <td class="kpi-col">REAL ID exception resolution &lt;5 min; denied boarding documented in Altéa within 15 min of incident; zero passengers boarded without TSA-acceptable ID</td>
+        <td class="pain-col">No automated link between AMS gate scanner and Altéa PNR creates audit gaps flagged in TSA compliance inspections; manual annotation relies on agent recall during high-throughput boarding — data quality degrades under pressure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Submit hold baggage manifest to TSA EDS screening</td>
+        <td class="kpi-col">100% of hold bags submitted to EDS before ramp loading begins; EDS screening throughput ≥300 bags/hr at Level 1</td>
+        <td class="pain-col">EDS machine downtime averages 4.2 hr/month per unit at busy stations; fallback to manual ETD screening reduces throughput by 60% and directly risks D0 departure delay — no automated EDS status feed into BagManager to trigger backup protocol</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Execute passenger-baggage reconciliation check</td>
+        <td class="kpi-col">Reconciliation completed ≥15 min before scheduled departure; mismatched bag rate &lt;0.1% of loaded bags</td>
+        <td class="pain-col">Interline baggage transfers lack real-time status in BagManager — connecting bags from partner carriers are invisible to reconciliation logic; increases unaccompanied bag risk on multi-carrier itineraries handled at shared terminals</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Remove and re-screen unaccompanied baggage</td>
+        <td class="kpi-col">Unaccompanied bag off-load completed &lt;10 min of identification; zero unaccompanied bags loaded; off-load documented 100% in BagManager</td>
+        <td class="pain-col">Off-loading a reconciliation-mismatched bag from a loaded aircraft requires full ramp access re-coordination with TSA and averages 18-min departure delay — each incident costs approximately $8,400 in direct delay costs and downstream slot penalties at coordinated airports</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Transmit eAPIS passenger manifest to CBP</td>
+        <td class="kpi-col">Manifest transmitted ≥60 min before international departure per 19 CFR 122.49a; 100% transmission rate; CBP acknowledgement within 10 min</td>
+        <td class="pain-col">Passport data OCR errors from self-service kiosks and online check-in produce CBP manifest rejections — average 2.3 passport corrections per international flight; each manual correction and CBP resubmission adds 8–10 min to pre-departure workload</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Receive and action CBP pre-departure APIS response</td>
+        <td class="kpi-col">CBP no-board response processed ≤10 min of receipt; 100% no-board orders actioned before gate close</td>
+        <td class="pain-col">CBP no-board orders occasionally arrive after gate close due to APIS processing latency — requires aircraft door reopening and coordinated offload, averaging 25-min delay and possible slot forfeiture at slot-controlled international airports (JFK, LGA, DCA, ORD)</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Offload CBP no-board passenger and associated bags</td>
+        <td class="kpi-col">No-board offload completed &lt;15 min of order receipt; 100% associated baggage removed before departure; CBP case number documented in PNR</td>
+        <td class="pain-col">Multi-segment bookings with interline bag transfers make associated baggage identification time-consuming — BagManager search limited to locally scanned bags; bags transferred from partner carriers on feeder flights are invisible, risking incomplete removal and TSA violation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Report security incident to TSA Operations Center</td>
+        <td class="kpi-col">Initial report filed within 4 hours of occurrence per 49 CFR Part 1544.305; 100% incident capture with zero unreported events</td>
+        <td class="pain-col">TSA eFile portal has no mobile interface — field agents must return to operations counter to file reports; creates reporting delays during concurrent gate incidents and documentation gaps when multiple events occur simultaneously across a departure bank</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Conduct post-departure security compliance audit</td>
+        <td class="kpi-col">Audit report completed within 2 hours of last departure; security exception rate &lt;1% of daily passengers processed; 100% exceptions assigned corrective owner</td>
+        <td class="pain-col">No unified compliance dashboard — AMS gate logs, Altéa BPPR records, and BagManager reconciliation data must be manually cross-referenced; average 45 min/day of manual report assembly per station; data format inconsistencies between systems cause reconciliation errors flagged in TSA programmatic inspections</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+</body>
+</html>
