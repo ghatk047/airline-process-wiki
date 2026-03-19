@@ -1,0 +1,43 @@
+flowchart LR
+  subgraph P1["Phase 1: Agreement & Config Setup"]
+    A([Start]) --> B[Validate ITA with partner carrier]
+    B --> C{ITA active & valid?}
+    C -- No --> B
+    C -- Yes --> D[Load partner tariff & combinability rules]
+  end
+  subgraph P2["Phase 2: Codeshare Flight Setup"]
+    D --> E[Register codeshare designator in Altéa PSS]
+    E --> F[Sync partner inventory via EDIFACT SSR/ACK]
+    F --> G{Inventory allocation confirmed?}
+    G -- No --> F
+    G -- Yes --> H[File codeshare fares via ATPCO]
+  end
+  subgraph P3["Phase 3: Booking & Ticket Issuance"]
+    H --> I[Receive interline booking from GDS/NDC]
+    I --> J{Fare combinability valid?}
+    J -- No --> I
+    J -- Yes --> K[Issue interline e-ticket via BSP/ARC]
+    K --> L[Transmit PNR to operating carrier via EDIFACT]
+  end
+  subgraph P4["Phase 4: Proration & Settlement"]
+    L --> M[Calculate proration per IATA PRM rules]
+    M --> N{Billing memo approved?}
+    N -- No --> M
+    N -- Yes --> O[Submit billing via IATA CASS/ICH]
+    O --> P[Post proration revenue to SAP S/4HANA FI]
+  end
+  subgraph P5["Phase 5: IROPS & Exceptions"]
+    P --> Q{IROPS disruption detected?}
+    Q -- Yes --> R[Reroute on alternate interline flight]
+    R --> S[Reissue or refund interline ticket]
+    Q -- No --> T([End])
+    S --> T
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style T fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600

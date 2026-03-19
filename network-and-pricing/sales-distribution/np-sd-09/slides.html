@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SD-09 Slides — Interline &amp; Codeshare Ticketing</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-09</span>
+    <h1>Interline &amp; Codeshare Ticketing</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sd-09.png" alt="BPMN for NP-SD-09" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-09</span>
+    <h1>Interline &amp; Codeshare Ticketing</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SD-09</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Sales &amp; Distribution</li>
+          <li><strong>L3 Name:</strong> Interline &amp; Codeshare Ticketing</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">15</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Validate Interline Ticketing Agreement status</li><li><strong>Phase 2:</strong> Register codeshare flight designator in Amadeus Al</li><li><strong>Phase 3:</strong> Receive interline booking request from GDS or NDC</li><li><strong>Phase 4:</strong> Calculate revenue proration using IATA Proration r</li><li><strong>Phase 5:</strong> Detect schedule disruption affecting interline iti</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Customer Experience Agent</li><li>Distribution Channel Manager</li><li>Distribution Systems Engineer</li><li>Fares &amp; Tariffs Analyst</li><li>Finance Accountant</li><li>Interline Agreements Manager</li><li>Interline Revenue Accounting Analyst</li><li>Interline Revenue Accounting Manager</li><li>Network Operations Controller</li><li>Revenue Integrity Analyst</li><li>Revenue Management Analyst</li><li>Schedule Planning Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>Amadeus Altéa PSS</li><li>Amadeus Revenue Management (NRM)</li><li>Amadeus SkyWORKS</li><li>IATA BSP Link</li><li>IATA CASS (Cargo Accounts Settlement System) / ICH</li><li>IATA MITA Portal</li><li>SAP S/4HANA Finance (FI/CO)</li><li>SCI Revenue Accounting (IBS Software)</li><li>Sabre GDS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-09</span>
+    <h1>Interline &amp; Codeshare Ticketing</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Validate Interline Ticketing Agreement status</td>
+        <td class="kpi-col">100% of active partners with valid ITA before ticket issuance enabled</td>
+        <td class="pain-col">MITA agreements lapse without automated renewal alerts — expired ITAs cause ticket rejection at GDS, creating passenger disruption and manual escalation to partner airline&#x27;s commercial team</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Load partner carrier tariff and fare rules</td>
+        <td class="kpi-col">Tariff load completed within 24 hours of ATPCO effective date</td>
+        <td class="pain-col">ATPCO batch updates publish at 00:01 EST — late-night automation failures leave stale fare rules in production until manual intervention, causing mispriced interline itineraries</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Configure MITA SSR message formats in PSS</td>
+        <td class="kpi-col">SSR message delivery success rate ≥99.5%</td>
+        <td class="pain-col">EDIFACT PADIS message version mismatches between carriers require manual mapping tables — each new partner requires 2–4 weeks of IT configuration, delaying commercial go-live</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Register codeshare flight designator in Amadeus Altéa</td>
+        <td class="kpi-col">Codeshare schedule loaded ≥90 days before first departure date</td>
+        <td class="pain-col">Operating carrier schedule changes propagate with latency — SkyWORKS SSIM refresh cycle is 24 hours, meaning same-day schedule swaps create ghost codeshare flights visible in GDS</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Sync partner inventory blocks via EDIFACT SSR/ACK</td>
+        <td class="kpi-col">Inventory sync acknowledgement (ACK) received within 15 minutes of block request</td>
+        <td class="pain-col">Dual inventory control (marketing vs operating carrier) creates overbooking risk — NRM cannot directly query operating carrier&#x27;s live seat map, relying on asynchronous SSR messages with no guaranteed delivery SLA</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>File codeshare fares via ATPCO and validate combinability</td>
+        <td class="kpi-col">Zero misfiled combinability rules causing GDS pricing errors at launch</td>
+        <td class="pain-col">ATPCO Category 10 combinability rules are complex — errors in end-on-end fare construction go undetected until passengers receive incorrect fares at booking, requiring mass repricing and IROPS-level agent intervention</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Receive interline booking request from GDS or NDC</td>
+        <td class="kpi-col">GDS booking response time ≤3 seconds for interline itineraries</td>
+        <td class="pain-col">NDC-sourced interline bookings lack standardised offer/order IDs compatible with legacy EDIFACT settlement — carriers without full NDC back-office integration cannot receive or settle NDC-issued interline tickets</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Perform fare construction combinability check</td>
+        <td class="kpi-col">Fare construction error rate ≤0.5% of all interline transactions</td>
+        <td class="pain-col">Half-round-trip (HRT) and end-on-end combination logic in Altéa pricing engine has known edge cases for 3+ carrier itineraries — manual audit required for itineraries crossing IATA traffic conference areas</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Issue interline e-ticket via BSP or ARC</td>
+        <td class="kpi-col">Ticket issuance success rate ≥99.8%; time-to-issue ≤60 seconds</td>
+        <td class="pain-col">BSP settlement reporting requires per-coupon carrier code validation — system-generated document check digit errors in Altéa have caused bulk ticket voids requiring 48-hour manual reissue queues</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Transmit PNR and coupon data to operating carrier</td>
+        <td class="kpi-col">PNR transmission to operating carrier within 5 minutes of ticket issuance; delivery confirmation ≥99%</td>
+        <td class="pain-col">IATCI (Interline Through Check-In) handoff failures occur when operating carrier&#x27;s PSS is on a different version of the EDIFACT PADIS standard — passengers arrive at operating carrier&#x27;s check-in counter with no booking record</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Calculate revenue proration using IATA Proration rules</td>
+        <td class="kpi-col">Proration calculation completed within T+1 business day of travel date</td>
+        <td class="pain-col">IATA Proration Rules Manual (PRM) updates twice yearly — revenue accounting system requires manual rule table updates, and delayed updates cause incorrect proration splits that take months to detect via interline billing reconciliation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Generate and submit interline billing memo via IATA CASS</td>
+        <td class="kpi-col">Billing memo submission before monthly IATA ICH cutoff (25th of month); dispute rate ≤2%</td>
+        <td class="pain-col">ICH submission deadlines are fixed — revenue accounting system outages during the last 3 business days of the month result in missed cutoffs, deferring settlement by a full month and creating cash flow exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Reconcile and approve interline billing statements</td>
+        <td class="kpi-col">Reconciliation completed within 10 business days of billing statement receipt; dispute resolution ≤30 days</td>
+        <td class="pain-col">Coupon usage data gaps (e.g., missing lift coupons from operating carrier) prevent automated matching — manual reconciliation for unmatched coupons exceeds 200 hours/month at mid-size carriers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Post approved proration revenue to general ledger</td>
+        <td class="kpi-col">GL posting completed within 2 business days of billing approval; zero unposted items at month-end close</td>
+        <td class="pain-col">Interline revenue accounting system integration with SAP FI relies on nightly batch file transfer — intra-month adjustments require manual journal entries, increasing month-end close effort and audit trail risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Detect schedule disruption affecting interline itinerary</td>
+        <td class="kpi-col">Disruption notification to marketing carrier within 30 minutes of operating carrier declaring IROPS</td>
+        <td class="pain-col">Operating carrier IROPS notifications arrive via unstructured email or telephone — no automated EDIFACT OC (Other Communication) message standard exists, meaning marketing carrier agents learn of disruptions reactively when passengers call</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Reroute passenger on alternate interline or codeshare flight</td>
+        <td class="kpi-col">Passenger reprotection offer presented within 60 minutes of IROPS declaration; acceptance rate ≥85%</td>
+        <td class="pain-col">IATA Resolution 735d mandates specific rebooking rules for involuntary rerouting — agents are not always trained on which rules apply to each interline agreement, leading to incorrect fare differences being charged or waived</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Process interline ticket reissue or refund</td>
+        <td class="kpi-col">Reissue or refund processing completed within 24 hours of passenger request; ADM dispute rate ≤1%</td>
+        <td class="pain-col">BSP Agent Debit Memos (ADMs) for incorrectly waived change fees create disputes lasting 6–12 months — interline reissue waiver codes are not standardised across carriers, causing downstream billing errors that inflate interline dispute volumes</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+</body>
+</html>
