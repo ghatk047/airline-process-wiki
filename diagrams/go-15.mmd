@@ -1,0 +1,49 @@
+flowchart LR
+  subgraph P1[Phase 1: Data Acquisition and Integration]
+    A([Start]) --> B[Extract AMS gate events]
+    B --> C[Pull ACARS turnaround timestamps]
+    C --> D[Ingest BRS baggage data]
+    D --> E{Data complete\nand timely?}
+    E -- No --> B
+    E -- Yes --> F
+  end
+  subgraph P2[Phase 2: KPI Computation]
+    F[Calculate D0 / D15 OTP] --> G[Compute gate utilisation rate]
+    G --> H[Calculate bag mishandling rate]
+    H --> I{KPIs within\nexpected range?}
+    I -- No --> J[Flag anomalies for review]
+    J --> F
+    I -- Yes --> K
+  end
+  subgraph P3[Phase 3: Scorecard Generation]
+    K[Build station scorecard in BI] --> L[Identify underperforming stations]
+    L --> M{Systematic\nperformance gap?}
+    M -- Yes --> N[Root cause drill-down]
+    N --> O
+    M -- No --> O
+  end
+  subgraph P4[Phase 4: Corrective Action]
+    O[Issue performance improvement notice] --> P{Escalation\nthreshold breached?}
+    P -- Yes --> Q[Escalate to VP Ground Ops]
+    Q --> R
+    P -- No --> R
+  end
+  subgraph P5[Phase 5: Reporting and Distribution]
+    R[Publish daily ops briefing] --> S[Distribute weekly scorecard]
+    S --> T[Submit monthly exec KPI report]
+    T --> U
+  end
+  subgraph P6[Phase 6: Trend Review and Target Governance]
+    U[Analyse 13-week rolling trends] --> V{KPI targets\nneed revision?}
+    V -- Yes --> W[Update targets in BI platform]
+    W --> X([End])
+    V -- No --> X
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600

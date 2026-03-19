@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Revenue Management · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>GO-15 · Station Performance &amp; KPI Reporting · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -171,7 +172,7 @@
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-09/"><span class="status-dot status-done"></span><span class="pid">GO-09</span>Wheelchair &amp; Special Assistance Services</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-10/"><span class="status-dot status-done"></span><span class="pid">GO-10</span>VIP &amp; Premium Passenger Handling</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-13/"><span class="status-dot status-done"></span><span class="pid">GO-13</span>Airport Security Compliance (TSA/CBP)</a>
-        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-15/"><span class="status-dot status-done"></span><span class="pid">GO-15</span>Station Performance &amp; KPI Reporting</a>
+        <a class="sidebar-l3-link active" href="../../../ground-operations/airport-gate-management/go-15/"><span class="status-dot status-done"></span><span class="pid">GO-15</span>Station Performance &amp; KPI Reporting</a>
       </div>
       <a class="sidebar-l2-link" href="../../../ground-operations/passenger-services/">Baggage Operations</a>
       <div class="sidebar-l3">
@@ -242,153 +243,268 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Revenue Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
+  <a href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a><span class="sep">›</span>
+  <span class="current">GO-15 · Station Performance &amp; KPI Reporting</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Revenue Management</h1>
-    <p>Network Planning &amp; Scheduling · 15 of 15 subprocesses complete · Updated 2026-03-19 14:32</p>
+    <h1>Station Performance &amp; KPI Reporting</h1>
+    <p>Ground Operations &amp; Airport Services › Airport &amp; Gate Management · 19 L4 steps · 6 phases · 5 decision gates · Updated 2026-03-19 14:32</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">GO-15</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-01</span>Inventory &amp; Yield Optimization</h3>
-    <p>Revenue Management · 18 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-go-15">
+      <img src="../../../assets/img/go-15.png" alt="GO-15 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-go-15').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-go-15').style.display='flex'">
+      <div id="diag-placeholder-go-15" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract gate event data from AMS</td>
+  <td class="td-role">Station Performance Analyst</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Scheduled reporting period close (daily/weekly trigger)</td>
+  <td style="font-size:10px">Raw gate event log: block-in, block-out, stand assignment, delays</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data extraction latency ≤15 min after period close</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Pull ACARS turnaround event timestamps</td>
+  <td class="td-role">Station Performance Analyst</td>
+  <td><span class="stag custom">SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">AMS gate event log from step 1.1</td>
+  <td style="font-size:10px">ACARS-corroborated block times: chocks-on, door-open, door-close, push-back</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ACARS coverage ≥95% of narrowbody turns at hub stations</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Ingest baggage handling data from BRS</td>
+  <td class="td-role">Station Performance Analyst</td>
+  <td><span class="stag custom">SITA WorldTracer</span></td>
+  <td style="font-size:10px;color:#6b7280">Baggage reconciliation system (BRS) export for the period</td>
+  <td style="font-size:10px">Baggage mishandling records: late bags, wrong-loaded, offloaded, damaged</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">WorldTracer file ingestion success rate ≥99%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Validate data completeness across all stations</td>
+  <td class="td-role">Station Performance Analyst</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Merged AMS, ACARS, and WorldTracer datasets loaded to Redshift staging schema</td>
+  <td style="font-size:10px">Data quality report: missing records flagged, coverage % per station</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data completeness ≥98% of operated flights before KPI run proceeds</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Calculate D0 and D15 on-time departure metrics</td>
+  <td class="td-role">Station Performance Analyst</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated gate event dataset from phase 1</td>
+  <td style="font-size:10px">D0 and D15 departure performance % per station, per fleet type, per hour-of-day</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">System-wide D0 ≥78%; D15 ≥88% (IATA AHM 810 standard)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Compute gate and stand utilisation rate</td>
+  <td class="td-role">Station Performance Analyst</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Stand assignment and block-time data from AMS</td>
+  <td style="font-size:10px">Gate utilisation % per stand per day; peak-hour congestion index per station</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate utilisation target ≥72% at primary hub gates; congestion index &lt;1.2 at peak</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Calculate baggage mishandling and delivery KPIs</td>
+  <td class="td-role">Station Performance Analyst</td>
+  <td><span class="stag custom">SITA WorldTracer</span></td>
+  <td style="font-size:10px;color:#6b7280">Baggage mishandling records from step 1.3; passenger boarding counts from Amadeus Altéa PSS</td>
+  <td style="font-size:10px">Mishandled baggage rate per 1,000 passengers; average delivery-to-belt time (minutes)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Mishandled bag rate ≤3.5 per 1,000 pax (IATA World Baggage Report benchmark); first-bag-to-belt ≤20 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Assess computed KPIs against threshold rules</td>
+  <td class="td-role">Station Performance Analyst</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Computed KPI values from steps 2.1–2.3; threshold configuration table in Redshift</td>
+  <td style="font-size:10px">KPI status flags: Green / Amber / Red per metric per station</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of KPI metrics receive a RAG status within 30 min of data validation</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Build station scorecard dashboard in Tableau</td>
+  <td class="td-role">Station Performance Analyst</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">RAG-flagged KPI dataset published to Tableau Server data source</td>
+  <td style="font-size:10px">Interactive station scorecard: D0/D15, gate util, bag KPIs, trend sparklines per station</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Scorecard refresh latency ≤60 min after reporting period close</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Identify underperforming stations via threshold alerts</td>
+  <td class="td-role">Ground Operations Performance Manager</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Published station scorecard with RAG flags</td>
+  <td style="font-size:10px">Underperformer shortlist: stations with ≥2 Red KPIs or single critical-metric Red flag</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Underperformer identification completed within 2 hours of scorecard publication</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Conduct root cause drill-down for Red-flagged stations</td>
+  <td class="td-role">Ground Operations Performance Manager</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Underperformer shortlist; flight-level delay code breakdown from Redshift</td>
+  <td style="font-size:10px">Root cause classification: staffing, equipment, aircraft late-in, ATC, weather, process</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Root cause assigned for ≥90% of Red-flagged stations within 4 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Issue performance improvement notice to station manager</td>
+  <td class="td-role">Ground Operations Performance Manager</td>
+  <td><span class="stag custom">Microsoft Azure Synapse</span></td>
+  <td style="font-size:10px;color:#6b7280">Root cause classification and supporting KPI evidence from step 3.3</td>
+  <td style="font-size:10px">Performance Improvement Notice (PIN) with specific KPI targets and 30-day remediation timeline</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PIN issued within 24 hours of Red-flag identification for stations with ground-caused root cause</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Assess whether VP Ground Ops escalation is required</td>
+  <td class="td-role">Ground Operations Performance Manager</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Station KPI trend data; PIN issuance history; escalation threshold ruleset</td>
+  <td style="font-size:10px">Escalation decision: escalate to VP Ground Ops or manage at performance manager level</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Escalation decision made within 48 hours of Red-flag identification</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Brief VP Ground Ops with station performance summary</td>
+  <td class="td-role">Director of Ground Operations</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Escalated station performance package: KPI trend, root cause, PIN history, remediation plan</td>
+  <td style="font-size:10px">VP decision: resource reallocation, contractor review, or formal station audit trigger</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">VP briefing delivered within 72 hours of escalation trigger</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Publish daily ops performance briefing</td>
+  <td class="td-role">Station Performance Analyst</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Overnight KPI computation run; previous-day baseline</td>
+  <td style="font-size:10px">Daily Ops Briefing email/dashboard: top-5 KPI movers, Red-flag summary, delay code distribution</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Daily briefing distributed by 07:00 local time at each hub station</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Distribute weekly station scorecard to station managers</td>
+  <td class="td-role">Ground Operations Performance Manager</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">7-day rolling KPI dataset; prior week scorecard for trend comparison</td>
+  <td style="font-size:10px">Weekly scorecard PDF distributed to station managers and regional directors</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Weekly scorecard delivered every Monday by 09:00 local hub time</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Submit monthly KPI report to senior leadership</td>
+  <td class="td-role">Director of Ground Operations</td>
+  <td><span class="stag custom">Microsoft Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">Monthly KPI summary from Redshift; incident log from AMS; financial impact data from SAP S/4HANA Finance</td>
+  <td style="font-size:10px">Monthly Ground Ops Performance Report: trend charts, YoY comparison, cost-of-poor-quality estimate</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Monthly report submitted to SVP Operations by the 5th calendar day of the following month</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Analyse 13-week rolling performance trends</td>
+  <td class="td-role">Ground Operations Performance Manager</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">13-week historical KPI dataset from Redshift; seasonality index from Amadeus SkyCAST</td>
+  <td style="font-size:10px">Trend analysis report: directional KPI movement, seasonal-adjusted performance, benchmark gap</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Trend analysis completed quarterly; covers 100% of hub and focus-city stations</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Review and update KPI targets in BI platform</td>
+  <td class="td-role">Director of Ground Operations</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">13-week trend report; benchmark data from IATA AHM and Airport Council International (ACI)</td>
+  <td style="font-size:10px">Updated KPI threshold configuration approved and published to Tableau data source; change log entry</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">KPI targets reviewed at minimum quarterly; changes approved within 5 business days of review</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-02</span>Fare Class &amp; Bucket Management</h3>
-    <p>Revenue Management · 18 steps · 9 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">GO-15</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Ground Operations &amp; Airport Services</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Airport &amp; Gate Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Station Performance &amp; KPI Reporting</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">19 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">6 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Station Performance Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Ground Operations Performance Manager</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Director of Ground Operations</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">SITA ACARS</span><span class="stag custom">SITA WorldTracer</span><span class="stag aws">AWS S3 / Redshift</span><span class="stag aws">AWS Redshift</span><span class="stag custom">Tableau</span><span class="stag custom">Microsoft Azure Synapse</span><span class="stag custom">Microsoft Power BI</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract gate event data from AMS</span><span class="kval">Data extraction latency ≤15 min after period close</span></div><div class="krow"><span class="kname">Pull ACARS turnaround event timestamps</span><span class="kval">ACARS coverage ≥95% of narrowbody turns at hub stations</span></div><div class="krow"><span class="kname">Ingest baggage handling data from BRS</span><span class="kval">WorldTracer file ingestion success rate ≥99%</span></div><div class="krow"><span class="kname">Validate data completeness across all stations</span><span class="kval">Data completeness ≥98% of operated flights before KPI run proceeds</span></div><div class="krow"><span class="kname">Calculate D0 and D15 on-time departure metrics</span><span class="kval">System-wide D0 ≥78%; D15 ≥88% (IATA AHM 810 standard)</span></div><div class="krow"><span class="kname">Compute gate and stand utilisation rate</span><span class="kval">Gate utilisation target ≥72% at primary hub gates; congestion index &lt;1.2 at peak</span></div><div class="krow"><span class="kname">Calculate baggage mishandling and delivery KPIs</span><span class="kval">Mishandled bag rate ≤3.5 per 1,000 pax (IATA World Baggage Report benchmark); first-bag-to-belt ≤20 min</span></div><div class="krow"><span class="kname">Assess computed KPIs against threshold rules</span><span class="kval">100% of KPI metrics receive a RAG status within 30 min of data validation</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">AMS event timestamps may be entered manually by ramp agents, introducing ±3 min inaccuracies that distort D0 calculations; no auto-capture at many regional stations</div><div class="risk-card">Regional and outstations with older ground equipment may have ACARS downlink gaps; fallback to manual log creates 5–8% data voids that inflate reported OTP</div><div class="risk-card">WorldTracer data latency at transborder stations (US/Canada/Mexico) can exceed 4 hours due to customs hold scanning delays, making same-day reporting unreliable</div><div class="risk-card">Redshift ingestion pipelines from SITA AMS rely on SFTP batch files; file delivery failures at outstations can silently drop entire station&#x27;s data from the reporting run</div><div class="risk-card">Carrier-caused vs. non-carrier delay classification is applied post-hoc via delay codes entered by agents — code 93 (ATC) vs code 15 (late aircraft) misclassification inflates ground ops performance metrics</div><div class="risk-card">AMS stand assignment data does not reflect real-time remote-stand tows, causing gate utilisation to be overstated for aerobridged stands and understated for remote apron positions</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Scheduled reporting period close (daily/weekly trigger)</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Updated KPI threshold configuration approved and published to Tableau data source; change log entry</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-03</span>Overbooking Policy Management</h3>
-    <p>Revenue Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-04</span>Demand Forecasting &amp; Modelling</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-05</span>Group Sales Revenue Management</h3>
-    <p>Revenue Management · 19 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-06</span>Upgrade &amp; Upsell Revenue Optimization</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-07</span>Ancillary Revenue Optimization</h3>
-    <p>Revenue Management · 15 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-08</span>RM System Calibration &amp; Tuning</h3>
-    <p>Revenue Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-09</span>Post-Departure Revenue Reporting</h3>
-    <p>Revenue Management · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-10</span>Competitive Fare Monitoring &amp; Response</h3>
-    <p>Revenue Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-11</span>Corporate &amp; Negotiated Rate Management</h3>
-    <p>Revenue Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-12</span>Real-Time Availability &amp; Seat Inventory Control</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-13</span>Revenue Integrity &amp; Ticketing Compliance</h3>
-    <p>Revenue Management · 18 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-14</span>O&amp;D Revenue Management</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-15</span>LCC Competitive Pricing Strategy</h3>
-    <p>Revenue Management · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../go-14/"><span class="arrow">←</span><span><span class="sub">Previous</span>GO-14 · Ground Support Equipment (GSE) Management</span></a><a class="pn-btn" href="../mr-01/"><span><span class="sub">Next</span>MR-01 · Line Maintenance Planning &amp; Execution</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
