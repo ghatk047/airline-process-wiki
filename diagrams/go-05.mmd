@@ -1,0 +1,60 @@
+flowchart LR
+  subgraph P1[Phase 1: Arrival Planning and Stand Allocation]
+    A([Start]) --> B[Receive inbound movement data]
+    B --> C[Allocate ramp resources]
+    C --> D{Stand clear\nand serviceable?}
+    D -- No --> E[Reassign or clear stand]
+    E --> D
+    D -- Yes --> F[Brief ramp team for arrival]
+  end
+  subgraph P2[Phase 2: Aircraft Arrival and Offload]
+    F --> G[Marshal aircraft to stand]
+    G --> H[Connect GPU and position chocks]
+    H --> I{FOD check\npassed?}
+    I -- No --> J[Clear FOD and re-inspect]
+    J --> I
+    I -- Yes --> K[Offload baggage and cargo]
+  end
+  subgraph P3[Phase 3: Aircraft Servicing]
+    K --> L[Lavatory and water servicing]
+    L --> M[Calculate and uplift fuel]
+    M --> N{Fuel qty matches\ndispatch release?}
+    N -- No --> O[Reconcile with fueling agent]
+    O --> M
+    N -- Yes --> P[Interior cleaning complete]
+  end
+  subgraph P4[Phase 4: Catering and Provisioning]
+    P --> Q[Load catering per galley plan]
+    Q --> R{Provisioning\ncounts verified?}
+    R -- No --> S[Resolve catering discrepancy]
+    S --> Q
+    R -- Yes --> T[Secure galley and seal doors]
+  end
+  subgraph P5[Phase 5: Load Control and Onload]
+    T --> U[Generate load plan from pax data]
+    U --> V{Load plan\napproved by LCO?}
+    V -- No --> W[Revise load distribution]
+    W --> U
+    V -- Yes --> X[Load baggage and cargo per plan]
+  end
+  subgraph P6[Phase 6: Departure Preparation and Pushback]
+    X --> Y[Calculate final weight and balance]
+    Y --> Z{W and B within\nenvelope?}
+    Z -- No --> W
+    Z -- Yes --> AA[Transmit loadsheet via ACARS]
+    AA --> AB{All services\ndisconnected?}
+    AB -- No --> AC[Disconnect remaining GSE]
+    AC --> AB
+    AB -- Yes --> AD[Coordinate pushback with ATC]
+    AD --> AE([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AE fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
+  style Z fill:#ff6600,color:#fff,stroke:#ff6600
+  style AB fill:#ff6600,color:#fff,stroke:#ff6600

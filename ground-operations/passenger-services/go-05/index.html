@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Heavy Maintenance · Maintenance, Repair &amp; Overhaul · Airlines Process Wiki</title>
+<title>GO-05 · Ramp &amp; Turnaround Operations · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -177,7 +178,7 @@
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-02/"><span class="status-dot status-done"></span><span class="pid">GO-02</span>Baggage Acceptance &amp; Handling</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-03/"><span class="status-dot status-done"></span><span class="pid">GO-03</span>Lost &amp; Found / Baggage Tracing</a>
-        <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-05/"><span class="status-dot status-done"></span><span class="pid">GO-05</span>Ramp &amp; Turnaround Operations</a>
+        <a class="sidebar-l3-link active" href="../../../ground-operations/passenger-services/go-05/"><span class="status-dot status-done"></span><span class="pid">GO-05</span>Ramp &amp; Turnaround Operations</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-06/"><span class="status-dot status-queue"></span><span class="pid">GO-06</span>Ground Handling Vendor Management</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-07/"><span class="status-dot status-queue"></span><span class="pid">GO-07</span>Load Control &amp; Aircraft Loading</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-11/"><span class="status-dot status-queue"></span><span class="pid">GO-11</span>Cargo &amp; Mail Ground Handling</a>
@@ -187,8 +188,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-queue"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
@@ -242,54 +243,278 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
-  <span class="current">Heavy Maintenance</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
+  <a href="../../../ground-operations/passenger-services/">Ramp &amp; Turnaround Operations</a><span class="sep">›</span>
+  <span class="current">GO-05 · Ramp &amp; Turnaround Operations</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Heavy Maintenance</h1>
-    <p>Maintenance, Repair &amp; Overhaul · 0 of 4 subprocesses complete · Updated 2026-03-19 14:01</p>
+    <h1>Ramp &amp; Turnaround Operations</h1>
+    <p>Ground Operations &amp; Airport Services › Ramp &amp; Turnaround Operations · 20 L4 steps · 6 phases · 7 decision gates · Updated 2026-03-19 14:01</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">GO-05</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-02</span>Heavy Maintenance (C/D Check) Planning</h3>
-    <p>Heavy Maintenance · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-go-05">
+      <img src="../../../assets/img/go-05.png" alt="GO-05 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-go-05').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-go-05').style.display='flex'">
+      <div id="diag-placeholder-go-05" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-02/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Receive inbound flight movement data</td>
+  <td class="td-role">Stand Allocation Manager</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Inbound OOOI messages and updated ETA from ACARS</td>
+  <td style="font-size:10px">Confirmed stand assignment and estimated on-block time</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Stand assignment confirmed ≥30 min before ETA</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Allocate ramp resources to inbound flight</td>
+  <td class="td-role">Ramp Resource Planner</td>
+  <td><span class="stag custom">Inform GroundStar</span></td>
+  <td style="font-size:10px;color:#6b7280">Stand assignment, aircraft type, turnaround time target</td>
+  <td style="font-size:10px">GSE allocation plan (GPU, belt loaders, pushback tug, stairs/JBs)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Resource plan published ≥20 min before on-block; GSE utilisation ≥75%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Confirm stand readiness and brief ramp team</td>
+  <td class="td-role">Ramp Duty Manager</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Incoming stand occupancy status, previous turn clearance confirmation</td>
+  <td style="font-size:10px">Stand ready flag set; ramp crew briefed on aircraft type, turn time, and special loads</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Stand cleared ≥10 min before on-block for 95% of turns</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Marshal aircraft to allocated stand</td>
+  <td class="td-role">Marshaller / Follow-Me Driver</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Stand ready confirmation, aircraft taxiing signal from Tower</td>
+  <td style="font-size:10px">Aircraft parked on stand with wheel position confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">On-block within 2 min of scheduled on-block time for 80% of turns</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Position chocks, connect GPU and air bridge</td>
+  <td class="td-role">Ground Equipment Operator</td>
+  <td><span class="stag custom">Inform GroundStar</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft on-block confirmation from marshaller</td>
+  <td style="font-size:10px">Chocks placed, GPU connected, aircraft on external power, air bridge docked</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GPU connected within 3 min of on-block; APU off within 5 min of on-block</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Conduct FOD check and open aircraft holds</td>
+  <td class="td-role">Ramp Safety Agent</td>
+  <td><span class="stag custom">Inform GroundStar</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft chocked and powered; airside safety clearance</td>
+  <td style="font-size:10px">FOD-clear certification logged; hold doors open and belt loaders positioned</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">FOD check completed within 5 min of chocking; zero FOD incidents per 10,000 turns</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Offload passenger baggage and ULDs</td>
+  <td class="td-role">Ramp Agent</td>
+  <td><span class="stag custom">SITA LoadPlanner</span></td>
+  <td style="font-size:10px;color:#6b7280">Offload sequence from LoadPlanner; ULD manifest from originating station</td>
+  <td style="font-size:10px">All baggage and ULDs offloaded and sorted to arrivals belt or transfer make-up area</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">First bag on belt ≤20 min after on-block; last bag ≤35 min for narrow-body</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.5</td>
+  <td class="td-name">Offload cargo and mail per cargo manifest</td>
+  <td class="td-role">Cargo Ramp Agent</td>
+  <td><span class="stag custom">SITA LoadPlanner</span></td>
+  <td style="font-size:10px;color:#6b7280">Cargo manifest (AWBs, special load codes), ULD positions from LoadPlanner</td>
+  <td style="font-size:10px">Cargo offloaded to bonded shed or transfer unit; DG and live animal loads handled per IATA DGR</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Cargo offload complete within 30 min of on-block; 100% DG loads documented per IATA DGR</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Perform lavatory and potable water servicing</td>
+  <td class="td-role">Ground Service Agent</td>
+  <td><span class="stag custom">Inform GroundStar</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft offload complete signal; lavatory service task assigned in GroundStar</td>
+  <td style="font-size:10px">Lavatory tanks emptied and rinsed; potable water tank filled to required level</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Lavatory service complete within 15 min of task start; zero potable water contamination events</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Calculate and uplift fuel per dispatch release</td>
+  <td class="td-role">Fueling Agent</td>
+  <td><span class="stag custom">Into-Plane Fuel Management System</span></td>
+  <td style="font-size:10px;color:#6b7280">Fuel uplift order from dispatch release (Jeppesen FliteDeck / NAVBLUE); aircraft fuel gauges</td>
+  <td style="font-size:10px">Fuel uplifted to required quantity; fuel receipt signed and data transmitted</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fueling complete ≥15 min before scheduled departure; fuel quantity variance ≤50 kg vs. dispatch order</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Complete aircraft interior cleaning</td>
+  <td class="td-role">Cabin Cleaning Crew Supervisor</td>
+  <td><span class="stag custom">Inform GroundStar</span></td>
+  <td style="font-size:10px;color:#6b7280">Cabin cleaning task released in GroundStar after passenger deplane confirmed</td>
+  <td style="font-size:10px">Cabin cleaned, seat pockets restocked, galleys reset; cleaning sign-off in GroundStar</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Cleaning complete within allocated turn time window; cabin cleanliness score ≥4.2/5 in post-flight survey</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Load catering and provisioning per galley plan</td>
+  <td class="td-role">Catering Supervisor</td>
+  <td><span class="stag custom">Inform GroundStar</span></td>
+  <td style="font-size:10px;color:#6b7280">Catering uplift order from catering management system; galley configuration file</td>
+  <td style="font-size:10px">All trolleys and supplies loaded to correct galley positions; catering doors secured</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Catering loading complete ≥20 min before STD; zero missing trolley events per 1,000 turns</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Verify catering counts against flight specification</td>
+  <td class="td-role">Load Controller</td>
+  <td><span class="stag custom">Inform GroundStar</span></td>
+  <td style="font-size:10px;color:#6b7280">Catering delivery notes; passenger load forecast from Amadeus Altéa PSS</td>
+  <td style="font-size:10px">Catering verification sign-off; discrepancy report raised if counts mismatch</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Catering verification complete within 5 min of loading; discrepancy rate &lt;0.5% of turns</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Receive final pax load and generate load plan</td>
+  <td class="td-role">Load Controller</td>
+  <td><span class="stag custom">SITA LoadPlanner</span></td>
+  <td style="font-size:10px;color:#6b7280">Final check-in closure data from Amadeus Altéa PSS; baggage weight data; cargo manifest</td>
+  <td style="font-size:10px">Load instruction report (LIR) with ULD build plan and position assignments</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Load plan generated ≤10 min after check-in closure; load factor accuracy ±1% of actual</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Load passenger baggage per approved load plan</td>
+  <td class="td-role">Ramp Agent</td>
+  <td><span class="stag custom">SITA LoadPlanner</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved LIR with ULD positions and weight targets per hold zone</td>
+  <td style="font-size:10px">Baggage loaded and locked in correct positions; actual weights per hold recorded in LoadPlanner</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Baggage loaded per plan with ≤2% position deviation; loading complete ≥15 min before STD</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Load outbound cargo and mail per manifest</td>
+  <td class="td-role">Cargo Ramp Agent</td>
+  <td><span class="stag custom">SITA LoadPlanner</span></td>
+  <td style="font-size:10px;color:#6b7280">Cargo manifest (AWBs); DG declarations; ULD build instructions from LoadPlanner</td>
+  <td style="font-size:10px">Cargo loaded per IATA ULD regulations; high-value and DG loads segregated and documented</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Cargo loading complete ≥20 min before STD; 100% DG segregation compliance per IATA DGR</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Calculate final weight and balance</td>
+  <td class="td-role">Load Controller</td>
+  <td><span class="stag custom">SITA LoadPlanner</span></td>
+  <td style="font-size:10px;color:#6b7280">Final pax count and weights, actual baggage and cargo weights, fuel uplift confirmation</td>
+  <td style="font-size:10px">Final loadsheet with ZFW, TOW, CG% MAC, and trim setting</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Loadsheet issued ≥10 min before STD; CG within certified envelope 100% of departures</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Transmit loadsheet to flight crew via ACARS</td>
+  <td class="td-role">Load Controller</td>
+  <td><span class="stag custom">Telex / SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved final loadsheet from SITA LoadPlanner</td>
+  <td style="font-size:10px">Loadsheet transmitted and acknowledged by flight deck; printed copy retained per regulatory requirement</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ACARS loadsheet transmission ≥8 min before STD; crew acknowledgement within 2 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.3</td>
+  <td class="td-name">Disconnect all GSE and confirm all-clear</td>
+  <td class="td-role">Ground Equipment Operator</td>
+  <td><span class="stag custom">Inform GroundStar</span></td>
+  <td style="font-size:10px;color:#6b7280">Doors-closed signal from cabin crew; loadsheet acknowledgement from flight deck</td>
+  <td style="font-size:10px">GPU disconnected, chocks removed, all GSE clear of aircraft; all-clear signal given to flight deck</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">All GSE cleared ≥3 min before off-block; zero FOD events during pushback phase</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.4</td>
+  <td class="td-name">Coordinate pushback and engine start with ATC</td>
+  <td class="td-role">Pushback Supervisor</td>
+  <td><span class="stag custom">Telex / SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">All-clear confirmed; ATIS and pushback clearance from ATC via VHF</td>
+  <td style="font-size:10px">Aircraft pushed back to runway heading; engine start sequence complete; pushback crew clear</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Off-block within 1 min of target off-block time (TOBT) for 78% of departures</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-03</span>Engine Shop Maintenance Management</h3>
-    <p>Heavy Maintenance · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">GO-05</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Ground Operations &amp; Airport Services</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Ramp &amp; Turnaround Operations</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Ramp &amp; Turnaround Operations</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">20 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">7 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">14 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Stand Allocation Manager</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Ramp Resource Planner</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Ramp Duty Manager</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Marshaller / Follow-Me Driver</div><div class="swim"><div class="dot" style="background:#10b981"></div>Ground Equipment Operator</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Ramp Safety Agent</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Ramp Agent</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Cargo Ramp Agent</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Ground Service Agent</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Fueling Agent</div><div class="swim"><div class="dot" style="background:#f97316"></div>Cabin Cleaning Crew Supervisor</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>Catering Supervisor</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Load Controller</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Pushback Supervisor</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">Inform GroundStar</span><span class="stag custom">SITA LoadPlanner</span><span class="stag custom">Into-Plane Fuel Management System</span><span class="stag custom">Telex / SITA ACARS</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Receive inbound flight movement data</span><span class="kval">Stand assignment confirmed ≥30 min before ETA</span></div><div class="krow"><span class="kname">Allocate ramp resources to inbound flight</span><span class="kval">Resource plan published ≥20 min before on-block; GSE utilisation ≥75%</span></div><div class="krow"><span class="kname">Confirm stand readiness and brief ramp team</span><span class="kval">Stand cleared ≥10 min before on-block for 95% of turns</span></div><div class="krow"><span class="kname">Marshal aircraft to allocated stand</span><span class="kval">On-block within 2 min of scheduled on-block time for 80% of turns</span></div><div class="krow"><span class="kname">Position chocks, connect GPU and air bridge</span><span class="kval">GPU connected within 3 min of on-block; APU off within 5 min of on-block</span></div><div class="krow"><span class="kname">Conduct FOD check and open aircraft holds</span><span class="kval">FOD check completed within 5 min of chocking; zero FOD incidents per 10,000 turns</span></div><div class="krow"><span class="kname">Offload passenger baggage and ULDs</span><span class="kval">First bag on belt ≤20 min after on-block; last bag ≤35 min for narrow-body</span></div><div class="krow"><span class="kname">Offload cargo and mail per cargo manifest</span><span class="kval">Cargo offload complete within 30 min of on-block; 100% DG loads documented per IATA DGR</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Late gate changes due to ATC slot revisions or prior turn overrun cause cascading resource conflicts — AMS does not auto-trigger GSE reallocation</div><div class="risk-card">GSE availability gaps during peak banks — GroundStar planning horizon is 4 hours; sub-contracted handling agents may not sync real-time equipment status</div><div class="risk-card">Stand conflicts when previous turn is delayed — SITA AMS does not automatically notify ramp crew of stand swap; verbal communication gaps cause missed briefings</div><div class="risk-card">Tight apron geometry at congested airports leads to proximity incidents — SITA AMS does not provide real-time apron conflict alerting; relies on manual visual clearance</div><div class="risk-card">APU-off compliance is monitored manually — airlines incur fuel burn penalty and noise fines if APU is left running; GroundStar task completion is self-reported, not sensor-verified</div><div class="risk-card">FOD checks are paper-based at many stations — GroundStar task completion does not integrate with airside safety management system, preventing automated audit trail</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Inbound OOOI messages and updated ETA from ACARS</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Aircraft pushed back to runway heading; engine start sequence complete; pushback crew clear</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-04</span>Component &amp; Parts Management</h3>
-    <p>Heavy Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-04/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-11</span>Structural Repair &amp; NDT Management</h3>
-    <p>Heavy Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-11/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../go-04/"><span class="arrow">←</span><span><span class="sub">Previous</span>GO-04 · Gate Management &amp; Assignment</span></a><a class="pn-btn" href="../go-06/"><span><span class="sub">Next</span>GO-06 · Ground Handling Vendor Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
