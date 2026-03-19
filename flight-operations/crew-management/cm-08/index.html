@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Schedule Planning · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>CM-08 · Crew Hotel &amp; Transportation Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Crew Management</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -149,7 +150,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-05/"><span class="status-dot status-done"></span><span class="pid">CM-05</span>Crew Training &amp; Recurrency Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-06/"><span class="status-dot status-done"></span><span class="pid">CM-06</span>Crew Licensing &amp; Medical Certification</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-07/"><span class="status-dot status-done"></span><span class="pid">CM-07</span>Reserve Crew Management</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-08/"><span class="status-dot status-done"></span><span class="pid">CM-08</span>Crew Hotel &amp; Transportation Management</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/crew-management/cm-08/"><span class="status-dot status-done"></span><span class="pid">CM-08</span>Crew Hotel &amp; Transportation Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-09/"><span class="status-dot status-queue"></span><span class="pid">CM-09</span>Cabin Crew Service Standards &amp; Training</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-10/"><span class="status-dot status-queue"></span><span class="pid">CM-10</span>Crew Disruption Recovery &amp; Re-pairing</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/crew-management/cm-11/"><span class="status-dot status-queue"></span><span class="pid">CM-11</span>Crew Union &amp; Labour Agreement Compliance</a>
@@ -242,153 +243,218 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Schedule Planning</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Crew Management</a><span class="sep">›</span>
+  <a href="../../../flight-operations/crew-management/">Crew Day-of-Operations</a><span class="sep">›</span>
+  <span class="current">CM-08 · Crew Hotel &amp; Transportation Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Schedule Planning</h1>
-    <p>Network Planning &amp; Scheduling · 15 of 15 subprocesses complete · Updated 2026-03-19 10:36</p>
+    <h1>Crew Hotel &amp; Transportation Management</h1>
+    <p>Crew Management › Crew Day-of-Operations · 14 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-19 10:36</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CM-08</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-01</span>Seasonal Schedule Construction</h3>
-    <p>Schedule Planning · 16 steps · 8 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cm-08">
+      <img src="../../../assets/img/cm-08.png" alt="CM-08 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cm-08').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cm-08').style.display='flex'">
+      <div id="diag-placeholder-cm-08" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract layover schedule by station and date</td>
+  <td class="td-role">Crew Scheduling Analyst</td>
+  <td><span class="stag custom">Jeppesen Crew Management Suite</span></td>
+  <td style="font-size:10px;color:#6b7280">Published crew pairings for 14-day rolling window</td>
+  <td style="font-size:10px">Layover demand matrix by city, date, and crew count</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Schedule extraction latency &lt;15 min after pairing publish</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Forecast hotel room demand by city</td>
+  <td class="td-role">Crew Logistics Coordinator</td>
+  <td><span class="stag aws">AWS Crew Operations System</span></td>
+  <td style="font-size:10px;color:#6b7280">Layover demand matrix, historical IROPS uplift factors by station</td>
+  <td style="font-size:10px">City-level room demand forecast with IROPS buffer (typically +15%)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Forecast accuracy ≥90% vs actual bookings week-over-week</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Validate contracted block vs demand forecast</td>
+  <td class="td-role">Crew Logistics Manager</td>
+  <td><span class="stag custom">Crew Hotel Management System</span></td>
+  <td style="font-size:10px;color:#6b7280">Room demand forecast, contracted block inventory by hotel and city</td>
+  <td style="font-size:10px">Block gap report flagging cities with coverage &lt;95%</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Contracted block coverage ≥95% of forecasted demand</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Auto-generate hotel reservations for pairings</td>
+  <td class="td-role">Crew Logistics Coordinator</td>
+  <td><span class="stag custom">Crew Hotel Management System</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved layover schedule, contracted hotel inventory</td>
+  <td style="font-size:10px">Hotel confirmation records with room type, check-in/out times</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Auto-booking rate ≥98% for standard layovers; zero manual entry for pairings &gt;48 hrs out</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Book ground transport for crew arrival and departure</td>
+  <td class="td-role">Crew Transport Coordinator</td>
+  <td><span class="stag noc">Ground Transport Dispatch System</span></td>
+  <td style="font-size:10px;color:#6b7280">Hotel confirmation records, scheduled flight arrival/departure times</td>
+  <td style="font-size:10px">Transport schedule with vendor assignment, vehicle type, and pickup windows</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Transport booking confirmed ≥4 hrs before crew arrival; on-time pickup rate ≥97%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Validate hotel transit time vs FAR 117 rest period</td>
+  <td class="td-role">Crew Logistics Manager</td>
+  <td><span class="stag custom">Jeppesen Crew Management Suite</span></td>
+  <td style="font-size:10px;color:#6b7280">Hotel address, transport time estimate, crew report time for next leg</td>
+  <td style="font-size:10px">FAR Part 117 §117.25 compliance flag per crew member</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of layovers validated against FAR Part 117 before booking confirmation</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Monitor real-time schedule changes affecting layovers</td>
+  <td class="td-role">Crew Control Officer</td>
+  <td><span class="stag aws">AWS Crew Operations System</span></td>
+  <td style="font-size:10px;color:#6b7280">Live flight operations feed, crew schedule update events</td>
+  <td style="font-size:10px">Change alerts for affected hotel and transport bookings</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Change detection latency &lt;5 min from schedule update event</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Amend hotel and transport bookings for disruptions</td>
+  <td class="td-role">Crew Logistics Coordinator</td>
+  <td><span class="stag custom">Crew Hotel Management System</span></td>
+  <td style="font-size:10px;color:#6b7280">Change alert with new layover city, arrival time, or cancellation flag</td>
+  <td style="font-size:10px">Amended or cancelled booking confirmations sent to hotel and transport vendor</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Amendment completion within 30 min of schedule change notification</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Push updated crew itinerary to mobile devices</td>
+  <td class="td-role">Crew Control Officer</td>
+  <td><span class="stag custom">Jeppesen CrewConnect Mobile</span></td>
+  <td style="font-size:10px;color:#6b7280">Amended booking confirmations, crew contact roster</td>
+  <td style="font-size:10px">Push notification with hotel name, address, transport pickup time, and confirmation number</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Notification delivery rate ≥99.5%; crew acknowledgement ≥95% within 30 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Dispatch transport on actual aircraft block-in</td>
+  <td class="td-role">Crew Transport Coordinator</td>
+  <td><span class="stag noc">Ground Transport Dispatch System</span></td>
+  <td style="font-size:10px;color:#6b7280">ACARS actual gate arrival time, crew count from flight manifest</td>
+  <td style="font-size:10px">Driver dispatch instruction with ETA to gate</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Transport wheels-rolling ≤20 min after block-in; crew at hotel ≤45 min after block-in</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Confirm all crew aboard transport before departure</td>
+  <td class="td-role">Crew Transport Coordinator</td>
+  <td><span class="stag noc">Ground Transport Dispatch System</span></td>
+  <td style="font-size:10px;color:#6b7280">Crew roster for arriving flight, driver headcount check</td>
+  <td style="font-size:10px">Departure confirmation or missing-crew alert</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Crew accounting accuracy 100% before vehicle departs gate area</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Source spot-rate hotel for IROPS overflow crew</td>
+  <td class="td-role">Crew Logistics Manager</td>
+  <td><span class="stag custom">Crew Hotel Management System</span></td>
+  <td style="font-size:10px;color:#6b7280">Block gap report, IROPS declaration from Network Operations Control</td>
+  <td style="font-size:10px">Spot-rate hotel bookings for overflow crew with transport coordination</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Overflow booking confirmed &lt;2 hrs from IROPS declaration; spot rate ≤2.5x contracted rate</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Reconcile hotel and transport invoices to bookings</td>
+  <td class="td-role">Finance Analyst</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Vendor invoices, hotel and transport booking confirmation records</td>
+  <td style="font-size:10px">Matched/unmatched line items and variance report by vendor</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Invoice-to-booking match rate ≥97%; variance items resolved within 10 business days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Generate vendor performance scorecard</td>
+  <td class="td-role">Crew Logistics Manager</td>
+  <td><span class="stag custom">Tableau / Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">Matched invoice data, crew feedback submissions, transport on-time records</td>
+  <td style="font-size:10px">Quarterly vendor scorecard covering cost compliance, service quality, and SLA adherence</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Vendor SLA compliance ≥95%; crew accommodation satisfaction score ≥4.2 / 5.0</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-02</span>Fleet Assignment &amp; Tail Routing</h3>
-    <p>Schedule Planning · 11 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CM-08</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Crew Management</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Crew Day-of-Operations</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Crew Hotel &amp; Transportation Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">14 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">7 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Crew Scheduling Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Crew Logistics Coordinator</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Crew Logistics Manager</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Crew Transport Coordinator</div><div class="swim"><div class="dot" style="background:#10b981"></div>Crew Control Officer</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Finance Analyst</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">Jeppesen Crew Management Suite</span><span class="stag aws">AWS Crew Operations System</span><span class="stag custom">Crew Hotel Management System</span><span class="stag noc">Ground Transport Dispatch System</span><span class="stag custom">Jeppesen CrewConnect Mobile</span><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span><span class="stag custom">Tableau / Power BI</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract layover schedule by station and date</span><span class="kval">Schedule extraction latency &lt;15 min after pairing publish</span></div><div class="krow"><span class="kname">Forecast hotel room demand by city</span><span class="kval">Forecast accuracy ≥90% vs actual bookings week-over-week</span></div><div class="krow"><span class="kname">Validate contracted block vs demand forecast</span><span class="kval">Contracted block coverage ≥95% of forecasted demand</span></div><div class="krow"><span class="kname">Auto-generate hotel reservations for pairings</span><span class="kval">Auto-booking rate ≥98% for standard layovers; zero manual entry for pairings &gt;48 hrs out</span></div><div class="krow"><span class="kname">Book ground transport for crew arrival and departure</span><span class="kval">Transport booking confirmed ≥4 hrs before crew arrival; on-time pickup rate ≥97%</span></div><div class="krow"><span class="kname">Validate hotel transit time vs FAR 117 rest period</span><span class="kval">100% of layovers validated against FAR Part 117 before booking confirmation</span></div><div class="krow"><span class="kname">Monitor real-time schedule changes affecting layovers</span><span class="kval">Change detection latency &lt;5 min from schedule update event</span></div><div class="krow"><span class="kname">Amend hotel and transport bookings for disruptions</span><span class="kval">Amendment completion within 30 min of schedule change notification</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Late pairing publication (T-24h or less) leaves insufficient lead time for contracted hotel vendors requiring 48-hr booking notice</div><div class="risk-card">IROPS surges at hub stations can exhaust all contracted room blocks within 2 hrs; forecast buffers are static and do not adjust to live weather events</div><div class="risk-card">Multi-hub IROPS events simultaneously exhaust blocks across 3–5 cities; no automated cross-city reallocation mechanism exists in current system</div><div class="risk-card">API integration gaps with major hotel chain property management systems cause duplicate booking records requiring manual reconciliation 3–4 times per week</div><div class="risk-card">Schedule changes within T-2h require emergency vendor calls; dispatch API does not support same-day amendments at 60% of outstations, forcing manual phone coordination</div><div class="risk-card">Hotels beyond 30-min transport window from airport trigger rest period recalculation under §117.25; legacy hotel contracts predate this requirement and contain non-compliant properties</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Published crew pairings for 14-day rolling window</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Quarterly vendor scorecard covering cost compliance, service quality, and SLA adherence</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-03</span>Route Profitability Analysis</h3>
-    <p>Schedule Planning · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-04</span>Slot Coordination &amp; Management</h3>
-    <p>Schedule Planning · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-05</span>Codeshare &amp; Interline Schedule Planning</h3>
-    <p>Schedule Planning · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-06</span>Schedule Change Management</h3>
-    <p>Schedule Planning · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-07</span>Capacity Planning &amp; Utilization</h3>
-    <p>Schedule Planning · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-08</span>New Market Entry Feasibility</h3>
-    <p>Schedule Planning · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-09</span>Alliance &amp; Partnership Network Strategy</h3>
-    <p>Schedule Planning · 19 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-10</span>SSIM File Management &amp; Distribution</h3>
-    <p>Schedule Planning · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-11</span>Schedule Publication &amp; GDS Loading</h3>
-    <p>Schedule Planning · 15 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-12</span>Irregular Operations Recovery Planning</h3>
-    <p>Schedule Planning · 18 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-13</span>Charter &amp; Ad-Hoc Flight Planning</h3>
-    <p>Schedule Planning · 17 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-14</span>Competition &amp; Capacity Benchmarking</h3>
-    <p>Schedule Planning · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-15</span>Strategic Network Planning</h3>
-    <p>Schedule Planning · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cm-07/"><span class="arrow">←</span><span><span class="sub">Previous</span>CM-07 · Reserve Crew Management</span></a><a class="pn-btn" href="../cm-09/"><span><span class="sub">Next</span>CM-09 · Cabin Crew Service Standards &amp; Training</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

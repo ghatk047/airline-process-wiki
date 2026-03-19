@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1[Phase 1: Demand Forecasting]
+    A([Start]) --> B[Extract layover schedule\nby station and date]
+    B --> C[Forecast hotel room\ndemand by city]
+    C --> D{Contracted block\nsufficient?}
+    D -- No --> E[Request block uplift\nfrom vendor]
+    E --> D
+    D -- Yes --> F[Confirm room\nblock allocation]
+  end
+  subgraph P2[Phase 2: Reservation and Booking]
+    F --> G[Auto-generate hotel\nreservations for pairings]
+    G --> H[Book ground transport\narrival and departure]
+    H --> I{FAR 117 rest period\nbreached by transit?}
+    I -- Yes --> J[Relocate hotel or\nadjust transport route]
+    J --> I
+    I -- No --> K[Confirm and distribute\nbooking records]
+  end
+  subgraph P3[Phase 3: Day-of Monitoring]
+    K --> L[Monitor real-time\nschedule change feed]
+    L --> M{Schedule change\nimpacts layover?}
+    M -- Yes --> N[Amend hotel and\ntransport bookings]
+    N --> O{Amendment within\nhotel penalty window?}
+    O -- Yes --> P[Log no-show charge\nfor recovery]
+    O -- No --> Q[Push updated itinerary\nto crew mobile]
+    P --> Q
+    M -- No --> Q
+  end
+  subgraph P4[Phase 4: Transport Dispatch]
+    Q --> R[Dispatch transport on\nactual aircraft block-in]
+    R --> S{All crew accounted\nfor at pickup?}
+    S -- No --> T[Locate missing crew\nvia crew ops system]
+    T --> S
+    S -- Yes --> U[Crew departs\nfor hotel]
+  end
+  subgraph P5[Phase 5: Cost Reconciliation]
+    U --> V[Reconcile invoices\nto booking records]
+    V --> W{Invoice variance\nexceeds tolerance?}
+    W -- Yes --> X[Dispute and resolve\nvariance with vendor]
+    X --> W
+    W -- No --> Y[Generate vendor\nperformance scorecard]
+    Y --> Z([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Z fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600

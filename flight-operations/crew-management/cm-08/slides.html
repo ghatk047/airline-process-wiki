@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-08 Slides — Crew Hotel &amp; Transportation Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-08</span>
+    <h1>Crew Hotel &amp; Transportation Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-08.png" alt="BPMN for CM-08" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Day-of-Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-08</span>
+    <h1>Crew Hotel &amp; Transportation Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-08</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Day-of-Operations</li>
+          <li><strong>L3 Name:</strong> Crew Hotel &amp; Transportation Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">14</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract layover schedule by station and date</li><li><strong>Phase 2:</strong> Auto-generate hotel reservations for pairings</li><li><strong>Phase 3:</strong> Monitor real-time schedule changes affecting layov</li><li><strong>Phase 4:</strong> Dispatch transport on actual aircraft block-in</li><li><strong>Phase 5:</strong> Reconcile hotel and transport invoices to bookings</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Crew Control Officer</li><li>Crew Logistics Coordinator</li><li>Crew Logistics Manager</li><li>Crew Scheduling Analyst</li><li>Crew Transport Coordinator</li><li>Finance Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Crew Operations System</li><li>Crew Hotel Management System</li><li>Ground Transport Dispatch System</li><li>Jeppesen Crew Management Suite</li><li>Jeppesen CrewConnect Mobile</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Tableau / Power BI</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Day-of-Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-08</span>
+    <h1>Crew Hotel &amp; Transportation Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract layover schedule by station and date</td>
+        <td class="kpi-col">Schedule extraction latency &lt;15 min after pairing publish</td>
+        <td class="pain-col">Late pairing publication (T-24h or less) leaves insufficient lead time for contracted hotel vendors requiring 48-hr booking notice</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Forecast hotel room demand by city</td>
+        <td class="kpi-col">Forecast accuracy ≥90% vs actual bookings week-over-week</td>
+        <td class="pain-col">IROPS surges at hub stations can exhaust all contracted room blocks within 2 hrs; forecast buffers are static and do not adjust to live weather events</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate contracted block vs demand forecast</td>
+        <td class="kpi-col">Contracted block coverage ≥95% of forecasted demand</td>
+        <td class="pain-col">Multi-hub IROPS events simultaneously exhaust blocks across 3–5 cities; no automated cross-city reallocation mechanism exists in current system</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Auto-generate hotel reservations for pairings</td>
+        <td class="kpi-col">Auto-booking rate ≥98% for standard layovers; zero manual entry for pairings &gt;48 hrs out</td>
+        <td class="pain-col">API integration gaps with major hotel chain property management systems cause duplicate booking records requiring manual reconciliation 3–4 times per week</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Book ground transport for crew arrival and departure</td>
+        <td class="kpi-col">Transport booking confirmed ≥4 hrs before crew arrival; on-time pickup rate ≥97%</td>
+        <td class="pain-col">Schedule changes within T-2h require emergency vendor calls; dispatch API does not support same-day amendments at 60% of outstations, forcing manual phone coordination</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate hotel transit time vs FAR 117 rest period</td>
+        <td class="kpi-col">100% of layovers validated against FAR Part 117 before booking confirmation</td>
+        <td class="pain-col">Hotels beyond 30-min transport window from airport trigger rest period recalculation under §117.25; legacy hotel contracts predate this requirement and contain non-compliant properties</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Monitor real-time schedule changes affecting layovers</td>
+        <td class="kpi-col">Change detection latency &lt;5 min from schedule update event</td>
+        <td class="pain-col">Dec 2022 IROPS demonstrated that cascading schedule changes overwhelm manual monitoring; automated alerting still misses secondary-effect pairings when first-order cancellation triggers re-crewing at a different station</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Amend hotel and transport bookings for disruptions</td>
+        <td class="kpi-col">Amendment completion within 30 min of schedule change notification</td>
+        <td class="pain-col">Hotel cancellation penalty windows (typically 6-hr cutoff) generate no-show charges when flights cancel &lt;6 hrs out; no automated penalty-waiver negotiation tool exists</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Push updated crew itinerary to mobile devices</td>
+        <td class="kpi-col">Notification delivery rate ≥99.5%; crew acknowledgement ≥95% within 30 min</td>
+        <td class="pain-col">Crew operating international outstations without cellular data roaming miss push notifications; no fallback SMS gateway for low-connectivity stations is currently integrated</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Dispatch transport on actual aircraft block-in</td>
+        <td class="kpi-col">Transport wheels-rolling ≤20 min after block-in; crew at hotel ≤45 min after block-in</td>
+        <td class="pain-col">ACARS feed latency at 12% of outstations means dispatch is triggered on estimated rather than actual arrival, causing early driver arrival and standby cost or missed crew if delayed</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Confirm all crew aboard transport before departure</td>
+        <td class="kpi-col">Crew accounting accuracy 100% before vehicle departs gate area</td>
+        <td class="pain-col">No electronic crew manifest is scanned at transport boarding; headcount is manual and error-prone, particularly for large widebody arrivals with 12–16 crew members at international stations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Source spot-rate hotel for IROPS overflow crew</td>
+        <td class="kpi-col">Overflow booking confirmed &lt;2 hrs from IROPS declaration; spot rate ≤2.5x contracted rate</td>
+        <td class="pain-col">Current system has no real-time rate cap enforcement for spot bookings; spot-rate hotels during major IROPS events have reached 4x contracted rate with no approval gate, generating significant unplanned cost</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Reconcile hotel and transport invoices to bookings</td>
+        <td class="kpi-col">Invoice-to-booking match rate ≥97%; variance items resolved within 10 business days</td>
+        <td class="pain-col">Hotel vendors routinely apply early checkout penalties and no-show charges not captured in the booking system, requiring Finance to cross-reference Crew Hotel Management System records manually for every disputed line</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Generate vendor performance scorecard</td>
+        <td class="kpi-col">Vendor SLA compliance ≥95%; crew accommodation satisfaction score ≥4.2 / 5.0</td>
+        <td class="pain-col">No structured crew feedback loop exists between hotel stay and vendor management; scores rely on ad-hoc complaints submitted to Crew Control rather than systematic post-stay surveys, understating quality failures</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Day-of-Operations</span>
+  </div>
+</div>
+
+</body>
+</html>
