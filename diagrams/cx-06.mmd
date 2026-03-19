@@ -1,0 +1,39 @@
+flowchart LR
+  subgraph P1["Phase 1: Data Extraction & Segmentation"]
+    A([Start]) --> B[Extract passenger manifest\nfrom PSS]
+    B --> C{Consent & channel\npreference valid?}
+    C -- No --> D[Suppress record &\nlog opt-out]
+    C -- Yes --> E[Segment by loyalty tier\n& journey type]
+  end
+  subgraph P2["Phase 2: Content Creation & Compliance"]
+    E --> F[Build personalised comms\ncadence schedule]
+    F --> G[Generate dynamic itinerary\n& offer content]
+    G --> H{GDPR / CAN-SPAM\ncompliant?}
+    H -- No --> G
+    H -- Yes --> I[Queue messages\nfor delivery]
+  end
+  subgraph P3["Phase 3: Pre-Departure Notifications"]
+    I --> J[Send 72h check-in\ninvitation & OLCI link]
+    J --> K[Deliver ancillary upsell\noffers — seat/bag/lounge]
+    K --> L{Check-in\ncompleted?}
+    L -- No --> M[Send 24h reminder\nvia SMS & email]
+    L -- Yes --> N[Deliver boarding pass\nto passenger]
+  end
+  subgraph P4["Phase 4: Day-of-Travel & IROPS"]
+    N --> O[Monitor real-time\nflight status feeds]
+    O --> P{Schedule change\nexceeds threshold?}
+    P -- No --> Q([End — Journey Complete])
+    P -- Yes --> R[Trigger disruption\nnotification]
+    R --> S{Cancellation or\nmajor delay?}
+    S -- Delay --> T[Send delay alert\n& revised ETD]
+    S -- Cancel --> U[Send rebooking\noptions & voucher]
+    T --> Q
+    U --> Q
+  end
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Q fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600

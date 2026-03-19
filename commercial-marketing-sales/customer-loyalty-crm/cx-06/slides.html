@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-06 Slides — Pre-Flight Customer Communication</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-06</span>
+    <h1>Pre-Flight Customer Communication</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-06.png" alt="BPMN for CX-06" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-06</span>
+    <h1>Pre-Flight Customer Communication</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-06</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Customer Experience Operations</li>
+          <li><strong>L3 Name:</strong> Pre-Flight Customer Communication</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">15</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract booked passenger manifest from PSS</li><li><strong>Phase 2:</strong> Build personalised comms cadence schedule</li><li><strong>Phase 3:</strong> Send 72h check-in invitation with OLCI link</li><li><strong>Phase 4:</strong> Monitor real-time flight status for schedule chang</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>CRM Analyst</li><li>CRM Compliance Analyst</li><li>CRM Data Analyst</li><li>Check-In Agent / Automated System</li><li>Comms Automation System</li><li>Compliance Analyst</li><li>Content Specialist</li><li>Customer Communications Manager</li><li>Disruption Communications Team</li><li>Disruption Resolution Agent</li><li>Operations Controller</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Altéa DCS</li><li>Amadeus Altéa PSS</li><li>SITA AMS</li><li>Salesforce CRM</li><li>Salesforce Marketing Cloud</li><li>Twilio / AWS SNS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-06</span>
+    <h1>Pre-Flight Customer Communication</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract booked passenger manifest from PSS</td>
+        <td class="kpi-col">Manifest extraction latency ≤15 min from trigger; data completeness ≥99.5%</td>
+        <td class="pain-col">Altéa API rate limits during peak booking windows can delay manifest pull by 30–45 min, pushing communications outside the optimal 72h window</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Enrich profiles with loyalty tier &amp; preferences</td>
+        <td class="kpi-col">Profile match rate ≥95% against CRM records; enrichment processing ≤10 min per 10,000 records</td>
+        <td class="pain-col">Non-member or pseudonymous bookings via OTA channels lack Rapid Rewards linkage, resulting in generic (non-personalised) communication for ~18% of bookings</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate communication consent &amp; channel eligibility</td>
+        <td class="kpi-col">Opt-out suppression accuracy 100%; consent validation completed ≤5 min before send queue</td>
+        <td class="pain-col">Consent records stored in multiple systems (PSS, CRM, mobile app) can be out of sync; GDPR Article 7 requires unambiguous consent — mismatch risk if unified consent hub is absent</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Build personalised comms cadence schedule</td>
+        <td class="kpi-col">Schedule build time ≤20 min for full departure manifest; ≥98% of schedules created before T-72h window</td>
+        <td class="pain-col">Multi-leg itineraries with short connections require independent cadence per leg; logic errors in connection-aware scheduling have caused duplicate or mis-timed notifications</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Generate dynamic itinerary &amp; ancillary offer content</td>
+        <td class="kpi-col">Content personalisation token fill rate ≥99%; render error rate ≤0.1% across email clients</td>
+        <td class="pain-col">Gate and terminal data is often unavailable at T-72h for airports operating under dynamic gate assignment (e.g., Midway MDW), forcing placeholder text that reduces perceived communication quality</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate dynamic content against live flight data</td>
+        <td class="kpi-col">Data staleness rate ≤0.5% at send time; validation cycle ≤8 min</td>
+        <td class="pain-col">Schedule changes filed in Altéa after content generation but before send can produce communications with incorrect departure times — requires a final data refresh check within 30 min of send</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Run GDPR / CAN-SPAM compliance check on content</td>
+        <td class="kpi-col">100% of sends include mandatory unsubscribe link; compliance check completion ≤5 min</td>
+        <td class="pain-col">Transactional vs marketing classification is disputed for upsell content (e.g., ancillary offers embedded in itinerary emails); misclassification exposes airline to CAN-SPAM violation — legal review required per campaign type</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Send 72h check-in invitation with OLCI link</td>
+        <td class="kpi-col">Email open rate ≥45%; SMS delivery rate ≥98%; OLCI click-through rate ≥35%</td>
+        <td class="pain-col">Online check-in opens at T-24h for some fare classes (e.g., Basic Economy restrictions); sending OLCI link at T-72h for ineligible passengers creates customer confusion and misdirected contact centre calls</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Deliver ancillary upsell offers — seat, baggage, lounge</td>
+        <td class="kpi-col">Ancillary revenue per communication ≥$4.50; offer acceptance rate ≥8%; unsubscribe rate ≤0.2%</td>
+        <td class="pain-col">ATPCO ancillary pricing updates can lag real-time seat inventory, resulting in offers quoting prices that have since changed — requires live price validation at click-through, not at send time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Send travel readiness advisory — docs, visa, weather</td>
+        <td class="kpi-col">Advisory delivery ≥ T-48h before departure; advisory relevance score ≥4.2/5 in post-trip survey</td>
+        <td class="pain-col">International routes to Mexico and Caribbean require ESTA / visa data that is sourced from IATA Travel Centre; data freshness is ±24h — incorrect requirements issued to passengers have led to denied-boarding incidents and liability claims</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Confirm check-in status and deliver boarding pass</td>
+        <td class="kpi-col">Mobile boarding pass adoption rate ≥72%; boarding pass delivery latency ≤30 sec post check-in</td>
+        <td class="pain-col">PKPass wallet integration with Altéa DCS has known compatibility gaps for codeshare itineraries — passengers on partner-operated segments occasionally receive blank boarding passes, requiring airport reprint</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Monitor real-time flight status for schedule changes</td>
+        <td class="kpi-col">Flight status event latency ≤2 min from OPS system to comms trigger; monitoring uptime ≥99.9%</td>
+        <td class="pain-col">SITA AMS and Altéa PSS publish flight status updates independently; reconciliation lag between the two systems (up to 8 min) can result in duplicate or conflicting passenger notifications</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Detect IROPS threshold breach and raise alert</td>
+        <td class="kpi-col">IROPS detection-to-trigger latency ≤3 min; false positive alert rate ≤1%</td>
+        <td class="pain-col">Threshold parameters are configured statically — a 25-min delay that extends to 90 min in increments may not trigger the 30-min rule until too late, leaving passengers uninformed during the critical re-booking window</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Send gate change, delay or cancellation notification</td>
+        <td class="kpi-col">First notification delivered ≤5 min of IROPS trigger; SMS delivery rate ≥99%; passenger awareness rate ≥90% (tracked via boarding rate post-alert)</td>
+        <td class="pain-col">Airport-side gate change displays (FIDS) and passenger SMS notifications are not synchronised — passengers often receive gate-change SMS after the FIDS has already shown the new gate, eroding trust in the notification system</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Generate and deliver rebooking options for cancelled flights</td>
+        <td class="kpi-col">Rebooking offer delivered ≤10 min of cancellation confirmation; self-service rebooking rate ≥55%; contact centre deflection rate ≥40%</td>
+        <td class="pain-col">Altéa availability query during IROPS events is throttled due to simultaneous mass rebooking — alternative availability returned to passengers can be stale within 90 sec, leading to &#x27;flight no longer available&#x27; errors at checkout and escalated call volumes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+</body>
+</html>
