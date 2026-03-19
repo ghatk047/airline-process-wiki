@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sales &amp; Distribution · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>FO-11 · ETOPS / EDTO Operations Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Flight Operations</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -134,7 +135,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-08/"><span class="status-dot status-done"></span><span class="pid">FO-08</span>Network Operations Control (NOC)</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-09/"><span class="status-dot status-done"></span><span class="pid">FO-09</span>Delay Management &amp; Root Cause Analysis</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-10/"><span class="status-dot status-done"></span><span class="pid">FO-10</span>Diversion &amp; Emergency Response Management</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-11/"><span class="status-dot status-done"></span><span class="pid">FO-11</span>ETOPS / EDTO Operations Management</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/flight-dispatch-control/fo-11/"><span class="status-dot status-done"></span><span class="pid">FO-11</span>ETOPS / EDTO Operations Management</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-12/"><span class="status-dot status-queue"></span><span class="pid">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-13/"><span class="status-dot status-queue"></span><span class="pid">FO-13</span>Performance &amp; FDR Data Monitoring</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-14/"><span class="status-dot status-queue"></span><span class="pid">FO-14</span>Air-to-Ground Communications Management</a>
@@ -242,153 +243,228 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Sales &amp; Distribution</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Flight Operations</a><span class="sep">›</span>
+  <a href="../../../flight-operations/flight-dispatch-control/">Network Operations Control</a><span class="sep">›</span>
+  <span class="current">FO-11 · ETOPS / EDTO Operations Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Sales &amp; Distribution</h1>
-    <p>Network Planning &amp; Scheduling · 15 of 15 subprocesses complete · Updated 2026-03-19 09:59</p>
+    <h1>ETOPS / EDTO Operations Management</h1>
+    <p>Flight Operations › Network Operations Control · 15 L4 steps · 6 phases · 7 decision gates · Updated 2026-03-19 09:59</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">FO-11</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-01</span>GDS Channel Management</h3>
-    <p>Sales &amp; Distribution · 14 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-fo-11">
+      <img src="../../../assets/img/fo-11.png" alt="FO-11 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-fo-11').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-fo-11').style.display='flex'">
+      <div id="diag-placeholder-fo-11" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Verify ETOPS route approval in OpSpecs</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE Flight Planning</span></td>
+  <td style="font-size:10px;color:#6b7280">Planned route, aircraft registration, OpSpec C057 reference</td>
+  <td style="font-size:10px">ETOPS route authorization confirmed; approved diversion time threshold recorded</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of ETOPS-routed flights pre-validated against OpSpecs before release</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Confirm aircraft ETOPS certification level</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft registration, current maintenance release status</td>
+  <td style="font-size:10px">ETOPS certification level confirmed (e.g. 120 / 180 / 240 min) and recorded against flight</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero ETOPS departures without valid airworthiness certificate and ETOPS approval on record</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Retrieve ETOPS alternate airport weather forecasts</td>
+  <td class="td-role">Flight Dispatcher / Meteorologist</td>
+  <td><span class="stag custom">Honeywell GoDirect Weather</span></td>
+  <td style="font-size:10px;color:#6b7280">Planned ETOPS alternate list, estimated departure time, flight duration</td>
+  <td style="font-size:10px">TAF and METAR reports for all alternates within ETOPS diversion circle</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Weather data currency ≤1 hour before departure; TAF coverage ≥18 hours ahead of ETP crossing</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Validate ETOPS alternate airport operational status</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Honeywell GoDirect / SITA NOTAM Service</span></td>
+  <td style="font-size:10px;color:#6b7280">Alternate airport list, current NOTAM bulletins, AIP supplements</td>
+  <td style="font-size:10px">Alternate availability confirmed, or replacement alternate identified and approved</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% alternate validation completed ≥2 hours before scheduled departure</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Calculate Equal Time Point and Point of No Return</td>
+  <td class="td-role">Flight Dispatcher / Flight Planner</td>
+  <td><span class="stag custom">NAVBLUE Flight Planning</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved route, winds aloft model, alternate coordinates, single-engine cruise speed profile</td>
+  <td style="font-size:10px">ETP and PNR coordinates, fuel checkpoint waypoints, go/no-go decision gates embedded in OFP</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ETP calculation within ±2 nm of independent manual cross-check; PNR fuel state verified against aircraft performance tables</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Review ETOPS significant systems maintenance status</td>
+  <td class="td-role">Maintenance Controller / Line Maintenance Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft tech log, ETOPS significant systems check sheet, MEL Part B (ETOPS items)</td>
+  <td style="font-size:10px">ETOPS airworthiness assessment: all significant systems serviceable or MEL-permissible deferred</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ETOPS maintenance check completed ≥90 min before scheduled departure; zero open ETOPS-critical MEL items at release</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Obtain dual maintenance and operations ETOPS release</td>
+  <td class="td-role">Certifying Engineer / Flight Operations Manager</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed tech log, ETOPS significant systems sign-off sheet, dispatcher release</td>
+  <td style="font-size:10px">Dual-signed ETOPS flight release stamped in aircraft tech log and ops system</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of ETOPS flights have both maintenance certification and dispatcher release before pushback</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Calculate ETOPS fuel requirements</td>
+  <td class="td-role">Flight Dispatcher / Fuel Planner</td>
+  <td><span class="stag custom">NAVBLUE Flight Planning</span></td>
+  <td style="font-size:10px;color:#6b7280">ETP coordinates, alternate distances, holding requirements, single-engine fuel burn curves, ETOPS contingency rule (FAR 121 Appendix P / ICAO Annex 6)</td>
+  <td style="font-size:10px">ETOPS fuel plan: trip fuel + ETOPS reserve + contingency fuel + alternate fuel + final reserve</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ETOPS fuel uplift within ±2% of planned quantity; zero short-fuel departures</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Validate ETOPS fuel load against MTOW constraints</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag amadeus">NAVBLUE Flight Planning / Amadeus Altéa DCS</span></td>
+  <td style="font-size:10px;color:#6b7280">ETOPS fuel plan, passenger count, cargo manifest, zero-fuel weight</td>
+  <td style="font-size:10px">Approved fuel load with weight-and-balance confirmation; payload trim decision if required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero overweight departures; fuel optimised within 500 kg of minimum legal ETOPS load</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">File ETOPS-annotated ATC flight plan via AFTN</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">NAVBLUE / SITA AFTN Gateway</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved ETOPS fuel plan, route with ETP waypoints, alternate airports</td>
+  <td style="font-size:10px">ATC flight plan filed with ETOPS notation in ICAO Item 18 TBE field; ACK confirmation received</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Flight plan filed and acknowledged ≥60 min before scheduled departure; zero unacknowledged plans at departure</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Monitor ETOPS significant systems via ACARS / SATCOM</td>
+  <td class="td-role">NOC Dispatcher / Flight Follower</td>
+  <td><span class="stag custom">SITA ACARS / Honeywell GoDirect Flight</span></td>
+  <td style="font-size:10px;color:#6b7280">In-flight ACARS position reports, engine health data (EHM), crew SATCOM check-ins</td>
+  <td style="font-size:10px">Real-time ETOPS systems status log; alert flags raised for any significant system degradation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ACARS position report receipt ≤15 min intervals on oceanic tracks; 100% engine health message coverage</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Update ETOPS alternate weather at ETP crossings</td>
+  <td class="td-role">Flight Dispatcher / Meteorologist</td>
+  <td><span class="stag custom">Honeywell GoDirect Weather</span></td>
+  <td style="font-size:10px;color:#6b7280">Inflight position reports, ETP waypoint schedule, updated TAF / SIGMET bulletins</td>
+  <td style="font-size:10px">Go / No-Go weather assessment for each alternate at projected ETP crossing time</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Weather reassessment delivered to flight crew ≤30 min before each ETP; 100% ETP coverage on all ETOPS sectors</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Assess engine or system anomaly for divert decision</td>
+  <td class="td-role">Flight Dispatcher / Captain (PIC)</td>
+  <td><span class="stag custom">SITA ACARS / Jeppesen FliteDeck Pro (EFB)</span></td>
+  <td style="font-size:10px;color:#6b7280">Engine health alerts, ECAM / EICAS messages reported via SATCOM, crew deviation report</td>
+  <td style="font-size:10px">Divert decision (continue to destination or proceed to ETOPS alternate); amended routing filed with ATC</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Divert decision communicated within ≤15 min of anomaly detection; ATC re-clearance obtained within ≤20 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Complete ETOPS post-flight operational report</td>
+  <td class="td-role">Flight Dispatcher / Flight Operations Manager</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware / Airline OpsControl</span></td>
+  <td style="font-size:10px;color:#6b7280">Flight data recorder summary, ACARS message logs, crew debrief notes, maintenance findings</td>
+  <td style="font-size:10px">ETOPS post-flight report compliant with FAR 121.374 / ICAO Doc 10085 Appendix; filed in ops system</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Report filed within 24 hours of landing; 100% compliance rate on regulatory audit cycle</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Update ETOPS reliability programme and IFSD database</td>
+  <td class="td-role">Flight Safety Manager / Airworthiness Manager</td>
+  <td><span class="stag sap">AMOS / Aviation Safety Action Programme (ASAP) Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">ETOPS post-flight report, in-flight significant system events, maintenance findings, IFSD occurrences</td>
+  <td style="font-size:10px">Updated ETOPS reliability metrics report; IFSD rate trend; corrective action initiated if threshold exceeded</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">In-Flight Shutdown (IFSD) rate ≤0.02 per 1,000 engine hours (ETOPS-180 regulatory threshold); reliability report issued within 30 days of each reporting period</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-02</span>Direct Channel Management (Web &amp; App)</h3>
-    <p>Sales &amp; Distribution · 16 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">FO-11</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Flight Operations</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Network Operations Control</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">ETOPS / EDTO Operations Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">15 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">7 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">9 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Flight Dispatcher</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Flight Dispatcher / Meteorologist</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Flight Dispatcher / Flight Planner</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Maintenance Controller / Line Maintenance Engineer</div><div class="swim"><div class="dot" style="background:#10b981"></div>Certifying Engineer / Flight Operations Manager</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Flight Dispatcher / Fuel Planner</div><div class="swim"><div class="dot" style="background:#6366f1"></div>NOC Dispatcher / Flight Follower</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Flight Dispatcher / Captain (PIC)</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Flight Dispatcher / Flight Operations Manager</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Flight Safety Manager / Airworthiness Manager</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">NAVBLUE Flight Planning</span><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag custom">Honeywell GoDirect Weather</span><span class="stag custom">Honeywell GoDirect / SITA NOTAM Service</span><span class="stag amadeus">NAVBLUE Flight Planning / Amadeus Altéa DCS</span><span class="stag custom">NAVBLUE / SITA AFTN Gateway</span><span class="stag custom">SITA ACARS / Honeywell GoDirect Flight</span><span class="stag custom">SITA ACARS / Jeppesen FliteDeck Pro (EFB)</span><span class="stag custom">AMOS by Swiss AviationSoftware / Airline OpsControl</span><span class="stag sap">AMOS / Aviation Safety Action Programme (ASAP) Portal</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Verify ETOPS route approval in OpSpecs</span><span class="kval">100% of ETOPS-routed flights pre-validated against OpSpecs before release</span></div><div class="krow"><span class="kname">Confirm aircraft ETOPS certification level</span><span class="kval">Zero ETOPS departures without valid airworthiness certificate and ETOPS approval on record</span></div><div class="krow"><span class="kname">Retrieve ETOPS alternate airport weather forecasts</span><span class="kval">Weather data currency ≤1 hour before departure; TAF coverage ≥18 hours ahead of ETP crossing</span></div><div class="krow"><span class="kname">Validate ETOPS alternate airport operational status</span><span class="kval">100% alternate validation completed ≥2 hours before scheduled departure</span></div><div class="krow"><span class="kname">Calculate Equal Time Point and Point of No Return</span><span class="kval">ETP calculation within ±2 nm of independent manual cross-check; PNR fuel state verified against aircraft performance tables</span></div><div class="krow"><span class="kname">Review ETOPS significant systems maintenance status</span><span class="kval">ETOPS maintenance check completed ≥90 min before scheduled departure; zero open ETOPS-critical MEL items at release</span></div><div class="krow"><span class="kname">Obtain dual maintenance and operations ETOPS release</span><span class="kval">100% of ETOPS flights have both maintenance certification and dispatcher release before pushback</span></div><div class="krow"><span class="kname">Calculate ETOPS fuel requirements</span><span class="kval">ETOPS fuel uplift within ±2% of planned quantity; zero short-fuel departures</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">OpSpec revisions under FAR 121.161 / ICAO Doc 10085 require 30-day authority lead time; last-minute network re-routing post-approval is operationally prohibited and forces costly re-planning</div><div class="risk-card">ETOPS certification can be suspended mid-rotation due to maintenance findings; AMOS aircraft status must be queried in real time — stale cache data in dispatch systems has caused near-misses on ETOPS eligibility checks</div><div class="risk-card">Remote oceanic alternates (e.g., NFFN Nadi, PGUM Guam, BIKF Keflavik) have sparse observation networks; TAF accuracy degrades beyond 12 hours, leaving critical ETP windows with low-confidence forecasts</div><div class="risk-card">NOTAM closure of a primary alternate (e.g., runway works at Honolulu&#x27;s divert field) forces complete replanning; NOTAM parsing tools remain largely manual, and auto-filtering tools miss complex conditional NOTAMs issued by some Pacific island states</div><div class="risk-card">NAVBLUE wind model integration updates every 6 hours; stale wind data on long trans-oceanic sectors (&gt;14 hr block) can shift ETP by up to 40 nm, materially affecting alternate fuel requirements and crew decision windows</div><div class="risk-card">ETOPS MEL (Minimum Equipment List) items differ substantively from standard MEL — APU, dual hydraulics, FADEC, SATCOM, and fire suppression must all be assessed against ETOPS-specific criteria; staff confusion on MMEL Part B boundaries generates repeated compliance queries and delays</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Planned route, aircraft registration, OpSpec C057 reference</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Updated ETOPS reliability metrics report; IFSD rate trend; corrective action initiated if threshold exceeded</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-03</span>Travel Agency &amp; TMC Management</h3>
-    <p>Sales &amp; Distribution · 17 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-04</span>Corporate Account Sales Management</h3>
-    <p>Sales &amp; Distribution · 16 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-05</span>NDC Content &amp; API Distribution</h3>
-    <p>Sales &amp; Distribution · 15 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-06</span>Group Sales Management</h3>
-    <p>Sales &amp; Distribution · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-07</span>Charter Sales &amp; Contract Management</h3>
-    <p>Sales &amp; Distribution · 18 steps · 10 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-08</span>Commission &amp; Incentive Management</h3>
-    <p>Sales &amp; Distribution · 17 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-09</span>Interline &amp; Codeshare Ticketing</h3>
-    <p>Sales &amp; Distribution · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-10</span>BSP Settlement &amp; IATA Billing</h3>
-    <p>Sales &amp; Distribution · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-11</span>Online Travel Agency (OTA) Management</h3>
-    <p>Sales &amp; Distribution · 16 steps · 11 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-12</span>Metasearch &amp; Comparison Site Management</h3>
-    <p>Sales &amp; Distribution · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-13</span>Sales Performance Reporting &amp; Analytics</h3>
-    <p>Sales &amp; Distribution · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-14</span>Distribution Cost Optimization</h3>
-    <p>Sales &amp; Distribution · 16 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SD-15</span>Sales Force Automation &amp; CRM</h3>
-    <p>Sales &amp; Distribution · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sd-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../fo-10/"><span class="arrow">←</span><span><span class="sub">Previous</span>FO-10 · Diversion &amp; Emergency Response Management</span></a><a class="pn-btn" href="../fo-12/"><span><span class="sub">Next</span>FO-12 · Flight Crew Briefing &amp; Pre-Departure</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

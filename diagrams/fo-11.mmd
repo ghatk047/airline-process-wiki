@@ -1,51 +1,57 @@
 flowchart LR
-  subgraph P1["Phase 1: Aircraft ETOPS Qualification"]
-    A([Start]) --> B[Verify ETOPS authorization]
-    B --> C[Check MEL/CDL serviceability]
-    C --> D{Aircraft ETOPS-eligible?}
-    D -- No --> E[Raise AOG / defer flight]
-    D -- Yes --> F[Record qualification]
+  subgraph P1[Phase 1: Route and Aircraft Authorization]
+    A([Start]) --> B[Verify ETOPS route\nin OpSpecs]
+    B --> C{Route within approved\nETOPS authorization?}
+    C -- No --> B
+    C -- Yes --> D[Confirm aircraft ETOPS\ncertification level]
   end
-  subgraph P2["Phase 2: Route & Alternate Planning"]
-    F --> G[Define ETOPS entry/exit waypoints]
-    G --> H[Select adequate alternates]
-    H --> I{Alternates within diversion time?}
-    I -- No --> H
-    I -- Yes --> J[Calculate critical fuel & ETP]
+  subgraph P2[Phase 2: Alternate and ETP Planning]
+    D --> E[Pull alternate airport\nweather forecasts]
+    E --> F[Validate alternate NOTAMs\nand operational status]
+    F --> G{All alternates available\nand within weather minima?}
+    G -- No --> E
+    G -- Yes --> H[Calculate ETP and PNR\ncoordinates]
   end
-  subgraph P3["Phase 3: Weather & NOTAM Assessment"]
-    J --> K[Pull alternate weather TAF/METAR]
-    K --> L[Assess SIGMET / PIREP track]
-    L --> M{Alternates above ETOPS minima?}
-    M -- No --> N[Revise alternate selection]
-    N --> K
-    M -- Yes --> O[Clear NOTAM review]
+  subgraph P3[Phase 3: Airworthiness Verification]
+    H --> I[Review ETOPS significant\nsystems maintenance status]
+    I --> J{APU / hydraulics / FADEC\nserviceable or MEL-cleared?}
+    J -- No --> K([Hold — maintenance\nremediation])
+    J -- Yes --> L[Obtain dual maintenance\nand ops flight release]
   end
-  subgraph P4["Phase 4: Dispatch Release & Crew Auth"]
-    O --> P[Issue ETOPS dispatch release]
-    P --> Q{Crew ETOPS currency valid?}
-    Q -- No --> R[Assign ETOPS-qualified crew]
-    Q -- Yes --> S[Pre-departure ETOPS briefing]
+  subgraph P4[Phase 4: Fuel Planning and ATC Filing]
+    L --> M[Calculate ETOPS fuel\nrequirements]
+    M --> N{Fuel + payload\nwithin MTOW?}
+    N -- No --> O[Trim payload /\nadjust fuel plan]
+    O --> N
+    N -- Yes --> P[File ETOPS-annotated\nflight plan via AFTN]
   end
-  subgraph P5["Phase 5: In-flight ETOPS Monitoring"]
-    S --> T[Monitor ACARS engine health]
-    T --> U[Track alternate weather updates]
-    U --> V{Anomaly or alternate wx degraded?}
-    V -- No --> U
-    V -- Yes --> W[Execute diversion protocol]
-    W --> X([Divert / Continue w/ alert])
+  subgraph P5[Phase 5: En-Route ETOPS Monitoring]
+    P --> Q[Monitor significant systems\nvia ACARS / SATCOM]
+    Q --> R[Update alternate weather\nat ETP crossings]
+    R --> S{Alternates still meet\nminima at ETP?}
+    S -- No --> T{Engine / system anomaly\nrequires diversion?}
+    S -- Yes --> T
+    T -- Yes --> U([Divert to ETOPS\nalternate])
+    T -- No --> V([Destination arrival])
   end
-  subgraph P6["Phase 6: Post-flight Compliance"]
-    X --> Y[File ETOPS completion report]
-    Y --> Z[Update significant-system MX records]
-    Z --> AA([End])
+  subgraph P6[Phase 6: Post-Flight Compliance]
+    V --> W[Complete ETOPS\npost-flight report]
+    W --> X[Update ETOPS reliability\nprogramme database]
+    X --> Y{IFSD rate within\napproved thresholds?}
+    Y -- No --> Z([Notify authority /\ncorrective action])
+    Y -- Yes --> AA([End])
   end
 
   style A fill:#003366,color:#fff,stroke:#003366
+  style K fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style V fill:#003366,color:#fff,stroke:#003366
+  style Z fill:#003366,color:#fff,stroke:#003366
   style AA fill:#003366,color:#fff,stroke:#003366
-  style X fill:#003366,color:#fff,stroke:#003366
-  style D fill:#ff6600,color:#fff,stroke:#ff6600
-  style I fill:#ff6600,color:#fff,stroke:#ff6600
-  style M fill:#ff6600,color:#fff,stroke:#ff6600
-  style Q fill:#ff6600,color:#fff,stroke:#ff6600
-  style V fill:#ff6600,color:#fff,stroke:#ff6600
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style Y fill:#ff6600,color:#fff,stroke:#ff6600
