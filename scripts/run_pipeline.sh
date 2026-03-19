@@ -144,20 +144,8 @@ run_mmdc() {
   log "  Running mmdc for $pid_lower..."
   mkdir -p "$IMG_DIR"
 
-  # Sanitise .mmd file — remove characters that break Mermaid parser
-  # Apostrophes, quotes, and certain punctuation in node labels cause parse errors
-  python3 - "$mmd_file" << 'SANITISE'
-import sys, re
-path = sys.argv[1]
-with open(path) as f: content = f.read()
-# Remove apostrophes inside node labels
-content = re.sub(r"'", "", content)
-# Replace special chars inside quoted strings in node labels
-content = re.sub(r'\[([^\]]*)\]', lambda m: '[' + m.group(1).replace('"','').replace("'",'').replace('&','and') + ']', content)
-content = re.sub(r'\{([^\}]*)\}', lambda m: '{' + m.group(1).replace('"','').replace("'",'').replace('&','and') + '}', content)
-with open(path, 'w') as f: f.write(content)
-print(f"  Sanitised: {path}")
-SANITISE
+  # Sanitise .mmd — call standalone sanitiser
+  python3 "$SCRIPT_DIR/sanitise_mmd.py" "$mmd_file"
 
   mmdc -i "$mmd_file" -o "$png_file" \
        -w 1920 -H 1080 --scale 2 --backgroundColor white \
