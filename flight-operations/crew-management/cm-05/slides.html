@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-05 Slides — Crew Training &amp; Recurrency Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-05</span>
+    <h1>Crew Training &amp; Recurrency Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-05.png" alt="BPMN for CM-05" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Compliance & Certification</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-05</span>
+    <h1>Crew Training &amp; Recurrency Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-05</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Compliance &amp; Certification</li>
+          <li><strong>L3 Name:</strong> Crew Training &amp; Recurrency Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Identify expiring crew certifications</li><li><strong>Phase 2:</strong> Generate training schedule and crew assignments</li><li><strong>Phase 3:</strong> Deliver CBT and ground school modules</li><li><strong>Phase 4:</strong> Administer written and oral knowledge exam</li><li><strong>Phase 5:</strong> Issue or renew certificate and update qualificatio</li><li><strong>Phase 6:</strong> Monitor upcoming recurrency expiry dates</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Check Airman / Designated Examiner</li><li>Check Airman / FAA Designated Examiner</li><li>Check Airman / Line Check Pilot</li><li>Crew Compliance Analyst</li><li>Crew Compliance Manager</li><li>Crew Compliance System (automated)</li><li>Crew Scheduling Coordinator</li><li>Crew Training Analyst</li><li>Crew Training Instructor</li><li>Crew Training Manager</li><li>Training Scheduler</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>CAE SimFinity Learning Management System</li><li>FAA IACRA (Integrated Airman Certification and Rating Application)</li><li>Jeppesen Crew Management System</li><li>SAP SuccessFactors Learning</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Compliance & Certification</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-05</span>
+    <h1>Crew Training &amp; Recurrency Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Identify expiring crew certifications</td>
+        <td class="kpi-col">100% of expiring certs identified ≥60 days before expiry</td>
+        <td class="pain-col">Jeppesen qualification module requires manual reconciliation with FAA IACRA records; mismatches cause last-minute groundings when discrepancies surface during pre-flight checks</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Map requirements against FAR/AQP framework</td>
+        <td class="kpi-col">Requirement matrix accuracy ≥99% vs. FAA-approved AQP schedule</td>
+        <td class="pain-col">Airlines with FAA-approved AQP have different recurrency intervals than standard FAR Part 135/121 defaults; Jeppesen must be manually configured per AQP module or will generate false compliance gaps</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate requirements against fleet qualification matrix</td>
+        <td class="kpi-col">Zero invalid simulator variant assignments at time of booking</td>
+        <td class="pain-col">Fleet commonality assumptions (e.g. 737-700 vs. 737 MAX 8 differences) can result in incorrect simulator type bookings; reconfigured MAX simulators require separate certification after Boeing grounding</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Generate training schedule and crew assignments</td>
+        <td class="kpi-col">Training schedule published ≥45 days before earliest session date</td>
+        <td class="pain-col">CAE SimFinity scheduling does not natively integrate with Jeppesen rostering; double-bookings arise when crew are simultaneously assigned to flying duties and simulator sessions during the same duty period</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Check crew scheduling conflicts and FAR legality</td>
+        <td class="kpi-col">Zero training assignments that violate FAR Part 117 rest or duty limits</td>
+        <td class="pain-col">Simulator sessions count as duty time under FAR Part 117 but are often omitted from crew duty calculators; non-compliance discovered late in scheduling cycle forces expensive last-minute crew swaps</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Reserve simulator slots and instructor resources</td>
+        <td class="kpi-col">Simulator utilisation rate ≥85%; booking cancellation rate ≤5%</td>
+        <td class="pain-col">Industry-wide simulator capacity constraints (limited Level D 737 MAX simulators globally) cause lead times of 6–12 weeks; last-minute certificate expirations cannot be accommodated without costly wet-lease of third-party simulator time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Notify crew of training assignments and prerequisites</td>
+        <td class="kpi-col">Crew acknowledgement of training assignment ≥95% within 5 business days</td>
+        <td class="pain-col">Crew portal notification fatigue leads to missed acknowledgements; no escalation workflow in SAP SuccessFactors Learning to flag non-response to crew base managers automatically</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Deliver CBT and ground school modules</td>
+        <td class="kpi-col">CBT completion rate ≥98% before simulator session; average CBT pass rate ≥90% on first attempt</td>
+        <td class="pain-col">CBT content refresh lags behind Boeing and Airbus service bulletin cycles; crews may train on outdated emergency procedure content if LMS version control is not tightly managed with OEM curriculum releases</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Execute simulator training session (PC/OE/LOFT)</td>
+        <td class="kpi-col">Session completion rate ≥97%; average maneuver proficiency score ≥3.0/4.0 on CAST/AQP rubric</td>
+        <td class="pain-col">CAE SimFinity session logs are stored locally at training centre; real-time sync to Jeppesen qualification records requires manual file export and upload, creating a 24–48h data latency window during which crew show as non-current in scheduling systems</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Verify attendance and training hours compliance</td>
+        <td class="kpi-col">Attendance verification completed within 24h of session end; zero incomplete records forwarded to assessment phase</td>
+        <td class="pain-col">Partial session completions (e.g. simulator hardware fault mid-session) require FAA Operations Specification deviation approval before credit can be granted; no automated workflow in SAP SuccessFactors to flag partial completions for regulatory review</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Administer written and oral knowledge exam</td>
+        <td class="kpi-col">Exam pass rate ≥92% on first attempt; remedial re-exam scheduled within 7 days of failure</td>
+        <td class="pain-col">FAA-approved question banks must be updated within 30 days of regulatory change (e.g. new NOTAM format, amended AOM chapter); SAP SuccessFactors Learning has no automated content update trigger linked to ATPCO or FAA rulemaking RSS feeds</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Evaluate simulator checkride performance</td>
+        <td class="kpi-col">Checkride pass rate ≥95% on first attempt; debrief delivered within 1h of session end</td>
+        <td class="pain-col">Under AQP, unsatisfactory grades must be correlated across crew cohorts to identify systemic training gaps vs. individual performance issues; CAE SimFinity does not natively produce cohort-level analytics — requires separate export to AWS Redshift for trend analysis</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Process pass/fail outcome and assign remedial path</td>
+        <td class="kpi-col">Remedial plan issued within 24h of failure; restricted flying status applied in Jeppesen within 2h of fail determination</td>
+        <td class="pain-col">Jeppesen does not automatically restrict crew from scheduled flights upon a failed checkride — manual status update required; delay in status change creates legal exposure if a non-current crew member departs before the block is applied</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Issue or renew certificate and update qualification record</td>
+        <td class="kpi-col">Certificate updated in FAA IACRA within 5 business days of checkride pass; zero expired certificates active in Jeppesen qualification module</td>
+        <td class="pain-col">IACRA processing delays (common during peak season or after mass recurrent training cycles) can leave pilots in a limbo state — passed checkride but no updated certificate — requiring Temporary Authorisation letters that must be manually tracked outside automated systems</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Sync updated qualifications to crew scheduling system</td>
+        <td class="kpi-col">Qualification sync completed within 4h of IACRA update; scheduling legality check auto-passed in Jeppesen within same window</td>
+        <td class="pain-col">Jeppesen qualification record sync relies on manual CSV import from FAA IACRA; no API integration exists, creating a reconciliation bottleneck during high-volume recurrent training months (typically January and July for most carriers)</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Monitor upcoming recurrency expiry dates</td>
+        <td class="kpi-col">100% of expiring qualifications flagged ≥60 days before expiry; dashboard refresh latency ≤1h</td>
+        <td class="pain-col">AQP recurrency windows are qualification-event-based (not calendar-based), making rolling expiry calculation complex; Jeppesen&#x27;s standard recurrency alert module applies calendar logic and generates false alarms for AQP-credentialed crew, reducing alert credibility</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Trigger automated recurrency alert to crew and base manager</td>
+        <td class="kpi-col">Alert delivery confirmation rate ≥99%; training re-scheduling initiated within 3 business days of 60-day alert</td>
+        <td class="pain-col">Alert fatigue from Jeppesen&#x27;s notification volume causes base managers to filter or ignore automated messages; no read-receipt or escalation logic exists in standard Jeppesen notification module — critical alerts are indistinguishable from routine operational messages</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Escalate non-compliant crew to Crew Compliance team</td>
+        <td class="kpi-col">Zero crew operating with lapsed certifications; escalation-to-grounding action completed within 2h of SLA breach</td>
+        <td class="pain-col">FAA Certificate Management Office requires airlines to self-report systemic training programme non-compliance within 10 days; failure to ground and report non-compliant crew can trigger enforcement action under 14 CFR Part 13, including civil penalties up to $25,000 per violation per day</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Compliance & Certification</span>
+  </div>
+</div>
+
+</body>
+</html>
