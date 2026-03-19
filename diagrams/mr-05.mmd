@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1[Phase 1: AD Receipt and Triage]
+    A([Start]):::navy --> B[Monitor FAA/EASA AD feed]
+    B --> C{Emergency or AOG AD?}:::orange
+    C -- Yes --> D[Escalate to Accountable Manager]
+    C -- No --> E[Log AD in CAMP tracking]
+    D --> E
+  end
+  subgraph P2[Phase 2: Fleet Applicability Assessment]
+    E --> F[Pull aircraft config records]
+    F --> G{AD applicable to fleet?}:::orange
+    G -- No --> H([Close — Not Applicable]):::navy
+    G -- Yes --> I[Identify affected tail numbers]
+    I --> J{AMOC or interim relief available?}:::orange
+    J -- Yes --> K[File AMOC request with FAA]
+    J -- No --> L[Proceed to compliance planning]
+    K --> L
+  end
+  subgraph P3[Phase 3: Compliance Planning]
+    L --> M[Create AD work order in AMOS]
+    M --> N[Source parts and tooling via Ramco]
+    N --> O{Line or hangar maintenance?}:::orange
+    O -- Hangar --> P[Schedule heavy maintenance slot]
+    O -- Line --> Q[Schedule line maintenance window]
+    P --> R[Confirm resource and parts readiness]
+    Q --> R
+  end
+  subgraph P4[Phase 4: Work Execution and Inspection]
+    R --> S[Brief technicians on AD task card]
+    S --> T[Execute AD work per approved data]
+    T --> U{Independent inspection passed?}:::orange
+    U -- No --> T
+    U -- Yes --> V[Buy-back sign-off by QA Inspector]
+  end
+  subgraph P5[Phase 5: Documentation and Regulatory Filing]
+    V --> W[Record AD in CAMP airworthiness log]
+    W --> X[Update aircraft logbook entry]
+    X --> Y{FAA/EASA report required?}:::orange
+    Y -- Yes --> Z[Submit compliance report — 8 day SLA]
+    Y -- No --> AA[Update fleet AD register in AMOS]
+    Z --> AA
+  end
+  subgraph P6[Phase 6: Recurring AD Monitoring]
+    AA --> AB[Configure recurrence interval alert]
+    AB --> AC{AD due within 30 days?}:::orange
+    AC -- Yes --> M
+    AC -- No --> AD([Monitor — next cycle]):::navy
+  end
+
+  classDef orange fill:#ff6600,color:#fff,stroke:#ff6600
+  classDef navy fill:#003366,color:#fff,stroke:#003366

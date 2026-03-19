@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Airport &amp; Gate Management · Ground Operations &amp; Airport Services · Airlines Process Wiki</title>
+<title>MR-05 · Airworthiness Directive (AD) Compliance · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -187,12 +188,12 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-done"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
-        <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-05/"><span class="status-dot status-done"></span><span class="pid">MR-05</span>Airworthiness Directive (AD) Compliance</a>
+        <a class="sidebar-l3-link active" href="../../../mro-maintenance-engineering/line-maintenance/mr-05/"><span class="status-dot status-done"></span><span class="pid">MR-05</span>Airworthiness Directive (AD) Compliance</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-06/"><span class="status-dot status-queue"></span><span class="pid">MR-06</span>Maintenance Reliability &amp; RCM Program</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-07/"><span class="status-dot status-queue"></span><span class="pid">MR-07</span>Aircraft Technical Records Management</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-08/"><span class="status-dot status-queue"></span><span class="pid">MR-08</span>AOG Recovery &amp; Technical Dispatch</a>
@@ -242,81 +243,268 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
-  <span class="current">Airport &amp; Gate Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/line-maintenance/">Airworthiness &amp; Compliance</a><span class="sep">›</span>
+  <span class="current">MR-05 · Airworthiness Directive (AD) Compliance</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Airport &amp; Gate Management</h1>
-    <p>Ground Operations &amp; Airport Services · 7 of 7 subprocesses complete · Updated 2026-03-19 19:17</p>
+    <h1>Airworthiness Directive (AD) Compliance</h1>
+    <p>Maintenance, Repair &amp; Overhaul › Airworthiness &amp; Compliance · 19 L4 steps · 6 phases · 7 decision gates · Updated 2026-03-19 19:17</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">MR-05</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-01</span>Passenger Check-In &amp; Boarding</h3>
-    <p>Airport &amp; Gate Management · 18 steps · 8 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-mr-05">
+      <img src="../../../assets/img/mr-05.png" alt="MR-05 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-mr-05').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-mr-05').style.display='flex'">
+      <div id="diag-placeholder-mr-05" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Monitor FAA/EASA AD publication feed</td>
+  <td class="td-role">Airworthiness Engineer</td>
+  <td><span class="stag custom">CAMP (Continuous Airworthiness Monitoring Program)</span></td>
+  <td style="font-size:10px;color:#6b7280">FAA ACAS / EASA AD database daily RSS feed</td>
+  <td style="font-size:10px">New AD log entry with urgency classification</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AD logged within 24 hrs of publication; 100% capture rate</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Classify AD urgency — Emergency, Priority, Routine</td>
+  <td class="td-role">Airworthiness Engineer</td>
+  <td><span class="stag custom">CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">AD text, compliance deadline, subject system ATA chapter</td>
+  <td style="font-size:10px">AD urgency category assigned; emergency ADs flagged to Accountable Manager within 2 hrs</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Emergency ADs escalated within 2 hrs of receipt; 0 missed emergency ADs</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Log AD record and open compliance tracking</td>
+  <td class="td-role">Airworthiness Coordinator</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Classified AD from Step 1.2</td>
+  <td style="font-size:10px">AMOS AD record created with deadline, ATA chapter, and assigned engineer</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AD record created in AMOS within 4 hrs of classification; 100% traceability</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Pull aircraft configuration records for AD ATA chapter</td>
+  <td class="td-role">Airworthiness Engineer</td>
+  <td><span class="stag custom">CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">AD applicability criteria (aircraft type, series, modification status)</td>
+  <td style="font-size:10px">List of tail numbers with configuration state for affected ATA chapter</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Configuration match completed within 8 hrs; 0 tail numbers missed</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Determine fleet-wide AD applicability</td>
+  <td class="td-role">Airworthiness Engineer</td>
+  <td><span class="stag custom">CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft configuration records, AD applicability logic</td>
+  <td style="font-size:10px">Applicability determination: list of affected vs not-affected tail numbers</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Applicability determination completed before 50% of compliance window expires</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Evaluate AMOC or interim relief options</td>
+  <td class="td-role">Senior Airworthiness Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">AD compliance method section; OEM service information; FAA AMOC precedents</td>
+  <td style="font-size:10px">Decision: accept standard compliance method or initiate AMOC request</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AMOC evaluation completed within 48 hrs of AD receipt for routine ADs</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Submit AMOC request to FAA Aircraft Certification Office</td>
+  <td class="td-role">Designated Engineering Representative (DER)</td>
+  <td><span class="stag noc">FAA AMOC Portal (DragonWave / paper submission)</span></td>
+  <td style="font-size:10px;color:#6b7280">Engineering justification, test data, equivalent safety analysis</td>
+  <td style="font-size:10px">AMOC submission reference number; interim relief authorization if granted</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AMOC submitted within 5 business days of decision; FAA acknowledgement within 10 days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Create AD compliance work order in AMOS</td>
+  <td class="td-role">Maintenance Planner</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Applicability list, compliance method, deadline from CAMP</td>
+  <td style="font-size:10px">Work order(s) created in AMOS linked to AD record, with task card reference</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Work orders created ≥14 days before compliance deadline for routine ADs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Identify and procure required parts and tooling</td>
+  <td class="td-role">Maintenance Planner</td>
+  <td><span class="stag custom">Ramco Aviation</span></td>
+  <td style="font-size:10px;color:#6b7280">AD task card materials list, current stock levels from AMOS inventory</td>
+  <td style="font-size:10px">Purchase orders raised; parts reservation against work orders</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Parts confirmed available ≥7 days before scheduled maintenance window; AOG sourcing SLA 4 hrs</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Determine maintenance venue — line vs hangar</td>
+  <td class="td-role">Maintenance Planner</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">AD task scope, aircraft access requirements, available maintenance slots</td>
+  <td style="font-size:10px">Venue decision: line maintenance window or heavy maintenance input</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Venue decision confirmed ≥10 days before compliance deadline</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Schedule and confirm maintenance event</td>
+  <td class="td-role">Maintenance Planner</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Maintenance venue, aircraft rotation schedule from Amadeus SkyWORKS</td>
+  <td style="font-size:10px">Confirmed maintenance slot; aircraft ground time blocked in ops schedule</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Compliance event scheduled before 75% of deadline window consumed</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Issue AD task card and brief certifying technicians</td>
+  <td class="td-role">Maintenance Supervisor</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved AD task card, AMM references, special tooling instructions</td>
+  <td style="font-size:10px">Technician briefing completed; task card issued with required certifications noted</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Task card issued ≥1 hr before planned job start; 0 tasks started without valid authorisation</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Execute AD compliance work per approved maintenance data</td>
+  <td class="td-role">Licensed Aircraft Maintenance Technician (AMT)</td>
+  <td><span class="stag custom">Boeing Toolbox / CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">AD task card, AMM procedures, special tooling</td>
+  <td style="font-size:10px">Physical work completed; technician sign-off on task card steps</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero rework rate due to incorrect procedure; work completed within planned man-hours ±10%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Perform independent inspection and buy-back</td>
+  <td class="td-role">Quality Assurance Inspector</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed task card, physical inspection of work area</td>
+  <td style="font-size:10px">QA sign-off; AMOS work order buy-back recorded</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of AD tasks require independent inspection; QA buy-back completed before aircraft release</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Record AD accomplishment in CAMP airworthiness log</td>
+  <td class="td-role">Airworthiness Coordinator</td>
+  <td><span class="stag custom">CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">Signed-off task card, QA buy-back confirmation from AMOS</td>
+  <td style="font-size:10px">CAMP AD compliance record updated with date accomplished, tail number, and next due date</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CAMP updated within 4 hrs of task completion; 0 gaps in airworthiness record</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Update aircraft technical log and maintenance records</td>
+  <td class="td-role">Licensed Aircraft Maintenance Technician (AMT)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed buy-back record, AD reference number</td>
+  <td style="font-size:10px">Aircraft technical log entry; AD compliance endorsement in journey log</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Technical log entry completed before aircraft return to service; 0 releases without AD documentation</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Assess FAA/EASA regulatory reporting obligation</td>
+  <td class="td-role">Airworthiness Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">AD text, compliance method used, any deviations or extensions granted</td>
+  <td style="font-size:10px">Decision: submit formal compliance report or retain on file only</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Compliance reports submitted within 8 calendar days where required by AD text</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Configure recurring interval alert in CAMP</td>
+  <td class="td-role">Airworthiness Coordinator</td>
+  <td><span class="stag custom">CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">AD next-due parameters (calendar days, flight hours, cycles)</td>
+  <td style="font-size:10px">Recurring alert configured; next-due dates visible in CAMP due-list dashboard</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Recurring alerts configured within 24 hrs of initial compliance; 0 recurring ADs missed at interval</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Generate AD due-list report for maintenance planning</td>
+  <td class="td-role">Airworthiness Engineer</td>
+  <td><span class="stag custom">CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">CAMP due-list data, 30/60/90-day forecast horizon</td>
+  <td style="font-size:10px">AD due-list report distributed to maintenance planning and operations; items within 30 days flagged</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Due-list report generated weekly; 100% of items due within 30 days actioned with work order</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-04</span>Gate Management &amp; Assignment</h3>
-    <p>Airport &amp; Gate Management · 18 steps · 5 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">MR-05</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Maintenance, Repair &amp; Overhaul</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Airworthiness &amp; Compliance</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Airworthiness Directive (AD) Compliance</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">19 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">7 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">7 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Airworthiness Engineer</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Airworthiness Coordinator</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Senior Airworthiness Engineer</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Designated Engineering Representative (DER)</div><div class="swim"><div class="dot" style="background:#10b981"></div>Maintenance Planner</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Maintenance Supervisor</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Licensed Aircraft Maintenance Technician (AMT)</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Quality Assurance Inspector</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">CAMP (Continuous Airworthiness Monitoring Program)</span><span class="stag custom">CAMP</span><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag noc">FAA AMOC Portal (DragonWave / paper submission)</span><span class="stag custom">Ramco Aviation</span><span class="stag custom">Boeing Toolbox / CAMP</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Monitor FAA/EASA AD publication feed</span><span class="kval">AD logged within 24 hrs of publication; 100% capture rate</span></div><div class="krow"><span class="kname">Classify AD urgency — Emergency, Priority, Routine</span><span class="kval">Emergency ADs escalated within 2 hrs of receipt; 0 missed emergency ADs</span></div><div class="krow"><span class="kname">Log AD record and open compliance tracking</span><span class="kval">AD record created in AMOS within 4 hrs of classification; 100% traceability</span></div><div class="krow"><span class="kname">Pull aircraft configuration records for AD ATA chapter</span><span class="kval">Configuration match completed within 8 hrs; 0 tail numbers missed</span></div><div class="krow"><span class="kname">Determine fleet-wide AD applicability</span><span class="kval">Applicability determination completed before 50% of compliance window expires</span></div><div class="krow"><span class="kname">Evaluate AMOC or interim relief options</span><span class="kval">AMOC evaluation completed within 48 hrs of AD receipt for routine ADs</span></div><div class="krow"><span class="kname">Submit AMOC request to FAA Aircraft Certification Office</span><span class="kval">AMOC submitted within 5 business days of decision; FAA acknowledgement within 10 days</span></div><div class="krow"><span class="kname">Create AD compliance work order in AMOS</span><span class="kval">Work orders created ≥14 days before compliance deadline for routine ADs</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Manual monitoring of multiple regulatory feeds (FAA, EASA, TCCA) creates gaps when engineer is on leave; no automated ingestion in legacy CAMP configurations</div><div class="risk-card">FAA Emergency ADs may have 0-day compliance windows that conflict with active aircraft in revenue service, forcing AOG decisions without operational slack</div><div class="risk-card">Duplicate AD entries occur when engineers create records independently in AMOS and CAMP before integration sync runs, causing reconciliation rework</div><div class="risk-card">Config records in CAMP may lag behind actual installed mods if AMOS SB status is not synced in real time — risk of incorrect applicability determination</div><div class="risk-card">Mixed-fleet operators with multiple sub-variants (e.g. 737-700 vs 737-800) frequently have partial applicability — manual cross-check against Boeing TASK data required</div><div class="risk-card">AMOC approval from FAA typically takes 30–90 days; if AD compliance window is shorter, airline must comply with original method regardless of cost impact</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">FAA ACAS / EASA AD database daily RSS feed</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">AD due-list report distributed to maintenance planning and operations; items within 30 days flagged</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-08</span>Passenger Disruption Handling (IRROP)</h3>
-    <p>Airport &amp; Gate Management · 19 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-09</span>Wheelchair &amp; Special Assistance Services</h3>
-    <p>Airport &amp; Gate Management · 19 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-10</span>VIP &amp; Premium Passenger Handling</h3>
-    <p>Airport &amp; Gate Management · 16 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-13</span>Airport Security Compliance (TSA/CBP)</h3>
-    <p>Airport &amp; Gate Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-15</span>Station Performance &amp; KPI Reporting</h3>
-    <p>Airport &amp; Gate Management · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../mr-04/"><span class="arrow">←</span><span><span class="sub">Previous</span>MR-04 · Component &amp; Parts Management</span></a><a class="pn-btn" href="../mr-06/"><span><span class="sub">Next</span>MR-06 · Maintenance Reliability &amp; RCM Program</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
