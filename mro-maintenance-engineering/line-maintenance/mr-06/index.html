@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Flight Dispatch &amp; Control · Flight Operations · Airlines Process Wiki</title>
+<title>MR-06 · Maintenance Reliability &amp; RCM Program · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -187,13 +188,13 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-done"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-05/"><span class="status-dot status-done"></span><span class="pid">MR-05</span>Airworthiness Directive (AD) Compliance</a>
-        <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-06/"><span class="status-dot status-done"></span><span class="pid">MR-06</span>Maintenance Reliability &amp; RCM Program</a>
+        <a class="sidebar-l3-link active" href="../../../mro-maintenance-engineering/line-maintenance/mr-06/"><span class="status-dot status-done"></span><span class="pid">MR-06</span>Maintenance Reliability &amp; RCM Program</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-07/"><span class="status-dot status-queue"></span><span class="pid">MR-07</span>Aircraft Technical Records Management</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-08/"><span class="status-dot status-queue"></span><span class="pid">MR-08</span>AOG Recovery &amp; Technical Dispatch</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-09/"><span class="status-dot status-queue"></span><span class="pid">MR-09</span>MRO Vendor &amp; Outsourcing Management</a>
@@ -242,153 +243,268 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Flight Dispatch &amp; Control</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/line-maintenance/">Airworthiness &amp; Compliance</a><span class="sep">›</span>
+  <span class="current">MR-06 · Maintenance Reliability &amp; RCM Program</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Flight Dispatch &amp; Control</h1>
-    <p>Flight Operations · 15 of 15 subprocesses complete · Updated 2026-03-19 19:19</p>
+    <h1>Maintenance Reliability &amp; RCM Program</h1>
+    <p>Maintenance, Repair &amp; Overhaul › Airworthiness &amp; Compliance · 19 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-19 19:19</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">MR-06</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-01</span>Flight Dispatch &amp; Release</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 11 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-mr-06">
+      <img src="../../../assets/img/mr-06.png" alt="MR-06 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-mr-06').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-mr-06').style.display='flex'">
+      <div id="diag-placeholder-mr-06" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract technical delay &amp; cancellation events</td>
+  <td class="td-role">Reliability Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Daily operations data feeds, PIREP submissions, MEL deferrals</td>
+  <td style="font-size:10px">Reliability event log with ATA chapter coding</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Technical dispatch reliability ≥99.0% (IATA target)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Compile PIREP and cabin defect report data</td>
+  <td class="td-role">Reliability Analyst</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Pilot reports (PIREPs), cabin defect logs, maintenance findings</td>
+  <td style="font-size:10px">Consolidated defect database partitioned by ATA chapter</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Repeat defect rate &lt;2% per ATA chapter per month</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Calculate ATA chapter reliability metrics</td>
+  <td class="td-role">Reliability Engineer</td>
+  <td><span class="stag custom">Tableau / Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">AMOS defect export, flight operations hours and cycles data</td>
+  <td style="font-size:10px">ATA chapter reliability scorecard (events per 1,000 flight hours)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Alert threshold: &gt;3 events / 1,000 flight hours per ATA chapter triggers review</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Assess alert threshold breach and escalate</td>
+  <td class="td-role">Reliability Manager</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">ATA chapter reliability scorecard</td>
+  <td style="font-size:10px">Alert notification issued to MRB, or threshold cleared and monitoring continues</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of threshold breaches assessed within 2 business days of month-end data close</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Initiate formal failure investigation record</td>
+  <td class="td-role">Reliability Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Alert notification from MRB, repeat defect flag</td>
+  <td style="font-size:10px">Investigation record opened in AMOS with case owner assigned</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of Level 1 alert items investigated within 5 business days of alert</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Perform MSG-3 logic and FMEA assessment</td>
+  <td class="td-role">Reliability Engineer</td>
+  <td><span class="stag custom">Boeing Toolbox / CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">Failure investigation record, OEM Maintenance Planning Document (MPD)</td>
+  <td style="font-size:10px">FMEA worksheet with failure mode, cause, and effect documented</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">FMEA completed for 100% of Level 1 alert items within investigation SLA</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Classify failure consequence category</td>
+  <td class="td-role">Reliability Engineer</td>
+  <td><span class="stag custom">Boeing Toolbox / CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">FMEA worksheet, MPD task data, airworthiness directive index</td>
+  <td style="font-size:10px">Failure consequence classification: Safety / Operational / Economic / Hidden</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% classification accuracy validated by MRB at monthly review</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Identify and document corrective task recommendation</td>
+  <td class="td-role">Reliability Manager</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Failure consequence classification, OEM service bulletin index</td>
+  <td style="font-size:10px">Task change recommendation record with justification and urgency rating</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Recommendation issued within 10 business days of alert escalation</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Evaluate existing MPD task applicability</td>
+  <td class="td-role">Fleet Technical Manager</td>
+  <td><span class="stag custom">Boeing Toolbox / CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">Task change recommendation, current approved MPD tasks</td>
+  <td style="font-size:10px">Task gap analysis identifying intervals to extend, reduce, or replace</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Task revision scope defined within 5 business days of recommendation receipt</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Develop revised maintenance task intervals</td>
+  <td class="td-role">Reliability Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Task gap analysis, reliability trend data, Weibull statistical model output</td>
+  <td style="font-size:10px">Draft task card revision with updated intervals (FH / FC / calendar)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Interval extension justified at ≥95% statistical confidence using Weibull analysis</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Assess regulatory change approval requirement</td>
+  <td class="td-role">Fleet Technical Manager</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Draft task card revision, FAR Part 121.370 compliance matrix</td>
+  <td style="font-size:10px">Regulatory assessment memo classifying change as self-approval or FSDO submission</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of safety-consequence task changes submitted for FAA/EASA regulatory review</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Issue Engineering Order or Maintenance Program Amendment</td>
+  <td class="td-role">MRO Engineering</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved task revision, regulatory assessment memo</td>
+  <td style="font-size:10px">Engineering Order (EO) or Maintenance Program Amendment (MPA) document</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Engineering Order issued within 15 business days of task approval</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Submit MPA to FAA FSDO or EASA for approval</td>
+  <td class="td-role">Continuing Airworthiness Manager</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Maintenance Program Amendment with supporting FMEA and reliability data</td>
+  <td style="font-size:10px">Regulatory submission package with acknowledgement reference number</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">FAA approval turnaround ≤90 days for non-safety items per FAR 121.370</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Update approved task cards in AMOS</td>
+  <td class="td-role">MRO Engineering</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Regulatory approval letter or self-approval sign-off, approved MPA</td>
+  <td style="font-size:10px">Updated task cards activated in AMOS with new intervals and applicability</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% task card accuracy post-update verified by QA within 48 hours of activation</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Validate task card update accuracy via QA audit</td>
+  <td class="td-role">Quality Assurance Inspector</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Updated AMOS task cards, approved MPA source document</td>
+  <td style="font-size:10px">QA sign-off record or discrepancy report requiring correction</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero task card interval discrepancies at post-update audit; 100% of failed audits remediated within 5 days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Train maintenance technicians on revised tasks</td>
+  <td class="td-role">Training Manager</td>
+  <td><span class="stag sap">SAP SuccessFactors</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved revised task cards, training needs analysis</td>
+  <td style="font-size:10px">Training completion records with competency sign-off per technician</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% technician training completion within 30 days of task implementation</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Generate monthly reliability performance report</td>
+  <td class="td-role">Reliability Manager</td>
+  <td><span class="stag custom">Tableau / Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">AMOS reliability data export, flight operations performance data</td>
+  <td style="font-size:10px">Monthly Reliability Report (MRR) with ATA trend charts and open action items</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Report published within 5 business days of month-end data close</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Present findings to Maintenance Review Board</td>
+  <td class="td-role">Reliability Manager</td>
+  <td><span class="stag custom">Tableau / Power BI</span></td>
+  <td style="font-size:10px;color:#6b7280">Monthly Reliability Report, open investigation items</td>
+  <td style="font-size:10px">MRB minutes with closed actions and new action items assigned</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of open MRB action items tracked to closure within agreed timescales; MRB held monthly</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Assess corrective action effectiveness and close investigation</td>
+  <td class="td-role">Reliability Manager</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">MRB minutes, post-change reliability trend data (90-day lookback)</td>
+  <td style="font-size:10px">Investigation closure record or re-escalation trigger for repeat failure</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Recurrence rate &lt;5% within 90 days of corrective action implementation</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-02</span>Operational Flight Plan Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">MR-06</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Maintenance, Repair &amp; Overhaul</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Airworthiness &amp; Compliance</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Maintenance Reliability &amp; RCM Program</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">19 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">2 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Reliability Engineer</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Reliability Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Reliability Manager</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Fleet Technical Manager</div><div class="swim"><div class="dot" style="background:#10b981"></div>MRO Engineering</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Continuing Airworthiness Manager</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Quality Assurance Inspector</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Training Manager</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag custom">Tableau / Power BI</span><span class="stag aws">AWS Redshift</span><span class="stag custom">Boeing Toolbox / CAMP</span><span class="stag sap">SAP SuccessFactors</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract technical delay &amp; cancellation events</span><span class="kval">Technical dispatch reliability ≥99.0% (IATA target)</span></div><div class="krow"><span class="kname">Compile PIREP and cabin defect report data</span><span class="kval">Repeat defect rate &lt;2% per ATA chapter per month</span></div><div class="krow"><span class="kname">Calculate ATA chapter reliability metrics</span><span class="kval">Alert threshold: &gt;3 events / 1,000 flight hours per ATA chapter triggers review</span></div><div class="krow"><span class="kname">Assess alert threshold breach and escalate</span><span class="kval">100% of threshold breaches assessed within 2 business days of month-end data close</span></div><div class="krow"><span class="kname">Initiate formal failure investigation record</span><span class="kval">100% of Level 1 alert items investigated within 5 business days of alert</span></div><div class="krow"><span class="kname">Perform MSG-3 logic and FMEA assessment</span><span class="kval">FMEA completed for 100% of Level 1 alert items within investigation SLA</span></div><div class="krow"><span class="kname">Classify failure consequence category</span><span class="kval">100% classification accuracy validated by MRB at monthly review</span></div><div class="krow"><span class="kname">Identify and document corrective task recommendation</span><span class="kval">Recommendation issued within 10 business days of alert escalation</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">AMOS data quality degrades at outstations using paper-based PIREP capture; electronic sync lags up to 24 hours, distorting daily reliability figures</div><div class="risk-card">Inconsistent ATA chapter coding across maintenance bases causes mis-classification; repeat defects counted under different chapters, masking true recurrence rates</div><div class="risk-card">Manual data extraction from AMOS via CSV export introduces processing lag of 2–3 days; no real-time API feed from AMOS to BI platform</div><div class="risk-card">Alert threshold logic embedded in legacy spreadsheets not integrated with AMOS or Redshift; threshold parameters updated manually and inconsistently across fleet types</div><div class="risk-card">Insufficient root cause data available when aircraft operated at remote outstations; maintenance findings not captured in AMOS before aircraft repositions</div><div class="risk-card">Boeing Toolbox concurrent-user licence constraints limit simultaneous FMEA sessions; engineers queue for access during peak investigation periods, extending cycle time</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Daily operations data feeds, PIREP submissions, MEL deferrals</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Investigation closure record or re-escalation trigger for repeat failure</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-03</span>Fuel Planning &amp; Tankering</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-04</span>Weight &amp; Balance Management</h3>
-    <p>Flight Dispatch &amp; Control · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-05</span>NOTAMs &amp; AIP Information Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-06</span>Weather Monitoring &amp; Decision Support</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-07</span>Air Traffic Control Coordination</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-08</span>Network Operations Control (NOC)</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 10 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-09</span>Delay Management &amp; Root Cause Analysis</h3>
-    <p>Flight Dispatch &amp; Control · 19 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-10</span>Diversion &amp; Emergency Response Management</h3>
-    <p>Flight Dispatch &amp; Control · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-11</span>ETOPS / EDTO Operations Management</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-13</span>Performance &amp; FDR Data Monitoring</h3>
-    <p>Flight Dispatch &amp; Control · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-14</span>Air-to-Ground Communications Management</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-15</span>Dangerous Goods Load Authorization</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 13 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../mr-05/"><span class="arrow">←</span><span><span class="sub">Previous</span>MR-05 · Airworthiness Directive (AD) Compliance</span></a><a class="pn-btn" href="../mr-07/"><span><span class="sub">Next</span>MR-07 · Aircraft Technical Records Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

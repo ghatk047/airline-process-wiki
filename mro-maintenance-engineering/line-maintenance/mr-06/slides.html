@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MR-06 Slides — Maintenance Reliability &amp; RCM Program</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-06</span>
+    <h1>Maintenance Reliability &amp; RCM Program</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/mr-06.png" alt="BPMN for MR-06" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Airworthiness & Compliance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-06</span>
+    <h1>Maintenance Reliability &amp; RCM Program</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> MR-06</li>
+          <li><strong>L1 Domain:</strong> Maintenance, Repair &amp; Overhaul</li>
+          <li><strong>L2 Process:</strong> Airworthiness &amp; Compliance</li>
+          <li><strong>L3 Name:</strong> Maintenance Reliability &amp; RCM Program</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">2</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract technical delay &amp; cancellation events</li><li><strong>Phase 2:</strong> Initiate formal failure investigation record</li><li><strong>Phase 3:</strong> Evaluate existing MPD task applicability</li><li><strong>Phase 4:</strong> Submit MPA to FAA FSDO or EASA for approval</li><li><strong>Phase 5:</strong> Generate monthly reliability performance report</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Continuing Airworthiness Manager</li><li>Fleet Technical Manager</li><li>MRO Engineering</li><li>Quality Assurance Inspector</li><li>Reliability Analyst</li><li>Reliability Engineer</li><li>Reliability Manager</li><li>Training Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>AWS Redshift</li><li>Boeing Toolbox / CAMP</li><li>SAP SuccessFactors</li><li>Tableau / Power BI</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Airworthiness & Compliance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-06</span>
+    <h1>Maintenance Reliability &amp; RCM Program</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract technical delay &amp; cancellation events</td>
+        <td class="kpi-col">Technical dispatch reliability ≥99.0% (IATA target)</td>
+        <td class="pain-col">AMOS data quality degrades at outstations using paper-based PIREP capture; electronic sync lags up to 24 hours, distorting daily reliability figures</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Compile PIREP and cabin defect report data</td>
+        <td class="kpi-col">Repeat defect rate &lt;2% per ATA chapter per month</td>
+        <td class="pain-col">Inconsistent ATA chapter coding across maintenance bases causes mis-classification; repeat defects counted under different chapters, masking true recurrence rates</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Calculate ATA chapter reliability metrics</td>
+        <td class="kpi-col">Alert threshold: &gt;3 events / 1,000 flight hours per ATA chapter triggers review</td>
+        <td class="pain-col">Manual data extraction from AMOS via CSV export introduces processing lag of 2–3 days; no real-time API feed from AMOS to BI platform</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Assess alert threshold breach and escalate</td>
+        <td class="kpi-col">100% of threshold breaches assessed within 2 business days of month-end data close</td>
+        <td class="pain-col">Alert threshold logic embedded in legacy spreadsheets not integrated with AMOS or Redshift; threshold parameters updated manually and inconsistently across fleet types</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Initiate formal failure investigation record</td>
+        <td class="kpi-col">100% of Level 1 alert items investigated within 5 business days of alert</td>
+        <td class="pain-col">Insufficient root cause data available when aircraft operated at remote outstations; maintenance findings not captured in AMOS before aircraft repositions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Perform MSG-3 logic and FMEA assessment</td>
+        <td class="kpi-col">FMEA completed for 100% of Level 1 alert items within investigation SLA</td>
+        <td class="pain-col">Boeing Toolbox concurrent-user licence constraints limit simultaneous FMEA sessions; engineers queue for access during peak investigation periods, extending cycle time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Classify failure consequence category</td>
+        <td class="kpi-col">100% classification accuracy validated by MRB at monthly review</td>
+        <td class="pain-col">Safety consequences misclassified as operational when CAMP airworthiness data is stale due to deferred AD entry; classification errors trigger rework and regulatory exposure</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Identify and document corrective task recommendation</td>
+        <td class="kpi-col">Recommendation issued within 10 business days of alert escalation</td>
+        <td class="pain-col">OEM (Boeing/Airbus) response SLA for MPD revision guidance averages 45 days, creating a backlog of open recommendations awaiting OEM concurrence before implementation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Evaluate existing MPD task applicability</td>
+        <td class="kpi-col">Task revision scope defined within 5 business days of recommendation receipt</td>
+        <td class="pain-col">Mixed 737-700/800/MAX fleet requires parallel MPD analysis tracks; task applicability differs by line number and engine variant, increasing analysis effort by 30–40%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Develop revised maintenance task intervals</td>
+        <td class="kpi-col">Interval extension justified at ≥95% statistical confidence using Weibull analysis</td>
+        <td class="pain-col">Small fleet sample size for 737 MAX subtype (&lt;50 aircraft in some configurations) limits Weibull confidence; task intervals set conservatively, missing potential cost optimisation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Assess regulatory change approval requirement</td>
+        <td class="kpi-col">100% of safety-consequence task changes submitted for FAA/EASA regulatory review</td>
+        <td class="pain-col">Ambiguity in FAR 121.370 on what constitutes a &#x27;significant&#x27; maintenance program change requires legal review for borderline cases, adding 5–10 days to the cycle</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Issue Engineering Order or Maintenance Program Amendment</td>
+        <td class="kpi-col">Engineering Order issued within 15 business days of task approval</td>
+        <td class="pain-col">Concurrent EO backlog regularly exceeds 60 open items; engineering resource constraint delays issuance and causes task cards to remain at superseded intervals in production</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Submit MPA to FAA FSDO or EASA for approval</td>
+        <td class="kpi-col">FAA approval turnaround ≤90 days for non-safety items per FAR 121.370</td>
+        <td class="pain-col">FAA FSDO staffing shortages in 2024–2025 causing MPA approval delays beyond 120 days for complex amendments; aircraft continue operating on superseded intervals during review</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Update approved task cards in AMOS</td>
+        <td class="kpi-col">100% task card accuracy post-update verified by QA within 48 hours of activation</td>
+        <td class="pain-col">Manual task card entry in AMOS prone to interval transcription errors (confusing FH vs FC vs calendar values); errors not caught until next scheduled QA audit cycle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Validate task card update accuracy via QA audit</td>
+        <td class="kpi-col">Zero task card interval discrepancies at post-update audit; 100% of failed audits remediated within 5 days</td>
+        <td class="pain-col">QA audit sampling rate of 10% for low-risk task revisions may miss low-frequency task card errors on infrequently performed tasks until first work-order execution</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Train maintenance technicians on revised tasks</td>
+        <td class="kpi-col">100% technician training completion within 30 days of task implementation</td>
+        <td class="pain-col">SAP SuccessFactors LMS is not integrated with the AMOS task library; training content must be manually synced, leading to version mismatches between LMS materials and live task cards</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Generate monthly reliability performance report</td>
+        <td class="kpi-col">Report published within 5 business days of month-end data close</td>
+        <td class="pain-col">Manual consolidation of AMOS export and ops data in spreadsheets creates version control risk; no automated pipeline from AMOS to Tableau, requiring 2–3 days of analyst effort per cycle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Present findings to Maintenance Review Board</td>
+        <td class="kpi-col">100% of open MRB action items tracked to closure within agreed timescales; MRB held monthly</td>
+        <td class="pain-col">MRB meeting cadence slips during heavy maintenance check periods; unresolved reliability actions go untracked for up to 60 days, breaching IATA Maintenance Review Board guidelines</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Assess corrective action effectiveness and close investigation</td>
+        <td class="kpi-col">Recurrence rate &lt;5% within 90 days of corrective action implementation</td>
+        <td class="pain-col">Corrective action effectiveness undermined when task changes are not adopted uniformly across all maintenance bases; partial implementation creates split-fleet reliability data that masks recurrence</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Airworthiness & Compliance</span>
+  </div>
+</div>
+
+</body>
+</html>

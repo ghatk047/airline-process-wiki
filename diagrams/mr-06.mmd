@@ -1,0 +1,46 @@
+flowchart LR
+  subgraph P1[Phase 1: Reliability Data Aggregation]
+    A([Start]) --> B[Extract tech delay and cancel events]
+    B --> C[Compile PIREP and defect data]
+    C --> D[Calculate ATA chapter metrics]
+    D --> E{Alert threshold breached?}
+    E -- No --> D
+    E -- Yes --> F[Escalate alert to MRB]
+  end
+  subgraph P2[Phase 2: Failure Mode Analysis]
+    F --> G[Initiate failure investigation]
+    G --> H[Perform MSG-3 / FMEA]
+    H --> I{Consequence classified?}
+    I -- Reclassify --> H
+    I -- Yes --> J[Identify corrective task]
+  end
+  subgraph P3[Phase 3: Task Development]
+    J --> K[Evaluate MPD task applicability]
+    K --> L[Develop revised task intervals]
+    L --> M{Regulatory approval required?}
+    M -- No --> N[Issue Engineering Order]
+    M -- Yes --> O[Prepare program amendment]
+    O --> N
+  end
+  subgraph P4[Phase 4: Implementation and Approval]
+    N --> P[Submit MPA to FAA / EASA]
+    P --> Q[Update task cards in AMOS]
+    Q --> R{QA audit passed?}
+    R -- Fail --> Q
+    R -- Pass --> S[Train technicians on tasks]
+  end
+  subgraph P5[Phase 5: Reporting and Improvement]
+    S --> T[Generate monthly reliability report]
+    T --> U[Present to Maintenance Review Board]
+    U --> V{Program effective?}
+    V -- No --> G
+    V -- Yes --> W([Close and Archive])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600
