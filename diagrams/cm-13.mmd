@@ -1,0 +1,57 @@
+flowchart LR
+  subgraph P1[Phase 1: Positioning Requirement Identification]
+    A([Start]) --> B[Detect open crew position]
+    B --> C{Rest window\nlegal?}
+    C -- No --> B
+    C -- Yes --> D[Identify positioning\nflight options]
+  end
+
+  subgraph P2[Phase 2: Flight Selection and Booking]
+    D --> E{Own-airline seat\navailable?}
+    E -- Yes --> F[Book deadhead seat\nin Altéa PSS]
+    E -- No --> G[Request interline /\ncharter via Sabre GDS]
+    G --> F
+    F --> H[Notify crew via\nCrewConnect]
+    H --> I{Crew acknowledged\nwithin 30 min?}
+    I -- No --> H
+    I -- Yes --> J[Coordinate priority\nboarding with AMS]
+  end
+
+  subgraph P3[Phase 3: Pre-Departure Coordination]
+    J --> K[Verify crew check-in\nin Altéa PSS]
+    K --> L{Checked in within\nrequired window?}
+    L -- No --> M([Exception: escalate])
+    L -- Yes --> N[Monitor positioning\nflight status]
+  end
+
+  subgraph P4[Phase 4: Deadhead Execution and Monitoring]
+    N --> O{Delay > 30 min\ndetected?}
+    O -- Yes --> P([Disruption Recovery\nPhase 6])
+    O -- No --> Q[Confirm crew boarded\nvia Altéa scan]
+  end
+
+  subgraph P5[Phase 5: Arrival and Duty Activation]
+    Q --> R[Confirm arrival\nCrewConnect]
+    R --> S{Min rest met\nFAR Part 117?}
+    S -- No --> T([Exception: find\nalternate cover])
+    S -- Yes --> U[Activate crew for\nnext duty pairing]
+    U --> V([End])
+  end
+
+  subgraph P6[Phase 6: Disruption Recovery]
+    P --> W{Standby crew\navailable at dest?}
+    W -- Yes --> X[Assign standby\nJeppesen Crew Mgmt]
+    W -- No --> Y[Source re-deadhead\nor reassignment]
+    X --> V
+    Y --> V
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style V fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600
