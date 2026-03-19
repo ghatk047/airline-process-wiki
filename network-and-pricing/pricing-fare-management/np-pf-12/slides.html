@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-PF-12 Slides — Corporate Contract Pricing</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-12</span>
+    <h1>Corporate Contract Pricing</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-pf-12.png" alt="BPMN for NP-PF-12" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-12</span>
+    <h1>Corporate Contract Pricing</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-PF-12</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Pricing &amp; Fare Management</li>
+          <li><strong>L3 Name:</strong> Corporate Contract Pricing</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive and log corporate RFP in CRM</li><li><strong>Phase 2:</strong> Model discount scenarios by O&amp;D and cabin</li><li><strong>Phase 3:</strong> Negotiate terms with corporate client or TMC</li><li><strong>Phase 4:</strong> File negotiated fares in ATPCO (Cat-15)</li><li><strong>Phase 5:</strong> Monitor monthly volume commitment attainment</li><li><strong>Phase 6:</strong> Conduct annual contract performance review</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Corporate Account Manager</li><li>Corporate Pricing Analyst</li><li>Corporate Pricing Manager</li><li>Distribution Analyst</li><li>Finance Analyst</li><li>QA Analyst</li><li>Revenue Management Analyst</li><li>Revenue Management Manager</li><li>Tariff Analyst</li><li>VP Pricing &amp; Revenue Management</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>Amadeus Altéa PSS</li><li>Amadeus NRM</li><li>Amadeus SkyCAST</li><li>NDC API Gateway</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Sabre GDS</li><li>Sabre PRISM</li><li>Salesforce CRM</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-PF-12</span>
+    <h1>Corporate Contract Pricing</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive and log corporate RFP in CRM</td>
+        <td class="kpi-col">RFP acknowledged within 2 business days; 100% of RFPs logged before pricing work begins</td>
+        <td class="pain-col">RFPs arriving via TMC intermediaries create version-control conflicts when the corporate client also engages the airline directly, leading to duplicate records in Salesforce</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Assess historical travel volume and route fit</td>
+        <td class="kpi-col">Minimum qualifying annual spend $250K; route overlap ≥60% of account top-10 O&amp;Ds</td>
+        <td class="pain-col">SkyCAST O&amp;D data attributes bookings to agency PCC rather than corporate ID, making true account volume difficult to isolate without PRISM reconciliation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Determine account tier and eligibility decision</td>
+        <td class="kpi-col">≥95% of eligible accounts tiered within 2 business days of volume assessment</td>
+        <td class="pain-col">Tier thresholds are static annual targets and do not account for seasonal concentration; high-value accounts with strong Q4 travel patterns may be under-tiered mid-year</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Model discount scenarios by O&amp;D and cabin</td>
+        <td class="kpi-col">Modelled revenue dilution &lt;3% vs unconstrained network revenue on contracted routes</td>
+        <td class="pain-col">Amadeus NRM inventory controls on high-demand routes may cap discount depth without manual override by the Revenue Manager, creating tension between corporate sales targets and RM policy</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Validate discount against yield floor — gate</td>
+        <td class="kpi-col">Revenue dilution from corporate contract ≤2% on constrained routes; ≤5% on off-peak routes</td>
+        <td class="pain-col">Yield floors are set seasonally and may not reflect intra-season demand shifts; approving discounts in low-demand periods can conflict with late-breaking demand spikes not yet captured in SkyCAST forecasts</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Draft and issue corporate pricing proposal</td>
+        <td class="kpi-col">Proposal issued within 3 business days of yield approval; 100% of proposals include ATPCO-compatible fare basis code references</td>
+        <td class="pain-col">Proposal templates are maintained separately from ATPCO rule structures; manual reconciliation is needed before filing, introducing errors when templates are not updated after ATPCO rule changes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Negotiate terms with corporate client or TMC</td>
+        <td class="kpi-col">Negotiation cycle completed in ≤3 rounds; average cycle time ≤10 business days</td>
+        <td class="pain-col">TMC-represented clients (BCD, Amex GBT) frequently introduce non-standard contract clauses (guaranteed availability, cap-on-surcharges) outside the airline&#x27;s standard ATPCO framework, requiring legal review that extends cycle time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Assess commercial impact of counter-proposal</td>
+        <td class="kpi-col">Counter-proposal modelled and responded to within 1 business day</td>
+        <td class="pain-col">Frequent counter-proposals on routes shared with alliance partners or interline agreements require additional proration impact analysis not automated in NRM, adding 2–3 days to cycle time</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Obtain pricing committee sign-off</td>
+        <td class="kpi-col">100% of contracts with annual value &gt;$1M approved at VP level; approval latency ≤2 business days</td>
+        <td class="pain-col">Approval workflows are largely email-based with no enforced audit trail in Salesforce; negotiated terms can deviate from the approved scenario without detection, creating post-execution disputes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>File negotiated fares in ATPCO (Cat-15)</td>
+        <td class="kpi-col">Fare filing completed ≥2 business days before contract effective date; 0% mis-pricing incidents on go-live day</td>
+        <td class="pain-col">Category 15 private fare rule coding errors (incorrect routing restrictions or permitted combinations) surface only at booking engine pricing, causing customer-facing mis-pricing and requiring urgent ATPCO re-filing</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Load and activate private fares in PSS</td>
+        <td class="kpi-col">100% of contracted fare basis codes active in PSS ≥24 hours before go-live; zero booking-class mismatches</td>
+        <td class="pain-col">Altéa PSS fare activation requires a manual QA step by a separate Revenue Management team; handoff gaps between Tariff and RM teams cause last-minute activation failures discovered only when test bookings are attempted</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Configure corporate access in distribution channels</td>
+        <td class="kpi-col">Corporate traveller can book contracted fare within 24 hours of go-live; NDC channel coverage ≥80% of contracted fare conditions</td>
+        <td class="pain-col">NDC API Gateway does not support all Category 15 private fare rule conditions (e.g. negotiated blackout dates); non-compliant fares fall back to GDS-only distribution, limiting direct channel adoption targets</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Validate end-to-end booking flow — gate</td>
+        <td class="kpi-col">100% of test bookings price correctly across all channels before live date; defects remediated within 4 hours</td>
+        <td class="pain-col">GDS test environment does not always replicate live Altéa inventory state; a clean test result can still produce pricing failures in production if RM inventory availability differs from the test snapshot</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Monitor monthly volume commitment attainment</td>
+        <td class="kpi-col">Volume reporting latency ≤3 business days after month-end; attainment variance flagged if &gt;10% below commitment trajectory</td>
+        <td class="pain-col">Sabre PRISM captures GDS-originated bookings only; direct channel and NDC bookings require separate reconciliation from Altéa PSS, causing systematic under-reporting of attainment and triggering false at-risk alerts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Identify and intervene on at-risk accounts</td>
+        <td class="kpi-col">≥80% of accounts on-track to meet annual commitment by month 6; at-risk accounts contacted within 5 business days of flag</td>
+        <td class="pain-col">Tableau dashboards are refreshed from AWS Redshift nightly; intra-month booking surges or drops are invisible until the next refresh cycle, delaying intervention and jeopardising end-of-year rebate qualification</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Calculate and process annual rebates</td>
+        <td class="kpi-col">Rebate processed within 30 days of contract year-end; 100% of rebate calculations independently verified against PRISM and Altéa data</td>
+        <td class="pain-col">Rebate calculations depend on reconciled volume data across PRISM (GDS), Altéa PSS (direct/NDC), and SAP AR; discrepancies between sources cause disputes that delay payment and damage account relationships</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Conduct annual contract performance review</td>
+        <td class="kpi-col">Review initiated ≥90 days before contract expiry; 100% of Tier 1 accounts reviewed in person</td>
+        <td class="pain-col">Account managers carrying portfolios of &gt;50 corporate contracts lack automated renewal-pipeline visibility in Salesforce; late review initiation (within 30 days of expiry) forces rushed renegotiation and weakens the airline&#x27;s commercial position</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Trigger renewal, renegotiation, or termination</td>
+        <td class="kpi-col">100% of contracts actioned ≥60 days before expiry; zero contracts lapsing without a documented decision</td>
+        <td class="pain-col">Accounts flagged for termination due to low volume often have strategic route dependencies (e.g. government contracts on thin markets) that override commercial logic; no system-enforced escalation path exists to flag strategic override decisions for VP review</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Pricing & Fare Management</span>
+  </div>
+</div>
+
+</body>
+</html>
