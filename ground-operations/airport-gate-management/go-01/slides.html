@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GO-01 Slides — Passenger Check-In &amp; Boarding</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-01</span>
+    <h1>Passenger Check-In &amp; Boarding</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/go-01.png" alt="BPMN for GO-01" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-01</span>
+    <h1>Passenger Check-In &amp; Boarding</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> GO-01</li>
+          <li><strong>L1 Domain:</strong> Ground Operations &amp; Airport Services</li>
+          <li><strong>L2 Process:</strong> Airport &amp; Gate Management</li>
+          <li><strong>L3 Name:</strong> Passenger Check-In &amp; Boarding</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">17</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Activate DCS flight check-in window</li><li><strong>Phase 2:</strong> Process web/mobile self-service check-in</li><li><strong>Phase 3:</strong> Accept, weigh &amp; measure checked baggage</li><li><strong>Phase 4:</strong> Open gate &amp; configure boarding group sequence</li><li><strong>Phase 5:</strong> Scan boarding passes &amp; verify pax identity</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Airport Services Agent</li><li>Airport Services Supervisor</li><li>Baggage Services Agent</li><li>Gate Agent</li><li>Gate Agent / Airport Services Supervisor</li><li>Gate Agent / Customer Relations</li><li>Gate Agent / Load Controller</li><li>Ground Services Agent</li><li>Ground Services Agent / Passenger (self-service)</li><li>Load Controller / Gate Agent</li><li>Passenger (self-service)</li><li>Passenger / Ground Services Agent</li><li>TSA Security Officer / Baggage Services Agent</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Airport EDS System (TSA-operated) + SITA Baggage Reconciliation System</li><li>Airport EDS System + SITA Baggage Reconciliation System</li><li>Amadeus Altéa DCS</li><li>Amadeus Altéa DCS + ACARS (SITA/ARINC)</li><li>Amadeus Altéa DCS + Airline Voucher System</li><li>Amadeus Altéa DCS + SITA APIS Gateway</li><li>Amadeus Altéa DCS + SITA BagDrop</li><li>Amadeus Altéa DCS + SITA Gate Reader</li><li>Amadeus Altéa DCS + Timatic (via GDS)</li><li>Amadeus Altéa Web Check-In</li><li>SITA Airport Management System (AMS) + Amadeus Altéa DCS</li><li>SITA CUSS Kiosk + Amadeus Altéa DCS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-01</span>
+    <h1>Passenger Check-In &amp; Boarding</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Activate DCS flight check-in window</td>
+        <td class="kpi-col">Check-in window live within 2 min of scheduled T-24h open time</td>
+        <td class="pain-col">Altéa DCS activation can lag if PSS flight record contains schedule irregularity codes from prior disruption; agents must manually resolve before window opens</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Transmit APIS data to government gateway</td>
+        <td class="kpi-col">APIS transmission ≥99.5% success rate; all records sent ≥60 min pre-departure</td>
+        <td class="pain-col">Incomplete passport data in PNR (collected via NDC or OTA) prevents automated APIS; agents must manually collect at counter, increasing queue time by avg 4 min/pax</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate APIS clearance response from authority</td>
+        <td class="kpi-col">APIS clearance rate ≥99.8%; inhibit rate &lt;0.2% on domestic sectors</td>
+        <td class="pain-col">CBP Inhibit responses arrive without explanation; agents must contact CBP Passenger Analysis Unit directly, causing delays of 15–45 min with no SLA guarantee</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Process web/mobile self-service check-in</td>
+        <td class="kpi-col">Web/mobile check-in adoption ≥65% of pax; avg session completion &lt;3 min</td>
+        <td class="pain-col">Altéa Web Check-In has limited SSR (special service request) handling — passengers requiring wheelchair, UMNR, or PETC must complete check-in at counter, reducing self-service deflection rate</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Process airport kiosk check-in</td>
+        <td class="kpi-col">Kiosk transaction time ≤90 sec avg; kiosk availability ≥98.5% uptime</td>
+        <td class="pain-col">CUSS kiosk MRZ readers degrade in high-throughput environments; passport scan failure rate &gt;5% triggers agent-assisted queue diversion, negating kiosk capacity benefit</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Counter check-in for SSR &amp; irregular pax</td>
+        <td class="kpi-col">Counter transaction time ≤4 min/pax; SSR coding accuracy 100%</td>
+        <td class="pain-col">Altéa DCS SSR codes not always consumed by downstream ramp/catering systems in real time; WCHR requests can fail to appear on OCS load sheet if coded after T-45 min</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Verify travel documents &amp; eligibility to travel</td>
+        <td class="kpi-col">Document check failure rate &lt;0.5%; inadmissible pax rate &lt;0.1% of international sector pax</td>
+        <td class="pain-col">Timatic database lags behind real-time government policy changes (e.g., COVID-era entry requirements updated faster than Timatic refresh); airlines face deportation liability and repatriation costs averaging $3,000–$5,000 per inadmissible passenger</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.5</td>
+        <td>Issue boarding pass and confirm check-in</td>
+        <td class="kpi-col">Boarding pass issuance within 30 sec of check-in completion; barcode scan success rate ≥99.9% at gate</td>
+        <td class="pain-col">Mobile boarding pass wallet integration (Apple Wallet / Google Wallet) requires Altéa connector; third-party OTA bookings may not receive push update if itinerary changed post-check-in, causing boarding pass mismatch at gate</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Accept, weigh &amp; measure checked baggage</td>
+        <td class="kpi-col">Baggage acceptance transaction ≤90 sec; excess bag fee collection accuracy 100%</td>
+        <td class="pain-col">SITA BagDrop scale calibration drift causes weight discrepancies; bags near allowance threshold require re-weighing at counter, increasing queue time and creating customer disputes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Print &amp; apply IATA 10-digit baggage tag</td>
+        <td class="kpi-col">Bag tag print success rate ≥99.8%; bag tag scan read rate at sortation ≥99.5%</td>
+        <td class="pain-col">Altéa bag tag thermal print quality degrades in high-humidity airport environments; low-contrast tags fail sortation OCR/barcode readers, causing misrouting — IATA Resolution 753 tracking mandates every bag event be captured</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Induct bags into EDS/TSA screening belt</td>
+        <td class="kpi-col">Bag induction-to-screening time ≤15 min; EDS throughput ≥1,200 bags/hr per lane</td>
+        <td class="pain-col">TSA EDS systems are airport authority / TSA-owned, not airline-controlled; EDS lane outages cause cascading bag delays with no airline SLA recourse — peak holiday periods see queue back-ups exceeding 45 min</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Resolve EDS alarm — security secondary screening</td>
+        <td class="kpi-col">Secondary screening resolution time ≤20 min pre-departure; cleared bags ≥95% make flight</td>
+        <td class="pain-col">Manual EDS secondary screening has no airline-controlled SLA; if passenger has already boarded, policy requires offloading all bags and re-matching — per TSA requirement — causing departure delay averaging 22 min</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Open gate &amp; configure boarding group sequence</td>
+        <td class="kpi-col">Gate open ≥35 min pre-departure; boarding group display accuracy 100%</td>
+        <td class="pain-col">Gate assignments change frequently due to aircraft swaps; SITA AMS gate change notification can lag DCS by 3–5 min, causing agents to set up at wrong gate — high at congested hubs like ATL and ORD</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Assess oversale position &amp; solicit volunteers</td>
+        <td class="kpi-col">VDB offer initiated ≥25 min pre-departure; IDB (involuntary) rate &lt;0.05 per 10,000 boarded (DOT threshold)</td>
+        <td class="pain-col">Altéa DCS overbooking display does not auto-factor no-show passengers from connecting flights until T-15 min; late confirmation of actual seat count means VDB offers are solicited unnecessarily or too late for proper compensation negotiation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Process VDB compensation &amp; rebook denied pax</td>
+        <td class="kpi-col">VDB compensation processing time ≤8 min; rebooking on same-day flight ≥85% of VDB cases</td>
+        <td class="pain-col">Voucher issuance system integration with Altéa DCS is not real-time at all stations; agents at outstations must use paper vouchers subject to fraud risk and delayed reconciliation in SAP S/4HANA AR</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Scan boarding passes &amp; verify pax identity</td>
+        <td class="kpi-col">Gate scan throughput ≥30 pax/min; scan success rate ≥99.5%; first scan read rate ≥99%</td>
+        <td class="pain-col">Mobile boarding pass screen brightness and barcode display inconsistency (especially on cracked screens) causes scan failures; SITA gate reader firmware version mismatches with Altéa DCS on shared CUTE gates cause intermittent rejections during irregular ops re-accommodation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Perform final headcount &amp; manifest reconciliation</td>
+        <td class="kpi-col">Manifest accuracy 100% (regulatory — FAR 121.693); reconciliation completed ≥5 min pre-departure</td>
+        <td class="pain-col">Gate reader offline events (network drop at remote stands) cause boarding records to queue locally and sync after pushback begins; manifest can show in-transit counts that require captain confirmation, delaying doors-closed by 3–8 min</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Transmit final load sheet &amp; close flight in DCS</td>
+        <td class="kpi-col">Load sheet transmitted ≥3 min pre-pushback; captain acceptance acknowledgement received 100% of flights</td>
+        <td class="pain-col">ACARS OOOI message timing and load sheet transmission depend on aircraft avionics connectivity; older narrowbody aircraft without VHF ACARS datalink require VHF voice relay, increasing workload for dispatch and introducing manual transcription errors in weight &amp; balance</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Airport & Gate Management</span>
+  </div>
+</div>
+
+</body>
+</html>

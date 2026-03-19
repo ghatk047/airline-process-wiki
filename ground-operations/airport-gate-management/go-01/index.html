@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Schedule Planning · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>GO-01 · Passenger Check-In &amp; Boarding · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -161,11 +162,11 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
-        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
+        <a class="sidebar-l3-link active" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-04/"><span class="status-dot status-queue"></span><span class="pid">GO-04</span>Gate Management &amp; Assignment</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-08/"><span class="status-dot status-queue"></span><span class="pid">GO-08</span>Passenger Disruption Handling (IRROP)</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-09/"><span class="status-dot status-queue"></span><span class="pid">GO-09</span>Wheelchair &amp; Special Assistance Services</a>
@@ -242,153 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Schedule Planning</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
+  <a href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a><span class="sep">›</span>
+  <span class="current">GO-01 · Passenger Check-In &amp; Boarding</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Schedule Planning</h1>
-    <p>Network Planning &amp; Scheduling · 15 of 15 subprocesses complete · Updated 2026-03-19 13:51</p>
+    <h1>Passenger Check-In &amp; Boarding</h1>
+    <p>Ground Operations &amp; Airport Services › Airport &amp; Gate Management · 18 L4 steps · 5 phases · 8 decision gates · Updated 2026-03-19 13:51</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">GO-01</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-01</span>Seasonal Schedule Construction</h3>
-    <p>Schedule Planning · 16 steps · 8 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-go-01">
+      <img src="../../../assets/img/go-01.png" alt="GO-01 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-go-01').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-go-01').style.display='flex'">
+      <div id="diag-placeholder-go-01" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Activate DCS flight check-in window</td>
+  <td class="td-role">Airport Services Supervisor</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS</span></td>
+  <td style="font-size:10px;color:#6b7280">Flight schedule activation trigger from PSS; T-24h threshold reached</td>
+  <td style="font-size:10px">Check-in window open; flight record active in DCS with configured limits</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Check-in window live within 2 min of scheduled T-24h open time</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Transmit APIS data to government gateway</td>
+  <td class="td-role">Airport Services Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS + SITA APIS Gateway</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger PNR records with passport/travel document data collected at booking</td>
+  <td style="font-size:10px">APIS message transmitted to CBP (US) or destination country border authority</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">APIS transmission ≥99.5% success rate; all records sent ≥60 min pre-departure</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Validate APIS clearance response from authority</td>
+  <td class="td-role">Airport Services Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS + SITA APIS Gateway</span></td>
+  <td style="font-size:10px;color:#6b7280">Government APIS response message (OK / Inhibit / Further Check)</td>
+  <td style="font-size:10px">Passenger flagged as cleared or held; DCS boarding permission set accordingly</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">APIS clearance rate ≥99.8%; inhibit rate &lt;0.2% on domestic sectors</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Process web/mobile self-service check-in</td>
+  <td class="td-role">Passenger (self-service)</td>
+  <td><span class="stag amadeus">Amadeus Altéa Web Check-In</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger booking reference or e-ticket number; opens T-24h pre-departure</td>
+  <td style="font-size:10px">Mobile or PDF boarding pass issued; seat confirmed (where applicable)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Web/mobile check-in adoption ≥65% of pax; avg session completion &lt;3 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Process airport kiosk check-in</td>
+  <td class="td-role">Passenger / Ground Services Agent</td>
+  <td><span class="stag amadeus">SITA CUSS Kiosk + Amadeus Altéa DCS</span></td>
+  <td style="font-size:10px;color:#6b7280">Booking reference, e-ticket barcode scan, or passport MRZ scan</td>
+  <td style="font-size:10px">Boarding pass printed at kiosk; baggage tag receipt if bags declared</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Kiosk transaction time ≤90 sec avg; kiosk availability ≥98.5% uptime</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Counter check-in for SSR &amp; irregular pax</td>
+  <td class="td-role">Ground Services Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger queue; SSR flags (WCHR, UMNR, PETC, excess baggage, name discrepancy)</td>
+  <td style="font-size:10px">Check-in complete with SSR coded; boarding pass issued; special handling instructions added to PNR</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Counter transaction time ≤4 min/pax; SSR coding accuracy 100%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Verify travel documents &amp; eligibility to travel</td>
+  <td class="td-role">Ground Services Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS + Timatic (via GDS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger passport, visa, travel document; destination entry requirements from Timatic</td>
+  <td style="font-size:10px">Document check passed or failed; boarding authorization set in DCS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Document check failure rate &lt;0.5%; inadmissible pax rate &lt;0.1% of international sector pax</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.5</td>
+  <td class="td-name">Issue boarding pass and confirm check-in</td>
+  <td class="td-role">Ground Services Agent / Passenger (self-service)</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed check-in record; APIS cleared; seat assigned</td>
+  <td style="font-size:10px">Boarding pass (mobile wallet, PDF, or thermal print) with barcode; PNR status updated to HK</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Boarding pass issuance within 30 sec of check-in completion; barcode scan success rate ≥99.9% at gate</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Accept, weigh &amp; measure checked baggage</td>
+  <td class="td-role">Baggage Services Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS + SITA BagDrop</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger with checked bags at counter or self-service bag drop; ticket with baggage allowance</td>
+  <td style="font-size:10px">Bag weight/dimensions recorded in DCS; excess baggage fee calculated if applicable</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Baggage acceptance transaction ≤90 sec; excess bag fee collection accuracy 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Print &amp; apply IATA 10-digit baggage tag</td>
+  <td class="td-role">Baggage Services Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS</span></td>
+  <td style="font-size:10px;color:#6b7280">Accepted bag; passenger PNR with flight and destination data</td>
+  <td style="font-size:10px">IATA 10-digit bag tag printed and applied; bag record created in WorldTracer</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bag tag print success rate ≥99.8%; bag tag scan read rate at sortation ≥99.5%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Induct bags into EDS/TSA screening belt</td>
+  <td class="td-role">Baggage Services Agent</td>
+  <td><span class="stag custom">Airport EDS System (TSA-operated) + SITA Baggage Reconciliation System</span></td>
+  <td style="font-size:10px;color:#6b7280">Tagged, accepted bags inducted at sortation entry point</td>
+  <td style="font-size:10px">Bag inducted into automated screening belt; bag status updated to &#x27;In Screening&#x27;</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bag induction-to-screening time ≤15 min; EDS throughput ≥1,200 bags/hr per lane</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Resolve EDS alarm — security secondary screening</td>
+  <td class="td-role">TSA Security Officer / Baggage Services Agent</td>
+  <td><span class="stag custom">Airport EDS System + SITA Baggage Reconciliation System</span></td>
+  <td style="font-size:10px;color:#6b7280">EDS alarm triggered on specific bag; bag diverted to manual inspection lane</td>
+  <td style="font-size:10px">Bag cleared after manual inspection or removed from flight; BRS status updated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Secondary screening resolution time ≤20 min pre-departure; cleared bags ≥95% make flight</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Open gate &amp; configure boarding group sequence</td>
+  <td class="td-role">Gate Agent</td>
+  <td><span class="stag amadeus">SITA Airport Management System (AMS) + Amadeus Altéa DCS</span></td>
+  <td style="font-size:10px;color:#6b7280">DCS flight record with check-in close count; gate assignment from AMS</td>
+  <td style="font-size:10px">Gate screen displays boarding groups; boarding group logic configured in DCS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate open ≥35 min pre-departure; boarding group display accuracy 100%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Assess oversale position &amp; solicit volunteers</td>
+  <td class="td-role">Gate Agent / Airport Services Supervisor</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS</span></td>
+  <td style="font-size:10px;color:#6b7280">Check-in close count vs. aircraft capacity; upgrade waitlist; standby list</td>
+  <td style="font-size:10px">Oversale position confirmed; VDB (voluntary denied boarding) offer issued if overbooked</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">VDB offer initiated ≥25 min pre-departure; IDB (involuntary) rate &lt;0.05 per 10,000 boarded (DOT threshold)</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Process VDB compensation &amp; rebook denied pax</td>
+  <td class="td-role">Gate Agent / Customer Relations</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS + Airline Voucher System</span></td>
+  <td style="font-size:10px;color:#6b7280">Volunteer passenger confirmed for VDB; compensation amount per DOT 14 CFR Part 250</td>
+  <td style="font-size:10px">VDB compensation issued (cash/voucher/miles); pax rebooked on next available service</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">VDB compensation processing time ≤8 min; rebooking on same-day flight ≥85% of VDB cases</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Scan boarding passes &amp; verify pax identity</td>
+  <td class="td-role">Gate Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS + SITA Gate Reader</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger presenting boarding pass (mobile/paper) at gate scanner</td>
+  <td style="font-size:10px">Boarding pass scanned; pax status updated to &#x27;Boarded&#x27; in DCS; seat confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate scan throughput ≥30 pax/min; scan success rate ≥99.5%; first scan read rate ≥99%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Perform final headcount &amp; manifest reconciliation</td>
+  <td class="td-role">Gate Agent / Load Controller</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS</span></td>
+  <td style="font-size:10px;color:#6b7280">Boarding complete; gate close signal; boarded pax count from DCS</td>
+  <td style="font-size:10px">Final passenger manifest reconciled; pax count confirmed against physical headcount</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Manifest accuracy 100% (regulatory — FAR 121.693); reconciliation completed ≥5 min pre-departure</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Transmit final load sheet &amp; close flight in DCS</td>
+  <td class="td-role">Load Controller / Gate Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS + ACARS (SITA/ARINC)</span></td>
+  <td style="font-size:10px;color:#6b7280">Reconciled pax count; final baggage and cargo weights; zero fuel weight from ramp</td>
+  <td style="font-size:10px">Final load sheet transmitted to cockpit via ACARS; DCS flight status set to Departed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Load sheet transmitted ≥3 min pre-pushback; captain acceptance acknowledgement received 100% of flights</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-02</span>Fleet Assignment &amp; Tail Routing</h3>
-    <p>Schedule Planning · 11 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">GO-01</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Ground Operations &amp; Airport Services</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Airport &amp; Gate Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Passenger Check-In &amp; Boarding</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">8 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">17 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Airport Services Supervisor</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Airport Services Agent</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Passenger (self-service)</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Passenger / Ground Services Agent</div><div class="swim"><div class="dot" style="background:#10b981"></div>Ground Services Agent</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Ground Services Agent / Passenger (self-service)</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Baggage Services Agent</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>TSA Security Officer / Baggage Services Agent</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Gate Agent</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Gate Agent / Airport Services Supervisor</div><div class="swim"><div class="dot" style="background:#f97316"></div>Gate Agent / Customer Relations</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>Gate Agent / Load Controller</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Load Controller / Gate Agent</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag amadeus">Amadeus Altéa DCS</span><span class="stag amadeus">Amadeus Altéa DCS + SITA APIS Gateway</span><span class="stag amadeus">Amadeus Altéa Web Check-In</span><span class="stag amadeus">SITA CUSS Kiosk + Amadeus Altéa DCS</span><span class="stag amadeus">Amadeus Altéa DCS + Timatic (via GDS)</span><span class="stag amadeus">Amadeus Altéa DCS + SITA BagDrop</span><span class="stag custom">Airport EDS System (TSA-operated) + SITA Baggage Reconciliation System</span><span class="stag custom">Airport EDS System + SITA Baggage Reconciliation System</span><span class="stag amadeus">SITA Airport Management System (AMS) + Amadeus Altéa DCS</span><span class="stag amadeus">Amadeus Altéa DCS + Airline Voucher System</span><span class="stag amadeus">Amadeus Altéa DCS + SITA Gate Reader</span><span class="stag amadeus">Amadeus Altéa DCS + ACARS (SITA/ARINC)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Activate DCS flight check-in window</span><span class="kval">Check-in window live within 2 min of scheduled T-24h open time</span></div><div class="krow"><span class="kname">Transmit APIS data to government gateway</span><span class="kval">APIS transmission ≥99.5% success rate; all records sent ≥60 min pre-departure</span></div><div class="krow"><span class="kname">Validate APIS clearance response from authority</span><span class="kval">APIS clearance rate ≥99.8%; inhibit rate &lt;0.2% on domestic sectors</span></div><div class="krow"><span class="kname">Process web/mobile self-service check-in</span><span class="kval">Web/mobile check-in adoption ≥65% of pax; avg session completion &lt;3 min</span></div><div class="krow"><span class="kname">Process airport kiosk check-in</span><span class="kval">Kiosk transaction time ≤90 sec avg; kiosk availability ≥98.5% uptime</span></div><div class="krow"><span class="kname">Counter check-in for SSR &amp; irregular pax</span><span class="kval">Counter transaction time ≤4 min/pax; SSR coding accuracy 100%</span></div><div class="krow"><span class="kname">Verify travel documents &amp; eligibility to travel</span><span class="kval">Document check failure rate &lt;0.5%; inadmissible pax rate &lt;0.1% of international sector pax</span></div><div class="krow"><span class="kname">Issue boarding pass and confirm check-in</span><span class="kval">Boarding pass issuance within 30 sec of check-in completion; barcode scan success rate ≥99.9% at gate</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Altéa DCS activation can lag if PSS flight record contains schedule irregularity codes from prior disruption; agents must manually resolve before window opens</div><div class="risk-card">Incomplete passport data in PNR (collected via NDC or OTA) prevents automated APIS; agents must manually collect at counter, increasing queue time by avg 4 min/pax</div><div class="risk-card">CBP Inhibit responses arrive without explanation; agents must contact CBP Passenger Analysis Unit directly, causing delays of 15–45 min with no SLA guarantee</div><div class="risk-card">Altéa Web Check-In has limited SSR (special service request) handling — passengers requiring wheelchair, UMNR, or PETC must complete check-in at counter, reducing self-service deflection rate</div><div class="risk-card">CUSS kiosk MRZ readers degrade in high-throughput environments; passport scan failure rate &gt;5% triggers agent-assisted queue diversion, negating kiosk capacity benefit</div><div class="risk-card">Altéa DCS SSR codes not always consumed by downstream ramp/catering systems in real time; WCHR requests can fail to appear on OCS load sheet if coded after T-45 min</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Flight schedule activation trigger from PSS; T-24h threshold reached</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Final load sheet transmitted to cockpit via ACARS; DCS flight status set to Departed</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-03</span>Route Profitability Analysis</h3>
-    <p>Schedule Planning · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-04</span>Slot Coordination &amp; Management</h3>
-    <p>Schedule Planning · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-05</span>Codeshare &amp; Interline Schedule Planning</h3>
-    <p>Schedule Planning · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-06</span>Schedule Change Management</h3>
-    <p>Schedule Planning · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-07</span>Capacity Planning &amp; Utilization</h3>
-    <p>Schedule Planning · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-08</span>New Market Entry Feasibility</h3>
-    <p>Schedule Planning · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-09</span>Alliance &amp; Partnership Network Strategy</h3>
-    <p>Schedule Planning · 19 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-10</span>SSIM File Management &amp; Distribution</h3>
-    <p>Schedule Planning · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-11</span>Schedule Publication &amp; GDS Loading</h3>
-    <p>Schedule Planning · 15 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-12</span>Irregular Operations Recovery Planning</h3>
-    <p>Schedule Planning · 18 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-13</span>Charter &amp; Ad-Hoc Flight Planning</h3>
-    <p>Schedule Planning · 17 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-14</span>Competition &amp; Capacity Benchmarking</h3>
-    <p>Schedule Planning · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-SP-15</span>Strategic Network Planning</h3>
-    <p>Schedule Planning · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-sp-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cm-15/"><span class="arrow">←</span><span><span class="sub">Previous</span>CM-15 · Crew Payroll &amp; Hours Tracking</span></a><a class="pn-btn" href="../go-02/"><span><span class="sub">Next</span>GO-02 · Baggage Acceptance &amp; Handling</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
