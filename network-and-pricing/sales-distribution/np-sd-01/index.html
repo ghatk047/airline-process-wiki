@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Airport &amp; Gate Management · Ground Operations &amp; Airport Services · Airlines Process Wiki</title>
+<title>NP-SD-01 · GDS Channel Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -77,7 +78,7 @@
       </div>
       <a class="sidebar-l2-link" href="../../../network-and-pricing/sales-distribution/">Sales &amp; Distribution</a>
       <div class="sidebar-l3">
-        <a class="sidebar-l3-link" href="../../../network-and-pricing/sales-distribution/np-sd-01/"><span class="status-dot status-done"></span><span class="pid">NP-SD-01</span>GDS Channel Management</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/sales-distribution/np-sd-01/"><span class="status-dot status-done"></span><span class="pid">NP-SD-01</span>GDS Channel Management</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/sales-distribution/np-sd-02/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-02</span>Direct Channel Management (Web &amp; App)</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/sales-distribution/np-sd-03/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-03</span>Travel Agency &amp; TMC Management</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/sales-distribution/np-sd-04/"><span class="status-dot status-queue"></span><span class="pid">NP-SD-04</span>Corporate Account Sales Management</a>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-queue"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -242,81 +243,218 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
-  <span class="current">Airport &amp; Gate Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/sales-distribution/">Sales &amp; Distribution</a><span class="sep">›</span>
+  <span class="current">NP-SD-01 · GDS Channel Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Airport &amp; Gate Management</h1>
-    <p>Ground Operations &amp; Airport Services · 0 of 7 subprocesses complete · Updated 2026-03-18 21:16</p>
+    <h1>GDS Channel Management</h1>
+    <p>Network Planning &amp; Scheduling › Sales &amp; Distribution · 14 L4 steps · 5 phases · 7 decision gates · Updated 2026-03-18 21:16</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-SD-01</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-01</span>Passenger Check-In &amp; Boarding</h3>
-    <p>Airport &amp; Gate Management · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-sd-01">
+      <img src="../../../assets/img/np-sd-01.png" alt="NP-SD-01 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-sd-01').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-sd-01').style.display='flex'">
+      <div id="diag-placeholder-np-sd-01" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-01/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Negotiate and renew GDS participation agreements</td>
+  <td class="td-role">Director of Distribution Strategy</td>
+  <td><span class="stag amadeus">Sabre GDS / Travelport GDS / Amadeus GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">Annual contract review trigger; GDS segment fee schedule; competitive benchmark data</td>
+  <td style="font-size:10px">Signed GDS participation agreement; segment incentive thresholds; preferred agency incentive schedule</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Blended GDS cost per segment ≤ $8.50; contract renewal completed ≥ 60 days before expiry</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Configure airline inventory and booking classes in GDS</td>
+  <td class="td-role">Distribution Systems Analyst</td>
+  <td><span class="stag amadeus">Amadeus GDS / Sabre GDS / Travelport GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">Signed GDS agreement; booking class structure from Revenue Management; IATA airline code</td>
+  <td style="font-size:10px">Live airline profile in each GDS; RBD (reservation booking designator) map configured; availability feed active</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GDS profile accuracy 100%; go-live within 5 business days of agreement signing</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Validate GDS neutral display compliance</td>
+  <td class="td-role">Distribution Systems Analyst</td>
+  <td><span class="stag gds">OAG Schedule Analyser / Sabre GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">Live GDS airline profile; IATA neutral display rules (Resolution 787)</td>
+  <td style="font-size:10px">Neutral display compliance report; exception list for escalation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Neutral display compliance 100%; exceptions resolved within 48 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">File published fares to ATPCO for GDS distribution</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag custom">ATPCO</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved fare structures from Pricing team; competitive market fare intelligence</td>
+  <td style="font-size:10px">Filed fares in ATPCO database; automated distribution to all subscribed GDSs</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fare filing lead time ≤ 24 hours from approval; filing accuracy rate ≥ 99.5%; fares live in GDS within 6 hours of ATPCO sync</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Distribute ancillary content via GDS Rich Content &amp; Branding</td>
+  <td class="td-role">Distribution Systems Analyst</td>
+  <td><span class="stag amadeus">Sabre GDS / Travelport GDS / Amadeus GDS (Rich Content &amp; Branding)</span></td>
+  <td style="font-size:10px;color:#6b7280">Ancillary product catalogue (seat upgrades, checked bags, meals); branded fare family definitions</td>
+  <td style="font-size:10px">Branded fare families and ancillary options visible in participating GDS terminals and OTA search displays</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Ancillary attachment rate via GDS ≥ 18%; branded content display coverage ≥ 95% of GDS-connected terminals supporting RCB</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Validate fare parity across all GDS channels</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM) / Sabre AirVision Revenue Manager</span></td>
+  <td style="font-size:10px;color:#6b7280">Filed fares in ATPCO; live GDS availability and fare display data; direct channel pricing</td>
+  <td style="font-size:10px">Fare parity compliance report; exception log with root cause and remediation actions</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fare parity compliance ≥ 99%; parity exceptions resolved within 2 hours of detection</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Onboard travel agency and assign GDS PCC</td>
+  <td class="td-role">Agency Sales Manager</td>
+  <td><span class="stag amadeus">Sabre GDS / Travelport GDS / Amadeus GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">Agency IATA accreditation certificate; agency booking tool selection; requested GDS access level</td>
+  <td style="font-size:10px">Active GDS pseudo-city code (PCC) for agency; booking access enabled; welcome pack issued</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Agency onboarding cycle time ≤ 3 business days; zero unauthorised PCC provisioning incidents per quarter</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Configure corporate account discount in Sabre PRISM</td>
+  <td class="td-role">Corporate Sales Manager</td>
+  <td><span class="stag amadeus">Sabre PRISM / Amadeus Agency Insight</span></td>
+  <td style="font-size:10px;color:#6b7280">Executed corporate contract; negotiated discount tiers; eligible fare classes</td>
+  <td style="font-size:10px">Corporate account code active in GDS; automated discount application rules configured; deal tracking enabled</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Corporate account setup within 5 business days of contract execution; discount application accuracy 100%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Set up automated booking data feed to TMC back-office</td>
+  <td class="td-role">Distribution Systems Analyst</td>
+  <td><span class="stag gds">Sabre PRISM / Travelport GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">TMC back-office system specifications (Concur Travel, Cytric, Serko); booking data feed format requirements</td>
+  <td style="font-size:10px">Automated GDS booking data feed to TMC; PNR data mapping confirmed; feed latency within SLA</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data feed latency ≤ 4 hours; booking record completeness ≥ 99.5%; zero PNR data truncation incidents</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Monitor GDS channel booking performance and cost</td>
+  <td class="td-role">Distribution Analytics Manager</td>
+  <td><span class="stag aws">AWS Redshift / Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Daily GDS booking extracts; segment fee invoices; PSS booking data from Amadeus Altéa</td>
+  <td style="font-size:10px">Channel performance dashboard; cost-per-booking by GDS; GDS vs. direct channel share trend report</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GDS channel share of total bookings ≤ 40%; weekly channel cost variance report delivered every Monday</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Audit and reconcile monthly GDS segment fee invoice</td>
+  <td class="td-role">Finance Analyst</td>
+  <td><span class="stag gds">SAP S/4HANA Finance (FI/CO) / Sabre GDS</span></td>
+  <td style="font-size:10px;color:#6b7280">Monthly GDS segment fee invoice; actual booked segment count from PSS; previous month dispute log</td>
+  <td style="font-size:10px">Reconciled invoice posted in SAP FI/CO; dispute claim submitted to GDS for billing errors</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Invoice reconciliation accuracy ≥ 99%; GDS billing disputes filed within 30 days of invoice receipt</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Identify and prioritise agencies for NDC migration</td>
+  <td class="td-role">Director of Distribution Strategy</td>
+  <td><span class="stag amadeus">Amadeus Agency Insight / AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Agency GDS booking volume; NDC certification registry (IATA); agency technology roadmap data</td>
+  <td style="font-size:10px">NDC migration priority tier list; agency communication and incentive plan; migration timeline</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NDC-enabled agencies ≥ 30% of total GDS booking volume within 12 months</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Onboard certified agency to NDC API Gateway</td>
+  <td class="td-role">Distribution Systems Analyst</td>
+  <td><span class="stag amadeus">NDC API Gateway / Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">IATA NDC-certified agency; API credentials; agreed IATA NDC schema version</td>
+  <td style="font-size:10px">Agency live on NDC channel; NDC booking, servicing, and ancillary capability confirmed in UAT</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NDC onboarding cycle time ≤ 10 business days; NDC API error rate &lt; 1% at go-live</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Monitor NDC adoption rate and distribution cost savings</td>
+  <td class="td-role">Distribution Analytics Manager</td>
+  <td><span class="stag amadeus">AWS Redshift / Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">NDC booking data; GDS segment fee data; direct channel booking data</td>
+  <td style="font-size:10px">NDC share report; distribution cost savings analysis vs. GDS; content gap register for NDC fallback scenarios</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NDC booking share ≥ 25% of total distribution within 18 months; NDC cost per booking ≤ $2.50 vs. ≥ $8.50 for GDS</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-04</span>Gate Management &amp; Assignment</h3>
-    <p>Airport &amp; Gate Management · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-SD-01</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network Planning &amp; Scheduling</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Sales &amp; Distribution</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">GDS Channel Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">14 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">7 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">9 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Director of Distribution Strategy</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Distribution Systems Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Pricing Analyst</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Revenue Management Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>Agency Sales Manager</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Corporate Sales Manager</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Distribution Analytics Manager</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Finance Analyst</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag amadeus">Sabre GDS / Travelport GDS / Amadeus GDS</span><span class="stag amadeus">Amadeus GDS / Sabre GDS / Travelport GDS</span><span class="stag gds">OAG Schedule Analyser / Sabre GDS</span><span class="stag custom">ATPCO</span><span class="stag amadeus">Sabre GDS / Travelport GDS / Amadeus GDS (Rich Content &amp; Branding)</span><span class="stag amadeus">Amadeus Revenue Management (NRM / AltéaRM) / Sabre AirVision Revenue Manager</span><span class="stag amadeus">Sabre PRISM / Amadeus Agency Insight</span><span class="stag gds">Sabre PRISM / Travelport GDS</span><span class="stag aws">AWS Redshift / Tableau</span><span class="stag gds">SAP S/4HANA Finance (FI/CO) / Sabre GDS</span><span class="stag amadeus">Amadeus Agency Insight / AWS Redshift</span><span class="stag amadeus">NDC API Gateway / Amadeus Altéa PSS</span><span class="stag amadeus">AWS Redshift / Amadeus Altéa PSS</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Negotiate and renew GDS participation agreements</span><span class="kval">Blended GDS cost per segment ≤ $8.50; contract renewal completed ≥ 60 days before expiry</span></div><div class="krow"><span class="kname">Configure airline inventory and booking classes in GDS</span><span class="kval">GDS profile accuracy 100%; go-live within 5 business days of agreement signing</span></div><div class="krow"><span class="kname">Validate GDS neutral display compliance</span><span class="kval">Neutral display compliance 100%; exceptions resolved within 48 hours</span></div><div class="krow"><span class="kname">File published fares to ATPCO for GDS distribution</span><span class="kval">Fare filing lead time ≤ 24 hours from approval; filing accuracy rate ≥ 99.5%; fares live in GDS within 6 hours of ATPCO sync</span></div><div class="krow"><span class="kname">Distribute ancillary content via GDS Rich Content &amp; Branding</span><span class="kval">Ancillary attachment rate via GDS ≥ 18%; branded content display coverage ≥ 95% of GDS-connected terminals supporting RCB</span></div><div class="krow"><span class="kname">Validate fare parity across all GDS channels</span><span class="kval">Fare parity compliance ≥ 99%; parity exceptions resolved within 2 hours of detection</span></div><div class="krow"><span class="kname">Onboard travel agency and assign GDS PCC</span><span class="kval">Agency onboarding cycle time ≤ 3 business days; zero unauthorised PCC provisioning incidents per quarter</span></div><div class="krow"><span class="kname">Configure corporate account discount in Sabre PRISM</span><span class="kval">Corporate account setup within 5 business days of contract execution; discount application accuracy 100%</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">GDS segment fees exceed direct booking cost by 3–5x; renegotiation leverage is weak without a credible NDC alternative to threaten channel shift</div><div class="risk-card">RBD misalignment between RM inventory buckets and GDS booking class display causes sell-up failures and unintended availability leakage</div><div class="risk-card">GDS display algorithm rankings can deprioritise non-alliance carriers; limited contractual recourse under IATA display rules for low-frequency routes</div><div class="risk-card">ATPCO distribution windows are time-boxed (4× daily sync cycles); last-minute competitive fare responses are delayed by up to 6 hours, costing revenue on price-sensitive O&amp;Ds</div><div class="risk-card">Many TMCs still use legacy green-screen GDS terminals with no RCB rendering capability; ancillary revenue opportunity is entirely lost for these bookings without an NDC fallback</div><div class="risk-card">Discrepancies between GDS fare display and website pricing trigger OTA meta-search penalties and TMC complaints; manual reconciliation across three GDSs is resource-intensive</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Annual contract review trigger; GDS segment fee schedule; competitive benchmark data</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">NDC share report; distribution cost savings analysis vs. GDS; content gap register for NDC fallback scenarios</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-04/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-08</span>Passenger Disruption Handling (IRROP)</h3>
-    <p>Airport &amp; Gate Management · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-09</span>Wheelchair &amp; Special Assistance Services</h3>
-    <p>Airport &amp; Gate Management · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-10</span>VIP &amp; Premium Passenger Handling</h3>
-    <p>Airport &amp; Gate Management · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-13</span>Airport Security Compliance (TSA/CBP)</h3>
-    <p>Airport &amp; Gate Management · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-15</span>Station Performance &amp; KPI Reporting</h3>
-    <p>Airport &amp; Gate Management · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../np-pf-15/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-PF-15 · Low Fare Guarantee Program Management</span></a><a class="pn-btn" href="../np-sd-02/"><span><span class="sub">Next</span>NP-SD-02 · Direct Channel Management (Web &amp; App)</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

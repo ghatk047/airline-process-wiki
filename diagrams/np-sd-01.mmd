@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1["Phase 1: GDS Setup & Configuration"]
+    A([Start]) --> B[Negotiate GDS\nagreements]
+    B --> C{Accept terms?}
+    C -- No --> B
+    C -- Yes --> D[Configure airline\ninventory in GDS]
+    D --> E{Display\ncompliant?}
+    E -- No --> D
+    E -- Yes --> F[Validate neutral\ndisplay rules]
+  end
+  subgraph P2["Phase 2: Fare & Content Distribution"]
+    F --> G[File fares\nvia ATPCO]
+    G --> H[Distribute ancillary\ncontent — GDS RCB]
+    H --> I{Parity\nexceptions?}
+    I -- Yes --> G
+    I -- No --> J[Parity confirmed\nacross channels]
+  end
+  subgraph P3["Phase 3: Agency & TMC Enablement"]
+    J --> K{Agency IATA\naccreditation valid?}
+    K -- No --> L([Block access])
+    K -- Yes --> M[Assign GDS PCC\nand booking access]
+    M --> N[Configure corporate\naccount in PRISM]
+    N --> O[Set up TMC\ndata feed]
+  end
+  subgraph P4["Phase 4: Channel Performance Monitoring"]
+    O --> P[Monitor GDS booking\nperformance — Redshift]
+    P --> Q{Invoice vs.\nbookings match?}
+    Q -- No --> R[Raise GDS\nfee dispute]
+    R --> Q
+    Q -- Yes --> S[Approve invoice\nSAP FI/CO]
+  end
+  subgraph P5["Phase 5: NDC Migration"]
+    S --> T{Agency NDC-certified\nand volume threshold?}
+    T -- No --> U[Remain on\nGDS channel]
+    T -- Yes --> V[Onboard agency\nto NDC API]
+    V --> W{NDC cert &\nAPI test passed?}
+    W -- No --> V
+    W -- Yes --> X[Monitor NDC\nadoption & savings]
+    X --> Y([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style L fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600
