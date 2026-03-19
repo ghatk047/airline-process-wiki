@@ -1,0 +1,46 @@
+flowchart LR
+  subgraph P1[Phase 1: Vendor Sourcing and Qualification]
+    A([Start]) --> B[Define ground handling scope]
+    B --> C[Issue RFP via procurement portal]
+    C --> D{Vendor meets\nqualification criteria?}
+    D -- No --> C
+    D -- Yes --> E[Conduct on-site capability audit]
+  end
+  subgraph P2[Phase 2: Contract Negotiation and Award]
+    E --> F[Negotiate SLA terms and penalty rates]
+    F --> G{Legal and safety\ncompliance approved?}
+    G -- No --> F
+    G -- Yes --> H[Execute contract and issue PO]
+  end
+  subgraph P3[Phase 3: Vendor Onboarding and Activation]
+    H --> I[Register vendor in airport ops system]
+    I --> J[Configure KPI thresholds in dashboard]
+    J --> K{Pre-operations readiness\ncheck passed?}
+    K -- No --> L[Resolve readiness gaps]
+    L --> K
+    K -- Yes --> M[Activate vendor for live operations]
+  end
+  subgraph P4[Phase 4: Performance Monitoring and Remediation]
+    M --> N[Ingest daily turnaround performance data]
+    N --> O[Generate monthly vendor scorecard]
+    O --> P{KPI compliance\nwithin SLA threshold?}
+    P -- No --> Q[Issue performance improvement notice]
+    Q --> N
+    P -- Yes --> R[Archive scorecard and close period]
+  end
+  subgraph P5[Phase 5: Contract Review and Renewal]
+    R --> S[Conduct annual safety and compliance audit]
+    S --> T{Audit score\nacceptable and renew?}
+    T -- No --> U[Initiate re-tender or termination]
+    U --> C
+    T -- Yes --> V[Execute contract renewal]
+    V --> W([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600

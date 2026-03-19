@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GO-06 Slides — Ground Handling Vendor Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-06</span>
+    <h1>Ground Handling Vendor Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/go-06.png" alt="BPMN for GO-06" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Ramp & Turnaround Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-06</span>
+    <h1>Ground Handling Vendor Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> GO-06</li>
+          <li><strong>L1 Domain:</strong> Ground Operations &amp; Airport Services</li>
+          <li><strong>L2 Process:</strong> Ramp &amp; Turnaround Operations</li>
+          <li><strong>L3 Name:</strong> Ground Handling Vendor Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Define ground handling scope and service requireme</li><li><strong>Phase 2:</strong> Negotiate SLA terms, turnaround targets, and penal</li><li><strong>Phase 3:</strong> Register vendor in airport operations system</li><li><strong>Phase 4:</strong> Ingest daily turnaround performance data from ops </li><li><strong>Phase 5:</strong> Conduct annual vendor safety and compliance audit</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Commercial Manager</li><li>Contract Manager</li><li>Ground Handling Auditor</li><li>Ground Handling Manager</li><li>Ground Ops Coordinator</li><li>Head of Ground Operations</li><li>Legal Counsel</li><li>Performance Analyst</li><li>Procurement Lead</li><li>Station Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Airport Management</li><li>Archer GRC</li><li>SAP Ariba</li><li>SAP S/4HANA Finance (FI/CO)</li><li>SITA Airport Management System (AMS)</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Ramp & Turnaround Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-06</span>
+    <h1>Ground Handling Vendor Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Define ground handling scope and service requirements</td>
+        <td class="kpi-col">Scope document published within 10 business days of trigger event</td>
+        <td class="pain-col">Scope creep when station-specific deicing or narrow-body-only ramp constraints are not captured early, leading to SLA gaps on first winter ops</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Issue RFP to pre-qualified ground handlers</td>
+        <td class="kpi-col">RFP issued within 5 business days of scope sign-off; minimum 3 qualified bidders invited</td>
+        <td class="pain-col">Thin vendor panels at secondary airports (e.g. single-handler markets) reduce competitive tension and inflate unit rates by up to 25% vs hub markets</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Evaluate vendor proposals against qualification criteria</td>
+        <td class="kpi-col">Evaluation completed within 15 business days of RFP close; minimum ISAGO score ≥ 80%</td>
+        <td class="pain-col">ISAGO certificates from some regional handlers are expired or cover a different station than the one being contracted, requiring manual verification against IATA ISAGO registry</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Conduct on-site capability and safety audit</td>
+        <td class="kpi-col">On-site audit completed within 20 business days of shortlist; zero critical findings to proceed</td>
+        <td class="pain-col">Handlers at code-share or alliance partner hubs may operate under local airport authority waivers that do not meet airline-specific safety standards, creating liability exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Negotiate SLA terms, turnaround targets, and penalty rates</td>
+        <td class="kpi-col">SLA negotiation concluded within 10 business days; penalty trigger at ≥3 consecutive monthly SLA breaches</td>
+        <td class="pain-col">Handlers resist penalty clauses tied to D0 when ATC or fuel delays (outside handler control) are not explicitly excluded in the SLA attribution model</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Conduct legal and aviation safety compliance review</td>
+        <td class="kpi-col">Legal review cycle ≤ 15 business days; zero unresolved liability caps at execution</td>
+        <td class="pain-col">Jurisdictional variation in ground handling regulations (e.g. EU Groundhandling Directive 96/67/EC vs. FAA Part 139 requirements for US stations) extends review cycles for multi-station contracts</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Execute contract and issue purchase order</td>
+        <td class="kpi-col">PO issued within 2 business days of contract execution; contract visible in SAP Ariba within same day</td>
+        <td class="pain-col">Manual data re-entry when contracts are executed outside SAP Ariba (e.g. via email exchange) causes vendor master mismatches and delayed invoice matching</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Register vendor in airport operations system</td>
+        <td class="kpi-col">Vendor profile configured and tested in SITA AMS ≥ 5 business days before go-live</td>
+        <td class="pain-col">SITA AMS vendor profiles are station-scoped; multi-station contracts require separate profile creation at each station, increasing setup time and risk of configuration inconsistencies</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Configure KPI monitoring thresholds in performance dashboard</td>
+        <td class="kpi-col">Dashboard live and validated against 5 historical flights before go-live; alert latency ≤ 1 hour from event</td>
+        <td class="pain-col">Data latency between Amadeus Airport Management and Tableau can exceed 90 minutes during peak schedules, causing delayed breach detection and missed real-time intervention windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Conduct pre-operations readiness assessment</td>
+        <td class="kpi-col">100% of vendor staff complete airline safety induction before go-live; GSE serviceability ≥ 95% on day 1</td>
+        <td class="pain-col">High staff turnover at ground handling contractors (industry average &gt;40% p.a.) means safety induction records in SAP SuccessFactors are frequently out of date within weeks of go-live</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Ingest daily turnaround performance data from ops systems</td>
+        <td class="kpi-col">≥ 98% of flights matched to vendor records within 24 hours; data completeness ≥ 99%</td>
+        <td class="pain-col">ACARS timestamp gaps on narrow-body short-haul sectors (sub-45-min turns) create ambiguous attribution when two ground handlers operate at adjacent stands simultaneously</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Generate monthly vendor performance scorecard</td>
+        <td class="kpi-col">Scorecard issued by business day 5 of following month; D0 target ≥78%, bag delivery ≤20 min</td>
+        <td class="pain-col">Delay attribution disputes between airline and vendor are common where root-cause coding (e.g. IATA delay code 93 vs. 61) is entered by different parties, inflating apparent handler performance</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Assess KPI compliance against contracted SLA thresholds</td>
+        <td class="kpi-col">Compliance assessment completed within 2 business days of scorecard publication; penalty invoice raised within 5 days of Red verdict</td>
+        <td class="pain-col">SLA cure periods (typically 30 days) allow repeated near-misses that never formally trigger penalties, masking systemic under-performance until a major disruption event</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Issue formal performance improvement notice to vendor</td>
+        <td class="kpi-col">PIP issued within 5 business days of Red verdict; vendor root-cause response required within 10 business days</td>
+        <td class="pain-col">Ground handlers often attribute performance failures to airline-side delays (late aircraft, late pax boarding) that are poorly documented, making PIP enforcement difficult without granular ACARS evidence</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Conduct annual vendor safety and compliance audit</td>
+        <td class="kpi-col">Annual audit completed ≥ 90 days before contract renewal date; zero High-risk open findings at renewal</td>
+        <td class="pain-col">ISAGO audit cycles (every 2 years) do not align with annual contract reviews, creating a 12-month window where compliance status is unverified between ISAGO renewal and airline audit</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Evaluate contract renewal versus re-tender decision</td>
+        <td class="kpi-col">Decision memo issued ≥ 60 days before contract expiry; re-tender initiated if 12-month D0 average &lt; 75%</td>
+        <td class="pain-col">At captive single-handler airports, re-tender is not a credible threat, weakening commercial leverage and often resulting in rate increases at renewal regardless of performance history</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Execute contract renewal or initiate new sourcing cycle</td>
+        <td class="kpi-col">Contract renewal executed ≥ 30 days before expiry; zero lapse in contractual coverage at any station</td>
+        <td class="pain-col">Contract lapses during re-tender transitions force reliance on month-to-month SGHA extensions at full tariff rates, increasing ground handling costs by 15–30% until new contract is executed</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Ramp & Turnaround Operations</span>
+  </div>
+</div>
+
+</body>
+</html>
