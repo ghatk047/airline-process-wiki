@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Finance &amp; Accounting · Corporate Support Functions · Airlines Process Wiki</title>
+<title>GO-04 · Gate Management &amp; Assignment · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -161,12 +162,12 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
-        <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-04/"><span class="status-dot status-done"></span><span class="pid">GO-04</span>Gate Management &amp; Assignment</a>
+        <a class="sidebar-l3-link active" href="../../../ground-operations/airport-gate-management/go-04/"><span class="status-dot status-done"></span><span class="pid">GO-04</span>Gate Management &amp; Assignment</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-08/"><span class="status-dot status-queue"></span><span class="pid">GO-08</span>Passenger Disruption Handling (IRROP)</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-09/"><span class="status-dot status-queue"></span><span class="pid">GO-09</span>Wheelchair &amp; Special Assistance Services</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-10/"><span class="status-dot status-queue"></span><span class="pid">GO-10</span>VIP &amp; Premium Passenger Handling</a>
@@ -213,8 +214,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-queue"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
@@ -242,117 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Corporate Support Functions</a><span class="sep">›</span>
-  <span class="current">Finance &amp; Accounting</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
+  <a href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a><span class="sep">›</span>
+  <span class="current">GO-04 · Gate Management &amp; Assignment</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Finance &amp; Accounting</h1>
-    <p>Corporate Support Functions · 1 of 11 subprocesses complete · Updated 2026-03-19 13:58</p>
+    <h1>Gate Management &amp; Assignment</h1>
+    <p>Ground Operations &amp; Airport Services › Airport &amp; Gate Management · 18 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-19 13:58</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">GO-04</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-01</span>Financial Planning &amp; Budgeting</h3>
-    <p>Finance &amp; Accounting · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-go-04">
+      <img src="../../../assets/img/go-04.png" alt="GO-04 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-go-04').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-go-04').style.display='flex'">
+      <div id="diag-placeholder-go-04" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-01/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Import scheduled movements &amp; gate inventory</td>
+  <td class="td-role">Gate Planning Analyst</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">SSIM schedule export, airport gate inventory with wingspan &amp; equipment constraints</td>
+  <td style="font-size:10px">Flight movement list with time windows loaded into AMS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate plan build initiated ≥18h before day of operations; 100% of scheduled movements imported</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Execute automated gate assignment optimisation</td>
+  <td class="td-role">Gate Planning Analyst</td>
+  <td><span class="stag custom">SITA AMS Gate Optimizer</span></td>
+  <td style="font-size:10px;color:#6b7280">Flight movement list, terminal zone rules, contact-stand preference list</td>
+  <td style="font-size:10px">Draft gate assignment plan covering all scheduled movements</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">≥92% of flights auto-assigned without manual intervention; optimisation run time &lt;10 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Validate assignments against aircraft type constraints</td>
+  <td class="td-role">Gate Planning Analyst</td>
+  <td><span class="stag custom">SITA AMS + Airline Fleet Database</span></td>
+  <td style="font-size:10px;color:#6b7280">Draft gate assignment plan, aircraft type per flight leg from PSS</td>
+  <td style="font-size:10px">Validated gate assignment list; flagged mismatches routed for manual resolution</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">0 gate/aircraft-type mismatches published; validation complete ≥14h before operations day</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Coordinate gate pre-conditioning with terminal ops</td>
+  <td class="td-role">Terminal Operations Coordinator</td>
+  <td><span class="stag custom">Airport Collaborative Decision Making (A-CDM) Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">Validated gate plan, cleaning and catering subcontractor schedules</td>
+  <td style="font-size:10px">Confirmed gate readiness schedule aligned with ground handler SLAs</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate confirmed ready ≥30 min before scheduled arrival; pre-conditioning exceptions &lt;5%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.5</td>
+  <td class="td-name">Publish gate plan to FIDS and stakeholder systems</td>
+  <td class="td-role">Gate Planning Analyst</td>
+  <td><span class="stag custom">SITA FIDS + A-CDM Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed gate assignment plan</td>
+  <td style="font-size:10px">Gate assignments published to passenger displays, ground handler portals, and crew bus scheduler</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Published ≥12h before day of operations; 100% of gates reflected in FIDS within 90 seconds of publish</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Ingest real-time flight status via ACARS</td>
+  <td class="td-role">Airport Operations Controller</td>
+  <td><span class="stag custom">SITA ACARS + SITA AMS</span></td>
+  <td style="font-size:10px;color:#6b7280">ACARS block-off/estimated arrival messages, ATC slot data, weather NOTAMs</td>
+  <td style="font-size:10px">Updated ETA per inbound flight refreshed in AMS every 5 minutes</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ETA refresh cycle ≤5 min; ETA data completeness ≥97% of active flights</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Confirm or revise gate assignments from updated ETAs</td>
+  <td class="td-role">Airport Operations Controller</td>
+  <td><span class="stag custom">SITA AMS</span></td>
+  <td style="font-size:10px;color:#6b7280">Updated ETAs, current gate occupancy status in AMS</td>
+  <td style="font-size:10px">Confirmed or revised gate assignment; conflict alert generated if overlap detected</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate confirmed ≥60 min before scheduled arrival; &lt;5% of gates reassigned day-of</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Notify ground handling of confirmed gate assignments</td>
+  <td class="td-role">Airport Operations Controller</td>
+  <td><span class="stag custom">A-CDM Portal + SITA AMS Messaging</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed gate assignments</td>
+  <td style="font-size:10px">Notifications dispatched to ground handler, fueller, caterer, and crew bus scheduler</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Notification sent ≥45 min before arrival; stakeholder acknowledgement rate ≥95%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Detect gate conflict from delay or early arrival</td>
+  <td class="td-role">Airport Operations Controller</td>
+  <td><span class="stag custom">SITA AMS Conflict Alerting</span></td>
+  <td style="font-size:10px;color:#6b7280">Real-time gate occupancy data, inbound ETA stream</td>
+  <td style="font-size:10px">Conflict alert with affected flight pair, overlap duration, and time to arrival</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Conflict detected ≥45 min before arrival; 0 aircraft held on apron &gt;15 min due to gate unavailability</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Assess remote stand and bus bridge feasibility</td>
+  <td class="td-role">Airport Operations Controller</td>
+  <td><span class="stag custom">SITA AMS + Ground Transport Management System</span></td>
+  <td style="font-size:10px;color:#6b7280">Conflict alert, remote stand inventory, airside bus availability</td>
+  <td style="font-size:10px">Remote stand feasibility decision with estimated passenger transfer time</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Decision made within 10 min of conflict detection; remote stand option assessed for 100% of conflict alerts</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Execute gate swap or remote stand assignment</td>
+  <td class="td-role">Airport Operations Controller</td>
+  <td><span class="stag custom">SITA AMS</span></td>
+  <td style="font-size:10px;color:#6b7280">Feasibility decision, available contact gate or remote stand ID</td>
+  <td style="font-size:10px">Revised gate/stand assignment confirmed in AMS and pushed to all connected systems</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate swap communicated to all parties within 5 min of decision; AMS record updated within 60 seconds</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Update FIDS, departure boards, and airline mobile app</td>
+  <td class="td-role">Airport Operations Controller</td>
+  <td><span class="stag amadeus">SITA FIDS + Amadeus Altéa PSS API + A-CDM Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">Revised gate assignment from AMS</td>
+  <td style="font-size:10px">Updated passenger-facing displays and push notifications via airline mobile app</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">FIDS updated within 2 min of gate change; mobile app push notification delivered within 3 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Monitor aircraft block-on time and turnaround milestones</td>
+  <td class="td-role">Ramp Operations Supervisor</td>
+  <td><span class="stag custom">SITA AMS + SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">ACARS block-on timestamp, A-CDM turnaround milestone checklist</td>
+  <td style="font-size:10px">Real-time turnaround status dashboard with milestone completion percentage</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Block-on captured within 2 min of actual; on-time departure (D0) ≥78%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Validate all ground services complete before release</td>
+  <td class="td-role">Ramp Operations Supervisor</td>
+  <td><span class="stag custom">SITA AMS Turnaround Manager + Ground Handling System</span></td>
+  <td style="font-size:10px;color:#6b7280">Fuelling confirmation, catering upload complete, baggage loaded, cabin clean signed off</td>
+  <td style="font-size:10px">Go/No-Go decision for pushback authorisation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">All services signed off ≥10 min before STD; late-service exception rate &lt;3% of turns</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Authorise pushback and release gate in AMS</td>
+  <td class="td-role">Ramp Operations Supervisor</td>
+  <td><span class="stag custom">SITA AMS + Apron Control VHF Radio</span></td>
+  <td style="font-size:10px;color:#6b7280">Go clearance from all service streams, apron traffic status from Apron Control</td>
+  <td style="font-size:10px">Pushback authorisation transmitted; gate status set to Available in AMS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gate released within 5 min of block-off; gate turnaround time ≤planned TAT per aircraft type</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Record and warehouse actual gate utilisation times</td>
+  <td class="td-role">Airport Performance Analyst</td>
+  <td><span class="stag aws">SITA AMS + AWS Redshift Data Warehouse</span></td>
+  <td style="font-size:10px;color:#6b7280">Block-on/off timestamps, gate occupancy records, planned vs. actual gate assignments</td>
+  <td style="font-size:10px">Actual vs. planned gate utilisation report loaded to Redshift</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data completeness ≥99% of movements; report available within 2h of operations day close</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Analyse gate conflict frequency and root causes</td>
+  <td class="td-role">Airport Performance Analyst</td>
+  <td><span class="stag aws">AWS Redshift + Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Gate utilisation report, conflict log, delay attribution data from OTP system</td>
+  <td style="font-size:10px">Root cause analysis report with recurring conflict patterns and improvement recommendations</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">≥80% of recurring gate conflicts identified with actionable root cause within 48h of operations day</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Update gate constraint and master data in AMS</td>
+  <td class="td-role">Gate Planning Analyst</td>
+  <td><span class="stag custom">SITA AMS Master Data Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Root cause findings, updated aircraft type assignments, revised ground equipment specs</td>
+  <td style="font-size:10px">Updated gate constraint library effective for next scheduling cycle</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Master data update cycle ≤7 days from change identification; 0 gate conflicts caused by stale constraint data in rolling 90-day window</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-02</span>Management Accounting &amp; Cost Control</h3>
-    <p>Finance &amp; Accounting · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">GO-04</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Ground Operations &amp; Airport Services</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Airport &amp; Gate Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Gate Management &amp; Assignment</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">6 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Gate Planning Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Terminal Operations Coordinator</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Airport Operations Controller</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Ramp Operations Supervisor</div><div class="swim"><div class="dot" style="background:#10b981"></div>Airport Performance Analyst</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">SITA AMS Gate Optimizer</span><span class="stag custom">SITA AMS + Airline Fleet Database</span><span class="stag custom">Airport Collaborative Decision Making (A-CDM) Portal</span><span class="stag custom">SITA FIDS + A-CDM Portal</span><span class="stag custom">SITA ACARS + SITA AMS</span><span class="stag custom">SITA AMS</span><span class="stag custom">A-CDM Portal + SITA AMS Messaging</span><span class="stag custom">SITA AMS Conflict Alerting</span><span class="stag custom">SITA AMS + Ground Transport Management System</span><span class="stag amadeus">SITA FIDS + Amadeus Altéa PSS API + A-CDM Portal</span><span class="stag custom">SITA AMS + SITA ACARS</span><span class="stag custom">SITA AMS Turnaround Manager + Ground Handling System</span><span class="stag custom">SITA AMS + Apron Control VHF Radio</span><span class="stag aws">SITA AMS + AWS Redshift Data Warehouse</span><span class="stag aws">AWS Redshift + Tableau</span><span class="stag custom">SITA AMS Master Data Management</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Import scheduled movements &amp; gate inventory</span><span class="kval">Gate plan build initiated ≥18h before day of operations; 100% of scheduled movements imported</span></div><div class="krow"><span class="kname">Execute automated gate assignment optimisation</span><span class="kval">≥92% of flights auto-assigned without manual intervention; optimisation run time &lt;10 min</span></div><div class="krow"><span class="kname">Validate assignments against aircraft type constraints</span><span class="kval">0 gate/aircraft-type mismatches published; validation complete ≥14h before operations day</span></div><div class="krow"><span class="kname">Coordinate gate pre-conditioning with terminal ops</span><span class="kval">Gate confirmed ready ≥30 min before scheduled arrival; pre-conditioning exceptions &lt;5%</span></div><div class="krow"><span class="kname">Publish gate plan to FIDS and stakeholder systems</span><span class="kval">Published ≥12h before day of operations; 100% of gates reflected in FIDS within 90 seconds of publish</span></div><div class="krow"><span class="kname">Ingest real-time flight status via ACARS</span><span class="kval">ETA refresh cycle ≤5 min; ETA data completeness ≥97% of active flights</span></div><div class="krow"><span class="kname">Confirm or revise gate assignments from updated ETAs</span><span class="kval">Gate confirmed ≥60 min before scheduled arrival; &lt;5% of gates reassigned day-of</span></div><div class="krow"><span class="kname">Notify ground handling of confirmed gate assignments</span><span class="kval">Notification sent ≥45 min before arrival; stakeholder acknowledgement rate ≥95%</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Late schedule amendments from airline ops (within T-6h) invalidate pre-built plans; no automated re-trigger of optimisation on change</div><div class="risk-card">Wide-body/narrow-body gate incompatibility not always captured in AMS master data — results in invalid auto-assignments requiring manual correction</div><div class="risk-card">Ad-hoc aircraft swaps driven by AOG maintenance events are not always reflected in Amadeus Altéa PSS in time for gate validation cycle</div><div class="risk-card">Cleaning and catering subcontractor SLA gaps at high-frequency turn stations cause gate hold-backs; A-CDM milestones not enforced contractually at all airports</div><div class="risk-card">SITA FIDS update latency (up to 90s per change batch) causes passenger confusion during rapid same-day gate changes at high-traffic terminals</div><div class="risk-card">ACARS signal dropout over oceanic routes causes ETA gaps; fallback to secondary radar feed introduces 15-min lag and degrades conflict detection accuracy</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">SSIM schedule export, airport gate inventory with wingspan &amp; equipment constraints</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Updated gate constraint library effective for next scheduling cycle</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-02/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-03</span>Revenue Accounting &amp; BSP Settlement</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-08</span>PSS (Passenger Service System) Management</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-09</span>Cybersecurity &amp; Threat Management</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-10</span>Data Engineering &amp; Analytics Platform</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-11</span>Strategic Sourcing &amp; Vendor Selection</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-12</span>Fuel Procurement &amp; Supply Chain</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-13</span>Aircraft Parts &amp; Consumables Procurement</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-14</span>Safety Management System (SMS)</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-15</span>Regulatory Compliance &amp; AOC Management</h3>
-    <p>Finance &amp; Accounting · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cs-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../go-03/"><span class="arrow">←</span><span><span class="sub">Previous</span>GO-03 · Lost &amp; Found / Baggage Tracing</span></a><a class="pn-btn" href="../go-05/"><span><span class="sub">Next</span>GO-05 · Ramp &amp; Turnaround Operations</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

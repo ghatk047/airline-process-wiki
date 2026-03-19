@@ -1,0 +1,40 @@
+flowchart LR
+  subgraph P1[Phase 1: Pre-Day Planning]
+    A([Start]) --> B[Import schedule and gate inventory]
+    B --> C[Run gate assignment optimisation]
+    C --> D{Type conflict?}
+    D -- No --> E[Publish gate plan to FIDS]
+    D -- Yes --> C
+  end
+  subgraph P2[Phase 2: Day-of Management]
+    E --> F[Ingest real-time ETAs via ACARS]
+    F --> G{Gate conflict?}
+    G -- No --> H[Notify ground handling]
+    G -- Yes --> I[Trigger conflict resolution]
+  end
+  subgraph P3[Phase 3: Conflict Resolution]
+    I --> J{Remote stand viable?}
+    J -- Yes --> K[Assign remote stand and bus]
+    J -- No --> L[Execute gate swap]
+    K --> M[Update FIDS and push notifications]
+    L --> M
+  end
+  subgraph P4[Phase 4: Turnaround and Release]
+    H --> N[Monitor turnaround milestones]
+    M --> N
+    N --> O{All services complete?}
+    O -- No --> N
+    O -- Yes --> P[Authorise pushback and release gate]
+  end
+  subgraph P5[Phase 5: Post-Ops Analysis]
+    P --> Q[Record actual gate utilisation]
+    Q --> R[Analyse conflicts and root causes]
+    R --> S[Update gate constraint master data]
+    S --> T([End])
+  end
+  style A fill:#003366,color:#fff,stroke:#003366
+  style T fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
