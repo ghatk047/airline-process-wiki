@@ -1,0 +1,49 @@
+flowchart LR
+  subgraph P1["Phase 1: Disruption Detection"]
+    A([IRROP Trigger]) --> B[Classify Disruption\nType and Cause]
+    B --> C{IRROP Threshold\nMet?}
+    C -- Monitor --> B
+    C -- Activate --> D[Open IRROP Case\nin Salesforce]
+  end
+  subgraph P2["Phase 2: PAX Identification"]
+    D --> E[Extract Manifest\nand Segment PAX]
+    E --> F[Send Proactive\nDisruption Alert]
+    F --> G{PAX Self-Served\nwithin 60 min?}
+  end
+  subgraph P3["Phase 3: Auto-Rebooking"]
+    H[Run Auto-Rebook\nEngine]
+    H --> I{Same-Day Alt\nCompliant?}
+    I -- Yes --> K[Issue Confirmed\nItinerary]
+  end
+  subgraph P4["Phase 4: Welfare Support"]
+    K --> L{Overnight Stay\nRequired?}
+    L -- Yes --> M[Issue Hotel\nVoucher]
+    L -- No --> N[Issue Meal and\nTransport Voucher]
+    M --> N
+  end
+  subgraph P5["Phase 5: Agent Recovery"]
+    O[Route to Agent\nQueue]
+    O --> P[Present OAL and\nInterline Options]
+    P --> Q{PAX Accepts\nAlternative?}
+    Q -- Yes --> K
+    Q -- No --> R[Log Refund\nRequest]
+  end
+  subgraph P6["Phase 6: Compensation and Closure"]
+    S[Process Refund\nor Compensation]
+    N --> T([Case Closed])
+    S --> T
+    T --> U[Log IRROP Event\nand Capture NPS]
+  end
+
+  G -- No --> H
+  G -- Yes --> L
+  I -- No --> O
+  R --> S
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style T fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600

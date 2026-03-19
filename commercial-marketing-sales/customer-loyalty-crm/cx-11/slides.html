@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-11 Slides — IRROP Passenger Recovery</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-11</span>
+    <h1>IRROP Passenger Recovery</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-11.png" alt="BPMN for CX-11" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-11</span>
+    <h1>IRROP Passenger Recovery</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-11</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Customer Experience Operations</li>
+          <li><strong>L3 Name:</strong> IRROP Passenger Recovery</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Monitor operational alerts for IRROP triggers</li><li><strong>Phase 2:</strong> Extract affected passenger manifest and PNR record</li><li><strong>Phase 3:</strong> Run automated rebooking engine against open invent</li><li><strong>Phase 4:</strong> Assess passenger welfare entitlement under applica</li><li><strong>Phase 5:</strong> Route unresolved cases to contact centre agent que</li><li><strong>Phase 6:</strong> Calculate entitlement and initiate compensation pa</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Airport Customer Service Agent</li><li>Customer Analytics Analyst</li><li>Customer Comms Automation</li><li>Customer Recovery Agent</li><li>Customer Recovery Analyst</li><li>Customer Recovery Manager</li><li>Customer Relations Analyst</li><li>Operations Control Analyst</li><li>Rebooking Automation System</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift</li><li>AWS SNS</li><li>Amadeus Altéa DCS</li><li>Amadeus Altéa PSS</li><li>SAP S/4HANA Finance (FI/CO)</li><li>SITA Airport Management System (AMS)</li><li>SITA Voucher Management</li><li>Sabre GDS</li><li>Salesforce Service Cloud</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-11</span>
+    <h1>IRROP Passenger Recovery</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Monitor operational alerts for IRROP triggers</td>
+        <td class="kpi-col">IRROP detection-to-alert time ≤15 min from event confirmation</td>
+        <td class="pain-col">SITA AMS integration with Altéa PSS can lag 5–10 min during high-volume events, widening the window before rebooking can begin and increasing downstream queue pressure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Classify disruption type, cause, and regulatory scope</td>
+        <td class="kpi-col">Cause code classification accuracy ≥95%; regulatory flag set within 5 min of classification</td>
+        <td class="pain-col">Weather vs. technical cause code misclassification directly affects DOT compensation liability exposure; Altéa delay code mapping requires manual override when ops and commercial teams disagree</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Activate IRROP protocol and notify stakeholders</td>
+        <td class="kpi-col">All operational stakeholders notified within 10 min of IRROP classification; case opened with correct priority tier in 100% of activations</td>
+        <td class="pain-col">Parallel activation across Altéa, Salesforce, and the crew management system has no single handshake confirmation; coordination gaps emerge during simultaneous multi-flight IRROPs</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Extract affected passenger manifest and PNR records</td>
+        <td class="kpi-col">Manifest extraction completed within 5 min of IRROP activation; contact data completeness ≥92% of affected PAX</td>
+        <td class="pain-col">Passengers booked through OTAs and GDS channels frequently have incomplete or agency-held contact fields in the Altéa PNR; direct SMS or email outreach fails for approximately 8% of affected passengers</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Segment passengers by recovery priority tier</td>
+        <td class="kpi-col">100% of premium-tier and connection-at-risk passengers classified as P1 before notification dispatch</td>
+        <td class="pain-col">Altéa segmentation logic does not automatically identify passengers with connection windows under 60 min on the same PNR; analysts must manually review itineraries, adding 10–15 min per large event</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Send proactive disruption notification with self-serve link</td>
+        <td class="kpi-col">≥90% of affected PAX notified within 30 min of IRROP activation; self-serve rebooking adoption ≥35% of notified passengers</td>
+        <td class="pain-col">Push notification delivery drops to approximately 72% for passengers without the airline app installed; passengers booked via travel agencies require manual outreach via GDS telex, which averages 20 min per agency</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Run automated rebooking engine against open inventory</td>
+        <td class="kpi-col">Auto-rebook match rate ≥70% of affected passengers on same-day service; engine execution time ≤3 min per 200-PAX event</td>
+        <td class="pain-col">Inventory constraints on popular routes during a large IRROP cause cascading rebooking failures; Altéa auto-rebook does not dynamically reprice across fare classes without a manual IT change request, locking lower-fare passengers out of available premium inventory</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Validate alternative itinerary against re-protection policy</td>
+        <td class="kpi-col">Re-protection policy compliance ≥98% of issued auto-rebooks; policy exception review completed within 5 min</td>
+        <td class="pain-col">Re-protection thresholds are hardcoded configuration parameters in Altéa requiring an IT change request to update; during major weather events affecting 50+ flights simultaneously the static thresholds cannot flex to match available capacity</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Issue confirmed rebooking and send updated itinerary</td>
+        <td class="kpi-col">Itinerary confirmation delivered within 5 min of rebooking commit; boarding pass pre-issuance success rate ≥95%</td>
+        <td class="pain-col">DCS boarding pass pre-issuance fails for departures more than 24 hrs out or where gate assignment is pending at origin; passengers receive confirmation but must re-check in at the airport, creating service desk queue spikes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Assess passenger welfare entitlement under applicable regulations</td>
+        <td class="kpi-col">Entitlement determination completed within 15 min of IRROP activation; regulatory accuracy ≥99% validated by Customer Relations</td>
+        <td class="pain-col">Dual-regulation scenarios on transatlantic routes require manual legal review; Salesforce workflow rules do not auto-resolve cross-jurisdictional entitlement conflicts, exposing the airline to under-compensation claims and EU regulatory fines</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Issue hotel accommodation vouchers for stranded passengers</td>
+        <td class="kpi-col">Hotel voucher issuance within 45 min of overnight determination; room availability confirmed for ≥90% of entitled passengers</td>
+        <td class="pain-col">Hotel partner API connectivity is inconsistent at smaller outstations; manual phone booking is required at approximately 30% of network stations, extending wait times to 2+ hrs and exhausting customer service staff capacity during simultaneous multi-station IRROPs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Distribute meal and ground transportation vouchers</td>
+        <td class="kpi-col">≥85% of vouchers issued digitally (app or email); airport service desk queue time ≤20 min during events under 300 PAX</td>
+        <td class="pain-col">Digital voucher adoption varies significantly by passenger demographic; elderly and tech-averse passengers queue at service desks, creating bottlenecks during large IRROPs that overwhelm deployed airport staff ratios</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Route unresolved cases to contact centre agent queue</td>
+        <td class="kpi-col">P1 passengers reached by agent within 5 min; P2 within 15 min; P3 within 30 min of queue entry</td>
+        <td class="pain-col">Contact centre surge during large IRROP events pushes wait times to 60–90 min for P3 passengers; AWS Connect IVR overflow routing is not dynamically linked to real-time IRROP case volume for on-demand agent staffing scale-up</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Present interline and OAL rebooking options to passenger</td>
+        <td class="kpi-col">Interline option presented within 10 min of agent engagement; OAL rebook success rate ≥60% when invoked</td>
+        <td class="pain-col">Interline agreements and bilateral e-ticketing eligibility must be manually verified in Sabre before issuance; Altéa has no automated interline rebook capability for many partner carriers, requiring agents to switch between Sabre and Altéa and manually reissue tickets</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Confirm passenger decision on rebooking or refund</td>
+        <td class="kpi-col">Agent average handling time ≤12 min per case; passenger acceptance rate of presented alternatives ≥75%</td>
+        <td class="pain-col">Refund processing for NDC-booked tickets falls outside the standard Altéa refund workflow; agents must manually process credits across 2–3 systems, extending handling time by 8–12 min per NDC case and increasing error rates</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Calculate entitlement and initiate compensation payment</td>
+        <td class="kpi-col">Refund processing completed within 7 business days per DOT requirement; compensation acknowledgement letter issued within 24 hrs of claim receipt</td>
+        <td class="pain-col">Refunds for GDS and OTA-booked tickets must route through the original selling channel; the airline has no direct refund path to the customer, requiring agency debit memos or manual credit card processing that can extend settlement to 15–30 business days</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Log IRROP event data and capture NPS impact</td>
+        <td class="kpi-col">Post-IRROP NPS survey response rate ≥25%; recovery satisfaction score ≥3.5 out of 5.0; event record published within 48 hrs of case closure</td>
+        <td class="pain-col">NPS survey responses from post-IRROP emails are not automatically linked to specific IRROP event records in Salesforce; manual tagging is required, delaying analytics availability by 48–72 hrs and reducing the accuracy of root cause attribution</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+</body>
+</html>
