@@ -1,0 +1,50 @@
+flowchart LR
+  subgraph P1["Phase 1: Cost Baseline"]
+    A([Start]) --> B[Extract channel cost data]
+    B --> C[Allocate GDS fees to routes]
+    C --> D{Baseline data\nacceptable?}
+    D -- No --> B
+    D -- Yes --> E[Approve cost baseline]
+  end
+  subgraph P2["Phase 2: Benchmarking & Targets"]
+    E --> F[Benchmark vs industry peers]
+    F --> G{Targets aligned\nwith revenue plan?}
+    G -- No --> F
+    G -- Yes --> H[Identify high-cost segments]
+  end
+  subgraph P3["Phase 3: NDC Migration"]
+    H --> I{Agency NDC\nreadiness ≥60%?}
+    I -- No --> J[Design NDC incentives]
+    J --> I
+    I -- Yes --> K[Negotiate NDC agreements]
+    K --> L{Volume threshold\nmet?}
+    L -- No --> K
+    L -- Yes --> M[Activate NDC channel]
+  end
+  subgraph P4["Phase 4: GDS Contract Optimisation"]
+    M --> N[Audit GDS compliance]
+    N --> O{Full-content clause\nconflicts NDC?}
+    O -- Yes --> P[Renegotiate GDS terms]
+    O -- No --> P
+    P --> Q{GDS fee terms\nwithin target?}
+    Q -- No --> P
+    Q -- Yes --> R[Restructure agency incentives]
+  end
+  subgraph P5["Phase 5: Monitoring & Loop"]
+    R --> S[Track weekly cost KPIs]
+    S --> T{Leakage exceeds\n2% threshold?}
+    T -- Yes --> U[Identify & escalate leakage]
+    U --> S
+    T -- No --> V[Report to leadership]
+    V --> W([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600

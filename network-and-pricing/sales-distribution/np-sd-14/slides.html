@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NP-SD-14 Slides — Distribution Cost Optimization</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-14</span>
+    <h1>Distribution Cost Optimization</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/np-sd-14.png" alt="BPMN for NP-SD-14" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-14</span>
+    <h1>Distribution Cost Optimization</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> NP-SD-14</li>
+          <li><strong>L1 Domain:</strong> Network Planning &amp; Scheduling</li>
+          <li><strong>L2 Process:</strong> Sales &amp; Distribution</li>
+          <li><strong>L3 Name:</strong> Distribution Cost Optimization</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract channel cost data from PSS and finance</li><li><strong>Phase 2:</strong> Benchmark distribution cost vs. industry peers</li><li><strong>Phase 3:</strong> Assess NDC API capability and agency readiness</li><li><strong>Phase 4:</strong> Audit GDS full-content agreement compliance</li><li><strong>Phase 5:</strong> Track blended distribution cost per booking weekly</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Distribution Analytics Analyst</li><li>Distribution Strategy Manager</li><li>GDS Contract Manager</li><li>Head of Distribution Strategy</li><li>Key Account Manager</li><li>NDC Programme Manager</li><li>Revenue Accounting Analyst</li><li>VP Sales &amp; Distribution</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO</li><li>AWS Redshift</li><li>NDC API Gateway</li><li>OAG Schedule Analyser</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Sabre GDS</li><li>Sabre PRISM</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">NP-SD-14</span>
+    <h1>Distribution Cost Optimization</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract channel cost data from PSS and finance</td>
+        <td class="kpi-col">Cost extraction completeness ≥99% of bookings reconciled per period</td>
+        <td class="pain-col">Sabre, Travelport, and Amadeus each use different invoice formats and fee codes; reconciliation against Altéa PSS PNRs requires manual mapping that introduces errors in ~2–3% of bookings</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Allocate GDS booking fees to route and O&amp;D level</td>
+        <td class="kpi-col">GDS cost per booking reconciled within ±$0.05 vs. invoiced totals</td>
+        <td class="pain-col">Altéa PSS booking records must be joined to SAP cost data at different granularities; PNR format mismatches between GDS sources and PSS cause join failures requiring manual resolution</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate and approve cost allocation baseline</td>
+        <td class="kpi-col">Baseline approved and published within 5 business days of period close</td>
+        <td class="pain-col">Disputed cost allocations between Finance and Commercial teams delay sign-off; no single P&amp;L owner for distribution costs creates accountability gaps that slow the optimization cycle</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Benchmark distribution cost vs. industry peers</td>
+        <td class="kpi-col">Distribution cost per booking target ≤$11.00 (vs. IATA industry average of $14–18)</td>
+        <td class="pain-col">Industry peer benchmarks are self-reported and often exclude hidden indirect costs such as agency incentive overrides; benchmarking accuracy is limited and results may misstate true competitive position</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Set channel-specific cost reduction targets</td>
+        <td class="kpi-col">Target: 15% reduction in blended distribution cost per booking year-on-year</td>
+        <td class="pain-col">Commercial teams may resist aggressive NDC shift targets when GDS volume is contractually linked to incentive tiers or corporate travel agreements that cannot be restructured mid-year</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Identify high-cost booking segments and routes</td>
+        <td class="kpi-col">Top-20% high-cost routes identified and validated within 3 business days of baseline approval</td>
+        <td class="pain-col">High-yield corporate routes are typically the highest GDS-cost segments; reducing GDS dependency on these routes risks losing managed travel bookings routed through Sabre PRISM by TMC partners</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Assess NDC API capability and agency readiness</td>
+        <td class="kpi-col">≥60% of top-50 agencies NDC-certified within 6 months of programme launch</td>
+        <td class="pain-col">Mid-market agencies lack NDC-capable booking tools; OBTs such as SAP Concur require separate NDC plug-ins with additional integration fees, creating adoption friction outside the top-10 agency pool</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Design NDC incentive and GDS surcharge structure</td>
+        <td class="kpi-col">NDC incentive cost per shifted booking ≤50% of the GDS fee saving on the same booking</td>
+        <td class="pain-col">ATPCO filing of channel-differentiated pricing is restricted by fare parity clauses in certain GDS full-content agreements and by regulatory price-parity rules in EU and select APAC markets; legal review adds 4–6 weeks per market</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Negotiate NDC adoption agreements with top agencies</td>
+        <td class="kpi-col">NDC adoption agreements signed with agencies covering ≥40% of total indirect booking volume</td>
+        <td class="pain-col">Large TMCs (BCD Travel, CWT, Amex GBT) negotiate distribution terms as blocs; failure to reach agreement risks losing the entire managed travel segment, which may represent 25–35% of revenue on key business routes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Activate NDC channel and monitor booking shift</td>
+        <td class="kpi-col">NDC share of indirect bookings ≥20% within 12 months of channel activation</td>
+        <td class="pain-col">NDC API stability issues — including rate limit breaches, error code ambiguity, and mid-session session token failures — cause booking failures that agents attribute to the airline, risking channel abandonment and reversion to GDS</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Audit GDS full-content agreement compliance</td>
+        <td class="kpi-col">GDS contract compliance rate ≥98%; zero penalty clauses triggered</td>
+        <td class="pain-col">GDS full-content clauses require all published fares to be available in GDS, creating direct tension with NDC-exclusive offer strategies; legal interpretation of content parity varies by GDS provider and jurisdiction, increasing compliance risk</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Renegotiate GDS booking fee and incentive terms</td>
+        <td class="kpi-col">GDS booking fee reduction ≥10% vs. current contracted rate across all three GDS providers</td>
+        <td class="pain-col">Sabre, Travelport, and Amadeus maintain strong negotiating leverage; airlines with less than 5% regional GDS market share have limited bargaining power, and fee concessions often require multi-year volume commitments that constrain future NDC migration</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Restructure agency override commission schedule</td>
+        <td class="kpi-col">Agency incentive cost as % of total revenue ≤2.5% (down from industry average ~3.5%)</td>
+        <td class="pain-col">Legacy override commission structures in Sabre PRISM are deeply embedded in agency workflows; unilateral reductions risk booking withdrawal by top-producing agencies during the renegotiation window, creating a short-term revenue gap</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Track blended distribution cost per booking weekly</td>
+        <td class="kpi-col">Blended distribution cost per booking ≤$11.50; dashboard published within T+2 business days of week close</td>
+        <td class="pain-col">Weekly GDS invoice data from Sabre, Travelport, and Amadeus arrives on different billing cycles (weekly, bi-weekly, monthly), creating inconsistent data availability and lag in blended cost visibility</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Identify cost leakage and wrong-channel bookings</td>
+        <td class="kpi-col">Cost leakage identified and escalated within 5 business days; leakage &lt;2% of total distribution cost</td>
+        <td class="pain-col">Wrong-channel bookings — NDC-enrolled agencies reverting to GDS — are difficult to detect without real-time PNR source tracking; Altéa PSS booking source flags are inconsistently populated by some GDS-connected OBTs</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Report cost performance to leadership and plan next cycle</td>
+        <td class="kpi-col">Monthly report delivered within 5 business days of period close; YoY cost reduction trajectory on track vs. 15% annual target</td>
+        <td class="pain-col">Executive reporting requires attribution of cost changes to specific initiatives (NDC shift, GDS renegotiation, incentive restructure), but the multi-year lag in GDS contract cycles and NDC adoption curves makes causal attribution difficult without a controlled test-and-learn design</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Network Planning & Scheduling › Sales & Distribution</span>
+  </div>
+</div>
+
+</body>
+</html>
