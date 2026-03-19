@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MR-01 Slides — Line Maintenance Planning &amp; Execution</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-01</span>
+    <h1>Line Maintenance Planning &amp; Execution</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/mr-01.png" alt="BPMN for MR-01" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Line Maintenance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-01</span>
+    <h1>Line Maintenance Planning &amp; Execution</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> MR-01</li>
+          <li><strong>L1 Domain:</strong> Maintenance, Repair &amp; Overhaul</li>
+          <li><strong>L2 Process:</strong> Line Maintenance</li>
+          <li><strong>L3 Name:</strong> Line Maintenance Planning &amp; Execution</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">20</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">14</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Retrieve scheduled work orders for inbound aircraf</li><li><strong>Phase 2:</strong> Receive Electronic Technical Log from flight crew</li><li><strong>Phase 3:</strong> Perform exterior walkaround inspection per AMM 05-</li><li><strong>Phase 4:</strong> Diagnose defect per AMM/TSM fault isolation proced</li><li><strong>Phase 5:</strong> Perform final inspection and duplicate check if re</li><li><strong>Phase 6:</strong> Close all work orders and task cards in AMOS</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Aircraft Maintenance Technician (AMT)</li><li>Licensed Aircraft Maintenance Engineer (LAME)</li><li>Line Maintenance Controller</li><li>Maintenance Control Centre (MCC) Controller</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>AWS S3 / Redshift</li><li>CAMP by Boeing</li><li>Jeppesen FliteDeck</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Line Maintenance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-01</span>
+    <h1>Line Maintenance Planning &amp; Execution</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Retrieve scheduled work orders for inbound aircraft</td>
+        <td class="kpi-col">Work pack issued ≥4 hours before estimated aircraft arrival</td>
+        <td class="pain-col">Late schedule changes from network operations can invalidate pre-built work packs; AMOS work order generation requires manual re-trigger when tail swaps occur</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Load MEL/CDL deferred defect carry-forwards</td>
+        <td class="kpi-col">100% of Category B/C MEL items captured before aircraft arrival; zero Category A items carried forward</td>
+        <td class="pain-col">ETL records from outstations transmitted via ACARS can arrive incomplete; discrepancies between paper ATL and AMOS electronic record create compliance exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Confirm parts, tools, and crew availability</td>
+        <td class="kpi-col">Resource confirmation completed ≥2 hours before arrival; parts availability ≥95% for scheduled tasks</td>
+        <td class="pain-col">Station stock levels for consumables (O-rings, filters, fluids) are often below safety stock due to demand spikes; AMOS min/max reorder logic not consistently tuned per station size</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Receive Electronic Technical Log from flight crew</td>
+        <td class="kpi-col">ETL handover completed within 10 minutes of blocks-on; 100% of defects transferred to AMOS within 15 minutes</td>
+        <td class="pain-col">EFB-to-MRO system integration gaps require manual re-keying of defects into AMOS at some stations, introducing transcription risk and adding 10–15 minutes to turnaround</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Categorise open defects by MEL interval and severity</td>
+        <td class="kpi-col">Defect categorisation completed within 5 minutes of ETL receipt; zero mis-categorisations identified at next audit</td>
+        <td class="pain-col">Engineers at outstations may lack current AMM/MEL revision; AMOS does not auto-flag MEL revision mismatches between aircraft effectivity and loaded document version</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Assess Category A defects and trigger AOG response</td>
+        <td class="kpi-col">AOG notification to MCC within 5 minutes of Category A identification; AOG rectification plan confirmed within 30 minutes</td>
+        <td class="pain-col">MCC visibility of real-time station technician availability is limited; AOG coordination relies on phone bridge rather than integrated workforce management, causing delays during high-disruption events</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Perform exterior walkaround inspection per AMM 05-10</td>
+        <td class="kpi-col">Walkaround completed within 15 minutes of blocks-on; defect detection rate benchmarked against fleet average</td>
+        <td class="pain-col">Short turnaround windows (25–45 min at focus cities) compress walkaround time; pressure to dispatch on-time can lead to incomplete checks — a known FAA audit finding category</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Service aircraft fluids — fuel, engine oil, hydraulic, LOX</td>
+        <td class="kpi-col">Engine oil consumption ≤0.3 qt/hr per engine; hydraulic fluid level within limits; LOX quantity per MEL minimum</td>
+        <td class="pain-col">High oil consumption trending on CFM56-7B engines requires tracking against CAMP trend monitoring; deferred oil top-ups due to short turns inflate consumption variance and can trigger premature engine shop visit</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Complete avionics and safety equipment functional checks</td>
+        <td class="kpi-col">100% of safety-critical checks (fire detection, ELT, emergency lighting) signed off before departure; zero open avionics items departing without MEL disposition</td>
+        <td class="pain-col">Some avionics functional checks require aircraft power-up with full flight deck crew, creating coordination bottleneck during short turns; no automated power-on sequencing tool integrated with AMOS task card sign-off</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Verify all turnaround check items signed off</td>
+        <td class="kpi-col">All transit check items signed off ≥10 minutes before scheduled departure; ground time extension rate &lt;5% of transits</td>
+        <td class="pain-col">AMOS task card sign-off visibility is station-level only; MCC cannot see real-time completion percentage across all active turns without custom Tableau dashboard — gap identified in 2024 operational review</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Diagnose defect per AMM/TSM fault isolation procedures</td>
+        <td class="kpi-col">Fault isolation completed within 30 minutes for 80% of line defects; correct-fix-first-time rate ≥92%</td>
+        <td class="pain-col">TSM procedures for avionics LRUs require BITE readout from centralised maintenance computer, which is unavailable to AMTs without Airbus/Boeing tooling licences at some outstations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Check station stock and raise parts demand in AMOS</td>
+        <td class="kpi-col">Parts issued within 20 minutes for in-stock items; AOG order placed within 15 minutes of stock-out confirmation</td>
+        <td class="pain-col">AMOS inventory sync with SAP S/4HANA Finance for parts valuation runs on 4-hour batch cycle; real-time availability data not always reflected, leading to manual phone confirmation with stores</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Apply MEL deferral if part unavailable within turn</td>
+        <td class="kpi-col">MEL deferral completed and documented within 20 minutes of stock-out decision; deferred defect interval compliance 100% at next station</td>
+        <td class="pain-col">CAMP airworthiness record and AMOS open defect record are maintained in parallel without bidirectional sync; duplicate data entry risk creates interval tracking errors identified in FAA surveillance programmes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Verify rectification completed before departure</td>
+        <td class="kpi-col">Rectification confirmed ≥15 minutes before scheduled departure for 90% of defects; gate hold rate due to maintenance &lt;2% of departures</td>
+        <td class="pain-col">MCC must coordinate between AMOS (maintenance status) and Amadeus AMS (gate/departure status) via manual phone bridge; no unified operations dashboard causes coordination lag during peak disruption periods</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Perform final inspection and duplicate check if required</td>
+        <td class="kpi-col">Duplicate inspection rate 100% for required work scopes; zero departures with open duplicate inspection requirement</td>
+        <td class="pain-col">Identifying which tasks legally require duplicate independent inspection is not automated in AMOS task card setup; relies on engineer knowledge and MOE references, creating inconsistency across station experience levels</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Issue Certificate of Release to Service in AMOS</td>
+        <td class="kpi-col">CRS issued ≥10 minutes before scheduled departure; 100% of CRS entries include mandatory regulatory fields per Part-145/FAR 43</td>
+        <td class="pain-col">AMOS CRS module requires manual licence validity check; no real-time integration with national aviation authority (NAA) licence database means expired or scope-exceeded authorisations are only caught during audits</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Update Electronic Technical Log and close open items</td>
+        <td class="kpi-col">ETL closed within 5 minutes of CRS; zero discrepancies between AMOS work order record and ETL at post-flight audit</td>
+        <td class="pain-col">FliteDeck ETL and AMOS work order closure are separate manual entries with no automated reconciliation; discrepancies create compliance findings during IOSA audits and require costly manual reconciliation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Close all work orders and task cards in AMOS</td>
+        <td class="kpi-col">100% of work orders closed within 2 hours of aircraft departure; man-hour variance vs. estimate ≤15%</td>
+        <td class="pain-col">Actual man-hour capture at line stations is often done retrospectively and inaccurately; affects MRO cost modelling and future work scope estimates in AMOS planning module</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Log component removals and installations in CAMP</td>
+        <td class="kpi-col">100% of life-limited parts (LLPs) and hard-time components logged within 4 hours of installation; zero untracked LLP removals per CAMP audit</td>
+        <td class="pain-col">Manual entry of component records into CAMP is error-prone at outstations; LLP tracking errors can result in components exceeding overhaul limits — a direct airworthiness risk with significant FAA fine exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Transmit maintenance data to central MRO analytics platform</td>
+        <td class="kpi-col">Data transmission latency &lt;30 minutes post work order closure; data completeness score ≥98% per monthly reliability report</td>
+        <td class="pain-col">AMOS-to-AWS data pipeline relies on scheduled batch exports rather than real-time streaming; 4–6 hour data lag means MCC reliability dashboards do not reflect same-day defect trends during disruption events</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Line Maintenance</span>
+  </div>
+</div>
+
+</body>
+</html>

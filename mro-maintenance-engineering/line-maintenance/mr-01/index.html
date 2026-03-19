@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Loyalty Programme Management · Customer Experience &amp; Loyalty · Airlines Process Wiki</title>
+<title>MR-01 · Line Maintenance Planning &amp; Execution · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -96,8 +97,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Customer Experience &amp; Loyalty</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Customer Experience &amp; Loyalty</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/">Loyalty Programme Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../commercial-marketing-sales/customer-loyalty-crm/cx-01/"><span class="status-dot status-done"></span><span class="pid">CX-01</span>Frequent Flyer Program Management</a>
@@ -187,11 +188,11 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a>
       <div class="sidebar-l3">
-        <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-done"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
+        <a class="sidebar-l3-link active" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-done"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-05/"><span class="status-dot status-queue"></span><span class="pid">MR-05</span>Airworthiness Directive (AD) Compliance</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-06/"><span class="status-dot status-queue"></span><span class="pid">MR-06</span>Maintenance Reliability &amp; RCM Program</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-07/"><span class="status-dot status-queue"></span><span class="pid">MR-07</span>Aircraft Technical Records Management</a>
@@ -242,162 +243,278 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Customer Experience &amp; Loyalty</a><span class="sep">›</span>
-  <span class="current">Loyalty Programme Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a><span class="sep">›</span>
+  <span class="current">MR-01 · Line Maintenance Planning &amp; Execution</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Loyalty Programme Management</h1>
-    <p>Customer Experience &amp; Loyalty · 16 of 16 subprocesses complete · Updated 2026-03-19 14:35</p>
+    <h1>Line Maintenance Planning &amp; Execution</h1>
+    <p>Maintenance, Repair &amp; Overhaul › Line Maintenance · 20 L4 steps · 6 phases · 6 decision gates · Updated 2026-03-19 14:35</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">MR-01</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-01</span>Frequent Flyer Program Management</h3>
-    <p>Loyalty Programme Management · 21 steps · 8 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-mr-01">
+      <img src="../../../assets/img/mr-01.png" alt="MR-01 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-mr-01').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-mr-01').style.display='flex'">
+      <div id="diag-placeholder-mr-01" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Retrieve scheduled work orders for inbound aircraft</td>
+  <td class="td-role">Line Maintenance Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Published flight schedule and aircraft tail assignment from Amadeus SkyWORKS</td>
+  <td style="font-size:10px">Work pack listing all due scheduled tasks, AD compliance items, and component changes</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Work pack issued ≥4 hours before estimated aircraft arrival</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Load MEL/CDL deferred defect carry-forwards</td>
+  <td class="td-role">Line Maintenance Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Open defect records from previous station&#x27;s Electronic Technical Log</td>
+  <td style="font-size:10px">Annotated work pack with deferred items, MEL interval expiry dates, and required rectification actions</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of Category B/C MEL items captured before aircraft arrival; zero Category A items carried forward</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Confirm parts, tools, and crew availability</td>
+  <td class="td-role">Line Maintenance Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Work pack task list and station inventory snapshot from AMOS stores module</td>
+  <td style="font-size:10px">Resource-confirmed work pack or escalation to AOG desk for missing items</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Resource confirmation completed ≥2 hours before arrival; parts availability ≥95% for scheduled tasks</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Receive Electronic Technical Log from flight crew</td>
+  <td class="td-role">Licensed Aircraft Maintenance Engineer (LAME)</td>
+  <td><span class="stag custom">Jeppesen FliteDeck</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed ETL entries from captain (defects, oil uptakes, cabin reports) transmitted via FliteDeck EFB</td>
+  <td style="font-size:10px">Acknowledged defect list with timestamp of handover; open items transferred to AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ETL handover completed within 10 minutes of blocks-on; 100% of defects transferred to AMOS within 15 minutes</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Categorise open defects by MEL interval and severity</td>
+  <td class="td-role">Licensed Aircraft Maintenance Engineer (LAME)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Defect entries from ETL handover; MEL/MMEL reference document in AMOS</td>
+  <td style="font-size:10px">Prioritised defect list: Category A (immediate), B (3 days), C (10 days), D (120 days)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Defect categorisation completed within 5 minutes of ETL receipt; zero mis-categorisations identified at next audit</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Assess Category A defects and trigger AOG response</td>
+  <td class="td-role">Maintenance Control Centre (MCC) Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Categorised defect list; FAR Part 43 and airline MOE airworthiness standards</td>
+  <td style="font-size:10px">AOG work order raised in AMOS with resource and parts requirements; MCC notified via ACARS/phone bridge</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AOG notification to MCC within 5 minutes of Category A identification; AOG rectification plan confirmed within 30 minutes</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Perform exterior walkaround inspection per AMM 05-10</td>
+  <td class="td-role">Aircraft Maintenance Technician (AMT)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved work pack with transit check task cards; AMM Chapter 05-10 inspection criteria</td>
+  <td style="font-size:10px">Signed-off walkaround task card in AMOS; new defects raised as open items</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Walkaround completed within 15 minutes of blocks-on; defect detection rate benchmarked against fleet average</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Service aircraft fluids — fuel, engine oil, hydraulic, LOX</td>
+  <td class="td-role">Aircraft Maintenance Technician (AMT)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Fuel uplift order from flight dispatch (Jeppesen FliteDeck); oil consumption trend from CAMP</td>
+  <td style="font-size:10px">Fluid servicing task cards signed off; uplift quantities logged in AMOS and transmitted to fuel vendor</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Engine oil consumption ≤0.3 qt/hr per engine; hydraulic fluid level within limits; LOX quantity per MEL minimum</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Complete avionics and safety equipment functional checks</td>
+  <td class="td-role">Aircraft Maintenance Technician (AMT)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Transit check task card list; crew defect reports referencing avionics squawks</td>
+  <td style="font-size:10px">Signed-off avionics check records; unresolved items escalated to LAME for MEL assessment</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of safety-critical checks (fire detection, ELT, emergency lighting) signed off before departure; zero open avionics items departing without MEL disposition</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Verify all turnaround check items signed off</td>
+  <td class="td-role">Licensed Aircraft Maintenance Engineer (LAME)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Task card completion status from AMT team; turnaround clock from Amadeus Airport Management System</td>
+  <td style="font-size:10px">Check completion record in AMOS; ground time extension request if items outstanding</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">All transit check items signed off ≥10 minutes before scheduled departure; ground time extension rate &lt;5% of transits</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Diagnose defect per AMM/TSM fault isolation procedures</td>
+  <td class="td-role">Licensed Aircraft Maintenance Engineer (LAME)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Open defect record from ETL; AMM and TSM fault isolation chapters accessed via AMOS document portal</td>
+  <td style="font-size:10px">Confirmed root cause; work scope defined; parts demand raised in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fault isolation completed within 30 minutes for 80% of line defects; correct-fix-first-time rate ≥92%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Check station stock and raise parts demand in AMOS</td>
+  <td class="td-role">Line Maintenance Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed parts requirement from LAME; AMOS station inventory snapshot</td>
+  <td style="font-size:10px">Parts issued from stock or AOG purchase order raised; estimated delivery time confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Parts issued within 20 minutes for in-stock items; AOG order placed within 15 minutes of stock-out confirmation</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Apply MEL deferral if part unavailable within turn</td>
+  <td class="td-role">Licensed Aircraft Maintenance Engineer (LAME)</td>
+  <td><span class="stag custom">CAMP by Boeing</span></td>
+  <td style="font-size:10px;color:#6b7280">MEL/MMEL reference; confirmed parts ETA vs. departure time; defect record in AMOS</td>
+  <td style="font-size:10px">MEL deferral entry in CAMP airworthiness tracking; placard installed on aircraft; copy transmitted to MCC</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">MEL deferral completed and documented within 20 minutes of stock-out decision; deferred defect interval compliance 100% at next station</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Verify rectification completed before departure</td>
+  <td class="td-role">Maintenance Control Centre (MCC) Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">LAME sign-off notification from AMOS; departure countdown from Amadeus Airport Management System</td>
+  <td style="font-size:10px">Rectification confirmed closed in AMOS or deferred via MEL; gate hold issued to operations if incomplete</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Rectification confirmed ≥15 minutes before scheduled departure for 90% of defects; gate hold rate due to maintenance &lt;2% of departures</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Perform final inspection and duplicate check if required</td>
+  <td class="td-role">Licensed Aircraft Maintenance Engineer (LAME)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed task cards and rectification records; regulatory requirement for duplicate inspection (CAR 43 / EASA Part-145)</td>
+  <td style="font-size:10px">Final inspection sign-off in AMOS; duplicate inspection record if flight control or engine reassembly performed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Duplicate inspection rate 100% for required work scopes; zero departures with open duplicate inspection requirement</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Issue Certificate of Release to Service in AMOS</td>
+  <td class="td-role">Licensed Aircraft Maintenance Engineer (LAME)</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">All task cards signed off; no outstanding Category A defects; completed final inspection record</td>
+  <td style="font-size:10px">CRS/RTS issued in AMOS with LAME licence number, authorisation scope, and timestamp; aircraft released to operations</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CRS issued ≥10 minutes before scheduled departure; 100% of CRS entries include mandatory regulatory fields per Part-145/FAR 43</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Update Electronic Technical Log and close open items</td>
+  <td class="td-role">Licensed Aircraft Maintenance Engineer (LAME)</td>
+  <td><span class="stag custom">Jeppesen FliteDeck</span></td>
+  <td style="font-size:10px;color:#6b7280">CRS issued in AMOS; rectification and deferral records</td>
+  <td style="font-size:10px">ETL updated with all maintenance actions, deferred items, and CRS reference; clean ATL handed to flight crew</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ETL closed within 5 minutes of CRS; zero discrepancies between AMOS work order record and ETL at post-flight audit</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Close all work orders and task cards in AMOS</td>
+  <td class="td-role">Line Maintenance Controller</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">LAME sign-off notifications; CRS reference number</td>
+  <td style="font-size:10px">All work orders closed with actual man-hours, materials consumed, and defect codes recorded</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of work orders closed within 2 hours of aircraft departure; man-hour variance vs. estimate ≤15%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Log component removals and installations in CAMP</td>
+  <td class="td-role">Line Maintenance Controller</td>
+  <td><span class="stag custom">CAMP by Boeing</span></td>
+  <td style="font-size:10px;color:#6b7280">Parts demand fulfilment records from AMOS; component serial and part numbers</td>
+  <td style="font-size:10px">Airworthiness record updated in CAMP with installation dates, cycles, and time-since-new for tracked components</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of life-limited parts (LLPs) and hard-time components logged within 4 hours of installation; zero untracked LLP removals per CAMP audit</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.3</td>
+  <td class="td-name">Transmit maintenance data to central MRO analytics platform</td>
+  <td class="td-role">Line Maintenance Controller</td>
+  <td><span class="stag aws">AWS S3 / Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Closed work orders, defect codes, man-hours, and component records from AMOS and CAMP</td>
+  <td style="font-size:10px">Maintenance event dataset available in AWS Redshift for reliability analysis, cost tracking, and Tableau dashboards</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data transmission latency &lt;30 minutes post work order closure; data completeness score ≥98% per monthly reliability report</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-02</span>Miles &amp; Points Accrual Management</h3>
-    <p>Loyalty Programme Management · 15 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">MR-01</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Maintenance, Repair &amp; Overhaul</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Line Maintenance</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Line Maintenance Planning &amp; Execution</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">20 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">6 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">14 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Line Maintenance Controller</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Licensed Aircraft Maintenance Engineer (LAME)</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Maintenance Control Centre (MCC) Controller</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Aircraft Maintenance Technician (AMT)</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag custom">Jeppesen FliteDeck</span><span class="stag custom">CAMP by Boeing</span><span class="stag aws">AWS S3 / Redshift</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Retrieve scheduled work orders for inbound aircraft</span><span class="kval">Work pack issued ≥4 hours before estimated aircraft arrival</span></div><div class="krow"><span class="kname">Load MEL/CDL deferred defect carry-forwards</span><span class="kval">100% of Category B/C MEL items captured before aircraft arrival; zero Category A items carried forward</span></div><div class="krow"><span class="kname">Confirm parts, tools, and crew availability</span><span class="kval">Resource confirmation completed ≥2 hours before arrival; parts availability ≥95% for scheduled tasks</span></div><div class="krow"><span class="kname">Receive Electronic Technical Log from flight crew</span><span class="kval">ETL handover completed within 10 minutes of blocks-on; 100% of defects transferred to AMOS within 15 minutes</span></div><div class="krow"><span class="kname">Categorise open defects by MEL interval and severity</span><span class="kval">Defect categorisation completed within 5 minutes of ETL receipt; zero mis-categorisations identified at next audit</span></div><div class="krow"><span class="kname">Assess Category A defects and trigger AOG response</span><span class="kval">AOG notification to MCC within 5 minutes of Category A identification; AOG rectification plan confirmed within 30 minutes</span></div><div class="krow"><span class="kname">Perform exterior walkaround inspection per AMM 05-10</span><span class="kval">Walkaround completed within 15 minutes of blocks-on; defect detection rate benchmarked against fleet average</span></div><div class="krow"><span class="kname">Service aircraft fluids — fuel, engine oil, hydraulic, LOX</span><span class="kval">Engine oil consumption ≤0.3 qt/hr per engine; hydraulic fluid level within limits; LOX quantity per MEL minimum</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Late schedule changes from network operations can invalidate pre-built work packs; AMOS work order generation requires manual re-trigger when tail swaps occur</div><div class="risk-card">ETL records from outstations transmitted via ACARS can arrive incomplete; discrepancies between paper ATL and AMOS electronic record create compliance exposure</div><div class="risk-card">Station stock levels for consumables (O-rings, filters, fluids) are often below safety stock due to demand spikes; AMOS min/max reorder logic not consistently tuned per station size</div><div class="risk-card">EFB-to-MRO system integration gaps require manual re-keying of defects into AMOS at some stations, introducing transcription risk and adding 10–15 minutes to turnaround</div><div class="risk-card">Engineers at outstations may lack current AMM/MEL revision; AMOS does not auto-flag MEL revision mismatches between aircraft effectivity and loaded document version</div><div class="risk-card">MCC visibility of real-time station technician availability is limited; AOG coordination relies on phone bridge rather than integrated workforce management, causing delays during high-disruption events</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Published flight schedule and aircraft tail assignment from Amadeus SkyWORKS</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Maintenance event dataset available in AWS Redshift for reliability analysis, cost tracking, and Tableau dashboards</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-03</span>Miles &amp; Points Redemption Management</h3>
-    <p>Loyalty Programme Management · 18 steps · 10 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-04</span>Tier Status &amp; Upgrade Management</h3>
-    <p>Loyalty Programme Management · 20 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-05</span>Customer Complaint &amp; Feedback Management</h3>
-    <p>Loyalty Programme Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-06</span>Pre-Flight Customer Communication</h3>
-    <p>Loyalty Programme Management · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-07</span>In-Flight Service Design &amp; Standards</h3>
-    <p>Loyalty Programme Management · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-08</span>Post-Flight Survey &amp; NPS Management</h3>
-    <p>Loyalty Programme Management · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-09</span>Special Services Request (SSR) Management</h3>
-    <p>Loyalty Programme Management · 18 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-10</span>Customer Data &amp; Personalization</h3>
-    <p>Loyalty Programme Management · 17 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-11</span>IRROP Passenger Recovery</h3>
-    <p>Loyalty Programme Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-12</span>Lounge &amp; Premium Experience Management</h3>
-    <p>Loyalty Programme Management · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-13</span>Co-Brand Credit Card Partnership Management</h3>
-    <p>Loyalty Programme Management · 18 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-14</span>Loyalty Program Partnerships (Hotels/Cars/Retail)</h3>
-    <p>Loyalty Programme Management · 18 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-15</span>Customer Service Contact Centre Operations</h3>
-    <p>Loyalty Programme Management · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-15/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CX-16</span>Digital Self-Service &amp; Chatbot Management</h3>
-    <p>Loyalty Programme Management · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cx-16/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../go-15/"><span class="arrow">←</span><span><span class="sub">Previous</span>GO-15 · Station Performance &amp; KPI Reporting</span></a><a class="pn-btn" href="../mr-02/"><span><span class="sub">Next</span>MR-02 · Heavy Maintenance (C/D Check) Planning</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

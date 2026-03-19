@@ -1,0 +1,61 @@
+flowchart LR
+  subgraph P1[Phase 1: Work Pack Preparation]
+    A([Start]) --> B[Retrieve scheduled work orders\nfrom AMOS]
+    B --> C[Load MEL/CDL deferred\ndefect carry-forwards]
+    C --> D{Work pack complete and\nresources confirmed?}
+    D -- No --> E[Requisition parts/tools\nfrom AMOS stores]
+    E --> D
+    D -- Yes --> F[Approved work pack\nand crew assignment]
+  end
+  subgraph P2[Phase 2: Aircraft Arrival and Log Review]
+    F --> G[Receive Electronic Technical\nLog from flight crew]
+    G --> H[Categorise open defects\nby MEL interval]
+    H --> I{Category A defect\nrequiring AOG action?}
+    I -- Yes --> J[Raise AOG alert and\nescalate to MCC]
+    J --> K[Initiate AOG rectification\nwork order in AMOS]
+    I -- No --> L[Defect list accepted\nfor standard process]
+  end
+  subgraph P3[Phase 3: Turnaround Check Execution]
+    L --> M[Perform exterior walkaround\nper AMM 05-10]
+    K --> M
+    M --> N[Service fluids — fuel, oil,\nhydraulic, LOX via AMOS]
+    N --> O[Avionics and safety equipment\nfunctional checks]
+    O --> P{All check items signed off\nwithin turnaround window?}
+    P -- No --> Q[Request ground time extension\nvia Amadeus AMS]
+    Q --> O
+    P -- Yes --> R[Check completion record\nlogged in AMOS]
+  end
+  subgraph P4[Phase 4: Defect Rectification]
+    R --> S[Diagnose defect per\nAMM/TSM procedures]
+    S --> T{Part available\nin station stock?}
+    T -- No --> U[Apply MEL deferral and\nlog in CAMP Airworthiness]
+    T -- Yes --> V[Replace/repair component;\nrecord in AMOS work order]
+    U --> W{Rectification complete\nbefore departure?}
+    V --> W
+    W -- No --> X[Coordinate AOG part\nshipment via AMOS AOG desk]
+    X --> V
+    W -- Yes --> Y[Rectification signed off\nby supervising engineer]
+  end
+  subgraph P5[Phase 5: Airworthiness Release]
+    Y --> Z[Perform final inspection and\nduplicate check if required]
+    Z --> AA{Duplicate inspection\nrequired by regulation?}
+    AA -- Yes --> AB[Second LAME performs\nindependent inspection]
+    AB --> AC
+    AA -- No --> AC[Issue Certificate of Release\nto Service in AMOS]
+    AC --> AD[Update Electronic Technical\nLog — close open items]
+  end
+  subgraph P6[Phase 6: Data Close-Out]
+    AD --> AE[Close all work orders\nand task cards in AMOS]
+    AE --> AF[Log component removals/installs\nin CAMP airworthiness tracking]
+    AF --> AG[Transmit maintenance data\nto AWS Redshift data lake]
+    AG --> AH([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AH fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600
+  style AA fill:#ff6600,color:#fff,stroke:#ff6600
