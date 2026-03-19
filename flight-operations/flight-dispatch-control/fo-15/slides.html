@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FO-15 Slides — Dangerous Goods Load Authorization</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-15</span>
+    <h1>Dangerous Goods Load Authorization</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/fo-15.png" alt="BPMN for FO-15" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-15</span>
+    <h1>Dangerous Goods Load Authorization</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> FO-15</li>
+          <li><strong>L1 Domain:</strong> Flight Operations</li>
+          <li><strong>L2 Process:</strong> Flight Dispatch &amp; Control</li>
+          <li><strong>L3 Name:</strong> Dangerous Goods Load Authorization</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">20</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">13</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">11</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Receive Shipper DG Declaration &amp; Air Waybill</li><li><strong>Phase 2:</strong> Verify Aircraft Type DG Limits (PAX vs CAO)</li><li><strong>Phase 3:</strong> Assign ULD Position per DG Segregation Rules</li><li><strong>Phase 4:</strong> Dispatcher DG Load Authorization Sign-Off</li><li><strong>Phase 5:</strong> Ramp Agent Loads DG per NOTOC Stowage Instructions</li><li><strong>Phase 6:</strong> Transmit DG Manifest to Destination &amp; En Route Sta</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Captain (PIC)</li><li>Cargo Acceptance Agent</li><li>Cargo Acceptance Supervisor</li><li>Cargo Records Administrator</li><li>DG Acceptance Supervisor</li><li>DG Compliance Specialist</li><li>DG Compliance Specialist / Safety Officer</li><li>Flight Dispatcher</li><li>Flight Dispatcher / Load Controller</li><li>Load Control Agent</li><li>Load Controller</li><li>Loading Supervisor</li><li>Ramp Supervisor / Cargo Handler</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Altéa DCS</li><li>Amadeus Altéa DCS (Departure Control System)</li><li>Amadeus Altéa DCS (NOTOC generation module)</li><li>Amadeus Altéa DCS (loadsheet module)</li><li>Amadeus Altéa LoadPlanner</li><li>Amadeus Altéa LoadPlanner (weight &amp; balance system)</li><li>CargoWise (cargo management platform)</li><li>CargoWise (document archive and retention management module)</li><li>CargoWise (operator DG policy rules engine)</li><li>CargoWise (operator approval registry module)</li><li>IATA DGR e-Tool</li><li>IATA DGR e-Tool (electronic dangerous goods database)</li><li>Jeppesen FliteDeck (EFB NOTOC viewer)</li><li>Jeppesen FliteDeck (state restriction and NOTAMs database)</li><li>SITA ACARS (aircraft communications and reporting system)</li><li>SITA ACARS / Amadeus Altéa DCS (inter-station messaging)</li><li>SITA Airport Management System (AMS — loading confirmation module)</li><li>SITA Airport Management System (AMS)</li><li>Safety Management System (SMS) integrated with ECCAIRS (EU) or FAA ASRS (US)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">FO-15</span>
+    <h1>Dangerous Goods Load Authorization</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Receive Shipper DG Declaration &amp; Air Waybill</td>
+        <td class="kpi-col">DG acceptance processing time ≤30 min per shipment</td>
+        <td class="pain-col">Incomplete or incorrectly completed shipper declarations are the leading cause of DG non-compliance; IATA DGR Sec 8.1.6 mandates specific formats but non-industry shippers routinely submit non-conforming documents requiring full re-inspection</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate UN Number and Proper Shipping Name</td>
+        <td class="kpi-col">Classification error rate &lt;0.5% of DG shipments processed</td>
+        <td class="pain-col">IATA DGR is revised annually; local DGR lookup databases at handling agents may lag the official publication by 4–8 weeks, causing classification mismatches particularly for newly added UN numbers in Class 9</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Verify Packing Group, Quantity Limits &amp; Label Compliance</td>
+        <td class="kpi-col">DG package rejection rate for non-compliance ≤2% of DG shipments; lithium battery state-of-charge verification rate 100%</td>
+        <td class="pain-col">Lithium battery shipments (Class 9, UN3480/3481) account for &gt;40% of DG non-compliance findings; IATA DGR Sec 3.9 requires state-of-charge ≤30% which is physically unverifiable without specialised equipment, creating acceptance risk</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Check Operator Acceptance Policy &amp; Forbidden DG List</td>
+        <td class="kpi-col">Operator policy compliance rate 100%; forbidden item interception rate 100%</td>
+        <td class="pain-col">Individual airlines maintain forbidden DG lists that exceed IATA minimums; policy updates are not always propagated to the CargoWise rules engine in real time, creating a window where inadvertent acceptance of operator-prohibited DG is possible</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Verify Aircraft Type DG Limits (PAX vs CAO)</td>
+        <td class="kpi-col">Per-aircraft DG limit compliance rate 100%; last-minute aircraft swap DG re-check completion rate 100%</td>
+        <td class="pain-col">Mixed fleet operations mean PAX aircraft quantity limits are significantly more restrictive than CAO limits for the same DG class; last-minute aircraft swaps change applicable limits and require full re-validation — Altéa DCS does not automatically trigger re-check on tail number change</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Validate State &amp; Overflight DG Restrictions for Routing</td>
+        <td class="kpi-col">State restriction check completion rate 100% per DG-carrying flight; overflight violation rate 0%</td>
+        <td class="pain-col">IATA DGR Addendum for State Variations is updated bi-annually but some states (notably China CAAC and several Middle East CAAs) impose interim restrictions not captured in the published addendum, requiring manual dispatcher lookup against state CAA circulars</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Confirm Operator Approval for Restricted DG Classes</td>
+        <td class="kpi-col">Approval verification cycle time ≤4 hours for restricted classes; approval expiry miss rate 0%</td>
+        <td class="pain-col">Class 7 radioactive material requires Transport Index calculations and specific CAA approvals that expire; renewal tracking at most carriers relies on manual spreadsheets with no system-enforced expiry alert in CargoWise, creating regulatory exposure under IATA DGR Sec 10.8</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Assign ULD Position per DG Segregation Rules</td>
+        <td class="kpi-col">DG stowage compliance rate 100%; CG deviation ≤±0.5% MAC from target</td>
+        <td class="pain-col">Altéa LoadPlanner&#x27;s DG segregation module requires manual overrides when multiple incompatible DG classes are present on the same flight; there is no automated incompatibility alert in the base LoadPlanner configuration, relying entirely on load controller knowledge</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Run DG Compatibility Matrix Check Across All Shipments</td>
+        <td class="kpi-col">Segregation non-conformance rate 0%; compatibility check cycle time ≤10 min</td>
+        <td class="pain-col">IATA DGR Table 9.3 covers 49 hazard class combinations; Altéa LoadPlanner automates checks for only 12 primary class pairs, requiring manual cross-reference for mixed-class loads — a high-error-risk step during high-density cargo operations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Calculate Total DG Quantities vs Aircraft Hold Limits</td>
+        <td class="kpi-col">Per-hold DG limit compliance 100%; NEM calculation accuracy within ±1%</td>
+        <td class="pain-col">Cumulative DG quantity limits per hold require aggregating across multiple individual shipments; there is no automated per-hold summation in standard Altéa LoadPlanner, exposing load controllers to arithmetic error risk on high-volume DG flights</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Generate NOTOC Draft in IATA Standard Format</td>
+        <td class="kpi-col">NOTOC generation time ≤15 min after load plan finalised; NOTOC accuracy rate ≥99.9%</td>
+        <td class="pain-col">NOTOC format requirements vary by state CAA — some authorities (FAA, EASA) require additional supplementary fields beyond the IATA standard template; Altéa NOTOC templates are not always maintained to reflect the latest state-specific variants, requiring manual addenda</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Dispatcher DG Load Authorization Sign-Off</td>
+        <td class="kpi-col">Authorization completion ≥D-45 min (45 min before departure); 100% sign-off completion rate</td>
+        <td class="pain-col">ICAO Annex 18 and 49 CFR Part 172 require dispatchers to hold current DG recurrent training (every 24 months); expired training certificates are not always flagged in Altéa DCS against the authorising dispatcher&#x27;s profile, creating a silent regulatory non-compliance risk</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Transmit NOTOC to Captain via ACARS Datalink</td>
+        <td class="kpi-col">NOTOC ACARS delivery confirmation rate ≥99%; delivery completed ≥D-30 min</td>
+        <td class="pain-col">ACARS uplink to an aircraft on the ground can fail when avionics are in pre-power state during early turnaround; backup paper NOTOC delivery via physical runner to the gate adds 15–20 min and relies on ramp coordination that frequently breaks down at congested hubs</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Captain Reviews and Accepts NOTOC</td>
+        <td class="kpi-col">Captain NOTOC rejection rate &lt;1% of DG flights; acceptance completed ≥D-20 min</td>
+        <td class="pain-col">Under ICAO Annex 18 and FAR 121.285 the captain has absolute authority to offload DG; rejections after DG is physically loaded require ramp return and cause an average 35-min departure delay — root cause is often insufficient pre-departure DG briefing to the cockpit crew</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Ramp Agent Loads DG per NOTOC Stowage Instructions</td>
+        <td class="kpi-col">DG loading position accuracy 100%; loading completion ≥D-25 min</td>
+        <td class="pain-col">Ramp teams handle DG orientation labels and class placards under intense time pressure; IATA DGR Sec 9.3 requires &#x27;This Way Up&#x27; orientation labels on liquid DG — compliance miss rates spike during peak turn operations when the same ramp team handles multiple aircraft simultaneously</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Verify DG Load Position and Condition Post-Loading</td>
+        <td class="kpi-col">DG load verification completion rate 100% ≥D-20 min; discrepancy rate &lt;0.5%</td>
+        <td class="pain-col">Hold access for DG load verification requires DG-certified personnel per IATA DGR Sec 9.4; at out-stations with thin staffing the verification is sometimes conducted by non-certified ramp agents, constituting a regulatory non-compliance that is rarely detected until a line audit</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Update Final Loadsheet with Confirmed DG Positions</td>
+        <td class="kpi-col">Loadsheet finalisation ≥D-15 min; weight discrepancy vs actual ≤0 kg</td>
+        <td class="pain-col">Late DG offloads — triggered by captain rejection or discovered package damage — require full loadsheet reissue; Altéa DCS reissue and re-signature cycle averages 8–12 min, severely compressing the pre-departure critical path and contributing to D0 departure misses</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Transmit DG Manifest to Destination &amp; En Route Stations</td>
+        <td class="kpi-col">Destination DG advance notification lead time ≥2 hours before scheduled arrival (IATA RP 1654); transmission success rate 100%</td>
+        <td class="pain-col">IATA RP 1654 requires advance DG notification to the destination station; system-to-system messaging reliability degrades at stations running legacy DCS versions incompatible with modern SITA XML message formats, requiring manual telephone or email follow-up that is frequently missed</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>File DG Occurrence Report if Incident Detected</td>
+        <td class="kpi-col">DG incident reporting compliance 100%; report filed ≤72 hours of incident per ICAO Annex 18</td>
+        <td class="pain-col">DG incident under-reporting is a recognised industry-wide issue; ramp and cargo staff are reluctant to self-report fearing personal liability — airlines that have not established non-punitive SMS reporting cultures consistently show under-reporting rates estimated at 60–80% of actual DG incidents</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Archive DG Documentation per Regulatory Retention Policy</td>
+        <td class="kpi-col">Documentation archival rate 100% within 4 hours of flight departure; retrieval time for audit requests ≤2 min</td>
+        <td class="pain-col">IATA DGR mandates minimum 3-month retention while FAA 49 CFR Part 175 requires 2 years and some EASA states require longer; carriers operating across jurisdictions must apply the longest applicable period globally, but CargoWise retention defaults are often configured to the shortest period, creating audit exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Flight Operations › Flight Dispatch & Control</span>
+  </div>
+</div>
+
+</body>
+</html>

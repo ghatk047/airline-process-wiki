@@ -1,0 +1,66 @@
+flowchart LR
+  subgraph P1[Phase 1: DG Declaration and Screening]
+    A([Start]) --> B[Receive DG Declaration and AWB]
+    B --> C{UN Number and PSN valid?}
+    C -- No --> B
+    C -- Yes --> D[Verify Packing Group and Labels]
+    D --> E{Within DGR limits and operator policy?}
+    E -- No --> REJ([Reject Shipment])
+    E -- Yes --> G[Confirm Operator Acceptance]
+  end
+  subgraph P2[Phase 2: Regulatory Compliance]
+    G --> H{PAX aircraft DG limits met?}
+    H -- No --> REJ
+    H -- Yes --> I[Validate State Overflight Restrictions]
+    I --> J{State variations block routing?}
+    J -- Yes --> REJ
+    J -- No --> L{Operator approval current?}
+    L -- No --> M[Obtain CAA Approval]
+    M --> L
+    L -- Yes --> N[Compliance Confirmed]
+  end
+  subgraph P3[Phase 3: Load Planning and Segregation]
+    N --> O[Assign ULD Position per Segregation Rules]
+    O --> P{DG incompatibility conflict?}
+    P -- Yes --> O
+    P -- No --> Q{Total DG exceeds hold limits?}
+    Q -- Yes --> REJ
+    Q -- No --> R[Generate NOTOC Draft]
+  end
+  subgraph P4[Phase 4: Load Authorization and NOTOC]
+    R --> S{Dispatcher authorizes DG load?}
+    S -- No --> REJ
+    S -- Yes --> T[Transmit NOTOC via ACARS]
+    T --> U{Captain accepts NOTOC?}
+    U -- No --> REJ
+    U -- Yes --> V[DG Load Approved]
+  end
+  subgraph P5[Phase 5: Physical Loading and Verification]
+    V --> W[Load DG per NOTOC Stowage Instructions]
+    W --> X{Position correct, no damage or leakage?}
+    X -- No --> REJ
+    X -- Yes --> Y[Update Final Loadsheet]
+  end
+  subgraph P6[Phase 6: Departure Documentation]
+    Y --> Z[Transmit DG Manifest to Destination]
+    Z --> AA{DG incident detected?}
+    AA -- Yes --> AB[File DG Occurrence Report]
+    AB --> AC[Archive DG Documentation]
+    AA -- No --> AC
+    AC --> AD([Flight Departs])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style REJ fill:#cc0000,color:#fff,stroke:#cc0000
+  style AD fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600
+  style AA fill:#ff6600,color:#fff,stroke:#ff6600

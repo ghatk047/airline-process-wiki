@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Revenue Management · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>FO-15 · Dangerous Goods Load Authorization · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../flight-operations/">Flight Operations</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -138,7 +139,7 @@
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-12/"><span class="status-dot status-done"></span><span class="pid">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-13/"><span class="status-dot status-done"></span><span class="pid">FO-13</span>Performance &amp; FDR Data Monitoring</a>
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-14/"><span class="status-dot status-done"></span><span class="pid">FO-14</span>Air-to-Ground Communications Management</a>
-        <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-15/"><span class="status-dot status-done"></span><span class="pid">FO-15</span>Dangerous Goods Load Authorization</a>
+        <a class="sidebar-l3-link active" href="../../../flight-operations/flight-dispatch-control/fo-15/"><span class="status-dot status-done"></span><span class="pid">FO-15</span>Dangerous Goods Load Authorization</a>
       </div>
       <a class="sidebar-l2-link" href="../../../flight-operations/crew-management/">Crew Planning &amp; Rostering</a>
       <div class="sidebar-l3">
@@ -242,153 +243,278 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Revenue Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../flight-operations/">Flight Operations</a><span class="sep">›</span>
+  <a href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a><span class="sep">›</span>
+  <span class="current">FO-15 · Dangerous Goods Load Authorization</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Revenue Management</h1>
-    <p>Network Planning &amp; Scheduling · 15 of 15 subprocesses complete · Updated 2026-03-19 10:13</p>
+    <h1>Dangerous Goods Load Authorization</h1>
+    <p>Flight Operations › Flight Dispatch &amp; Control · 20 L4 steps · 6 phases · 13 decision gates · Updated 2026-03-19 10:13</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">FO-15</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-01</span>Inventory &amp; Yield Optimization</h3>
-    <p>Revenue Management · 18 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-fo-15">
+      <img src="../../../assets/img/fo-15.png" alt="FO-15 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-fo-15').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-fo-15').style.display='flex'">
+      <div id="diag-placeholder-fo-15" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Receive Shipper DG Declaration &amp; Air Waybill</td>
+  <td class="td-role">Cargo Acceptance Agent</td>
+  <td><span class="stag custom">CargoWise (cargo management platform)</span></td>
+  <td style="font-size:10px;color:#6b7280">Shipper&#x27;s Declaration for Dangerous Goods (IATA DGR Sec 8.1.6 format), Air Waybill</td>
+  <td style="font-size:10px">DG shipment record created in cargo system with initial classification flag</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">DG acceptance processing time ≤30 min per shipment</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Validate UN Number and Proper Shipping Name</td>
+  <td class="td-role">Cargo Acceptance Agent</td>
+  <td><span class="stag custom">IATA DGR e-Tool (electronic dangerous goods database)</span></td>
+  <td style="font-size:10px;color:#6b7280">UN number and proper shipping name from shipper&#x27;s declaration</td>
+  <td style="font-size:10px">DG classification confirmed or rejected; discrepancy report if mismatch</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Classification error rate &lt;0.5% of DG shipments processed</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Verify Packing Group, Quantity Limits &amp; Label Compliance</td>
+  <td class="td-role">DG Acceptance Supervisor</td>
+  <td><span class="stag custom">IATA DGR e-Tool</span></td>
+  <td style="font-size:10px;color:#6b7280">Physical package inspection, shipper&#x27;s declaration packing details</td>
+  <td style="font-size:10px">Packing compliance report; label and marking verification sign-off</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">DG package rejection rate for non-compliance ≤2% of DG shipments; lithium battery state-of-charge verification rate 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Check Operator Acceptance Policy &amp; Forbidden DG List</td>
+  <td class="td-role">Cargo Acceptance Supervisor</td>
+  <td><span class="stag custom">CargoWise (operator DG policy rules engine)</span></td>
+  <td style="font-size:10px;color:#6b7280">DG classification, operator Cargo Acceptance Policy manual, forbidden items registry</td>
+  <td style="font-size:10px">Operator acceptance or rejection decision; special approval requirement flagged if applicable</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Operator policy compliance rate 100%; forbidden item interception rate 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Verify Aircraft Type DG Limits (PAX vs CAO)</td>
+  <td class="td-role">Load Control Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS (Departure Control System)</span></td>
+  <td style="font-size:10px;color:#6b7280">DG class and quantity, aircraft registration, flight number</td>
+  <td style="font-size:10px">Aircraft-specific DG quantity limits confirmed per IATA DGR Table 2.3; PAX/CAO classification applied</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Per-aircraft DG limit compliance rate 100%; last-minute aircraft swap DG re-check completion rate 100%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Validate State &amp; Overflight DG Restrictions for Routing</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag custom">Jeppesen FliteDeck (state restriction and NOTAMs database)</span></td>
+  <td style="font-size:10px;color:#6b7280">Flight routing waypoints, DG class, UN number, quantity</td>
+  <td style="font-size:10px">State variation compliance confirmation or routing conflict advisory</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">State restriction check completion rate 100% per DG-carrying flight; overflight violation rate 0%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Confirm Operator Approval for Restricted DG Classes</td>
+  <td class="td-role">DG Compliance Specialist</td>
+  <td><span class="stag custom">CargoWise (operator approval registry module)</span></td>
+  <td style="font-size:10px;color:#6b7280">DG class requiring specific operator approval (Class 1 explosives, Class 7 radioactive, infectious substances)</td>
+  <td style="font-size:10px">Operator approval number confirmed and recorded; CAA authorisation obtained if required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Approval verification cycle time ≤4 hours for restricted classes; approval expiry miss rate 0%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Assign ULD Position per DG Segregation Rules</td>
+  <td class="td-role">Load Control Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa LoadPlanner (weight &amp; balance system)</span></td>
+  <td style="font-size:10px;color:#6b7280">DG class, quantity, ULD type, aircraft hold configuration, passenger manifest</td>
+  <td style="font-size:10px">DG ULD or bulk position assignment in hold; preliminary centre-of-gravity impact noted</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">DG stowage compliance rate 100%; CG deviation ≤±0.5% MAC from target</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Run DG Compatibility Matrix Check Across All Shipments</td>
+  <td class="td-role">Load Control Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa LoadPlanner</span></td>
+  <td style="font-size:10px;color:#6b7280">All DG shipments on the flight, IATA DGR Table 9.3 segregation matrix</td>
+  <td style="font-size:10px">Compatibility check result; stowage conflict report if incompatible DG classes co-located</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Segregation non-conformance rate 0%; compatibility check cycle time ≤10 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Calculate Total DG Quantities vs Aircraft Hold Limits</td>
+  <td class="td-role">Load Control Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa LoadPlanner</span></td>
+  <td style="font-size:10px;color:#6b7280">All assigned DG ULD positions, per-hold DG limits from aircraft type profile</td>
+  <td style="font-size:10px">DG quantity compliance summary per hold compartment; net explosive mass (NEM) calculation where applicable</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Per-hold DG limit compliance 100%; NEM calculation accuracy within ±1%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Generate NOTOC Draft in IATA Standard Format</td>
+  <td class="td-role">Load Control Agent</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS (NOTOC generation module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed DG positions, classes, UN numbers, quantities, stowage locations from load plan</td>
+  <td style="font-size:10px">Draft NOTOC (Notice to Captain) in IATA-standard format ready for dispatcher review</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NOTOC generation time ≤15 min after load plan finalised; NOTOC accuracy rate ≥99.9%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Dispatcher DG Load Authorization Sign-Off</td>
+  <td class="td-role">Flight Dispatcher / Load Controller</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS</span></td>
+  <td style="font-size:10px;color:#6b7280">DG compliance checklist, NOTOC draft, load plan, dispatcher training currency record</td>
+  <td style="font-size:10px">Signed DG load authorization record; compliance checklist archived</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Authorization completion ≥D-45 min (45 min before departure); 100% sign-off completion rate</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Transmit NOTOC to Captain via ACARS Datalink</td>
+  <td class="td-role">Load Controller</td>
+  <td><span class="stag custom">SITA ACARS (aircraft communications and reporting system)</span></td>
+  <td style="font-size:10px;color:#6b7280">Finalised NOTOC, captain ACARS uplink address, departure gate</td>
+  <td style="font-size:10px">NOTOC delivered to flight deck with ACARS delivery confirmation timestamp</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">NOTOC ACARS delivery confirmation rate ≥99%; delivery completed ≥D-30 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Captain Reviews and Accepts NOTOC</td>
+  <td class="td-role">Captain (PIC)</td>
+  <td><span class="stag custom">Jeppesen FliteDeck (EFB NOTOC viewer)</span></td>
+  <td style="font-size:10px;color:#6b7280">NOTOC received via ACARS or EFB datalink; DG policy briefing from dispatcher</td>
+  <td style="font-size:10px">Captain acceptance acknowledgement or rejection with stated reason</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Captain NOTOC rejection rate &lt;1% of DG flights; acceptance completed ≥D-20 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Ramp Agent Loads DG per NOTOC Stowage Instructions</td>
+  <td class="td-role">Ramp Supervisor / Cargo Handler</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Finalised NOTOC, ULD build sheets, Loading Instruction Report (LIR)</td>
+  <td style="font-size:10px">DG ULDs or bulk items loaded at designated hold positions as per NOTOC</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">DG loading position accuracy 100%; loading completion ≥D-25 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Verify DG Load Position and Condition Post-Loading</td>
+  <td class="td-role">Loading Supervisor</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS — loading confirmation module)</span></td>
+  <td style="font-size:10px;color:#6b7280">NOTOC stowage locations, physical hold inspection, DG condition checklist</td>
+  <td style="font-size:10px">DG load verification sign-off; discrepancy or damage report if applicable</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">DG load verification completion rate 100% ≥D-20 min; discrepancy rate &lt;0.5%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Update Final Loadsheet with Confirmed DG Positions</td>
+  <td class="td-role">Load Controller</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS (loadsheet module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Verified DG hold positions, ULD manifest, passenger and cargo weights</td>
+  <td style="font-size:10px">Final signed loadsheet with DG positions confirmed; takeoff weight and CG transmitted to cockpit</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Loadsheet finalisation ≥D-15 min; weight discrepancy vs actual ≤0 kg</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Transmit DG Manifest to Destination &amp; En Route Stations</td>
+  <td class="td-role">Flight Dispatcher</td>
+  <td><span class="stag amadeus">SITA ACARS / Amadeus Altéa DCS (inter-station messaging)</span></td>
+  <td style="font-size:10px;color:#6b7280">Final NOTOC, DG manifest with UN numbers, classes, quantities and positions</td>
+  <td style="font-size:10px">DG advance notification transmitted to destination and en route handling agents</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Destination DG advance notification lead time ≥2 hours before scheduled arrival (IATA RP 1654); transmission success rate 100%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">File DG Occurrence Report if Incident Detected</td>
+  <td class="td-role">DG Compliance Specialist / Safety Officer</td>
+  <td><span class="stag noc">Safety Management System (SMS) integrated with ECCAIRS (EU) or FAA ASRS (US)</span></td>
+  <td style="font-size:10px;color:#6b7280">DG handling incident, package damage, leakage, or undeclared DG discovery during loading</td>
+  <td style="font-size:10px">DG occurrence report filed per ICAO Annex 18 Chapter 14 and applicable national CAA requirements</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">DG incident reporting compliance 100%; report filed ≤72 hours of incident per ICAO Annex 18</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">6.3</td>
+  <td class="td-name">Archive DG Documentation per Regulatory Retention Policy</td>
+  <td class="td-role">Cargo Records Administrator</td>
+  <td><span class="stag custom">CargoWise (document archive and retention management module)</span></td>
+  <td style="font-size:10px;color:#6b7280">NOTOC, shipper DG declarations, acceptance checklist, captain sign-off, loading verification</td>
+  <td style="font-size:10px">DG documentation set archived with jurisdiction-appropriate retention flag applied</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Documentation archival rate 100% within 4 hours of flight departure; retrieval time for audit requests ≤2 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-02</span>Fare Class &amp; Bucket Management</h3>
-    <p>Revenue Management · 18 steps · 9 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">FO-15</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Flight Operations</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Flight Dispatch &amp; Control</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Dangerous Goods Load Authorization</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">20 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">13 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">11 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Cargo Acceptance Agent</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>DG Acceptance Supervisor</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Cargo Acceptance Supervisor</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Load Control Agent</div><div class="swim"><div class="dot" style="background:#10b981"></div>Flight Dispatcher</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>DG Compliance Specialist</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Flight Dispatcher / Load Controller</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Load Controller</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Captain (PIC)</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Ramp Supervisor / Cargo Handler</div><div class="swim"><div class="dot" style="background:#f97316"></div>Loading Supervisor</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>DG Compliance Specialist / Safety Officer</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Cargo Records Administrator</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">CargoWise (cargo management platform)</span><span class="stag custom">IATA DGR e-Tool (electronic dangerous goods database)</span><span class="stag custom">IATA DGR e-Tool</span><span class="stag custom">CargoWise (operator DG policy rules engine)</span><span class="stag amadeus">Amadeus Altéa DCS (Departure Control System)</span><span class="stag custom">Jeppesen FliteDeck (state restriction and NOTAMs database)</span><span class="stag custom">CargoWise (operator approval registry module)</span><span class="stag amadeus">Amadeus Altéa LoadPlanner (weight &amp; balance system)</span><span class="stag amadeus">Amadeus Altéa LoadPlanner</span><span class="stag amadeus">Amadeus Altéa DCS (NOTOC generation module)</span><span class="stag amadeus">Amadeus Altéa DCS</span><span class="stag custom">SITA ACARS (aircraft communications and reporting system)</span><span class="stag custom">Jeppesen FliteDeck (EFB NOTOC viewer)</span><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">SITA Airport Management System (AMS — loading confirmation module)</span><span class="stag amadeus">Amadeus Altéa DCS (loadsheet module)</span><span class="stag amadeus">SITA ACARS / Amadeus Altéa DCS (inter-station messaging)</span><span class="stag noc">Safety Management System (SMS) integrated with ECCAIRS (EU) or FAA ASRS (US)</span><span class="stag custom">CargoWise (document archive and retention management module)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Receive Shipper DG Declaration &amp; Air Waybill</span><span class="kval">DG acceptance processing time ≤30 min per shipment</span></div><div class="krow"><span class="kname">Validate UN Number and Proper Shipping Name</span><span class="kval">Classification error rate &lt;0.5% of DG shipments processed</span></div><div class="krow"><span class="kname">Verify Packing Group, Quantity Limits &amp; Label Compliance</span><span class="kval">DG package rejection rate for non-compliance ≤2% of DG shipments; lithium battery state-of-charge verification rate 100%</span></div><div class="krow"><span class="kname">Check Operator Acceptance Policy &amp; Forbidden DG List</span><span class="kval">Operator policy compliance rate 100%; forbidden item interception rate 100%</span></div><div class="krow"><span class="kname">Verify Aircraft Type DG Limits (PAX vs CAO)</span><span class="kval">Per-aircraft DG limit compliance rate 100%; last-minute aircraft swap DG re-check completion rate 100%</span></div><div class="krow"><span class="kname">Validate State &amp; Overflight DG Restrictions for Routing</span><span class="kval">State restriction check completion rate 100% per DG-carrying flight; overflight violation rate 0%</span></div><div class="krow"><span class="kname">Confirm Operator Approval for Restricted DG Classes</span><span class="kval">Approval verification cycle time ≤4 hours for restricted classes; approval expiry miss rate 0%</span></div><div class="krow"><span class="kname">Assign ULD Position per DG Segregation Rules</span><span class="kval">DG stowage compliance rate 100%; CG deviation ≤±0.5% MAC from target</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Incomplete or incorrectly completed shipper declarations are the leading cause of DG non-compliance; IATA DGR Sec 8.1.6 mandates specific formats but non-industry shippers routinely submit non-conforming documents requiring full re-inspection</div><div class="risk-card">IATA DGR is revised annually; local DGR lookup databases at handling agents may lag the official publication by 4–8 weeks, causing classification mismatches particularly for newly added UN numbers in Class 9</div><div class="risk-card">Lithium battery shipments (Class 9, UN3480/3481) account for &gt;40% of DG non-compliance findings; IATA DGR Sec 3.9 requires state-of-charge ≤30% which is physically unverifiable without specialised equipment, creating acceptance risk</div><div class="risk-card">Individual airlines maintain forbidden DG lists that exceed IATA minimums; policy updates are not always propagated to the CargoWise rules engine in real time, creating a window where inadvertent acceptance of operator-prohibited DG is possible</div><div class="risk-card">Mixed fleet operations mean PAX aircraft quantity limits are significantly more restrictive than CAO limits for the same DG class; last-minute aircraft swaps change applicable limits and require full re-validation — Altéa DCS does not automatically trigger re-check on tail number change</div><div class="risk-card">IATA DGR Addendum for State Variations is updated bi-annually but some states (notably China CAAC and several Middle East CAAs) impose interim restrictions not captured in the published addendum, requiring manual dispatcher lookup against state CAA circulars</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Shipper&#x27;s Declaration for Dangerous Goods (IATA DGR Sec 8.1.6 format), Air Waybill</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">DG documentation set archived with jurisdiction-appropriate retention flag applied</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-03</span>Overbooking Policy Management</h3>
-    <p>Revenue Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-04</span>Demand Forecasting &amp; Modelling</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-05</span>Group Sales Revenue Management</h3>
-    <p>Revenue Management · 19 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-06</span>Upgrade &amp; Upsell Revenue Optimization</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-07</span>Ancillary Revenue Optimization</h3>
-    <p>Revenue Management · 15 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-08</span>RM System Calibration &amp; Tuning</h3>
-    <p>Revenue Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-09</span>Post-Departure Revenue Reporting</h3>
-    <p>Revenue Management · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-10</span>Competitive Fare Monitoring &amp; Response</h3>
-    <p>Revenue Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-11</span>Corporate &amp; Negotiated Rate Management</h3>
-    <p>Revenue Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-12</span>Real-Time Availability &amp; Seat Inventory Control</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-13</span>Revenue Integrity &amp; Ticketing Compliance</h3>
-    <p>Revenue Management · 18 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-14</span>O&amp;D Revenue Management</h3>
-    <p>Revenue Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-RM-15</span>LCC Competitive Pricing Strategy</h3>
-    <p>Revenue Management · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-rm-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../fo-14/"><span class="arrow">←</span><span><span class="sub">Previous</span>FO-14 · Air-to-Ground Communications Management</span></a><a class="pn-btn" href="../cm-01/"><span><span class="sub">Next</span>CM-01 · Crew Pairing Optimization</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
