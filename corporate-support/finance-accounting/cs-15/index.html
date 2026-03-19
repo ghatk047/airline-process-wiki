@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Line Maintenance · Maintenance, Repair &amp; Overhaul · Airlines Process Wiki</title>
+<title>CS-15 · Regulatory Compliance &amp; AOC Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../corporate-support/">Corporate Support Functions</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -187,8 +188,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-queue"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
@@ -213,8 +214,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-queue"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
@@ -227,7 +228,7 @@
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-12/"><span class="status-dot status-queue"></span><span class="pid">CS-12</span>Fuel Procurement &amp; Supply Chain</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-13/"><span class="status-dot status-queue"></span><span class="pid">CS-13</span>Aircraft Parts &amp; Consumables Procurement</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-14/"><span class="status-dot status-queue"></span><span class="pid">CS-14</span>Safety Management System (SMS)</a>
-        <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-15/"><span class="status-dot status-done"></span><span class="pid">CS-15</span>Regulatory Compliance &amp; AOC Management</a>
+        <a class="sidebar-l3-link active" href="../../../corporate-support/finance-accounting/cs-15/"><span class="status-dot status-done"></span><span class="pid">CS-15</span>Regulatory Compliance &amp; AOC Management</a>
       </div>
       <a class="sidebar-l2-link" href="../../../corporate-support/human-resources/">Human Resources</a>
       <div class="sidebar-l3">
@@ -242,117 +243,248 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
-  <span class="current">Line Maintenance</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../corporate-support/">Corporate Support Functions</a><span class="sep">›</span>
+  <a href="../../../corporate-support/finance-accounting/">Safety &amp; Regulatory</a><span class="sep">›</span>
+  <span class="current">CS-15 · Regulatory Compliance &amp; AOC Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Line Maintenance</h1>
-    <p>Maintenance, Repair &amp; Overhaul · 0 of 11 subprocesses complete · Updated 2026-03-19 09:50</p>
+    <h1>Regulatory Compliance &amp; AOC Management</h1>
+    <p>Corporate Support Functions › Safety &amp; Regulatory · 17 L4 steps · 5 phases · 7 decision gates · Updated 2026-03-19 09:50</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CS-15</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-01</span>Line Maintenance Planning &amp; Execution</h3>
-    <p>Line Maintenance · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cs-15">
+      <img src="../../../assets/img/cs-15.png" alt="CS-15 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cs-15').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cs-15').style.display='flex'">
+      <div id="diag-placeholder-cs-15" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Failed</div>
-    <a class="domain-card-link" href="mr-01/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Subscribe to FAA rulemaking &amp; ICAO SARPs updates</td>
+  <td class="td-role">Regulatory Compliance Manager</td>
+  <td><span class="stag noc">FAA Regulatory Notification Service (GovDelivery)</span></td>
+  <td style="font-size:10px;color:#6b7280">FAA NPRM publications, ICAO amendment cycles, DOT safety directives</td>
+  <td style="font-size:10px">Regulatory watch list with effective dates and applicability flags</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of applicable NPRMs captured within 5 business days of publication</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Classify regulatory change by AOC impact category</td>
+  <td class="td-role">Director of Safety &amp; Compliance</td>
+  <td><span class="stag custom">ARMS (Aviation Risk Management Solutions)</span></td>
+  <td style="font-size:10px;color:#6b7280">Regulatory watch list, current Operations Specifications (OpSpecs) baseline</td>
+  <td style="font-size:10px">Impact classification: Critical / Significant / Administrative; assigned owner and deadline</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Classification completed within 3 business days of receipt; ≥95% accuracy validated by VP Safety review</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Determine material impact on AOC or OpSpecs conditions</td>
+  <td class="td-role">Regulatory Compliance Manager</td>
+  <td><span class="stag custom">ARMS (Aviation Risk Management Solutions)</span></td>
+  <td style="font-size:10px;color:#6b7280">Impact classification, current OpSpecs (OpSpec A, B, C, D series)</td>
+  <td style="font-size:10px">Go/no-go decision: initiate gap assessment or log as no-action required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Decision documented within 2 business days; 0 unreviewed critical items older than 5 days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Conduct OpSpecs gap analysis against new regulation</td>
+  <td class="td-role">Regulatory Compliance Analyst</td>
+  <td><span class="stag noc">WebOPSS (FAA Web-Based Operations Specifications System)</span></td>
+  <td style="font-size:10px;color:#6b7280">Applicable regulatory change, current approved OpSpecs, Operations Manual</td>
+  <td style="font-size:10px">Gap analysis report with non-compliant clauses, affected flight types, and remediation scope</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Gap analysis completed ≥30 days before regulation effective date for non-emergency rules</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Review fleet type ratings and pilot training compliance</td>
+  <td class="td-role">Chief Pilot / Training Standards Manager</td>
+  <td><span class="stag custom">Jeppesen FliteDeck (Operations Manual &amp; training reference)</span></td>
+  <td style="font-size:10px;color:#6b7280">Gap analysis report, approved Training Specifications (TRSpecs), FAR Part 121 Subpart N/O</td>
+  <td style="font-size:10px">Training compliance matrix: current vs. required qualification levels by aircraft type and route</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of pilots current on type rating within 24-month recurrent cycle; 0 flights dispatched with lapsed qualification</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Identify non-compliance gaps and remediation requirements</td>
+  <td class="td-role">VP Safety &amp; Regulatory Affairs</td>
+  <td><span class="stag custom">ARMS (Aviation Risk Management Solutions)</span></td>
+  <td style="font-size:10px;color:#6b7280">Gap analysis report, training compliance matrix, airworthiness directives (ADs) list</td>
+  <td style="font-size:10px">Non-compliance register with risk severity rating (Critical / High / Medium / Low)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero Critical-rated gaps open beyond 30 days; High-rated gaps resolved within 90 days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Develop and approve corrective action plan (CAP)</td>
+  <td class="td-role">Director of Safety &amp; Compliance</td>
+  <td><span class="stag custom">ARMS (Aviation Risk Management Solutions)</span></td>
+  <td style="font-size:10px;color:#6b7280">Non-compliance register, resource constraints, budget from SAP S/4HANA Finance</td>
+  <td style="font-size:10px">Board-approved CAP with milestones, accountable owners, and target closure dates</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CAP approved by VP Safety within 10 business days of gap identification; milestone adherence ≥90%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Prepare AOC amendment or OpSpecs revision package</td>
+  <td class="td-role">Regulatory Compliance Manager</td>
+  <td><span class="stag noc">WebOPSS (FAA Web-Based Operations Specifications System)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved CAP, draft revised OpSpecs, supporting technical documentation</td>
+  <td style="font-size:10px">Complete FAA amendment package: Form 8900-1, revised OpSpec paragraphs, supporting data</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Package completeness score ≥95% on first submission (measured by FAA deficiency rate); zero incomplete submissions</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Submit amendment package to FAA FSDO via WebOPSS</td>
+  <td class="td-role">Regulatory Compliance Manager</td>
+  <td><span class="stag noc">WebOPSS (FAA Web-Based Operations Specifications System)</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed amendment package, principal operations inspector (POI) contact</td>
+  <td style="font-size:10px">FAA submission confirmation number; amendment tracking record opened in ARMS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Submission made ≥60 days before effective date for Major amendments; ≥30 days for Minor</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Respond to FAA requests for additional information</td>
+  <td class="td-role">Director of Safety &amp; Compliance</td>
+  <td><span class="stag noc">WebOPSS (FAA Web-Based Operations Specifications System)</span></td>
+  <td style="font-size:10px;color:#6b7280">FAA deficiency notice or Request for Additional Information (RAI)</td>
+  <td style="font-size:10px">Supplemental data package; revised submission if OpSpec text changes required</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">RAI response submitted within 10 business days of receipt; first-response resolution rate ≥75%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Receive, validate, and file approved OpSpecs revision</td>
+  <td class="td-role">Regulatory Compliance Manager</td>
+  <td><span class="stag noc">WebOPSS (FAA Web-Based Operations Specifications System)</span></td>
+  <td style="font-size:10px;color:#6b7280">FAA-approved OpSpecs revision notification</td>
+  <td style="font-size:10px">Updated OpSpecs filed in controlled document repository; affected departments notified</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Distribution to operational departments within 24 hours of FAA approval; acknowledgement receipt rate 100% within 48 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Conduct periodic SMS internal compliance audit</td>
+  <td class="td-role">SMS Coordinator / Internal Safety Auditor</td>
+  <td><span class="stag custom">ARMS (Aviation Risk Management Solutions)</span></td>
+  <td style="font-size:10px;color:#6b7280">Annual audit schedule, ICAO Doc 9859 SMS framework, 14 CFR §119.65 requirements</td>
+  <td style="font-size:10px">Internal audit report with findings, risk ratings, and corrective action recommendations</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">4 SMS audits completed per year; critical findings closed within 30 days; audit coverage ≥100% of SMS components annually</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Analyse FOQA safety performance indicators against thresholds</td>
+  <td class="td-role">Flight Data Monitoring Analyst</td>
+  <td><span class="stag custom">Flight Data Monitoring (FDM/FOQA) Platform</span></td>
+  <td style="font-size:10px;color:#6b7280">Flight recorder data feeds, airline-defined safety performance indicator (SPI) thresholds</td>
+  <td style="font-size:10px">SPI dashboard report: exceedance counts, trend analysis, risk-ranked event list</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">FOQA data capture rate ≥99.5% of revenue flights; SPI exceedance rate &lt;0.5 per 1,000 flights for high-severity events</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">File ASAP or VDRP voluntary safety disclosure report</td>
+  <td class="td-role">Pilot / Dispatcher / Aviation Safety Action Program (ASAP) Manager</td>
+  <td><span class="stag noc">FAA Aviation Safety Action Program (ASAP) Portal</span></td>
+  <td style="font-size:10px;color:#6b7280">SPI threshold breach, pilot self-disclosure, or near-miss event report</td>
+  <td style="font-size:10px">ASAP Event Review Committee (ERC) report; corrective action recommendation to FAA</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">ASAP report submission within 24 hours of event identification; ERC review completed within 30 days; 0 reports rejected for lateness</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Update MEL, Operations Manual, and training materials</td>
+  <td class="td-role">Technical Publications Manager</td>
+  <td><span class="stag custom">Jeppesen FliteDeck (EFB content management)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved OpSpecs revision, AD compliance status, ASAP corrective actions</td>
+  <td style="font-size:10px">Revised MEL amendments, updated Operations Manual sections, EFB content pushed to fleet tablets</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">MEL and Ops Manual updates published within 5 business days of OpSpecs approval; EFB content sync to 100% of fleet devices within 24 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Track and report compliance costs against regulatory budget</td>
+  <td class="td-role">Regulatory Affairs Finance Controller</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">CAP milestones, training programme costs, audit fees, legal advisory costs</td>
+  <td style="font-size:10px">Regulatory compliance cost report by OpSpec category; variance analysis vs. annual budget</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Regulatory compliance budget variance ≤5% quarterly; cost-per-amendment tracked and benchmarked annually</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Archive compliance records and close regulatory cycle</td>
+  <td class="td-role">Regulatory Compliance Manager</td>
+  <td><span class="stag custom">Microsoft SharePoint (Controlled Document Management)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved OpSpecs, audit reports, ASAP ERC decisions, CAP closure evidence</td>
+  <td style="font-size:10px">Compliance cycle closure report; archived records indexed for 7-year retention per 14 CFR §121.380</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of compliance records archived within 5 business days of cycle close; retrieval time for auditor requests ≤1 business day</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-05</span>Airworthiness Directive (AD) Compliance</h3>
-    <p>Line Maintenance · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CS-15</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Corporate Support Functions</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Safety &amp; Regulatory</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Regulatory Compliance &amp; AOC Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">17 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">7 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">8 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Regulatory Compliance Manager</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Director of Safety &amp; Compliance</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Regulatory Compliance Analyst</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Chief Pilot / Training Standards Manager</div><div class="swim"><div class="dot" style="background:#10b981"></div>VP Safety &amp; Regulatory Affairs</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>SMS Coordinator / Internal Safety Auditor</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Flight Data Monitoring Analyst</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Pilot / Dispatcher / Aviation Safety Action Program (ASAP) Manager</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Technical Publications Manager</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Regulatory Affairs Finance Controller</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag noc">FAA Regulatory Notification Service (GovDelivery)</span><span class="stag custom">ARMS (Aviation Risk Management Solutions)</span><span class="stag noc">WebOPSS (FAA Web-Based Operations Specifications System)</span><span class="stag custom">Jeppesen FliteDeck (Operations Manual &amp; training reference)</span><span class="stag custom">Flight Data Monitoring (FDM/FOQA) Platform</span><span class="stag noc">FAA Aviation Safety Action Program (ASAP) Portal</span><span class="stag custom">Jeppesen FliteDeck (EFB content management)</span><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span><span class="stag custom">Microsoft SharePoint (Controlled Document Management)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Subscribe to FAA rulemaking &amp; ICAO SARPs updates</span><span class="kval">100% of applicable NPRMs captured within 5 business days of publication</span></div><div class="krow"><span class="kname">Classify regulatory change by AOC impact category</span><span class="kval">Classification completed within 3 business days of receipt; ≥95% accuracy validated by VP Safety review</span></div><div class="krow"><span class="kname">Determine material impact on AOC or OpSpecs conditions</span><span class="kval">Decision documented within 2 business days; 0 unreviewed critical items older than 5 days</span></div><div class="krow"><span class="kname">Conduct OpSpecs gap analysis against new regulation</span><span class="kval">Gap analysis completed ≥30 days before regulation effective date for non-emergency rules</span></div><div class="krow"><span class="kname">Review fleet type ratings and pilot training compliance</span><span class="kval">100% of pilots current on type rating within 24-month recurrent cycle; 0 flights dispatched with lapsed qualification</span></div><div class="krow"><span class="kname">Identify non-compliance gaps and remediation requirements</span><span class="kval">Zero Critical-rated gaps open beyond 30 days; High-rated gaps resolved within 90 days</span></div><div class="krow"><span class="kname">Develop and approve corrective action plan (CAP)</span><span class="kval">CAP approved by VP Safety within 10 business days of gap identification; milestone adherence ≥90%</span></div><div class="krow"><span class="kname">Prepare AOC amendment or OpSpecs revision package</span><span class="kval">Package completeness score ≥95% on first submission (measured by FAA deficiency rate); zero incomplete submissions</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">FAA issues 300+ NPRMs per year; manual triage against 14 CFR Part 119/121 scope causes missed applicability deadlines without automated rule-matching</div><div class="risk-card">14 CFR Part 121 overlaps with Part 91, Part 135, and ICAO Annex 6 — misclassification risk is high for carriers operating international routes under bilateral agreements</div><div class="risk-card">OpSpecs are issued at aircraft-type level — a single Boeing 737 MAX amendment may trigger parallel OpSpec revisions across A002, B036, and D085 series, each requiring separate FAA FSDO concurrence</div><div class="risk-card">WebOPSS does not provide automated diff between existing OpSpecs and new regulatory text — analysts must perform manual line-by-line comparison across 100+ OpSpec paragraphs, consuming 40+ analyst-hours per major rule change</div><div class="risk-card">Introduction of new flight deck technology (e.g., Boeing 737 MAX MCAS differences training) requires FSDO-approved training programme amendments before revenue flying — timeline mismatch with aircraft delivery schedules creates capacity risk</div><div class="risk-card">FAA Airworthiness Directives issued via AD registry may conflict with manufacturer service bulletin schedules — carriers must negotiate alternate means of compliance (AMOC) approval which averages 6–18 months with FAA Aircraft Certification Office</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">FAA NPRM publications, ICAO amendment cycles, DOT safety directives</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Compliance cycle closure report; archived records indexed for 7-year retention per 14 CFR §121.380</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Failed</div>
-    <a class="domain-card-link" href="mr-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-06</span>Maintenance Reliability &amp; RCM Program</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Failed</div>
-    <a class="domain-card-link" href="mr-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-07</span>Aircraft Technical Records Management</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Failed</div>
-    <a class="domain-card-link" href="mr-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-08</span>AOG Recovery &amp; Technical Dispatch</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Failed</div>
-    <a class="domain-card-link" href="mr-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-09</span>MRO Vendor &amp; Outsourcing Management</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Failed</div>
-    <a class="domain-card-link" href="mr-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-10</span>Spare Parts Inventory &amp; Procurement</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Failed</div>
-    <a class="domain-card-link" href="mr-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-12</span>Avionics &amp; Systems Modification</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Failed</div>
-    <a class="domain-card-link" href="mr-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-13</span>Quality Assurance &amp; Safety Audits (CAMO)</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Failed</div>
-    <a class="domain-card-link" href="mr-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-14</span>Maintenance Cost Control &amp; KPI Reporting</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Failed</div>
-    <a class="domain-card-link" href="mr-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-15</span>Warranty Claim Management</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Failed</div>
-    <a class="domain-card-link" href="mr-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cs-14/"><span class="arrow">←</span><span><span class="sub">Previous</span>CS-14 · Safety Management System (SMS)</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

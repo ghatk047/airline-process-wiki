@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS-15 Slides — Regulatory Compliance &amp; AOC Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-15</span>
+    <h1>Regulatory Compliance &amp; AOC Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cs-15.png" alt="BPMN for CS-15" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Safety & Regulatory</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-15</span>
+    <h1>Regulatory Compliance &amp; AOC Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CS-15</li>
+          <li><strong>L1 Domain:</strong> Corporate Support Functions</li>
+          <li><strong>L2 Process:</strong> Safety &amp; Regulatory</li>
+          <li><strong>L3 Name:</strong> Regulatory Compliance &amp; AOC Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Subscribe to FAA rulemaking &amp; ICAO SARPs updates</li><li><strong>Phase 2:</strong> Conduct OpSpecs gap analysis against new regulatio</li><li><strong>Phase 3:</strong> Prepare AOC amendment or OpSpecs revision package</li><li><strong>Phase 4:</strong> Conduct periodic SMS internal compliance audit</li><li><strong>Phase 5:</strong> Update MEL, Operations Manual, and training materi</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Chief Pilot / Training Standards Manager</li><li>Director of Safety &amp; Compliance</li><li>Flight Data Monitoring Analyst</li><li>Pilot / Dispatcher / Aviation Safety Action Program (ASAP) Manager</li><li>Regulatory Affairs Finance Controller</li><li>Regulatory Compliance Analyst</li><li>Regulatory Compliance Manager</li><li>SMS Coordinator / Internal Safety Auditor</li><li>Technical Publications Manager</li><li>VP Safety &amp; Regulatory Affairs</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ARMS (Aviation Risk Management Solutions)</li><li>FAA Aviation Safety Action Program (ASAP) Portal</li><li>FAA Regulatory Notification Service (GovDelivery)</li><li>Flight Data Monitoring (FDM/FOQA) Platform</li><li>Jeppesen FliteDeck (EFB content management)</li><li>Jeppesen FliteDeck (Operations Manual &amp; training reference)</li><li>Microsoft SharePoint (Controlled Document Management)</li><li>SAP S/4HANA Finance (FI/CO)</li><li>WebOPSS (FAA Web-Based Operations Specifications System)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Safety & Regulatory</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-15</span>
+    <h1>Regulatory Compliance &amp; AOC Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Subscribe to FAA rulemaking &amp; ICAO SARPs updates</td>
+        <td class="kpi-col">100% of applicable NPRMs captured within 5 business days of publication</td>
+        <td class="pain-col">FAA issues 300+ NPRMs per year; manual triage against 14 CFR Part 119/121 scope causes missed applicability deadlines without automated rule-matching</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Classify regulatory change by AOC impact category</td>
+        <td class="kpi-col">Classification completed within 3 business days of receipt; ≥95% accuracy validated by VP Safety review</td>
+        <td class="pain-col">14 CFR Part 121 overlaps with Part 91, Part 135, and ICAO Annex 6 — misclassification risk is high for carriers operating international routes under bilateral agreements</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Determine material impact on AOC or OpSpecs conditions</td>
+        <td class="kpi-col">Decision documented within 2 business days; 0 unreviewed critical items older than 5 days</td>
+        <td class="pain-col">OpSpecs are issued at aircraft-type level — a single Boeing 737 MAX amendment may trigger parallel OpSpec revisions across A002, B036, and D085 series, each requiring separate FAA FSDO concurrence</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Conduct OpSpecs gap analysis against new regulation</td>
+        <td class="kpi-col">Gap analysis completed ≥30 days before regulation effective date for non-emergency rules</td>
+        <td class="pain-col">WebOPSS does not provide automated diff between existing OpSpecs and new regulatory text — analysts must perform manual line-by-line comparison across 100+ OpSpec paragraphs, consuming 40+ analyst-hours per major rule change</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Review fleet type ratings and pilot training compliance</td>
+        <td class="kpi-col">100% of pilots current on type rating within 24-month recurrent cycle; 0 flights dispatched with lapsed qualification</td>
+        <td class="pain-col">Introduction of new flight deck technology (e.g., Boeing 737 MAX MCAS differences training) requires FSDO-approved training programme amendments before revenue flying — timeline mismatch with aircraft delivery schedules creates capacity risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Identify non-compliance gaps and remediation requirements</td>
+        <td class="kpi-col">Zero Critical-rated gaps open beyond 30 days; High-rated gaps resolved within 90 days</td>
+        <td class="pain-col">FAA Airworthiness Directives issued via AD registry may conflict with manufacturer service bulletin schedules — carriers must negotiate alternate means of compliance (AMOC) approval which averages 6–18 months with FAA Aircraft Certification Office</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Develop and approve corrective action plan (CAP)</td>
+        <td class="kpi-col">CAP approved by VP Safety within 10 business days of gap identification; milestone adherence ≥90%</td>
+        <td class="pain-col">CAP funding competes with capital allocation cycles — safety-driven OpEx spend cannot be deferred but lacks the revenue justification framework used for commercial projects, creating budget approval delays</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Prepare AOC amendment or OpSpecs revision package</td>
+        <td class="kpi-col">Package completeness score ≥95% on first submission (measured by FAA deficiency rate); zero incomplete submissions</td>
+        <td class="pain-col">FAA Form 8900-1 and WebOPSS data entry does not validate cross-references between OpSpec series — errors discovered during FSDO review require full resubmission and add 4–8 weeks to approval timeline</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Submit amendment package to FAA FSDO via WebOPSS</td>
+        <td class="kpi-col">Submission made ≥60 days before effective date for Major amendments; ≥30 days for Minor</td>
+        <td class="pain-col">WebOPSS portal has documented uptime issues during peak submission periods (e.g., end-of-year deadline rush); carriers with sole-source FSDO assignment have no alternative submission channel if POI is on extended leave</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Respond to FAA requests for additional information</td>
+        <td class="kpi-col">RAI response submitted within 10 business days of receipt; first-response resolution rate ≥75%</td>
+        <td class="pain-col">FAA POI reviewer rotation means institutional knowledge of airline-specific OpSpecs is lost — new POI may re-open previously resolved items, causing amendment cycles to restart and exceeding planned compliance timelines</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Receive, validate, and file approved OpSpecs revision</td>
+        <td class="kpi-col">Distribution to operational departments within 24 hours of FAA approval; acknowledgement receipt rate 100% within 48 hours</td>
+        <td class="pain-col">OpSpecs revisions must be cascaded to Dispatch, Crew Training, Maintenance, and Ground Ops simultaneously — document management systems (SharePoint) lack mandatory-read workflow enforcement, creating compliance traceability gaps</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Conduct periodic SMS internal compliance audit</td>
+        <td class="kpi-col">4 SMS audits completed per year; critical findings closed within 30 days; audit coverage ≥100% of SMS components annually</td>
+        <td class="pain-col">FAA requires SMS programmes to demonstrate safety performance improvement over time (AC 120-92B) — carriers using spreadsheet-based audit tracking cannot produce trend evidence required for IOSA (IATA Operational Safety Audit) recertification</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Analyse FOQA safety performance indicators against thresholds</td>
+        <td class="kpi-col">FOQA data capture rate ≥99.5% of revenue flights; SPI exceedance rate &lt;0.5 per 1,000 flights for high-severity events</td>
+        <td class="pain-col">FOQA data volumes from 800+ daily flights generate 2TB+ per month — without automated anomaly detection (e.g., Palantir Aviation Safety), manual analyst review creates a 4–6 week lag between exceedance event and corrective action initiation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>File ASAP or VDRP voluntary safety disclosure report</td>
+        <td class="kpi-col">ASAP report submission within 24 hours of event identification; ERC review completed within 30 days; 0 reports rejected for lateness</td>
+        <td class="pain-col">ASAP programme confidentiality protections (14 CFR §13.401) conflict with labour contract grievance procedures — ambiguity over which events qualify for ASAP immunity vs. disciplinary action suppresses voluntary disclosure rates, undermining SMS effectiveness</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Update MEL, Operations Manual, and training materials</td>
+        <td class="kpi-col">MEL and Ops Manual updates published within 5 business days of OpSpecs approval; EFB content sync to 100% of fleet devices within 24 hours</td>
+        <td class="pain-col">MEL amendment cycle requires simultaneous approval from airline, Boeing (MMEL source), and FAA — three-party review adds 60–120 days per amendment, creating temporary deferred maintenance item backlogs that inflate maintenance cost and aircraft availability risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Track and report compliance costs against regulatory budget</td>
+        <td class="kpi-col">Regulatory compliance budget variance ≤5% quarterly; cost-per-amendment tracked and benchmarked annually</td>
+        <td class="pain-col">Regulatory compliance costs are scattered across Safety, Legal, Crew Training, and Maintenance cost centres in SAP — absence of a dedicated regulatory compliance WBS element prevents accurate total-cost-of-compliance reporting required by board audit committees</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Archive compliance records and close regulatory cycle</td>
+        <td class="kpi-col">100% of compliance records archived within 5 business days of cycle close; retrieval time for auditor requests ≤1 business day</td>
+        <td class="pain-col">14 CFR §121.380 mandates 7-year retention for most compliance records, but GDPR and state privacy laws impose conflicting deletion requirements for records containing crew personal data — dual-obligation conflict requires manual legal review for each retention decision</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Safety & Regulatory</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -18719,7 +18719,7 @@
       "l2_process": "Network Operations Control",
       "l2_slug": "flight-dispatch-control",
       "l3_name": "ETOPS / EDTO Operations Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18731,7 +18731,7 @@
       "l2_process": "Flight Dispatch & Control",
       "l2_slug": "flight-dispatch-control",
       "l3_name": "Flight Crew Briefing & Pre-Departure",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18743,7 +18743,7 @@
       "l2_process": "Network Operations Control",
       "l2_slug": "flight-dispatch-control",
       "l3_name": "Performance & FDR Data Monitoring",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18755,7 +18755,7 @@
       "l2_process": "Flight Dispatch & Control",
       "l2_slug": "flight-dispatch-control",
       "l3_name": "Air-to-Ground Communications Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18767,7 +18767,7 @@
       "l2_process": "Flight Dispatch & Control",
       "l2_slug": "flight-dispatch-control",
       "l3_name": "Dangerous Goods Load Authorization",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18779,7 +18779,7 @@
       "l2_process": "Crew Planning & Rostering",
       "l2_slug": "crew-management",
       "l3_name": "Crew Pairing Optimization",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18791,7 +18791,7 @@
       "l2_process": "Crew Planning & Rostering",
       "l2_slug": "crew-management",
       "l3_name": "Crew Rostering & Bidding",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18803,7 +18803,7 @@
       "l2_process": "Crew Day-of-Operations",
       "l2_slug": "crew-management",
       "l3_name": "Crew Day-of-Operations Tracking",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18815,7 +18815,7 @@
       "l2_process": "Crew Compliance & Certification",
       "l2_slug": "crew-management",
       "l3_name": "Fatigue & Rest Rule Compliance (FAR Part 117)",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18827,7 +18827,7 @@
       "l2_process": "Crew Compliance & Certification",
       "l2_slug": "crew-management",
       "l3_name": "Crew Training & Recurrency Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18839,7 +18839,7 @@
       "l2_process": "Crew Compliance & Certification",
       "l2_slug": "crew-management",
       "l3_name": "Crew Licensing & Medical Certification",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18851,7 +18851,7 @@
       "l2_process": "Crew Day-of-Operations",
       "l2_slug": "crew-management",
       "l3_name": "Reserve Crew Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18863,7 +18863,7 @@
       "l2_process": "Crew Day-of-Operations",
       "l2_slug": "crew-management",
       "l3_name": "Crew Hotel & Transportation Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18875,7 +18875,7 @@
       "l2_process": "Crew Planning & Rostering",
       "l2_slug": "crew-management",
       "l3_name": "Cabin Crew Service Standards & Training",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18887,7 +18887,7 @@
       "l2_process": "Crew Day-of-Operations",
       "l2_slug": "crew-management",
       "l3_name": "Crew Disruption Recovery & Re-pairing",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18899,7 +18899,7 @@
       "l2_process": "Crew Compliance & Certification",
       "l2_slug": "crew-management",
       "l3_name": "Crew Union & Labour Agreement Compliance",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18911,7 +18911,7 @@
       "l2_process": "Crew Planning & Rostering",
       "l2_slug": "crew-management",
       "l3_name": "Crew Recruitment & Onboarding",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18923,7 +18923,7 @@
       "l2_process": "Crew Day-of-Operations",
       "l2_slug": "crew-management",
       "l3_name": "Deadhead & Positioning Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18935,7 +18935,7 @@
       "l2_process": "Crew Planning & Rostering",
       "l2_slug": "crew-management",
       "l3_name": "Crew Performance Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18947,7 +18947,7 @@
       "l2_process": "Crew Planning & Rostering",
       "l2_slug": "crew-management",
       "l3_name": "Crew Payroll & Hours Tracking",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18959,7 +18959,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "Passenger Check-In & Boarding",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18971,7 +18971,7 @@
       "l2_process": "Baggage Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Baggage Acceptance & Handling",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18983,7 +18983,7 @@
       "l2_process": "Baggage Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Lost & Found / Baggage Tracing",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -18995,7 +18995,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "Gate Management & Assignment",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19007,7 +19007,7 @@
       "l2_process": "Ramp & Turnaround Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Ramp & Turnaround Operations",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19019,7 +19019,7 @@
       "l2_process": "Ramp & Turnaround Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Ground Handling Vendor Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19031,7 +19031,7 @@
       "l2_process": "Ramp & Turnaround Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Load Control & Aircraft Loading",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19043,7 +19043,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "Passenger Disruption Handling (IRROP)",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19055,7 +19055,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "Wheelchair & Special Assistance Services",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19067,7 +19067,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "VIP & Premium Passenger Handling",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19079,7 +19079,7 @@
       "l2_process": "Baggage Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Cargo & Mail Ground Handling",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19091,7 +19091,7 @@
       "l2_process": "Ramp & Turnaround Operations",
       "l2_slug": "passenger-services",
       "l3_name": "De-Icing & Winter Operations",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19103,7 +19103,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "Airport Security Compliance (TSA/CBP)",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19115,7 +19115,7 @@
       "l2_process": "Ramp & Turnaround Operations",
       "l2_slug": "passenger-services",
       "l3_name": "Ground Support Equipment (GSE) Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19127,7 +19127,7 @@
       "l2_process": "Airport & Gate Management",
       "l2_slug": "airport-gate-management",
       "l3_name": "Station Performance & KPI Reporting",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19139,7 +19139,7 @@
       "l2_process": "Line Maintenance",
       "l2_slug": "line-maintenance",
       "l3_name": "Line Maintenance Planning & Execution",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19151,7 +19151,7 @@
       "l2_process": "Heavy Maintenance",
       "l2_slug": "heavy-maintenance",
       "l3_name": "Heavy Maintenance (C/D Check) Planning",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19163,7 +19163,7 @@
       "l2_process": "Engine & Component Shop",
       "l2_slug": "heavy-maintenance",
       "l3_name": "Engine Shop Maintenance Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19175,7 +19175,7 @@
       "l2_process": "Engine & Component Shop",
       "l2_slug": "heavy-maintenance",
       "l3_name": "Component & Parts Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19187,7 +19187,7 @@
       "l2_process": "Airworthiness & Compliance",
       "l2_slug": "line-maintenance",
       "l3_name": "Airworthiness Directive (AD) Compliance",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19199,7 +19199,7 @@
       "l2_process": "Airworthiness & Compliance",
       "l2_slug": "line-maintenance",
       "l3_name": "Maintenance Reliability & RCM Program",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19211,7 +19211,7 @@
       "l2_process": "Airworthiness & Compliance",
       "l2_slug": "line-maintenance",
       "l3_name": "Aircraft Technical Records Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19223,7 +19223,7 @@
       "l2_process": "Line Maintenance",
       "l2_slug": "line-maintenance",
       "l3_name": "AOG Recovery & Technical Dispatch",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19235,7 +19235,7 @@
       "l2_process": "MRO Vendor Management",
       "l2_slug": "line-maintenance",
       "l3_name": "MRO Vendor & Outsourcing Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19247,7 +19247,7 @@
       "l2_process": "MRO Vendor Management",
       "l2_slug": "line-maintenance",
       "l3_name": "Spare Parts Inventory & Procurement",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19259,7 +19259,7 @@
       "l2_process": "Heavy Maintenance",
       "l2_slug": "heavy-maintenance",
       "l3_name": "Structural Repair & NDT Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19271,7 +19271,7 @@
       "l2_process": "Airworthiness & Compliance",
       "l2_slug": "line-maintenance",
       "l3_name": "Avionics & Systems Modification",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19283,7 +19283,7 @@
       "l2_process": "Airworthiness & Compliance",
       "l2_slug": "line-maintenance",
       "l3_name": "Quality Assurance & Safety Audits (CAMO)",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19295,7 +19295,7 @@
       "l2_process": "MRO Vendor Management",
       "l2_slug": "line-maintenance",
       "l3_name": "Maintenance Cost Control & KPI Reporting",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19307,7 +19307,7 @@
       "l2_process": "MRO Vendor Management",
       "l2_slug": "line-maintenance",
       "l3_name": "Warranty Claim Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19319,7 +19319,7 @@
       "l2_process": "Finance & Accounting",
       "l2_slug": "finance-accounting",
       "l3_name": "Financial Planning & Budgeting",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19331,7 +19331,7 @@
       "l2_process": "Finance & Accounting",
       "l2_slug": "finance-accounting",
       "l3_name": "Management Accounting & Cost Control",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19343,7 +19343,7 @@
       "l2_process": "Finance & Accounting",
       "l2_slug": "finance-accounting",
       "l3_name": "Revenue Accounting & BSP Settlement",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19355,7 +19355,7 @@
       "l2_process": "Human Resources",
       "l2_slug": "human-resources",
       "l3_name": "Workforce Planning & Headcount Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19367,7 +19367,7 @@
       "l2_process": "Human Resources",
       "l2_slug": "human-resources",
       "l3_name": "Talent Acquisition & Recruitment",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19379,7 +19379,7 @@
       "l2_process": "Human Resources",
       "l2_slug": "human-resources",
       "l3_name": "Learning & Development Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19391,7 +19391,7 @@
       "l2_process": "Human Resources",
       "l2_slug": "human-resources",
       "l3_name": "Labour Relations & Union Negotiation",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19403,7 +19403,7 @@
       "l2_process": "Information Technology",
       "l2_slug": "finance-accounting",
       "l3_name": "PSS (Passenger Service System) Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19415,7 +19415,7 @@
       "l2_process": "Information Technology",
       "l2_slug": "finance-accounting",
       "l3_name": "Cybersecurity & Threat Management",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19427,7 +19427,7 @@
       "l2_process": "Information Technology",
       "l2_slug": "finance-accounting",
       "l3_name": "Data Engineering & Analytics Platform",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19439,7 +19439,7 @@
       "l2_process": "Procurement & Supply Chain",
       "l2_slug": "finance-accounting",
       "l3_name": "Strategic Sourcing & Vendor Selection",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19451,7 +19451,7 @@
       "l2_process": "Procurement & Supply Chain",
       "l2_slug": "finance-accounting",
       "l3_name": "Fuel Procurement & Supply Chain",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19463,7 +19463,7 @@
       "l2_process": "Procurement & Supply Chain",
       "l2_slug": "finance-accounting",
       "l3_name": "Aircraft Parts & Consumables Procurement",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19475,7 +19475,7 @@
       "l2_process": "Safety & Regulatory",
       "l2_slug": "finance-accounting",
       "l3_name": "Safety Management System (SMS)",
-      "status": "Queued",
+      "status": "Failed",
       "run_date": null,
       "wiki_path": null,
       "l4_steps": []
@@ -19487,10 +19487,215 @@
       "l2_process": "Safety & Regulatory",
       "l2_slug": "finance-accounting",
       "l3_name": "Regulatory Compliance & AOC Management",
-      "status": "Queued",
-      "run_date": null,
-      "wiki_path": null,
-      "l4_steps": []
+      "status": "Complete",
+      "run_date": "2026-03-19",
+      "wiki_path": "corporate-support/safety-regulatory/cs-15",
+      "l4_steps": [
+        {
+          "step": "1.1",
+          "name": "Subscribe to FAA rulemaking & ICAO SARPs updates",
+          "role": "Regulatory Compliance Manager",
+          "system": "FAA Regulatory Notification Service (GovDelivery)",
+          "input": "FAA NPRM publications, ICAO amendment cycles, DOT safety directives",
+          "output": "Regulatory watch list with effective dates and applicability flags",
+          "kpi": "100% of applicable NPRMs captured within 5 business days of publication",
+          "pain_point": "FAA issues 300+ NPRMs per year; manual triage against 14 CFR Part 119/121 scope causes missed applicability deadlines without automated rule-matching",
+          "decision_point": "N",
+          "exception": "N"
+        },
+        {
+          "step": "1.2",
+          "name": "Classify regulatory change by AOC impact category",
+          "role": "Director of Safety & Compliance",
+          "system": "ARMS (Aviation Risk Management Solutions)",
+          "input": "Regulatory watch list, current Operations Specifications (OpSpecs) baseline",
+          "output": "Impact classification: Critical / Significant / Administrative; assigned owner and deadline",
+          "kpi": "Classification completed within 3 business days of receipt; \u226595% accuracy validated by VP Safety review",
+          "pain_point": "14 CFR Part 121 overlaps with Part 91, Part 135, and ICAO Annex 6 \u2014 misclassification risk is high for carriers operating international routes under bilateral agreements",
+          "decision_point": "Y",
+          "exception": "N"
+        },
+        {
+          "step": "1.3",
+          "name": "Determine material impact on AOC or OpSpecs conditions",
+          "role": "Regulatory Compliance Manager",
+          "system": "ARMS (Aviation Risk Management Solutions)",
+          "input": "Impact classification, current OpSpecs (OpSpec A, B, C, D series)",
+          "output": "Go/no-go decision: initiate gap assessment or log as no-action required",
+          "kpi": "Decision documented within 2 business days; 0 unreviewed critical items older than 5 days",
+          "pain_point": "OpSpecs are issued at aircraft-type level \u2014 a single Boeing 737 MAX amendment may trigger parallel OpSpec revisions across A002, B036, and D085 series, each requiring separate FAA FSDO concurrence",
+          "decision_point": "Y",
+          "exception": "Y"
+        },
+        {
+          "step": "2.1",
+          "name": "Conduct OpSpecs gap analysis against new regulation",
+          "role": "Regulatory Compliance Analyst",
+          "system": "WebOPSS (FAA Web-Based Operations Specifications System)",
+          "input": "Applicable regulatory change, current approved OpSpecs, Operations Manual",
+          "output": "Gap analysis report with non-compliant clauses, affected flight types, and remediation scope",
+          "kpi": "Gap analysis completed \u226530 days before regulation effective date for non-emergency rules",
+          "pain_point": "WebOPSS does not provide automated diff between existing OpSpecs and new regulatory text \u2014 analysts must perform manual line-by-line comparison across 100+ OpSpec paragraphs, consuming 40+ analyst-hours per major rule change",
+          "decision_point": "N",
+          "exception": "N"
+        },
+        {
+          "step": "2.2",
+          "name": "Review fleet type ratings and pilot training compliance",
+          "role": "Chief Pilot / Training Standards Manager",
+          "system": "Jeppesen FliteDeck (Operations Manual & training reference)",
+          "input": "Gap analysis report, approved Training Specifications (TRSpecs), FAR Part 121 Subpart N/O",
+          "output": "Training compliance matrix: current vs. required qualification levels by aircraft type and route",
+          "kpi": "100% of pilots current on type rating within 24-month recurrent cycle; 0 flights dispatched with lapsed qualification",
+          "pain_point": "Introduction of new flight deck technology (e.g., Boeing 737 MAX MCAS differences training) requires FSDO-approved training programme amendments before revenue flying \u2014 timeline mismatch with aircraft delivery schedules creates capacity risk",
+          "decision_point": "N",
+          "exception": "Y"
+        },
+        {
+          "step": "2.3",
+          "name": "Identify non-compliance gaps and remediation requirements",
+          "role": "VP Safety & Regulatory Affairs",
+          "system": "ARMS (Aviation Risk Management Solutions)",
+          "input": "Gap analysis report, training compliance matrix, airworthiness directives (ADs) list",
+          "output": "Non-compliance register with risk severity rating (Critical / High / Medium / Low)",
+          "kpi": "Zero Critical-rated gaps open beyond 30 days; High-rated gaps resolved within 90 days",
+          "pain_point": "FAA Airworthiness Directives issued via AD registry may conflict with manufacturer service bulletin schedules \u2014 carriers must negotiate alternate means of compliance (AMOC) approval which averages 6\u201318 months with FAA Aircraft Certification Office",
+          "decision_point": "Y",
+          "exception": "Y"
+        },
+        {
+          "step": "2.4",
+          "name": "Develop and approve corrective action plan (CAP)",
+          "role": "Director of Safety & Compliance",
+          "system": "ARMS (Aviation Risk Management Solutions)",
+          "input": "Non-compliance register, resource constraints, budget from SAP S/4HANA Finance",
+          "output": "Board-approved CAP with milestones, accountable owners, and target closure dates",
+          "kpi": "CAP approved by VP Safety within 10 business days of gap identification; milestone adherence \u226590%",
+          "pain_point": "CAP funding competes with capital allocation cycles \u2014 safety-driven OpEx spend cannot be deferred but lacks the revenue justification framework used for commercial projects, creating budget approval delays",
+          "decision_point": "Y",
+          "exception": "N"
+        },
+        {
+          "step": "3.1",
+          "name": "Prepare AOC amendment or OpSpecs revision package",
+          "role": "Regulatory Compliance Manager",
+          "system": "WebOPSS (FAA Web-Based Operations Specifications System)",
+          "input": "Approved CAP, draft revised OpSpecs, supporting technical documentation",
+          "output": "Complete FAA amendment package: Form 8900-1, revised OpSpec paragraphs, supporting data",
+          "kpi": "Package completeness score \u226595% on first submission (measured by FAA deficiency rate); zero incomplete submissions",
+          "pain_point": "FAA Form 8900-1 and WebOPSS data entry does not validate cross-references between OpSpec series \u2014 errors discovered during FSDO review require full resubmission and add 4\u20138 weeks to approval timeline",
+          "decision_point": "N",
+          "exception": "N"
+        },
+        {
+          "step": "3.2",
+          "name": "Submit amendment package to FAA FSDO via WebOPSS",
+          "role": "Regulatory Compliance Manager",
+          "system": "WebOPSS (FAA Web-Based Operations Specifications System)",
+          "input": "Completed amendment package, principal operations inspector (POI) contact",
+          "output": "FAA submission confirmation number; amendment tracking record opened in ARMS",
+          "kpi": "Submission made \u226560 days before effective date for Major amendments; \u226530 days for Minor",
+          "pain_point": "WebOPSS portal has documented uptime issues during peak submission periods (e.g., end-of-year deadline rush); carriers with sole-source FSDO assignment have no alternative submission channel if POI is on extended leave",
+          "decision_point": "N",
+          "exception": "Y"
+        },
+        {
+          "step": "3.3",
+          "name": "Respond to FAA requests for additional information",
+          "role": "Director of Safety & Compliance",
+          "system": "WebOPSS (FAA Web-Based Operations Specifications System)",
+          "input": "FAA deficiency notice or Request for Additional Information (RAI)",
+          "output": "Supplemental data package; revised submission if OpSpec text changes required",
+          "kpi": "RAI response submitted within 10 business days of receipt; first-response resolution rate \u226575%",
+          "pain_point": "FAA POI reviewer rotation means institutional knowledge of airline-specific OpSpecs is lost \u2014 new POI may re-open previously resolved items, causing amendment cycles to restart and exceeding planned compliance timelines",
+          "decision_point": "Y",
+          "exception": "Y"
+        },
+        {
+          "step": "3.4",
+          "name": "Receive, validate, and file approved OpSpecs revision",
+          "role": "Regulatory Compliance Manager",
+          "system": "WebOPSS (FAA Web-Based Operations Specifications System)",
+          "input": "FAA-approved OpSpecs revision notification",
+          "output": "Updated OpSpecs filed in controlled document repository; affected departments notified",
+          "kpi": "Distribution to operational departments within 24 hours of FAA approval; acknowledgement receipt rate 100% within 48 hours",
+          "pain_point": "OpSpecs revisions must be cascaded to Dispatch, Crew Training, Maintenance, and Ground Ops simultaneously \u2014 document management systems (SharePoint) lack mandatory-read workflow enforcement, creating compliance traceability gaps",
+          "decision_point": "N",
+          "exception": "N"
+        },
+        {
+          "step": "4.1",
+          "name": "Conduct periodic SMS internal compliance audit",
+          "role": "SMS Coordinator / Internal Safety Auditor",
+          "system": "ARMS (Aviation Risk Management Solutions)",
+          "input": "Annual audit schedule, ICAO Doc 9859 SMS framework, 14 CFR \u00a7119.65 requirements",
+          "output": "Internal audit report with findings, risk ratings, and corrective action recommendations",
+          "kpi": "4 SMS audits completed per year; critical findings closed within 30 days; audit coverage \u2265100% of SMS components annually",
+          "pain_point": "FAA requires SMS programmes to demonstrate safety performance improvement over time (AC 120-92B) \u2014 carriers using spreadsheet-based audit tracking cannot produce trend evidence required for IOSA (IATA Operational Safety Audit) recertification",
+          "decision_point": "N",
+          "exception": "N"
+        },
+        {
+          "step": "4.2",
+          "name": "Analyse FOQA safety performance indicators against thresholds",
+          "role": "Flight Data Monitoring Analyst",
+          "system": "Flight Data Monitoring (FDM/FOQA) Platform",
+          "input": "Flight recorder data feeds, airline-defined safety performance indicator (SPI) thresholds",
+          "output": "SPI dashboard report: exceedance counts, trend analysis, risk-ranked event list",
+          "kpi": "FOQA data capture rate \u226599.5% of revenue flights; SPI exceedance rate <0.5 per 1,000 flights for high-severity events",
+          "pain_point": "FOQA data volumes from 800+ daily flights generate 2TB+ per month \u2014 without automated anomaly detection (e.g., Palantir Aviation Safety), manual analyst review creates a 4\u20136 week lag between exceedance event and corrective action initiation",
+          "decision_point": "Y",
+          "exception": "Y"
+        },
+        {
+          "step": "4.3",
+          "name": "File ASAP or VDRP voluntary safety disclosure report",
+          "role": "Pilot / Dispatcher / Aviation Safety Action Program (ASAP) Manager",
+          "system": "FAA Aviation Safety Action Program (ASAP) Portal",
+          "input": "SPI threshold breach, pilot self-disclosure, or near-miss event report",
+          "output": "ASAP Event Review Committee (ERC) report; corrective action recommendation to FAA",
+          "kpi": "ASAP report submission within 24 hours of event identification; ERC review completed within 30 days; 0 reports rejected for lateness",
+          "pain_point": "ASAP programme confidentiality protections (14 CFR \u00a713.401) conflict with labour contract grievance procedures \u2014 ambiguity over which events qualify for ASAP immunity vs. disciplinary action suppresses voluntary disclosure rates, undermining SMS effectiveness",
+          "decision_point": "Y",
+          "exception": "Y"
+        },
+        {
+          "step": "5.1",
+          "name": "Update MEL, Operations Manual, and training materials",
+          "role": "Technical Publications Manager",
+          "system": "Jeppesen FliteDeck (EFB content management)",
+          "input": "Approved OpSpecs revision, AD compliance status, ASAP corrective actions",
+          "output": "Revised MEL amendments, updated Operations Manual sections, EFB content pushed to fleet tablets",
+          "kpi": "MEL and Ops Manual updates published within 5 business days of OpSpecs approval; EFB content sync to 100% of fleet devices within 24 hours",
+          "pain_point": "MEL amendment cycle requires simultaneous approval from airline, Boeing (MMEL source), and FAA \u2014 three-party review adds 60\u2013120 days per amendment, creating temporary deferred maintenance item backlogs that inflate maintenance cost and aircraft availability risk",
+          "decision_point": "N",
+          "exception": "Y"
+        },
+        {
+          "step": "5.2",
+          "name": "Track and report compliance costs against regulatory budget",
+          "role": "Regulatory Affairs Finance Controller",
+          "system": "SAP S/4HANA Finance (FI/CO)",
+          "input": "CAP milestones, training programme costs, audit fees, legal advisory costs",
+          "output": "Regulatory compliance cost report by OpSpec category; variance analysis vs. annual budget",
+          "kpi": "Regulatory compliance budget variance \u22645% quarterly; cost-per-amendment tracked and benchmarked annually",
+          "pain_point": "Regulatory compliance costs are scattered across Safety, Legal, Crew Training, and Maintenance cost centres in SAP \u2014 absence of a dedicated regulatory compliance WBS element prevents accurate total-cost-of-compliance reporting required by board audit committees",
+          "decision_point": "N",
+          "exception": "N"
+        },
+        {
+          "step": "5.3",
+          "name": "Archive compliance records and close regulatory cycle",
+          "role": "Regulatory Compliance Manager",
+          "system": "Microsoft SharePoint (Controlled Document Management)",
+          "input": "Approved OpSpecs, audit reports, ASAP ERC decisions, CAP closure evidence",
+          "output": "Compliance cycle closure report; archived records indexed for 7-year retention per 14 CFR \u00a7121.380",
+          "kpi": "100% of compliance records archived within 5 business days of cycle close; retrieval time for auditor requests \u22641 business day",
+          "pain_point": "14 CFR \u00a7121.380 mandates 7-year retention for most compliance records, but GDPR and state privacy laws impose conflicting deletion requirements for records containing crew personal data \u2014 dual-obligation conflict requires manual legal review for each retention decision",
+          "decision_point": "N",
+          "exception": "N"
+        }
+      ]
     }
   ]
 }
