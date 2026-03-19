@@ -1,0 +1,59 @@
+flowchart LR
+  subgraph P1["Phase 1: Policy Configuration"]
+    A([Start]) --> B[Define LFG scope & fare rules]
+    B --> C[Configure claim window & compensation tiers]
+    C --> D{Tariff & DOT compliant?}
+    D -- No --> B
+    D -- Yes --> E[Policy published to channels]
+  end
+  subgraph P2["Phase 2: Fare Monitoring & Baseline"]
+    E --> F[Schedule competitor fare capture]
+    F --> G[Capture reference fare at booking]
+    G --> H{Same route/date/conditions?}
+    H -- No --> I([Ineligible — exit])
+    H -- Yes --> J[Fare baseline stored in PNR]
+  end
+  subgraph P3["Phase 3: Claim Intake & Validation"]
+    J --> K[Receive LFG claim via digital or voice]
+    K --> L{Within claim window & policy scope?}
+    L -- No --> M([Claim rejected])
+    L -- Yes --> N[Authenticate competitor fare via GDS/ATPCO]
+    N --> O{Competitor fare independently verified?}
+    O -- No --> M
+    O -- Yes --> P[Claim validated]
+  end
+  subgraph P4["Phase 4: Price Match Decision"]
+    P --> Q[Calculate fare differential & compensation]
+    Q --> R{Exceeds approval threshold?}
+    R -- Yes --> S[Escalate to Senior Pricing Manager]
+    S --> T{Manager approved?}
+    T -- No --> M
+    T -- Yes --> U[Issue compensation decision to customer]
+    R -- No --> U
+  end
+  subgraph P5["Phase 5: Settlement & Fulfillment"]
+    U --> V[Process refund or travel credit]
+    V --> W[Award frequent flyer miles if applicable]
+    W --> X[Update PNR & CRM with claim disposition]
+    X --> Y([Claim closed])
+  end
+  subgraph P6["Phase 6: Performance Review"]
+    Y --> Z[Aggregate claim volume & payout metrics]
+    Z --> AA{Program ROI below threshold?}
+    AA -- Yes --> AB[Recommend & implement policy adjustments]
+    AB --> B
+    AA -- No --> AC([Review complete])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style I fill:#003366,color:#fff,stroke:#003366
+  style M fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style AC fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style AA fill:#ff6600,color:#fff,stroke:#ff6600

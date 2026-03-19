@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Line Maintenance · Maintenance, Repair &amp; Overhaul · Airlines Process Wiki</title>
+<title>NP-PF-15 · Low Fare Guarantee Program Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -73,7 +74,7 @@
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-12/"><span class="status-dot status-done"></span><span class="pid">NP-PF-12</span>Corporate Contract Pricing</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-13/"><span class="status-dot status-done"></span><span class="pid">NP-PF-13</span>Competitive Fare Intelligence</a>
         <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-14/"><span class="status-dot status-done"></span><span class="pid">NP-PF-14</span>Bundled Fare Product Management</a>
-        <a class="sidebar-l3-link" href="../../../network-and-pricing/pricing-fare-management/np-pf-15/"><span class="status-dot status-done"></span><span class="pid">NP-PF-15</span>Low Fare Guarantee Program Management</a>
+        <a class="sidebar-l3-link active" href="../../../network-and-pricing/pricing-fare-management/np-pf-15/"><span class="status-dot status-done"></span><span class="pid">NP-PF-15</span>Low Fare Guarantee Program Management</a>
       </div>
       <a class="sidebar-l2-link" href="../../../network-and-pricing/sales-distribution/">Sales &amp; Distribution</a>
       <div class="sidebar-l3">
@@ -187,8 +188,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-queue"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
@@ -242,117 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
-  <span class="current">Line Maintenance</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/">Network Planning &amp; Scheduling</a><span class="sep">›</span>
+  <a href="../../../network-and-pricing/pricing-fare-management/">Pricing &amp; Fare Management</a><span class="sep">›</span>
+  <span class="current">NP-PF-15 · Low Fare Guarantee Program Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Line Maintenance</h1>
-    <p>Maintenance, Repair &amp; Overhaul · 0 of 11 subprocesses complete · Updated 2026-03-18 21:14</p>
+    <h1>Low Fare Guarantee Program Management</h1>
+    <p>Network Planning &amp; Scheduling › Pricing &amp; Fare Management · 18 L4 steps · 6 phases · 6 decision gates · Updated 2026-03-18 21:14</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">NP-PF-15</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-01</span>Line Maintenance Planning &amp; Execution</h3>
-    <p>Line Maintenance · Queued</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-np-pf-15">
+      <img src="../../../assets/img/np-pf-15.png" alt="NP-PF-15 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-np-pf-15').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-np-pf-15').style.display='flex'">
+      <div id="diag-placeholder-np-pf-15" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-01/">Queued</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Define LFG eligibility scope &amp; fare rules</td>
+  <td class="td-role">Pricing Policy Manager</td>
+  <td><span class="stag custom">ATPCO Automated Pricing</span></td>
+  <td style="font-size:10px;color:#6b7280">Annual pricing strategy review, commercial policy mandate</td>
+  <td style="font-size:10px">Documented eligibility criteria (route scope, booking class, advance-purchase limits, fare conditions)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Policy configuration cycle ≤5 business days; zero ambiguous eligibility clauses flagged by Legal</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Configure claim window &amp; compensation tiers</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (Pricing Module)</span></td>
+  <td style="font-size:10px;color:#6b7280">LFG policy document, approved compensation tiers (refund / travel credit / miles)</td>
+  <td style="font-size:10px">Configured claim submission window (e.g. 24 h post-booking) and compensation rule tables in Altéa</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Configuration accuracy ≥99% — zero erroneous payouts in first 30 days post-launch</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Validate policy against DOT tariff requirements</td>
+  <td class="td-role">Pricing Compliance Analyst</td>
+  <td><span class="stag custom">ATPCO Automated Pricing (Rulebook validation)</span></td>
+  <td style="font-size:10px;color:#6b7280">Configured LFG policy parameters</td>
+  <td style="font-size:10px">Compliance sign-off or revision request with specific ATPCO rule references</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Compliance review completion ≤3 business days; zero DOT tariff violations at launch</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Schedule automated competitor fare data feeds</td>
+  <td class="td-role">Pricing Analyst</td>
+  <td><span class="stag custom">ATPCO OTA Transparency (fare shopping feed)</span></td>
+  <td style="font-size:10px;color:#6b7280">LFG-eligible route and market list</td>
+  <td style="font-size:10px">Scheduled fare monitoring jobs; competitor fare baseline dataset refreshed ≤4 h</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Market coverage ≥95% of LFG-eligible routes; data freshness ≤4 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Capture immutable reference fare at time of booking</td>
+  <td class="td-role">Pricing Rules Engine (automated)</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS (fare quoting engine)</span></td>
+  <td style="font-size:10px;color:#6b7280">Customer booking transaction</td>
+  <td style="font-size:10px">Fare snapshot stored in PNR history: fare basis, amount, booking class, applicable conditions</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fare snapshot latency ≤2 s per booking; capture rate ≥99.9% of LFG-eligible transactions</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Classify competitor fare for LFG comparability</td>
+  <td class="td-role">Pricing Rules Engine (automated)</td>
+  <td><span class="stag custom">PROS RM (fare rules comparison module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Customer&#x27;s booked fare snapshot; competitor fare from ATPCO feed</td>
+  <td style="font-size:10px">Comparability flag (eligible / ineligible) with structured rationale stored against PNR</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Correct comparability classification ≥97%; false-positive ineligibility rate ≤2%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Receive LFG claim via digital or voice channel</td>
+  <td class="td-role">Customer Service Representative / Self-Service Bot</td>
+  <td><span class="stag custom">Salesforce Service Cloud (CRM)</span></td>
+  <td style="font-size:10px;color:#6b7280">Customer claim submission: booking reference, competitor fare evidence, claimed price</td>
+  <td style="font-size:10px">CRM claim ticket with booking reference linked, channel source, and timestamp</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Claim intake acknowledgement ≤4 business hours; self-service digital claim completion rate ≥55%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Verify booking eligibility against LFG policy rules</td>
+  <td class="td-role">Claims Processing Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS + Salesforce Service Cloud</span></td>
+  <td style="font-size:10px;color:#6b7280">CRM claim ticket; PNR booking history from Altéa</td>
+  <td style="font-size:10px">Eligibility determination (eligible / ineligible) with policy rule reference; rejection letter if ineligible</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Eligibility verification turnaround ≤2 business hours; accuracy ≥98%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Authenticate competitor fare evidence via GDS/ATPCO</td>
+  <td class="td-role">Claims Processing Analyst</td>
+  <td><span class="stag gds">ATPCO OTA Transparency + Sabre GDS (fare display)</span></td>
+  <td style="font-size:10px;color:#6b7280">Customer-submitted competitor fare screenshot or URL; ATPCO feed for the claimed market and date</td>
+  <td style="font-size:10px">Authenticated competitor fare record with airline, booking class, conditions, and availability timestamp</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Evidence authentication turnaround ≤1 business hour; false-positive acceptance rate ≤3%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Calculate fare differential &amp; compensation amount</td>
+  <td class="td-role">Claims Processing Analyst (automated calculation)</td>
+  <td><span class="stag amadeus">PROS RM (compensation calculation module) + Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Authenticated competitor fare; customer&#x27;s booked fare from PNR snapshot</td>
+  <td style="font-size:10px">Calculated net differential; proposed compensation type (refund / travel credit / miles) and amount</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Calculation accuracy ≥99.9%; average compensation computation time ≤30 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Escalate large-differential claims for manager approval</td>
+  <td class="td-role">Senior Pricing Manager</td>
+  <td><span class="stag custom">Salesforce Service Cloud (approval workflow)</span></td>
+  <td style="font-size:10px;color:#6b7280">Compensation calculation where differential exceeds authority threshold (e.g. &gt;$300)</td>
+  <td style="font-size:10px">Approved or denied compensation decision with manager sign-off and rationale</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Escalated claim approval turnaround ≤4 business hours; escalation rate documented monthly</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Issue compensation decision notification to customer</td>
+  <td class="td-role">Claims Processing Analyst</td>
+  <td><span class="stag amadeus">Salesforce Service Cloud + Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved (or denied) compensation decision</td>
+  <td style="font-size:10px">Multi-channel customer notification (email, app push) with compensation type, amount, and redemption instructions</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Notification delivery ≤15 min of decision; post-claim CSAT ≥4.2/5.0</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Process refund or travel credit to customer account</td>
+  <td class="td-role">Revenue Accounting Analyst</td>
+  <td><span class="stag amadeus">SAP S/4HANA Finance (FI/CO) + Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved compensation decision; customer payment method on file</td>
+  <td style="font-size:10px">Refund posted to original payment method or travel credit added to customer wallet</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Refund processing ≤7 business days (per DOT requirement); travel credit issuance ≤24 hours; zero incorrect postings</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Award frequent flyer miles compensation if applicable</td>
+  <td class="td-role">Loyalty Operations Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa Loyalty (FFP module)</span></td>
+  <td style="font-size:10px;color:#6b7280">Compensation decision specifying miles award type and quantity</td>
+  <td style="font-size:10px">Miles credited to customer frequent flyer account with transaction reference</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Miles credit turnaround ≤24 hours; posting accuracy ≥99.99%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Update PNR &amp; CRM record with claim disposition</td>
+  <td class="td-role">Claims Processing Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa PSS + Salesforce Service Cloud</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed settlement confirmation from SAP and/or Loyalty</td>
+  <td style="font-size:10px">PNR OSI remark with LFG claim reference number; CRM ticket closed with structured disposition code</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Record update completeness ≥99.5%; full audit trail retained for 24-month regulatory period</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 6</div>6.1</td>
+  <td class="td-name">Aggregate LFG claim volume &amp; payout metrics</td>
+  <td class="td-role">Revenue Management Analyst</td>
+  <td><span class="stag aws">AWS Redshift + Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Salesforce CRM claim exports; SAP settlement records; Altéa PNR data</td>
+  <td style="font-size:10px">Monthly LFG dashboard: claim volume, approval rate, average payout, market distribution, denial reasons</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Dashboard refresh ≤T+1 business day; cross-system data completeness ≥98%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.2</td>
+  <td class="td-name">Benchmark program cost against revenue retention</td>
+  <td class="td-role">Senior Pricing Manager</td>
+  <td><span class="stag amadeus">Amadeus Revenue Management (NRM) + AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">LFG payout totals; revenue from retained bookings; customer churn analysis</td>
+  <td style="font-size:10px">Program ROI assessment; markets where LFG drives positive retention vs. net cost centres</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">LFG program ROI ≥2.5× (revenue retained per $1 paid out); cost-per-claim ≤$45</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">6.3</td>
+  <td class="td-name">Recommend &amp; implement LFG policy adjustments</td>
+  <td class="td-role">Pricing Policy Manager</td>
+  <td><span class="stag amadeus">ATPCO Automated Pricing + Amadeus Altéa PSS</span></td>
+  <td style="font-size:10px;color:#6b7280">Program ROI assessment; competitive fare environment trends from OAG</td>
+  <td style="font-size:10px">Revised LFG policy parameters (eligibility scope, claim window, compensation tiers) filed to ATPCO and updated in Altéa</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Policy revision cycle ≤30 days; zero lapse in published guarantee terms during transition; ATPCO filing lead time ≥7 days before effective date</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-05</span>Airworthiness Directive (AD) Compliance</h3>
-    <p>Line Maintenance · Queued</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">NP-PF-15</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Network Planning &amp; Scheduling</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Pricing &amp; Fare Management</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Low Fare Guarantee Program Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 6 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">6 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">7 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Pricing Policy Manager</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Revenue Management Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Pricing Compliance Analyst</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Pricing Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>Pricing Rules Engine (automated)</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Customer Service Representative / Self-Service Bot</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Claims Processing Analyst</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Claims Processing Analyst (automated calculation)</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Senior Pricing Manager</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Revenue Accounting Analyst</div><div class="swim"><div class="dot" style="background:#f97316"></div>Loyalty Operations Analyst</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">ATPCO Automated Pricing</span><span class="stag amadeus">Amadeus Altéa PSS (Pricing Module)</span><span class="stag custom">ATPCO Automated Pricing (Rulebook validation)</span><span class="stag custom">ATPCO OTA Transparency (fare shopping feed)</span><span class="stag amadeus">Amadeus Altéa PSS (fare quoting engine)</span><span class="stag custom">PROS RM (fare rules comparison module)</span><span class="stag custom">Salesforce Service Cloud (CRM)</span><span class="stag amadeus">Amadeus Altéa PSS + Salesforce Service Cloud</span><span class="stag gds">ATPCO OTA Transparency + Sabre GDS (fare display)</span><span class="stag amadeus">PROS RM (compensation calculation module) + Amadeus Altéa PSS</span><span class="stag custom">Salesforce Service Cloud (approval workflow)</span><span class="stag amadeus">Salesforce Service Cloud + Amadeus Altéa PSS</span><span class="stag amadeus">SAP S/4HANA Finance (FI/CO) + Amadeus Altéa PSS</span><span class="stag amadeus">Amadeus Altéa Loyalty (FFP module)</span><span class="stag aws">AWS Redshift + Tableau</span><span class="stag amadeus">Amadeus Revenue Management (NRM) + AWS Redshift</span><span class="stag amadeus">ATPCO Automated Pricing + Amadeus Altéa PSS</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Define LFG eligibility scope &amp; fare rules</span><span class="kval">Policy configuration cycle ≤5 business days; zero ambiguous eligibility clauses flagged by Legal</span></div><div class="krow"><span class="kname">Configure claim window &amp; compensation tiers</span><span class="kval">Configuration accuracy ≥99% — zero erroneous payouts in first 30 days post-launch</span></div><div class="krow"><span class="kname">Validate policy against DOT tariff requirements</span><span class="kval">Compliance review completion ≤3 business days; zero DOT tariff violations at launch</span></div><div class="krow"><span class="kname">Schedule automated competitor fare data feeds</span><span class="kval">Market coverage ≥95% of LFG-eligible routes; data freshness ≤4 hours</span></div><div class="krow"><span class="kname">Capture immutable reference fare at time of booking</span><span class="kval">Fare snapshot latency ≤2 s per booking; capture rate ≥99.9% of LFG-eligible transactions</span></div><div class="krow"><span class="kname">Classify competitor fare for LFG comparability</span><span class="kval">Correct comparability classification ≥97%; false-positive ineligibility rate ≤2%</span></div><div class="krow"><span class="kname">Receive LFG claim via digital or voice channel</span><span class="kval">Claim intake acknowledgement ≤4 business hours; self-service digital claim completion rate ≥55%</span></div><div class="krow"><span class="kname">Verify booking eligibility against LFG policy rules</span><span class="kval">Eligibility verification turnaround ≤2 business hours; accuracy ≥98%</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">ATPCO fare rule structures make same-fare-basis comparisons across carriers difficult; mismatched fare conditions (e.g. refundability, baggage) trigger spurious customer claims that are hard to reject</div><div class="risk-card">Altéa PSS compensation rule tables require manual maintenance; there is no native LFG workflow module, so each rule change must be scripted separately for web, call-centre, and API channels</div><div class="risk-card">DOT price advertising rules (14 CFR Part 399) require precise disclosure of LFG terms in all channels; a mismatch between the ATPCO-filed rule and the website copy has triggered enforcement action at peer carriers</div><div class="risk-card">Screen-scraping competitor OTA prices violates most carrier terms of service and is legally risky; ATPCO-published fares lag real-time OTA dynamic pricing by several hours, creating a window where a competitor&#x27;s low fare expires before the airline can verify a claim</div><div class="risk-card">Dynamic pricing means the fare quoted to a customer can change within minutes of booking; the snapshot must be cryptographically signed or write-once to prevent retroactive manipulation by either party</div><div class="risk-card">Bundled fares (seat + bag + flexibility) vs. unbundled competitor fares create apples-to-oranges comparisons that PROS cannot resolve automatically; a manual adjudication queue exists but has no SLA, causing consumer complaints</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Annual pricing strategy review, commercial policy mandate</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Revised LFG policy parameters (eligibility scope, claim window, compensation tiers) filed to ATPCO and updated in Altéa</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-05/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-06</span>Maintenance Reliability &amp; RCM Program</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-06/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-07</span>Aircraft Technical Records Management</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-07/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-08</span>AOG Recovery &amp; Technical Dispatch</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-09</span>MRO Vendor &amp; Outsourcing Management</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-10</span>Spare Parts Inventory &amp; Procurement</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-12</span>Avionics &amp; Systems Modification</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-13</span>Quality Assurance &amp; Safety Audits (CAMO)</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-14</span>Maintenance Cost Control &amp; KPI Reporting</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">MR-15</span>Warranty Claim Management</h3>
-    <p>Line Maintenance · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="mr-15/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../np-pf-14/"><span class="arrow">←</span><span><span class="sub">Previous</span>NP-PF-14 · Bundled Fare Product Management</span></a><a class="pn-btn" href="../np-sd-01/"><span><span class="sub">Next</span>NP-SD-01 · GDS Channel Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
