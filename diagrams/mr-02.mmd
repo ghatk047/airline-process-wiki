@@ -1,0 +1,52 @@
+flowchart LR
+  subgraph P1[Phase 1: Airworthiness Review and Check Trigger]
+    A([Start]) --> B[Extract aircraft\ndue-date forecast\nfrom CAMP]
+    B --> C[Review AD/SB\ncompliance status]
+    C --> D{Check type:\nC-check or D-check?}
+    D -- C-Check --> E[Initiate C-check\nplanning package]
+    D -- D-Check --> F[Escalate to\nD-check scope lead]
+    E --> G[Check type\nconfirmed]
+    F --> G
+  end
+  subgraph P2[Phase 2: Work Scope Development]
+    G --> H[Generate MPD\nbaseline work package]
+    H --> I[Incorporate deferred\ndefects and MELs]
+    I --> J[Add Engineering Orders\nand mods — AMOS]
+    J --> K{Scope exceeds\nC-check threshold?}
+    K -- Yes --> L[Re-scope as\nD-check in AMOS]
+    L --> K
+    K -- No --> M[Approved work\nscope package]
+  end
+  subgraph P3[Phase 3: Resource and Material Planning]
+    M --> N[Estimate manhours\nfrom AMOS work pkg]
+    N --> O[Identify long-lead\nparts — CAMP / SAP]
+    O --> P{Critical parts\nconfirmed available?}
+    P -- No --> Q[Raise emergency\nrequisition — Ariba]
+    Q --> P
+    P -- Yes --> R[Material plan\nfinalized]
+  end
+  subgraph P4[Phase 4: MRO Vendor Contracting]
+    R --> S[Issue RFQ to\napproved MRO vendors]
+    S --> T[Evaluate bids:\nTAT, cost, capability]
+    T --> U{Bid meets TAT\nand cost targets?}
+    U -- No --> V[Negotiate or\nre-issue RFQ]
+    V --> U
+    U -- Yes --> W[Award contract and\nraise PO — SAP Ariba]
+  end
+  subgraph P5[Phase 5: Pre-Induction Readiness]
+    W --> X[Compile aircraft\ntech docs package]
+    X --> Y[Coordinate ferry\nflight — SkyWORKS]
+    Y --> Z{Pre-induction\nchecklist complete?}
+    Z -- No --> AA[Resolve open\nitems — AMOS]
+    AA --> Z
+    Z -- Yes --> AB[Confirm induction\ndate with MRO]
+    AB --> AC([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AC fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style Z fill:#ff6600,color:#fff,stroke:#ff6600

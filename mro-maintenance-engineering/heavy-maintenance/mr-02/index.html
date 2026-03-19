@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Airport &amp; Gate Management · Ground Operations &amp; Airport Services · Airlines Process Wiki</title>
+<title>MR-02 · Heavy Maintenance (C/D Check) Planning · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -187,8 +188,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Maintenance, Repair &amp; Overhaul</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/line-maintenance/">Line Maintenance</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/line-maintenance/mr-01/"><span class="status-dot status-done"></span><span class="pid">MR-01</span>Line Maintenance Planning &amp; Execution</a>
@@ -205,7 +206,7 @@
       </div>
       <a class="sidebar-l2-link" href="../../../mro-maintenance-engineering/heavy-maintenance/">Heavy Maintenance</a>
       <div class="sidebar-l3">
-        <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-02/"><span class="status-dot status-done"></span><span class="pid">MR-02</span>Heavy Maintenance (C/D Check) Planning</a>
+        <a class="sidebar-l3-link active" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-02/"><span class="status-dot status-done"></span><span class="pid">MR-02</span>Heavy Maintenance (C/D Check) Planning</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-03/"><span class="status-dot status-queue"></span><span class="pid">MR-03</span>Engine Shop Maintenance Management</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-04/"><span class="status-dot status-queue"></span><span class="pid">MR-04</span>Component &amp; Parts Management</a>
         <a class="sidebar-l3-link" href="../../../mro-maintenance-engineering/heavy-maintenance/mr-11/"><span class="status-dot status-queue"></span><span class="pid">MR-11</span>Structural Repair &amp; NDT Management</a>
@@ -242,81 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
-  <span class="current">Airport &amp; Gate Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/">Maintenance, Repair &amp; Overhaul</a><span class="sep">›</span>
+  <a href="../../../mro-maintenance-engineering/heavy-maintenance/">Heavy Maintenance</a><span class="sep">›</span>
+  <span class="current">MR-02 · Heavy Maintenance (C/D Check) Planning</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Airport &amp; Gate Management</h1>
-    <p>Ground Operations &amp; Airport Services · 7 of 7 subprocesses complete · Updated 2026-03-19 14:37</p>
+    <h1>Heavy Maintenance (C/D Check) Planning</h1>
+    <p>Maintenance, Repair &amp; Overhaul › Heavy Maintenance · 18 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-19 14:37</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">MR-02</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-01</span>Passenger Check-In &amp; Boarding</h3>
-    <p>Airport &amp; Gate Management · 18 steps · 8 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-mr-02">
+      <img src="../../../assets/img/mr-02.png" alt="MR-02 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-mr-02').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-mr-02').style.display='flex'">
+      <div id="diag-placeholder-mr-02" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract aircraft maintenance due-date forecast</td>
+  <td class="td-role">Maintenance Planning Engineer</td>
+  <td><span class="stag custom">CAMP (Continuous Airworthiness Monitoring Program)</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft flight hours, cycles, and calendar days from ACARS/flight ops feeds</td>
+  <td style="font-size:10px">Due-date forecast report showing C/D check windows per tail number</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Forecast horizon ≥12 months; 100% of fleet tails covered</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Review AD/SB compliance status per tail</td>
+  <td class="td-role">Airworthiness Engineer</td>
+  <td><span class="stag custom">CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">FAA Airworthiness Directives feed, manufacturer Service Bulletins, CAMP compliance tracker</td>
+  <td style="font-size:10px">AD/SB compliance gap list with mandated incorporation deadlines</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Zero open mandatory ADs at check induction; SB review complete ≥90 days pre-induction</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Determine check type: C-check vs D-check</td>
+  <td class="td-role">Maintenance Planning Manager</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft age, total flight cycles, last heavy check date, AD requirements</td>
+  <td style="font-size:10px">Confirmed check type decision (C1/C2/C3 or D-check) entered in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Check type confirmed ≥9 months prior to induction date</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Generate MPD baseline work package in AMOS</td>
+  <td class="td-role">Maintenance Planning Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved check type, aircraft MPD (Boeing Maintenance Planning Document), AMOS task library</td>
+  <td style="font-size:10px">Baseline work package with task cards, intervals, and estimated manhours</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Baseline work package issued ≥8 months prior to induction; manhour estimate accuracy ±10%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Incorporate deferred defects and open MEL items</td>
+  <td class="td-role">Technical Records Analyst</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Deferred defect register, MEL (Minimum Equipment List) open items from line maintenance logs</td>
+  <td style="font-size:10px">Updated work package with deferred items assigned to check package</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of Category A/B MEL items resolved at or before heavy check; deferred defect backlog cleared</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Add Engineering Orders and requested modifications</td>
+  <td class="td-role">Engineering Standards Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Engineering Orders (EOs), STC modifications, cabin reconfiguration requests from fleet planning</td>
+  <td style="font-size:10px">Supplemental work scope with EOs and mods task-carded in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">All approved EOs incorporated ≥6 months pre-induction; no scope additions within 60 days of induction</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Validate work scope against C-check threshold</td>
+  <td class="td-role">Maintenance Planning Manager</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed work scope package, manhour estimates, EO add-ons</td>
+  <td style="font-size:10px">Scope classification confirmed: C-check or escalated to D-check in AMOS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Scope re-classification decisions completed within 5 business days of scope freeze; re-scope rate &lt;5% of planned checks</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Estimate total manhours and skill requirements</td>
+  <td class="td-role">Maintenance Planning Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved work scope package with task cards</td>
+  <td style="font-size:10px">Manhour demand plan broken down by trade (structures, avionics, engines, interiors)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Manhour forecast accuracy ±15% vs actuals; plan issued ≥6 months pre-induction</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Identify and order long-lead rotable parts</td>
+  <td class="td-role">Supply Chain Planner</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (MM / Procurement)</span></td>
+  <td style="font-size:10px;color:#6b7280">AMOS work package BOM, CAMP part cross-reference, current inventory positions</td>
+  <td style="font-size:10px">Long-lead parts list with order quantities, lead times, and due-in dates</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of long-lead parts (lead time &gt;90 days) on order ≥6 months pre-induction; stockout rate at induction &lt;2%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Raise material requisitions for consumables and hardware</td>
+  <td class="td-role">Supply Chain Planner</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">AMOS-generated materials list, approved vendor catalogue in SAP Ariba</td>
+  <td style="font-size:10px">Purchase requisitions raised and approved in SAP Ariba; delivery schedule confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">All consumable PRs raised ≥90 days pre-induction; on-time delivery rate ≥95%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Confirm critical parts availability at MRO site</td>
+  <td class="td-role">Maintenance Planning Manager</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">SAP Ariba purchase orders, MRO facility inventory feed, Boeing Toolbox part status</td>
+  <td style="font-size:10px">Parts readiness confirmation report; open shortages escalated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Parts readiness confirmation completed 30 days pre-induction; critical shortage count = 0 at induction</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Issue RFQ to approved heavy MRO facilities</td>
+  <td class="td-role">Procurement Manager – MRO</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved work scope package, manhour estimates, parts supply plan, desired induction window</td>
+  <td style="font-size:10px">RFQ document issued to ≥3 qualified MRO vendors via SAP Ariba sourcing event</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">RFQ issued ≥9 months pre-induction; minimum 3 qualified vendor responses received</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Evaluate vendor bids on TAT, cost, and capability</td>
+  <td class="td-role">Procurement Manager – MRO</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Vendor bids, MRO capability audit records, historical TAT performance data</td>
+  <td style="font-size:10px">Bid evaluation scorecard with vendor ranking; recommendation memo</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Evaluation complete within 15 business days of bid close; cost variance between lowest and selected bid &lt;8%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Confirm bid meets TAT and unit cost targets</td>
+  <td class="td-role">VP Maintenance &amp; Engineering</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Bid evaluation scorecard, fleet plan TAT requirements, approved MRO budget</td>
+  <td style="font-size:10px">Approved vendor selection or instruction to re-issue RFQ / negotiate</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Contract TAT ≤21 days for C-check, ≤45 days for D-check; unit cost within ±5% of approved budget</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Award contract and raise PO in SAP</td>
+  <td class="td-role">Procurement Manager – MRO</td>
+  <td><span class="stag sap">SAP Ariba / SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved vendor selection, agreed contract terms, budget approval</td>
+  <td style="font-size:10px">Signed MRO contract, purchase order raised in SAP S/4HANA, cost centre committed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PO raised within 5 business days of approval; contract signed ≥6 months pre-induction</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Compile aircraft technical documentation package</td>
+  <td class="td-role">Technical Records Analyst</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft log books, CAMP airworthiness records, work scope package, AD/SB status report</td>
+  <td style="font-size:10px">Complete pre-induction documentation pack transmitted to MRO facility</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Documentation package delivered to MRO ≥14 days before induction; zero missing mandatory documents at induction gate</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Coordinate ferry flight and fleet schedule impact</td>
+  <td class="td-role">Network Operations Planner</td>
+  <td><span class="stag amadeus">Amadeus SkyWORKS</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed MRO induction date, aircraft tail assignment, fleet plan from SkyWORKS</td>
+  <td style="font-size:10px">Ferry flight plan, substitute aircraft allocation, schedule change notification to OCC</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Ferry flight confirmed ≥21 days pre-induction; schedule impact to revenue flying &lt;2 affected rotations</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Complete pre-induction readiness checklist</td>
+  <td class="td-role">Maintenance Planning Manager</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Documentation pack status, parts delivery confirmations, ferry flight plan, MRO slot confirmation</td>
+  <td style="font-size:10px">Signed pre-induction checklist; go/no-go decision for induction</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Checklist signed-off 7 days pre-induction; no-go rate due to planning gaps &lt;3%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-04</span>Gate Management &amp; Assignment</h3>
-    <p>Airport &amp; Gate Management · 18 steps · 5 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">MR-02</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Maintenance, Repair &amp; Overhaul</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Heavy Maintenance</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Heavy Maintenance (C/D Check) Planning</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">8 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Maintenance Planning Engineer</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Airworthiness Engineer</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Maintenance Planning Manager</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Technical Records Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>Engineering Standards Engineer</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Supply Chain Planner</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Procurement Manager – MRO</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>VP Maintenance &amp; Engineering</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Network Operations Planner</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">CAMP (Continuous Airworthiness Monitoring Program)</span><span class="stag custom">CAMP</span><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag sap">SAP S/4HANA Finance (MM / Procurement)</span><span class="stag sap">SAP Ariba</span><span class="stag sap">SAP Ariba / SAP S/4HANA Finance (FI/CO)</span><span class="stag amadeus">Amadeus SkyWORKS</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract aircraft maintenance due-date forecast</span><span class="kval">Forecast horizon ≥12 months; 100% of fleet tails covered</span></div><div class="krow"><span class="kname">Review AD/SB compliance status per tail</span><span class="kval">Zero open mandatory ADs at check induction; SB review complete ≥90 days pre-induction</span></div><div class="krow"><span class="kname">Determine check type: C-check vs D-check</span><span class="kval">Check type confirmed ≥9 months prior to induction date</span></div><div class="krow"><span class="kname">Generate MPD baseline work package in AMOS</span><span class="kval">Baseline work package issued ≥8 months prior to induction; manhour estimate accuracy ±10%</span></div><div class="krow"><span class="kname">Incorporate deferred defects and open MEL items</span><span class="kval">100% of Category A/B MEL items resolved at or before heavy check; deferred defect backlog cleared</span></div><div class="krow"><span class="kname">Add Engineering Orders and requested modifications</span><span class="kval">All approved EOs incorporated ≥6 months pre-induction; no scope additions within 60 days of induction</span></div><div class="krow"><span class="kname">Validate work scope against C-check threshold</span><span class="kval">Scope re-classification decisions completed within 5 business days of scope freeze; re-scope rate &lt;5% of planned checks</span></div><div class="krow"><span class="kname">Estimate total manhours and skill requirements</span><span class="kval">Manhour forecast accuracy ±15% vs actuals; plan issued ≥6 months pre-induction</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">CAMP data sync lag from ACARS can understate actual FH/FC by 1-2 cycles, risking check due-date miscalculation</div><div class="risk-card">Rapid-fire AD releases (e.g. Boeing MAX ADs post-737 MAX groundings) can invalidate a pre-built work scope days before induction</div><div class="risk-card">Legacy aircraft approaching D-check thresholds (typically 8-12 years) may be upgraded mid-plan; late D-check designation inflates TAT and cost &gt;40%</div><div class="risk-card">MPD revision cycles from Boeing (quarterly) can introduce new tasks after baseline is locked, requiring rework of the work package</div><div class="risk-card">MEL items deferred beyond permissible intervals can trigger unplanned component removals, extending TAT by 3-5 days</div><div class="risk-card">Cabin modification requests (seat layout changes, IFE upgrades) arriving late can increase ground time by 5-10 days and require renegotiation of MRO slot</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Aircraft flight hours, cycles, and calendar days from ACARS/flight ops feeds</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Signed pre-induction checklist; go/no-go decision for induction</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-08</span>Passenger Disruption Handling (IRROP)</h3>
-    <p>Airport &amp; Gate Management · 19 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-09</span>Wheelchair &amp; Special Assistance Services</h3>
-    <p>Airport &amp; Gate Management · 19 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-10</span>VIP &amp; Premium Passenger Handling</h3>
-    <p>Airport &amp; Gate Management · 16 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-13</span>Airport Security Compliance (TSA/CBP)</h3>
-    <p>Airport &amp; Gate Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-15</span>Station Performance &amp; KPI Reporting</h3>
-    <p>Airport &amp; Gate Management · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../mr-01/"><span class="arrow">←</span><span><span class="sub">Previous</span>MR-01 · Line Maintenance Planning &amp; Execution</span></a><a class="pn-btn" href="../mr-03/"><span><span class="sub">Next</span>MR-03 · Engine Shop Maintenance Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

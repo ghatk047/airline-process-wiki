@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MR-02 Slides — Heavy Maintenance (C/D Check) Planning</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-02</span>
+    <h1>Heavy Maintenance (C/D Check) Planning</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/mr-02.png" alt="BPMN for MR-02" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Heavy Maintenance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-02</span>
+    <h1>Heavy Maintenance (C/D Check) Planning</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> MR-02</li>
+          <li><strong>L1 Domain:</strong> Maintenance, Repair &amp; Overhaul</li>
+          <li><strong>L2 Process:</strong> Heavy Maintenance</li>
+          <li><strong>L3 Name:</strong> Heavy Maintenance (C/D Check) Planning</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract aircraft maintenance due-date forecast</li><li><strong>Phase 2:</strong> Generate MPD baseline work package in AMOS</li><li><strong>Phase 3:</strong> Estimate total manhours and skill requirements</li><li><strong>Phase 4:</strong> Issue RFQ to approved heavy MRO facilities</li><li><strong>Phase 5:</strong> Compile aircraft technical documentation package</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Airworthiness Engineer</li><li>Engineering Standards Engineer</li><li>Maintenance Planning Engineer</li><li>Maintenance Planning Manager</li><li>Network Operations Planner</li><li>Procurement Manager – MRO</li><li>Supply Chain Planner</li><li>Technical Records Analyst</li><li>VP Maintenance &amp; Engineering</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>Amadeus SkyWORKS</li><li>CAMP</li><li>CAMP (Continuous Airworthiness Monitoring Program)</li><li>SAP Ariba</li><li>SAP Ariba / SAP S/4HANA Finance (FI/CO)</li><li>SAP S/4HANA Finance (MM / Procurement)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Heavy Maintenance</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-02</span>
+    <h1>Heavy Maintenance (C/D Check) Planning</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract aircraft maintenance due-date forecast</td>
+        <td class="kpi-col">Forecast horizon ≥12 months; 100% of fleet tails covered</td>
+        <td class="pain-col">CAMP data sync lag from ACARS can understate actual FH/FC by 1-2 cycles, risking check due-date miscalculation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Review AD/SB compliance status per tail</td>
+        <td class="kpi-col">Zero open mandatory ADs at check induction; SB review complete ≥90 days pre-induction</td>
+        <td class="pain-col">Rapid-fire AD releases (e.g. Boeing MAX ADs post-737 MAX groundings) can invalidate a pre-built work scope days before induction</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Determine check type: C-check vs D-check</td>
+        <td class="kpi-col">Check type confirmed ≥9 months prior to induction date</td>
+        <td class="pain-col">Legacy aircraft approaching D-check thresholds (typically 8-12 years) may be upgraded mid-plan; late D-check designation inflates TAT and cost &gt;40%</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Generate MPD baseline work package in AMOS</td>
+        <td class="kpi-col">Baseline work package issued ≥8 months prior to induction; manhour estimate accuracy ±10%</td>
+        <td class="pain-col">MPD revision cycles from Boeing (quarterly) can introduce new tasks after baseline is locked, requiring rework of the work package</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Incorporate deferred defects and open MEL items</td>
+        <td class="kpi-col">100% of Category A/B MEL items resolved at or before heavy check; deferred defect backlog cleared</td>
+        <td class="pain-col">MEL items deferred beyond permissible intervals can trigger unplanned component removals, extending TAT by 3-5 days</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Add Engineering Orders and requested modifications</td>
+        <td class="kpi-col">All approved EOs incorporated ≥6 months pre-induction; no scope additions within 60 days of induction</td>
+        <td class="pain-col">Cabin modification requests (seat layout changes, IFE upgrades) arriving late can increase ground time by 5-10 days and require renegotiation of MRO slot</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Validate work scope against C-check threshold</td>
+        <td class="kpi-col">Scope re-classification decisions completed within 5 business days of scope freeze; re-scope rate &lt;5% of planned checks</td>
+        <td class="pain-col">Scope creep during D-check escalation is poorly controlled — cumulative EOs can push TAT from 21 days to 45 days without formal gate review</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Estimate total manhours and skill requirements</td>
+        <td class="kpi-col">Manhour forecast accuracy ±15% vs actuals; plan issued ≥6 months pre-induction</td>
+        <td class="pain-col">Structures trade skill shortages at third-party MROs (particularly composite repair) can stretch avail windows; market-rate labour cost escalation unpredictable &gt;6 months out</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Identify and order long-lead rotable parts</td>
+        <td class="kpi-col">100% of long-lead parts (lead time &gt;90 days) on order ≥6 months pre-induction; stockout rate at induction &lt;2%</td>
+        <td class="pain-col">Boeing 737 MAX supply chain disruptions (e.g. Spirit AeroSystems fuselage quality holds 2024) can delay rotable availability by 4-8 weeks, forcing work scope deferral</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Raise material requisitions for consumables and hardware</td>
+        <td class="kpi-col">All consumable PRs raised ≥90 days pre-induction; on-time delivery rate ≥95%</td>
+        <td class="pain-col">Spot-buy requirements for unplanned findings inflate procurement cost by 20-40%; Ariba spot-buy approvals can take 5-10 days, delaying line opening</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Confirm critical parts availability at MRO site</td>
+        <td class="kpi-col">Parts readiness confirmation completed 30 days pre-induction; critical shortage count = 0 at induction</td>
+        <td class="pain-col">MRO-to-airline inventory visibility gaps mean shortages are discovered at induction rather than pre-induction, causing AOG-equivalent delays mid-check</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Issue RFQ to approved heavy MRO facilities</td>
+        <td class="kpi-col">RFQ issued ≥9 months pre-induction; minimum 3 qualified vendor responses received</td>
+        <td class="pain-col">Global MRO capacity constraints (post-pandemic backlog) reduce competitive vendor responses; sole-source situations remove cost leverage and inflate quotes by 15-30%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Evaluate vendor bids on TAT, cost, and capability</td>
+        <td class="kpi-col">Evaluation complete within 15 business days of bid close; cost variance between lowest and selected bid &lt;8%</td>
+        <td class="pain-col">MRO vendors routinely under-quote TAT to win contract then invoke &#x27;findings escalation&#x27; clauses — actual TAT can exceed quoted by 20-35%, disrupting aircraft utilisation plan</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Confirm bid meets TAT and unit cost targets</td>
+        <td class="kpi-col">Contract TAT ≤21 days for C-check, ≤45 days for D-check; unit cost within ±5% of approved budget</td>
+        <td class="pain-col">Approval delays at VP level (budget cycles, contract committee scheduling) can compress negotiation window, forcing acceptance of sub-optimal bids</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Award contract and raise PO in SAP</td>
+        <td class="kpi-col">PO raised within 5 business days of approval; contract signed ≥6 months pre-induction</td>
+        <td class="pain-col">SAP Ariba–to–S/4HANA PO hand-off failures (integration errors) can delay cost commitment, blocking parts release and hangar slot confirmation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Compile aircraft technical documentation package</td>
+        <td class="kpi-col">Documentation package delivered to MRO ≥14 days before induction; zero missing mandatory documents at induction gate</td>
+        <td class="pain-col">Paper-based or siloed digital records from legacy line maintenance systems create gaps in technical records; missing logbook entries can halt induction pending FAA review</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Coordinate ferry flight and fleet schedule impact</td>
+        <td class="kpi-col">Ferry flight confirmed ≥21 days pre-induction; schedule impact to revenue flying &lt;2 affected rotations</td>
+        <td class="pain-col">Last-minute fleet reassignments to cover operational disruptions can pull the designated heavy-check aircraft back into service, delaying induction and incurring MRO slot-break fees</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Complete pre-induction readiness checklist</td>
+        <td class="kpi-col">Checklist signed-off 7 days pre-induction; no-go rate due to planning gaps &lt;3%</td>
+        <td class="pain-col">No-go decisions within 7 days of induction trigger MRO penalty fees (typically $15-25K/day for slot breaks) and ripple delay to subsequent planned checks</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › Heavy Maintenance</span>
+  </div>
+</div>
+
+</body>
+</html>
