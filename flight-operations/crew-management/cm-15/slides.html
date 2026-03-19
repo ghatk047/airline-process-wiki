@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CM-15 Slides — Crew Payroll &amp; Hours Tracking</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-15</span>
+    <h1>Crew Payroll &amp; Hours Tracking</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cm-15.png" alt="BPMN for CM-15" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-15</span>
+    <h1>Crew Payroll &amp; Hours Tracking</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CM-15</li>
+          <li><strong>L1 Domain:</strong> Crew Management</li>
+          <li><strong>L2 Process:</strong> Crew Planning &amp; Rostering</li>
+          <li><strong>L3 Name:</strong> Crew Payroll &amp; Hours Tracking</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract completed duty periods from crew system</li><li><strong>Phase 2:</strong> Load CBA pay rules for crew category</li><li><strong>Phase 3:</strong> Validate daily flight duty period against FAR Part</li><li><strong>Phase 4:</strong> Transfer approved pay data to SAP SuccessFactors</li><li><strong>Phase 5:</strong> Reconcile payroll cost vs crew operations budget</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Crew Compliance Analyst</li><li>Crew Compliance Manager</li><li>Crew Pay Analyst</li><li>Crew Pay Manager</li><li>Crew Planning Analyst</li><li>Crew Records Administrator</li><li>Finance Business Partner — Crew</li><li>Payroll Administrator</li><li>Payroll Configuration Analyst</li><li>Payroll Integration Middleware</li><li>SAP Payroll System</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift</li><li>Jeppesen Crew Management</li><li>SAP Integration Suite (CPI)</li><li>SAP S/4HANA Finance (FI/CO)</li><li>SAP SuccessFactors Employee Central</li><li>SAP SuccessFactors Employee Central Payroll</li><li>SITA ACARS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CM-15</span>
+    <h1>Crew Payroll &amp; Hours Tracking</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract completed duty periods from crew system</td>
+        <td class="kpi-col">Data extraction completeness ≥99.9% of operated flights</td>
+        <td class="pain-col">Late ACARS sign-off events or manual overrides in Jeppesen can produce duplicate or null duty records, requiring manual reconciliation before payroll can proceed</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate actual block times against ACARS data</td>
+        <td class="kpi-col">Block-time discrepancy rate &lt;0.5% of legs per pay cycle</td>
+        <td class="pain-col">ACARS message loss over oceanic tracks or VHF dropouts can leave gaps requiring manual entry from paper OFP, introducing audit risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Adjudicate duty time discrepancies with crew</td>
+        <td class="kpi-col">Discrepancy resolution cycle time ≤24 hours</td>
+        <td class="pain-col">Pilots and cabin crew may contest block-time adjustments that reduce pay — disputes require union observer involvement under most CBAs, extending resolution time</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Lock finalised duty records for pay period</td>
+        <td class="kpi-col">Records locked ≥48 hours before payroll cut-off</td>
+        <td class="pain-col">Late crew changes from irregular ops (IROPS) in the final days of a pay period can force record reopening, risking payroll deadline breach</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Load CBA pay rules for crew category</td>
+        <td class="kpi-col">CBA rule table accuracy rate 100% (zero miscategorisation)</td>
+        <td class="pain-col">Airlines operating multiple crew agreements (pilots vs cabin crew vs contract ground) must maintain separate rate tables in SAP SuccessFactors; version mismatches after CBA renegotiation cause systematic overpayment or underpayment</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Calculate block/credit hours and per diem</td>
+        <td class="kpi-col">Payroll calculation variance vs manual audit sample ≤0.1%</td>
+        <td class="pain-col">CBAs often specify credit hours that differ from actual block hours (e.g. scheduled vs actual, or minimum leg credit), requiring complex conditional logic that is error-prone when rates change mid-year</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Evaluate and apply minimum-guarantee provisions</td>
+        <td class="kpi-col">Minimum guarantee errors detected in post-payroll audit ≤0.2%</td>
+        <td class="pain-col">IROPS-driven trip removals can drop crew below the monthly minimum guarantee, triggering a top-up that must be calculated separately from regular flight pay — SAP wage-type configuration must handle this without double-counting</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Apply premiums, overrides, and special pay components</td>
+        <td class="kpi-col">Premium application accuracy ≥99.8% validated against CBA schedule</td>
+        <td class="pain-col">Introduction of new aircraft types (e.g. A320neo vs B737 MAX) or new international routes creates CBA premium ambiguity until Letter of Agreement (LOA) is ratified — interim pay must be tracked and retroactively corrected</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Validate daily flight duty period against FAR Part 117</td>
+        <td class="kpi-col">FAR Part 117 violation rate 0 per pay cycle; automated check coverage 100%</td>
+        <td class="pain-col">FAR Part 117 FDP limits vary by time-of-day start and number of flight segments — Jeppesen rules engine requires precise configuration and must be updated whenever ICAO or FAA revises rest requirements</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Check cumulative hours against 28-day and 365-day limits</td>
+        <td class="kpi-col">Zero crew members exceeding FAR Part 117 cumulative limits (100 hrs/28 days; 1,000 hrs/365 days)</td>
+        <td class="pain-col">Cross-border operations and wet-lease arrangements complicate cumulative tracking when hours are flown under different AOCs — hours from partner carriers may not be visible in Jeppesen without manual import</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Escalate violations and trigger roster correction</td>
+        <td class="kpi-col">Violation-to-resolution cycle time ≤4 hours</td>
+        <td class="pain-col">Grounding crew mid-period to cure a FAR Part 117 breach triggers crew-shortage cascades and CBA compensation obligations (deadhead pay, hotel, reassignment premiums) that add unplanned payroll cost</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Approve validated hours for payroll submission</td>
+        <td class="kpi-col">Payroll approval completed ≥36 hours before payroll cut-off</td>
+        <td class="pain-col">Approval bottleneck when a single manager owns sign-off for hundreds of crew — absence or IROPS event during cut-off window can delay entire payroll run</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Transfer approved pay data to SAP SuccessFactors</td>
+        <td class="kpi-col">File transfer success rate 100%; record reconciliation count match before payroll run</td>
+        <td class="pain-col">Schema mismatches between Jeppesen export format and SAP wage-type structure require a custom integration layer — changes to either system can silently break the interface until the next payroll run</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Execute payroll calculation run in SAP</td>
+        <td class="kpi-col">Payroll error log: zero critical errors; warning resolution ≤2 hours</td>
+        <td class="pain-col">Multi-state tax residency for crew who live in a different state from their crew base requires correct SAP tax-area assignment — errors create IRS compliance exposure and retroactive correction cost</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Generate pay advices and post GL entries</td>
+        <td class="kpi-col">Pay advice delivery within 24 hours of payroll run; GL posting error rate 0%</td>
+        <td class="pain-col">Crew cost-centre allocation requires splitting payroll costs across multiple operational cost centres when a crew member flew for different fleets or bases in the same period — misallocation distorts fleet P&amp;L reporting</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Reconcile payroll cost vs crew operations budget</td>
+        <td class="kpi-col">Payroll-to-budget variance explained ≥95% within 3 business days of payroll run</td>
+        <td class="pain-col">IROPS months generate significant unbudgeted premium and minimum-guarantee costs that distort variance analysis — Finance needs a dedicated IROPS payroll variance code to separate structural from operational pay drivers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Generate crew hours utilisation and fatigue report</td>
+        <td class="kpi-col">Crew utilisation rate ≥85% of contractual hours; fatigue indicator trend published ≤5 days post-period</td>
+        <td class="pain-col">Combining hours data from Jeppesen with cost data from SAP requires a data pipeline that must be maintained across system upgrades — ad hoc Tableau reports built on inconsistent extracts produce conflicting crew productivity figures for leadership</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Archive payroll and hours records per FAA requirements</td>
+        <td class="kpi-col">Record archive completeness 100%; retrieval SLA ≤4 hours for FAA audit request</td>
+        <td class="pain-col">FAR 121.683 mandates 24-month retention for crew duty records; GDPR and state privacy laws (CCPA) impose conflicting obligations on how long certain payroll data can be held — retention policy must be reviewed with legal each year</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Crew Management › Crew Planning & Rostering</span>
+  </div>
+</div>
+
+</body>
+</html>
