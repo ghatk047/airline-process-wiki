@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1["Phase 1: Service Standards Design"]
+    A([Start]) --> B[Benchmark competitor\nservice offerings]
+    B --> C[Define cabin class\nservice standards]
+    C --> D{Standards approved\nby CX board?}
+    D -- No --> C
+    D -- Yes --> E[Publish service\nsequence manual]
+  end
+  subgraph P2["Phase 2: Menu & Catering Planning"]
+    E --> F[Design menu &\nbeverage programme]
+    F --> G[Issue catering\nRFQ to suppliers]
+    G --> H{Food safety &\nregulatory compliant?}
+    H -- No --> F
+    H -- Yes --> I[Finalise catering\ncontracts & load specs]
+  end
+  subgraph P3["Phase 3: Crew Training & Readiness"]
+    I --> J[Build service delivery\ntraining curriculum]
+    J --> K[Train cabin crew\non standards]
+    K --> L{Service readiness\nassessment passed?}
+    L -- No --> K
+    L -- Yes --> M[Certify crew &\nupdate competency records]
+  end
+  subgraph P4["Phase 4: Cabin & Galley Configuration"]
+    M --> N[Configure galley layout\n& equipment specs]
+    N --> O[Load galley manifest\ninto catering system]
+    O --> P{Manifest &\nIFE configuration OK?}
+    P -- No --> N
+    P -- Yes --> Q[Approve cabin config\nfor live operation]
+  end
+  subgraph P5["Phase 5: In-Flight Execution"]
+    Q --> R[Execute cabin service\nper approved standard]
+    R --> S[Capture post-flight\nNPS & CSAT feedback]
+    S --> T{NPS below\ntarget threshold?}
+    T -- No --> U([End — Cycle Complete])
+    T -- Yes --> V[Escalate service\nfailure for review]
+  end
+  subgraph P6["Phase 6: Review & Improvement"]
+    V --> W[Analyse performance\ndashboard & complaints]
+    W --> X{Root cause\nidentified?}
+    X -- No --> W
+    X -- Yes --> Y[Implement service\nimprovement change]
+    Y --> U
+  end
+  style A fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600

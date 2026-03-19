@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-07 Slides — In-Flight Service Design &amp; Standards</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-07</span>
+    <h1>In-Flight Service Design &amp; Standards</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-07.png" alt="BPMN for CX-07" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-07</span>
+    <h1>In-Flight Service Design &amp; Standards</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-07</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Customer Experience Operations</li>
+          <li><strong>L3 Name:</strong> In-Flight Service Design &amp; Standards</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Benchmark competitor in-flight service offerings</li><li><strong>Phase 2:</strong> Design seasonal menu &amp; beverage programme</li><li><strong>Phase 3:</strong> Build service delivery training curriculum</li><li><strong>Phase 4:</strong> Configure galley layout and equipment specificatio</li><li><strong>Phase 5:</strong> Execute in-flight service per approved standard</li><li><strong>Phase 6:</strong> Analyse service performance metrics and complaints</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>CX Analytics Manager</li><li>Cabin Crew (Operating)</li><li>Cabin Crew Trainer</li><li>Cabin Crew Training Design Specialist</li><li>Catering Operations Coordinator</li><li>Customer Experience Strategy Manager</li><li>Food Safety &amp; Compliance Officer</li><li>In-Flight Catering Product Manager</li><li>In-Flight Entertainment (IFE) Systems Coordinator</li><li>In-Flight Equipment &amp; Galley Engineer</li><li>In-Flight Performance Analyst</li><li>In-Flight Product Design Lead</li><li>In-Flight Standards Coordinator</li><li>Procurement Manager — Catering</li><li>Senior Cabin Crew Examiner</li><li>VP Customer Experience</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware (MRO &amp; Configuration Management)</li><li>Comply365 (Regulatory Compliance Management)</li><li>Confluence (Service Standards Wiki)</li><li>Cornerstone OnDemand (Competency Records) + Jeppesen Crew Management</li><li>Cornerstone OnDemand (LMS) + Cabin Crew Training Simulator</li><li>Cornerstone OnDemand (Learning Management System)</li><li>Gate Gourmet CateringIT Portal</li><li>Guestlogix Onboard Retail Platform</li><li>Jeppesen FliteDeck (Crew Document Distribution)</li><li>Jeppesen FliteDeck (Service Brief) + Gate Gourmet CateringIT (Manifest)</li><li>Medallia Experience Cloud</li><li>OAG Schedule Analyser</li><li>Panasonic Avionics eX3 Content Management System</li><li>Power BI (Connected to Medallia + ServiceNow + Altéa Data Warehouse)</li><li>SAP Ariba (Contract Management) + Gate Gourmet CateringIT Portal</li><li>SAP Ariba (Sourcing &amp; Procurement)</li><li>ServiceNow (Change Advisory Board)</li><li>ServiceNow (Problem Management) + Confluence (Service Standards Wiki)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-07</span>
+    <h1>In-Flight Service Design &amp; Standards</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Benchmark competitor in-flight service offerings</td>
+        <td class="kpi-col">Benchmark coverage ≥10 direct competitors; report issued within 15 working days of cycle start</td>
+        <td class="pain-col">OAG data lacks cabin-class service detail; manual research from APEX/IFSA industry reports required, creating a 2–3 week lag in intelligence</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Define cabin class service standards &amp; sequences</td>
+        <td class="kpi-col">Standards documented for 100% of cabin classes within 20 working days</td>
+        <td class="pain-col">No dedicated service-design tooling — standards authored in Confluence with no version-controlled approval workflow, leading to unapproved drafts reaching crew training</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Obtain CX board approval for service standards</td>
+        <td class="kpi-col">Board approval cycle ≤10 working days; zero unapproved standards in production</td>
+        <td class="pain-col">Multi-stakeholder approval (Inflight, Safety, Commercial, Legal) causes average 18-day delay; no SLA enforcement in ServiceNow CAB workflow</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Publish service sequence manual to crew portal</td>
+        <td class="kpi-col">100% of active cabin crew acknowledge new manual within 5 days of publication</td>
+        <td class="pain-col">FliteDeck acknowledgement tracking is available for pilot documents but EFB access for cabin crew varies by aircraft type, requiring parallel paper distribution on older fleets</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Design seasonal menu &amp; beverage programme</td>
+        <td class="kpi-col">Menu refresh cycle ≤90 days; SPML coverage ≥18 dietary codes per IATA standard</td>
+        <td class="pain-col">Altéa PSS SPML data completeness averages 62% — many passengers select meal preferences at airport rather than booking, causing last-minute galley shortfalls on long-haul sectors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Issue catering RFQ and evaluate supplier bids</td>
+        <td class="kpi-col">RFQ response rate ≥80%; bid evaluation completed within 15 working days</td>
+        <td class="pain-col">SAP Ariba supplier onboarding for new catering vendors averages 30 days due to food safety certification upload requirements; limits ability to switch suppliers for disrupted routes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate food safety and regulatory compliance</td>
+        <td class="kpi-col">Zero non-compliant meals reaching aircraft; compliance review completed ≤10 working days</td>
+        <td class="pain-col">Vary-by-country food import regulations (e.g. USDA restrictions, EU novel food rules) cause compliance hold-ups averaging 8 days per new ingredient, delaying menu finalisation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Finalise catering contracts and upload load plans</td>
+        <td class="kpi-col">Contract executed ≥21 days before menu effective date; load plan accuracy ≥98% vs actual uplift</td>
+        <td class="pain-col">Gate Gourmet CateringIT portal API integration with Amadeus Altéa PSS pax counts is batch-based (T-24h), not real-time — load plans cannot adjust dynamically for last-minute booking surges</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Build service delivery training curriculum</td>
+        <td class="kpi-col">Curriculum published ≥14 days before crew training cohort start; ≥90% module completion rate per cohort</td>
+        <td class="pain-col">Cornerstone LMS integration with Jeppesen crew rostering is one-way — training completion status does not auto-block scheduling of uncertified crew, requiring manual cross-checks</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Deliver in-flight service standards training to crew</td>
+        <td class="kpi-col">Training completion ≥95% of active crew 7 days before go-live; practical assessment pass rate ≥88%</td>
+        <td class="pain-col">Simulator availability is constrained by shared scheduling with safety/emergency training (SEP); service training often deferred to on-aircraft familiarisation flights, increasing variability</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Conduct service readiness assessment and certify crew</td>
+        <td class="kpi-col">100% of operating crew certified before standard go-live; re-assessment cycle ≤5 days for failures</td>
+        <td class="pain-col">Manual update of qualification flags in Jeppesen after Cornerstone certification creates a 24–48h lag; uncertified crew can be legally rostered during the gap if not caught by manual audit</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Configure galley layout and equipment specifications</td>
+        <td class="kpi-col">Configuration records updated for 100% of affected fleet tails ≥10 days before service go-live</td>
+        <td class="pain-col">Fleet heterogeneity (B737-800 vs B737 MAX 8 vs B737-700 galley volumes differ by 8–12%) means single load plan cannot be applied uniformly, requiring per-subfleet configuration variants</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Load galley manifest into catering management system</td>
+        <td class="kpi-col">Manifest upload completed ≥48h before first operated flight; uplift accuracy target ≥98%</td>
+        <td class="pain-col">Amadeus SkyWORKS schedule changes (re-routes, aircraft swaps) are not automatically propagated to Gate Gourmet CateringIT — manual re-upload required within 2h of change notification to avoid mismatched uplift</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Validate IFE content load and seat configuration</td>
+        <td class="kpi-col">IFE content load verified on 100% of IFE-equipped tails ≥5 days before service period; zero safety video version mismatches</td>
+        <td class="pain-col">Panasonic eX3 content load requires physical ground time per aircraft and cannot be pushed OTA to older eX1 installations; schedule compression means some tails miss the update window and carry previous season content</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Execute in-flight service per approved standard</td>
+        <td class="kpi-col">Service sequence adherence ≥95% per audited flights; galley shortfall rate &lt;2% of flights</td>
+        <td class="pain-col">No real-time digital cabin service tracking — adherence is measured through periodic audits only (sample &lt;5% of flights), creating a large blind spot between audit cycles</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Capture post-flight NPS and CSAT feedback</td>
+        <td class="kpi-col">Survey response rate ≥18%; NPS target ≥45 for short-haul; ≥55 for long-haul</td>
+        <td class="pain-col">Altéa PSS email suppression rules (opt-out, GDPR, corporate booking via Sabre GDS without passenger email) reduce survey reach by ~35%, skewing NPS samples toward direct-channel passengers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Analyse service performance metrics and complaints</td>
+        <td class="kpi-col">Dashboard published within 5 working days of month-end; complaint resolution rate ≥90% within SLA</td>
+        <td class="pain-col">Medallia, ServiceNow, and Altéa data are held in separate systems with no automated ETL pipeline; Power BI refresh depends on manual CSV exports from Medallia, introducing 2–3 day data staleness</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Identify root cause and implement service improvements</td>
+        <td class="kpi-col">Root cause identified within 10 working days of threshold breach; improvement implemented within 30 days of approval</td>
+        <td class="pain-col">Continuous improvement cycle lacks a formal feedback loop into Cornerstone LMS — identified training gaps require manual curriculum update requests, averaging 6-week lag before crew retraining is delivered</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+</body>
+</html>
