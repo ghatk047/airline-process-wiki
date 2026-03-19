@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Baggage Operations · Ground Operations &amp; Airport Services · Airlines Process Wiki</title>
+<title>GO-12 · De-Icing &amp; Winter Operations · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -181,7 +182,7 @@
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-06/"><span class="status-dot status-done"></span><span class="pid">GO-06</span>Ground Handling Vendor Management</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-07/"><span class="status-dot status-done"></span><span class="pid">GO-07</span>Load Control &amp; Aircraft Loading</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-11/"><span class="status-dot status-done"></span><span class="pid">GO-11</span>Cargo &amp; Mail Ground Handling</a>
-        <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-12/"><span class="status-dot status-done"></span><span class="pid">GO-12</span>De-Icing &amp; Winter Operations</a>
+        <a class="sidebar-l3-link active" href="../../../ground-operations/passenger-services/go-12/"><span class="status-dot status-done"></span><span class="pid">GO-12</span>De-Icing &amp; Winter Operations</a>
         <a class="sidebar-l3-link" href="../../../ground-operations/passenger-services/go-14/"><span class="status-dot status-queue"></span><span class="pid">GO-14</span>Ground Support Equipment (GSE) Management</a>
       </div>
     </div>
@@ -242,90 +243,228 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
-  <span class="current">Baggage Operations</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../ground-operations/">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
+  <a href="../../../ground-operations/passenger-services/">Ramp &amp; Turnaround Operations</a><span class="sep">›</span>
+  <span class="current">GO-12 · De-Icing &amp; Winter Operations</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Baggage Operations</h1>
-    <p>Ground Operations &amp; Airport Services · 7 of 8 subprocesses complete · Updated 2026-03-19 14:22</p>
+    <h1>De-Icing &amp; Winter Operations</h1>
+    <p>Ground Operations &amp; Airport Services › Ramp &amp; Turnaround Operations · 15 L4 steps · 5 phases · 9 decision gates · Updated 2026-03-19 14:22</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">GO-12</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-02</span>Baggage Acceptance &amp; Handling</h3>
-    <p>Baggage Operations · 17 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-go-12">
+      <img src="../../../assets/img/go-12.png" alt="GO-12 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-go-12').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-go-12').style.display='flex'">
+      <div id="diag-placeholder-go-12" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-02/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Activate Winter Operations Plan via AMS</td>
+  <td class="td-role">Station Operations Manager</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Meteorological forecast showing OAT &lt;= +3°C or freezing precipitation expected within 2 hours</td>
+  <td style="font-size:10px">WINOPS activation notice distributed to ground crews, ramp supervisors, and flight dispatch</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Activation lead time &gt;= 2 hours before first affected departure; 100% crew acknowledgement within 15 min</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Pre-Position De-icing Equipment and Brief Crews</td>
+  <td class="td-role">Ramp Supervisor</td>
+  <td><span class="stag custom">Ground Support Equipment (GSE) Tracking System</span></td>
+  <td style="font-size:10px;color:#6b7280">WINOPS activation notice, flight schedule, de-icing pad/gate assignments</td>
+  <td style="font-size:10px">De-icing vehicles positioned at pad or gates; crews briefed, signed off on fluid handling procedures</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Equipment readiness &gt;= 30 min before first scheduled de-icing event; all crew holdover time (HOT) training current within 12 months</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Confirm Fluid Inventory and Type Availability</td>
+  <td class="td-role">Ground Equipment Coordinator</td>
+  <td><span class="stag custom">De-icing Management System (DMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Current fluid stock levels (Type I, II, III, IV), upcoming flight schedule, forecast storm duration</td>
+  <td style="font-size:10px">Fluid availability confirmed and logged; reorder triggered if stock &lt; 40% of estimated daily requirement</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Fluid stock &gt;= 120% of estimated daily requirement; reorder threshold: 40% remaining; no event aborted due to fluid shortage</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Monitor Real-Time Weather and Issue De-icing Advisory</td>
+  <td class="td-role">Weather Operations Analyst</td>
+  <td><span class="stag custom">DTN Weather Operations</span></td>
+  <td style="font-size:10px;color:#6b7280">METAR, TAF, PIREP, real-time OAT, precipitation type and rate from DTN feeds</td>
+  <td style="font-size:10px">De-icing advisory issued specifying contamination type, severity level, and recommended fluid type</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Advisory issued within 10 min of METAR update confirming frozen precipitation; advisory accuracy vs actual ramp conditions &gt;= 90%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Conduct Aircraft Contamination Walk-Around Inspection</td>
+  <td class="td-role">De-icing Crew Chief</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS) — Mobile Ops Tablet</span></td>
+  <td style="font-size:10px;color:#6b7280">Aircraft parked at gate or de-icing pad, current weather conditions, contamination advisory</td>
+  <td style="font-size:10px">Contamination type and surface coverage documented (wings, fuselage, tail, control surfaces, sensors)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Inspection completed within 5 min of aircraft block-in; 100% of critical surfaces (wing leading edge, ailerons, elevator, rudder, pitot tubes) checked</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Determine De-Icing Treatment Type and Fluid Selection</td>
+  <td class="td-role">De-icing Crew Chief</td>
+  <td><span class="stag custom">De-icing Management System (DMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Contamination type (frost, snow, ice, freezing rain), OAT, precipitation rate, planned departure time</td>
+  <td style="font-size:10px">Treatment order specifying: Type I only vs. Type I + anti-icing fluid, dilution ratio, and sequence</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Treatment type decision within 3 min of inspection completion; fluid selection compliant with SAE AMS 1424 (Type I) and AMS 1428 (Type IV) specifications</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Position De-icing Vehicle and Establish Cockpit Communication</td>
+  <td class="td-role">De-icing Operator</td>
+  <td><span class="stag custom">Telex / SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">Treatment order, aircraft stand or pad assignment, vehicle positioning clearance from ramp controller</td>
+  <td style="font-size:10px">Vehicle positioned within safe working envelope; two-way communication established with flight deck; chocks and safety cones confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Spray basket clearance &gt;= 1 m from aircraft surface at all times; positioning complete within 3 min of vehicle arrival at stand</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Apply Type I Heated Fluid — Active Contamination Removal</td>
+  <td class="td-role">De-icing Operator</td>
+  <td><span class="stag custom">De-icing Management System (DMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Contaminated aircraft surfaces, Type I fluid heated to 60–82°C, application nozzle settings</td>
+  <td style="font-size:10px">Aircraft surfaces cleared of snow, ice, and frost; fluid volume applied and temperature at nozzle logged in DMS</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">All critical surfaces clear of contamination after Type I pass; fluid temperature &gt;= 60°C at application point; fluid waste rate &lt; 5% through overspray</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Apply Anti-Icing Fluid (Type II/IV) for Holdover Protection</td>
+  <td class="td-role">De-icing Operator</td>
+  <td><span class="stag custom">De-icing Management System (DMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Clean aircraft surfaces confirmed, selected anti-icing fluid and dilution ratio, OAT, precipitation rate</td>
+  <td style="font-size:10px">Anti-icing fluid coat applied uniformly; application start time, volume, dilution ratio, and fluid type recorded to DMS with timestamp</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Application completed within 3 min; fluid start time logged to second-level accuracy for HOT calculation; coating uniform per SAE AMS 1428 visual check</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Calculate Holdover Time from FAA/TC Tables via EFB</td>
+  <td class="td-role">De-icing Crew Chief</td>
+  <td><span class="stag noc">Jeppesen FliteDeck (EFB — FAA/TC HOT Table Application)</span></td>
+  <td style="font-size:10px;color:#6b7280">Anti-icing fluid type, dilution ratio, application start time, OAT, precipitation type and rate</td>
+  <td style="font-size:10px">HOT start and end times calculated and communicated to flight crew via ACARS or verbal relay</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">HOT calculation completed within 2 min of anti-icing fluid application start; communicated to captain before pushback clearance request; zero cases of HOT communicated after pushback initiation</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Conduct Post-Application Clean Aircraft Inspection</td>
+  <td class="td-role">De-icing Crew Chief</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS) — Mobile Ops Tablet</span></td>
+  <td style="font-size:10px;color:#6b7280">Anti-icing fluid applied, aircraft surfaces, current precipitation conditions</td>
+  <td style="font-size:10px">Clean aircraft confirmation issued or re-treatment ordered; inspection result logged with crew ID and timestamp</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Inspection covers 100% of critical surfaces; completion within 5 min of fluid application finish; re-treatment rate &lt; 8% of treated aircraft</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Issue De-Icing Completion Record and Transmit to Flight Crew</td>
+  <td class="td-role">De-icing Crew Chief</td>
+  <td><span class="stag custom">Telex / SITA ACARS</span></td>
+  <td style="font-size:10px;color:#6b7280">DMS treatment record (fluid type, volume, dilution, start/end time, HOT range), clean aircraft confirmation</td>
+  <td style="font-size:10px">De-icing completion report transmitted to flight deck via ACARS; paper copy retained for regulatory compliance per FAA AC 120-60B</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Report transmitted &gt;= 5 min before pushback; 100% compliance with FAA pre-takeoff contamination check communication requirement; zero ACARS transmission failures without verbal backup</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Coordinate Pushback Within HOT Window</td>
+  <td class="td-role">Ground Movement Controller</td>
+  <td><span class="stag amadeus">Amadeus Airport Management</span></td>
+  <td style="font-size:10px;color:#6b7280">HOT end time, ATC ground departure sequence, aircraft readiness confirmation, tug availability</td>
+  <td style="font-size:10px">Pushback clearance issued within HOT validity window; ATC ground movement coordination confirmed</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Departure initiated &gt;= 5 min before HOT expiry; on-time departure rate (D0) &gt;= 78% during active winter ops; zero aircraft departing with documented expired HOT</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Monitor Departure Queue for HOT Expiry and Re-Treatment Triggers</td>
+  <td class="td-role">Station Operations Manager</td>
+  <td><span class="stag custom">SITA Airport Management System (AMS)</span></td>
+  <td style="font-size:10px;color:#6b7280">Real-time departure queue timestamps, HOT end times per aircraft, updated weather data from DTN</td>
+  <td style="font-size:10px">Re-treatment orders issued for aircraft exceeding HOT; ATC notified of delay and sequence changes</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Re-treatment decision made &gt;= 10 min before HOT expiry; zero aircraft cleared for takeoff with expired HOT; re-treatment throughput capacity &gt;= scheduled de-icing volume + 20% buffer</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Log De-Icing Event Data for Compliance and Performance Analysis</td>
+  <td class="td-role">Ground Operations Analyst</td>
+  <td><span class="stag aws">AWS S3 / Redshift (De-icing Data Warehouse)</span></td>
+  <td style="font-size:10px;color:#6b7280">DMS treatment records (fluid volumes, times, tail numbers, crew IDs), HOT data, weather data, delay records</td>
+  <td style="font-size:10px">De-icing event records archived; fluid consumption and waste report generated; seasonal performance dashboard updated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of de-icing events logged within 24 hours; fluid waste rate &lt; 5% of applied volume; regulatory audit trail completeness &gt;= 99.5%; glycol runoff report submitted to EPA/Transport Canada within 30 days of season-end</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-03</span>Lost &amp; Found / Baggage Tracing</h3>
-    <p>Baggage Operations · 18 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">GO-12</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Ground Operations &amp; Airport Services</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Ramp &amp; Turnaround Operations</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">De-Icing &amp; Winter Operations</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">15 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">9 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">10 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Station Operations Manager</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Ramp Supervisor</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Ground Equipment Coordinator</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Weather Operations Analyst</div><div class="swim"><div class="dot" style="background:#10b981"></div>De-icing Crew Chief</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>De-icing Operator</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Ground Movement Controller</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Ground Operations Analyst</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">SITA Airport Management System (AMS)</span><span class="stag custom">Ground Support Equipment (GSE) Tracking System</span><span class="stag custom">De-icing Management System (DMS)</span><span class="stag custom">DTN Weather Operations</span><span class="stag custom">SITA Airport Management System (AMS) — Mobile Ops Tablet</span><span class="stag custom">Telex / SITA ACARS</span><span class="stag noc">Jeppesen FliteDeck (EFB — FAA/TC HOT Table Application)</span><span class="stag amadeus">Amadeus Airport Management</span><span class="stag aws">AWS S3 / Redshift (De-icing Data Warehouse)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Activate Winter Operations Plan via AMS</span><span class="kval">Activation lead time &gt;= 2 hours before first affected departure; 100% crew acknowledgement within 15 min</span></div><div class="krow"><span class="kname">Pre-Position De-icing Equipment and Brief Crews</span><span class="kval">Equipment readiness &gt;= 30 min before first scheduled de-icing event; all crew holdover time (HOT) training current within 12 months</span></div><div class="krow"><span class="kname">Confirm Fluid Inventory and Type Availability</span><span class="kval">Fluid stock &gt;= 120% of estimated daily requirement; reorder threshold: 40% remaining; no event aborted due to fluid shortage</span></div><div class="krow"><span class="kname">Monitor Real-Time Weather and Issue De-icing Advisory</span><span class="kval">Advisory issued within 10 min of METAR update confirming frozen precipitation; advisory accuracy vs actual ramp conditions &gt;= 90%</span></div><div class="krow"><span class="kname">Conduct Aircraft Contamination Walk-Around Inspection</span><span class="kval">Inspection completed within 5 min of aircraft block-in; 100% of critical surfaces (wing leading edge, ailerons, elevator, rudder, pitot tubes) checked</span></div><div class="krow"><span class="kname">Determine De-Icing Treatment Type and Fluid Selection</span><span class="kval">Treatment type decision within 3 min of inspection completion; fluid selection compliant with SAE AMS 1424 (Type I) and AMS 1428 (Type IV) specifications</span></div><div class="krow"><span class="kname">Position De-icing Vehicle and Establish Cockpit Communication</span><span class="kval">Spray basket clearance &gt;= 1 m from aircraft surface at all times; positioning complete within 3 min of vehicle arrival at stand</span></div><div class="krow"><span class="kname">Apply Type I Heated Fluid — Active Contamination Removal</span><span class="kval">All critical surfaces clear of contamination after Type I pass; fluid temperature &gt;= 60°C at application point; fluid waste rate &lt; 5% through overspray</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Late NOTAMs or rapidly developing weather compress the activation window; insufficient crew briefing time during sudden temperature drops leads to unprepared ground teams</div><div class="risk-card">GSE unserviceability during peak winter events reduces available truck count with no redundancy at smaller stations; crew HOT training currency lapses go undetected until seasonal activation</div><div class="risk-card">Type IV fluid supply chain disruptions during extended winter events common at capacity-constrained stations; airports with limited glycol storage cannot buffer multi-day storm events</div><div class="risk-card">Rapidly changing precipitation type (freezing rain transitioning to snow) invalidates HOT mid-event; DTN update latency vs real-time ramp microclimate conditions can lead to under- or over-treatment decisions</div><div class="risk-card">Crew access to tail surfaces restricted at narrow-body gates without elevated stands; time pressure from tight turnarounds causes rushed inspections that miss contamination on aft fuselage or horizontal stabiliser</div><div class="risk-card">Crew chiefs without current SAE HOT table training select incorrect dilution ratios, overestimating holdover time and creating latent safety risk; audit trail for treatment decision not captured in all DMS implementations</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Meteorological forecast showing OAT &lt;= +3°C or freezing precipitation expected within 2 hours</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">De-icing event records archived; fluid consumption and waste report generated; seasonal performance dashboard updated</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-05</span>Ramp &amp; Turnaround Operations</h3>
-    <p>Baggage Operations · 20 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-06</span>Ground Handling Vendor Management</h3>
-    <p>Baggage Operations · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-07</span>Load Control &amp; Aircraft Loading</h3>
-    <p>Baggage Operations · 20 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-11</span>Cargo &amp; Mail Ground Handling</h3>
-    <p>Baggage Operations · 16 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-12</span>De-Icing &amp; Winter Operations</h3>
-    <p>Baggage Operations · 15 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-14</span>Ground Support Equipment (GSE) Management</h3>
-    <p>Baggage Operations · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="go-14/">Queued</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../go-11/"><span class="arrow">←</span><span><span class="sub">Previous</span>GO-11 · Cargo &amp; Mail Ground Handling</span></a><a class="pn-btn" href="../go-13/"><span><span class="sub">Next</span>GO-13 · Airport Security Compliance (TSA/CBP)</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

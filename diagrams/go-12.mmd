@@ -1,0 +1,52 @@
+flowchart LR
+  subgraph P1[Phase 1: Winter Ops Activation]
+    A([Start]) --> B[Activate WINOPS Plan\nvia SITA AMS]
+    B --> C{OAT <= 3C or\nfrozen precip?}
+    C -- No, Monitor --> A
+    C -- Yes --> D[Pre-position GSE\nand Brief Crews]
+    D --> E{Fluid stock\nsufficient?}
+    E -- No, Reorder --> D
+    E -- Yes --> F[Confirm Fluid\nInventory in DMS]
+  end
+  subgraph P2[Phase 2: Contamination Assessment]
+    F --> G[Monitor Wx via DTN\nIssue De-icing Advisory]
+    G --> H{Contamination on\ncritical surfaces?}
+    H -- No, Monitor --> G
+    H -- Yes --> I[Determine Treatment\nType and Fluid]
+  end
+  subgraph P3[Phase 3: Fluid Application]
+    I --> J[Position Vehicle\nEstablish Crew Comm]
+    J --> K[Apply Type I\nHeated Fluid]
+    K --> L{Surfaces clean\nafter Type I?}
+    L -- No, Re-apply --> K
+    L -- Yes --> M[Apply Anti-icing\nFluid Type II/IV]
+  end
+  subgraph P4[Phase 4: HOT and QA]
+    M --> N[Calculate HOT\nFAA/TC Tables via EFB]
+    N --> O{HOT sufficient for\ndeparture window?}
+    O -- No, Re-treat --> M
+    O -- Yes --> P[Post-Application\nClean Aircraft Check]
+    P --> Q{Aircraft clean?}
+    Q -- No, Re-treat --> K
+    Q -- Yes --> R[Issue De-icing\nRecord via ACARS]
+  end
+  subgraph P5[Phase 5: Departure and Compliance]
+    R --> S{HOT valid\nat pushback?}
+    S -- No, Re-treat --> I
+    S -- Yes --> T[Coordinate Pushback\nWithin HOT Window]
+    T --> U{HOT expired\nin queue?}
+    U -- Yes, Re-treat --> I
+    U -- No --> V[Log Event to\nDe-icing Data Warehouse]
+    V --> W([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600

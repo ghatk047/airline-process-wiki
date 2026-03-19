@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GO-12 Slides — De-Icing &amp; Winter Operations</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-12</span>
+    <h1>De-Icing &amp; Winter Operations</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/go-12.png" alt="BPMN for GO-12" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Ramp & Turnaround Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-12</span>
+    <h1>De-Icing &amp; Winter Operations</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> GO-12</li>
+          <li><strong>L1 Domain:</strong> Ground Operations &amp; Airport Services</li>
+          <li><strong>L2 Process:</strong> Ramp &amp; Turnaround Operations</li>
+          <li><strong>L3 Name:</strong> De-Icing &amp; Winter Operations</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">15</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Activate Winter Operations Plan via AMS</li><li><strong>Phase 2:</strong> Monitor Real-Time Weather and Issue De-icing Advis</li><li><strong>Phase 3:</strong> Position De-icing Vehicle and Establish Cockpit Co</li><li><strong>Phase 4:</strong> Calculate Holdover Time from FAA/TC Tables via EFB</li><li><strong>Phase 5:</strong> Coordinate Pushback Within HOT Window</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>De-icing Crew Chief</li><li>De-icing Operator</li><li>Ground Equipment Coordinator</li><li>Ground Movement Controller</li><li>Ground Operations Analyst</li><li>Ramp Supervisor</li><li>Station Operations Manager</li><li>Weather Operations Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS S3 / Redshift (De-icing Data Warehouse)</li><li>Amadeus Airport Management</li><li>DTN Weather Operations</li><li>De-icing Management System (DMS)</li><li>Ground Support Equipment (GSE) Tracking System</li><li>Jeppesen FliteDeck (EFB — FAA/TC HOT Table Application)</li><li>SITA Airport Management System (AMS)</li><li>SITA Airport Management System (AMS) — Mobile Ops Tablet</li><li>Telex / SITA ACARS</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Ramp & Turnaround Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">GO-12</span>
+    <h1>De-Icing &amp; Winter Operations</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Activate Winter Operations Plan via AMS</td>
+        <td class="kpi-col">Activation lead time &gt;= 2 hours before first affected departure; 100% crew acknowledgement within 15 min</td>
+        <td class="pain-col">Late NOTAMs or rapidly developing weather compress the activation window; insufficient crew briefing time during sudden temperature drops leads to unprepared ground teams</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Pre-Position De-icing Equipment and Brief Crews</td>
+        <td class="kpi-col">Equipment readiness &gt;= 30 min before first scheduled de-icing event; all crew holdover time (HOT) training current within 12 months</td>
+        <td class="pain-col">GSE unserviceability during peak winter events reduces available truck count with no redundancy at smaller stations; crew HOT training currency lapses go undetected until seasonal activation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Confirm Fluid Inventory and Type Availability</td>
+        <td class="kpi-col">Fluid stock &gt;= 120% of estimated daily requirement; reorder threshold: 40% remaining; no event aborted due to fluid shortage</td>
+        <td class="pain-col">Type IV fluid supply chain disruptions during extended winter events common at capacity-constrained stations; airports with limited glycol storage cannot buffer multi-day storm events</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Monitor Real-Time Weather and Issue De-icing Advisory</td>
+        <td class="kpi-col">Advisory issued within 10 min of METAR update confirming frozen precipitation; advisory accuracy vs actual ramp conditions &gt;= 90%</td>
+        <td class="pain-col">Rapidly changing precipitation type (freezing rain transitioning to snow) invalidates HOT mid-event; DTN update latency vs real-time ramp microclimate conditions can lead to under- or over-treatment decisions</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Conduct Aircraft Contamination Walk-Around Inspection</td>
+        <td class="kpi-col">Inspection completed within 5 min of aircraft block-in; 100% of critical surfaces (wing leading edge, ailerons, elevator, rudder, pitot tubes) checked</td>
+        <td class="pain-col">Crew access to tail surfaces restricted at narrow-body gates without elevated stands; time pressure from tight turnarounds causes rushed inspections that miss contamination on aft fuselage or horizontal stabiliser</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Determine De-Icing Treatment Type and Fluid Selection</td>
+        <td class="kpi-col">Treatment type decision within 3 min of inspection completion; fluid selection compliant with SAE AMS 1424 (Type I) and AMS 1428 (Type IV) specifications</td>
+        <td class="pain-col">Crew chiefs without current SAE HOT table training select incorrect dilution ratios, overestimating holdover time and creating latent safety risk; audit trail for treatment decision not captured in all DMS implementations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Position De-icing Vehicle and Establish Cockpit Communication</td>
+        <td class="kpi-col">Spray basket clearance &gt;= 1 m from aircraft surface at all times; positioning complete within 3 min of vehicle arrival at stand</td>
+        <td class="pain-col">Ramp congestion at hub airports delays vehicle access to stand; ATC-mandated de-icing pad queuing adds 15–20 min to turnaround during peak demand; inadequate ground lighting at night complicates safe vehicle positioning</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Apply Type I Heated Fluid — Active Contamination Removal</td>
+        <td class="kpi-col">All critical surfaces clear of contamination after Type I pass; fluid temperature &gt;= 60°C at application point; fluid waste rate &lt; 5% through overspray</td>
+        <td class="pain-col">Very low OAT (&lt;-15°C) reduces Type I heated fluid effectiveness, requiring multiple passes and extending turnaround; excessive Type I application increases glycol runoff requiring EPA/Transport Canada environmental reporting</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Apply Anti-Icing Fluid (Type II/IV) for Holdover Protection</td>
+        <td class="kpi-col">Application completed within 3 min; fluid start time logged to second-level accuracy for HOT calculation; coating uniform per SAE AMS 1428 visual check</td>
+        <td class="pain-col">Type IV fluid viscosity at OAT &lt; -14°C reduces flow-off performance on wing surfaces, requiring switch to Type III or abandoning anti-icing and increasing re-treatment frequency; operators must carry multiple fluid types adding storage and logistics complexity</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Calculate Holdover Time from FAA/TC Tables via EFB</td>
+        <td class="kpi-col">HOT calculation completed within 2 min of anti-icing fluid application start; communicated to captain before pushback clearance request; zero cases of HOT communicated after pushback initiation</td>
+        <td class="pain-col">FAA/TC HOT tables are conservative estimates; actual holdover time reduced by wind, direct sunlight, taxiway delays — flight crews must perform independent pre-departure contamination check but training and procedures vary by airline; EFB app connectivity failures force manual table lookup</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Conduct Post-Application Clean Aircraft Inspection</td>
+        <td class="kpi-col">Inspection covers 100% of critical surfaces; completion within 5 min of fluid application finish; re-treatment rate &lt; 8% of treated aircraft</td>
+        <td class="pain-col">Inadequate ramp lighting during night ops or heavy snowfall reduces visibility for post-application inspectors; incorrect clean aircraft calls are a primary de-icing safety risk (referenced in multiple NTSB and TSB accident reports); no standardised photographic evidence requirement at most carriers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Issue De-Icing Completion Record and Transmit to Flight Crew</td>
+        <td class="kpi-col">Report transmitted &gt;= 5 min before pushback; 100% compliance with FAA pre-takeoff contamination check communication requirement; zero ACARS transmission failures without verbal backup</td>
+        <td class="pain-col">ACARS data entry errors under time pressure cause incorrect HOT communication to crew; regional and charter operations rely on verbal communication with no digital audit trail, creating regulatory exposure; captains not trained to question HOT plausibility against observed conditions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Coordinate Pushback Within HOT Window</td>
+        <td class="kpi-col">Departure initiated &gt;= 5 min before HOT expiry; on-time departure rate (D0) &gt;= 78% during active winter ops; zero aircraft departing with documented expired HOT</td>
+        <td class="pain-col">ATC sequencing delays during high-demand winter events push departures beyond HOT expiry, requiring return to pad for costly re-treatment; airlines report 18–25 min average re-treatment penalty per aircraft during peak de-icing, cascading across the departure bank</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Monitor Departure Queue for HOT Expiry and Re-Treatment Triggers</td>
+        <td class="kpi-col">Re-treatment decision made &gt;= 10 min before HOT expiry; zero aircraft cleared for takeoff with expired HOT; re-treatment throughput capacity &gt;= scheduled de-icing volume + 20% buffer</td>
+        <td class="pain-col">Simultaneous HOT expiry across multiple aircraft during heavy snowfall creates ramp congestion and cascading departure delays; single de-icing pad airports cannot handle re-treatment surges without significant schedule disruption; AMS does not natively flag HOT expiry without custom integration</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Log De-Icing Event Data for Compliance and Performance Analysis</td>
+        <td class="kpi-col">100% of de-icing events logged within 24 hours; fluid waste rate &lt; 5% of applied volume; regulatory audit trail completeness &gt;= 99.5%; glycol runoff report submitted to EPA/Transport Canada within 30 days of season-end</td>
+        <td class="pain-col">DMS data silos prevent automated correlation with on-time performance and maintenance data, limiting root-cause analysis; EPA and Transport Canada glycol runoff reporting requirements vary by airport and add manual compliance burden; data quality issues in DMS (manual entries, missing fields) degrade seasonal analytics</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Ground Operations & Airport Services › Ramp & Turnaround Operations</span>
+  </div>
+</div>
+
+</body>
+</html>
