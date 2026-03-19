@@ -164,7 +164,12 @@ git_push() {
     || { log "  Nothing to commit."; return 0; }
   git push origin main \
     && log "  Pushed to GitHub." \
-    || { log "  WARN: push failed — check auth / network"; }
+    || {
+      log "  Push rejected — attempting rebase and retry..."
+      git pull --rebase origin main && git push origin main \
+        && log "  Pushed after rebase." \
+        || log "  WARN: push failed after rebase — run: git pull --rebase && git push"
+    }
 }
 
 # ── Print summary ──────────────────────────────────────────────────
