@@ -1,0 +1,50 @@
+flowchart LR
+  subgraph P1[Phase 1: QAR and FDR Data Acquisition]
+    A([Start]) --> B[Wireless QAR offload\nat gate]
+    B --> C{Data gap\n>2 min?}
+    C -- No --> D[Validate frame\nCRC integrity]
+    C -- Yes --> E[Ingest ACARS\nperformance snapshots]
+    E --> D
+  end
+
+  subgraph P2[Phase 2: Automated Exceedance Detection]
+    D --> F[Run exceedance\ndetection algorithms]
+    F --> G[Classify events\nCat A / B / C]
+    G --> H{Cat A flight-safety\nexceedance?}
+    H -- Yes --> I[Escalate to\nFlight Safety SMS]
+    H -- No --> J[Extract engine\nperformance params]
+    I --> J
+  end
+
+  subgraph P3[Phase 3: Engine and Systems Trend Monitoring]
+    J --> K[Compare vs MRO\nengine baseline]
+    K --> L{Deviation\nexceeds +/-3 sigma?}
+    L -- Yes --> M[Raise maintenance\nalert in AMOS]
+    L -- No --> N[Cross-ref ATC and\nmet data]
+    M --> N
+  end
+
+  subgraph P4[Phase 4: Investigation and Corrective Action]
+    N --> O[Conduct de-identified\nASAP crew debrief]
+    O --> P{Procedural or\ntechnique deviation?}
+    P -- Yes --> Q[Route to training\nprogramme]
+    P -- No --> R[Close with safety\nrecommendations]
+    Q --> S[Publish monthly\nFOQA dashboard]
+    R --> S
+  end
+
+  subgraph P5[Phase 5: Regulatory Reporting and Archival]
+    S --> T{Event meets FAR\n121.703 SDR threshold?}
+    T -- Yes --> U[Submit SDR report\nvia FAA DrAFT]
+    T -- No --> V[Archive FDR and QAR\ndata to AWS S3]
+    U --> V
+    V --> W([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
