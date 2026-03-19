@@ -1,0 +1,56 @@
+flowchart LR
+  subgraph P1["Phase 1: SSR Intake & Classification"]
+    A([Start]) --> B[Capture SSR from channel]
+    B --> C{Valid IATA SSR code?}
+    C -- No --> B
+    C -- Yes --> D[Classify SSR type & priority]
+  end
+  subgraph P2["Phase 2: Feasibility Assessment"]
+    D --> E[Check aircraft equipment fit]
+    E --> F{Resource & regulatory OK?}
+    F -- No --> G[Offer alternative or decline]
+    G --> H{Passenger accepts alt?}
+    H -- No --> Z([End — SSR Declined])
+    H -- Yes --> I[Update SSR with alternative]
+    F -- Yes --> I
+  end
+  subgraph P3["Phase 3: Confirmation & Notification"]
+    I --> J[Confirm SSR in Altéa PSS]
+    J --> K[Broadcast SSR to stations via SITA AMS]
+    K --> L{Receiving station acknowledged?}
+    L -- No --> K
+    L -- Yes --> M[Send confirmation to passenger]
+  end
+  subgraph P4["Phase 4: Pre-Flight Preparation"]
+    M --> N[Assign priority seat & equipment]
+    N --> O{Special equipment available?}
+    O -- No --> P[Escalate to Ground Ops Manager]
+    P --> O
+    O -- Yes --> Q[Brief cabin & ground crew]
+  end
+  subgraph P5["Phase 5: Airport Execution"]
+    Q --> R[Verify SSR at check-in]
+    R --> S{SSR requirements met at gate?}
+    S -- No --> T[Invoke irregular ops protocol]
+    T --> S
+    S -- Yes --> U[Execute boarding assistance]
+    U --> V[Cabin crew SSR handoff]
+  end
+  subgraph P6["Phase 6: Post-Service Review"]
+    V --> W[Record SSR outcome in CRM]
+    W --> X{SSR fulfilled as requested?}
+    X -- No --> Y[Log failure & trigger complaint]
+    X -- Yes --> AA([End — SSR Complete])
+    Y --> AA
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Z fill:#003366,color:#fff,stroke:#003366
+  style AA fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style X fill:#ff6600,color:#fff,stroke:#ff6600

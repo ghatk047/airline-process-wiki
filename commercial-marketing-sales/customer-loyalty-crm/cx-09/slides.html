@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CX-09 Slides — Special Services Request (SSR) Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-09</span>
+    <h1>Special Services Request (SSR) Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cx-09.png" alt="BPMN for CX-09" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-09</span>
+    <h1>Special Services Request (SSR) Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CX-09</li>
+          <li><strong>L1 Domain:</strong> Customer Experience &amp; Loyalty</li>
+          <li><strong>L2 Process:</strong> Customer Experience Operations</li>
+          <li><strong>L3 Name:</strong> Special Services Request (SSR) Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">11</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Capture SSR from booking or service channel</li><li><strong>Phase 2:</strong> Check aircraft equipment compatibility for SSR</li><li><strong>Phase 3:</strong> Confirm SSR and update PNR in Altéa PSS</li><li><strong>Phase 4:</strong> Generate SSR pre-departure briefing sheet for crew</li><li><strong>Phase 5:</strong> Verify SSR at check-in and issue special boarding </li><li><strong>Phase 6:</strong> Record SSR fulfillment outcome post-arrival</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Airport Customer Service Agent</li><li>Airport Customer Service Agent / Gate Agent</li><li>Amadeus Altéa PSS (automated)</li><li>CRM Automation / Reservations Agent</li><li>Customer Experience Analytics Manager</li><li>Customer Relations Manager</li><li>Gate Agent / Passenger Service Supervisor</li><li>Ground Operations Supervisor</li><li>Operations Control Coordinator</li><li>Reservations Agent / Self-Service System</li><li>Senior Cabin Crew Member</li><li>Special Services Coordinator</li><li>Special Services Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Redshift</li><li>Amadeus Altéa Departure Control System (DCS)</li><li>Amadeus Altéa PSS</li><li>Amadeus SkyMAX</li><li>Jeppesen Crew Management</li><li>SITA Airport Management System (AMS)</li><li>Salesforce CRM</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CX-09</span>
+    <h1>Special Services Request (SSR) Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Capture SSR from booking or service channel</td>
+        <td class="kpi-col">SSR capture rate ≥98% of requests received across all channels</td>
+        <td class="pain-col">NDC channel requests may not automatically propagate IATA SSR codes into Altéa PSS, requiring manual re-entry and creating duplication risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Classify SSR using IATA ADRM standard codes</td>
+        <td class="kpi-col">SSR miscoding rate &lt;0.5% of all SSRs entered</td>
+        <td class="pain-col">Agents conflate WCHR (ramp wheelchair) with WCHC (cabin wheelchair), causing resource over/under-provision at the gate</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Validate SSR code against passenger record</td>
+        <td class="kpi-col">Validation completion within 4 hours of SSR capture for standard requests; &lt;1 hour for MEDA cases</td>
+        <td class="pain-col">UMNR age validation relies on data-entry accuracy — no automated DOB check against passport data until check-in APIS processing</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Check aircraft equipment compatibility for SSR</td>
+        <td class="kpi-col">Equipment conflict detection rate 100% prior to SSR confirmation</td>
+        <td class="pain-col">Last-minute aircraft swaps (e.g. gauge change from 737-800 to 737-700) invalidate pre-assigned STCR/BSCT seats with no automated re-trigger of SSR review</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Assess ground handling resource requirements</td>
+        <td class="kpi-col">Resource pre-positioning completed ≥2 hours before scheduled departure</td>
+        <td class="pain-col">Third-party ground handler contracts at outstations often exclude specialised WCHC lift-on/lift-off equipment, requiring airline-owned asset repositioning at cost</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Verify regulatory and safety compliance for SSR</td>
+        <td class="kpi-col">MEDA clearance turnaround &lt;6 hours for standard medical cases; 100% DOT Part 382 compliance audit pass rate</td>
+        <td class="pain-col">MEDA cases require Chief Medical Officer sign-off but CMO availability outside business hours causes SSR holds and flight-day escalations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Confirm SSR and update PNR in Altéa PSS</td>
+        <td class="kpi-col">PNR update latency &lt;30 minutes from approval; SSR visible in all downstream systems within 1 hour</td>
+        <td class="pain-col">OSI remark field character limit (64 chars) forces abbreviation of complex medical notes, leading to misinterpretation by cabin crew at boarding</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Broadcast SSR notification to all handling stations</td>
+        <td class="kpi-col">Notification delivery confirmation rate ≥99.5%; transit station SSR awareness rate ≥97%</td>
+        <td class="pain-col">Interline/codeshare segments handled by operating carrier may not receive SSR notifications via SITA AMS if operating carrier uses a non-Altéa PSS — manual telex fallback required</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Send SSR confirmation to passenger</td>
+        <td class="kpi-col">Passenger confirmation sent ≥24 hours before departure for pre-booked SSRs; &lt;2 hours for same-day airport requests</td>
+        <td class="pain-col">Salesforce CRM and Altéa PSS use separate customer identifiers — real-time SSR status sync requires middleware (API layer) that has a known 15-minute polling lag</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Generate SSR pre-departure briefing sheet for crew</td>
+        <td class="kpi-col">PSNB delivery to crew ≥60 minutes before departure; crew acknowledgement rate 100%</td>
+        <td class="pain-col">Late SSR additions (&lt;2 hours before departure) do not always trigger PSNB update in Jeppesen — crew may operate on stale briefing data</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Pre-position special equipment at departure gate</td>
+        <td class="kpi-col">Equipment pre-positioned ≥45 minutes before boarding; zero gate-delay incidents attributable to missing SSR equipment</td>
+        <td class="pain-col">Ambulift availability is shared across multiple gates at hub airports — competing WCHC requests on peak departure banks cause queuing and boarding delays</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Review and protect SSR passenger seat assignment</td>
+        <td class="kpi-col">SSR seat protection applied ≥12 hours before departure; zero involuntary seat moves for SSR passengers</td>
+        <td class="pain-col">Upgrade clearance processes (Tier status upgrades) can inadvertently re-assign SSR-protected rows if the upgrade algorithm does not read SESL flags correctly</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Verify SSR at check-in and issue special boarding pass</td>
+        <td class="kpi-col">SSR verification completion rate 100% at check-in; check-in processing time for WCHC/MEDA ≤8 minutes</td>
+        <td class="pain-col">APIS/ICTS name matching failures for passengers with SSR who also have name correction remarks cause check-in holds and require supervisor override</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Coordinate pre-board assistance and boarding sequence</td>
+        <td class="kpi-col">Pre-board completion ≥10 minutes before general boarding start; zero SSR passenger miss-boards</td>
+        <td class="pain-col">Congested gate areas at hub turnaround stations make wheelchair manoeuvring hazardous; lack of dedicated SSR queuing lanes creates safety and delay incidents</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Execute cabin crew SSR handoff at aircraft door</td>
+        <td class="kpi-col">SSR handoff completed before aircraft door closure; cabin crew SSR briefing acknowledgement 100%</td>
+        <td class="pain-col">High crew-to-SSR passenger ratios on wide-body or full narrow-body flights limit the attention available for complex MEDA or STCR cases during turbulence events</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Record SSR fulfillment outcome post-arrival</td>
+        <td class="kpi-col">Post-flight SSR outcome recorded within 4 hours of block-in; SSR data completeness ≥95%</td>
+        <td class="pain-col">No structured digital handoff mechanism between cabin crew and ground at arrival — fulfillment gaps are captured verbally or not at all, degrading SSR performance data quality</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Trigger complaint or recovery action for failed SSR</td>
+        <td class="kpi-col">Proactive recovery contact within 24 hours of SSR failure; DOT Part 382 incidents reported within 10 days per regulatory requirement</td>
+        <td class="pain-col">Manual identification of DOT-reportable SSR failures relies on agent judgement — no automated flag in Salesforce CRM triggers the mandatory DOT disability complaint reporting workflow</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.3</td>
+        <td>Analyse SSR performance and update service standards</td>
+        <td class="kpi-col">SSR on-time fulfillment rate ≥96%; SSR-related NPS ≥+45; DOT disability complaints per 10,000 enplanements &lt;0.2</td>
+        <td class="pain-col">SSR data is fragmented across Altéa PSS, Salesforce CRM, and SITA AMS with no unified SSR BI view — monthly reconciliation is manual and takes 3–4 days</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Customer Experience & Loyalty › Customer Experience Operations</span>
+  </div>
+</div>
+
+</body>
+</html>
