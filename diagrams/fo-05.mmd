@@ -1,0 +1,60 @@
+flowchart LR
+  subgraph P1["Phase 1: NOTAM Ingestion & Parsing"]
+    A([Start]) --> B[Retrieve NOTAMs via AFTN/SITA]
+    B --> C[Parse & classify by type/location]
+    C --> D{NOTAM format valid?}
+    D -- No --> B
+    D -- Yes --> E[Store in NOTAM database]
+  end
+
+  subgraph P2["Phase 2: Network Relevance Filtering"]
+    E --> F[Filter NOTAMs vs active route network]
+    F --> G[Assign severity level]
+    G --> H{Affects operational routes?}
+    H -- No --> I[Archive — low relevance]
+    H -- Yes --> J[Escalate for impact assessment]
+  end
+
+  subgraph P3["Phase 3: Operational Impact Assessment"]
+    J --> K[Analyse runway/navaid constraints]
+    K --> L[Review AIP amendments]
+    L --> M[Assess alternate airport availability]
+    M --> N{Flight plan modification required?}
+    N -- Yes --> O[Trigger re-route / alternate change]
+    N -- No --> P[Flag for briefing only]
+  end
+
+  subgraph P4["Phase 4: Briefing Package Compilation"]
+    O --> Q[Compile route NOTAM briefing pack]
+    P --> Q
+    Q --> R[Push to EFB pre-departure package]
+    R --> S{Critical NOTAMs acknowledged by crew?}
+    S -- No --> R
+    S -- Yes --> T[Record crew acknowledgement]
+  end
+
+  subgraph P5["Phase 5: Flight Plan Compliance"]
+    T --> U[Validate route vs active airspace NOTAMs]
+    U --> V[Update alternate selections]
+    V --> W{Flight plan NOTAM-compliant?}
+    W -- No --> O
+    W -- Yes --> X[Release flight plan to ATC]
+  end
+
+  subgraph P6["Phase 6: In-Flight Monitoring & Closure"]
+    X --> Y[Monitor NOTAM updates via ACARS]
+    Y --> Z{New critical NOTAM for airborne flight?}
+    Z -- Yes --> AA[Transmit update to crew via ACARS]
+    Z -- No --> AB[Archive expired NOTAMs & close log]
+    AA --> AB
+    AB --> AC([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AC fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style S fill:#ff6600,color:#fff,stroke:#ff6600
+  style W fill:#ff6600,color:#fff,stroke:#ff6600
+  style Z fill:#ff6600,color:#fff,stroke:#ff6600
