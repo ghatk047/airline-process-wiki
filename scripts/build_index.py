@@ -69,7 +69,7 @@ def build_sidebar(active_l1s=None, active_l2s=None, depth=1):
                       else "status-wip" if p["status"] == "In Progress" \
                       else "status-queue"
                 lines.append(
-                    f'        <a class="sidebar-l3-link" href="{root}{l1s}/{l2s}/{p["id"].lower()}/">'
+                    f'        <a class="sidebar-l3-link" href="{root}{l1s}/{l2d['slug']}/{p['id'].lower()}/">'
                     f'<span class="status-dot {dot}"></span>'
                     f'<span class="pid">{p["id"]}</span>{escape(p["l3_name"])}</a>'
                 )
