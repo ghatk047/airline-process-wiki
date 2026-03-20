@@ -31,17 +31,19 @@ for p in procs:
             "name": p["l1_domain"], "slug": l1s,
             "l2s": OrderedDict(), "total": 0, "complete": 0
         }
-    if l2s not in l1_groups[l1s]["l2s"]:
-        l1_groups[l1s]["l2s"][l2s] = {
+    # Key by l2_process name so different L2 groups with same slug show separately
+    l2_key = p["l2_process"]
+    if l2_key not in l1_groups[l1s]["l2s"]:
+        l1_groups[l1s]["l2s"][l2_key] = {
             "name": p["l2_process"], "slug": l2s,
             "procs": [], "total": 0, "complete": 0
         }
-    l1_groups[l1s]["l2s"][l2s]["procs"].append(p)
-    l1_groups[l1s]["l2s"][l2s]["total"] += 1
+    l1_groups[l1s]["l2s"][l2_key]["procs"].append(p)
+    l1_groups[l1s]["l2s"][l2_key]["total"] += 1
     l1_groups[l1s]["total"] += 1
     if p["status"] == "Complete":
         l1_groups[l1s]["complete"] += 1
-        l1_groups[l1s]["l2s"][l2s]["complete"] += 1
+        l1_groups[l1s]["l2s"][l2_key]["complete"] += 1
 
 total_all    = len(procs)
 complete_all = sum(1 for p in procs if p["status"] == "Complete")
@@ -49,7 +51,7 @@ queued_all   = sum(1 for p in procs if p["status"] == "Queued")
 
 # ── Shared sidebar builder ─────────────────────────────────────────
 def build_sidebar(active_l1s=None, active_l2s=None, depth=1):
-    root = "../" * depth
+    root = "./" if depth == 0 else "../" * depth
     lines = []
     for l1s, l1d in l1_groups.items():
         is_active_l1 = (l1s == active_l1s)
@@ -123,7 +125,7 @@ def build_home():
 </div>""")
 
     main = f"""<div class="hero">
-  <div class="hero-eyebrow">SAP Consulting · Process Catalog</div>
+  <div class="hero-eyebrow">Process Catalog</div>
   <h1>Airlines Process Wiki</h1>
   <p>End-to-end L1 → L2 → L3 → L4 process documentation for airline verticals.
   Each subprocess includes BPMN flow diagrams, L4 step tables, swim lanes,
@@ -139,7 +141,7 @@ def build_home():
 <div class="domain-grid">{"".join(cards)}</div>"""
 
     html = page_shell("Airlines Process Wiki — SAP Consulting",
-                      "./", "./", build_sidebar(depth=1), main, "./")
+                      "./", "./", build_sidebar(depth=0), main, "./")
     out = REPO_DIR / "index.html"
     out.write_text(html, encoding="utf-8")
     print(f"  ✅ index.html ({complete_all} complete / {total_all} total)")
@@ -171,7 +173,7 @@ def build_l1_pages():
 </div>
 <div class="domain-grid">{"".join(cards)}</div>"""
 
-        sidebar = build_sidebar(active_l1s=l1s, depth=2)
+        sidebar = build_sidebar(active_l1s=l1s, depth=1)
         html = page_shell(l1d["name"], "../", "../", sidebar, main, "../")
         out_dir = REPO_DIR / l1s
         out_dir.mkdir(parents=True, exist_ok=True)
@@ -232,3 +234,4 @@ build_home()
 build_l1_pages()
 build_l2_pages()
 print(f"\n✅ All index pages rebuilt.")
+
