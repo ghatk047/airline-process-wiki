@@ -1,0 +1,46 @@
+flowchart LR
+  subgraph P1[Phase 1: Data Ingestion and Validation]
+    A([Start]) --> B[Ingest BSP/ARC\ndata feed]
+    B --> C{Coupon match\nrate ≥97%?}
+    C -- No --> B
+    C -- Yes --> D[ATPCO fare basis\nvalidation]
+    D --> E{Exceptions\nresolvable?}
+    E -- Yes --> F[Resolve coupon\nexceptions]
+    E -- No --> E2([Escalate to\nFare Desk])
+  end
+  subgraph P2[Phase 2: Revenue Proration and Recognition]
+    G[Calculate interline\nrevenue proration] --> H{Flight\ndeparted?}
+    H -- No --> H2[Hold in deferred\nrevenue]
+    H2 --> H
+    H -- Yes --> I[Apply ASC 606\nrecognition rules]
+    I --> J[Process EMD and\nancillary revenue]
+  end
+  subgraph P3[Phase 3: BSP Reconciliation and Settlement]
+    K[Reconcile BSP billing\nvs internal records] --> L{Variance\n<0.1%?}
+    L -- No --> M[Raise ADMs for\ndiscrepancies]
+    M --> K
+    L -- Yes --> N[Approve BSP\nsettlement payment]
+    N --> O{Settlement\napproved?}
+    O -- No --> N
+    O -- Yes --> P[Confirm and close\nbilling cycle]
+  end
+  subgraph P4[Phase 4: GL Posting and Period Close]
+    Q[Post revenue journals\nto SAP GL] --> R{Reconciliation\nsigned off?}
+    R -- No --> Q
+    R -- Yes --> S[Generate revenue\nreports and close period]
+    S --> T([End])
+  end
+
+  F --> G
+  J --> K
+  P --> Q
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style T fill:#003366,color:#fff,stroke:#003366
+  style E2 fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS-03 Slides — Revenue Accounting &amp; BSP Settlement</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-03</span>
+    <h1>Revenue Accounting &amp; BSP Settlement</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cs-03.png" alt="BPMN for CS-03" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Finance & Accounting</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-03</span>
+    <h1>Revenue Accounting &amp; BSP Settlement</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CS-03</li>
+          <li><strong>L1 Domain:</strong> Corporate Support Functions</li>
+          <li><strong>L2 Process:</strong> Finance &amp; Accounting</li>
+          <li><strong>L3 Name:</strong> Revenue Accounting &amp; BSP Settlement</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">14</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Ingest daily BSP/ARC ticket sales data feed</li><li><strong>Phase 2:</strong> Calculate interline revenue proration</li><li><strong>Phase 3:</strong> Reconcile BSP billing memo vs internal records</li><li><strong>Phase 4:</strong> Post revenue journal entries to SAP General Ledger</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>BSP Settlement Analyst</li><li>Finance Controller</li><li>Revenue Accounting Analyst</li><li>Revenue Accounting Manager</li><li>Senior Revenue Accounting Analyst</li><li>Treasury Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>ATPCO Passenger Revenue Accounting</li><li>Amadeus Altéa PSS</li><li>Amadeus Altéa PSS (EMD module)</li><li>BlackLine Account Reconciliation</li><li>IATA BSP Link</li><li>Mercator REVERA Revenue Accounting</li><li>SAP Analytics Cloud</li><li>SAP S/4HANA Finance (AP module)</li><li>SAP S/4HANA Finance (FI/CO)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Finance & Accounting</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-03</span>
+    <h1>Revenue Accounting &amp; BSP Settlement</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Ingest daily BSP/ARC ticket sales data feed</td>
+        <td class="kpi-col">File ingestion success rate ≥99.5%; processing time &lt;2 hours after BSP file drop</td>
+        <td class="pain-col">BSP file format differences across IATA billing regions (e.g. BSP-Americas vs BSP-Europe) cause parsing errors for non-standard fare constructions; legacy ASCII flat-file format has no structured error reporting</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Match ticket coupons against PSS booking records</td>
+        <td class="kpi-col">Automated coupon match rate ≥97%; unmatched coupons backlog &lt;3% of daily volume</td>
+        <td class="pain-col">PNR purge cycle (typically 90 days post-departure) removes booking records before interline billing arrives, causing match failures for delayed interline invoices; no automated re-match queue</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Apply ATPCO fare basis code validation</td>
+        <td class="kpi-col">Fare validation error rate &lt;1% of total coupons processed; validation completed within 4 hours of ingestion</td>
+        <td class="pain-col">ATPCO fare filing publication lag (up to 48 hours after filing) means recently-sold fares may not yet appear in validation tables, generating false-positive errors on new fare products launched during peak sale windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Resolve coupon validation exceptions</td>
+        <td class="kpi-col">Exception resolution within 5 business days; exception backlog &lt;500 coupons at any time</td>
+        <td class="pain-col">Manual exception handling volume spikes after IROP events when re-issued tickets carry non-standard fare constructions and waiver codes not recognised by the revenue accounting system; resolution requires coordination with airport and contact centre teams</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Calculate interline revenue proration</td>
+        <td class="kpi-col">Proration processing completed within T+3 calendar days; interline dispute rate &lt;2% of prorated billings</td>
+        <td class="pain-col">IATA Resolution 850e proration formula conflicts with bilaterally-negotiated prorate agreements for specific carrier pairs; manual overrides are required and not fully auditable within REVERA, creating reconciliation risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Apply ASC 606 revenue recognition rules</td>
+        <td class="kpi-col">Deferred revenue posting accuracy ≥99.9% of ticket value; period-end deferred revenue balance reconciled within T+5 business days</td>
+        <td class="pain-col">Ancillary revenue bundling (e.g. seat upgrade + checked bag + base fare sold as one fare family) requires performance obligation disaggregation under ASC 606 Topic 606; the revenue accounting subledger does not support multi-element arrangement splitting natively, requiring manual journal overrides</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Process EMD ancillary and ancillary revenue</td>
+        <td class="kpi-col">EMD-to-revenue match rate ≥98%; ancillary revenue posted within T+2 days of service delivery date</td>
+        <td class="pain-col">EMD-A (associated, tied to flight coupon) vs EMD-S (standalone, sold independently) misclassification causes ancillary revenue to be booked to incorrect income lines; the distinction is not enforced at point of sale by all booking channels</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Reconcile BSP billing memo vs internal records</td>
+        <td class="kpi-col">Net billing variance &lt;0.1% of total settlement amount; reconciliation completed within T+1 business day of BSP memo receipt</td>
+        <td class="pain-col">Currency conversion timing differences between the BSP billing date and the internal booking date create systematic variances in markets with volatile FX rates (e.g. ARS, TRY, EGP); IATA BSP Link applies the exchange rate at billing date, not booking date</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Raise Agency Debit Memos for billing discrepancies</td>
+        <td class="kpi-col">ADM filed within IATA 15-day filing deadline; ADM acceptance rate by agencies ≥85% within 30 days</td>
+        <td class="pain-col">IATA BSP Link ADM filing requires exact citation of the IATA resolution code authorising the ADM; incorrect or missing resolution citations cause automatic rejection, restarting the 15-day clock and risking write-off if the deadline cannot be met on re-submission</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Approve and submit BSP settlement payment</td>
+        <td class="kpi-col">Payment submitted on BSP settlement value date with zero late-payment penalties; settlement accuracy 100% of approved net amount</td>
+        <td class="pain-col">Dual-approval workflow between Revenue Accounting and Treasury creates a bottleneck when approvers are unavailable on the BSP settlement date; SAP S/4HANA workflow does not support time-sensitive escalation routing to backup approvers</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Confirm BSP settlement receipt and archive</td>
+        <td class="kpi-col">Settlement confirmation archived within 24 hours of IATA acknowledgement; audit trail completeness 100%</td>
+        <td class="pain-col">IATA BSP Link does not provide real-time payment confirmation; reconciliation relies on bank MT940 SWIFT message feeds which may lag by 1 business day, leaving the settlement status in IATA BSP Link as &#x27;pending&#x27; and triggering false escalation alerts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Post revenue journal entries to SAP General Ledger</td>
+        <td class="kpi-col">Automated posting rate ≥95% of journal lines; manual journals &lt;5%; posting completed within T+2 business days of period end</td>
+        <td class="pain-col">Revenue accounting system to SAP interface uses scheduled batch file transfer; if a batch fails mid-run, partial postings create out-of-balance GL entries requiring manual reversal journals and repost, delaying period close</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Perform revenue GL account reconciliation</td>
+        <td class="kpi-col">All revenue GL accounts reconciled within T+5 business days of month end; unexplained open items &lt;$50,000 aggregate</td>
+        <td class="pain-col">High volume of open items from ongoing interline billing disputes strains the reconciliation process; open item ageing is not automatically surfaced in BlackLine, requiring manual export and pivot analysis, often pushing sign-off past the T+5 target</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Generate revenue reports and close accounting period</td>
+        <td class="kpi-col">Revenue flash report delivered to CFO within T+3 business days of period end; period close completed by T+7 business days</td>
+        <td class="pain-col">Parallel month-end close activities (cost accounting, payroll, procurement AP) contend for SAP period-close resources; lock conflicts on shared profit centre and cost centre objects delay period close when multiple finance teams post simultaneously</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Finance & Accounting</span>
+  </div>
+</div>
+
+</body>
+</html>
