@@ -1,0 +1,44 @@
+flowchart LR
+  subgraph P1[Phase 1: Training Needs Analysis]
+    A([Start]) --> B[Aggregate regulatory requirements]
+    B --> C[Conduct skills gap analysis]
+    C --> D{Budget sufficient for plan?}
+    D -- Yes --> E[Publish Annual Training Plan]
+    D -- No --> C
+  end
+  subgraph P2[Phase 2: Programme Design and Scheduling]
+    E --> F[Define objectives and modality]
+    F --> G[Schedule sessions and instructors]
+    G --> H{Role mapping validated?}
+    H -- No --> F
+    H -- Yes --> I[Assign courses to learning plans]
+  end
+  subgraph P3[Phase 3: Content Development and Review]
+    I --> J[Develop or procure content]
+    J --> K{SME and regulatory approval?}
+    K -- No --> J
+    K -- Yes --> L[Publish content to LMS]
+  end
+  subgraph P4[Phase 4: Delivery and Tracking]
+    L --> M[Deliver training sessions]
+    M --> N[Record completions and certifications]
+    N --> O{Non-completion: LOA or non-compliant?}
+    O -- Non-compliant --> P[Escalate and re-enroll]
+    O -- Approved leave --> N
+    P --> M
+  end
+  subgraph P5[Phase 5: Compliance Reporting and Evaluation]
+    N --> Q{Compliance rate ≥98%?}
+    Q -- No --> R[Remediation plan]
+    R --> M
+    Q -- Yes --> S[Generate audit-ready reports]
+    S --> T[Evaluate effectiveness and ROI]
+    T --> U([End])
+  end
+  style A fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style H fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
