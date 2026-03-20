@@ -1,0 +1,60 @@
+flowchart LR
+  subgraph P1[Phase 1: Demand Forecasting and Budget Planning]
+    A([Start]) --> B[Extract volume\nforecast from schedule]
+    B --> C{Hedge ratio\nin policy band?}
+    C -- No --> B
+    C -- Yes --> D[Submit fuel\nbudget to Finance]
+  end
+  subgraph P2[Phase 2: Supplier Qualification and Contracting]
+    D --> E[Qualify suppliers\nby station]
+    E --> F{Station has\n≥2 suppliers?}
+    F -- No --> G([Single-source\nexception logged])
+    F -- Yes --> H[Issue RFQ and\nevaluate bids]
+    H --> I{Price formula:\nindex-linked or fixed?}
+    I -- Either --> J[Execute supply\nagreement]
+  end
+  subgraph P3[Phase 3: Purchasing and Order Execution]
+    J --> K[Generate daily\nuplift orders]
+    K --> L{Tankering yields\nnet cost saving?}
+    L -- No --> M[Standard uplift order]
+    L -- Yes --> N[Tanker uplift order]
+    M --> O[Execute PO\nvia SAP Ariba]
+    N --> O
+  end
+  subgraph P4[Phase 4: Fuel Delivery and Into-Plane]
+    O --> P[Monitor fuel\ndelivery at gate]
+    P --> Q{Batch passes\nDEF STAN 91-091?}
+    Q -- No --> R([Hold and resample])
+    Q -- Yes --> S{Delivery\ncomplete on time?}
+    S -- Shortage --> T([Emergency alt-\nsupplier order])
+    S -- Complete --> U[Record uplift\nin FuelPlus]
+  end
+  subgraph P5[Phase 5: Invoice Reconciliation and Payment]
+    U --> V[3-way match invoice\nto uplift and PO]
+    V --> W{Invoice within\n0.5% tolerance?}
+    W -- No --> X[Raise discrepancy\nwith supplier]
+    X --> V
+    W -- Yes --> Y[Process payment\nin SAP FI-AP]
+  end
+  subgraph P6[Phase 6: Hedging and Performance Reporting]
+    Y --> Z[Mark-to-market\nhedge positions daily]
+    Z --> AA{Hedge effectiveness\n≥80% per IFRS 9?}
+    AA -- No --> AB([Rebalance\nhedge portfolio])
+    AA -- Yes --> AC[Report fuel cost\nper ASM to Board]
+    AC --> AD([End])
+  end
+
+  style A  fill:#003366,color:#fff,stroke:#003366
+  style AD fill:#003366,color:#fff,stroke:#003366
+  style G  fill:#003366,color:#fff,stroke:#003366
+  style R  fill:#003366,color:#fff,stroke:#003366
+  style T  fill:#003366,color:#fff,stroke:#003366
+  style AB fill:#003366,color:#fff,stroke:#003366
+  style C  fill:#ff6600,color:#fff,stroke:#ff6600
+  style F  fill:#ff6600,color:#fff,stroke:#ff6600
+  style I  fill:#ff6600,color:#fff,stroke:#ff6600
+  style L  fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q  fill:#ff6600,color:#fff,stroke:#ff6600
+  style S  fill:#ff6600,color:#fff,stroke:#ff6600
+  style W  fill:#ff6600,color:#fff,stroke:#ff6600
+  style AA fill:#ff6600,color:#fff,stroke:#ff6600
