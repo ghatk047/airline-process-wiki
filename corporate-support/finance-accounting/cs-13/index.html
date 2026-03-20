@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Baggage Operations · Ground Operations &amp; Airport Services · Airlines Process Wiki</title>
+<title>CS-13 · Aircraft Parts &amp; Consumables Procurement · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../corporate-support/">Corporate Support Functions</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -161,8 +162,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Ground Operations &amp; Airport Services</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../ground-operations/airport-gate-management/">Airport &amp; Gate Management</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../ground-operations/airport-gate-management/go-01/"><span class="status-dot status-done"></span><span class="pid">GO-01</span>Passenger Check-In &amp; Boarding</a>
@@ -213,8 +214,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-done"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
@@ -225,7 +226,7 @@
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-10/"><span class="status-dot status-done"></span><span class="pid">CS-10</span>Data Engineering &amp; Analytics Platform</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-11/"><span class="status-dot status-done"></span><span class="pid">CS-11</span>Strategic Sourcing &amp; Vendor Selection</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-12/"><span class="status-dot status-done"></span><span class="pid">CS-12</span>Fuel Procurement &amp; Supply Chain</a>
-        <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-13/"><span class="status-dot status-done"></span><span class="pid">CS-13</span>Aircraft Parts &amp; Consumables Procurement</a>
+        <a class="sidebar-l3-link active" href="../../../corporate-support/finance-accounting/cs-13/"><span class="status-dot status-done"></span><span class="pid">CS-13</span>Aircraft Parts &amp; Consumables Procurement</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-14/"><span class="status-dot status-queue"></span><span class="pid">CS-14</span>Safety Management System (SMS)</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-15/"><span class="status-dot status-done"></span><span class="pid">CS-15</span>Regulatory Compliance &amp; AOC Management</a>
       </div>
@@ -242,90 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Ground Operations &amp; Airport Services</a><span class="sep">›</span>
-  <span class="current">Baggage Operations</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../corporate-support/">Corporate Support Functions</a><span class="sep">›</span>
+  <a href="../../../corporate-support/finance-accounting/">Procurement &amp; Supply Chain</a><span class="sep">›</span>
+  <span class="current">CS-13 · Aircraft Parts &amp; Consumables Procurement</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Baggage Operations</h1>
-    <p>Ground Operations &amp; Airport Services · 8 of 8 subprocesses complete · Updated 2026-03-19 22:48</p>
+    <h1>Aircraft Parts &amp; Consumables Procurement</h1>
+    <p>Corporate Support Functions › Procurement &amp; Supply Chain · 18 L4 steps · 5 phases · 6 decision gates · Updated 2026-03-19 22:48</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CS-13</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-02</span>Baggage Acceptance &amp; Handling</h3>
-    <p>Baggage Operations · 17 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cs-13">
+      <img src="../../../assets/img/cs-13.png" alt="CS-13 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cs-13').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cs-13').style.display='flex'">
+      <div id="diag-placeholder-cs-13" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-02/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Extract aircraft parts demand from MRO system</td>
+  <td class="td-role">Materials Planning Analyst</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Scheduled maintenance work orders, AD compliance calendar, historical consumption rates</td>
+  <td style="font-size:10px">Parts demand list by ATA chapter, quantity, and required-by date</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Forecast accuracy ≥92% (actual vs planned consumption within 30-day window)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Run inventory replenishment forecast in SAP MM</td>
+  <td class="td-role">Materials Planning Analyst</td>
+  <td><span class="stag sap">SAP S/4HANA MM (Materials Management)</span></td>
+  <td style="font-size:10px;color:#6b7280">Current stock levels, reorder points, safety stock parameters, open POs</td>
+  <td style="font-size:10px">MRP exception report highlighting below-safety-stock and slow-moving items</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Stockout rate ≤1.5% of demand events; safety stock coverage ≥14 days for AOG-critical parts</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Review reorder triggers and approve requisition list</td>
+  <td class="td-role">Supply Chain Manager</td>
+  <td><span class="stag sap">SAP S/4HANA MM (Materials Management)</span></td>
+  <td style="font-size:10px;color:#6b7280">MRP exception report, open purchase requisitions</td>
+  <td style="font-size:10px">Approved purchase requisition batch or rejection with revised parameters</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Requisition approval cycle time ≤4 hours for AOG-critical parts; ≤48 hours standard</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.4</td>
+  <td class="td-name">Create material requisition and attach technical specs</td>
+  <td class="td-role">Materials Planning Analyst</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved purchase requisition, part number, ATA chapter, airworthiness standard (FAR/CS-25)</td>
+  <td style="font-size:10px">Sourcing-ready requisition with part description, quantity, required-by date, and certification requirements</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Requisition completeness rate ≥98% (no return-for-correction by procurement)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Verify part source against Approved Vendor List</td>
+  <td class="td-role">Procurement Specialist</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Material requisition, part number, ATA chapter</td>
+  <td style="font-size:10px">Shortlist of AVL-qualified vendors for the specific part</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">AVL coverage ≥95% of recurring part numbers; AVL review cycle ≤12 months per vendor</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Validate airworthiness certification for each vendor</td>
+  <td class="td-role">Quality Assurance Engineer</td>
+  <td><span class="stag custom">Boeing Toolbox / CAMP</span></td>
+  <td style="font-size:10px;color:#6b7280">Vendor list, part number, applicable airworthiness directive (AD) status</td>
+  <td style="font-size:10px">Certification status decision — FAA Form 8130-3 or EASA Form 1 confirmed valid or rejected</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Certificate validation cycle ≤2 hours; zero parts accepted without valid airworthiness release document</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Issue RFQ to certified vendors via SAP Ariba</td>
+  <td class="td-role">Procurement Specialist</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Certified vendor shortlist, technical specifications, required-by date, quantity</td>
+  <td style="font-size:10px">RFQ event published to vendors with response deadline</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">RFQ response rate ≥80% from invited vendors; RFQ-to-quote cycle ≤24 hours for standard parts, ≤4 hours for AOG</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Evaluate vendor bids on price, lead time, and certs</td>
+  <td class="td-role">Procurement Specialist</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Vendor quote responses including price, lead time, certification documents, warranty terms</td>
+  <td style="font-size:10px">Bid evaluation scorecard; recommended vendor selection</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Negotiated savings vs. list price ≥8% on non-contracted parts; lead time commitment variance ≤10%</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Create purchase order with full part traceability data</td>
+  <td class="td-role">Procurement Specialist</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved vendor selection, quote reference, requisition number, delivery address</td>
+  <td style="font-size:10px">Draft PO with line items, unit price, delivery terms (INCOTERMS), and cert requirements</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PO first-time-right rate ≥97% (no revision required post-vendor acknowledgement)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Route PO through financial approval workflow</td>
+  <td class="td-role">Finance Controller</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Draft PO, cost centre, budget availability check result</td>
+  <td style="font-size:10px">Approved or rejected PO with approval audit trail</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PO approval cycle ≤1 business day for values ≤$50K; ≤4 hours for AOG regardless of value</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Transmit approved PO and confirm vendor acknowledgement</td>
+  <td class="td-role">Procurement Specialist</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved PO, vendor contact details</td>
+  <td style="font-size:10px">Vendor-acknowledged PO with confirmed delivery date and tracking reference</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Vendor acknowledgement receipt ≤4 hours of PO transmission; acknowledgement rate ≥99%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Receive parts shipment and verify packing list</td>
+  <td class="td-role">Stores Receiving Technician</td>
+  <td><span class="stag sap">SAP S/4HANA MM (Materials Management)</span></td>
+  <td style="font-size:10px;color:#6b7280">Inbound shipment, vendor packing list, PO reference</td>
+  <td style="font-size:10px">Goods receipt draft with quantity discrepancy flag if applicable</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Receiving dock processing time ≤2 hours per shipment; quantity accuracy ≥99.5%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Validate airworthiness release documents on receipt</td>
+  <td class="td-role">Quality Assurance Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Physical parts, FAA 8130-3 or EASA Form 1, manufacturer C of C, batch/lot traceability records</td>
+  <td style="font-size:10px">Documentation validation decision — accept, quarantine, or return to vendor</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Documentation rejection rate ≤0.5% of line items received; zero parts accepted with missing trace-back documentation</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Perform incoming quality inspection per IPC criteria</td>
+  <td class="td-role">Quality Assurance Engineer</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Physical parts, Illustrated Parts Catalog (IPC) criteria, AMM serviceable limits</td>
+  <td style="font-size:10px">Inspection finding report; parts tagged Serviceable, Unserviceable, or Suspect Unapproved</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Incoming inspection pass rate ≥99.2%; suspect unapproved parts reported to FAA per AC 21-29D within 24 hours</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Accept serviceable parts to bonded stores or quarantine</td>
+  <td class="td-role">Stores Receiving Technician</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Inspection finding report, serviceable tag, bin location assignment</td>
+  <td style="font-size:10px">Parts stocked in correct bin with full traceability record in AMOS; quarantine log updated for rejects</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Bin accuracy rate ≥99.8%; quarantine disposition completed within 5 business days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Post goods receipt and update inventory in SAP MM</td>
+  <td class="td-role">Materials Planning Analyst</td>
+  <td><span class="stag sap">SAP S/4HANA MM (Materials Management)</span></td>
+  <td style="font-size:10px;color:#6b7280">Accepted parts list, quantity, bin location, PO reference</td>
+  <td style="font-size:10px">GR document posted; inventory updated; open PO quantity reduced</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GR posting lag ≤4 hours from physical acceptance; GR accuracy rate ≥99.5%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Execute 3-way invoice match and approve payment</td>
+  <td class="td-role">Accounts Payable Analyst</td>
+  <td><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></td>
+  <td style="font-size:10px;color:#6b7280">Vendor invoice, PO, goods receipt document</td>
+  <td style="font-size:10px">Matched and approved invoice posted for payment; discrepancy log raised if match fails</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">3-way match auto-approval rate ≥85%; invoice-to-payment cycle ≤30 days net; dispute resolution ≤10 business days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Update vendor performance scorecard and close PO</td>
+  <td class="td-role">Procurement Specialist</td>
+  <td><span class="stag sap">SAP Ariba</span></td>
+  <td style="font-size:10px;color:#6b7280">Delivery performance data, quality inspection results, invoice accuracy record, lead time variance</td>
+  <td style="font-size:10px">Vendor scorecard updated; PO closed in SAP Ariba; AVL status flagged for review if score &lt; threshold</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Vendor scorecard completion rate ≥95% per quarter; suppliers scoring &lt;70/100 reviewed for AVL status within 30 days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-03</span>Lost &amp; Found / Baggage Tracing</h3>
-    <p>Baggage Operations · 18 steps · 7 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CS-13</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Corporate Support Functions</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Procurement &amp; Supply Chain</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Aircraft Parts &amp; Consumables Procurement</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">6 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">10 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Materials Planning Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Supply Chain Manager</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Procurement Specialist</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Quality Assurance Engineer</div><div class="swim"><div class="dot" style="background:#10b981"></div>Finance Controller</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Stores Receiving Technician</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Accounts Payable Analyst</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag sap">SAP S/4HANA MM (Materials Management)</span><span class="stag sap">SAP Ariba</span><span class="stag custom">Boeing Toolbox / CAMP</span><span class="stag sap">SAP S/4HANA Finance (FI/CO)</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Extract aircraft parts demand from MRO system</span><span class="kval">Forecast accuracy ≥92% (actual vs planned consumption within 30-day window)</span></div><div class="krow"><span class="kname">Run inventory replenishment forecast in SAP MM</span><span class="kval">Stockout rate ≤1.5% of demand events; safety stock coverage ≥14 days for AOG-critical parts</span></div><div class="krow"><span class="kname">Review reorder triggers and approve requisition list</span><span class="kval">Requisition approval cycle time ≤4 hours for AOG-critical parts; ≤48 hours standard</span></div><div class="krow"><span class="kname">Create material requisition and attach technical specs</span><span class="kval">Requisition completeness rate ≥98% (no return-for-correction by procurement)</span></div><div class="krow"><span class="kname">Verify part source against Approved Vendor List</span><span class="kval">AVL coverage ≥95% of recurring part numbers; AVL review cycle ≤12 months per vendor</span></div><div class="krow"><span class="kname">Validate airworthiness certification for each vendor</span><span class="kval">Certificate validation cycle ≤2 hours; zero parts accepted without valid airworthiness release document</span></div><div class="krow"><span class="kname">Issue RFQ to certified vendors via SAP Ariba</span><span class="kval">RFQ response rate ≥80% from invited vendors; RFQ-to-quote cycle ≤24 hours for standard parts, ≤4 hours for AOG</span></div><div class="krow"><span class="kname">Evaluate vendor bids on price, lead time, and certs</span><span class="kval">Negotiated savings vs. list price ≥8% on non-contracted parts; lead time commitment variance ≤10%</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">AMOS demand signals are not always linked to long-range MRO event schedules, causing reactive spot-buy procurement that inflates unit cost by 20–40%</div><div class="risk-card">Safety stock parameters are manually maintained and rarely updated when fleet mix changes (e.g. introduction of new variant), leading to chronic under-stocking of variant-specific parts</div><div class="risk-card">Manual approval queues during shift changes cause delayed AOG responses; no automated escalation when AOG-flagged requisitions remain unactioned beyond 1 hour</div><div class="risk-card">Part number supersession data from Boeing Toolbox is not auto-synced to SAP Ariba, causing requisitions for obsolete P/Ns that vendors cannot supply</div><div class="risk-card">AVL is maintained in SAP Ariba but not automatically cross-checked against FAA ASAP (Aviation Supplier Accreditation Program) suspension lists, creating compliance exposure</div><div class="risk-card">Counterfeit parts risk is elevated for high-demand Boeing 737 consumables; manual certificate checks against FAA ACSEP database are time-intensive and inconsistently applied across stations</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Scheduled maintenance work orders, AD compliance calendar, historical consumption rates</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Vendor scorecard updated; PO closed in SAP Ariba; AVL status flagged for review if score &lt; threshold</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-05</span>Ramp &amp; Turnaround Operations</h3>
-    <p>Baggage Operations · 20 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-06</span>Ground Handling Vendor Management</h3>
-    <p>Baggage Operations · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-07</span>Load Control &amp; Aircraft Loading</h3>
-    <p>Baggage Operations · 20 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-11</span>Cargo &amp; Mail Ground Handling</h3>
-    <p>Baggage Operations · 16 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-12</span>De-Icing &amp; Winter Operations</h3>
-    <p>Baggage Operations · 15 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">GO-14</span>Ground Support Equipment (GSE) Management</h3>
-    <p>Baggage Operations · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="go-14/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cs-12/"><span class="arrow">←</span><span><span class="sub">Previous</span>CS-12 · Fuel Procurement &amp; Supply Chain</span></a><a class="pn-btn" href="../cs-14/"><span><span class="sub">Next</span>CS-14 · Safety Management System (SMS)</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>

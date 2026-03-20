@@ -1,0 +1,48 @@
+flowchart LR
+  subgraph P1[Phase 1: Demand Planning]
+    A([Start]) --> B[Extract MRO demand\nfrom AMOS]
+    B --> C[Run replenishment\nforecast — SAP MM]
+    C --> D{Stock below\nsafety level?}
+    D -- No --> C
+    D -- Yes --> E[Create material\nrequisition]
+  end
+  subgraph P2[Phase 2: Sourcing and Certification]
+    E --> F[Check Approved\nVendor List — SAP Ariba]
+    F --> G{FAA 8130 /\nEASA Form 1 valid?}
+    G -- No --> F
+    G -- Yes --> H[Issue RFQ\nvia SAP Ariba]
+    H --> I{Best bid within\nbudget cap?}
+    I -- No --> H
+    I -- Yes --> J[Select vendor]
+  end
+  subgraph P3[Phase 3: Purchase Order]
+    J --> K[Create PO\nin SAP Ariba]
+    K --> L{PO exceeds\napproval threshold?}
+    L -- Yes --> M[Route for\nsenior approval]
+    M --> L
+    L -- No --> N[Transmit PO\nto vendor]
+  end
+  subgraph P4[Phase 4: Receiving and Inspection]
+    N --> O[Receive shipment\ncheck packing list]
+    O --> P{Trace docs\nand certs valid?}
+    P -- No --> Q[Quarantine\nparts]
+    P -- Yes --> R[Incoming quality\ninspection — AMOS]
+    R --> S[Accept to\nserviceable stock]
+  end
+  subgraph P5[Phase 5: Settlement and Scorecard]
+    S --> T[Post goods receipt\nSAP S/4HANA MM]
+    T --> U{3-way match:\nInvoice = PO + GR?}
+    U -- No --> V[Raise invoice\ndiscrepancy]
+    V --> U
+    U -- Yes --> W[Update vendor\nscorecard — SAP Ariba]
+    W --> X([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600

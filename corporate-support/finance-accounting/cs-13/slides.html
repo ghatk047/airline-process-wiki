@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS-13 Slides — Aircraft Parts &amp; Consumables Procurement</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-13</span>
+    <h1>Aircraft Parts &amp; Consumables Procurement</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cs-13.png" alt="BPMN for CS-13" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Procurement & Supply Chain</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-13</span>
+    <h1>Aircraft Parts &amp; Consumables Procurement</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CS-13</li>
+          <li><strong>L1 Domain:</strong> Corporate Support Functions</li>
+          <li><strong>L2 Process:</strong> Procurement &amp; Supply Chain</li>
+          <li><strong>L3 Name:</strong> Aircraft Parts &amp; Consumables Procurement</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">10</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract aircraft parts demand from MRO system</li><li><strong>Phase 2:</strong> Verify part source against Approved Vendor List</li><li><strong>Phase 3:</strong> Create purchase order with full part traceability </li><li><strong>Phase 4:</strong> Receive parts shipment and verify packing list</li><li><strong>Phase 5:</strong> Post goods receipt and update inventory in SAP MM</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Accounts Payable Analyst</li><li>Finance Controller</li><li>Materials Planning Analyst</li><li>Procurement Specialist</li><li>Quality Assurance Engineer</li><li>Stores Receiving Technician</li><li>Supply Chain Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>Boeing Toolbox / CAMP</li><li>SAP Ariba</li><li>SAP S/4HANA Finance (FI/CO)</li><li>SAP S/4HANA MM (Materials Management)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Procurement & Supply Chain</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-13</span>
+    <h1>Aircraft Parts &amp; Consumables Procurement</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract aircraft parts demand from MRO system</td>
+        <td class="kpi-col">Forecast accuracy ≥92% (actual vs planned consumption within 30-day window)</td>
+        <td class="pain-col">AMOS demand signals are not always linked to long-range MRO event schedules, causing reactive spot-buy procurement that inflates unit cost by 20–40%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Run inventory replenishment forecast in SAP MM</td>
+        <td class="kpi-col">Stockout rate ≤1.5% of demand events; safety stock coverage ≥14 days for AOG-critical parts</td>
+        <td class="pain-col">Safety stock parameters are manually maintained and rarely updated when fleet mix changes (e.g. introduction of new variant), leading to chronic under-stocking of variant-specific parts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Review reorder triggers and approve requisition list</td>
+        <td class="kpi-col">Requisition approval cycle time ≤4 hours for AOG-critical parts; ≤48 hours standard</td>
+        <td class="pain-col">Manual approval queues during shift changes cause delayed AOG responses; no automated escalation when AOG-flagged requisitions remain unactioned beyond 1 hour</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Create material requisition and attach technical specs</td>
+        <td class="kpi-col">Requisition completeness rate ≥98% (no return-for-correction by procurement)</td>
+        <td class="pain-col">Part number supersession data from Boeing Toolbox is not auto-synced to SAP Ariba, causing requisitions for obsolete P/Ns that vendors cannot supply</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Verify part source against Approved Vendor List</td>
+        <td class="kpi-col">AVL coverage ≥95% of recurring part numbers; AVL review cycle ≤12 months per vendor</td>
+        <td class="pain-col">AVL is maintained in SAP Ariba but not automatically cross-checked against FAA ASAP (Aviation Supplier Accreditation Program) suspension lists, creating compliance exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Validate airworthiness certification for each vendor</td>
+        <td class="kpi-col">Certificate validation cycle ≤2 hours; zero parts accepted without valid airworthiness release document</td>
+        <td class="pain-col">Counterfeit parts risk is elevated for high-demand Boeing 737 consumables; manual certificate checks against FAA ACSEP database are time-intensive and inconsistently applied across stations</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Issue RFQ to certified vendors via SAP Ariba</td>
+        <td class="kpi-col">RFQ response rate ≥80% from invited vendors; RFQ-to-quote cycle ≤24 hours for standard parts, ≤4 hours for AOG</td>
+        <td class="pain-col">AOG events require verbal quotes followed by retroactive PO creation, bypassing SAP Ariba controls and creating audit gaps under FAR Part 145 supplier documentation requirements</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Evaluate vendor bids on price, lead time, and certs</td>
+        <td class="kpi-col">Negotiated savings vs. list price ≥8% on non-contracted parts; lead time commitment variance ≤10%</td>
+        <td class="pain-col">Lowest-price selection without lead time weighting frequently results in late deliveries that trigger AOG events; no automated score weighting enforced in SAP Ariba evaluation templates</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Create purchase order with full part traceability data</td>
+        <td class="kpi-col">PO first-time-right rate ≥97% (no revision required post-vendor acknowledgement)</td>
+        <td class="pain-col">INCOTERMS and hazardous material shipping codes (IATA DGR compliance for rotable parts containing hydraulic fluid) are manually entered, leading to customs clearance delays at international stations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Route PO through financial approval workflow</td>
+        <td class="kpi-col">PO approval cycle ≤1 business day for values ≤$50K; ≤4 hours for AOG regardless of value</td>
+        <td class="pain-col">Approval delegation matrices in SAP FI/CO are not updated when managers are on leave, causing approval bottlenecks that delay AOG resolutions beyond IATA AHM 730 target resolution windows</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Transmit approved PO and confirm vendor acknowledgement</td>
+        <td class="kpi-col">Vendor acknowledgement receipt ≤4 hours of PO transmission; acknowledgement rate ≥99%</td>
+        <td class="pain-col">Some MRO and rotables vendors still require fax or email PO transmission; SAP Ariba supplier portal adoption is ~70%, leaving 30% of POs outside automated acknowledgement tracking</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Receive parts shipment and verify packing list</td>
+        <td class="kpi-col">Receiving dock processing time ≤2 hours per shipment; quantity accuracy ≥99.5%</td>
+        <td class="pain-col">AOG parts shipped via freight forwarder sometimes arrive without correct customs clearance documentation at non-hub stations, causing hold delays that negate the benefit of expedited shipping</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Validate airworthiness release documents on receipt</td>
+        <td class="kpi-col">Documentation rejection rate ≤0.5% of line items received; zero parts accepted with missing trace-back documentation</td>
+        <td class="pain-col">AMOS certificate module does not validate 8130-3 document numbers against FAA online registry in real time; manual spot-checks miss approximately 3% of certificate anomalies per internal audit</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Perform incoming quality inspection per IPC criteria</td>
+        <td class="kpi-col">Incoming inspection pass rate ≥99.2%; suspect unapproved parts reported to FAA per AC 21-29D within 24 hours</td>
+        <td class="pain-col">Tooling calibration records required for dimensional inspection are tracked in a separate CMMS that is not integrated with AMOS, creating manual cross-reference steps that slow AOG part acceptance</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Accept serviceable parts to bonded stores or quarantine</td>
+        <td class="kpi-col">Bin accuracy rate ≥99.8%; quarantine disposition completed within 5 business days</td>
+        <td class="pain-col">Bin location data in AMOS does not sync with warehouse management in SAP MM in real time, requiring nightly batch jobs that cause daytime inventory location discrepancies at high-volume line stations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Post goods receipt and update inventory in SAP MM</td>
+        <td class="kpi-col">GR posting lag ≤4 hours from physical acceptance; GR accuracy rate ≥99.5%</td>
+        <td class="pain-col">Back-dated GR postings to correct receiving errors distort accrual reporting in SAP FI/CO and trigger SOX compliance flags during month-end close</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Execute 3-way invoice match and approve payment</td>
+        <td class="kpi-col">3-way match auto-approval rate ≥85%; invoice-to-payment cycle ≤30 days net; dispute resolution ≤10 business days</td>
+        <td class="pain-col">Vendor invoices often include freight and handling surcharges not captured on the original PO, causing systematic 3-way match failures for ~12% of parts invoices and manual intervention by AP</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Update vendor performance scorecard and close PO</td>
+        <td class="kpi-col">Vendor scorecard completion rate ≥95% per quarter; suppliers scoring &lt;70/100 reviewed for AVL status within 30 days</td>
+        <td class="pain-col">Scorecard data is manually compiled from AMOS, SAP MM, and SAP FI/CO with no automated feed; quarterly compilation takes 3–5 days and is often deprioritised during AOG-heavy periods, reducing scorecard coverage below 60%</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Procurement & Supply Chain</span>
+  </div>
+</div>
+
+</body>
+</html>
