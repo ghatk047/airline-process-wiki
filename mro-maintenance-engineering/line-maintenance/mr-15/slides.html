@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MR-15 Slides — Warranty Claim Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-15</span>
+    <h1>Warranty Claim Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/mr-15.png" alt="BPMN for MR-15" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › MRO Vendor Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-15</span>
+    <h1>Warranty Claim Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> MR-15</li>
+          <li><strong>L1 Domain:</strong> Maintenance, Repair &amp; Overhaul</li>
+          <li><strong>L2 Process:</strong> MRO Vendor Management</li>
+          <li><strong>L3 Name:</strong> Warranty Claim Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">3</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Detect Warranty-Eligible Maintenance Event</li><li><strong>Phase 2:</strong> Gather Supporting Work Orders and Borescope Eviden</li><li><strong>Phase 3:</strong> Submit Claim via OEM Vendor Portal</li><li><strong>Phase 4:</strong> Review OEM Assessment and Determination</li><li><strong>Phase 5:</strong> Process Approved Warranty Credit or Replacement Pa</li><li><strong>Phase 6:</strong> Generate Warranty Recovery KPI Dashboard</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Line Maintenance Technician</li><li>MRO Commercial Manager</li><li>MRO Finance Coordinator</li><li>MRO Performance Analyst</li><li>Technical Records Specialist</li><li>Warranty &amp; Contracts Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>AWS S3 / Redshift</li><li>Boeing Toolbox / CAMP</li><li>Ramco Aviation</li><li>SAP Ariba</li><li>SAP S/4HANA Finance (FI/CO)</li><li>Tableau / Power BI</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › MRO Vendor Management</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">MR-15</span>
+    <h1>Warranty Claim Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Detect Warranty-Eligible Maintenance Event</td>
+        <td class="kpi-col">Warranty event capture rate ≥95% of eligible removals</td>
+        <td class="pain-col">AMOS warranty flag relies on manual technician input; missed flags cause unrecoverable cost leakage when discovery exceeds OEM claim window (typically 90 days)</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Validate Warranty Coverage Against OEM Contract</td>
+        <td class="kpi-col">Coverage determination completed within 2 business days of event flag</td>
+        <td class="pain-col">OEM warranty terms scattered across multiple Ariba contract line items; exclusions for airline-induced damage (e.g. FOD, corrosion) frequently disputed without clear documented threshold</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Confirm Component Airworthiness History</td>
+        <td class="kpi-col">History pull completed within 1 business day</td>
+        <td class="pain-col">CAMP component records can have gaps when aircraft are acquired from lessors or third-party MROs; incomplete records lead to OEM claim rejection citing unverifiable maintenance history</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Gather Supporting Work Orders and Borescope Evidence</td>
+        <td class="kpi-col">Documentation pack assembled within 5 business days of removal</td>
+        <td class="pain-col">Borescope images stored outside AMOS in file shares; retrieval is manual and inconsistent — OEMs (CFM, Pratt &amp; Whitney) require image sets in specific DPI/format standards or reject claims on technical grounds</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Assess Documentation Completeness Against OEM Checklist</td>
+        <td class="kpi-col">First-time claim submission completeness rate ≥88%</td>
+        <td class="pain-col">Each OEM (Airbus, CFM, Honeywell, Collins Aerospace) has different checklist formats and portal requirements; maintaining current versions of each OEM&#x27;s checklist is a manual process with no automated update feed</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Build Formal Warranty Claim Package</td>
+        <td class="kpi-col">Claim value accuracy within ±5% of final settlement</td>
+        <td class="pain-col">Labour rate and material cost calculations reference SAP actuals — discrepancies between AMOS work order cost codes and SAP cost centres cause reconciliation errors that delay settlement</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Submit Claim via OEM Vendor Portal</td>
+        <td class="kpi-col">Claim submitted within 30 days of component removal (OEM SLA compliance)</td>
+        <td class="pain-col">OEM portals (Airbus WSC, CFM TEAM, Honeywell MyAerospace) each have unique interfaces; no API integration with AMOS/Ramco means double-entry and high rework rate (~25%) for portal validation errors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Register Claim in Warranty Tracking Register</td>
+        <td class="kpi-col">100% of submitted claims logged within same business day</td>
+        <td class="pain-col">AMOS warranty module not universally adopted — some analysts maintain parallel spreadsheet trackers creating version drift and missed follow-up triggers</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Monitor Claim Status and Escalate on SLA Breach</td>
+        <td class="kpi-col">OEM response within 30-day SLA for standard claims; escalation triggered within 5 days of breach</td>
+        <td class="pain-col">AMOS SLA alerting requires manual daily review; no automated push notification to account managers — high-value claims (&gt;$50K) routinely age past SLA without escalation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Review OEM Assessment and Determination</td>
+        <td class="kpi-col">Claim acceptance rate ≥70% of submitted value</td>
+        <td class="pain-col">OEMs commonly invoke exclusion clauses (FAR Part 43 compliance gaps, improper storage, FOD) with limited technical substantiation — airline burden of proof is high and legal recourse under IATA ATA Spec 200 is slow</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Escalate Disputed Claims to Commercial Team</td>
+        <td class="kpi-col">Dispute initiated within 10 business days of unsatisfactory determination</td>
+        <td class="pain-col">Airlines with smaller fleets or lower OEM spend have limited commercial leverage — Boeing and CFM prioritise high-volume operators; dispute resolution timelines can exceed 180 days for turbine-module claims</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Prepare Technical Counter-Evidence Package</td>
+        <td class="kpi-col">Counter-evidence submitted within 15 business days of dispute initiation</td>
+        <td class="pain-col">AD compliance records in CAMP may not cross-reference superseded bulletins; if OEM cites a service bulletin the airline cannot prove was complied with, the claim is unrecoverable</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Process Approved Warranty Credit or Replacement Part</td>
+        <td class="kpi-col">Credit posted within 5 business days of OEM approval; replacement part receipted against correct maintenance order</td>
+        <td class="pain-col">OEM credit notes issued in vendor&#x27;s currency (USD, EUR) — FX timing differences between AMOS claim valuation and SAP posting date create unexplained P&amp;L variance in MRO cost accounts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Close Claim and Update Warranty Register</td>
+        <td class="kpi-col">Claim closure within 3 business days of financial settlement; register accuracy ≥99%</td>
+        <td class="pain-col">AMOS closure step is often skipped when analysts are under workload pressure — open claim backlog inflates apparent recovery pipeline and distorts management reporting</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Generate Warranty Recovery KPI Dashboard</td>
+        <td class="kpi-col">Report published by 5th business day of each month; warranty recovery rate ≥3.5% of total MRO spend</td>
+        <td class="pain-col">AMOS-to-Tableau data pipeline is batch-refresh (T+1); real-time claim status not visible to Finance — monthly accruals for outstanding claims are estimated manually and frequently restated</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Analyse Claim Patterns and Trigger Vendor Review</td>
+        <td class="kpi-col">Vendor review completed annually; rejection rate per OEM &lt;15%; repeat claim rate on same part number &lt;5%</td>
+        <td class="pain-col">Warranty rejection patterns (e.g. systemic CFM LEAP defect series) are not automatically correlated with fleet reliability data in Redshift — root cause identification requires manual cross-referencing across three systems</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Maintenance, Repair & Overhaul › MRO Vendor Management</span>
+  </div>
+</div>
+
+</body>
+</html>

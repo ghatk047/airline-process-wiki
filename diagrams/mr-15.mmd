@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1[Phase 1: Event Identification and Validation]
+    A([Start]) --> B[Detect warranty-eligible\nevent in AMOS]
+    B --> C{Within warranty\nperiod and scope?}
+    C -- No --> Z([End: Not Covered])
+    C -- Yes --> D[Validate OEM contract\ncoverage terms]
+  end
+  subgraph P2[Phase 2: Documentation and Claim Prep]
+    D --> E[Collect work orders\nand component history]
+    E --> F{Documentation\ncomplete and compliant?}
+    F -- No --> E
+    F -- Yes --> G[Build claim package\nwith fault evidence]
+  end
+  subgraph P3[Phase 3: Submission and Tracking]
+    G --> H[Submit claim via\nOEM/vendor portal]
+    H --> I[Log claim in\nwarranty register]
+    I --> J{Response within\nSLA window?}
+    J -- No --> H
+    J -- Yes --> K[Review vendor\nassessment]
+  end
+  subgraph P4[Phase 4: Dispute Resolution]
+    K --> L{Vendor determination\naccepted?}
+    L -- No --> M[Escalate to\nCommercial team]
+    M --> N{Dispute\nresolved?}
+    N -- No --> M
+    N -- Yes --> O[Process settlement]
+    L -- Yes --> O
+  end
+  subgraph P5[Phase 5: Recovery and Closure]
+    O --> P[Post credit or\nreplacement to SAP]
+    P --> Q[Close claim and\nupdate warranty register]
+    Q --> R([End])
+  end
+  subgraph P6[Phase 6: Reporting and Analytics]
+    R --> S[Generate warranty\nrecovery KPI report]
+    S --> T{Recovery rate\nbelow target?}
+    T -- Yes --> U[Trigger vendor\nperformance review]
+    T -- No --> V([Done])
+    U --> V
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Z fill:#003366,color:#fff,stroke:#003366
+  style R fill:#003366,color:#fff,stroke:#003366
+  style V fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style F fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
