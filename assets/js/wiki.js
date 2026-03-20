@@ -1,34 +1,245 @@
-/* Airlines Process Wiki JS v2 — lightbox + search + collapsible sidebar */
+/* Airlines Process Wiki JS v3 — icon-rail sidebar + drag resize + lightbox + search */
+
+/* L1 domain icons */
+const DOMAIN_ICONS = {
+  'network and pricing':              '🗺️',
+  'network planning':                 '🗺️',
+  'customer experience':              '⭐',
+  'commercial':                       '📣',
+  'flight operations':                '✈️',
+  'crew management':                  '👨‍✈️',
+  'ground operations':                '🛄',
+  'maintenance':                      '🔧',
+  'mro':                              '🔧',
+  'corporate support':                '🏢',
+  'safety':                           '🛡️',
+  'cargo':                            '📦',
+  'finance':                          '💰',
+  'human resources':                  '👥',
+  'information technology':           '💻',
+  'procurement':                      '🛒',
+  'sustainability':                   '🌱',
+  'marketing':                        '📣',
+  'regulatory':                       '⚖️',
+  'fleet':                            '🛫',
+};
+
+function getDomainIcon(name) {
+  const lower = (name || '').toLowerCase();
+  for (const [key, icon] of Object.entries(DOMAIN_ICONS)) {
+    if (lower.includes(key)) return icon;
+  }
+  return '📋';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* 1. SIDEBAR ACCORDION */
+  /* ── 1. INJECT ICONS into sidebar domain headers ── */
+  document.querySelectorAll('.sidebar-domain').forEach(el => {
+    const label = el.querySelector('span:first-child');
+    const labelText = label ? label.textContent.trim() : el.textContent.trim();
+    
+    // Add data-label for tooltip in rail mode
+    el.setAttribute('data-label', labelText);
+
+    // Inject icon span if not already present
+    if (!el.querySelector('.domain-icon')) {
+      const iconEl = document.createElement('span');
+      iconEl.className = 'domain-icon';
+      iconEl.textContent = getDomainIcon(labelText);
+      el.insertBefore(iconEl, el.firstChild);
+    }
+    // Wrap label text
+    if (label && !label.classList.contains('domain-label')) {
+      label.classList.add('domain-label');
+    }
+  });
+
+  /* ── 2. SIDEBAR ACCORDION ── */
   document.querySelectorAll('.sidebar-domain').forEach(el => {
     el.addEventListener('click', () => {
+      if (sidebar.classList.contains('rail')) {
+        // In rail mode — expand sidebar first then open section
+        setSidebarExpanded();
+        setTimeout(() => {
+          el.classList.add('open');
+          const l2 = el.nextElementSibling;
+          if (l2) l2.classList.add('open');
+        }, 230);
+        return;
+      }
       el.classList.toggle('open');
       const l2 = el.nextElementSibling;
       if (l2) l2.classList.toggle('open');
     });
   });
+
+  // Auto-open active section
   const active = document.querySelector('.sidebar-l3-link.active');
   if (active) {
     let p = active.closest('.sidebar-l2');
-    if (p) { p.classList.add('open'); const d = p.previousElementSibling; if (d) d.classList.add('open'); }
+    if (p) {
+      p.classList.add('open');
+      const d = p.previousElementSibling;
+      if (d) d.classList.add('open');
+    }
   }
 
-  /* 2. COLLAPSIBLE SIDEBAR */
+  /* ── 3. SIDEBAR ELEMENTS ── */
   const sidebar   = document.getElementById('sidebar');
   const mainEl    = document.querySelector('.main');
-  const toggleBtn = document.getElementById('sidebar-toggle');
-  if (toggleBtn && sidebar) {
+  const toggleBtn = document.getElementById('sidebarToggle') || document.getElementById('sidebar-toggle');
+
+  // Inject drag resizer
+  let resizer = document.getElementById('sidebar-resizer');
+  if (!resizer) {
+    resizer = document.createElement('div');
+    resizer.id = 'sidebar-resizer';
+    document.body.appendChild(resizer);
+  }
+
+  // Inject overlay
+  let overlay = document.getElementById('sidebar-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'sidebar-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  const isMobile = () => window.innerWidth <= 900;
+  const RAIL_W   = 52;
+  let currentW   = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sidebar-w')) || 260;
+
+  /* ── 4. COLLAPSE TO RAIL / EXPAND ── */
+  function setSidebarRail() {
+    sidebar.classList.add('rail');
+    sidebar.classList.remove('mobile-open');
+    if (toggleBtn) { toggleBtn.innerHTML = '&#9654;'; toggleBtn.title = 'Expand sidebar'; }
+    resizer.style.left = RAIL_W + 'px';
+    localStorage.setItem('sidebarState', 'rail');
+  }
+
+  function setSidebarExpanded() {
+    sidebar.classList.remove('rail');
+    sidebar.style.width = currentW + 'px';
+    if (mainEl) mainEl.style.marginLeft = currentW + 'px';
+    resizer.style.left = currentW + 'px';
+    if (toggleBtn) { toggleBtn.innerHTML = '&#9664;'; toggleBtn.title = 'Collapse sidebar'; }
+    localStorage.setItem('sidebarState', 'expanded');
+  }
+
+  function toggleDesktop() {
+    if (sidebar.classList.contains('rail')) {
+      setSidebarExpanded();
+    } else {
+      setSidebarRail();
+    }
+  }
+
+  /* ── 5. MOBILE OPEN/CLOSE ── */
+  function openMobile() {
+    sidebar.classList.add('mobile-open');
+    overlay.classList.add('active');
+    if (toggleBtn) { toggleBtn.innerHTML = '&#9664;'; toggleBtn.title = 'Close menu'; }
+  }
+  function closeMobile() {
+    sidebar.classList.remove('mobile-open');
+    overlay.classList.remove('active');
+    if (toggleBtn) { toggleBtn.innerHTML = '&#9654;'; toggleBtn.title = 'Open menu'; }
+  }
+
+  /* ── 6. TOGGLE BUTTON ── */
+  if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
-      const collapsed = sidebar.classList.toggle('sidebar-collapsed');
-      if (mainEl) mainEl.classList.toggle('main-expanded', collapsed);
-      toggleBtn.title   = collapsed ? 'Show sidebar' : 'Hide sidebar';
-      toggleBtn.innerHTML = collapsed ? '&#9654;' : '&#9664;';
+      if (isMobile()) {
+        sidebar.classList.contains('mobile-open') ? closeMobile() : openMobile();
+      } else {
+        toggleDesktop();
+      }
     });
   }
 
-  /* 3. SMOOTH SCROLL */
+  overlay.addEventListener('click', closeMobile);
+
+  // Close sidebar on mobile when link clicked
+  sidebar.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => { if (isMobile()) closeMobile(); });
+  });
+
+  /* ── 7. HOVER EXPAND FROM RAIL (desktop only) ── */
+  /* Sidebar only collapses via toggle button — not on mouse leave */
+  sidebar.addEventListener('mouseenter', () => {
+    if (!isMobile() && sidebar.classList.contains('rail')) {
+      setSidebarExpanded();
+    }
+  });
+
+  /* ── 8. DRAG TO RESIZE ── */
+  let dragging = false;
+  let startX, startW;
+
+  resizer.addEventListener('mousedown', e => {
+    if (isMobile()) return;
+    dragging = true;
+    startX = e.clientX;
+    startW = sidebar.offsetWidth;
+    resizer.classList.add('dragging');
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    const delta = e.clientX - startX;
+    let newW = Math.max(180, Math.min(480, startW + delta));
+    // Snap to rail if dragged very small
+    if (newW < 120) {
+      setSidebarRail();
+      dragging = false;
+      return;
+    }
+    currentW = newW;
+    sidebar.style.width = newW + 'px';
+    if (mainEl) mainEl.style.marginLeft = newW + 'px';
+    resizer.style.left = newW + 'px';
+    if (toggleBtn) toggleBtn.style.left = (newW - 13) + 'px';
+    document.documentElement.style.setProperty('--sidebar-w', newW + 'px');
+    sidebar.classList.remove('rail');
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!dragging) return;
+    dragging = false;
+    resizer.classList.remove('dragging');
+    document.body.style.cursor = '';
+    document.body.style.userSelect = '';
+    localStorage.setItem('sidebarW', currentW);
+  });
+
+  /* ── 9. RESTORE STATE ── */
+  const savedState = localStorage.getItem('sidebarState');
+  const savedW     = localStorage.getItem('sidebarW');
+  if (!isMobile()) {
+    if (savedW) {
+      currentW = parseInt(savedW);
+      document.documentElement.style.setProperty('--sidebar-w', currentW + 'px');
+    }
+    if (savedState === 'rail') {
+      setSidebarRail();
+    } else {
+      setSidebarExpanded();
+    }
+  }
+
+  window.addEventListener('resize', () => {
+    if (!isMobile()) {
+      overlay.classList.remove('active');
+      sidebar.classList.remove('mobile-open');
+    }
+  });
+
+  /* ── 10. SMOOTH SCROLL ── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const t = document.querySelector(a.getAttribute('href'));
@@ -36,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* 4. BPMN LIGHTBOX WITH ZOOM + PAN */
+  /* ── 11. BPMN LIGHTBOX WITH ZOOM + PAN ── */
   function buildLightbox() {
     if (document.getElementById('bpmn-lightbox')) return document.getElementById('bpmn-lightbox');
     const ov = document.createElement('div');
@@ -56,33 +267,30 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(ov);
     const canvas = document.getElementById('lb-canvas');
     const img    = document.getElementById('lb-img');
-    let scale = 1, ox = 0, oy = 0, dragging = false, lx = 0, ly = 0;
-    const applyT   = () => { img.style.transform = `translate(${ox}px,${oy}px) scale(${scale})`; };
+    let scale = 1, ox = 0, oy = 0, draggingLB = false, lx = 0, ly = 0;
+    const applyT    = () => { img.style.transform = `translate(${ox}px,${oy}px) scale(${scale})`; };
     const resetView = () => { scale=1; ox=0; oy=0; applyT(); };
     const closeLB   = () => { ov.classList.remove('lb-open'); resetView(); };
     document.getElementById('lb-zoom-in').onclick  = () => { scale = Math.min(scale*1.3, 8); applyT(); };
     document.getElementById('lb-zoom-out').onclick = () => { scale = Math.max(scale/1.3, 0.15); applyT(); };
     document.getElementById('lb-reset').onclick    = resetView;
     document.getElementById('lb-close').onclick    = closeLB;
-    ov.addEventListener('click', e => { if (e.target === ov) closeLB(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); });
-    canvas.addEventListener('wheel', e => {
-      e.preventDefault();
-      scale = Math.max(0.15, Math.min(8, scale * (e.deltaY > 0 ? 0.85 : 1.18)));
-      applyT();
-    }, { passive: false });
-    canvas.addEventListener('mousedown', e => { dragging=true; lx=e.clientX; ly=e.clientY; canvas.style.cursor='grabbing'; });
-    document.addEventListener('mousemove', e => {
-      if (!dragging) return;
-      ox += e.clientX-lx; oy += e.clientY-ly; lx=e.clientX; ly=e.clientY; applyT();
-    });
-    document.addEventListener('mouseup', () => { dragging=false; canvas.style.cursor='grab'; });
+    canvas.addEventListener('wheel', e => { e.preventDefault(); scale = e.deltaY < 0 ? Math.min(scale*1.1,8) : Math.max(scale/1.1,0.15); applyT(); }, {passive:false});
+    canvas.addEventListener('mousedown', e => { draggingLB=true; lx=e.clientX; ly=e.clientY; img.style.cursor='grabbing'; });
+    document.addEventListener('mousemove', e => { if (!draggingLB) return; ox+=e.clientX-lx; oy+=e.clientY-ly; lx=e.clientX; ly=e.clientY; applyT(); });
+    document.addEventListener('mouseup', () => { draggingLB=false; img.style.cursor='grab'; });
+    /* Touch support for mobile pan + pinch-zoom */
+    let pt=0,lastDist=0;
+    canvas.addEventListener('touchstart', e => { e.preventDefault(); if(e.touches.length===1){draggingLB=true;lx=e.touches[0].clientX;ly=e.touches[0].clientY;}else if(e.touches.length===2){lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);} },{passive:false});
+    canvas.addEventListener('touchmove', e => { e.preventDefault(); if(e.touches.length===1&&draggingLB){ox+=e.touches[0].clientX-lx;oy+=e.touches[0].clientY-ly;lx=e.touches[0].clientX;ly=e.touches[0].clientY;applyT();}else if(e.touches.length===2){const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(Math.max(scale*(d/lastDist),0.15),8);lastDist=d;applyT();} },{passive:false});
+    canvas.addEventListener('touchend', () => { draggingLB=false; });
+    document.addEventListener('keydown', e => { if (e.key==='Escape') closeLB(); });
+    ov.addEventListener('click', e => { if (e.target===ov) closeLB(); });
     return ov;
   }
 
   document.querySelectorAll('.diagram-wrap img').forEach(img => {
     img.style.cursor = 'zoom-in';
-    img.title = 'Click to expand and zoom';
     img.addEventListener('click', () => {
       const lb = buildLightbox();
       document.getElementById('lb-img').src = img.src;
@@ -90,60 +298,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* 5. SEARCH */
-  const idx = [];
-  document.querySelectorAll('.sidebar-l3-link').forEach(link => {
-    const pid  = link.querySelector('.pid')?.textContent?.trim() || '';
-    const name = link.textContent.replace(pid, '').trim();
-    idx.push({ pid, name, url: link.href, type: 'process', text: (pid+' '+name).toLowerCase() });
-  });
-  document.querySelectorAll('tbody tr').forEach(row => {
-    const c = row.querySelectorAll('td');
-    if (c.length < 3) return;
-    const step=c[0]?.textContent?.trim(), name=c[1]?.textContent?.trim(), role=c[2]?.textContent?.trim();
-    if (!name) return;
-    idx.push({ pid:step, name, role, url:window.location.href.split('#')[0], type:'step', text:(step+' '+name+' '+role).toLowerCase() });
-  });
+  /* ── 12. SEARCH ── */
+  const searchBox = document.getElementById('searchBox');
+  const resultsEl = document.getElementById('searchResults') || (() => {
+    const el = document.createElement('div');
+    el.id = 'searchResults';
+    el.className = 'search-results';
+    el.style.display = 'none';
+    document.body.appendChild(el);
+    return el;
+  })();
 
-  const topR = document.querySelector('.topbar-right');
-  if (topR) {
-    const wrap = document.createElement('div');
-    wrap.id = 'search-wrap';
-    wrap.innerHTML = `
-      <div id="search-box">
-        <span id="search-icon">&#128269;</span>
-        <input id="search-input" type="text" placeholder="Search processes, steps... (or press /)" autocomplete="off">
-        <button id="search-clear">&#10005;</button>
-      </div>
-      <div id="search-results"></div>`;
-    topR.insertBefore(wrap, topR.firstChild);
+  if (searchBox) {
+    const links = [...document.querySelectorAll('.sidebar-l3-link')].map(a => ({
+      text: a.textContent.trim(), href: a.href
+    }));
 
-    const inp = document.getElementById('search-input');
-    const res = document.getElementById('search-results');
+    searchBox.addEventListener('input', () => {
+      const q = searchBox.value.trim().toLowerCase();
+      if (!q) { resultsEl.style.display = 'none'; return; }
+      const hits = links.filter(l => l.text.toLowerCase().includes(q)).slice(0, 8);
+      if (!hits.length) { resultsEl.style.display = 'none'; return; }
+      resultsEl.innerHTML = hits.map(h =>
+        `<a class="sr-item" href="${h.href}">${h.text}</a>`
+      ).join('');
+      resultsEl.style.display = 'block';
+    });
 
-    const doSearch = q => {
-      q = q.trim().toLowerCase(); res.innerHTML = '';
-      if (q.length < 2) { res.classList.remove('open'); return; }
-      const tokens = q.split(/\s+/);
-      const hits = idx.filter(i => tokens.every(t => i.text.includes(t))).slice(0, 12);
-      if (!hits.length) { res.innerHTML = '<div class="sr-empty">No results found</div>'; res.classList.add('open'); return; }
-      hits.forEach(m => {
-        const d = document.createElement('div'); d.className = 'sr-item';
-        d.innerHTML = `<span class="sr-type ${m.type==='process'?'sr-proc':'sr-step'}">${m.type==='process'?'Process':'Step'}</span><span class="sr-pid">${m.pid}</span><span class="sr-name">${m.name}</span>${m.role?`<span class="sr-role">${m.role}</span>`:''}`;
-        d.onclick = () => { window.location.href = m.url; res.classList.remove('open'); };
-        res.appendChild(d);
-      });
-      res.classList.add('open');
-    };
+    document.addEventListener('click', e => {
+      if (!searchBox.contains(e.target) && !resultsEl.contains(e.target)) {
+        resultsEl.style.display = 'none';
+      }
+    });
 
-    inp.addEventListener('input', e => doSearch(e.target.value));
-    inp.addEventListener('keydown', e => { if (e.key==='Escape') { res.classList.remove('open'); inp.value=''; } });
-    document.getElementById('search-clear').onclick = () => { inp.value=''; res.classList.remove('open'); inp.focus(); };
-    document.addEventListener('click', e => { if (!wrap.contains(e.target)) res.classList.remove('open'); });
     document.addEventListener('keydown', e => {
-      if ((e.metaKey||e.ctrlKey) && e.key==='k') { e.preventDefault(); inp.focus(); inp.select(); }
-      if (e.key==='/' && document.activeElement.tagName !== 'INPUT') { e.preventDefault(); inp.focus(); }
+      if (e.key === '/' && document.activeElement !== searchBox) {
+        e.preventDefault(); searchBox.focus();
+      }
+      if (e.key === 'Escape') { searchBox.value=''; resultsEl.style.display='none'; searchBox.blur(); }
     });
   }
+
+  /* ── 13. STATUS DOTS ── */
+  document.querySelectorAll('.sidebar-l3-link').forEach(link => {
+    const dot = link.querySelector('.status-dot');
+    if (dot) {
+      if (dot.classList.contains('status-done')) dot.title = 'Complete';
+      else if (dot.classList.contains('status-wip')) dot.title = 'In Progress';
+      else dot.title = 'Queued';
+    }
+  });
 
 });
