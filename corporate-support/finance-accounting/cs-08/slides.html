@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS-08 Slides — PSS (Passenger Service System) Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-08</span>
+    <h1>PSS (Passenger Service System) Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cs-08.png" alt="BPMN for CS-08" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Information Technology</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-08</span>
+    <h1>PSS (Passenger Service System) Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CS-08</li>
+          <li><strong>L1 Domain:</strong> Corporate Support Functions</li>
+          <li><strong>L2 Process:</strong> Information Technology</li>
+          <li><strong>L3 Name:</strong> PSS (Passenger Service System) Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">7</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Monitor Altéa PSS platform availability</li><li><strong>Phase 2:</strong> Log PSS change request in ITSM</li><li><strong>Phase 3:</strong> Detect and triage PSS service degradation</li><li><strong>Phase 4:</strong> Monitor GDS and NDC API message volumes</li><li><strong>Phase 5:</strong> Execute quarterly PCI-DSS scope review for PSS</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Airport Systems Engineer</li><li>Airport Systems Manager / DCS Operations Lead</li><li>Business Systems Analyst (IT-Commercial)</li><li>Change Manager / PSS Platform Owner</li><li>Government Compliance Analyst / PSS Data Engineer</li><li>IT Security Analyst / PSS Access Control Owner</li><li>IT Security Manager / PCI QSA</li><li>Integration Engineer</li><li>PSS Operations Analyst</li><li>PSS Operations Engineer</li><li>PSS Operations Engineer / NOC Analyst</li><li>PSS Platform Architect</li><li>PSS Platform Owner / Incident Manager</li><li>PSS QA Engineer / Business UAT Lead</li><li>PSS Release Engineer</li><li>PSS Solutions Architect</li><li>Problem Manager / PSS Solutions Architect</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus Altéa / SITA Message Broker</li><li>Amadeus Altéa / ServiceNow</li><li>Amadeus Altéa Configuration Manager / ServiceNow</li><li>Amadeus Altéa DCS / Amadeus Service Hub</li><li>Amadeus Service Hub / Microsoft Teams</li><li>Amadeus SkyCAST / AWS CloudWatch</li><li>Confluence / ServiceNow CMDB</li><li>Datadog / AWS CloudWatch</li><li>Datadog / ServiceNow</li><li>MuleSoft API Gateway / AWS CloudWatch</li><li>Okta / Amadeus Altéa Identity Management</li><li>Qualys / Amadeus Altéa Payment Gateway Integration</li><li>SITA CUTE / Amadeus Altéa DCS</li><li>ServiceNow</li><li>ServiceNow CAB Workbench</li><li>ServiceNow Problem Management</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Information Technology</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-08</span>
+    <h1>PSS (Passenger Service System) Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Monitor Altéa PSS platform availability</td>
+        <td class="kpi-col">PSS availability ≥99.95% (Amadeus contractual SLA); P1 alert threshold &lt;99.9%</td>
+        <td class="pain-col">Altéa is hosted on Amadeus shared infrastructure — airline has limited visibility into underlying platform health; alerts may lag actual degradation by 2–3 minutes during peak booking windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Execute daily Altéa module health checks</td>
+        <td class="kpi-col">100% of critical Altéa modules checked daily; zero unchecked P1 defects at day-start</td>
+        <td class="pain-col">Altéa DCS health check scripts are not fully automated — manual verification of check-in profile activation is required per airport, creating risk of missed misconfigurations before morning peak operations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Assess PSS capacity against booking surge forecast</td>
+        <td class="kpi-col">PSS transaction throughput ≥3,000 TPS at peak; platform headroom ≥20% above forecast peak</td>
+        <td class="pain-col">Amadeus Altéa operates on shared cloud tenancy; requesting capacity uplift requires 72-hour lead time, creating exposure during unexpected IROPS-driven booking surges</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Log PSS change request in ITSM</td>
+        <td class="kpi-col">100% of PSS changes logged in ServiceNow before implementation; backlog reviewed weekly; zero untracked production changes</td>
+        <td class="pain-col">Amadeus imposes mandatory maintenance windows for Altéa upgrades (typically 02:00–05:00 local) that may conflict with overnight red-eye operations — airline has limited ability to defer mandatory platform upgrades</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Conduct PSS change impact assessment</td>
+        <td class="kpi-col">Impact assessment completed within 3 business days of CR submission; zero unassessed downstream touchpoints at CAB submission</td>
+        <td class="pain-col">Altéa PSS has 40+ integrated touchpoints (GDS, CUTE, APIS, FFP, payment gateway) — full dependency mapping is not maintained in a single CMDB, making impact assessment error-prone and time-consuming</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Present PSS change to Change Advisory Board</td>
+        <td class="kpi-col">CAB first-pass approval rate for standard PSS changes ≥85%; emergency changes &lt;5% of total PSS change volume</td>
+        <td class="pain-col">CAB cycle runs weekly — urgent commercial changes (e.g. new fare class activation before a sale launch) may miss the cycle, forcing the emergency change process which bypasses full regression testing</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Deploy PSS configuration or patch to production</td>
+        <td class="kpi-col">Deployment success rate ≥98%; rollback execution ≤15 minutes if triggered; zero unplanned outages from PSS deployments</td>
+        <td class="pain-col">Amadeus Altéa configuration deployment does not support blue-green or canary rollout — changes go live for all users simultaneously, making partial rollback impossible without full revert to prior state</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.5</td>
+        <td>Execute post-deployment validation and UAT sign-off</td>
+        <td class="kpi-col">UAT sign-off within 4 hours of deployment; defect escape rate from PSS releases &lt;2%; rollback decision within 30 minutes of failed gate</td>
+        <td class="pain-col">Post-deployment testing in production relies on live bookings — synthetic transaction testing is limited in Altéa, meaning edge-case itinerary defects (multi-segment codeshares, redemption bookings) only surface with real passenger data</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Detect and triage PSS service degradation</td>
+        <td class="kpi-col">Mean time to detect (MTTD) ≤5 minutes; P1 incidents triaged within 10 minutes of detection</td>
+        <td class="pain-col">Altéa degradation often manifests downstream (slow check-in, booking errors) before the root Altéa API layer raises an alert — false-negative monitoring gaps cause delayed triage during initial incident stages, especially during network-wide IROPS</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Engage Amadeus emergency support bridge for P1</td>
+        <td class="kpi-col">Amadeus P1 bridge engagement ≤15 minutes of incident declaration; executive notification ≤20 minutes; Amadeus MTTR for P1 platform incidents ≤60 minutes (SLA)</td>
+        <td class="pain-col">Amadeus Altéa support tiers vary by contract — airlines without Premium SLA tiers experience slower engineer response; SLA contract review is annual and cannot flex responsively during high-impact IROPS events</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Activate PSS failover or CUTE operational workaround</td>
+        <td class="kpi-col">Workaround activation ≤20 minutes from P1 declaration; zero flights missed due to check-in system failure under CUTE local mode</td>
+        <td class="pain-col">SITA CUTE local mode requires pre-staged passenger data synced from PSS — if the outage occurs outside the 90-minute DCS data-push window before departure, CUTE offline mode cannot function and manual processing is required</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Conduct post-incident review and log problem record</td>
+        <td class="kpi-col">RCA completed within 5 business days of P1 resolution; permanent fix scheduled within 30 days for recurring incidents; zero repeat P1s from same root cause within 90 days</td>
+        <td class="pain-col">Amadeus contractual RCA turnaround for Altéa platform-layer incidents is 10 business days — airline-side problem records cannot be closed until vendor RCA is received, creating SLA breaches in ITSM management reporting</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Monitor GDS and NDC API message volumes</td>
+        <td class="kpi-col">GDS message success rate ≥99.5% per channel; NDC API response time ≤500ms (p95); zero unmonitored distribution channels</td>
+        <td class="pain-col">GDS partners (Sabre GDS, Travelport GDS, Amadeus GDS) operate independent switching infrastructure — airline-side monitoring cannot definitively distinguish PSS degradation from GDS-side issues without per-channel telemetry, leading to mis-attribution of booking failures and delayed escalation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Validate APIS/PNR submission to government systems</td>
+        <td class="kpi-col">APIS advance notification success rate ≥99.9% (US CBP mandate); failed submissions resolved ≥4 hours before scheduled departure</td>
+        <td class="pain-col">US CBP requires APIS transmission ≥60 minutes before departure for international flights — last-minute schedule changes or codeshare segment additions can break APIS data completeness, triggering regulatory penalties up to $5,000 per violation</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Maintain PSS-to-CUTE/CUSS airport integration</td>
+        <td class="kpi-col">CUTE check-in uptime ≥99.8% across all outstations; DCS profile sync errors &lt;0.1% of daily transactions</td>
+        <td class="pain-col">Airline operates at 100+ airports, each with varying CUTE software versions and local airport IT ownership — PSS DCS profile updates do not auto-propagate to all CUTE endpoints simultaneously, creating version drift that causes check-in failures during Altéa upgrades</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Execute quarterly PCI-DSS scope review for PSS</td>
+        <td class="kpi-col">PCI-DSS assessment completed quarterly; zero P1 findings at annual QSA audit; tokenization coverage ≥100% of card-present transactions</td>
+        <td class="pain-col">Amadeus Altéa integrates with multiple payment processors (Worldpay, Adyen) via PSS middleware — PCI scope boundaries shift with each integration update, and Amadeus does not consistently publish advance notice of scope-impacting Altéa upgrades</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Conduct PSS user access recertification</td>
+        <td class="kpi-col">Access review completed within 10 business days of cycle start; orphaned account remediation ≤24 hours of identification; privileged Altéa accounts reviewed monthly</td>
+        <td class="pain-col">Amadeus Altéa user provisioning is managed in a separate identity silo from corporate Azure AD — SSO federation is partial, meaning leavers deprovisioned in Okta may retain active Altéa sessions until manual sync runs, creating SOX and GDPR compliance exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Information Technology</span>
+  </div>
+</div>
+
+</body>
+</html>

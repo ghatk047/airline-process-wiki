@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pricing &amp; Fare Management · Network Planning &amp; Scheduling · Airlines Process Wiki</title>
+<title>CS-08 · PSS (Passenger Service System) Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../corporate-support/">Corporate Support Functions</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Network Planning &amp; Scheduling</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../network-and-pricing/schedule-planning/">Schedule Planning</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../network-and-pricing/schedule-planning/np-sp-01/"><span class="status-dot status-done"></span><span class="pid">NP-SP-01</span>Seasonal Schedule Construction</a>
@@ -213,14 +214,14 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-done"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-02/"><span class="status-dot status-done"></span><span class="pid">CS-02</span>Management Accounting &amp; Cost Control</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-03/"><span class="status-dot status-done"></span><span class="pid">CS-03</span>Revenue Accounting &amp; BSP Settlement</a>
-        <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-08/"><span class="status-dot status-done"></span><span class="pid">CS-08</span>PSS (Passenger Service System) Management</a>
+        <a class="sidebar-l3-link active" href="../../../corporate-support/finance-accounting/cs-08/"><span class="status-dot status-done"></span><span class="pid">CS-08</span>PSS (Passenger Service System) Management</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-09/"><span class="status-dot status-queue"></span><span class="pid">CS-09</span>Cybersecurity &amp; Threat Management</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-10/"><span class="status-dot status-queue"></span><span class="pid">CS-10</span>Data Engineering &amp; Analytics Platform</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-11/"><span class="status-dot status-queue"></span><span class="pid">CS-11</span>Strategic Sourcing &amp; Vendor Selection</a>
@@ -242,153 +243,248 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Network Planning &amp; Scheduling</a><span class="sep">›</span>
-  <span class="current">Pricing &amp; Fare Management</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../corporate-support/">Corporate Support Functions</a><span class="sep">›</span>
+  <a href="../../../corporate-support/finance-accounting/">Information Technology</a><span class="sep">›</span>
+  <span class="current">CS-08 · PSS (Passenger Service System) Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Pricing &amp; Fare Management</h1>
-    <p>Network Planning &amp; Scheduling · 15 of 15 subprocesses complete · Updated 2026-03-19 22:22</p>
+    <h1>PSS (Passenger Service System) Management</h1>
+    <p>Corporate Support Functions › Information Technology · 17 L4 steps · 5 phases · 7 decision gates · Updated 2026-03-19 22:22</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CS-08</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-01</span>Fare Construction &amp; Filing</h3>
-    <p>Pricing &amp; Fare Management · 16 steps · 7 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cs-08">
+      <img src="../../../assets/img/cs-08.png" alt="CS-08 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cs-08').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cs-08').style.display='flex'">
+      <div id="diag-placeholder-cs-08" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Monitor Altéa PSS platform availability</td>
+  <td class="td-role">PSS Operations Engineer</td>
+  <td><span class="stag aws">Datadog / AWS CloudWatch</span></td>
+  <td style="font-size:10px;color:#6b7280">Real-time telemetry from Amadeus Altéa hosting environment</td>
+  <td style="font-size:10px">Availability dashboard; automated alert triggers on SLA breach</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PSS availability ≥99.95% (Amadeus contractual SLA); P1 alert threshold &lt;99.9%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Execute daily Altéa module health checks</td>
+  <td class="td-role">PSS Operations Analyst</td>
+  <td><span class="stag amadeus">Amadeus Altéa DCS / Amadeus Service Hub</span></td>
+  <td style="font-size:10px;color:#6b7280">Scheduled daily runbook; prior incident tickets; check-in profile inventory</td>
+  <td style="font-size:10px">Health check report; open defect log with severity classification</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of critical Altéa modules checked daily; zero unchecked P1 defects at day-start</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Assess PSS capacity against booking surge forecast</td>
+  <td class="td-role">PSS Platform Architect</td>
+  <td><span class="stag amadeus">Amadeus SkyCAST / AWS CloudWatch</span></td>
+  <td style="font-size:10px;color:#6b7280">Demand forecast from SkyCAST; current PSS TPS (transactions per second) baseline</td>
+  <td style="font-size:10px">Capacity risk assessment; Amadeus capacity uplift request if threshold breached</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PSS transaction throughput ≥3,000 TPS at peak; platform headroom ≥20% above forecast peak</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Log PSS change request in ITSM</td>
+  <td class="td-role">Business Systems Analyst (IT-Commercial)</td>
+  <td><span class="stag custom">ServiceNow</span></td>
+  <td style="font-size:10px;color:#6b7280">Business enhancement request or Amadeus scheduled release notification</td>
+  <td style="font-size:10px">Change request (CR) record with impact assessment template; priority classification</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of PSS changes logged in ServiceNow before implementation; backlog reviewed weekly; zero untracked production changes</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Conduct PSS change impact assessment</td>
+  <td class="td-role">PSS Solutions Architect</td>
+  <td><span class="stag custom">Confluence / ServiceNow CMDB</span></td>
+  <td style="font-size:10px;color:#6b7280">Change request record; Altéa module dependency map; active integration inventory</td>
+  <td style="font-size:10px">Impact assessment document; list of affected downstream systems (DCS, FFP, GDS feeds, CUTE, APIS)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Impact assessment completed within 3 business days of CR submission; zero unassessed downstream touchpoints at CAB submission</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Present PSS change to Change Advisory Board</td>
+  <td class="td-role">Change Manager / PSS Platform Owner</td>
+  <td><span class="stag custom">ServiceNow CAB Workbench</span></td>
+  <td style="font-size:10px;color:#6b7280">Impact assessment; test plan; rollback procedure; maintenance window request</td>
+  <td style="font-size:10px">CAB approval decision; approved maintenance window slot; emergency change flag if urgent</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CAB first-pass approval rate for standard PSS changes ≥85%; emergency changes &lt;5% of total PSS change volume</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Deploy PSS configuration or patch to production</td>
+  <td class="td-role">PSS Release Engineer</td>
+  <td><span class="stag amadeus">Amadeus Altéa Configuration Manager / ServiceNow</span></td>
+  <td style="font-size:10px;color:#6b7280">CAB-approved CR record; deployment runbook; rollback script; maintenance window confirmation</td>
+  <td style="font-size:10px">Deployed configuration or patch; CR status updated to Implemented in ServiceNow</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Deployment success rate ≥98%; rollback execution ≤15 minutes if triggered; zero unplanned outages from PSS deployments</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.5</td>
+  <td class="td-name">Execute post-deployment validation and UAT sign-off</td>
+  <td class="td-role">PSS QA Engineer / Business UAT Lead</td>
+  <td><span class="stag amadeus">Amadeus Altéa / ServiceNow</span></td>
+  <td style="font-size:10px;color:#6b7280">Deployment confirmation; test scripts; acceptance criteria from business owner</td>
+  <td style="font-size:10px">UAT sign-off document; CR closed or rollback initiated with RCA</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">UAT sign-off within 4 hours of deployment; defect escape rate from PSS releases &lt;2%; rollback decision within 30 minutes of failed gate</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Detect and triage PSS service degradation</td>
+  <td class="td-role">PSS Operations Engineer / NOC Analyst</td>
+  <td><span class="stag custom">Datadog / ServiceNow</span></td>
+  <td style="font-size:10px;color:#6b7280">Automated Datadog alert; call centre escalation; airport operations degradation report</td>
+  <td style="font-size:10px">ServiceNow incident ticket; initial severity classification (P1–P4)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Mean time to detect (MTTD) ≤5 minutes; P1 incidents triaged within 10 minutes of detection</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Engage Amadeus emergency support bridge for P1</td>
+  <td class="td-role">PSS Platform Owner / Incident Manager</td>
+  <td><span class="stag amadeus">Amadeus Service Hub / Microsoft Teams</span></td>
+  <td style="font-size:10px;color:#6b7280">P1 incident ticket; Amadeus SLA escalation threshold (&gt;15 min outage); executive notification list</td>
+  <td style="font-size:10px">Active Amadeus support bridge; incident war room established; executive notifications dispatched</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Amadeus P1 bridge engagement ≤15 minutes of incident declaration; executive notification ≤20 minutes; Amadeus MTTR for P1 platform incidents ≤60 minutes (SLA)</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Activate PSS failover or CUTE operational workaround</td>
+  <td class="td-role">Airport Systems Manager / DCS Operations Lead</td>
+  <td><span class="stag amadeus">SITA CUTE / Amadeus Altéa DCS</span></td>
+  <td style="font-size:10px;color:#6b7280">P1 incident active; failover runbook; CUTE offline check-in procedures; pre-staged passenger manifests</td>
+  <td style="font-size:10px">Workaround activated (CUTE local mode or paper boarding pass fallback); passenger impact report</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Workaround activation ≤20 minutes from P1 declaration; zero flights missed due to check-in system failure under CUTE local mode</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Conduct post-incident review and log problem record</td>
+  <td class="td-role">Problem Manager / PSS Solutions Architect</td>
+  <td><span class="stag custom">ServiceNow Problem Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Closed P1/P2 incident ticket; incident timeline; Amadeus root cause report</td>
+  <td style="font-size:10px">Problem record; root cause analysis (RCA) document; permanent fix backlog item in ServiceNow</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">RCA completed within 5 business days of P1 resolution; permanent fix scheduled within 30 days for recurring incidents; zero repeat P1s from same root cause within 90 days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Monitor GDS and NDC API message volumes</td>
+  <td class="td-role">Integration Engineer</td>
+  <td><span class="stag aws">MuleSoft API Gateway / AWS CloudWatch</span></td>
+  <td style="font-size:10px;color:#6b7280">Real-time GDS/NDC feed metrics; booking volume baseline; channel-level transaction logs</td>
+  <td style="font-size:10px">Integration health dashboard; anomaly alerts per GDS channel (Sabre, Travelport, Amadeus GDS)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">GDS message success rate ≥99.5% per channel; NDC API response time ≤500ms (p95); zero unmonitored distribution channels</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Validate APIS/PNR submission to government systems</td>
+  <td class="td-role">Government Compliance Analyst / PSS Data Engineer</td>
+  <td><span class="stag amadeus">Amadeus Altéa / SITA Message Broker</span></td>
+  <td style="font-size:10px;color:#6b7280">Booked PNR data; departure manifest; CBP/TSA APIS API endpoints; schedule change notifications</td>
+  <td style="font-size:10px">APIS transmission confirmation log; error report for failed or incomplete submissions</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">APIS advance notification success rate ≥99.9% (US CBP mandate); failed submissions resolved ≥4 hours before scheduled departure</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Maintain PSS-to-CUTE/CUSS airport integration</td>
+  <td class="td-role">Airport Systems Engineer</td>
+  <td><span class="stag amadeus">SITA CUTE / Amadeus Altéa DCS</span></td>
+  <td style="font-size:10px;color:#6b7280">Check-in agent workstation logs; CUTE connectivity reports; DCS profile configuration</td>
+  <td style="font-size:10px">Updated CUTE profile configuration; resolved connectivity tickets; DCS sync confirmation</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CUTE check-in uptime ≥99.8% across all outstations; DCS profile sync errors &lt;0.1% of daily transactions</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Execute quarterly PCI-DSS scope review for PSS</td>
+  <td class="td-role">IT Security Manager / PCI QSA</td>
+  <td><span class="stag amadeus">Qualys / Amadeus Altéa Payment Gateway Integration</span></td>
+  <td style="font-size:10px;color:#6b7280">PCI-DSS v4.0 assessment checklist; PSS payment processing scope diagram; prior audit findings</td>
+  <td style="font-size:10px">PCI scope review report; remediation backlog items; updated scope diagram</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PCI-DSS assessment completed quarterly; zero P1 findings at annual QSA audit; tokenization coverage ≥100% of card-present transactions</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Conduct PSS user access recertification</td>
+  <td class="td-role">IT Security Analyst / PSS Access Control Owner</td>
+  <td><span class="stag amadeus">Okta / Amadeus Altéa Identity Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Quarterly access review schedule; Altéa role inventory; leaver/mover report from SAP SuccessFactors</td>
+  <td style="font-size:10px">Recertified access matrix; deprovisioned orphaned accounts; audit evidence package for SOX</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Access review completed within 10 business days of cycle start; orphaned account remediation ≤24 hours of identification; privileged Altéa accounts reviewed monthly</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-02</span>Fare Distribution &amp; Publishing</h3>
-    <p>Pricing &amp; Fare Management · 15 steps · 6 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CS-08</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Corporate Support Functions</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Information Technology</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">PSS (Passenger Service System) Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">17 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">7 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">9 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>PSS Operations Engineer</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>PSS Operations Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>PSS Platform Architect</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Business Systems Analyst (IT-Commercial)</div><div class="swim"><div class="dot" style="background:#10b981"></div>PSS Solutions Architect</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Change Manager / PSS Platform Owner</div><div class="swim"><div class="dot" style="background:#6366f1"></div>PSS Release Engineer</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>PSS QA Engineer / Business UAT Lead</div><div class="swim"><div class="dot" style="background:#84cc16"></div>PSS Operations Engineer / NOC Analyst</div><div class="swim"><div class="dot" style="background:#ef4444"></div>PSS Platform Owner / Incident Manager</div><div class="swim"><div class="dot" style="background:#f97316"></div>Airport Systems Manager / DCS Operations Lead</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>Problem Manager / PSS Solutions Architect</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Integration Engineer</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Government Compliance Analyst / PSS Data Engineer</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Airport Systems Engineer</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>IT Security Manager / PCI QSA</div><div class="swim"><div class="dot" style="background:#10b981"></div>IT Security Analyst / PSS Access Control Owner</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag aws">Datadog / AWS CloudWatch</span><span class="stag amadeus">Amadeus Altéa DCS / Amadeus Service Hub</span><span class="stag amadeus">Amadeus SkyCAST / AWS CloudWatch</span><span class="stag custom">ServiceNow</span><span class="stag custom">Confluence / ServiceNow CMDB</span><span class="stag custom">ServiceNow CAB Workbench</span><span class="stag amadeus">Amadeus Altéa Configuration Manager / ServiceNow</span><span class="stag amadeus">Amadeus Altéa / ServiceNow</span><span class="stag custom">Datadog / ServiceNow</span><span class="stag amadeus">Amadeus Service Hub / Microsoft Teams</span><span class="stag amadeus">SITA CUTE / Amadeus Altéa DCS</span><span class="stag custom">ServiceNow Problem Management</span><span class="stag aws">MuleSoft API Gateway / AWS CloudWatch</span><span class="stag amadeus">Amadeus Altéa / SITA Message Broker</span><span class="stag amadeus">Qualys / Amadeus Altéa Payment Gateway Integration</span><span class="stag amadeus">Okta / Amadeus Altéa Identity Management</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Monitor Altéa PSS platform availability</span><span class="kval">PSS availability ≥99.95% (Amadeus contractual SLA); P1 alert threshold &lt;99.9%</span></div><div class="krow"><span class="kname">Execute daily Altéa module health checks</span><span class="kval">100% of critical Altéa modules checked daily; zero unchecked P1 defects at day-start</span></div><div class="krow"><span class="kname">Assess PSS capacity against booking surge forecast</span><span class="kval">PSS transaction throughput ≥3,000 TPS at peak; platform headroom ≥20% above forecast peak</span></div><div class="krow"><span class="kname">Log PSS change request in ITSM</span><span class="kval">100% of PSS changes logged in ServiceNow before implementation; backlog reviewed weekly; zero untracked production changes</span></div><div class="krow"><span class="kname">Conduct PSS change impact assessment</span><span class="kval">Impact assessment completed within 3 business days of CR submission; zero unassessed downstream touchpoints at CAB submission</span></div><div class="krow"><span class="kname">Present PSS change to Change Advisory Board</span><span class="kval">CAB first-pass approval rate for standard PSS changes ≥85%; emergency changes &lt;5% of total PSS change volume</span></div><div class="krow"><span class="kname">Deploy PSS configuration or patch to production</span><span class="kval">Deployment success rate ≥98%; rollback execution ≤15 minutes if triggered; zero unplanned outages from PSS deployments</span></div><div class="krow"><span class="kname">Execute post-deployment validation and UAT sign-off</span><span class="kval">UAT sign-off within 4 hours of deployment; defect escape rate from PSS releases &lt;2%; rollback decision within 30 minutes of failed gate</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Altéa is hosted on Amadeus shared infrastructure — airline has limited visibility into underlying platform health; alerts may lag actual degradation by 2–3 minutes during peak booking windows</div><div class="risk-card">Altéa DCS health check scripts are not fully automated — manual verification of check-in profile activation is required per airport, creating risk of missed misconfigurations before morning peak operations</div><div class="risk-card">Amadeus Altéa operates on shared cloud tenancy; requesting capacity uplift requires 72-hour lead time, creating exposure during unexpected IROPS-driven booking surges</div><div class="risk-card">Amadeus imposes mandatory maintenance windows for Altéa upgrades (typically 02:00–05:00 local) that may conflict with overnight red-eye operations — airline has limited ability to defer mandatory platform upgrades</div><div class="risk-card">Altéa PSS has 40+ integrated touchpoints (GDS, CUTE, APIS, FFP, payment gateway) — full dependency mapping is not maintained in a single CMDB, making impact assessment error-prone and time-consuming</div><div class="risk-card">CAB cycle runs weekly — urgent commercial changes (e.g. new fare class activation before a sale launch) may miss the cycle, forcing the emergency change process which bypasses full regression testing</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Real-time telemetry from Amadeus Altéa hosting environment</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Recertified access matrix; deprovisioned orphaned accounts; audit evidence package for SOX</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-03</span>Promotional Fare Design</h3>
-    <p>Pricing &amp; Fare Management · 19 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-04</span>Fare Rules &amp; Restriction Management</h3>
-    <p>Pricing &amp; Fare Management · 16 steps · 9 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-05</span>Dynamic Pricing Engine Management</h3>
-    <p>Pricing &amp; Fare Management · 17 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-06</span>Surcharge &amp; Tax Management</h3>
-    <p>Pricing &amp; Fare Management · 17 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-07</span>Interline &amp; Codeshare Fare Proration</h3>
-    <p>Pricing &amp; Fare Management · 14 steps · 8 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-08</span>ATPCO Filing &amp; Maintenance</h3>
-    <p>Pricing &amp; Fare Management · 16 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-09</span>Currency &amp; FX Rate Management</h3>
-    <p>Pricing &amp; Fare Management · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-10</span>Fare Audit &amp; Compliance</h3>
-    <p>Pricing &amp; Fare Management · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-11</span>Ancillary Pricing (Bags, Seats, Meals)</h3>
-    <p>Pricing &amp; Fare Management · 15 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-12</span>Corporate Contract Pricing</h3>
-    <p>Pricing &amp; Fare Management · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-13</span>Competitive Fare Intelligence</h3>
-    <p>Pricing &amp; Fare Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-14</span>Bundled Fare Product Management</h3>
-    <p>Pricing &amp; Fare Management · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">NP-PF-15</span>Low Fare Guarantee Program Management</h3>
-    <p>Pricing &amp; Fare Management · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="np-pf-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cs-07/"><span class="arrow">←</span><span><span class="sub">Previous</span>CS-07 · Labour Relations &amp; Union Negotiation</span></a><a class="pn-btn" href="../cs-09/"><span><span class="sub">Next</span>CS-09 · Cybersecurity &amp; Threat Management</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
