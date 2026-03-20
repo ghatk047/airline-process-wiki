@@ -31,8 +31,8 @@ for p in procs:
             "name": p["l1_domain"], "slug": l1s,
             "l2s": OrderedDict(), "total": 0, "complete": 0
         }
-    # Key by l2_process name so different L2 groups with same slug show separately
-    l2_key = p["l2_process"]
+    # Key by "slug::l2_process" so same slug can have multiple L2 display groups
+    l2_key = l2s + "::" + p["l2_process"]
     if l2_key not in l1_groups[l1s]["l2s"]:
         l1_groups[l1s]["l2s"][l2_key] = {
             "name": p["l2_process"], "slug": l2s,
@@ -62,7 +62,7 @@ def build_sidebar(active_l1s=None, active_l2s=None, depth=1):
             f'    <div class="sidebar-l2{open_cls}">',
         ]
         for l2s, l2d in l1d["l2s"].items():
-            lines.append(f'      <a class="sidebar-l2-link" href="{root}{l1s}/{l2s}/">{escape(l2d["name"])}</a>')
+            lines.append(f'      <a class="sidebar-l2-link" href="{root}{l1s}/{l2d['slug']}/">{escape(l2d["name"])}</a>')
             lines.append(f'      <div class="sidebar-l3">')
             for p in l2d["procs"]:
                 dot = "status-done" if p["status"] == "Complete" \
@@ -157,7 +157,7 @@ def build_l1_pages():
   <div class="domain-card-hdr"><h3>{escape(l2d["name"])}</h3><p>{escape(l1d["name"])}</p></div>
   <div class="domain-card-body">
     <div class="domain-card-stat">{l2d["complete"]} of {l2d["total"]} subprocesses complete</div>
-    <a class="domain-card-link" href="{l2s}/">View subprocesses →</a>
+    <a class="domain-card-link" href="{l2d['slug']}/">View subprocesses →</a>
   </div>
 </div>""")
 
