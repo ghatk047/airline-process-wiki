@@ -123,7 +123,7 @@ def build_home():
 </div>""")
 
     main = f"""<div class="hero">
-  <div class="hero-eyebrow">SAP Consulting · Process Catalog</div>
+  <div class="hero-eyebrow">Process Catalog</div>
   <h1>Airlines Process Wiki</h1>
   <p>End-to-end L1 → L2 → L3 → L4 process documentation for airline verticals.
   Each subprocess includes BPMN flow diagrams, L4 step tables, swim lanes,
