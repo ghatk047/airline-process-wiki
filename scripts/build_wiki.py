@@ -53,9 +53,11 @@ def build_sidebar(all_procs, active_pid):
         l2s = p["l2_slug"]
         if l1s not in l1_order:
             l1_order[l1s] = {"name": p["l1_domain"], "l2s": OrderedDict()}
-        if l2s not in l1_order[l1s]["l2s"]:
-            l1_order[l1s]["l2s"][l2s] = {"name": p["l2_process"], "procs": []}
-        l1_order[l1s]["l2s"][l2s]["procs"].append(p)
+        # Key by l2_process name so different L2 groups with same slug show separately
+        l2_key = p["l2_process"]
+        if l2_key not in l1_order[l1s]["l2s"]:
+            l1_order[l1s]["l2s"][l2_key] = {"name": p["l2_process"], "slug": l2s, "procs": []}
+        l1_order[l1s]["l2s"][l2_key]["procs"].append(p)
 
     for l1s, l1d in l1_order.items():
         active_in_l1 = any(
