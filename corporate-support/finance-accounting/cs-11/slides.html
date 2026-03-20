@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS-11 Slides — Strategic Sourcing &amp; Vendor Selection</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-11</span>
+    <h1>Strategic Sourcing &amp; Vendor Selection</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cs-11.png" alt="BPMN for CS-11" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Procurement & Supply Chain</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-11</span>
+    <h1>Strategic Sourcing &amp; Vendor Selection</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CS-11</li>
+          <li><strong>L1 Domain:</strong> Corporate Support Functions</li>
+          <li><strong>L2 Process:</strong> Procurement &amp; Supply Chain</li>
+          <li><strong>L3 Name:</strong> Strategic Sourcing &amp; Vendor Selection</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">15</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Capture and validate sourcing requirement</li><li><strong>Phase 2:</strong> Define sourcing strategy and evaluation scorecard</li><li><strong>Phase 3:</strong> Score proposals against weighted evaluation criter</li><li><strong>Phase 4:</strong> Prepare award recommendation and obtain DOA approv</li><li><strong>Phase 5:</strong> Execute vendor onboarding and EDI/API integration </li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Category Manager</li><li>Category Manager + Chief Procurement Officer</li><li>Category Manager + Legal Counsel</li><li>Category Manager + Vendor Account Manager</li><li>Evaluation Committee (Category Manager, BU Technical Lead, Finance)</li><li>Legal Counsel + Category Manager</li><li>Procurement Operations Specialist</li><li>Procurement Specialist</li><li>Spend Analyst</li><li>Supplier Enablement Manager</li><li>Supplier Risk Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>SAP Ariba Contracts + DocuSign</li><li>SAP Ariba Contracts + SAP S/4HANA Finance (Vendor Master)</li><li>SAP Ariba Procurement</li><li>SAP Ariba Procurement (Approval workflow) + SAP S/4HANA Finance</li><li>SAP Ariba Sourcing</li><li>SAP Ariba Sourcing (Auction / BAFO module)</li><li>SAP Ariba Sourcing (RFx module)</li><li>SAP Ariba Sourcing (Scoring module)</li><li>SAP Ariba Supplier Performance Management + Tableau</li><li>SAP Ariba Supplier Risk + Dun &amp; Bradstreet Direct+</li><li>SAP Ariba Supply Chain Collaboration + EDI/API Gateway</li><li>SAP S/4HANA Finance (FI/CO) + SAP Ariba Analytics</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Procurement & Supply Chain</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-11</span>
+    <h1>Strategic Sourcing &amp; Vendor Selection</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Capture and validate sourcing requirement</td>
+        <td class="kpi-col">Sourcing request processed within 2 business days of submission</td>
+        <td class="pain-col">Airlines carry highly fragmented procurement across MRO, IT, fuel, catering, and ground handling — category ownership disputes between Finance and Operations delay sourcing initiation by 3–7 days on average</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Conduct spend analysis and category benchmarking</td>
+        <td class="kpi-col">Spend data coverage ≥95% of addressable spend in category; analysis completed within 3 business days</td>
+        <td class="pain-col">Fuel, MRO, and ground handling spend frequently sits in legacy cost centers not yet mapped to SAP Ariba Analytics, creating data blind spots that understate category spend by up to 20%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Assess supply market and regulatory landscape</td>
+        <td class="kpi-col">Market assessment completed within 5 business days; ≥3 qualified alternative suppliers identified per category</td>
+        <td class="pain-col">Aviation-specific supplier pools (e.g. FAA Part 145 repair stations, EASA-approved MRO shops) are narrow — market power asymmetry severely constrains negotiation leverage; fewer than 3 qualified suppliers in many technical categories</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Define sourcing strategy and evaluation scorecard</td>
+        <td class="kpi-col">Stakeholder sign-off on strategy within 3 business days; evaluation criteria weighted and approved prior to RFx issuance</td>
+        <td class="pain-col">Flight Operations and Maintenance stakeholders frequently bypass procurement to negotiate directly with preferred vendors, undermining competitive process integrity and creating maverick spend exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Build and issue RFI/RFP/RFQ package to suppliers</td>
+        <td class="kpi-col">RFP issued within 5 business days of strategy approval; minimum 5 qualified suppliers invited per event</td>
+        <td class="pain-col">Aviation technical specifications for avionics components and GSE routinely contain ITAR/EAR export control clauses requiring Legal pre-clearance — this delays RFP issuance by 3–10 business days and is not tracked within standard Ariba Sourcing workflow</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Manage supplier Q&amp;A period and receive proposals</td>
+        <td class="kpi-col">Proposal submission rate ≥60% of invited suppliers; addenda issued to all bidders within 24 hours of Q&amp;A close</td>
+        <td class="pain-col">RFx deadline extensions to accommodate late supplier queries inflate sourcing cycle time by 5–15 days; SAP Ariba version-lock on RFP documents can prevent late addenda from being distributed to all bidders simultaneously, creating legal exposure</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Score proposals against weighted evaluation criteria</td>
+        <td class="kpi-col">Scoring completed within 5 business days of proposal deadline; inter-evaluator score variance &lt;15% per criterion</td>
+        <td class="pain-col">Technical evaluators from Flight Operations and MRO departments frequently lack procurement training, producing non-compliant scoring narratives that expose the airline to bid protest risk and require rework cycles</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Conduct vendor due diligence and financial health check</td>
+        <td class="kpi-col">Due diligence completed within 3 business days; zero unresolved critical risk flags at award recommendation stage</td>
+        <td class="pain-col">Post-pandemic supply chain fragility means key MRO and GSE suppliers carry elevated debt loads — D&amp;B Paydex scores alone are insufficient for FAA-regulated suppliers, which also require manual verification of current FAA Repair Station Certificate (Form 8310-3) validity</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Conduct best-and-final-offer (BAFO) round</td>
+        <td class="kpi-col">Cost reduction vs. baseline ≥8% for competitive categories; BAFO round completed within 5 business days</td>
+        <td class="pain-col">Fuel hedging contracts and aircraft wet-lease negotiations require Treasury and Legal involvement that is not modelled in standard Ariba BAFO workflows — offline negotiation tracks create version control issues and audit trail gaps</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Prepare award recommendation and obtain DOA approval</td>
+        <td class="kpi-col">Approval obtained within 2 business days for contracts within CPO authority; 100% of awards documented against DOA matrix</td>
+        <td class="pain-col">Multi-tier DOA matrices mean large MRO or IT contracts frequently require Board-level approval, creating 10–20-day bottlenecks when procurement timeline is driven by AOG (Aircraft on Ground) operational urgency</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Draft, negotiate, and execute vendor contract</td>
+        <td class="kpi-col">Contract execution within 10 business days of award; ≤2 redline round-trips on standard contract terms</td>
+        <td class="pain-col">Aviation-specific indemnity clauses (hull and liability coverage requirements for ground handlers, hangar keepers liability) routinely stall negotiations — the airline&#x27;s aviation contract template library in SAP Ariba Contracts is often outdated versus current IATA Ground Handling Agreement (IGHA 2013) standards</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Activate vendor master record in SAP S/4HANA</td>
+        <td class="kpi-col">Vendor master activated within 1 business day of contract execution; 100% contract data accuracy confirmed in Ariba Contracts</td>
+        <td class="pain-col">Duplicate vendor master entries in SAP S/4HANA (created by decentralised AP teams across hub stations without central Ariba governance) cause payment routing errors and complicate spend reporting; MDM cleanse required for ~15% of new vendor activations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Execute vendor onboarding and EDI/API integration test</td>
+        <td class="kpi-col">Onboarding completed within 10 business days of contract activation; EDI transaction error rate &lt;1% in test phase</td>
+        <td class="pain-col">MRO suppliers (FAA Part 145 repair stations) and smaller catering vendors often lack EDI/API capability — manual PO and invoice processing inflates error rate and extends AOG parts procurement lead times by 24–48 hours</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Establish vendor KPI scorecard and SLA baseline</td>
+        <td class="kpi-col">Vendor scorecard published within 5 business days of go-live; ≥90% of contracted SLA fields populated at baseline</td>
+        <td class="pain-col">Procurement and Flight Operations use conflicting KPI definitions for vendor performance (procurement measures on-time delivery; Ops measures AOG-free rate) — SAP Ariba SPM module is not configured to capture operations-driven SLAs, requiring manual Tableau overlays that are inconsistently maintained</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Conduct 90-day post-award performance review</td>
+        <td class="kpi-col">90-day review completed on schedule for 100% of strategic vendors; vendor SLA achievement ≥85% at 90-day gate</td>
+        <td class="pain-col">High-volume catering and GSE contracts rarely receive structured 90-day reviews due to Category Manager bandwidth constraints — performance issues compound undetected until contract renewal, entrenching underperforming vendors and increasing switching costs</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Procurement & Supply Chain</span>
+  </div>
+</div>
+
+</body>
+</html>

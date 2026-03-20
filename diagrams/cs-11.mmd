@@ -1,0 +1,58 @@
+flowchart LR
+  subgraph P1[Phase 1: Need and Market Analysis]
+    A([Start]) --> B[Capture sourcing\nrequirement]
+    B --> C[Spend analysis\nand benchmarking]
+    C --> D{Full competitive\nprocess warranted?}
+    D -- No --> E[Document sole-source\njustification]
+    D -- Yes --> F[Market and regulatory\nassessment]
+    E --> F
+  end
+  subgraph P2[Phase 2: RFx Development]
+    F --> G[Define sourcing\nstrategy and criteria]
+    G --> H[Build and issue\nRFI/RFP/RFQ]
+    H --> I{ITAR/EAR\nexport flag?}
+    I -- Yes --> J[Legal export\ncontrol review]
+    I -- No --> K[Manage QandA\nand submissions]
+    J --> K
+    K --> L{Min response\nthreshold met?}
+    L -- No --> G
+    L -- Yes --> M[Sealed proposals\nreceived]
+  end
+  subgraph P3[Phase 3: Vendor Evaluation]
+    M --> N[Score proposals\nvs. criteria]
+    N --> O[Due diligence\nand risk check]
+    O --> P{Vendor passes\ncompliance?}
+    P -- No --> Q([Disqualify /\nEscalate])
+    P -- Yes --> R[BAFO\nnegotiations]
+  end
+  subgraph P4[Phase 4: Contract Award]
+    R --> S[Award recommendation\nand DOA approval]
+    S --> T{Exceeds CPO\nspend authority?}
+    T -- Yes --> U[Board / Executive\napproval]
+    T -- No --> V[Draft and execute\ncontract]
+    U --> V
+    V --> W[Activate vendor\nin SAP]
+  end
+  subgraph P5[Phase 5: Vendor Onboarding]
+    W --> X[EDI/API\nonboarding and test]
+    X --> Y{Vendor\nEDI-capable?}
+    Y -- No --> Z[Manual PO\nprocess activated]
+    Y -- Yes --> AA[Establish KPI\nscorecard]
+    Z --> AA
+    AA --> AB[90-day post-award\nreview]
+    AB --> AC{SLA threshold\nmet at 90 days?}
+    AC -- No --> AD[Corrective action\nplan issued]
+    AC -- Yes --> AE([Contract Active])
+    AD --> AE
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Q fill:#003366,color:#fff,stroke:#003366
+  style AE fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
+  style Y fill:#ff6600,color:#fff,stroke:#ff6600
+  style AC fill:#ff6600,color:#fff,stroke:#ff6600
