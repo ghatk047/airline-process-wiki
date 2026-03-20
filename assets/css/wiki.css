@@ -327,3 +327,56 @@ tbody td { padding: 9px 12px; vertical-align: top; line-height: 1.5; }
 .sr-name { font-size: 12px; font-weight: 600; color: var(--navy); }
 .sr-role { font-size: 10px; color: var(--muted); margin-left: auto; font-style: italic; }
 .sr-empty { padding: 18px; text-align: center; color: var(--muted); font-size: 12px; }
+
+/* ── Mobile & tablet responsive sidebar ─────────────────────────── */
+/* Overlay backdrop for mobile sidebar */
+#sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 85;
+  cursor: pointer;
+}
+#sidebar-overlay.active { display: block; }
+
+@media (max-width: 900px) {
+  /* Sidebar slides in over content — doesn't push it */
+  .sidebar {
+    position: fixed;
+    top: var(--topbar-h);
+    left: 0;
+    height: calc(100vh - var(--topbar-h));
+    z-index: 90;
+    transform: translateX(calc(-1 * var(--sidebar-w)));
+    box-shadow: none;
+  }
+  /* Main takes full width */
+  .main {
+    margin-left: 0 !important;
+  }
+  /* Toggle button always visible */
+  #sidebar-toggle, .sidebar-toggle {
+    display: flex !important;
+    left: 6px;
+  }
+  /* Sidebar open state on mobile */
+  .sidebar.mobile-open {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0,0,0,.18);
+  }
+  .sidebar.mobile-open ~ #sidebar-overlay { display: block; }
+  /* Hide desktop collapse state on mobile */
+  .sidebar.sidebar-collapsed {
+    transform: translateX(calc(-1 * var(--sidebar-w)));
+  }
+  /* Topbar adjustments */
+  .topbar-right a:not(.gh-btn) { display: none; }
+  .search-box { width: 140px; }
+}
+
+@media (max-width: 480px) {
+  .search-box { width: 100px; font-size: 11px; }
+  .topbar-logo span { display: none; }
+  :root { --sidebar-w: 240px; }
+}
