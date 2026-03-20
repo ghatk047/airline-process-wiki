@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS-14 Slides — Safety Management System (SMS)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-14</span>
+    <h1>Safety Management System (SMS)</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cs-14.png" alt="BPMN for CS-14" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Safety & Regulatory</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-14</span>
+    <h1>Safety Management System (SMS)</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CS-14</li>
+          <li><strong>L1 Domain:</strong> Corporate Support Functions</li>
+          <li><strong>L2 Process:</strong> Safety &amp; Regulatory</li>
+          <li><strong>L3 Name:</strong> Safety Management System (SMS)</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Capture safety occurrence report</li><li><strong>Phase 2:</strong> Assign risk probability &amp; severity matrix score</li><li><strong>Phase 3:</strong> Initiate formal safety investigation</li><li><strong>Phase 4:</strong> Develop safety risk controls &amp; mitigations</li><li><strong>Phase 5:</strong> Track safety performance indicators vs targets</li><li><strong>Phase 6:</strong> Conduct scheduled SMS internal audit</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Director of Safety</li><li>Front-line Employee / Safety Reporter</li><li>Lead Safety Investigator</li><li>Safety Analyst</li><li>Safety Audit Manager</li><li>Safety Manager</li><li>Safety Manager / Process Owner</li><li>Safety Performance Manager</li><li>VP Safety</li><li>VP Safety / Safety Review Board</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>FAA ASIAS Web Portal</li><li>Ideagen IQSMS</li><li>NASA ASRS Web Submission Portal</li><li>Tableau Safety BI Dashboard</li><li>Teledyne SSFDR / Airline FOQA Programme</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Safety & Regulatory</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-14</span>
+    <h1>Safety Management System (SMS)</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Capture safety occurrence report</td>
+        <td class="kpi-col">Report submission rate ≥95% of known occurrences within 24 hrs</td>
+        <td class="pain-col">Anonymous voluntary reporting culture varies by crew base; under-reporting persists in stations without dedicated Safety Officers</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Classify report type &amp; severity tier</td>
+        <td class="kpi-col">Classification accuracy ≥98% validated at quarterly QA review</td>
+        <td class="pain-col">Inconsistent severity tier assignment across regions; IQSMS taxonomy not always aligned with ICAO Annex 13 definitions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Determine mandatory regulatory reporting threshold</td>
+        <td class="kpi-col">100% of mandatory reports filed within regulatory deadlines (2 hrs / 10 days per FAR 830)</td>
+        <td class="pain-col">Threshold ambiguity for ground damage events under FAR 830.5; legal and safety teams misalign on what constitutes &#x27;substantial damage&#x27;</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Submit voluntary report to ASAP/NASA ASRS</td>
+        <td class="kpi-col">ASAP programme participation rate ≥80% of eligible workforce</td>
+        <td class="pain-col">FAA AC 120-66B ASAP MOU must be current; if MOU lapses, regulatory protection for reporters is void — high legal exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.5</td>
+        <td>Initiate mandatory FAA/NTSB notification</td>
+        <td class="kpi-col">100% of NTSB immediate notifications within 2 hrs of accident (FAR 830.5)</td>
+        <td class="pain-col">Coordination latency between Operations Control and Safety when event occurs overnight; on-call Director of Safety pager escalation path not always followed</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Assign risk probability &amp; severity matrix score</td>
+        <td class="kpi-col">Risk assessments completed within 48 hrs of report receipt for Tier 1–2 events</td>
+        <td class="pain-col">Risk matrix calibration is subjective; two analysts rating same event can produce divergent scores without standardised anchor examples in IQSMS</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Validate risk score at Safety Review Board</td>
+        <td class="kpi-col">Safety Review Board convenes within 5 business days for red-rated risks</td>
+        <td class="pain-col">Board quorum requires VP-level attendees; scheduling conflicts delay review for high-severity events; FOQA data retrieval from Teledyne SSFDR takes 48–72 hrs</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Accept low risk &amp; assign monitoring SPI</td>
+        <td class="kpi-col">100% of accepted risks assigned at least one SPI within 5 days</td>
+        <td class="pain-col">Tableau Safety BI dashboard is manually updated monthly; real-time SPI trending not available — latent risks may not surface until next board review</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Initiate formal safety investigation</td>
+        <td class="kpi-col">Investigation plan issued within 24 hrs of escalation for Tier 1 events</td>
+        <td class="pain-col">Investigator availability limited at outstations; company investigators are also line employees — release from duty requires crew scheduling coordination with Jeppesen Crew Management</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Gather evidence including FOQA flight data</td>
+        <td class="kpi-col">FOQA data retrieved within 72 hrs for flight-related events</td>
+        <td class="pain-col">CVR/FDR data automatically overwritten after 30 days — late reporting of incidents frequently results in lost recorder data; preservation requests must be issued same day</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Perform root cause analysis using bowtie/5-Whys</td>
+        <td class="kpi-col">Root cause identified for ≥90% of Tier 1 investigations within 30 days</td>
+        <td class="pain-col">Bowtie analysis tool within IQSMS lacks integration with operational data — investigators manually cross-reference FOQA exports, increasing analysis time by 30–40%</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Document investigation findings &amp; close investigation</td>
+        <td class="kpi-col">Investigation report issued within 60 days for Tier 1; 30 days for Tier 2</td>
+        <td class="pain-col">Regulatory review of investigation reports by FAA/NTSB (if MOU-governed) can impose revisions — internal report may need to be amended post-publication, creating version control issues</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Develop safety risk controls &amp; mitigations</td>
+        <td class="kpi-col">Risk residual score reduced to green (≤4) for ≥95% of Tier 1 events post-mitigation</td>
+        <td class="pain-col">Procedural changes require FOM/GOM amendment workflow through Standards &amp; Compliance — average revision cycle is 45–60 days, leaving residual risk unmitigated in the interim</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Assign corrective action owners &amp; due dates</td>
+        <td class="kpi-col">100% of corrective actions have named owner and due date within 5 days of investigation closure</td>
+        <td class="pain-col">Cross-departmental corrective actions (e.g. Maintenance + Ops) lack shared accountability — IQSMS task ownership model does not enforce escalation when due dates slip</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Verify corrective action effectiveness</td>
+        <td class="kpi-col">Corrective action on-time closure rate ≥85%; recurrence rate for closed risks &lt;5% within 12 months</td>
+        <td class="pain-col">Effectiveness verification relies on SPI trend analysis over 6–12 months — impatient leadership pressure to close risks prematurely inflates &#x27;green&#x27; status without sufficient data</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Track safety performance indicators vs targets</td>
+        <td class="kpi-col">Accident rate: 0 per year; Serious incident rate ≤0.3 per 100,000 flights; FOQA exceedance rate ≤1.5%</td>
+        <td class="pain-col">FOQA data pipeline from Teledyne SSFDR to Tableau requires manual CSV export — automated API integration not yet implemented, causing 5–10 day data lag</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Publish monthly safety performance report to executives</td>
+        <td class="kpi-col">Monthly report published by 10th of following month; 100% board safety committee attendance</td>
+        <td class="pain-col">Board-level safety committee may lack aviation SMS expertise — safety reporting must translate technical SPI data into business risk language; skills gap in governance layer</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Conduct scheduled SMS internal audit</td>
+        <td class="kpi-col">Annual SMS audit completion rate 100%; critical non-conformances closed within 30 days</td>
+        <td class="pain-col">FAA AC 120-92B SMS requirements for Part 121 carriers are currently voluntary — without mandate, audit rigour is inconsistent and funding for SMS programme competes with operational priorities</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Submit mandatory occurrence reports to FAA ASIAS</td>
+        <td class="kpi-col">100% of SDRs filed within 3 days of discovery (FAR 121.703); zero overdue mandatory reports</td>
+        <td class="pain-col">SDR filing workflow spans Maintenance and Safety departments — coordination gaps between AMOS MRO system and IQSMS mean some defects are resolved without triggering the SDR filing check</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Safety & Regulatory</span>
+  </div>
+</div>
+
+</body>
+</html>

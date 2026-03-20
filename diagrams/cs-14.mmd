@@ -1,0 +1,52 @@
+flowchart LR
+  subgraph P1[Phase 1: Hazard Identification and Reporting]
+    A([Start]) --> B[Capture safety occurrence\nin Ideagen IQSMS]
+    B --> C{Mandatory\nreporting\nthreshold?}
+    C -- No --> D[Log as voluntary\nASAP/ASRS report]
+    C -- Yes --> E[Initiate mandatory\nODA/FAA notification]
+  end
+
+  subgraph P2[Phase 2: Risk Assessment and Prioritization]
+    D --> F[Assign risk probability\nand severity matrix score]
+    E --> F
+    F --> G{Risk level\nacceptable?}
+    G -- Yes --> H[Accept and monitor\nwith SPIs]
+    G -- No --> I[Escalate to Safety\nReview Board]
+  end
+
+  subgraph P3[Phase 3: Safety Investigation]
+    I --> J[Gather evidence and\nFOQA flight data]
+    J --> K[Perform root cause\nanalysis — 5 Whys/bowtie]
+    K --> L{Root cause\nidentified?}
+    L -- No --> J
+    L -- Yes --> M[Document findings\nin IQSMS investigation]
+  end
+
+  subgraph P4[Phase 4: Corrective Action Management]
+    M --> N[Develop safety risk\ncontrols and mitigations]
+    N --> O{Controls\nadequate?}
+    O -- No --> N
+    O -- Yes --> P[Assign owners and\ndeadlines in IQSMS]
+  end
+
+  subgraph P5[Phase 5: Safety Performance Monitoring]
+    H --> Q[Track SPIs and SPTs\nin Tableau Safety BI]
+    P --> Q
+    Q --> R{SPI below\nthreshold?}
+    R -- Yes --> I
+    R -- No --> S[Publish monthly\nsafety performance report]
+  end
+
+  subgraph P6[Phase 6: Regulatory Compliance and Audit]
+    S --> T[Conduct SMS audit\nvs FAA AC 120-92B]
+    T --> U[Submit MOR/SDR\nreports to FAA ASIAS]
+    U --> V([End: SMS cycle\nclosed and archived])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style V fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style O fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
