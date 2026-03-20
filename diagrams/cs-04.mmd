@@ -1,0 +1,45 @@
+flowchart LR
+  subgraph P1[Phase 1: Strategic Workforce Forecasting]
+    A([Start]) --> B[Extract schedule demand forecast]
+    B --> C[Model staffing ratios by role]
+    C --> D[Overlay attrition projections]
+    D --> E{Certification gap\nexceeds threshold?}
+    E -- Yes --> F[Escalate type rating\nprocurement plan]
+    E -- No --> G[Forecasting complete]
+    F --> G
+  end
+  subgraph P2[Phase 2: Headcount Demand Modelling]
+    G --> H[Consolidate dept\nheadcount requests]
+    H --> I{Aligned to\noperational plan?}
+    I -- No --> H
+    I -- Yes --> J[Run base / upside /\ndownside scenarios]
+  end
+  subgraph P3[Phase 3: Budget and Approval]
+    J --> K[Submit plan for\nfinancial review]
+    K --> L{Within approved\nbudget envelope?}
+    L -- No --> M[Revise headcount plan]
+    M --> K
+    L -- Yes --> N[Lock headcount plan]
+  end
+  subgraph P4[Phase 4: Position Creation and Recruitment]
+    N --> O[Create approved\npositions in HRIS]
+    O --> P{Safety-critical\nor regulated role?}
+    P -- Yes --> Q[Apply FAA/EASA\nscreening criteria]
+    P -- No --> R[Trigger standard\nrecruitment workflow]
+    Q --> R
+    R --> S[Confirm headcount\nactuals at hire]
+  end
+  subgraph P5[Phase 5: Monitoring and Reforecast]
+    S --> T[Publish monthly\nheadcount dashboard]
+    T --> U{Headcount gap\n> ±5% of plan?}
+    U -- No --> T
+    U -- Yes --> V[Reforecast and escalate\nto ExCo]
+    V --> W([End])
+  end
+  style A fill:#003366,color:#fff,stroke:#003366
+  style W fill:#003366,color:#fff,stroke:#003366
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600

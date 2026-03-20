@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS-04 Slides — Workforce Planning &amp; Headcount Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-04</span>
+    <h1>Workforce Planning &amp; Headcount Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cs-04.png" alt="BPMN for CS-04" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Human Resources</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-04</span>
+    <h1>Workforce Planning &amp; Headcount Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CS-04</li>
+          <li><strong>L1 Domain:</strong> Corporate Support Functions</li>
+          <li><strong>L2 Process:</strong> Human Resources</li>
+          <li><strong>L3 Name:</strong> Workforce Planning &amp; Headcount Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">16</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Extract operational demand forecast from schedule </li><li><strong>Phase 2:</strong> Consolidate departmental headcount requests</li><li><strong>Phase 3:</strong> Submit headcount plan for financial cost review</li><li><strong>Phase 4:</strong> Create approved position records in HRIS</li><li><strong>Phase 5:</strong> Publish monthly headcount actuals vs plan dashboar</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>CFO / VP Finance</li><li>Chief People Officer</li><li>Compliance &amp; Regulatory HR Specialist</li><li>HR Analytics Manager</li><li>HR Business Partner</li><li>HR Finance Controller</li><li>HR Operations Specialist</li><li>Talent Acquisition Partner</li><li>Workforce Planning Analyst</li><li>Workforce Planning Manager</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Amadeus SkyWORKS</li><li>Jeppesen Crew Management</li><li>SAP S/4HANA Finance (FI/CO)</li><li>SAP SuccessFactors Employee Central</li><li>SAP SuccessFactors People Analytics</li><li>SAP SuccessFactors Recruiting</li><li>SAP SuccessFactors Workforce Planning</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Human Resources</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-04</span>
+    <h1>Workforce Planning &amp; Headcount Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Extract operational demand forecast from schedule system</td>
+        <td class="kpi-col">Forecast accuracy ≥90% vs actuals at 6-month horizon</td>
+        <td class="pain-col">Schedule changes in SkyWORKS are not auto-pushed to HR systems; manual re-extract required after each revision cycle, causing stale inputs to the workforce model</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Model staffing ratios by role and operational area</td>
+        <td class="kpi-col">Ratio deviation ≤5% vs prior year actuals</td>
+        <td class="pain-col">FAR Part 117 duty-time limits constrain crew FTE ratios and are not natively modelled in SuccessFactors; manual adjustments required for each schedule scenario</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Overlay attrition and turnover projections</td>
+        <td class="kpi-col">Attrition forecast accuracy ±2pp vs 12-month rolling actuals</td>
+        <td class="pain-col">Pilot attrition is volatile due to competitor hiring campaigns and Boeing MAX delivery schedule; SuccessFactors demographic model does not ingest external labour market signals</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Assess certification and type rating requirements</td>
+        <td class="kpi-col">Zero FAA/EASA non-compliance findings at annual audit</td>
+        <td class="pain-col">737 MAX type rating lead times of 9–12 months create long procurement cycles; late identification of gaps forces expensive contractor or wet-lease cover</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Consolidate departmental headcount requests</td>
+        <td class="kpi-col">100% of headcount requests submitted via SuccessFactors (zero shadow-spreadsheet submissions)</td>
+        <td class="pain-col">Ground operations departments routinely bypass SuccessFactors and submit requests by email, causing reconciliation delays of 3–5 business days</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Validate requests against approved operational plan</td>
+        <td class="kpi-col">Validation cycle completed ≤5 business days from submission close</td>
+        <td class="pain-col">Schedule volatility during irregular operations invalidates demand validation within weeks of submission; no automated re-trigger exists in SuccessFactors when SkyWORKS schedule changes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Run base, upside, and downside scenario models</td>
+        <td class="kpi-col">Scenario model delivered ≤10 business days from schedule freeze date</td>
+        <td class="pain-col">Custom ETL between AWS Redshift and SuccessFactors introduces 24-hour data latency, reducing scenario responsiveness during rapid schedule changes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Submit headcount plan for financial cost review</td>
+        <td class="kpi-col">Headcount cost submission completed ≤2 weeks before annual budget lock date</td>
+        <td class="pain-col">Mid-year headcount additions require supplemental budget approval; SAP CO cost-centre realignment for new positions is manual and error-prone when org structures change</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Obtain finance approval for headcount envelope</td>
+        <td class="kpi-col">Approval decision returned ≤10 business days of submission</td>
+        <td class="pain-col">Executive approval cycles extend by 4–6 weeks during periods of financial pressure such as fuel price spikes, delaying time-to-hire for safety-critical roles</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Revise and lock headcount plan per finance decision</td>
+        <td class="kpi-col">Revised plan published within 3 business days of finance approval</td>
+        <td class="pain-col">Version control in SuccessFactors Workforce Planning is limited; multiple revision cycles create confusion between HR and Finance on which version constitutes the locked baseline</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Create approved position records in HRIS</td>
+        <td class="kpi-col">Position creation within 2 business days of plan lock; 100% data quality pass on mandatory fields</td>
+        <td class="pain-col">Employee Central position management requires manual org chart updates that are time-consuming for large cohort hires such as seasonal cabin crew intakes of 200+ headcount</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Trigger recruitment workflow per approved position</td>
+        <td class="kpi-col">Time-to-open requisition ≤1 business day; 100% of requisitions linked to an approved position record</td>
+        <td class="pain-col">Pilot and licensed dispatcher requisitions require FAA/EASA qualification screening criteria not pre-built in SuccessFactors Recruiting templates, causing manual customisation per role</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Confirm headcount actuals against plan at point of hire</td>
+        <td class="kpi-col">Headcount actuals vs plan variance ≤3% at each quarter-end</td>
+        <td class="pain-col">Backfill hires for unexpected attrition routinely consume approved new-hire slots, distorting the plan vs actual comparison and masking net headcount growth</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Publish monthly headcount actuals vs plan dashboard</td>
+        <td class="kpi-col">Dashboard published by Day 5 of each month; plan variance flagged automatically if &gt;5%</td>
+        <td class="pain-col">SuccessFactors People Analytics runs on prior-day data; same-day joiners and leavers in high-volume ops departments are missed, understating attrition in real-time views</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Conduct mid-year headcount reforecast</td>
+        <td class="kpi-col">Reforecast submitted ≤15 business days after H1 close; all variances &gt;3% documented with root cause</td>
+        <td class="pain-col">Mid-year schedule changes by Network Planning in SkyWORKS are not automatically signalled to HR, so workforce reforecasts are often triggered 4–6 weeks late</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Escalate critical headcount gaps to executive committee</td>
+        <td class="kpi-col">Escalation report presented within 5 business days of trigger; resolution decision returned ≤10 business days</td>
+        <td class="pain-col">Airline operational staffing shortfalls for pilots and licensed dispatchers carry regulatory consequences under FAR Part 121; delayed escalation has resulted in AOG situations and DOT scrutiny</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Human Resources</span>
+  </div>
+</div>
+
+</body>
+</html>
