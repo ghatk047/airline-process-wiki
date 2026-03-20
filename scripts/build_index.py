@@ -184,8 +184,21 @@ def build_l1_pages():
 #  3. L2 PAGES — {l1_slug}/{l2_slug}/index.html
 # ══════════════════════════════════════════════════════════════════
 def build_l2_pages():
+    # First, merge groups with same slug so we write one page per slug
     for l1s, l1d in l1_groups.items():
-        for l2s, l2d in l1d["l2s"].items():
+        # Build slug → merged procs mapping
+        slug_pages = {}
+        for l2_key, l2d in l1d["l2s"].items():
+            slug = l2d["slug"]
+            if slug not in slug_pages:
+                slug_pages[slug] = {"name": l2d["name"], "slug": slug,
+                                     "procs": [], "complete": 0, "total": 0}
+            slug_pages[slug]["procs"].extend(l2d["procs"])
+            slug_pages[slug]["total"] += l2d["total"]
+            slug_pages[slug]["complete"] += l2d["complete"]
+
+        for slug, l2d in slug_pages.items():
+            l2s = slug  # use slug as path key
             rows = []
             for p in l2d["procs"]:
                 dot = "status-done" if p["status"] == "Complete" \
@@ -220,12 +233,12 @@ def build_l2_pages():
 </div>
 <div class="domain-grid">{"".join(rows)}</div>"""
 
-            sidebar = build_sidebar(active_l1s=l1s, active_l2s=l2s, depth=3)
+            sidebar = build_sidebar(active_l1s=l1s, active_l2s=slug, depth=3)
             html = page_shell(f"{l2d['name']} · {l1d['name']}", "../../", "../../", sidebar, main, "../../")
-            out_dir = REPO_DIR / l1s / l2s
+            out_dir = REPO_DIR / l1s / slug
             out_dir.mkdir(parents=True, exist_ok=True)
             (out_dir / "index.html").write_text(html, encoding="utf-8")
-            print(f"  ✅ {l1s}/{l2s}/index.html ({l2d['complete']}/{l2d['total']})")
+            print(f"  ✅ {l1s}/{slug}/index.html ({l2d['complete']}/{l2d['total']})")
 
 # ── Run all ────────────────────────────────────────────────────────
 print(f"\n🏗  Rebuilding all index pages from processes.json...")
