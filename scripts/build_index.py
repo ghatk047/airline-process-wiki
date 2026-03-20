@@ -49,7 +49,7 @@ queued_all   = sum(1 for p in procs if p["status"] == "Queued")
 
 # ── Shared sidebar builder ─────────────────────────────────────────
 def build_sidebar(active_l1s=None, active_l2s=None, depth=1):
-    root = "../" * depth
+    root = "./" if depth == 0 else "../" * depth
     lines = []
     for l1s, l1d in l1_groups.items():
         is_active_l1 = (l1s == active_l1s)
@@ -139,7 +139,7 @@ def build_home():
 <div class="domain-grid">{"".join(cards)}</div>"""
 
     html = page_shell("Airlines Process Wiki — SAP Consulting",
-                      "./", "./", build_sidebar(depth=1), main, "./")
+                      "./", "./", build_sidebar(depth=0), main, "./")
     out = REPO_DIR / "index.html"
     out.write_text(html, encoding="utf-8")
     print(f"  ✅ index.html ({complete_all} complete / {total_all} total)")
@@ -171,7 +171,7 @@ def build_l1_pages():
 </div>
 <div class="domain-grid">{"".join(cards)}</div>"""
 
-        sidebar = build_sidebar(active_l1s=l1s, depth=2)
+        sidebar = build_sidebar(active_l1s=l1s, depth=1)
         html = page_shell(l1d["name"], "../", "../", sidebar, main, "../")
         out_dir = REPO_DIR / l1s
         out_dir.mkdir(parents=True, exist_ok=True)
@@ -232,3 +232,4 @@ build_home()
 build_l1_pages()
 build_l2_pages()
 print(f"\n✅ All index pages rebuilt.")
+
