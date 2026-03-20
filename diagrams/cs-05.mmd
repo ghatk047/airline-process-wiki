@@ -1,0 +1,53 @@
+flowchart LR
+  subgraph P1[Phase 1: Workforce Need and Requisition]
+    A([Start]) --> B[Review headcount plan]
+    B --> C[Create job requisition]
+    C --> D{Requisition and budget approved?}
+    D -- No --> C
+    D -- Yes --> E[Approved requisition]
+  end
+  subgraph P2[Phase 2: Sourcing and Attraction]
+    E --> F[Post to job boards and internal portal]
+    F --> G[Source passive candidates]
+    G --> H{Pipeline adequate? Min 5 qualified}
+    H -- No --> G
+    H -- Yes --> I[Candidate pool ready]
+  end
+  subgraph P3[Phase 3: Screening and Assessment]
+    I --> J[ATS automated screening]
+    J --> K[Telephone / video pre-screen]
+    K --> L[Role-specific assessments]
+    L --> M{Candidates qualify for interview?}
+    M -- No --> J
+    M -- Yes --> N[Interview shortlist confirmed]
+  end
+  subgraph P4[Phase 4: Interview and Selection]
+    N --> O[Schedule panel interviews]
+    O --> P[Conduct structured interviews]
+    P --> Q{Preferred candidate selected?}
+    Q -- No --> N
+    Q -- Yes --> R[Selection documented]
+  end
+  subgraph P5[Phase 5: Offer and Pre-Employment Checks]
+    R --> S[Extend conditional offer]
+    S --> T[Background and FAA PRIA checks]
+    T --> U[DOT drug and alcohol screening]
+    U --> V[Verify licences and medicals]
+    V --> W{All pre-employment checks passed?}
+    W -- No --> X([Offer withdrawn])
+    W -- Yes --> Y[Candidate cleared]
+  end
+  subgraph P6[Phase 6: Onboarding Initiation]
+    Y --> Z[Create employee record and provision access]
+    Z --> AA[Enrol in orientation and mandatory training]
+    AA --> BB([Onboarding initiated])
+  end
+
+  style A  fill:#003366,color:#fff,stroke:#003366
+  style X  fill:#003366,color:#fff,stroke:#003366
+  style BB fill:#003366,color:#fff,stroke:#003366
+  style D  fill:#ff6600,color:#fff,stroke:#ff6600
+  style H  fill:#ff6600,color:#fff,stroke:#ff6600
+  style M  fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q  fill:#ff6600,color:#fff,stroke:#ff6600
+  style W  fill:#ff6600,color:#fff,stroke:#ff6600

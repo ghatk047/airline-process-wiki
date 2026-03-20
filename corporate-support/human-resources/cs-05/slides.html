@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS-05 Slides — Talent Acquisition &amp; Recruitment</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-05</span>
+    <h1>Talent Acquisition &amp; Recruitment</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cs-05.png" alt="BPMN for CS-05" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Human Resources</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-05</span>
+    <h1>Talent Acquisition &amp; Recruitment</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CS-05</li>
+          <li><strong>L1 Domain:</strong> Corporate Support Functions</li>
+          <li><strong>L2 Process:</strong> Human Resources</li>
+          <li><strong>L3 Name:</strong> Talent Acquisition &amp; Recruitment</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Review headcount plan and identify vacancy</li><li><strong>Phase 2:</strong> Post vacancy to internal and external channels</li><li><strong>Phase 3:</strong> Automated ATS screening and shortlisting</li><li><strong>Phase 4:</strong> Schedule panel interviews and notify participants</li><li><strong>Phase 5:</strong> Generate and extend conditional offer letter</li><li><strong>Phase 6:</strong> Create employee record and provision system access</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>HR Business Partner</li><li>HR Director / Finance Controller</li><li>HR Operations Specialist / IT Service Desk</li><li>HR Operations Specialist / Learning &amp; Development Coordinator</li><li>Hiring Manager</li><li>Hiring Manager / HR Business Partner</li><li>Hiring Manager / HR Business Partner / Technical SME</li><li>Occupational Health Coordinator</li><li>Talent Acquisition Coordinator</li><li>Talent Acquisition Lead</li><li>Talent Acquisition Lead / Hiring Manager</li><li>Talent Acquisition Specialist</li><li>Talent Acquisition Specialist / Compensation Analyst</li><li>Talent Acquisition Specialist / Crew Compliance Officer</li><li>Talent Acquisition Specialist / Technical SME</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Criteria Corp (cognitive/aptitude) / SHL (technical assessment) / CAE SimuFlite (pilot simulator check)</li><li>FAA IACRA (Integrated Airman Certification and Rating Application) / SAP SuccessFactors Document Management</li><li>HireRight (background screening) / FAA PRIA System</li><li>HireVue / Microsoft Teams</li><li>LabCorp (DOT-certified collection network) / Psychemedics</li><li>LinkedIn Recruiter / Avjobs Aviation Job Board</li><li>SAP SuccessFactors Career Site / LinkedIn Job Slots / Indeed</li><li>SAP SuccessFactors Employee Central / ServiceNow (IT provisioning workflow)</li><li>SAP SuccessFactors Learning (LMS)</li><li>SAP SuccessFactors Offer Management / DocuSign</li><li>SAP SuccessFactors Recruiting</li><li>SAP SuccessFactors Recruiting (AI-assisted screening)</li><li>SAP SuccessFactors Recruiting (interview guide and scorecard)</li><li>SAP SuccessFactors Recruiting (pipeline analytics dashboard)</li><li>SAP SuccessFactors Recruiting / Microsoft Outlook (calendar integration)</li><li>SAP SuccessFactors Recruiting / SAP S/4HANA Finance (FI/CO)</li><li>SAP SuccessFactors Workforce Planning</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Human Resources</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-05</span>
+    <h1>Talent Acquisition &amp; Recruitment</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Review headcount plan and identify vacancy</td>
+        <td class="kpi-col">Requisition-to-plan alignment rate ≥95%; headcount request raised within 5 business days of vacancy identification</td>
+        <td class="pain-col">SAP SuccessFactors Workforce Planning module is not integrated with crew scheduling or flight operations staffing models — frontline vacancy data (pilots, cabin crew) must be manually cross-referenced, causing 5–10 day lag in requisition initiation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Create and submit job requisition</td>
+        <td class="kpi-col">Requisition submitted within 3 business days of headcount approval</td>
+        <td class="pain-col">Job description templates in SAP SuccessFactors are frequently outdated for technical aviation roles (avionics technician, line maintenance engineer) — manual SME review adds 2–4 days to requisition creation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Approve requisition and confirm budget</td>
+        <td class="kpi-col">Approval cycle time ≤3 business days; 100% of approved requisitions within sanctioned FTE budget</td>
+        <td class="pain-col">SAP S/4HANA Finance month-end close (3-day window) freezes cost centre commitments — operational hiring requisitions submitted during close are delayed, disrupting crew and maintenance staffing timelines</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Post vacancy to internal and external channels</td>
+        <td class="kpi-col">Internal application rate ≥20% for non-entry-level roles; posting live within 1 business day of requisition approval</td>
+        <td class="pain-col">SAP SuccessFactors Career Site apply-flow is not mobile-optimised — pilot and cabin crew candidates applying via mobile devices report high abandonment rates, reducing application conversion vs. competitor portals</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Source passive candidates via direct outreach</td>
+        <td class="kpi-col">Passive candidate pipeline of ≥3 qualified prospects per requisition within 10 business days of posting</td>
+        <td class="pain-col">Global commercial pilot shortage (ICAO forecasts 50,000+ deficit by 2030) makes passive sourcing for ATP-rated First Officers intensely competitive — response rates on LinkedIn Recruiter InMail for pilot roles average &lt;15%, well below the 35% cross-industry benchmark</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Assess pipeline adequacy and decide sourcing strategy</td>
+        <td class="kpi-col">Minimum 5 qualified applicants before screening commences; agency engagement escalation rate ≤15% of requisitions</td>
+        <td class="pain-col">SAP SuccessFactors does not enforce a preferred supplier list for recruitment agencies — when pipeline fails, hiring managers independently engage agencies at non-negotiated rates, inflating cost-per-hire for technical roles by 30–50%</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Automated ATS screening and shortlisting</td>
+        <td class="kpi-col">ATS screen-to-shortlist ratio ≤5:1; screening completed within 2 business days of application close</td>
+        <td class="pain-col">SAP SuccessFactors AI screening does not recognise FAA-standard licence abbreviations (ATP, A&amp;P, IA) and ICAO type rating codes — qualified pilot and maintenance candidates are incorrectly filtered out, requiring manual review of up to 30% of rejections</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Conduct telephone or video pre-screen interview</td>
+        <td class="kpi-col">Pre-screen completed within 5 business days of shortlisting; candidate pass rate 50–70%</td>
+        <td class="pain-col">HireVue asynchronous video interviews have significantly lower engagement rates with experienced pilot and senior maintenance candidates who expect direct recruiter interaction — completion rates for these cohorts are 20–25% below junior role benchmarks</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Administer role-specific skills and aptitude assessments</td>
+        <td class="kpi-col">Assessment completion rate ≥85%; cognitive benchmark score ≥65th percentile for technical roles; pilot sim check pass rate reported within 5 days</td>
+        <td class="pain-col">Simulator assessment slots at CAE and FlightSafety International facilities cost $3,000–$5,000 per candidate and must be booked 4–6 weeks in advance — scheduling constraints extend pilot time-to-hire by 3–6 weeks vs. non-technical roles</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Review assessments and finalise interview shortlist</td>
+        <td class="kpi-col">Interview shortlist delivered to hiring manager within 3 business days of assessment completion</td>
+        <td class="pain-col">Inconsistent scoring rubrics across business units in SAP SuccessFactors create EEOC/OFCCP audit risk — selection decisions for cabin crew base hiring lack standardised documentation, exposing the airline to disparate impact claims</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Schedule panel interviews and notify participants</td>
+        <td class="kpi-col">Interviews scheduled within 5 business days of shortlist approval; candidate no-show rate ≤5%</td>
+        <td class="pain-col">Outlook-to-SuccessFactors calendar sync fails for interviewers on crew scheduling systems — operational disruptions (IROPS, maintenance delays) cause same-day cancellations that are not automatically reflected in SuccessFactors, requiring manual rescheduling</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Conduct structured panel interviews</td>
+        <td class="kpi-col">100% of interviews completed with documented scorecards; inter-rater reliability ≥0.70 (Krippendorff&#x27;s alpha)</td>
+        <td class="pain-col">Operational interviewers (crew planning managers, maintenance supervisors) frequently bypass SAP SuccessFactors scorecard entry citing system complexity — undocumented decisions create material gaps in EEOC record-keeping required for airlines with federal contracts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Debrief panel, rank candidates, and select preferred hire</td>
+        <td class="kpi-col">Debrief completed within 2 business days of final interview; offer decline reserve conversion rate ≥60%</td>
+        <td class="pain-col">SAP SuccessFactors does not support structured calibration sessions for multi-site roles — regional hiring panels for cabin crew bases (e.g., BWI vs. MDW) use inconsistent evaluation norms, creating equity and compliance risk</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Generate and extend conditional offer letter</td>
+        <td class="kpi-col">Offer extended within 2 business days of selection decision; offer acceptance rate ≥85%</td>
+        <td class="pain-col">SAP SuccessFactors salary band guardrails block above-band offers without a formal exception workflow — for experienced First Officers and A&amp;P mechanics competing with legacy carrier packages (Delta, United), the exception approval cycle (5–7 days) causes candidate drop-off to competitors</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Initiate background check and FAA PRIA records request</td>
+        <td class="kpi-col">Background check completed within 7 business days; FAA PRIA response within 30 days (statutory maximum); 100% compliance with Air Carrier Access Act record-keeping</td>
+        <td class="pain-col">FAA PRIA requests for internationally certified pilots (JAA/EASA licence holders converting to FAA ATP) require manual coordination with foreign civil aviation authorities — average response time is 45–60 days vs. the 30-day statutory target, blocking hire completion</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Conduct DOT-mandated drug and alcohol screening</td>
+        <td class="kpi-col">Drug screen specimen collected within 3 business days of offer acceptance; 100% compliance rate for safety-sensitive roles (pilots, cabin crew, dispatchers, mechanics)</td>
+        <td class="pain-col">DOT 49 CFR Part 40 requires direct-observation collection for certain re-hire categories — the LabCorp DOT collector network has limited presence in smaller airline base cities (ISP, BDL, MHT), requiring candidates to travel, causing 2–5 day delays and candidate attrition</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.4</td>
+        <td>Verify licences, certificates, and medical fitness</td>
+        <td class="kpi-col">100% credential verification completed before Day 1; zero compliance exceptions at FAA CHDO audit; credential expiry alerts configured in SuccessFactors</td>
+        <td class="pain-col">FAA IACRA public lookup does not have an API integration with SAP SuccessFactors — credential data must be manually transcribed, creating data entry error risk; errors discovered at FAA Certificate Holding District Office (CHDO) audit result in regulatory corrective action</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">6.1</td>
+        <td>Create employee record and provision system access</td>
+        <td class="kpi-col">System access provisioned and verified by 08:00 on Day 1; first-day access failure rate ≤1%</td>
+        <td class="pain-col">ServiceNow-to-SuccessFactors integration triggers provisioning only on a nightly batch — new hire records created less than 48 hours before the start date miss the batch window and arrive on Day 1 without access, requiring manual IT escalation that averages 4–6 hours to resolve</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">6.2</td>
+        <td>Enrol new hire in orientation and mandatory training</td>
+        <td class="kpi-col">100% of mandatory Day-1 training assignments loaded before start date; regulatory training completion ≥95% within first 30 days; zero FAA compliance exceptions at training audit</td>
+        <td class="pain-col">SAP SuccessFactors LMS does not auto-assign FAA-required recurrent training curricula (FAR Part 121 initial, emergency equipment, CRM) when a new employee record is created for safety-sensitive roles — manual curriculum assignment is required and is frequently missed during high-volume new hire cohorts, creating FAA Part 121 compliance gaps</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Human Resources</span>
+  </div>
+</div>
+
+</body>
+</html>
