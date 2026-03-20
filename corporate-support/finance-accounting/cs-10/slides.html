@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS-10 Slides — Data Engineering &amp; Analytics Platform</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-10</span>
+    <h1>Data Engineering &amp; Analytics Platform</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cs-10.png" alt="BPMN for CS-10" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Information Technology</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-10</span>
+    <h1>Data Engineering &amp; Analytics Platform</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CS-10</li>
+          <li><strong>L1 Domain:</strong> Corporate Support Functions</li>
+          <li><strong>L2 Process:</strong> Information Technology</li>
+          <li><strong>L3 Name:</strong> Data Engineering &amp; Analytics Platform</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">6</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">13</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Capture data source requirements from business</li><li><strong>Phase 2:</strong> Execute automated data quality checks</li><li><strong>Phase 3:</strong> Develop dbt transformation models</li><li><strong>Phase 4:</strong> Design and build Tableau analytics dashboards</li><li><strong>Phase 5:</strong> Monitor pipeline health and SLA compliance</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Analytics Engineer</li><li>BI Developer</li><li>Cloud FinOps Analyst</li><li>Data Engineer</li><li>Data Governance Analyst</li><li>Data Product Manager</li><li>Data Quality Engineer</li><li>DataOps Engineer</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS CloudWatch</li><li>AWS Cost Explorer</li><li>AWS Glue</li><li>AWS Glue Data Catalog</li><li>AWS S3</li><li>AWS S3 / Redshift</li><li>Amazon Macie</li><li>Amazon Redshift</li><li>Collibra Data Intelligence Cloud</li><li>Confluence</li><li>Monte Carlo</li><li>PagerDuty</li><li>Tableau Server</li><li>dbt Cloud</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Information Technology</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-10</span>
+    <h1>Data Engineering &amp; Analytics Platform</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Capture data source requirements from business</td>
+        <td class="kpi-col">Requirements captured within 5 business days of request; ≥90% completeness score</td>
+        <td class="pain-col">Airline ops systems (Amadeus Altéa, Jeppesen) use proprietary APIs with limited documentation, causing specification rework</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Assess source API availability and schema</td>
+        <td class="kpi-col">Schema discovery completed within 2 days; 100% of fields documented</td>
+        <td class="pain-col">PSS and crew management systems use batch SFTP exports rather than real-time APIs, creating up to 24-hour data latency for operational dashboards</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Configure AWS Glue ETL connectors</td>
+        <td class="kpi-col">Connector build time ≤3 days; incremental load latency ≤15 min for streaming sources</td>
+        <td class="pain-col">GDS feed formats (Sabre, Travelport) change without advance notice, breaking Glue jobs and requiring emergency patching during revenue-critical periods</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>Ingest raw data to S3 landing zone</td>
+        <td class="kpi-col">Pipeline success rate ≥99.5% per month; P99 ingestion latency ≤30 min</td>
+        <td class="pain-col">Amadeus Altéa PNR change events generate burst loads during irregular operations (IROPs), overwhelming Kinesis shards and causing data loss if auto-scaling is not pre-configured</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Execute automated data quality checks</td>
+        <td class="kpi-col">DQ check coverage ≥95% of all active datasets; anomaly detection P95 latency ≤10 min</td>
+        <td class="pain-col">Flight operations feeds contain mission-critical fields (flight status, delay codes) where a single null cascades into incorrect OTP reporting to DOT, creating regulatory exposure</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Quarantine and triage DQ failures</td>
+        <td class="kpi-col">P1 DQ incidents triaged within 1 hour; resolution SLA ≤4 hours for operational data domains</td>
+        <td class="pain-col">Crew system data gaps post-irregular ops (mirrors Dec 2022 SkySolver failure pattern) create silent DQ failures where crew assignment data appears complete but contains stale records</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Register and classify dataset in data catalog</td>
+        <td class="kpi-col">100% of production datasets catalogued within 1 sprint of go-live; lineage coverage ≥80% of governed domains</td>
+        <td class="pain-col">High analyst turnover means undocumented datasets proliferate; teams build duplicate pipelines for the same source, wasting engineering capacity and creating inconsistent metrics</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Apply PII masking and access controls</td>
+        <td class="kpi-col">PII detection coverage ≥99% of passenger-facing domains; zero unmasked PII in non-production environments</td>
+        <td class="pain-col">Rapid Rewards member data flows through multiple systems (Altéa, Redshift, Tableau); inconsistent masking across environments has previously caused PII exposure in analytics sandboxes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Develop dbt transformation models</td>
+        <td class="kpi-col">dbt model test pass rate ≥98%; model execution time within agreed SLA per domain (e.g. revenue mart ≤20 min)</td>
+        <td class="pain-col">Fare and revenue data from ATPCO and Amadeus NRM use airline-specific tariff codes that require complex lookup logic; errors in fare basis decoding produce materially wrong yield reports</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Run dbt model tests and schema validation</td>
+        <td class="kpi-col">Zero undetected primary-key duplicates in mart layer; row count variance ≤0.1% vs source</td>
+        <td class="pain-col">Amadeus SkyWORKS schedule changes (flight adds/cancels) generate late-arriving facts that cause mart row count mismatches, failing dbt tests and blocking downstream dashboards</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Load transformed data to Redshift data warehouse</td>
+        <td class="kpi-col">Load job SLA: ≤60 min for daily full refresh; query P90 response time ≤5 s on standard analyst workloads</td>
+        <td class="pain-col">Redshift cluster concurrency limits cause query queuing during peak morning reporting windows (06:00–09:00 local), when ops, revenue, and finance teams all run simultaneous heavy queries</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Design and build Tableau analytics dashboards</td>
+        <td class="kpi-col">Dashboard load time ≤8 s on standard extract; certified data source reuse rate ≥60% across dashboards</td>
+        <td class="pain-col">Business users bypass certified data sources and connect directly to raw Redshift tables, creating metric discrepancies between dashboards and eroding trust in analytics outputs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Obtain stakeholder sign-off on dashboard accuracy</td>
+        <td class="kpi-col">UAT cycle ≤5 business days; zero P1 metric errors post-production release</td>
+        <td class="pain-col">Revenue management teams use Amadeus NRM as system of record for yield metrics; divergence between NRM native reports and Tableau (caused by time-zone offsets in fact tables) leads to sign-off delays</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Publish self-service data products to analytics portal</td>
+        <td class="kpi-col">Data product NPS ≥7/10 in quarterly survey; product adoption ≥80% of target business unit within 30 days of launch</td>
+        <td class="pain-col">Lack of a self-service data marketplace means analyst requests are routed to the data engineering backlog, creating queue times of 4–8 weeks for straightforward data access needs</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Monitor pipeline health and SLA compliance</td>
+        <td class="kpi-col">Pipeline SLA breach rate ≤0.5% per month; mean time to detect (MTTD) ≤5 min</td>
+        <td class="pain-col">Airflow MWAA auto-scaling lags during IROP events when flight data ingestion volume spikes 3–5× baseline, causing cascading DAG failures and delayed operational reporting to the NOC</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Manage Redshift cluster capacity and cost governance</td>
+        <td class="kpi-col">Redshift cost per TB processed ≤$25; month-over-month cost variance ≤10%; idle cluster time ≤5%</td>
+        <td class="pain-col">Ad-hoc analyst queries with full table scans on unoptimised Redshift tables generate runaway costs; lack of workload management (WLM) queues allows single queries to consume entire cluster resources</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Execute platform incident response and root-cause analysis</td>
+        <td class="kpi-col">MTTR for P1 data outages ≤2 hours; post-mortem completed within 48 hours; recurrence rate ≤10% for resolved incidents</td>
+        <td class="pain-col">Data platform incidents during irregular operations (when analytics are most needed by NOC and Revenue) cannot be deprioritised, but on-call rosters are understaffed relative to the criticality of the platform</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Information Technology</span>
+  </div>
+</div>
+
+</body>
+</html>

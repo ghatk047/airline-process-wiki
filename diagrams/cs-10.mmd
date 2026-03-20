@@ -1,0 +1,51 @@
+flowchart LR
+  subgraph P1[Phase 1: Data Ingestion and Source Integration]
+    A([Start]) --> B[Define source requirements]
+    B --> C{Source API available?}
+    C -- No --> B
+    C -- Yes --> D[Configure AWS Glue connectors]
+    D --> E[Ingest raw data to S3 landing zone]
+  end
+
+  subgraph P2[Phase 2: Data Quality and Governance]
+    E --> F[Run Monte Carlo DQ checks]
+    F --> G{Quality score ≥95%?}
+    G -- No --> H[Quarantine and log DQ failure]
+    H --> F
+    G -- Yes --> I[Register dataset in Collibra catalog]
+    I --> J{PII/sensitive data?}
+    J -- Yes --> K[Apply Macie masking rules]
+    K --> L[Publish to governed S3 zone]
+    J -- No --> L
+  end
+
+  subgraph P3[Phase 3: Data Transformation and Modeling]
+    L --> M[Build dbt transformation models]
+    M --> N{Model tests pass?}
+    N -- No --> M
+    N -- Yes --> O[Load to Redshift dimensional schema]
+  end
+
+  subgraph P4[Phase 4: Analytics and Self-Service Delivery]
+    O --> P[Publish Tableau / Power BI dashboards]
+    P --> Q{Stakeholder sign-off?}
+    Q -- No --> P
+    Q -- Yes --> R[Release to self-service analytics portal]
+  end
+
+  subgraph P5[Phase 5: Platform Operations and Monitoring]
+    R --> S[Monitor pipelines via CloudWatch]
+    S --> T{SLA breach detected?}
+    T -- Yes --> U[Trigger PagerDuty incident]
+    U --> S
+    T -- No --> V([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style V fill:#003366,color:#fff,stroke:#003366
+  style C fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
