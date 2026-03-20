@@ -1,0 +1,46 @@
+flowchart LR
+  subgraph P1[Phase 1: Contract Monitoring and Prep]
+    A([Start]) --> B[Monitor CBA expiry\nSuccessFactors]
+    B --> C[Benchmark labour costs\nPower BI]
+    C --> D[Model financial impact\nSAP FI/CO]
+  end
+  subgraph P2[Phase 2: Negotiation Strategy]
+    D --> E[Form negotiation team\nSharePoint]
+    E --> F[Draft opening proposals\nIronclad CLM]
+    F --> G{Board mandate\napproved?}
+    G -- Revise --> F
+    G -- Approved --> H[File RLA Section 6 notice\nNMB Portal]
+  end
+  subgraph P3[Phase 3: Formal Bargaining]
+    H --> I[Exchange proposals\nIronclad CLM]
+    I --> J[Track TAs and open issues\nServiceNow HR]
+    J --> K{Impasse\ndeclared?}
+    K -- No, continue --> I
+    K -- Yes --> L[Request NMB mediation\nNMB Portal]
+  end
+  subgraph P4[Phase 4: Mediation]
+    L --> M[Conduct mediated sessions\nIronclad CLM]
+    M --> N{TA reached\nor self-help risk?}
+    N -- Continue mediation --> M
+    N -- TA reached --> O[Draft full tentative agreement\nIronclad CLM]
+  end
+  subgraph P5[Phase 5: Ratification]
+    O --> P{Ratification\nvote passed?}
+    P -- No, restart bargaining --> I
+    P -- Yes --> Q[Implement in SAP SuccessFactors]
+  end
+  subgraph P6[Phase 6: Implementation and Compliance]
+    Q --> R[Distribute contract\nSharePoint]
+    R --> S[Monitor grievances\nServiceNow HR]
+    S --> T{Grievance\nescalated?}
+    T -- Resolved --> U([Complete])
+    T -- Arbitration --> S
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style U fill:#003366,color:#fff,stroke:#003366
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style K fill:#ff6600,color:#fff,stroke:#ff6600
+  style N fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style T fill:#ff6600,color:#fff,stroke:#ff6600
