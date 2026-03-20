@@ -1,0 +1,50 @@
+flowchart LR
+  subgraph P1[Phase 1: Threat Intel and Monitoring]
+    A([Start]) --> B[Ingest threat intel feeds]
+    B --> C[Monitor SIEM for anomalies]
+    C --> D{Credible threat\nindicator?}
+    D -- No --> C
+    D -- Yes --> E[Enrich and correlate IOCs]
+  end
+
+  subgraph P2[Phase 2: Vulnerability Management]
+    E --> F[Run authenticated vuln scan]
+    F --> G{Critical CVE on\naviation system?}
+    G -- No --> H[Standard patch queue]
+    G -- Yes --> I[Emergency patch assessment]
+    H --> J[Schedule patching window]
+    I --> J
+  end
+
+  subgraph P3[Phase 3: Incident Detection and Triage]
+    J --> K[Classify and triage alert]
+    K --> L{True positive\nconfirmed?}
+    L -- No --> M[Close false positive]
+    L -- Yes --> N[Assign severity P1–P4]
+  end
+
+  subgraph P4[Phase 4: Response and Containment]
+    N --> O[Activate IR playbook]
+    O --> P[Isolate affected systems]
+    P --> Q{OT or avionics\nsystems involved?}
+    Q -- Yes --> R[Notify TSA and CISA\nper SD-04C]
+    Q -- No --> S[Internal containment]
+    R --> T[Eradicate threat and preserve evidence]
+    S --> T
+  end
+
+  subgraph P5[Phase 5: Recovery and Post-Incident Review]
+    T --> U[Restore from clean backup]
+    U --> V{Systems validated\ncompliant?}
+    V -- No --> U
+    V -- Yes --> W[Post-incident review and report]
+    W --> X([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style X fill:#003366,color:#fff,stroke:#003366
+  style D fill:#ff6600,color:#fff,stroke:#ff6600
+  style G fill:#ff6600,color:#fff,stroke:#ff6600
+  style L fill:#ff6600,color:#fff,stroke:#ff6600
+  style Q fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600

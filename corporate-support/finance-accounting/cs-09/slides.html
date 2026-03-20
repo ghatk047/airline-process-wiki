@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS-09 Slides — Cybersecurity &amp; Threat Management</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-09</span>
+    <h1>Cybersecurity &amp; Threat Management</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cs-09.png" alt="BPMN for CS-09" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Information Technology</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-09</span>
+    <h1>Cybersecurity &amp; Threat Management</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CS-09</li>
+          <li><strong>L1 Domain:</strong> Corporate Support Functions</li>
+          <li><strong>L2 Process:</strong> Information Technology</li>
+          <li><strong>L3 Name:</strong> Cybersecurity &amp; Threat Management</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">17</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">4</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Ingest threat intelligence feeds</li><li><strong>Phase 2:</strong> Schedule and execute authenticated vulnerability s</li><li><strong>Phase 3:</strong> Classify and triage incoming security alert</li><li><strong>Phase 4:</strong> Activate incident response playbook</li><li><strong>Phase 5:</strong> Restore systems from clean validated backup</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>CISO / IR Lead / SOC Lead</li><li>CISO / Regulatory Compliance Manager</li><li>IR Engineer</li><li>IR Engineer / Digital Forensics Analyst</li><li>IR Engineer / Platform Engineer</li><li>IT Security Engineer</li><li>Incident Response Lead</li><li>SOC Analyst (Tier 1)</li><li>SOC Analyst (Tier 2)</li><li>SOC Lead</li><li>Security Architect / Threat Intelligence Analyst</li><li>Threat Intelligence Analyst</li><li>Vulnerability Management Engineer</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AWS Backup / ServiceNow Change Management</li><li>CrowdStrike Falcon / AWS S3 (evidence bucket)</li><li>CrowdStrike Falcon / Microsoft Sentinel</li><li>CrowdStrike Falcon / Palo Alto NGFW</li><li>Microsoft Sentinel</li><li>Microsoft Sentinel / Palo Alto Cortex XSOAR</li><li>Microsoft Sentinel / Palo Alto Cortex XSOAR / Tenable.io</li><li>Palo Alto Cortex XSOAR</li><li>SITA Cybersecurity Services / ISAC Aviation AISAC feed</li><li>ServiceNow Security Operations</li><li>ServiceNow Security Operations / AWS Systems Manager Patch Manager</li><li>ServiceNow Security Operations / Confluence</li><li>ServiceNow Security Operations / Tenable OT Security</li><li>TSA Cybersecurity Reporting Portal / ServiceNow GRC</li><li>Tenable.io</li><li>Tenable.io / ServiceNow Security Operations</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Information Technology</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-09</span>
+    <h1>Cybersecurity &amp; Threat Management</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Ingest threat intelligence feeds</td>
+        <td class="kpi-col">Feed ingestion latency ≤15 min from publication; IOC coverage ≥95% of subscribed feeds</td>
+        <td class="pain-col">Aviation ISAC feed cadence is irregular; manual triage required when SITA portal and Microsoft Sentinel connector versions diverge after platform updates</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Monitor SIEM for security anomalies</td>
+        <td class="kpi-col">Mean time to detect (MTTD) ≤4 hrs for high-severity events; alert queue SLA acknowledgement ≤15 min</td>
+        <td class="pain-col">Amadeus Altéa PSS syslog format requires custom parser; parser breaks on Altéa quarterly patch releases causing 2–6 hr blind-spot windows</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Correlate IOCs and assess threat credibility</td>
+        <td class="kpi-col">False positive rate ≤12% on high-severity alerts; IOC correlation throughput ≥500 indicators/hr</td>
+        <td class="pain-col">GDS connection endpoints (Sabre, Travelport, Amadeus GDS) generate high IOC overlap with legitimate partner traffic, inflating false-positive rates</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Schedule and execute authenticated vulnerability scan</td>
+        <td class="kpi-col">Scan coverage ≥98% of in-scope assets per cycle; scan cycle ≤7 days for internet-facing assets</td>
+        <td class="pain-col">Crew management AWS-hosted system requires coordinated scan windows with Crew Ops to avoid disrupting real-time crew tracking; missed windows extend exposure</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Prioritise vulnerabilities by CVSS and asset criticality</td>
+        <td class="kpi-col">P1 (CVSS ≥9.0) remediation SLA ≤24 hrs; P2 (CVSS 7.0–8.9) ≤7 days; mean vulnerability age ≤30 days</td>
+        <td class="pain-col">Jeppesen FliteDeck EFB tablets are classified airline OT; patches require Boeing approval and airline maintenance sign-off, extending P2 remediation to 45+ days</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Execute patch deployment or emergency remediation</td>
+        <td class="kpi-col">Patch success rate ≥99% without service disruption; emergency patch deployment ≤4 hrs for P1</td>
+        <td class="pain-col">Amadeus Altéa PSS patching requires Amadeus vendor coordination and PSS freeze window; unilateral patching risks PSS instability affecting booking and check-in functions</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Classify and triage incoming security alert</td>
+        <td class="kpi-col">Triage completion ≤15 min for P1/P2; analyst throughput ≥20 alerts/hr per Tier-1 analyst</td>
+        <td class="pain-col">NDC API Gateway traffic is high-volume JSON; DDoS patterns targeting NDC endpoints are difficult to distinguish from legitimate agency booking bursts without airline-specific baselines</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Validate alert as true or false positive</td>
+        <td class="kpi-col">True positive confirmation rate ≥88%; false positive closure with tuning update ≤2 hrs</td>
+        <td class="pain-col">SITA ACARS messages traversing legacy ground-to-air links generate unusual encoding patterns that trigger EDR heuristics; suppression rules require SITA vendor input to avoid masking real threats</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Assign incident owner and escalate to IR team</td>
+        <td class="kpi-col">P1 escalation to IR team ≤30 min from true positive confirmation; IR lead acknowledgement ≤15 min</td>
+        <td class="pain-col">On-call rotation gaps during irregular flight operations (e.g., irregular operations recovery periods) delay P1 escalation when SOC team is simultaneously supporting NOC cyber requests</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Activate incident response playbook</td>
+        <td class="kpi-col">Playbook activation ≤5 min of IR lead assignment; playbook coverage ≥95% of known threat categories</td>
+        <td class="pain-col">Airline-specific playbooks for PSS compromise and GDS channel manipulation are not included in XSOAR out-of-box content library; custom playbooks require quarterly review to stay current with Amadeus Altéa version changes</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Isolate affected endpoints and network segments</td>
+        <td class="kpi-col">Containment time ≤1 hr for P1; mean time to contain (MTTC) ≤2 hrs across all incidents</td>
+        <td class="pain-col">AWS-hosted crew management system cannot be hard-isolated without triggering crew tracking outage; partial isolation (egress block only) leaves lateral movement risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Assess OT or avionics system involvement</td>
+        <td class="kpi-col">OT scope assessment completion ≤30 min of containment; 100% of OT-involved incidents flagged for TSA notification within required window</td>
+        <td class="pain-col">EFB (Jeppesen FliteDeck) tablets on aircraft are in a grey zone between IT and OT asset classification; incident scope determination requires coordination between IT Security, Flight Operations, and Boeing technical representatives</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Notify TSA and CISA per cybersecurity directive SD-04C</td>
+        <td class="kpi-col">TSA notification compliance: 100% on-time within 24-hr regulatory window; zero overdue reports</td>
+        <td class="pain-col">TSA SD-04C reporting thresholds are ambiguous for incidents affecting systems that touch both IT and airline-operated networks (e.g., airport check-in kiosks on shared infrastructure); legal review adds time</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.5</td>
+        <td>Eradicate threat and preserve digital evidence</td>
+        <td class="kpi-col">Evidence collection completeness ≥99% of affected hosts; eradication verified by CrowdStrike scan before re-entry to network</td>
+        <td class="pain-col">Volatile memory forensics on Amadeus Altéa reservation servers requires PSS vendor coordination; uncoordinated memory acquisition risks PSS process interruption affecting live bookings</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Restore systems from clean validated backup</td>
+        <td class="kpi-col">RTO ≤4 hrs for P1 critical systems (PSS, crew system); RPO ≤1 hr for tier-1 systems</td>
+        <td class="pain-col">Amadeus Altéa PSS restoration must be sequenced with Amadeus Altéa operations team in Madrid; time zone dependency and vendor SLA of 4-hr response means RTO targets are at risk for overnight incidents</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Conduct post-incident review and root cause analysis</td>
+        <td class="kpi-col">PIR completion ≤5 business days for P1; 100% of action items assigned with due date; action item closure rate ≥85% within 30 days</td>
+        <td class="pain-col">Airline operational disruption pressure (irregular operations recovery) competes with PIR scheduling; PIR action items for systemic GDS security gaps are deprioritised against commercial recovery objectives</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Update controls, playbooks, and threat detection rules</td>
+        <td class="kpi-col">Detection rule update deployment ≤48 hrs of PIR sign-off; XSOAR playbook coverage improvement measured per PIR cycle</td>
+        <td class="pain-col">Sentinel custom rules for Amadeus Altéa and Sabre GDS log formats must be regression-tested against production log samples after every rule update; lack of a dedicated security staging environment increases change risk</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Information Technology</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Flight Dispatch &amp; Control · Flight Operations · Airlines Process Wiki</title>
+<title>CS-09 · Cybersecurity &amp; Threat Management · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../corporate-support/">Corporate Support Functions</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -120,8 +121,8 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain open"><span>Flight Operations</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2 open">
+    <div class="sidebar-domain"><span>Flight Operations</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2">
       <a class="sidebar-l2-link" href="../../../flight-operations/flight-dispatch-control/">Flight Dispatch &amp; Control</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../flight-operations/flight-dispatch-control/fo-01/"><span class="status-dot status-done"></span><span class="pid">FO-01</span>Flight Dispatch &amp; Release</a>
@@ -213,15 +214,15 @@
     </div>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-domain"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
+    <div class="sidebar-domain open"><span>Corporate Support Functions</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-done"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-02/"><span class="status-dot status-done"></span><span class="pid">CS-02</span>Management Accounting &amp; Cost Control</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-03/"><span class="status-dot status-done"></span><span class="pid">CS-03</span>Revenue Accounting &amp; BSP Settlement</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-08/"><span class="status-dot status-done"></span><span class="pid">CS-08</span>PSS (Passenger Service System) Management</a>
-        <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-09/"><span class="status-dot status-done"></span><span class="pid">CS-09</span>Cybersecurity &amp; Threat Management</a>
+        <a class="sidebar-l3-link active" href="../../../corporate-support/finance-accounting/cs-09/"><span class="status-dot status-done"></span><span class="pid">CS-09</span>Cybersecurity &amp; Threat Management</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-10/"><span class="status-dot status-queue"></span><span class="pid">CS-10</span>Data Engineering &amp; Analytics Platform</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-11/"><span class="status-dot status-queue"></span><span class="pid">CS-11</span>Strategic Sourcing &amp; Vendor Selection</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-12/"><span class="status-dot status-queue"></span><span class="pid">CS-12</span>Fuel Procurement &amp; Supply Chain</a>
@@ -242,153 +243,248 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Flight Operations</a><span class="sep">›</span>
-  <span class="current">Flight Dispatch &amp; Control</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../corporate-support/">Corporate Support Functions</a><span class="sep">›</span>
+  <a href="../../../corporate-support/finance-accounting/">Information Technology</a><span class="sep">›</span>
+  <span class="current">CS-09 · Cybersecurity &amp; Threat Management</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Flight Dispatch &amp; Control</h1>
-    <p>Flight Operations · 15 of 15 subprocesses complete · Updated 2026-03-19 22:24</p>
+    <h1>Cybersecurity &amp; Threat Management</h1>
+    <p>Corporate Support Functions › Information Technology · 17 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-19 22:24</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CS-09</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-01</span>Flight Dispatch &amp; Release</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 11 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cs-09">
+      <img src="../../../assets/img/cs-09.png" alt="CS-09 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cs-09').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cs-09').style.display='flex'">
+      <div id="diag-placeholder-cs-09" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Ingest threat intelligence feeds</td>
+  <td class="td-role">Threat Intelligence Analyst</td>
+  <td><span class="stag custom">SITA Cybersecurity Services / ISAC Aviation AISAC feed</span></td>
+  <td style="font-size:10px;color:#6b7280">Aviation ISAC threat bulletins, CISA alerts, commercial CTI feeds</td>
+  <td style="font-size:10px">Normalised IOC set (IPs, domains, hashes) loaded into SIEM</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Feed ingestion latency ≤15 min from publication; IOC coverage ≥95% of subscribed feeds</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Monitor SIEM for security anomalies</td>
+  <td class="td-role">SOC Analyst (Tier 1)</td>
+  <td><span class="stag custom">Microsoft Sentinel</span></td>
+  <td style="font-size:10px;color:#6b7280">Log streams from Amadeus Altéa PSS, AWS Security Hub, Palo Alto NGFW, endpoint telemetry</td>
+  <td style="font-size:10px">Security alerts queue; anomaly tickets auto-created in ServiceNow Security Operations</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Mean time to detect (MTTD) ≤4 hrs for high-severity events; alert queue SLA acknowledgement ≤15 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Correlate IOCs and assess threat credibility</td>
+  <td class="td-role">Threat Intelligence Analyst</td>
+  <td><span class="stag custom">Microsoft Sentinel / Palo Alto Cortex XSOAR</span></td>
+  <td style="font-size:10px;color:#6b7280">Raw SIEM alerts, enriched IOCs from threat intel feeds</td>
+  <td style="font-size:10px">Threat credibility score; escalation decision to vulnerability management or incident triage</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">False positive rate ≤12% on high-severity alerts; IOC correlation throughput ≥500 indicators/hr</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Schedule and execute authenticated vulnerability scan</td>
+  <td class="td-role">Vulnerability Management Engineer</td>
+  <td><span class="stag custom">Tenable.io</span></td>
+  <td style="font-size:10px;color:#6b7280">Asset inventory from AWS Security Hub and ServiceNow CMDB; approved scan windows</td>
+  <td style="font-size:10px">Vulnerability report with CVSS scores, affected asset list, and CVE references</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Scan coverage ≥98% of in-scope assets per cycle; scan cycle ≤7 days for internet-facing assets</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Prioritise vulnerabilities by CVSS and asset criticality</td>
+  <td class="td-role">Vulnerability Management Engineer</td>
+  <td><span class="stag custom">Tenable.io / ServiceNow Security Operations</span></td>
+  <td style="font-size:10px;color:#6b7280">Raw vulnerability report, asset criticality tiers from CMDB</td>
+  <td style="font-size:10px">Risk-ranked remediation backlog with SLA targets (P1–P4) in ServiceNow</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">P1 (CVSS ≥9.0) remediation SLA ≤24 hrs; P2 (CVSS 7.0–8.9) ≤7 days; mean vulnerability age ≤30 days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Execute patch deployment or emergency remediation</td>
+  <td class="td-role">IT Security Engineer</td>
+  <td><span class="stag aws">ServiceNow Security Operations / AWS Systems Manager Patch Manager</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved remediation backlog item, change request from ServiceNow CAB</td>
+  <td style="font-size:10px">Patched asset record, vulnerability closure confirmation in Tenable.io</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Patch success rate ≥99% without service disruption; emergency patch deployment ≤4 hrs for P1</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Classify and triage incoming security alert</td>
+  <td class="td-role">SOC Analyst (Tier 1)</td>
+  <td><span class="stag custom">Palo Alto Cortex XSOAR</span></td>
+  <td style="font-size:10px;color:#6b7280">Alert from Microsoft Sentinel or CrowdStrike Falcon EDR</td>
+  <td style="font-size:10px">Initial triage record with classification (malware, phishing, insider, DDoS, etc.) and severity P1–P4</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Triage completion ≤15 min for P1/P2; analyst throughput ≥20 alerts/hr per Tier-1 analyst</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Validate alert as true or false positive</td>
+  <td class="td-role">SOC Analyst (Tier 2)</td>
+  <td><span class="stag custom">CrowdStrike Falcon / Microsoft Sentinel</span></td>
+  <td style="font-size:10px;color:#6b7280">Triage record, endpoint telemetry, network flow logs from Palo Alto NGFW</td>
+  <td style="font-size:10px">Confirmed true/false positive determination; false positives closed with tuning note</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">True positive confirmation rate ≥88%; false positive closure with tuning update ≤2 hrs</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Assign incident owner and escalate to IR team</td>
+  <td class="td-role">SOC Lead</td>
+  <td><span class="stag custom">ServiceNow Security Operations</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed true positive with severity, initial classification</td>
+  <td style="font-size:10px">Incident ticket assigned to IR owner; P1 bridge call initiated; CISO notified for P1</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">P1 escalation to IR team ≤30 min from true positive confirmation; IR lead acknowledgement ≤15 min</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Activate incident response playbook</td>
+  <td class="td-role">Incident Response Lead</td>
+  <td><span class="stag custom">Palo Alto Cortex XSOAR</span></td>
+  <td style="font-size:10px;color:#6b7280">Incident ticket, threat classification, affected asset list</td>
+  <td style="font-size:10px">Active XSOAR playbook run with assigned task steps; war room opened in collaboration tool</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Playbook activation ≤5 min of IR lead assignment; playbook coverage ≥95% of known threat categories</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Isolate affected endpoints and network segments</td>
+  <td class="td-role">IR Engineer</td>
+  <td><span class="stag custom">CrowdStrike Falcon / Palo Alto NGFW</span></td>
+  <td style="font-size:10px;color:#6b7280">Confirmed affected asset list from XSOAR playbook</td>
+  <td style="font-size:10px">Isolated hosts (network contain via CrowdStrike); VLAN quarantine applied via Palo Alto policy push</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Containment time ≤1 hr for P1; mean time to contain (MTTC) ≤2 hrs across all incidents</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Assess OT or avionics system involvement</td>
+  <td class="td-role">Incident Response Lead</td>
+  <td><span class="stag custom">ServiceNow Security Operations / Tenable OT Security</span></td>
+  <td style="font-size:10px;color:#6b7280">Affected asset CMDB records, network topology map, CrowdStrike telemetry</td>
+  <td style="font-size:10px">OT/avionics scope determination; regulatory notification trigger decision</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">OT scope assessment completion ≤30 min of containment; 100% of OT-involved incidents flagged for TSA notification within required window</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Notify TSA and CISA per cybersecurity directive SD-04C</td>
+  <td class="td-role">CISO / Regulatory Compliance Manager</td>
+  <td><span class="stag custom">TSA Cybersecurity Reporting Portal / ServiceNow GRC</span></td>
+  <td style="font-size:10px;color:#6b7280">OT/avionics involvement confirmation, incident severity, timeline of events</td>
+  <td style="font-size:10px">TSA notification submitted within 24 hrs; CISA report filed; log preserved in ServiceNow GRC</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">TSA notification compliance: 100% on-time within 24-hr regulatory window; zero overdue reports</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.5</td>
+  <td class="td-name">Eradicate threat and preserve digital evidence</td>
+  <td class="td-role">IR Engineer / Digital Forensics Analyst</td>
+  <td><span class="stag aws">CrowdStrike Falcon / AWS S3 (evidence bucket)</span></td>
+  <td style="font-size:10px;color:#6b7280">Isolated systems, threat actor TTPs, XSOAR playbook eradication task</td>
+  <td style="font-size:10px">Cleaned endpoints, forensic image stored in AWS S3 evidence bucket with chain of custody</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Evidence collection completeness ≥99% of affected hosts; eradication verified by CrowdStrike scan before re-entry to network</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Restore systems from clean validated backup</td>
+  <td class="td-role">IR Engineer / Platform Engineer</td>
+  <td><span class="stag aws">AWS Backup / ServiceNow Change Management</span></td>
+  <td style="font-size:10px;color:#6b7280">Eradication sign-off, approved recovery runbook, last known-good backup snapshot</td>
+  <td style="font-size:10px">Restored system instance, recovery validation test results, change record closed in ServiceNow</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">RTO ≤4 hrs for P1 critical systems (PSS, crew system); RPO ≤1 hr for tier-1 systems</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Conduct post-incident review and root cause analysis</td>
+  <td class="td-role">CISO / IR Lead / SOC Lead</td>
+  <td><span class="stag custom">ServiceNow Security Operations / Confluence</span></td>
+  <td style="font-size:10px;color:#6b7280">Incident timeline, XSOAR playbook run log, forensic evidence summary</td>
+  <td style="font-size:10px">Post-incident review (PIR) report with RCA, timeline, and ≥3 action items in ServiceNow</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">PIR completion ≤5 business days for P1; 100% of action items assigned with due date; action item closure rate ≥85% within 30 days</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Update controls, playbooks, and threat detection rules</td>
+  <td class="td-role">Security Architect / Threat Intelligence Analyst</td>
+  <td><span class="stag custom">Microsoft Sentinel / Palo Alto Cortex XSOAR / Tenable.io</span></td>
+  <td style="font-size:10px;color:#6b7280">PIR action items, new threat actor TTPs identified during incident</td>
+  <td style="font-size:10px">Updated Sentinel detection rules, revised XSOAR playbooks, new Tenable scan policies; changes logged in ServiceNow GRC</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Detection rule update deployment ≤48 hrs of PIR sign-off; XSOAR playbook coverage improvement measured per PIR cycle</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-02</span>Operational Flight Plan Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CS-09</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Corporate Support Functions</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Information Technology</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Cybersecurity &amp; Threat Management</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">17 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">4 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Threat Intelligence Analyst</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>SOC Analyst (Tier 1)</div><div class="swim"><div class="dot" style="background:#ec4899"></div>Vulnerability Management Engineer</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>IT Security Engineer</div><div class="swim"><div class="dot" style="background:#10b981"></div>SOC Analyst (Tier 2)</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>SOC Lead</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Incident Response Lead</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>IR Engineer</div><div class="swim"><div class="dot" style="background:#84cc16"></div>CISO / Regulatory Compliance Manager</div><div class="swim"><div class="dot" style="background:#ef4444"></div>IR Engineer / Digital Forensics Analyst</div><div class="swim"><div class="dot" style="background:#f97316"></div>IR Engineer / Platform Engineer</div><div class="swim"><div class="dot" style="background:#14b8a6"></div>CISO / IR Lead / SOC Lead</div><div class="swim"><div class="dot" style="background:#3b82f6"></div>Security Architect / Threat Intelligence Analyst</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag custom">SITA Cybersecurity Services / ISAC Aviation AISAC feed</span><span class="stag custom">Microsoft Sentinel</span><span class="stag custom">Microsoft Sentinel / Palo Alto Cortex XSOAR</span><span class="stag custom">Tenable.io</span><span class="stag custom">Tenable.io / ServiceNow Security Operations</span><span class="stag aws">ServiceNow Security Operations / AWS Systems Manager Patch Manager</span><span class="stag custom">Palo Alto Cortex XSOAR</span><span class="stag custom">CrowdStrike Falcon / Microsoft Sentinel</span><span class="stag custom">ServiceNow Security Operations</span><span class="stag custom">CrowdStrike Falcon / Palo Alto NGFW</span><span class="stag custom">ServiceNow Security Operations / Tenable OT Security</span><span class="stag custom">TSA Cybersecurity Reporting Portal / ServiceNow GRC</span><span class="stag aws">CrowdStrike Falcon / AWS S3 (evidence bucket)</span><span class="stag aws">AWS Backup / ServiceNow Change Management</span><span class="stag custom">ServiceNow Security Operations / Confluence</span><span class="stag custom">Microsoft Sentinel / Palo Alto Cortex XSOAR / Tenable.io</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Ingest threat intelligence feeds</span><span class="kval">Feed ingestion latency ≤15 min from publication; IOC coverage ≥95% of subscribed feeds</span></div><div class="krow"><span class="kname">Monitor SIEM for security anomalies</span><span class="kval">Mean time to detect (MTTD) ≤4 hrs for high-severity events; alert queue SLA acknowledgement ≤15 min</span></div><div class="krow"><span class="kname">Correlate IOCs and assess threat credibility</span><span class="kval">False positive rate ≤12% on high-severity alerts; IOC correlation throughput ≥500 indicators/hr</span></div><div class="krow"><span class="kname">Schedule and execute authenticated vulnerability scan</span><span class="kval">Scan coverage ≥98% of in-scope assets per cycle; scan cycle ≤7 days for internet-facing assets</span></div><div class="krow"><span class="kname">Prioritise vulnerabilities by CVSS and asset criticality</span><span class="kval">P1 (CVSS ≥9.0) remediation SLA ≤24 hrs; P2 (CVSS 7.0–8.9) ≤7 days; mean vulnerability age ≤30 days</span></div><div class="krow"><span class="kname">Execute patch deployment or emergency remediation</span><span class="kval">Patch success rate ≥99% without service disruption; emergency patch deployment ≤4 hrs for P1</span></div><div class="krow"><span class="kname">Classify and triage incoming security alert</span><span class="kval">Triage completion ≤15 min for P1/P2; analyst throughput ≥20 alerts/hr per Tier-1 analyst</span></div><div class="krow"><span class="kname">Validate alert as true or false positive</span><span class="kval">True positive confirmation rate ≥88%; false positive closure with tuning update ≤2 hrs</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Aviation ISAC feed cadence is irregular; manual triage required when SITA portal and Microsoft Sentinel connector versions diverge after platform updates</div><div class="risk-card">Amadeus Altéa PSS syslog format requires custom parser; parser breaks on Altéa quarterly patch releases causing 2–6 hr blind-spot windows</div><div class="risk-card">GDS connection endpoints (Sabre, Travelport, Amadeus GDS) generate high IOC overlap with legitimate partner traffic, inflating false-positive rates</div><div class="risk-card">Crew management AWS-hosted system requires coordinated scan windows with Crew Ops to avoid disrupting real-time crew tracking; missed windows extend exposure</div><div class="risk-card">Jeppesen FliteDeck EFB tablets are classified airline OT; patches require Boeing approval and airline maintenance sign-off, extending P2 remediation to 45+ days</div><div class="risk-card">Amadeus Altéa PSS patching requires Amadeus vendor coordination and PSS freeze window; unilateral patching risks PSS instability affecting booking and check-in functions</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Aviation ISAC threat bulletins, CISA alerts, commercial CTI feeds</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Updated Sentinel detection rules, revised XSOAR playbooks, new Tenable scan policies; changes logged in ServiceNow GRC</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-03</span>Fuel Planning &amp; Tankering</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-03/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-04</span>Weight &amp; Balance Management</h3>
-    <p>Flight Dispatch &amp; Control · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-04/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-05</span>NOTAMs &amp; AIP Information Management</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-05/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-06</span>Weather Monitoring &amp; Decision Support</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-06/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-07</span>Air Traffic Control Coordination</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 6 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-07/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-08</span>Network Operations Control (NOC)</h3>
-    <p>Flight Dispatch &amp; Control · 18 steps · 10 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-08/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-09</span>Delay Management &amp; Root Cause Analysis</h3>
-    <p>Flight Dispatch &amp; Control · 19 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-09/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-10</span>Diversion &amp; Emergency Response Management</h3>
-    <p>Flight Dispatch &amp; Control · 19 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-10/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-11</span>ETOPS / EDTO Operations Management</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-11/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-12</span>Flight Crew Briefing &amp; Pre-Departure</h3>
-    <p>Flight Dispatch &amp; Control · 15 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-12/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-13</span>Performance &amp; FDR Data Monitoring</h3>
-    <p>Flight Dispatch &amp; Control · 16 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-13/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-14</span>Air-to-Ground Communications Management</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 5 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-14/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">FO-15</span>Dangerous Goods Load Authorization</h3>
-    <p>Flight Dispatch &amp; Control · 20 steps · 13 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="fo-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cs-08/"><span class="arrow">←</span><span><span class="sub">Previous</span>CS-08 · PSS (Passenger Service System) Management</span></a><a class="pn-btn" href="../cs-10/"><span><span class="sub">Next</span>CS-10 · Data Engineering &amp; Analytics Platform</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
