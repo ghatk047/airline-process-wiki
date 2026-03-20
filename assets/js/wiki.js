@@ -285,6 +285,11 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.addEventListener('mousedown', e => { draggingLB=true; lx=e.clientX; ly=e.clientY; img.style.cursor='grabbing'; });
     document.addEventListener('mousemove', e => { if (!draggingLB) return; ox+=e.clientX-lx; oy+=e.clientY-ly; lx=e.clientX; ly=e.clientY; applyT(); });
     document.addEventListener('mouseup', () => { draggingLB=false; img.style.cursor='grab'; });
+    /* Touch support for mobile pan + pinch-zoom */
+    let pt=0,lastDist=0;
+    canvas.addEventListener('touchstart', e => { e.preventDefault(); if(e.touches.length===1){draggingLB=true;lx=e.touches[0].clientX;ly=e.touches[0].clientY;}else if(e.touches.length===2){lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);} },{passive:false});
+    canvas.addEventListener('touchmove', e => { e.preventDefault(); if(e.touches.length===1&&draggingLB){ox+=e.touches[0].clientX-lx;oy+=e.touches[0].clientY-ly;lx=e.touches[0].clientX;ly=e.touches[0].clientY;applyT();}else if(e.touches.length===2){const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);scale=Math.min(Math.max(scale*(d/lastDist),0.15),8);lastDist=d;applyT();} },{passive:false});
+    canvas.addEventListener('touchend', () => { draggingLB=false; });
     document.addEventListener('keydown', e => { if (e.key==='Escape') closeLB(); });
     ov.addEventListener('click', e => { if (e.target===ov) closeLB(); });
     return ov;
