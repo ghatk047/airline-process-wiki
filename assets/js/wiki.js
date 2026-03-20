@@ -166,15 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
     a.addEventListener('click', () => { if (isMobile()) closeMobile(); });
   });
 
-  /* ── 7. AUTO-COLLAPSE ON MOUSE LEAVE (desktop) ── */
-  let hoverTimer;
-  sidebar.addEventListener('mouseleave', () => {
-    if (!isMobile() && !sidebar.classList.contains('rail')) {
-      hoverTimer = setTimeout(() => setSidebarRail(), 1200);
-    }
-  });
+  /* ── 7. HOVER EXPAND FROM RAIL (desktop only) ── */
+  /* Sidebar only collapses via toggle button — not on mouse leave */
   sidebar.addEventListener('mouseenter', () => {
-    clearTimeout(hoverTimer);
     if (!isMobile() && sidebar.classList.contains('rail')) {
       setSidebarExpanded();
     }
