@@ -243,19 +243,6 @@ tbody td { padding: 9px 12px; vertical-align: top; line-height: 1.5; }
 .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
 /* ── SIDEBAR COLLAPSE ──────────────────────────────────────────────────── */
-#sidebar-toggle {
-  position: fixed; top: 14px; left: calc(var(--sidebar-w) - 14px);
-  z-index: 200; width: 26px; height: 26px; border-radius: 50%;
-  background: var(--orange); color: #fff; border: 2px solid #fff;
-  cursor: pointer; font-size: 9px; display: flex; align-items: center;
-  justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,.25);
-  transition: left .25s ease;
-}
-.sidebar { transition: transform .25s ease; }
-.sidebar.sidebar-collapsed { transform: translateX(calc(-1 * var(--sidebar-w))); }
-.sidebar.sidebar-collapsed ~ #sidebar-toggle { left: 6px; }
-.main { transition: margin-left .25s ease; }
-.main.main-expanded { margin-left: 0 !important; }
 
 /* ── BPMN LIGHTBOX ─────────────────────────────────────────────────────── */
 #bpmn-lightbox {
@@ -328,8 +315,174 @@ tbody td { padding: 9px 12px; vertical-align: top; line-height: 1.5; }
 .sr-role { font-size: 10px; color: var(--muted); margin-left: auto; font-style: italic; }
 .sr-empty { padding: 18px; text-align: center; color: var(--muted); font-size: 12px; }
 
-/* ── Mobile & tablet responsive sidebar ─────────────────────────── */
-/* Overlay backdrop for mobile sidebar */
+/* ═══════════════════════════════════════════════════════════════
+   COLLAPSIBLE SIDEBAR — desktop icon-rail + hover expand
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --sidebar-w:        260px;
+  --sidebar-rail-w:   52px;   /* icon-only collapsed width */
+  --sidebar-trans:    .22s ease;
+}
+
+/* ── Base sidebar ── */
+.sidebar {
+  position: fixed;
+  top: var(--topbar-h);
+  left: 0;
+  width: var(--sidebar-w);
+  height: calc(100vh - var(--topbar-h));
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 90;
+  transition: width var(--sidebar-trans);
+  padding: 10px 0;
+}
+
+/* ── Main content offset ── */
+.main {
+  margin-left: var(--sidebar-w);
+  transition: margin-left var(--sidebar-trans);
+}
+
+/* ── L1 domain icon pills (always visible) ── */
+.sidebar-domain {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 0;
+  transition: background .15s, color .15s;
+}
+.sidebar-domain:hover { color: var(--navy); background: var(--bg); }
+.sidebar-domain .domain-icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  background: var(--blue-l);
+  transition: background .15s;
+}
+.sidebar-domain:hover .domain-icon,
+.sidebar-domain.open .domain-icon { background: var(--navy); filter: brightness(10); }
+.sidebar-domain .domain-label { transition: opacity var(--sidebar-trans); }
+.sidebar-domain .chevron { margin-left: auto; font-size: 9px; transition: transform .2s; flex-shrink: 0; }
+.sidebar-domain.open .chevron { transform: rotate(90deg); }
+
+/* ── Collapsed rail — icon only ── */
+.sidebar.rail {
+  width: var(--sidebar-rail-w);
+}
+.sidebar.rail ~ .main {
+  margin-left: var(--sidebar-rail-w);
+}
+.sidebar.rail .sidebar-domain {
+  padding: 8px 13px;
+  justify-content: center;
+}
+.sidebar.rail .domain-label,
+.sidebar.rail .chevron,
+.sidebar.rail .sidebar-l2,
+.sidebar.rail .sidebar-l2-link,
+.sidebar.rail .sidebar-l3 { 
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+.sidebar.rail .domain-icon {
+  background: var(--blue-l);
+  filter: none;
+}
+.sidebar.rail .sidebar-domain:hover .domain-icon {
+  background: var(--orange);
+  filter: brightness(10);
+}
+
+/* Tooltip on hover in rail mode */
+.sidebar.rail .sidebar-domain {
+  position: relative;
+}
+.sidebar.rail .sidebar-domain::after {
+  content: attr(data-label);
+  position: absolute;
+  left: calc(var(--sidebar-rail-w) + 4px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--navy);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s;
+  z-index: 200;
+}
+.sidebar.rail .sidebar-domain:hover::after { opacity: 1; }
+
+/* ── Toggle button ── */
+#sidebarToggle, #sidebar-toggle {
+  position: fixed;
+  top: calc(var(--topbar-h) + 10px);
+  left: calc(var(--sidebar-w) - 13px);
+  z-index: 200;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left var(--sidebar-trans), background .15s;
+  box-shadow: 0 1px 4px rgba(0,0,0,.12);
+}
+#sidebarToggle:hover, #sidebar-toggle:hover { background: var(--navy); color: #fff; }
+
+.sidebar.rail ~ #sidebarToggle,
+.sidebar.rail ~ #sidebar-toggle {
+  left: calc(var(--sidebar-rail-w) - 13px);
+}
+
+/* ── Drag handle ── */
+#sidebar-resizer {
+  position: fixed;
+  top: var(--topbar-h);
+  left: var(--sidebar-w);
+  width: 4px;
+  height: calc(100vh - var(--topbar-h));
+  cursor: col-resize;
+  z-index: 95;
+  background: transparent;
+  transition: left var(--sidebar-trans);
+}
+#sidebar-resizer:hover,
+#sidebar-resizer.dragging { background: var(--orange); }
+.sidebar.rail ~ #sidebar-resizer {
+  left: var(--sidebar-rail-w);
+}
+
+/* ── Mobile overlay ── */
 #sidebar-overlay {
   display: none;
   position: fixed;
@@ -340,43 +493,31 @@ tbody td { padding: 9px 12px; vertical-align: top; line-height: 1.5; }
 }
 #sidebar-overlay.active { display: block; }
 
+/* ── Mobile ── */
 @media (max-width: 900px) {
-  /* Sidebar slides in over content — doesn't push it */
   .sidebar {
-    position: fixed;
-    top: var(--topbar-h);
-    left: 0;
-    height: calc(100vh - var(--topbar-h));
-    z-index: 90;
+    width: var(--sidebar-w) !important;
     transform: translateX(calc(-1 * var(--sidebar-w)));
+    transition: transform var(--sidebar-trans);
     box-shadow: none;
   }
-  /* Main takes full width */
-  .main {
-    margin-left: 0 !important;
-  }
-  /* Toggle button always visible */
-  #sidebar-toggle, .sidebar-toggle {
-    display: flex !important;
-    left: 6px;
-  }
-  /* Sidebar open state on mobile */
   .sidebar.mobile-open {
     transform: translateX(0);
     box-shadow: 4px 0 24px rgba(0,0,0,.18);
   }
-  .sidebar.mobile-open ~ #sidebar-overlay { display: block; }
-  /* Hide desktop collapse state on mobile */
-  .sidebar.sidebar-collapsed {
-    transform: translateX(calc(-1 * var(--sidebar-w)));
+  .main { margin-left: 0 !important; }
+  #sidebarToggle, #sidebar-toggle { left: 8px !important; }
+  #sidebar-resizer { display: none; }
+  .sidebar.rail .domain-label,
+  .sidebar.rail .chevron,
+  .sidebar.rail .sidebar-l2 {
+    opacity: 1; pointer-events: auto; height: auto; overflow: visible;
   }
-  /* Topbar adjustments */
   .topbar-right a:not(.gh-btn) { display: none; }
   .search-box { width: 140px; }
 }
 
 @media (max-width: 480px) {
-  .search-box { width: 100px; font-size: 11px; }
-  .topbar-logo span { display: none; }
   :root { --sidebar-w: 240px; }
+  .search-box { width: 100px; }
 }
