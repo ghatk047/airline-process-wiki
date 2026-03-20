@@ -1,0 +1,52 @@
+flowchart LR
+  subgraph P1[Phase 1: Planning Assumptions]
+    A([Start]) --> B[Initiate annual\nplanning cycle]
+    B --> C[Extract prior-year\nactuals from SAP FI/CO]
+    C --> D[Pull macro and fuel\nprice assumptions]
+    D --> E{CFO approves\nassumptions?}
+    E -- No --> D
+    E -- Yes --> F[Publish planning\nguidance pack]
+  end
+
+  subgraph P2[Phase 2: Budget Build and Submission]
+    F --> G[Distribute templates\nvia SAP BPC]
+    G --> H[Depts enter cost\ncentre budgets]
+    H --> I{All submissions\nby deadline?}
+    I -- No --> H
+    I -- Yes --> J[Validate headcount\nvs SuccessFactors]
+    J --> K[Validate capex vs\nfleet and route plan]
+  end
+
+  subgraph P3[Phase 3: Consolidation and Challenge]
+    K --> L[Consolidate PandL,\ncash flow, balance sheet]
+    L --> M{EBITDAR target\nmet?}
+    M -- No --> N[Issue cut targets\nto cost centres]
+    N --> H
+    M -- Yes --> O[Reconcile fuel hedge\npositions with treasury]
+  end
+
+  subgraph P4[Phase 4: Board Approval and Lock]
+    O --> P[Prepare exec budget\npack in Tableau]
+    P --> Q[Present to Board\nFinance Committee]
+    Q --> R{Board approved\nwithout major changes?}
+    R -- No --> S[Revise budget\nper board direction]
+    S --> Q
+    R -- Yes --> T[Lock baseline in\nSAP BPC and SAP CO]
+  end
+
+  subgraph P5[Phase 5: Monitoring and Reforecast]
+    T --> U[Generate monthly\nactuals vs budget]
+    U --> V{Variance exceeds\nmateriality threshold?}
+    V -- Yes --> W[Trigger rolling\nreforecast cycle]
+    W --> U
+    V -- No --> X[Archive and close\nbudget cycle]
+    X --> Y([End])
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style Y fill:#003366,color:#fff,stroke:#003366
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style I fill:#ff6600,color:#fff,stroke:#ff6600
+  style M fill:#ff6600,color:#fff,stroke:#ff6600
+  style R fill:#ff6600,color:#fff,stroke:#ff6600
+  style V fill:#ff6600,color:#fff,stroke:#ff6600

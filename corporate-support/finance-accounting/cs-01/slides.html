@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS-01 Slides — Financial Planning &amp; Budgeting</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-01</span>
+    <h1>Financial Planning &amp; Budgeting</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cs-01.png" alt="BPMN for CS-01" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Finance & Accounting</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-01</span>
+    <h1>Financial Planning &amp; Budgeting</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CS-01</li>
+          <li><strong>L1 Domain:</strong> Corporate Support Functions</li>
+          <li><strong>L2 Process:</strong> Finance &amp; Accounting</li>
+          <li><strong>L3 Name:</strong> Financial Planning &amp; Budgeting</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">19</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">9</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Initiate annual planning cycle in SAP S/4HANA</li><li><strong>Phase 2:</strong> Distribute budget templates via SAP BPC</li><li><strong>Phase 3:</strong> Consolidate full P&amp;L, cash flow, and balance sheet</li><li><strong>Phase 4:</strong> Prepare executive budget pack for Board presentati</li><li><strong>Phase 5:</strong> Generate monthly actuals vs budget variance report</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>CFO</li><li>Capital Planning Manager</li><li>Cost Centre Manager</li><li>FP&amp;A Analyst</li><li>FP&amp;A Director</li><li>FP&amp;A Manager</li><li>Financial Controller</li><li>HR Finance Partner</li><li>Treasury Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>Bloomberg Terminal</li><li>SAP BPC (Business Planning &amp; Consolidation)</li><li>SAP S/4HANA Finance (FI/CO)</li><li>SAP SuccessFactors</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Finance & Accounting</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-01</span>
+    <h1>Financial Planning &amp; Budgeting</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Initiate annual planning cycle in SAP S/4HANA</td>
+        <td class="kpi-col">Planning cycle launched ≥12 weeks before fiscal year-end</td>
+        <td class="pain-col">Misalignment between network planning schedule (Amadeus SkyWORKS) and finance calendar delays capacity cost assumptions by 2–3 weeks</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Extract prior-year actuals from SAP FI/CO</td>
+        <td class="kpi-col">Actuals extraction completed within 3 business days of year-end close</td>
+        <td class="pain-col">Manual reclassification of intercompany recharges between airline OpCo and MRO subsidiary inflates cost centre variances by up to 8%</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Pull macro &amp; fuel price assumptions</td>
+        <td class="kpi-col">Fuel price assumption reviewed against IATA Jet Fuel Monitor within ±5% of market consensus</td>
+        <td class="pain-col">Jet fuel price volatility (±40% year-on-year) makes fixed planning assumptions obsolete within Q1; no direct feed from Bloomberg into SAP BPC requiring manual re-entry</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.4</td>
+        <td>CFO review and approval of planning assumptions</td>
+        <td class="kpi-col">Assumptions approved and published within 5 business days of Treasury submission</td>
+        <td class="pain-col">Late delivery of network capacity plan from Amadeus SkyMAX optimisation run blocks CFO sign-off; fleet assignment iterations can extend 2+ weeks past planning calendar</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Distribute budget templates via SAP BPC</td>
+        <td class="kpi-col">Templates distributed within 2 business days of assumption approval</td>
+        <td class="pain-col">SAP BPC template version conflicts when cost centre hierarchy changes mid-cycle (e.g., post-restructuring) cause data submission errors requiring IT intervention</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Departments enter cost centre budgets in SAP BPC</td>
+        <td class="kpi-col">On-time submission rate ≥90% of cost centres by stated deadline</td>
+        <td class="pain-col">Operational departments (Ground Ops, Crew Planning) lack financial modelling skills; submissions frequently contain formula errors, requiring FP&amp;A rework averaging 3 days per cycle</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Validate completeness of departmental submissions</td>
+        <td class="kpi-col">100% submission completeness achieved before consolidation window opens</td>
+        <td class="pain-col">No automated reminder workflow in SAP BPC; FP&amp;A team manually tracks submissions via spreadsheet, introducing version control risk</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Validate headcount budget vs SAP SuccessFactors plan</td>
+        <td class="kpi-col">Headcount variance between BPC submission and SuccessFactors plan ≤2% at department level</td>
+        <td class="pain-col">SAP SuccessFactors and SAP BPC do not share a live integration; headcount data exported via flat-file weekly, causing stale data when departments submit after the extract cut-off</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.5</td>
+        <td>Validate capex requests against fleet and route plan</td>
+        <td class="kpi-col">Capex budget total reconciled to strategic fleet plan within ±2% variance</td>
+        <td class="pain-col">Boeing 737 MAX delivery slippages (historically 6–18 months) invalidate fleet-linked capex budgets; no automated feed from Boeing delivery portal into SAP CO requiring manual re-phasing</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Consolidate full P&amp;L, cash flow, and balance sheet</td>
+        <td class="kpi-col">Consolidation completed within 3 business days of submission deadline</td>
+        <td class="pain-col">Intercompany eliminations between airline, MRO entity, and loyalty programme require manual journal entries in SAP BPC; risk of double-counting revenue estimated at 1–2% of group revenue</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Assess consolidated budget vs EBITDAR target</td>
+        <td class="kpi-col">EBITDAR margin target ≥15% on consolidated airline revenue</td>
+        <td class="pain-col">Fuel and labour costs (&gt;65% of OPEX) are largely non-discretionary; gap closure options are limited and CFO pressure to cut maintenance capex risks AOG rate increases in Y+1</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Issue cut targets and iterate with cost centres</td>
+        <td class="kpi-col">Resubmission cycle completed within 5 business days of cut target issuance</td>
+        <td class="pain-col">Repeated iteration loops (average 2.3 rounds per cycle) extend the planning calendar into operational freeze windows, increasing risk of budget being published after the fiscal year has started</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Reconcile fuel hedge positions with treasury model</td>
+        <td class="kpi-col">Hedge coverage ratio target ≥50% of planned fuel consumption for next 12 months</td>
+        <td class="pain-col">Fuel hedging positions managed in Bloomberg are not natively visible in SAP BPC; hedge P&amp;L impact must be manually bridged, introducing a reporting lag of up to 5 business days</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Prepare executive budget pack for Board presentation</td>
+        <td class="kpi-col">Board pack delivered ≥5 business days before Finance Committee meeting</td>
+        <td class="pain-col">Manual export of SAP BPC data into Tableau introduces version risk; FP&amp;A teams maintain parallel Excel models that diverge from SAP BPC source of truth, undermining data integrity</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Present budget to Board Finance Committee</td>
+        <td class="kpi-col">Board approval obtained at first presentation in ≥75% of annual cycles</td>
+        <td class="pain-col">Board members may request scenario re-runs (e.g., different fuel assumptions) that SAP BPC cannot perform live in the board room; delays approval by 1–2 weeks</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Lock approved budget baseline in SAP BPC and SAP CO</td>
+        <td class="kpi-col">Budget locked and released to SAP CO within 3 business days of Board approval</td>
+        <td class="pain-col">SAP BPC version locking does not prevent ad-hoc manual adjustments via SAP CO cost centre planning; shadow budgets maintained by operations managers erode single-source-of-truth discipline</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Generate monthly actuals vs budget variance report</td>
+        <td class="kpi-col">Management accounts published within 5 business days of month-end close</td>
+        <td class="pain-col">Month-end close extended by late Accounts Payable accruals from MRO vendors (average 3–4 day delay post month-end); delays variance reporting and triggers reforecast discussions without complete data</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Assess variance against materiality threshold</td>
+        <td class="kpi-col">Reforecast trigger decision made within 2 business days of management accounts publication</td>
+        <td class="pain-col">Absence of a formal materiality policy means reforecast decisions are made ad-hoc; in fuel price spike scenarios (e.g., geopolitical events), Finance may be 6–8 weeks behind market reality</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Execute rolling reforecast and update SAP BPC</td>
+        <td class="kpi-col">Rolling reforecast cycle completed within 10 business days of trigger; forecast accuracy ≤3% vs subsequent actuals</td>
+        <td class="pain-col">Revenue reforecast requires Amadeus NRM booking-curve data that is not available in SAP BPC; FP&amp;A manually requests extracts from Revenue Management team, adding 2–3 day dependency</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Finance & Accounting</span>
+  </div>
+</div>
+
+</body>
+</html>
