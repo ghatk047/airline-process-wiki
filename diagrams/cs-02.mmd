@@ -1,0 +1,55 @@
+flowchart LR
+  subgraph P1[Phase 1: Master Data and Baseline]
+    A([Start]) --> B[Maintain cost centre\nhierarchy in SAP CO]
+    B --> C[Load approved budget\nbaseline into SAP CO]
+    C --> D[Configure activity types\nand internal rates]
+    D --> E{Cost centre structure\naligned to budget?}
+    E -- No --> B
+    E -- Yes --> F[Publish CO master data\nto all cost owners]
+  end
+
+  subgraph P2[Phase 2: Actuals Capture and Allocation]
+    F --> G[Capture direct cost\npostings via SAP FI]
+    G --> H[Run assessment cycles\nfor indirect costs]
+    H --> I[Settle maintenance orders\nto cost objects via AMOS]
+    I --> J{All allocation cycles\nbalanced to zero?}
+    J -- No --> K[Investigate unallocated\nbalances in SAP CO]
+    K --> H
+    J -- Yes --> L[Close period in\nSAP S/4HANA CO]
+  end
+
+  subgraph P3[Phase 3: Route and Fleet Profitability]
+    L --> M[Extract flight-level\nunit costs from SAP CO]
+    M --> N[Join revenue and capacity\ndata via AWS Redshift]
+    N --> O[Calculate CASM, RASM\nand contribution margin]
+    O --> P{Routes below\nprofitability threshold?}
+    P -- Yes --> Q[Flag routes for\nnetwork review panel]
+    P -- No --> R[Archive profitability\nresults to data lake]
+    Q --> R
+  end
+
+  subgraph P4[Phase 4: Variance Analysis]
+    R --> S[Run budget vs actuals\ncomparison in SAP BPC]
+    S --> T[Classify and quantify\nmaterial variances]
+    T --> U{Variance exceeds\nmateriality threshold?}
+    U -- No --> V[Document minor variances\nin commentary log]
+    U -- Yes --> W[Conduct root-cause analysis\nwith cost centre managers]
+    W --> V
+  end
+
+  subgraph P5[Phase 5: Reporting and Cost Control]
+    V --> X[Compile monthly management\naccounts pack in Tableau]
+    X --> Y{CFO escalation or\nreforecast required?}
+    Y -- Yes --> Z[Issue cost reduction\ndirectives via SAP BPC]
+    Z --> AA[Trigger rolling reforecast\ncycle in SAP BPC]
+    AA --> AB([End])
+    Y -- No --> AB
+  end
+
+  style A fill:#003366,color:#fff,stroke:#003366
+  style AB fill:#003366,color:#fff,stroke:#003366
+  style E fill:#ff6600,color:#fff,stroke:#ff6600
+  style J fill:#ff6600,color:#fff,stroke:#ff6600
+  style P fill:#ff6600,color:#fff,stroke:#ff6600
+  style U fill:#ff6600,color:#fff,stroke:#ff6600
+  style Y fill:#ff6600,color:#fff,stroke:#ff6600

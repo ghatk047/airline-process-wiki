@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS-02 Slides — Management Accounting &amp; Cost Control</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --navy:   #003366;
+    --orange: #FF6600;
+    --light:  #F0F7FF;
+    --mid:    #D6E4F0;
+    --text:   #1a1a1a;
+  }
+  body { font-family: 'Inter', 'Segoe UI', sans-serif; background:#1a1a1a; color:var(--text); }
+
+  /* ── Slide container ── */
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    margin:32px auto; padding:0;
+    display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.4);
+    page-break-after: always;
+    overflow:hidden;
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background:var(--navy); color:#fff;
+    padding:14px 32px; display:flex;
+    align-items:center; justify-content:space-between;
+    flex-shrink:0;
+  }
+  .slide-header .pid-tag {
+    background:var(--orange); color:#fff;
+    padding:3px 12px; border-radius:4px;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+  .slide-header h1 { font-size:18px; font-weight:600; flex:1; margin:0 20px; }
+  .slide-header .meta { font-size:12px; opacity:.8; white-space:nowrap; }
+
+  /* ── Slide body ── */
+  .slide-body { flex:1; overflow:hidden; display:flex; flex-direction:column; }
+
+  /* ── Slide A — BPMN ── */
+  .bpmn-full {
+    width:100%; height:100%; object-fit:contain;
+    background:#f8f8f8; display:block;
+  }
+  .placeholder {
+    flex:1; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px;
+    background:var(--light); color:#666;
+  }
+  .placeholder code {
+    font-size:11px; background:#fff;
+    padding:8px 16px; border-radius:4px;
+    border:1px solid #ddd;
+  }
+
+  /* ── Slide B — Attributes ── */
+  .attrs-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0; height:100%;
+  }
+  .attr-panel {
+    padding:24px 28px;
+    border-right:1px solid #e0e0e0;
+  }
+  .attr-panel:last-child { border-right:none; }
+  .attr-panel h3 {
+    font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.8px; color:var(--orange); margin-bottom:12px;
+  }
+  .stat-row {
+    display:flex; gap:24px; margin-bottom:20px;
+  }
+  .stat-box {
+    background:var(--light); border-radius:8px;
+    padding:10px 16px; text-align:center; flex:1;
+  }
+  .stat-box .num { font-size:28px; font-weight:700; color:var(--navy); }
+  .stat-box .lbl { font-size:10px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+  ul.attr-list { list-style:none; }
+  ul.attr-list li {
+    padding:5px 0; border-bottom:1px solid #f0f0f0;
+    font-size:12px; line-height:1.4;
+  }
+  ul.attr-list li:last-child { border-bottom:none; }
+
+  /* ── Slide C — KPIs ── */
+  .kpi-wrap { padding:16px 28px; overflow:auto; height:100%; }
+  .kpi-table { width:100%; border-collapse:collapse; font-size:11px; }
+  .kpi-table thead tr { background:var(--navy); color:#fff; }
+  .kpi-table th {
+    padding:8px 10px; text-align:left;
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .kpi-table tbody tr:nth-child(even) { background:var(--light); }
+  .kpi-table td { padding:7px 10px; border-bottom:1px solid #eee; vertical-align:top; }
+  .step-col { font-weight:700; color:var(--navy); white-space:nowrap; width:55px; }
+  .gate-col { text-align:center; width:45px; color:var(--orange); font-size:14px; }
+  .kpi-col  { width:200px; }
+  .pain-col { color:#7f3f00; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    background:var(--light); padding:8px 32px;
+    display:flex; justify-content:space-between;
+    font-size:10px; color:#666; flex-shrink:0;
+    border-top:2px solid var(--orange);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background:#fff; }
+    .slide { margin:0; box-shadow:none; width:100vw; height:100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE A — BPMN ══════════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-02</span>
+    <h1>Management Accounting &amp; Cost Control</h1>
+    <span class="meta">Slide 1 of 3 — Process Flow</span>
+  </div>
+  <div class="slide-body">
+<img src="../../../assets/img/cs-02.png" alt="BPMN for CS-02" class="bpmn-full">
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Finance & Accounting</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE B — PROCESS ATTRIBUTES ════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-02</span>
+    <h1>Management Accounting &amp; Cost Control</h1>
+    <span class="meta">Slide 2 of 3 — Process Attributes</span>
+  </div>
+  <div class="slide-body">
+    <div class="attrs-grid">
+      <div class="attr-panel">
+        <h3>Overview</h3>
+        <ul class="attr-list">
+          <li><strong>Process ID:</strong> CS-02</li>
+          <li><strong>L1 Domain:</strong> Corporate Support Functions</li>
+          <li><strong>L2 Process:</strong> Finance &amp; Accounting</li>
+          <li><strong>L3 Name:</strong> Management Accounting &amp; Cost Control</li>
+        </ul>
+        <div class="stat-row" style="margin-top:20px">
+          <div class="stat-box"><div class="num">18</div><div class="lbl">L4 Steps</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="lbl">Decision Gates</div></div>
+          <div class="stat-box"><div class="num">8</div><div class="lbl">Exceptions</div></div>
+        </div>
+        <h3 style="margin-top:12px">Process Phases</h3>
+        <ul class="attr-list"><li><strong>Phase 1:</strong> Maintain cost centre hierarchy in SAP CO</li><li><strong>Phase 2:</strong> Capture direct cost postings via SAP FI/MM</li><li><strong>Phase 3:</strong> Extract flight-level unit costs from SAP CO-PA</li><li><strong>Phase 4:</strong> Run budget vs actuals comparison in SAP BPC</li><li><strong>Phase 5:</strong> Compile monthly management accounts pack</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Roles / Swim Lanes</h3>
+        <ul class="attr-list"><li>Accounts Payable Specialist</li><li>CFO / Finance Director</li><li>CO Functional Consultant</li><li>Data Analytics Engineer</li><li>Finance Business Partner</li><li>Financial Planning Analyst</li><li>Head of Management Accounting</li><li>Head of Route Profitability</li><li>MRO Finance Analyst</li><li>Management Accountant</li><li>Route Profitability Analyst</li></ul>
+      </div>
+      <div class="attr-panel">
+        <h3>Systems</h3>
+        <ul class="attr-list"><li>AMOS by Swiss AviationSoftware</li><li>AWS Redshift</li><li>SAP BPC (Business Planning and Consolidation)</li><li>SAP S/4HANA CO (Controlling)</li><li>SAP S/4HANA CO-PA (Profitability Analysis)</li><li>SAP S/4HANA FI (Financial Accounting)</li><li>Tableau</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Finance & Accounting</span>
+  </div>
+</div>
+
+<!-- ══ SLIDE C — KPIs & RISK ════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="pid-tag">CS-02</span>
+    <h1>Management Accounting &amp; Cost Control</h1>
+    <span class="meta">Slide 3 of 3 — KPIs &amp; Risk Register</span>
+  </div>
+  <div class="slide-body">
+    <div class="kpi-wrap">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Step</th><th>L4 Step Name</th>
+          <th>KPI / Target</th><th>Pain Point / Risk</th><th>Gate</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="step-col">1.1</td>
+        <td>Maintain cost centre hierarchy in SAP CO</td>
+        <td class="kpi-col">100% of cost centres mapped to a valid profit centre before period open</td>
+        <td class="pain-col">Organisational restructures (e.g. new MRO subsidiary, alliance JV) require manual CO hierarchy redesign; no automated sync from SAP SuccessFactors org chart</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.2</td>
+        <td>Load approved budget baseline into SAP CO</td>
+        <td class="kpi-col">Budget upload completed ≤3 business days after board approval</td>
+        <td class="pain-col">Manual mapping required between SAP BPC planning dimensions and SAP CO cost element groups; version mismatch causes reforecast figures to overwrite locked baseline</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">1.3</td>
+        <td>Configure activity types and internal activity rates</td>
+        <td class="kpi-col">Activity rate variance vs prior year ≤5%; all rates signed off by Finance Director</td>
+        <td class="pain-col">Flight-hour activity rates must be reconciled against Jeppesen crew pairing outputs; late crew schedule changes invalidate planned rate calculations after period open</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">2.1</td>
+        <td>Capture direct cost postings via SAP FI/MM</td>
+        <td class="kpi-col">Invoice processing cycle time ≤2 days; &lt;0.5% posting error rate per period</td>
+        <td class="pain-col">Aircraft fuel invoices from multi-supplier contracts require manual cost element split between line maintenance and flight operations cost centres; no automated split rule in standard SAP MM</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.2</td>
+        <td>Run periodic assessment cycles for indirect costs</td>
+        <td class="kpi-col">Assessment cycle runtime ≤4 hours; 100% of sender cost centre balances zeroed after cycle</td>
+        <td class="pain-col">IT infrastructure costs shared across 20+ airline business units require quarterly review of allocation keys; stale keys from pre-cloud migration era overallocate to legacy data centre cost centres</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.3</td>
+        <td>Settle maintenance work orders to cost objects</td>
+        <td class="kpi-col">Work order settlement rate ≥98% within 5 business days of task completion</td>
+        <td class="pain-col">AMOS-to-SAP CO integration relies on batch interface; late settlement of heavy maintenance C-checks causes significant under-absorption variances in MRO cost centres at period-end</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">2.4</td>
+        <td>Validate allocation cycles balanced to zero</td>
+        <td class="kpi-col">Unallocated balance &lt;$1,000 (rounding tolerance) per sender cost centre after cycle</td>
+        <td class="pain-col">Incorrect sender/receiver split factors from ad-hoc project cost centres prevent full balance clearance; requires manual journal workaround which bypasses standard CO cycle logic</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">3.1</td>
+        <td>Extract flight-level unit costs from SAP CO-PA</td>
+        <td class="kpi-col">CASM (Cost per Available Seat Mile) calculated for 100% of operated flights within 48 hours of period close</td>
+        <td class="pain-col">CO-PA account-based model requires manual derivation rules for mapping operational cost drivers (tail number, route) to profitability segments; missing derivation rules create blank segment records that distort CASM calculations</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.2</td>
+        <td>Join revenue and capacity data via AWS Redshift</td>
+        <td class="kpi-col">Data pipeline latency ≤6 hours after period close; revenue reconciliation variance vs FI ledger &lt;0.1%</td>
+        <td class="pain-col">Amadeus Altéa proration logic for interline and codeshare itineraries produces estimated revenue splits; actuals are only available after IATA BSP settlement (30-day lag), creating provisional revenue figures in monthly management accounts</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.3</td>
+        <td>Calculate CASM, RASM, and contribution margin</td>
+        <td class="kpi-col">Network contribution margin ≥18% of total revenue; CASM ex-fuel ≤8.5¢</td>
+        <td class="pain-col">Allocation of fleet ownership costs (depreciation, lessor rentals) to routes requires arbitrary ASM-based split; aircraft utilisation swings caused by irregular operations distort per-route cost benchmarks</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">3.4</td>
+        <td>Flag underperforming routes for network review</td>
+        <td class="kpi-col">Routes with contribution margin &lt;5% for 3 consecutive months escalated within 5 business days</td>
+        <td class="pain-col">Seasonal routes and new route ramp-up periods require judgement-based exclusion from watch-list; absence of a formal ramp-up tolerance policy leads to premature escalation of viable long-term routes</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.1</td>
+        <td>Run budget vs actuals comparison in SAP BPC</td>
+        <td class="kpi-col">Variance report published ≤4 business days after period close</td>
+        <td class="pain-col">SAP BPC data model refresh from S/4HANA requires nightly batch job; ad-hoc reforecasts during the period create multiple BPC plan versions that are difficult to reconcile with the locked baseline</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.2</td>
+        <td>Classify and quantify material variances by type</td>
+        <td class="kpi-col">≥90% of variances &gt;$50K classified and explained within 5 business days of period close</td>
+        <td class="pain-col">Fuel price variances require decomposition into volume, price, and hedge settlement components; hedge P&amp;L is recorded in a separate SAP FI treasury module with no direct CO linkage, requiring manual reconciliation</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">4.3</td>
+        <td>Determine if variance requires CFO escalation</td>
+        <td class="kpi-col">100% of variances exceeding $500K or 10% of cost centre budget escalated within 24 hours</td>
+        <td class="pain-col">Materiality thresholds are static (set at year-start) and do not adjust for mid-year reforecast changes; cost centres that received budget cuts become hypersensitive to small nominal variances</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">4.4</td>
+        <td>Conduct root-cause analysis with cost centre managers</td>
+        <td class="kpi-col">Root-cause memo issued within 3 business days of escalation trigger</td>
+        <td class="pain-col">Operational cost centre managers (e.g. Maintenance Base, Ground Ops) have limited SAP CO access and rely on Finance to extract drill-down data; information asymmetry delays variance explanation by 2–3 days</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.1</td>
+        <td>Compile monthly management accounts pack</td>
+        <td class="kpi-col">Management pack distributed to CFO and ExCo ≤6 business days after period close</td>
+        <td class="pain-col">Management pack relies on manual Excel consolidation of Tableau outputs, SAP BPC variance reports, and treasury hedge commentary; multi-source assembly creates version control risk and delays when any single source is late</td>
+        <td class="gate-col"></td>
+      </tr>
+      <tr>
+        <td class="step-col">5.2</td>
+        <td>Issue cost reduction directives to business units</td>
+        <td class="kpi-col">Cost reduction directives issued within 2 business days of ExCo approval</td>
+        <td class="pain-col">Spending authority changes require SAP CO cost centre budget updates AND updates to SAP Ariba procurement approval hierarchies; the two systems are not integrated, so purchasing limits frequently lag behind finance decisions</td>
+        <td class="gate-col">⚠</td>
+      </tr>
+      <tr>
+        <td class="step-col">5.3</td>
+        <td>Trigger rolling reforecast cycle in SAP BPC</td>
+        <td class="kpi-col">Rolling reforecast completed and published ≤10 business days after period close</td>
+        <td class="pain-col">Mid-year capacity changes (aircraft AOG events, network schedule revisions from Amadeus SkyWORKS) invalidate the ASM base used for CASM forecasting; reforecasts become stale within days if not linked to live schedule data</td>
+        <td class="gate-col"></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Airlines Process Wiki · SAP Consulting</span>
+    <span>Corporate Support Functions › Finance & Accounting</span>
+  </div>
+</div>
+
+</body>
+</html>

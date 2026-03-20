@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Finance &amp; Accounting · Corporate Support Functions · Airlines Process Wiki</title>
+<title>CS-02 · Management Accounting &amp; Cost Control · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/wiki.css">
+<link rel="stylesheet" href="../../../assets/css/wiki.css">
 </head>
 <body>
 <header class="topbar">
-  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <a href="../../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
   <span class="topbar-badge">v1.0</span>
   <div class="topbar-right">
     <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
-    <a href="../../">Home</a>
+    <a href="../../../">Home</a>
+    <a href="../../../corporate-support/">Corporate Support Functions</a>
     <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
   </div>
 </header>
@@ -218,7 +219,7 @@
       <a class="sidebar-l2-link" href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a>
       <div class="sidebar-l3">
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-01/"><span class="status-dot status-done"></span><span class="pid">CS-01</span>Financial Planning &amp; Budgeting</a>
-        <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-02/"><span class="status-dot status-done"></span><span class="pid">CS-02</span>Management Accounting &amp; Cost Control</a>
+        <a class="sidebar-l3-link active" href="../../../corporate-support/finance-accounting/cs-02/"><span class="status-dot status-done"></span><span class="pid">CS-02</span>Management Accounting &amp; Cost Control</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-03/"><span class="status-dot status-queue"></span><span class="pid">CS-03</span>Revenue Accounting &amp; BSP Settlement</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-08/"><span class="status-dot status-queue"></span><span class="pid">CS-08</span>PSS (Passenger Service System) Management</a>
         <a class="sidebar-l3-link" href="../../../corporate-support/finance-accounting/cs-09/"><span class="status-dot status-queue"></span><span class="pid">CS-09</span>Cybersecurity &amp; Threat Management</a>
@@ -242,117 +243,258 @@
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
 <div class="breadcrumb">
-  <a href="../../">Home</a><span class="sep">›</span>
-  <a href="../">Corporate Support Functions</a><span class="sep">›</span>
-  <span class="current">Finance &amp; Accounting</span>
+  <a href="../../../">Home</a><span class="sep">›</span>
+  <a href="../../../corporate-support/">Corporate Support Functions</a><span class="sep">›</span>
+  <a href="../../../corporate-support/finance-accounting/">Finance &amp; Accounting</a><span class="sep">›</span>
+  <span class="current">CS-02 · Management Accounting &amp; Cost Control</span>
 </div>
 <div class="page-header">
   <div class="page-header-left">
-    <h1>Finance &amp; Accounting</h1>
-    <p>Corporate Support Functions · 3 of 11 subprocesses complete · Updated 2026-03-19 22:03</p>
+    <h1>Management Accounting &amp; Cost Control</h1>
+    <p>Corporate Support Functions › Finance &amp; Accounting · 18 L4 steps · 5 phases · 5 decision gates · Updated 2026-03-19 22:03</p>
+  </div>
+  <div class="page-header-meta">
+    <span class="pid-badge">CS-02</span>
+    <span class="status-badge complete">✅ Complete</span>
   </div>
 </div>
-<div class="domain-grid"><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-01</span>Financial Planning &amp; Budgeting</h3>
-    <p>Finance &amp; Accounting · 19 steps · 5 gates</p>
+<div class="card" id="diagram">
+  <div class="card-header"><span class="icon">📊</span><h2>Process Flow Diagram (BPMN)</h2></div>
+  <div class="card-body">
+    <div class="diagram-wrap" id="diag-wrap-cs-02">
+      <img src="../../../assets/img/cs-02.png" alt="CS-02 BPMN diagram"
+           style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.08)"
+           onload="document.getElementById('diag-placeholder-cs-02').style.display='none'"
+           onerror="this.style.display='none';document.getElementById('diag-placeholder-cs-02').style.display='flex'">
+      <div id="diag-placeholder-cs-02" class="diagram-placeholder" style="display:none">
+        <span class="ico">🗂</span>
+        <span>PNG not yet generated.</span>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cs-01/">View process →</a>
+</div>
+<div class="card" id="l4-steps">
+  <div class="card-header"><span class="icon">📋</span><h2>L4 Process Steps</h2></div>
+  <div class="card-body" style="padding:0">
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Step</th><th>Step Name</th><th>Role / Swim Lane</th><th>System</th>
+        <th>Input</th><th>Output</th><th>KPI</th><th>Dec?</th><th>Exc?</th>
+      </tr></thead>
+      <tbody><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 1</div>1.1</td>
+  <td class="td-name">Maintain cost centre hierarchy in SAP CO</td>
+  <td class="td-role">Management Accountant</td>
+  <td><span class="stag sap">SAP S/4HANA CO (Controlling)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved organisational structure and departmental headcount plan</td>
+  <td style="font-size:10px">Cost centre master data with hierarchy nodes aligned to P&amp;L structure</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of cost centres mapped to a valid profit centre before period open</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.2</td>
+  <td class="td-name">Load approved budget baseline into SAP CO</td>
+  <td class="td-role">Financial Planning Analyst</td>
+  <td><span class="stag sap">SAP BPC (Business Planning and Consolidation)</span></td>
+  <td style="font-size:10px;color:#6b7280">Board-approved annual budget locked in SAP BPC</td>
+  <td style="font-size:10px">Cost centre plan versions activated in SAP CO for current fiscal year</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Budget upload completed ≤3 business days after board approval</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">1.3</td>
+  <td class="td-name">Configure activity types and internal activity rates</td>
+  <td class="td-role">CO Functional Consultant</td>
+  <td><span class="stag sap">SAP S/4HANA CO (Controlling)</span></td>
+  <td style="font-size:10px;color:#6b7280">Planned cost centre volumes (flight hours, maintenance man-hours, FTE counts)</td>
+  <td style="font-size:10px">Validated activity type rates for internal cost transfers (e.g. $/flight-hour, $/MHR)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Activity rate variance vs prior year ≤5%; all rates signed off by Finance Director</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 2</div>2.1</td>
+  <td class="td-name">Capture direct cost postings via SAP FI/MM</td>
+  <td class="td-role">Accounts Payable Specialist</td>
+  <td><span class="stag sap">SAP S/4HANA FI (Financial Accounting)</span></td>
+  <td style="font-size:10px;color:#6b7280">Supplier invoices, purchase orders, and expense reports from SAP Concur</td>
+  <td style="font-size:10px">Verified FI document postings assigned to correct cost centres and cost elements</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Invoice processing cycle time ≤2 days; &lt;0.5% posting error rate per period</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.2</td>
+  <td class="td-name">Run periodic assessment cycles for indirect costs</td>
+  <td class="td-role">Management Accountant</td>
+  <td><span class="stag sap">SAP S/4HANA CO (Controlling)</span></td>
+  <td style="font-size:10px;color:#6b7280">Closed FI period with all direct postings; allocation cycle configuration</td>
+  <td style="font-size:10px">Indirect costs distributed from sender cost centres (IT, HR, Finance) to receiver cost centres</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Assessment cycle runtime ≤4 hours; 100% of sender cost centre balances zeroed after cycle</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.3</td>
+  <td class="td-name">Settle maintenance work orders to cost objects</td>
+  <td class="td-role">MRO Finance Analyst</td>
+  <td><span class="stag custom">AMOS by Swiss AviationSoftware</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed maintenance work orders with labour, parts, and subcontract costs</td>
+  <td style="font-size:10px">Settled maintenance costs transferred from AMOS work orders to SAP CO cost centres or internal orders</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Work order settlement rate ≥98% within 5 business days of task completion</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">2.4</td>
+  <td class="td-name">Validate allocation cycles balanced to zero</td>
+  <td class="td-role">Management Accountant</td>
+  <td><span class="stag sap">SAP S/4HANA CO (Controlling)</span></td>
+  <td style="font-size:10px;color:#6b7280">Completed assessment and settlement cycle results</td>
+  <td style="font-size:10px">Period-close sign-off confirmation; unallocated balance report</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Unallocated balance &lt;$1,000 (rounding tolerance) per sender cost centre after cycle</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 3</div>3.1</td>
+  <td class="td-name">Extract flight-level unit costs from SAP CO-PA</td>
+  <td class="td-role">Route Profitability Analyst</td>
+  <td><span class="stag sap">SAP S/4HANA CO-PA (Profitability Analysis)</span></td>
+  <td style="font-size:10px;color:#6b7280">Settled cost centre and order actuals; flight schedule from Amadeus SkyWORKS</td>
+  <td style="font-size:10px">Per-flight cost breakdown by cost element (fuel, crew, maintenance, fees, overhead)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">CASM (Cost per Available Seat Mile) calculated for 100% of operated flights within 48 hours of period close</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.2</td>
+  <td class="td-name">Join revenue and capacity data via AWS Redshift</td>
+  <td class="td-role">Data Analytics Engineer</td>
+  <td><span class="stag aws">AWS Redshift</span></td>
+  <td style="font-size:10px;color:#6b7280">Passenger revenue from Amadeus Altéa PSS; ancillary revenue from booking engine; ASM/RPM from Amadeus SkyWORKS</td>
+  <td style="font-size:10px">Integrated flight-level dataset combining cost, revenue, and capacity metrics</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Data pipeline latency ≤6 hours after period close; revenue reconciliation variance vs FI ledger &lt;0.1%</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">3.3</td>
+  <td class="td-name">Calculate CASM, RASM, and contribution margin</td>
+  <td class="td-role">Route Profitability Analyst</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Integrated flight-level dataset from AWS Redshift</td>
+  <td style="font-size:10px">Route-level and fleet-type profitability scorecard (CASM, RASM, load factor, contribution margin $/seat)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Network contribution margin ≥18% of total revenue; CASM ex-fuel ≤8.5¢</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">3.4</td>
+  <td class="td-name">Flag underperforming routes for network review</td>
+  <td class="td-role">Head of Route Profitability</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Route profitability scorecard; minimum profitability threshold (CFO-approved)</td>
+  <td style="font-size:10px">Route watch-list submitted to Network Planning for schedule review in Amadeus SkySYM</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Routes with contribution margin &lt;5% for 3 consecutive months escalated within 5 business days</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 4</div>4.1</td>
+  <td class="td-name">Run budget vs actuals comparison in SAP BPC</td>
+  <td class="td-role">Management Accountant</td>
+  <td><span class="stag sap">SAP BPC (Business Planning and Consolidation)</span></td>
+  <td style="font-size:10px;color:#6b7280">Locked budget baseline; period actuals loaded from SAP S/4HANA FI/CO</td>
+  <td style="font-size:10px">Variance report by cost centre, cost element, and P&amp;L line</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Variance report published ≤4 business days after period close</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.2</td>
+  <td class="td-name">Classify and quantify material variances by type</td>
+  <td class="td-role">Management Accountant</td>
+  <td><span class="stag sap">SAP S/4HANA CO (Controlling)</span></td>
+  <td style="font-size:10px;color:#6b7280">Variance report; cost centre manager commentary submitted via email or SharePoint</td>
+  <td style="font-size:10px">Variance classification register (price variance, volume variance, mix variance, one-off items)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">≥90% of variances &gt;$50K classified and explained within 5 business days of period close</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr>
+  <td class="td-step">4.3</td>
+  <td class="td-name">Determine if variance requires CFO escalation</td>
+  <td class="td-role">Finance Business Partner</td>
+  <td><span class="stag sap">SAP BPC (Business Planning and Consolidation)</span></td>
+  <td style="font-size:10px;color:#6b7280">Classified variance register; materiality thresholds approved by CFO</td>
+  <td style="font-size:10px">Escalation decision: CFO notified within 24 hours if threshold breached</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">100% of variances exceeding $500K or 10% of cost centre budget escalated within 24 hours</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">4.4</td>
+  <td class="td-name">Conduct root-cause analysis with cost centre managers</td>
+  <td class="td-role">Finance Business Partner</td>
+  <td><span class="stag sap">SAP S/4HANA CO (Controlling)</span></td>
+  <td style="font-size:10px;color:#6b7280">Escalated variance items; cost centre transaction drill-down from SAP CO</td>
+  <td style="font-size:10px">Root-cause analysis memo; corrective action plan with owner and due date</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Root-cause memo issued within 3 business days of escalation trigger</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+</tr><tr class="phase-break">
+  <td class="td-step"><div style="font-size:9px;font-weight:700;color:#ff6600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Phase 5</div>5.1</td>
+  <td class="td-name">Compile monthly management accounts pack</td>
+  <td class="td-role">Head of Management Accounting</td>
+  <td><span class="stag custom">Tableau</span></td>
+  <td style="font-size:10px;color:#6b7280">Variance analysis, route profitability scorecard, corrective action plans</td>
+  <td style="font-size:10px">Monthly management accounts pack (P&amp;L, cost bridge, KPI dashboard, CFO narrative)</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Management pack distributed to CFO and ExCo ≤6 business days after period close</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.2</td>
+  <td class="td-name">Issue cost reduction directives to business units</td>
+  <td class="td-role">CFO / Finance Director</td>
+  <td><span class="stag sap">SAP BPC (Business Planning and Consolidation)</span></td>
+  <td style="font-size:10px;color:#6b7280">Approved cost control decisions from CFO review of management pack</td>
+  <td style="font-size:10px">Revised cost centre spending authorities; updated BPC reforecast with reduction targets</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Cost reduction directives issued within 2 business days of ExCo approval</td>
+  <td style="text-align:center"><span class="flag flag-y">Y</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr><tr>
+  <td class="td-step">5.3</td>
+  <td class="td-name">Trigger rolling reforecast cycle in SAP BPC</td>
+  <td class="td-role">Financial Planning Analyst</td>
+  <td><span class="stag sap">SAP BPC (Business Planning and Consolidation)</span></td>
+  <td style="font-size:10px;color:#6b7280">Cost reduction directives; updated fuel price and capacity assumptions</td>
+  <td style="font-size:10px">Revised full-year forecast published in SAP BPC; new CASM and EBITDAR outlook circulated</td>
+  <td style="font-family:var(--mono);font-size:9px;color:#374151">Rolling reforecast completed and published ≤10 business days after period close</td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+  <td style="text-align:center"><span class="flag flag-n">N</span></td>
+</tr></tbody>
+    </table></div>
   </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-02</span>Management Accounting &amp; Cost Control</h3>
-    <p>Finance &amp; Accounting · 18 steps · 5 gates</p>
+</div>
+<div class="card" id="meta">
+  <div class="card-header"><span class="icon">📋</span><h2>Process Attributes</h2></div>
+  <div class="card-body">
+    <div class="meta-grid">
+      <div>
+        <div class="meta-section"><h3>Identification</h3>
+          <div class="krow"><span class="kname">Process ID</span><span class="kval">CS-02</span></div>
+          <div class="krow"><span class="kname">L1 Domain</span><span class="kval">Corporate Support Functions</span></div>
+          <div class="krow"><span class="kname">L2 Process</span><span class="kval">Finance &amp; Accounting</span></div>
+          <div class="krow"><span class="kname">L3 Name</span><span class="kval">Management Accounting &amp; Cost Control</span></div>
+          <div class="krow"><span class="kname">L4 Steps</span><span class="kval">18 across 5 phases</span></div>
+          <div class="krow"><span class="kname">Decision Gates</span><span class="kval">5 (all with iteration loops)</span></div>
+          <div class="krow"><span class="kname">Exceptions</span><span class="kval">8 documented</span></div>
+        </div>
+        <div class="meta-section"><h3>Swim Lanes (Roles)</h3><div class="swim"><div class="dot" style="background:#3b82f6"></div>Management Accountant</div><div class="swim"><div class="dot" style="background:#8b5cf6"></div>Financial Planning Analyst</div><div class="swim"><div class="dot" style="background:#ec4899"></div>CO Functional Consultant</div><div class="swim"><div class="dot" style="background:#f59e0b"></div>Accounts Payable Specialist</div><div class="swim"><div class="dot" style="background:#10b981"></div>MRO Finance Analyst</div><div class="swim"><div class="dot" style="background:#06b6d4"></div>Route Profitability Analyst</div><div class="swim"><div class="dot" style="background:#6366f1"></div>Data Analytics Engineer</div><div class="swim"><div class="dot" style="background:#0ea5e9"></div>Head of Route Profitability</div><div class="swim"><div class="dot" style="background:#84cc16"></div>Finance Business Partner</div><div class="swim"><div class="dot" style="background:#ef4444"></div>Head of Management Accounting</div><div class="swim"><div class="dot" style="background:#f97316"></div>CFO / Finance Director</div></div>
+        <div class="meta-section"><h3>Systems &amp; Tools</h3><span class="stag sap">SAP S/4HANA CO (Controlling)</span><span class="stag sap">SAP BPC (Business Planning and Consolidation)</span><span class="stag sap">SAP S/4HANA FI (Financial Accounting)</span><span class="stag custom">AMOS by Swiss AviationSoftware</span><span class="stag sap">SAP S/4HANA CO-PA (Profitability Analysis)</span><span class="stag aws">AWS Redshift</span><span class="stag custom">Tableau</span></div>
+      </div>
+      <div>
+        <div class="meta-section"><h3>Key Performance Indicators</h3><div class="krow"><span class="kname">Maintain cost centre hierarchy in SAP CO</span><span class="kval">100% of cost centres mapped to a valid profit centre before period open</span></div><div class="krow"><span class="kname">Load approved budget baseline into SAP CO</span><span class="kval">Budget upload completed ≤3 business days after board approval</span></div><div class="krow"><span class="kname">Configure activity types and internal activity rates</span><span class="kval">Activity rate variance vs prior year ≤5%; all rates signed off by Finance Director</span></div><div class="krow"><span class="kname">Capture direct cost postings via SAP FI/MM</span><span class="kval">Invoice processing cycle time ≤2 days; &lt;0.5% posting error rate per period</span></div><div class="krow"><span class="kname">Run periodic assessment cycles for indirect costs</span><span class="kval">Assessment cycle runtime ≤4 hours; 100% of sender cost centre balances zeroed after cycle</span></div><div class="krow"><span class="kname">Settle maintenance work orders to cost objects</span><span class="kval">Work order settlement rate ≥98% within 5 business days of task completion</span></div><div class="krow"><span class="kname">Validate allocation cycles balanced to zero</span><span class="kval">Unallocated balance &lt;$1,000 (rounding tolerance) per sender cost centre after cycle</span></div><div class="krow"><span class="kname">Extract flight-level unit costs from SAP CO-PA</span><span class="kval">CASM (Cost per Available Seat Mile) calculated for 100% of operated flights within 48 hours of period close</span></div></div>
+        <div class="meta-section"><h3>Airline-Specific Risks &amp; Pain Points</h3><div class="risk-card">Organisational restructures (e.g. new MRO subsidiary, alliance JV) require manual CO hierarchy redesign; no automated sync from SAP SuccessFactors org chart</div><div class="risk-card">Manual mapping required between SAP BPC planning dimensions and SAP CO cost element groups; version mismatch causes reforecast figures to overwrite locked baseline</div><div class="risk-card">Flight-hour activity rates must be reconciled against Jeppesen crew pairing outputs; late crew schedule changes invalidate planned rate calculations after period open</div><div class="risk-card">Aircraft fuel invoices from multi-supplier contracts require manual cost element split between line maintenance and flight operations cost centres; no automated split rule in standard SAP MM</div><div class="risk-card">IT infrastructure costs shared across 20+ airline business units require quarterly review of allocation keys; stale keys from pre-cloud migration era overallocate to legacy data centre cost centres</div><div class="risk-card">AMOS-to-SAP CO integration relies on batch interface; late settlement of heavy maintenance C-checks causes significant under-absorption variances in MRO cost centres at period-end</div></div>
+        <div class="meta-section"><h3>Inputs / Outputs</h3>
+          <div class="krow"><span class="kname">Primary Input</span><span class="kval">Approved organisational structure and departmental headcount plan</span></div>
+          <div class="krow"><span class="kname">Primary Output</span><span class="kval">Revised full-year forecast published in SAP BPC; new CASM and EBITDAR outlook circulated</span></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cs-02/">View process →</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-03</span>Revenue Accounting &amp; BSP Settlement</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-03/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-08</span>PSS (Passenger Service System) Management</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-08/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-09</span>Cybersecurity &amp; Threat Management</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-09/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-10</span>Data Engineering &amp; Analytics Platform</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-10/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-11</span>Strategic Sourcing &amp; Vendor Selection</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-11/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-12</span>Fuel Procurement &amp; Supply Chain</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-12/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-13</span>Aircraft Parts &amp; Consumables Procurement</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-13/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-14</span>Safety Management System (SMS)</h3>
-    <p>Finance &amp; Accounting · Queued</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">⏳ Queued</div>
-    <a class="domain-card-link" href="cs-14/">Queued</a>
-  </div>
-</div><div class="domain-card">
-  <div class="domain-card-hdr">
-    <h3><span class="pid-badge" style="font-size:11px;margin-right:8px">CS-15</span>Regulatory Compliance &amp; AOC Management</h3>
-    <p>Finance &amp; Accounting · 17 steps · 7 gates</p>
-  </div>
-  <div class="domain-card-body">
-    <div class="domain-card-stat">✅ Complete</div>
-    <a class="domain-card-link" href="cs-15/">View process →</a>
-  </div>
-</div></div>
+</div>
+<div class="pn-nav"><a class="pn-btn" href="../cs-01/"><span class="arrow">←</span><span><span class="sub">Previous</span>CS-01 · Financial Planning &amp; Budgeting</span></a><a class="pn-btn" href="../cs-03/"><span><span class="sub">Next</span>CS-03 · Revenue Accounting &amp; BSP Settlement</span><span class="arrow">→</span></a></div>
 </main>
-<script src="../../assets/js/wiki.js"></script>
+<script src="../../../assets/js/wiki.js"></script>
 </body>
 </html>
