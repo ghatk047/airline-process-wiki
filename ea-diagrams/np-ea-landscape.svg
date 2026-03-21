@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1600" viewBox="0 0 2400 1600" font-family="Inter,Arial,sans-serif">
+  <rect width="2400" height="1600" fill="#F8FAFC"/>
+  <text x="1200" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#003366">Network Planning &amp; Scheduling — Application Landscape</text>
+  <text x="1200" y="64" text-anchor="middle" font-size="13" fill="#64748B">60 subprocesses · 34 systems · 4 L2 process groups</text>
+  <rect x="60" y="104" width="2280" height="92" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="70" y="124" font-size="11" font-weight="700" fill="#64748B" letter-spacing="1">L2 PROCESS GROUPS</text>
+  <rect x="580" y="120" width="280" height="60" rx="6" fill="#003366" stroke="#001F3F" stroke-width="1.5"/>
+  <text x="720" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">Schedule Planning</text>
+  <rect x="900" y="120" width="280" height="60" rx="6" fill="#004080" stroke="#001F3F" stroke-width="1.5"/>
+  <text x="1040" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">Revenue Management</text>
+  <rect x="1220" y="120" width="280" height="60" rx="6" fill="#004d99" stroke="#001F3F" stroke-width="1.5"/>
+  <text x="1360" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">Pricing & Fare Mgmt</text>
+  <rect x="1540" y="120" width="280" height="60" rx="6" fill="#0059b3" stroke="#001F3F" stroke-width="1.5"/>
+  <text x="1680" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">Sales & Distribution</text>
+  <rect x="60" y="280" width="740" height="352" rx="10" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1.5" opacity="0.5"/>
+  <text x="76" y="304" font-size="13" font-weight="700" fill="#1E3A8A">Planning Suite</text>
+  <rect x="830" y="280" width="740" height="168" rx="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.5" opacity="0.5"/>
+  <text x="846" y="304" font-size="13" font-weight="700" fill="#14532D">PSS & Inventory</text>
+  <rect x="1600" y="280" width="740" height="168" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5" opacity="0.5"/>
+  <text x="1616" y="304" font-size="13" font-weight="700" fill="#92400E">Revenue & Pricing</text>
+  <rect x="60" y="750" width="740" height="260" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.5" opacity="0.5"/>
+  <text x="76" y="774" font-size="13" font-weight="700" fill="#581C87">Distribution & GDS</text>
+  <rect x="830" y="750" width="740" height="168" rx="10" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.5" opacity="0.5"/>
+  <text x="846" y="774" font-size="13" font-weight="700" fill="#134E4A">Analytics & BI</text>
+  <rect x="1600" y="750" width="740" height="168" rx="10" fill="#FFE4E6" stroke="#E11D48" stroke-width="1.5" opacity="0.5"/>
+  <text x="1616" y="774" font-size="13" font-weight="700" fill="#881337">Finance & CRM</text>
+  <!-- Connector lines -->
+  <path d="M 1360 180 C 1360 258 163 258 163 336" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 258 163 258 163 336" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 258 163 258 163 336" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 258 341 258 341 336" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 258 341 258 341 336" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 258 519 258 519 336" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 258 697 258 697 336" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 258 697 258 697 336" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 258 697 258 697 336" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 304 163 304 163 428" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 304 163 304 163 428" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 304 163 304 163 428" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 304 163 304 163 428" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 304 341 304 341 428" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 304 341 304 341 428" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 304 519 304 519 428" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 304 519 304 519 428" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 304 697 304 697 428" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 350 163 350 163 520" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 258 935 258 935 336" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 258 935 258 935 336" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 258 935 258 935 336" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 258 935 258 935 336" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 258 1117 258 1117 336" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 258 1117 258 1117 336" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 258 1117 258 1117 336" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 258 1117 258 1117 336" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 258 1299 258 1299 336" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 258 1703 258 1703 336" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 258 1703 258 1703 336" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 258 1703 258 1703 336" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 258 1703 258 1703 336" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 258 1881 258 1881 336" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 258 1881 258 1881 336" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 258 1881 258 1881 336" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 258 1881 258 1881 336" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 258 2059 258 2059 336" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 258 2059 258 2059 336" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 258 2059 258 2059 336" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 258 2059 258 2059 336" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 258 2237 258 2237 336" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 493 163 493 163 806" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 493 163 493 163 806" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 493 163 493 163 806" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 493 163 493 163 806" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 493 341 493 341 806" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 493 341 493 341 806" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 493 341 493 341 806" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 493 519 493 519 806" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 493 519 493 519 806" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 493 519 493 519 806" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 493 519 493 519 806" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 493 697 493 697 806" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 493 697 493 697 806" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 493 697 493 697 806" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 539 163 539 163 898" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 539 163 539 163 898" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 539 341 539 341 898" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 539 341 539 341 898" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 539 341 539 341 898" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 539 519 539 519 898" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 493 933 493 933 806" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 493 933 493 933 806" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 493 933 493 933 806" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 493 933 493 933 806" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 493 1111 493 1111 806" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 493 1111 493 1111 806" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 493 1111 493 1111 806" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 493 1111 493 1111 806" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 493 1289 493 1289 806" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 493 1289 493 1289 806" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 493 1289 493 1289 806" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 493 1467 493 1467 806" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 493 1705 493 1705 806" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 493 1705 493 1705 806" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 493 1705 493 1705 806" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 720 180 C 720 493 1705 493 1705 806" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1360 180 C 1360 493 1887 493 1887 806" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1040 180 C 1040 493 1887 493 1887 806" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.35"/>
+  <path d="M 1680 180 C 1680 493 1887 493 1887 806" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.35"/>
+  <rect x="80" y="336" width="166" height="80" rx="6" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="163" y="372" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3A8A">Amadeus SkyCAST</text>
+  <text x="163" y="408" text-anchor="middle" font-size="9" fill="#94A3B8">19 processes</text>
+  <rect x="258" y="336" width="166" height="80" rx="6" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="341" y="372" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3A8A">Amadeus SkySYM</text>
+  <text x="341" y="408" text-anchor="middle" font-size="9" fill="#94A3B8">13 processes</text>
+  <rect x="436" y="336" width="166" height="80" rx="6" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="519" y="372" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3A8A">Amadeus SkyMAX</text>
+  <text x="519" y="408" text-anchor="middle" font-size="9" fill="#94A3B8">9 processes</text>
+  <rect x="614" y="336" width="166" height="80" rx="6" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="697" y="372" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3A8A">Amadeus SkyWORKS</text>
+  <text x="697" y="408" text-anchor="middle" font-size="9" fill="#94A3B8">16 processes</text>
+  <rect x="80" y="428" width="166" height="80" rx="6" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="163" y="458" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3A8A">OAG</text>
+  <text x="163" y="471" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3A8A">Schedule Analyser</text>
+  <text x="163" y="500" text-anchor="middle" font-size="9" fill="#94A3B8">23 processes</text>
+  <rect x="258" y="428" width="166" height="80" rx="6" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="341" y="464" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3A8A">SITA AMS</text>
+  <text x="341" y="500" text-anchor="middle" font-size="9" fill="#94A3B8">9 processes</text>
+  <rect x="436" y="428" width="166" height="80" rx="6" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="519" y="464" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3A8A">Jeppesen Crew Mgmt</text>
+  <text x="519" y="500" text-anchor="middle" font-size="9" fill="#94A3B8">5 processes</text>
+  <rect x="614" y="428" width="166" height="80" rx="6" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="697" y="464" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3A8A">Avtec Scout NOC</text>
+  <text x="697" y="500" text-anchor="middle" font-size="9" fill="#94A3B8">2 processes</text>
+  <rect x="80" y="520" width="166" height="80" rx="6" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="163" y="556" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3A8A">Crew Mgmt System</text>
+  <text x="163" y="592" text-anchor="middle" font-size="9" fill="#94A3B8">2 processes</text>
+  <rect x="850" y="336" width="170" height="80" rx="6" fill="white" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="935" y="372" text-anchor="middle" font-size="11" font-weight="600" fill="#14532D">Amadeus Altéa PSS</text>
+  <text x="935" y="408" text-anchor="middle" font-size="9" fill="#94A3B8">46 processes</text>
+  <rect x="1032" y="336" width="170" height="80" rx="6" fill="white" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="1117" y="372" text-anchor="middle" font-size="11" font-weight="600" fill="#14532D">NDC API Gateway</text>
+  <text x="1117" y="408" text-anchor="middle" font-size="9" fill="#94A3B8">30 processes</text>
+  <rect x="1214" y="336" width="170" height="80" rx="6" fill="white" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="1299" y="372" text-anchor="middle" font-size="11" font-weight="600" fill="#14532D">Accelya NDC</text>
+  <text x="1299" y="408" text-anchor="middle" font-size="9" fill="#94A3B8">1 processes</text>
+  <rect x="1620" y="336" width="166" height="80" rx="6" fill="white" stroke="#D97706" stroke-width="1.5"/>
+  <text x="1703" y="372" text-anchor="middle" font-size="11" font-weight="600" fill="#92400E">Amadeus NRM</text>
+  <text x="1703" y="408" text-anchor="middle" font-size="9" fill="#94A3B8">47 processes</text>
+  <rect x="1798" y="336" width="166" height="80" rx="6" fill="white" stroke="#D97706" stroke-width="1.5"/>
+  <text x="1881" y="372" text-anchor="middle" font-size="11" font-weight="600" fill="#92400E">PROS RM</text>
+  <text x="1881" y="408" text-anchor="middle" font-size="9" fill="#94A3B8">11 processes</text>
+  <rect x="1976" y="336" width="166" height="80" rx="6" fill="white" stroke="#D97706" stroke-width="1.5"/>
+  <text x="2059" y="372" text-anchor="middle" font-size="11" font-weight="600" fill="#92400E">ATPCO</text>
+  <text x="2059" y="408" text-anchor="middle" font-size="9" fill="#94A3B8">36 processes</text>
+  <rect x="2154" y="336" width="166" height="80" rx="6" fill="white" stroke="#D97706" stroke-width="1.5"/>
+  <text x="2237" y="372" text-anchor="middle" font-size="11" font-weight="600" fill="#92400E">Sabre AirVision RM</text>
+  <text x="2237" y="408" text-anchor="middle" font-size="9" fill="#94A3B8">1 processes</text>
+  <rect x="80" y="806" width="166" height="80" rx="6" fill="white" stroke="#9333EA" stroke-width="1.5"/>
+  <text x="163" y="842" text-anchor="middle" font-size="11" font-weight="600" fill="#581C87">Sabre GDS</text>
+  <text x="163" y="878" text-anchor="middle" font-size="9" fill="#94A3B8">31 processes</text>
+  <rect x="258" y="806" width="166" height="80" rx="6" fill="white" stroke="#9333EA" stroke-width="1.5"/>
+  <text x="341" y="842" text-anchor="middle" font-size="11" font-weight="600" fill="#581C87">Travelport GDS</text>
+  <text x="341" y="878" text-anchor="middle" font-size="9" fill="#94A3B8">12 processes</text>
+  <rect x="436" y="806" width="166" height="80" rx="6" fill="white" stroke="#9333EA" stroke-width="1.5"/>
+  <text x="519" y="842" text-anchor="middle" font-size="11" font-weight="600" fill="#581C87">Amadeus GDS</text>
+  <text x="519" y="878" text-anchor="middle" font-size="9" fill="#94A3B8">13 processes</text>
+  <rect x="614" y="806" width="166" height="80" rx="6" fill="white" stroke="#9333EA" stroke-width="1.5"/>
+  <text x="697" y="842" text-anchor="middle" font-size="11" font-weight="600" fill="#581C87">Sabre PRISM</text>
+  <text x="697" y="878" text-anchor="middle" font-size="9" fill="#94A3B8">11 processes</text>
+  <rect x="80" y="898" width="166" height="80" rx="6" fill="white" stroke="#9333EA" stroke-width="1.5"/>
+  <text x="163" y="934" text-anchor="middle" font-size="11" font-weight="600" fill="#581C87">IATA CRS</text>
+  <text x="163" y="970" text-anchor="middle" font-size="9" fill="#94A3B8">10 processes</text>
+  <rect x="258" y="898" width="166" height="80" rx="6" fill="white" stroke="#9333EA" stroke-width="1.5"/>
+  <text x="341" y="934" text-anchor="middle" font-size="11" font-weight="600" fill="#581C87">IATA BSP</text>
+  <text x="341" y="970" text-anchor="middle" font-size="9" fill="#94A3B8">8 processes</text>
+  <rect x="436" y="898" width="166" height="80" rx="6" fill="white" stroke="#9333EA" stroke-width="1.5"/>
+  <text x="519" y="934" text-anchor="middle" font-size="11" font-weight="600" fill="#581C87">SAP Ariba</text>
+  <text x="519" y="970" text-anchor="middle" font-size="9" fill="#94A3B8">4 processes</text>
+  <rect x="850" y="806" width="166" height="80" rx="6" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="933" y="842" text-anchor="middle" font-size="11" font-weight="600" fill="#134E4A">AWS Data Platform</text>
+  <text x="933" y="878" text-anchor="middle" font-size="9" fill="#94A3B8">41 processes</text>
+  <rect x="1028" y="806" width="166" height="80" rx="6" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="1111" y="842" text-anchor="middle" font-size="11" font-weight="600" fill="#134E4A">Tableau</text>
+  <text x="1111" y="878" text-anchor="middle" font-size="9" fill="#94A3B8">36 processes</text>
+  <rect x="1206" y="806" width="166" height="80" rx="6" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="1289" y="842" text-anchor="middle" font-size="11" font-weight="600" fill="#134E4A">Power BI</text>
+  <text x="1289" y="878" text-anchor="middle" font-size="9" fill="#94A3B8">10 processes</text>
+  <rect x="1384" y="806" width="166" height="80" rx="6" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="1467" y="842" text-anchor="middle" font-size="11" font-weight="600" fill="#134E4A">Azure Synapse</text>
+  <text x="1467" y="878" text-anchor="middle" font-size="9" fill="#94A3B8">1 processes</text>
+  <rect x="1620" y="806" width="170" height="80" rx="6" fill="white" stroke="#E11D48" stroke-width="1.5"/>
+  <text x="1705" y="842" text-anchor="middle" font-size="11" font-weight="600" fill="#881337">SAP S4HANA</text>
+  <text x="1705" y="878" text-anchor="middle" font-size="9" fill="#94A3B8">28 processes</text>
+  <rect x="1802" y="806" width="170" height="80" rx="6" fill="white" stroke="#E11D48" stroke-width="1.5"/>
+  <text x="1887" y="842" text-anchor="middle" font-size="11" font-weight="600" fill="#881337">Salesforce CRM</text>
+  <text x="1887" y="878" text-anchor="middle" font-size="9" fill="#94A3B8">7 processes</text>
+  <text x="60" y="1540" font-size="11" font-weight="700" fill="#64748B">LEGEND:</text>
+  <rect x="140" y="1528" width="14" height="14" rx="3" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="158" y="1540" font-size="10" fill="#475569">Planning Suite</text>
+  <rect x="278" y="1528" width="14" height="14" rx="3" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="296" y="1540" font-size="10" fill="#475569">PSS & Inventory</text>
+  <rect x="423" y="1528" width="14" height="14" rx="3" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="441" y="1540" font-size="10" fill="#475569">Revenue & Pricing</text>
+  <rect x="582" y="1528" width="14" height="14" rx="3" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.5"/>
+  <text x="600" y="1540" font-size="10" fill="#475569">Distribution & GDS</text>
+  <rect x="748" y="1528" width="14" height="14" rx="3" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="766" y="1540" font-size="10" fill="#475569">Analytics & BI</text>
+  <rect x="886" y="1528" width="14" height="14" rx="3" fill="#FFE4E6" stroke="#E11D48" stroke-width="1.5"/>
+  <text x="904" y="1540" font-size="10" fill="#475569">Finance & CRM</text>
+</svg>
