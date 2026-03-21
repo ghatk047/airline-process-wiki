@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1846" viewBox="0 0 2400 1846" font-family="Inter,Arial,sans-serif">
+  <rect width="2400" height="1846" fill="#F8FAFC"/>
+  <text x="1200" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#003366">Maintenance, Repair &amp; Overhaul — Application Landscape</text>
+  <text x="1200" y="58" text-anchor="middle" font-size="12" fill="#64748B">15 subprocesses · 35 systems · 5 L2 process groups</text>
+  <rect x="50" y="72" width="2300" height="75" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="58" y="90" font-size="9" font-weight="700" fill="#94A3B8" letter-spacing="1">L2 PROCESS GROUPS</text>
+  <rect x="510" y="100" width="260" height="55" rx="6" fill="#003366" stroke="#001F3F" stroke-width="1.5"/>
+  <text x="640" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#FFF">Airworthiness</text>
+  <text x="640" y="134" text-anchor="middle" font-size="11" font-weight="700" fill="#FFF">&amp; Compliance</text>
+  <rect x="790" y="100" width="260" height="55" rx="6" fill="#004080" stroke="#001F3F" stroke-width="1.5"/>
+  <text x="920" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#FFF">Engine &amp;</text>
+  <text x="920" y="134" text-anchor="middle" font-size="11" font-weight="700" fill="#FFF">Component Shop</text>
+  <rect x="1070" y="100" width="260" height="55" rx="6" fill="#005099" stroke="#001F3F" stroke-width="1.5"/>
+  <text x="1200" y="132" text-anchor="middle" font-size="12" font-weight="700" fill="#FFF">Heavy Maintenance</text>
+  <rect x="1350" y="100" width="260" height="55" rx="6" fill="#0060b3" stroke="#001F3F" stroke-width="1.5"/>
+  <text x="1480" y="132" text-anchor="middle" font-size="12" font-weight="700" fill="#FFF">Line Maintenance</text>
+  <rect x="1630" y="100" width="260" height="55" rx="6" fill="#0070cc" stroke="#001F3F" stroke-width="1.5"/>
+  <text x="1760" y="132" text-anchor="middle" font-size="12" font-weight="700" fill="#FFF">MRO Vendor Management</text>
+  <rect x="50" y="220" width="753" height="142" rx="10" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1.5" opacity="0.45"/>
+  <text x="62" y="242" font-size="12" font-weight="700" fill="#1E3A8A">Planning &amp; Scheduling</text>
+  <rect x="823" y="362" width="753" height="142" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.5" opacity="0.45"/>
+  <text x="835" y="384" font-size="12" font-weight="700" fill="#581C87">Distribution &amp; GDS</text>
+  <rect x="1597" y="504" width="753" height="306" rx="10" fill="#FFF3E0" stroke="#EA580C" stroke-width="1.5" opacity="0.45"/>
+  <text x="1609" y="526" font-size="12" font-weight="700" fill="#7C2D12">Operations &amp; Crew</text>
+  <rect x="50" y="830" width="753" height="224" rx="10" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.5" opacity="0.45"/>
+  <text x="62" y="852" font-size="12" font-weight="700" fill="#134E4A">Analytics &amp; BI</text>
+  <rect x="823" y="1054" width="753" height="224" rx="10" fill="#FFE4E6" stroke="#E11D48" stroke-width="1.5" opacity="0.45"/>
+  <text x="835" y="1076" font-size="12" font-weight="700" fill="#881337">Finance &amp; ERP</text>
+  <rect x="1597" y="1278" width="753" height="142" rx="10" fill="#F0FDF4" stroke="#15803D" stroke-width="1.5" opacity="0.45"/>
+  <text x="1609" y="1300" font-size="12" font-weight="700" fill="#14532D">HR &amp; Corporate</text>
+  <rect x="50" y="1440" width="753" height="306" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5" opacity="0.45"/>
+  <text x="62" y="1462" font-size="12" font-weight="700" fill="#475569">Other Systems</text>
+  <path d="M 1480 155 C 1480 210 143 210 143 266" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 210 311 210 311 266" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 210 479 210 479 266" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 282 916 282 916 408" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 352 1690 352 1690 550" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 352 1690 352 1690 550" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 352 1690 352 1690 550" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 352 1690 352 1690 550" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1760 155 C 1760 352 1690 352 1690 550" fill="none" stroke="#DC2626" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 352 1858 352 1858 550" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1760 155 C 1760 352 1858 352 1858 550" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 352 2026 352 2026 550" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 352 2194 352 2194 550" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 394 1690 394 1690 632" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 394 1858 394 1858 632" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 394 2026 394 2026 632" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 394 2194 394 2194 632" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 434 1690 434 1690 714" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 516 143 516 143 876" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1760 155 C 1760 516 143 516 143 876" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 516 311 516 311 876" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1760 155 C 1760 516 311 516 311 876" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 516 479 516 479 876" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 516 647 516 647 876" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1760 155 C 1760 556 143 556 143 958" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 628 916 628 916 1100" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 628 916 628 916 1100" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1760 155 C 1760 628 916 628 916 1100" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 628 1084 628 1084 1100" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1760 155 C 1760 628 1084 628 1084 1100" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 628 1252 628 1252 1100" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 628 1420 628 1420 1100" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1760 155 C 1760 668 916 668 916 1182" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1760 155 C 1760 668 1084 668 1084 1182" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1760 155 C 1760 668 1252 668 1252 1182" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 740 1690 740 1690 1324" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 820 143 820 143 1486" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 820 311 820 311 1486" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 820 311 820 311 1486" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 820 479 820 479 1486" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 820 479 820 479 1486" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 820 479 820 479 1486" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1760 155 C 1760 820 479 820 479 1486" fill="none" stroke="#9333EA" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 820 647 820 647 1486" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 862 143 862 143 1568" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 862 311 862 311 1568" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 862 479 862 479 1568" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 862 647 862 647 1568" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 640 155 C 640 902 143 902 143 1650" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <rect x="64" y="266" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="143" y="298" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Jeppesen FliteDeck</text>
+  <text x="143" y="331" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="232" y="266" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="311" y="298" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">A.SkyWORKS</text>
+  <text x="311" y="331" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="400" y="266" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="479" y="298" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Honeywell GoDirect</text>
+  <text x="479" y="331" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="837" y="408" width="158" height="72" rx="5" fill="white" stroke="#9333EA" stroke-width="1.5"/>
+  <text x="916" y="436" text-anchor="middle" font-size="10" font-weight="600" fill="#581C87">AWS S3</text>
+  <text x="916" y="449" text-anchor="middle" font-size="10" font-weight="600" fill="#581C87">(Long-Term Document Archive)</text>
+  <text x="916" y="473" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1611" y="550" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="1690" y="582" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">AMOS MRO</text>
+  <text x="1690" y="615" text-anchor="middle" font-size="8" fill="#94A3B8">15p</text>
+  <rect x="1779" y="550" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="1858" y="582" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">Ramco MRO</text>
+  <text x="1858" y="615" text-anchor="middle" font-size="8" fill="#94A3B8">2p</text>
+  <rect x="1947" y="550" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="2026" y="578" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">Trax</text>
+  <text x="2026" y="591" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">(MRO Software)</text>
+  <text x="2026" y="615" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="2115" y="550" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="2194" y="578" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">AMOS (Purchasing /</text>
+  <text x="2194" y="591" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">AOG Order module)</text>
+  <text x="2194" y="615" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1611" y="632" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="1690" y="660" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">AMOS</text>
+  <text x="1690" y="673" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">(Loan/Borrow module)</text>
+  <text x="1690" y="697" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1779" y="632" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="1858" y="660" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">direct AOG</text>
+  <text x="1858" y="673" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">desk contact</text>
+  <text x="1858" y="697" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1947" y="632" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="2026" y="664" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">AMOS</text>
+  <text x="2026" y="697" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="2115" y="632" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="2194" y="660" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">DHL / FedEx</text>
+  <text x="2194" y="673" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">AOG courier portal</text>
+  <text x="2194" y="697" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1611" y="714" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="1690" y="742" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">AMOS (Work Order</text>
+  <text x="1690" y="755" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">/ Task Card module)</text>
+  <text x="1690" y="779" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="876" width="158" height="72" rx="5" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="143" y="908" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">Tableau / Power BI</text>
+  <text x="143" y="941" text-anchor="middle" font-size="8" fill="#94A3B8">4p</text>
+  <rect x="232" y="876" width="158" height="72" rx="5" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="311" y="908" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">AWS S3 / Redshift</text>
+  <text x="311" y="941" text-anchor="middle" font-size="8" fill="#94A3B8">3p</text>
+  <rect x="400" y="876" width="158" height="72" rx="5" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="479" y="908" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">AWS Data Platform</text>
+  <text x="479" y="941" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="568" y="876" width="158" height="72" rx="5" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="647" y="904" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">Tableau (BI</text>
+  <text x="647" y="917" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">&amp; Reporting)</text>
+  <text x="647" y="941" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="958" width="158" height="72" rx="5" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="143" y="990" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">Power BI</text>
+  <text x="143" y="1023" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="837" y="1100" width="158" height="72" rx="5" fill="white" stroke="#E11D48" stroke-width="1.5"/>
+  <text x="916" y="1132" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">SAP Ariba</text>
+  <text x="916" y="1165" text-anchor="middle" font-size="8" fill="#94A3B8">7p</text>
+  <rect x="1005" y="1100" width="158" height="72" rx="5" fill="white" stroke="#E11D48" stroke-width="1.5"/>
+  <text x="1084" y="1128" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">SAP S/4HANA</text>
+  <text x="1084" y="1141" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">Finance (FI/CO)</text>
+  <text x="1084" y="1165" text-anchor="middle" font-size="8" fill="#94A3B8">4p</text>
+  <rect x="1173" y="1100" width="158" height="72" rx="5" fill="white" stroke="#E11D48" stroke-width="1.5"/>
+  <text x="1252" y="1128" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">SAP S/4HANA Finance</text>
+  <text x="1252" y="1141" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">(MM / Procurement)</text>
+  <text x="1252" y="1165" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1341" y="1100" width="158" height="72" rx="5" fill="white" stroke="#E11D48" stroke-width="1.5"/>
+  <text x="1420" y="1128" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">SAP Ariba /</text>
+  <text x="1420" y="1141" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">SAP S/4HANA Finance (FI/CO)</text>
+  <text x="1420" y="1165" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="837" y="1182" width="158" height="72" rx="5" fill="white" stroke="#E11D48" stroke-width="1.5"/>
+  <text x="916" y="1210" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">SAP Ariba</text>
+  <text x="916" y="1223" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">(Contract Management)</text>
+  <text x="916" y="1247" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1005" y="1182" width="158" height="72" rx="5" fill="white" stroke="#E11D48" stroke-width="1.5"/>
+  <text x="1084" y="1210" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">SAP Ariba</text>
+  <text x="1084" y="1223" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">(Change Order)</text>
+  <text x="1084" y="1247" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1173" y="1182" width="158" height="72" rx="5" fill="white" stroke="#E11D48" stroke-width="1.5"/>
+  <text x="1252" y="1210" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">SAP Ariba /</text>
+  <text x="1252" y="1223" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">SAP S/4HANA Finance</text>
+  <text x="1252" y="1247" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1611" y="1324" width="158" height="72" rx="5" fill="white" stroke="#15803D" stroke-width="1.5"/>
+  <text x="1690" y="1356" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">SAP SuccessFactors</text>
+  <text x="1690" y="1389" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="1486" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="143" y="1518" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">CAMP by Boeing</text>
+  <text x="143" y="1551" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="232" y="1486" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="311" y="1518" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">CAMP</text>
+  <text x="311" y="1551" text-anchor="middle" font-size="8" fill="#94A3B8">2p</text>
+  <rect x="400" y="1486" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="479" y="1514" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Boeing Toolbox</text>
+  <text x="479" y="1527" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">/ CAMP</text>
+  <text x="479" y="1551" text-anchor="middle" font-size="8" fill="#94A3B8">5p</text>
+  <rect x="568" y="1486" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="647" y="1518" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">A.Altéa Operations</text>
+  <text x="647" y="1551" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="1568" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="143" y="1600" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">ILS Partsbase</text>
+  <text x="143" y="1633" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="232" y="1568" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="311" y="1600" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">CAMP Systems</text>
+  <text x="311" y="1633" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="400" y="1568" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="479" y="1600" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Boeing TechConnect</text>
+  <text x="479" y="1633" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="568" y="1568" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="647" y="1600" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Trax</text>
+  <text x="647" y="1633" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="1650" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="143" y="1678" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">CAMP by</text>
+  <text x="143" y="1691" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">CAMP Systems International</text>
+  <text x="143" y="1715" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <text x="50" y="1816" font-size="10" font-weight="700" fill="#64748B">LEGEND:</text>
+  <rect x="120" y="1805" width="12" height="12" rx="2" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1.2"/>
+  <text x="136" y="1816" font-size="9" fill="#475569">Planning &amp; Scheduling</text>
+  <rect x="282" y="1805" width="12" height="12" rx="2" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.2"/>
+  <text x="298" y="1816" font-size="9" fill="#475569">Distribution &amp; GDS</text>
+  <rect x="426" y="1805" width="12" height="12" rx="2" fill="#FFF3E0" stroke="#EA580C" stroke-width="1.2"/>
+  <text x="442" y="1816" font-size="9" fill="#475569">Operations &amp; Crew</text>
+  <rect x="564" y="1805" width="12" height="12" rx="2" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.2"/>
+  <text x="580" y="1816" font-size="9" fill="#475569">Analytics &amp; BI</text>
+  <rect x="684" y="1805" width="12" height="12" rx="2" fill="#FFE4E6" stroke="#E11D48" stroke-width="1.2"/>
+  <text x="700" y="1816" font-size="9" fill="#475569">Finance &amp; ERP</text>
+  <rect x="798" y="1805" width="12" height="12" rx="2" fill="#F0FDF4" stroke="#15803D" stroke-width="1.2"/>
+  <text x="814" y="1816" font-size="9" fill="#475569">HR &amp; Corporate</text>
+  <rect x="918" y="1805" width="12" height="12" rx="2" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.2"/>
+  <text x="934" y="1816" font-size="9" fill="#475569">Other Systems</text>
+</svg>
