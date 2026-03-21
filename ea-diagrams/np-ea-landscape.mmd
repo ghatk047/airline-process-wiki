@@ -1,210 +1,199 @@
-%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter,Arial'}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px'}}}%%
 flowchart TB
 
-  %% ── L2 Process Groups ──────────────────────────────────────────
-  subgraph L2_PROCS[" Network Planning & Scheduling — L2 Process Groups "]
+  subgraph PROCS[Network Planning and Scheduling - L2 Process Groups]
     direction LR
-    L2_0[\"**Schedule Planning**\"]
-    L2_1[\"**Revenue Management**\"]
-    L2_2[\"**Pricing & Fare Management**\"]
-    L2_3[\"**Sales & Distribution**\"]
+    L2_SP[Schedule Planning]
+    L2_RM[Revenue Management]
+    L2_PF[Pricing and Fare Mgmt]
+    L2_SD[Sales and Distribution]
   end
 
-  %% ── Planning Suite ──────────────────────────────────────────
-  subgraph PLANNING_SUITE[" Planning Suite "]
+  subgraph PLANNING_SUITE[Planning Suite]
     direction TB
-    SYS0["SkyCAST\n<small>19 processes</small>"]
-    SYS1["SkySYM\n<small>13 processes</small>"]
-    SYS2["SkyMAX\n<small>9 processes</small>"]
-    SYS3["SkyWORKS\n<small>16 processes</small>"]
-    SYS4["OAG Schedule Analyser\n<small>23 processes</small>"]
-    SYS5["SITA AMS\n<small>9 processes</small>"]
-    SYS6["SITA STB\n<small>1 processes</small>"]
-    SYS7["AMOS MRO\n<small>2 processes</small>"]
-    SYS8["Avtec Scout NOC\n<small>2 processes</small>"]
-    SYS9["Crew Mgmt System\n<small>2 processes</small>"]
-    SYS10["Jeppesen Crew Mgmt\n<small>5 processes</small>"]
-    SYS11["Jeppesen FliteDeck\n<small>2 processes</small>"]
-    SYS12["Airport\nMgmt\n<small>2 processes</small>"]
+    S0[Amadeus SkyCAST - 19p]
+    S1[Amadeus SkySYM - 13p]
+    S2[Amadeus SkyMAX - 9p]
+    S3[Amadeus SkyWORKS - 16p]
+    S4[OAG Schedule Analyse - 23p]
+    S5[SITA AMS - 9p]
+    S6[SITA STB - 1p]
+    S7[AMOS MRO - 2p]
+    S8[Avtec Scout NOC - 2p]
+    S9[Crew Mgmt System - 2p]
+    S10[Jeppesen Crew Mgmt - 5p]
+    S11[Jeppesen FliteDeck - 2p]
+    S12[Amadeus Airport Mana - 2p]
   end
 
-  %% ── PSS & Inventory ──────────────────────────────────────────
-  subgraph PSS_AND_INVENTORY[" PSS & Inventory "]
+  subgraph PSS_AND_INVENTORY[PSS and Inventory]
     direction TB
-    SYS13["Altéa PSS\n<small>46 processes</small>"]
-    SYS14["NDC API Gateway\n<small>30 processes</small>"]
-    SYS15["Accelya NDC\n<small>1 processes</small>"]
+    S13[Amadeus Altea PSS - 46p]
+    S14[NDC API Gateway - 30p]
+    S15[Accelya NDC - 1p]
   end
 
-  %% ── Revenue & Pricing ──────────────────────────────────────────
-  subgraph REVENUE_AND_PRICING[" Revenue & Pricing "]
+  subgraph REVENUE_AND_PRICING[Revenue and Pricing]
     direction TB
-    SYS16["NRM\n<small>47 processes</small>"]
-    SYS17["PROS RM\n<small>11 processes</small>"]
-    SYS18["Sabre AirVision RM\n<small>1 processes</small>"]
-    SYS19["ATPCO\n<small>36 processes</small>"]
+    S16[Amadeus NRM - 47p]
+    S17[PROS RM - 11p]
+    S18[Sabre AirVision RM - 1p]
+    S19[ATPCO - 36p]
   end
 
-  %% ── Distribution & GDS ──────────────────────────────────────────
-  subgraph DISTRIBUTION_AND_GDS[" Distribution & GDS "]
+  subgraph DISTRIBUTION_GDS[Distribution GDS]
     direction TB
-    SYS20["Sabre GDS\n<small>31 processes</small>"]
-    SYS21["Travelport GDS\n<small>12 processes</small>"]
-    SYS22["GDS\n<small>13 processes</small>"]
-    SYS23["Sabre PRISM\n<small>11 processes</small>"]
-    SYS24["IATA CRS\n<small>10 processes</small>"]
-    SYS25["IATA BSP\n<small>8 processes</small>"]
-    SYS26["SAP Ariba\n<small>4 processes</small>"]
+    S20[Sabre GDS - 31p]
+    S21[Travelport GDS - 12p]
+    S22[Amadeus GDS - 13p]
+    S23[Sabre PRISM - 11p]
+    S24[IATA CRS - 10p]
+    S25[IATA BSP - 8p]
+    S26[SAP Ariba - 4p]
   end
 
-  %% ── Analytics & BI ──────────────────────────────────────────
-  subgraph ANALYTICS_AND_BI[" Analytics & BI "]
+  subgraph ANALYTICS_AND_BI[Analytics and BI]
     direction TB
-    SYS27["AWS Data\nPlatform\n<small>41 processes</small>"]
-    SYS28["Tableau\n<small>36 processes</small>"]
-    SYS29["Power BI\n<small>10 processes</small>"]
-    SYS30["Azure Synapse\n<small>1 processes</small>"]
-    SYS31["Amplitude\n<small>1 processes</small>"]
+    S27[AWS Data Platform - 41p]
+    S28[Tableau - 36p]
+    S29[Power BI - 10p]
+    S30[Azure Synapse - 1p]
+    S31[Amplitude - 1p]
   end
 
-  %% ── Finance & CRM ──────────────────────────────────────────
-  subgraph FINANCE_AND_CRM[" Finance & CRM "]
+  subgraph FINANCE_AND_CRM[Finance and CRM]
     direction TB
-    SYS32["SAP S/4HANA\n<small>28 processes</small>"]
-    SYS33["Salesforce CRM\n<small>7 processes</small>"]
+    S32[SAP S4HANA - 28p]
+    S33[Salesforce CRM - 7p]
   end
 
-  %% ── L2 to System connections ───────────────────────────────────
-  L2_2 --> SYS0
-  L2_1 --> SYS0
-  L2_0 --> SYS0
-  L2_2 --> SYS1
-  L2_0 --> SYS1
-  L2_0 --> SYS2
-  L2_2 --> SYS3
-  L2_3 --> SYS3
-  L2_0 --> SYS3
-  L2_2 --> SYS4
-  L2_1 --> SYS4
-  L2_3 --> SYS4
-  L2_0 --> SYS4
-  L2_1 --> SYS5
-  L2_0 --> SYS5
-  L2_0 --> SYS6
-  L2_0 --> SYS7
-  L2_0 --> SYS8
-  L2_0 --> SYS9
-  L2_3 --> SYS10
-  L2_0 --> SYS10
-  L2_0 --> SYS11
-  L2_3 --> SYS12
-  L2_0 --> SYS12
-  L2_2 --> SYS13
-  L2_1 --> SYS13
-  L2_3 --> SYS13
-  L2_0 --> SYS13
-  L2_2 --> SYS14
-  L2_1 --> SYS14
-  L2_3 --> SYS14
-  L2_0 --> SYS14
-  L2_3 --> SYS15
-  L2_2 --> SYS16
-  L2_1 --> SYS16
-  L2_3 --> SYS16
-  L2_0 --> SYS16
-  L2_2 --> SYS17
-  L2_1 --> SYS17
-  L2_3 --> SYS17
-  L2_0 --> SYS17
-  L2_3 --> SYS18
-  L2_2 --> SYS19
-  L2_1 --> SYS19
-  L2_3 --> SYS19
-  L2_0 --> SYS19
-  L2_2 --> SYS20
-  L2_1 --> SYS20
-  L2_3 --> SYS20
-  L2_0 --> SYS20
-  L2_2 --> SYS21
-  L2_3 --> SYS21
-  L2_0 --> SYS21
-  L2_2 --> SYS22
-  L2_1 --> SYS22
-  L2_3 --> SYS22
-  L2_0 --> SYS22
-  L2_2 --> SYS23
-  L2_1 --> SYS23
-  L2_3 --> SYS23
-  L2_3 --> SYS24
-  L2_0 --> SYS24
-  L2_2 --> SYS25
-  L2_1 --> SYS25
-  L2_3 --> SYS25
-  L2_3 --> SYS26
-  L2_2 --> SYS27
-  L2_1 --> SYS27
-  L2_3 --> SYS27
-  L2_0 --> SYS27
-  L2_2 --> SYS28
-  L2_1 --> SYS28
-  L2_3 --> SYS28
-  L2_0 --> SYS28
-  L2_1 --> SYS29
-  L2_3 --> SYS29
-  L2_0 --> SYS29
-  L2_1 --> SYS30
-  L2_3 --> SYS31
-  L2_2 --> SYS32
-  L2_1 --> SYS32
-  L2_3 --> SYS32
-  L2_0 --> SYS32
-  L2_2 --> SYS33
-  L2_1 --> SYS33
-  L2_3 --> SYS33
+  %% Connections
+  L2_PF --> S0
+  L2_RM --> S0
+  L2_SP --> S0
+  L2_PF --> S1
+  L2_SP --> S1
+  L2_SP --> S2
+  L2_PF --> S3
+  L2_SD --> S3
+  L2_SP --> S3
+  L2_PF --> S4
+  L2_RM --> S4
+  L2_SD --> S4
+  L2_SP --> S4
+  L2_RM --> S5
+  L2_SP --> S5
+  L2_SP --> S6
+  L2_SP --> S7
+  L2_SP --> S8
+  L2_SP --> S9
+  L2_SD --> S10
+  L2_SP --> S10
+  L2_SP --> S11
+  L2_SD --> S12
+  L2_SP --> S12
+  L2_PF --> S13
+  L2_RM --> S13
+  L2_SD --> S13
+  L2_SP --> S13
+  L2_PF --> S14
+  L2_RM --> S14
+  L2_SD --> S14
+  L2_SP --> S14
+  L2_SD --> S15
+  L2_PF --> S16
+  L2_RM --> S16
+  L2_SD --> S16
+  L2_SP --> S16
+  L2_PF --> S17
+  L2_RM --> S17
+  L2_SD --> S17
+  L2_SP --> S17
+  L2_SD --> S18
+  L2_PF --> S19
+  L2_RM --> S19
+  L2_SD --> S19
+  L2_SP --> S19
+  L2_PF --> S20
+  L2_RM --> S20
+  L2_SD --> S20
+  L2_SP --> S20
+  L2_PF --> S21
+  L2_SD --> S21
+  L2_SP --> S21
+  L2_PF --> S22
+  L2_RM --> S22
+  L2_SD --> S22
+  L2_SP --> S22
+  L2_PF --> S23
+  L2_RM --> S23
+  L2_SD --> S23
+  L2_SD --> S24
+  L2_SP --> S24
+  L2_PF --> S25
+  L2_RM --> S25
+  L2_SD --> S25
+  L2_SD --> S26
+  L2_PF --> S27
+  L2_RM --> S27
+  L2_SD --> S27
+  L2_SP --> S27
+  L2_PF --> S28
+  L2_RM --> S28
+  L2_SD --> S28
+  L2_SP --> S28
+  L2_RM --> S29
+  L2_SD --> S29
+  L2_SP --> S29
+  L2_RM --> S30
+  L2_SD --> S31
+  L2_PF --> S32
+  L2_RM --> S32
+  L2_SD --> S32
+  L2_SP --> S32
+  L2_PF --> S33
+  L2_RM --> S33
+  L2_SD --> S33
 
-  %% ── Styles ──────────────────────────────────────────────────────
-  classDef l2node fill:#003366,color:#fff,stroke:#003366,rx:6
-  classDef planning fill:#E8F4FD,stroke:#1565C0,color:#0D3B6E,rx:4
-  classDef pss fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20,rx:4
-  classDef revenue fill:#FFF3E0,stroke:#E65100,color:#BF360C,rx:4
-  classDef distrib fill:#F3E5F5,stroke:#6A1B9A,color:#4A148C,rx:4
-  classDef analytics fill:#E0F2F1,stroke:#00695C,color:#004D40,rx:4
-  classDef finance fill:#FCE4EC,stroke:#AD1457,color:#880E4F,rx:4
-  class L2_0 l2node
-  class L2_1 l2node
-  class L2_2 l2node
-  class L2_3 l2node
-  class SYS0 planning
-  class SYS1 planning
-  class SYS2 planning
-  class SYS3 planning
-  class SYS4 planning
-  class SYS5 planning
-  class SYS6 planning
-  class SYS7 planning
-  class SYS8 planning
-  class SYS9 planning
-  class SYS10 planning
-  class SYS11 planning
-  class SYS12 planning
-  class SYS13 pss
-  class SYS14 pss
-  class SYS15 pss
-  class SYS16 revenue
-  class SYS17 revenue
-  class SYS18 revenue
-  class SYS19 revenue
-  class SYS20 distrib
-  class SYS21 distrib
-  class SYS22 distrib
-  class SYS23 distrib
-  class SYS24 distrib
-  class SYS25 distrib
-  class SYS26 distrib
-  class SYS27 analytics
-  class SYS28 analytics
-  class SYS29 analytics
-  class SYS30 analytics
-  class SYS31 analytics
-  class SYS32 finance
-  class SYS33 finance
+  classDef l2 fill:#003366,color:#fff,stroke:#003366
+  classDef plan fill:#E8F4FD,stroke:#1565C0,color:#0D3B6E
+  classDef pss fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20
+  classDef rev fill:#FFF3E0,stroke:#E65100,color:#BF360C
+  classDef dist fill:#F3E5F5,stroke:#6A1B9A,color:#4A148C
+  classDef bi fill:#E0F2F1,stroke:#00695C,color:#004D40
+  classDef fin fill:#FCE4EC,stroke:#AD1457,color:#880E4F
+  class L2_SP,L2_RM,L2_PF,L2_SD l2
+  class S0 plan
+  class S1 plan
+  class S2 plan
+  class S3 plan
+  class S4 plan
+  class S5 plan
+  class S6 plan
+  class S7 plan
+  class S8 plan
+  class S9 plan
+  class S10 plan
+  class S11 plan
+  class S12 plan
+  class S13 pss
+  class S14 pss
+  class S15 pss
+  class S16 rev
+  class S17 rev
+  class S18 rev
+  class S19 rev
+  class S20 dist
+  class S21 dist
+  class S22 dist
+  class S23 dist
+  class S24 dist
+  class S25 dist
+  class S26 dist
+  class S27 bi
+  class S28 bi
+  class S29 bi
+  class S30 bi
+  class S31 bi
+  class S32 fin
+  class S33 fin
