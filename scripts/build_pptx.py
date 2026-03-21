@@ -183,14 +183,28 @@ for proc in complete:
              Inches(1.1), Inches(0.42), Inches(9.5), Inches(0.3),
              size=9, color=RGBColor(0xAD, 0xD8, 0xE6), align=PP_ALIGN.LEFT)
 
-    # BPMN image or placeholder
+    # BPMN image — fit to slide preserving aspect ratio
     if img.exists():
-        # Fill remaining slide area with the PNG
-        slide.shapes.add_picture(
-            str(img),
-            Inches(0.1), Inches(0.78),
-            width=Inches(13.13), height=Inches(6.62)
-        )
+        from PIL import Image as PILImage
+        with PILImage.open(img) as im:
+            img_w, img_h = im.size
+
+        # Available area
+        area_w = Inches(13.13)
+        area_h = Inches(6.62)
+        area_l = Inches(0.1)
+        area_t = Inches(0.78)
+
+        # Scale to fit within area preserving aspect ratio
+        scale = min(area_w / img_w, area_h / img_h)
+        pic_w = int(img_w * scale)
+        pic_h = int(img_h * scale)
+
+        # Centre within the available area
+        pic_l = area_l + (area_w - pic_w) // 2
+        pic_t = area_t + (area_h - pic_h) // 2
+
+        slide.shapes.add_picture(str(img), pic_l, pic_t, width=pic_w, height=pic_h)
     else:
         # Placeholder box
         add_rect(slide, Inches(0.1), Inches(0.78),
