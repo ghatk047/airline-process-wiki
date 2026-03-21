@@ -1,0 +1,342 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="2458" viewBox="0 0 2400 2458" font-family="Inter,Arial,sans-serif">
+  <rect width="2400" height="2458" fill="#F8FAFC"/>
+  <text x="1200" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#003366">Crew Management — Application Landscape</text>
+  <text x="1200" y="58" text-anchor="middle" font-size="12" fill="#64748B">15 subprocesses · 60 systems · 3 L2 process groups</text>
+  <rect x="50" y="72" width="2300" height="75" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="58" y="90" font-size="9" font-weight="700" fill="#94A3B8" letter-spacing="1">L2 PROCESS GROUPS</text>
+  <rect x="790" y="100" width="260" height="55" rx="6" fill="#003366" stroke="#001F3F" stroke-width="1.5"/>
+  <text x="920" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#FFF">Crew Compliance</text>
+  <text x="920" y="134" text-anchor="middle" font-size="11" font-weight="700" fill="#FFF">&amp; Certification</text>
+  <rect x="1070" y="100" width="260" height="55" rx="6" fill="#004080" stroke="#001F3F" stroke-width="1.5"/>
+  <text x="1200" y="132" text-anchor="middle" font-size="12" font-weight="700" fill="#FFF">Crew Day-of-Operations</text>
+  <rect x="1350" y="100" width="260" height="55" rx="6" fill="#005099" stroke="#001F3F" stroke-width="1.5"/>
+  <text x="1480" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#FFF">Crew Planning</text>
+  <text x="1480" y="134" text-anchor="middle" font-size="11" font-weight="700" fill="#FFF">&amp; Rostering</text>
+  <rect x="50" y="220" width="753" height="306" rx="10" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1.5" opacity="0.45"/>
+  <text x="62" y="242" font-size="12" font-weight="700" fill="#1E3A8A">Planning &amp; Scheduling</text>
+  <rect x="823" y="526" width="753" height="142" rx="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.5" opacity="0.45"/>
+  <text x="835" y="548" font-size="12" font-weight="700" fill="#14532D">PSS &amp; Reservations</text>
+  <rect x="1597" y="668" width="753" height="142" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.5" opacity="0.45"/>
+  <text x="1609" y="690" font-size="12" font-weight="700" fill="#581C87">Distribution &amp; GDS</text>
+  <rect x="50" y="830" width="753" height="306" rx="10" fill="#FFF3E0" stroke="#EA580C" stroke-width="1.5" opacity="0.45"/>
+  <text x="62" y="852" font-size="12" font-weight="700" fill="#7C2D12">Operations &amp; Crew</text>
+  <rect x="823" y="1136" width="753" height="224" rx="10" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.5" opacity="0.45"/>
+  <text x="835" y="1158" font-size="12" font-weight="700" fill="#134E4A">Analytics &amp; BI</text>
+  <rect x="1597" y="1360" width="753" height="142" rx="10" fill="#FFE4E6" stroke="#E11D48" stroke-width="1.5" opacity="0.45"/>
+  <text x="1609" y="1382" font-size="12" font-weight="700" fill="#881337">Finance &amp; ERP</text>
+  <rect x="50" y="1522" width="753" height="306" rx="10" fill="#F0FDF4" stroke="#15803D" stroke-width="1.5" opacity="0.45"/>
+  <text x="62" y="1544" font-size="12" font-weight="700" fill="#14532D">HR &amp; Corporate</text>
+  <rect x="823" y="1828" width="753" height="142" rx="10" fill="#F1F5F9" stroke="#475569" stroke-width="1.5" opacity="0.45"/>
+  <text x="835" y="1850" font-size="12" font-weight="700" fill="#1E293B">IT &amp; Security</text>
+  <rect x="1597" y="1970" width="753" height="388" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5" opacity="0.45"/>
+  <text x="1609" y="1992" font-size="12" font-weight="700" fill="#475569">Other Systems</text>
+  <path d="M 920 155 C 920 210 143 210 143 266" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 210 143 210 143 266" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 210 143 210 143 266" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 210 311 210 311 266" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 210 311 210 311 266" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 210 311 210 311 266" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 210 479 210 479 266" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 210 479 210 479 266" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 210 647 210 647 266" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 252 143 252 143 348" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 252 311 252 311 348" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 252 479 252 479 348" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 252 647 252 647 348" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 292 143 292 143 430" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 292 311 292 311 430" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 292 479 292 479 430" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 364 916 364 916 572" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 364 916 364 916 572" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 434 1690 434 1690 714" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 434 1858 434 1858 714" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 516 143 516 143 876" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 516 143 516 143 876" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 516 143 516 143 876" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 516 311 516 311 876" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 516 479 516 479 876" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 516 647 516 647 876" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 556 143 556 143 958" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 556 311 556 311 958" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 556 479 556 479 958" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 556 647 556 647 958" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 598 143 598 143 1040" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 598 311 598 311 1040" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 598 479 598 479 1040" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 668 916 668 916 1182" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 668 916 668 916 1182" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 668 916 668 916 1182" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 668 1084 668 1084 1182" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 668 1084 668 1084 1182" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 668 1252 668 1252 1182" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 668 1252 668 1252 1182" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 668 1420 668 1420 1182" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 710 916 710 916 1264" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 710 1084 710 1084 1264" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 780 1690 780 1690 1406" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 780 1690 780 1690 1406" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 780 1690 780 1690 1406" fill="none" stroke="#D97706" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 780 1858 780 1858 1406" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 862 143 862 143 1568" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 862 143 862 143 1568" fill="none" stroke="#0D9488" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 862 311 862 311 1568" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 862 479 862 479 1568" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1200 155 C 1200 862 647 862 647 1568" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 902 143 902 143 1650" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 902 311 902 311 1650" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 902 479 902 479 1650" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 902 647 902 647 1650" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 944 143 944 143 1732" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 944 311 944 311 1732" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1014 916 1014 916 1874" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1086 1690 1086 1690 2016" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1086 1858 1086 1858 2016" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 1086 2026 1086 2026 2016" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 920 155 C 920 1086 2194 1086 2194 2016" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1126 1690 1126 1690 2098" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1126 1858 1126 1858 2098" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1126 2026 1126 2026 2098" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1126 2194 1126 2194 2098" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1168 1690 1168 1690 2180" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1168 1858 1168 1858 2180" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1168 2026 1168 2026 2180" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1168 2194 1168 2194 2180" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1208 1690 1208 1690 2262" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1208 1858 1208 1858 2262" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1208 2026 1208 2026 2262" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <path d="M 1480 155 C 1480 1208 2194 1208 2194 2262" fill="none" stroke="#1D4ED8" stroke-width="1.2" opacity="0.3"/>
+  <rect x="64" y="266" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="143" y="298" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Jeppesen Crew</text>
+  <text x="143" y="331" text-anchor="middle" font-size="8" fill="#94A3B8">14p</text>
+  <rect x="232" y="266" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="311" y="298" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">SITA AMS</text>
+  <text x="311" y="331" text-anchor="middle" font-size="8" fill="#94A3B8">6p</text>
+  <rect x="400" y="266" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="479" y="294" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Jeppesen</text>
+  <text x="479" y="307" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">FliteDeck (EFB)</text>
+  <text x="479" y="331" text-anchor="middle" font-size="8" fill="#94A3B8">2p</text>
+  <rect x="568" y="266" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="647" y="298" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">A.SkyWORKS</text>
+  <text x="647" y="331" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="348" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="143" y="376" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Jeppesen Crew</text>
+  <text x="143" y="389" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Management (CrewPortal)</text>
+  <text x="143" y="413" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="232" y="348" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="311" y="376" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Jeppesen Crew</text>
+  <text x="311" y="389" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Management (FRMS module)</text>
+  <text x="311" y="413" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="400" y="348" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="479" y="376" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Jeppesen Crew</text>
+  <text x="479" y="389" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Management Suite</text>
+  <text x="479" y="413" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="568" y="348" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="647" y="376" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Jeppesen</text>
+  <text x="647" y="389" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">CrewConnect Mobile</text>
+  <text x="647" y="413" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="430" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="143" y="458" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Jeppesen CrewConnect</text>
+  <text x="143" y="471" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">mobile app</text>
+  <text x="143" y="495" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="232" y="430" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="311" y="462" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">A.SkyCAST</text>
+  <text x="311" y="495" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="400" y="430" width="158" height="72" rx="5" fill="white" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="479" y="462" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">Jeppesen CrewPlan</text>
+  <text x="479" y="495" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="837" y="572" width="158" height="72" rx="5" fill="white" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="916" y="604" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">A.Altéa PSS</text>
+  <text x="916" y="637" text-anchor="middle" font-size="8" fill="#94A3B8">4p</text>
+  <rect x="1611" y="714" width="158" height="72" rx="5" fill="white" stroke="#9333EA" stroke-width="1.5"/>
+  <text x="1690" y="742" text-anchor="middle" font-size="10" font-weight="600" fill="#581C87">FAA Airmen</text>
+  <text x="1690" y="755" text-anchor="middle" font-size="10" font-weight="600" fill="#581C87">Records Clearinghouse (ARC)</text>
+  <text x="1690" y="779" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1779" y="714" width="158" height="72" rx="5" fill="white" stroke="#9333EA" stroke-width="1.5"/>
+  <text x="1858" y="746" text-anchor="middle" font-size="10" font-weight="600" fill="#581C87">Sabre GDS</text>
+  <text x="1858" y="779" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="876" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="143" y="908" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">IBS iCrew</text>
+  <text x="143" y="941" text-anchor="middle" font-size="8" fill="#94A3B8">4p</text>
+  <rect x="232" y="876" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="311" y="908" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">SITA ACARS / Telex</text>
+  <text x="311" y="941" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="400" y="876" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="479" y="904" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">IBS Software iCrew</text>
+  <text x="479" y="917" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">(mobile crew app)</text>
+  <text x="479" y="941" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="568" y="876" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="647" y="904" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">IBS Software</text>
+  <text x="647" y="917" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">iCrew (open-time posting)</text>
+  <text x="647" y="941" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="958" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="143" y="986" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">NOC</text>
+  <text x="143" y="999" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">Operations Board</text>
+  <text x="143" y="1023" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="232" y="958" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="311" y="986" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">AWS Crew</text>
+  <text x="311" y="999" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">Operations System</text>
+  <text x="311" y="1023" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="400" y="958" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="479" y="986" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">Crew Hotel</text>
+  <text x="479" y="999" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">Management System</text>
+  <text x="479" y="1023" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="568" y="958" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="647" y="986" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">Ground Transport</text>
+  <text x="647" y="999" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">Dispatch System</text>
+  <text x="647" y="1023" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="1040" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="143" y="1072" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">Telex/SITA ACARS</text>
+  <text x="143" y="1105" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="232" y="1040" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="311" y="1072" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">SITA CrewConnect</text>
+  <text x="311" y="1105" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="400" y="1040" width="158" height="72" rx="5" fill="white" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="479" y="1072" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">SITA ACARS</text>
+  <text x="479" y="1105" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="837" y="1182" width="158" height="72" rx="5" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="916" y="1214" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">AWS Data Platform</text>
+  <text x="916" y="1247" text-anchor="middle" font-size="8" fill="#94A3B8">4p</text>
+  <rect x="1005" y="1182" width="158" height="72" rx="5" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="1084" y="1214" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">Tableau</text>
+  <text x="1084" y="1247" text-anchor="middle" font-size="8" fill="#94A3B8">3p</text>
+  <rect x="1173" y="1182" width="158" height="72" rx="5" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="1252" y="1214" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">Tableau / Power BI</text>
+  <text x="1252" y="1247" text-anchor="middle" font-size="8" fill="#94A3B8">2p</text>
+  <rect x="1341" y="1182" width="158" height="72" rx="5" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="1420" y="1210" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">AWS S3 /</text>
+  <text x="1420" y="1223" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">Redshift (compliance audit log)</text>
+  <text x="1420" y="1247" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="837" y="1264" width="158" height="72" rx="5" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="916" y="1296" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">AWS S3 / Redshift</text>
+  <text x="916" y="1329" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1005" y="1264" width="158" height="72" rx="5" fill="white" stroke="#0D9488" stroke-width="1.5"/>
+  <text x="1084" y="1296" text-anchor="middle" font-size="10" font-weight="600" fill="#134E4A">Power BI</text>
+  <text x="1084" y="1329" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1611" y="1406" width="158" height="72" rx="5" fill="white" stroke="#E11D48" stroke-width="1.5"/>
+  <text x="1690" y="1434" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">SAP S/4HANA</text>
+  <text x="1690" y="1447" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">Finance (FI/CO)</text>
+  <text x="1690" y="1471" text-anchor="middle" font-size="8" fill="#94A3B8">5p</text>
+  <rect x="1779" y="1406" width="158" height="72" rx="5" fill="white" stroke="#E11D48" stroke-width="1.5"/>
+  <text x="1858" y="1438" text-anchor="middle" font-size="10" font-weight="600" fill="#881337">DocuSign</text>
+  <text x="1858" y="1471" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="1568" width="158" height="72" rx="5" fill="white" stroke="#15803D" stroke-width="1.5"/>
+  <text x="143" y="1596" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">SAP</text>
+  <text x="143" y="1609" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">SuccessFactors Learning</text>
+  <text x="143" y="1633" text-anchor="middle" font-size="8" fill="#94A3B8">2p</text>
+  <rect x="232" y="1568" width="158" height="72" rx="5" fill="white" stroke="#15803D" stroke-width="1.5"/>
+  <text x="311" y="1596" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">CAE SimFinity</text>
+  <text x="311" y="1609" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">Learning Management System</text>
+  <text x="311" y="1633" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="400" y="1568" width="158" height="72" rx="5" fill="white" stroke="#15803D" stroke-width="1.5"/>
+  <text x="479" y="1596" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">airline labour</text>
+  <text x="479" y="1609" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">relations tracking system</text>
+  <text x="479" y="1633" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="568" y="1568" width="158" height="72" rx="5" fill="white" stroke="#15803D" stroke-width="1.5"/>
+  <text x="647" y="1600" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">SAP SuccessFactors</text>
+  <text x="647" y="1633" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="1650" width="158" height="72" rx="5" fill="white" stroke="#15803D" stroke-width="1.5"/>
+  <text x="143" y="1678" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">SAP SuccessFactors</text>
+  <text x="143" y="1691" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">(Employee Central)</text>
+  <text x="143" y="1715" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="232" y="1650" width="158" height="72" rx="5" fill="white" stroke="#15803D" stroke-width="1.5"/>
+  <text x="311" y="1678" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">SAP</text>
+  <text x="311" y="1691" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">SuccessFactors Recruiting</text>
+  <text x="311" y="1715" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="400" y="1650" width="158" height="72" rx="5" fill="white" stroke="#15803D" stroke-width="1.5"/>
+  <text x="479" y="1678" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">SAP</text>
+  <text x="479" y="1691" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">SuccessFactors Onboarding</text>
+  <text x="479" y="1715" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="568" y="1650" width="158" height="72" rx="5" fill="white" stroke="#15803D" stroke-width="1.5"/>
+  <text x="647" y="1678" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">SAP SuccessFactors</text>
+  <text x="647" y="1691" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">Learning (LMS)</text>
+  <text x="647" y="1715" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="64" y="1732" width="158" height="72" rx="5" fill="white" stroke="#15803D" stroke-width="1.5"/>
+  <text x="143" y="1760" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">SAP SuccessFactors</text>
+  <text x="143" y="1773" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">(PIP workflow module)</text>
+  <text x="143" y="1797" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="232" y="1732" width="158" height="72" rx="5" fill="white" stroke="#15803D" stroke-width="1.5"/>
+  <text x="311" y="1760" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">SAP SuccessFactors</text>
+  <text x="311" y="1773" text-anchor="middle" font-size="10" font-weight="600" fill="#14532D">Employee Central</text>
+  <text x="311" y="1797" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="837" y="1874" width="158" height="72" rx="5" fill="white" stroke="#475569" stroke-width="1.5"/>
+  <text x="916" y="1906" text-anchor="middle" font-size="10" font-weight="600" fill="#1E293B">Microsoft 365</text>
+  <text x="916" y="1939" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1611" y="2016" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="1690" y="2044" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Boeing Toolbox</text>
+  <text x="1690" y="2057" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">/ CAMP</text>
+  <text x="1690" y="2081" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1779" y="2016" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="1858" y="2044" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">airline</text>
+  <text x="1858" y="2057" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">push-notification service</text>
+  <text x="1858" y="2081" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1947" y="2016" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="2026" y="2044" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">FAA DragonWave</text>
+  <text x="2026" y="2057" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">/ ASAP Portal</text>
+  <text x="2026" y="2081" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="2115" y="2016" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="2194" y="2048" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">FAA MedXpress</text>
+  <text x="2194" y="2081" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1611" y="2098" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="1690" y="2130" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">LinkedIn Recruiter</text>
+  <text x="1690" y="2163" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1779" y="2098" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="1858" y="2130" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">FAA Airmen Inquiry</text>
+  <text x="1858" y="2163" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1947" y="2098" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="2026" y="2126" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Hogan Assessments /</text>
+  <text x="2026" y="2139" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Criteria Corp CCAT</text>
+  <text x="2026" y="2163" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="2115" y="2098" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="2194" y="2126" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">HireRight</text>
+  <text x="2194" y="2139" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Background Screening</text>
+  <text x="2194" y="2163" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1611" y="2180" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="1690" y="2212" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">FAA MedXPress</text>
+  <text x="1690" y="2245" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1779" y="2180" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="1858" y="2208" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">AME Network</text>
+  <text x="1858" y="2221" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">(Aviation Medical Examiner)</text>
+  <text x="1858" y="2245" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1947" y="2180" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="2026" y="2212" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">DHS E-Verify</text>
+  <text x="2026" y="2245" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="2115" y="2180" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="2194" y="2208" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Airline CBT</text>
+  <text x="2194" y="2221" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Training Portal</text>
+  <text x="2194" y="2245" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1611" y="2262" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="1690" y="2290" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">CAE SimuFlite</text>
+  <text x="1690" y="2303" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">FFS Level D</text>
+  <text x="1690" y="2327" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1779" y="2262" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="1858" y="2290" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">LOSA</text>
+  <text x="1858" y="2303" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Observation Software</text>
+  <text x="1858" y="2327" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="1947" y="2262" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="2026" y="2290" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">CAE Simfinity</text>
+  <text x="2026" y="2303" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Training Management</text>
+  <text x="2026" y="2327" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <rect x="2115" y="2262" width="158" height="72" rx="5" fill="white" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="2194" y="2290" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">SAP Integration</text>
+  <text x="2194" y="2303" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Suite (CPI)</text>
+  <text x="2194" y="2327" text-anchor="middle" font-size="8" fill="#94A3B8">1p</text>
+  <text x="50" y="2428" font-size="10" font-weight="700" fill="#64748B">LEGEND:</text>
+  <rect x="120" y="2417" width="12" height="12" rx="2" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1.2"/>
+  <text x="136" y="2428" font-size="9" fill="#475569">Planning &amp; Scheduling</text>
+  <rect x="282" y="2417" width="12" height="12" rx="2" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.2"/>
+  <text x="298" y="2428" font-size="9" fill="#475569">PSS &amp; Reservations</text>
+  <rect x="426" y="2417" width="12" height="12" rx="2" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.2"/>
+  <text x="442" y="2428" font-size="9" fill="#475569">Distribution &amp; GDS</text>
+  <rect x="570" y="2417" width="12" height="12" rx="2" fill="#FFF3E0" stroke="#EA580C" stroke-width="1.2"/>
+  <text x="586" y="2428" font-size="9" fill="#475569">Operations &amp; Crew</text>
+  <rect x="708" y="2417" width="12" height="12" rx="2" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.2"/>
+  <text x="724" y="2428" font-size="9" fill="#475569">Analytics &amp; BI</text>
+  <rect x="828" y="2417" width="12" height="12" rx="2" fill="#FFE4E6" stroke="#E11D48" stroke-width="1.2"/>
+  <text x="844" y="2428" font-size="9" fill="#475569">Finance &amp; ERP</text>
+  <rect x="942" y="2417" width="12" height="12" rx="2" fill="#F0FDF4" stroke="#15803D" stroke-width="1.2"/>
+  <text x="958" y="2428" font-size="9" fill="#475569">HR &amp; Corporate</text>
+  <rect x="1062" y="2417" width="12" height="12" rx="2" fill="#F1F5F9" stroke="#475569" stroke-width="1.2"/>
+  <text x="1078" y="2428" font-size="9" fill="#475569">IT &amp; Security</text>
+  <rect x="1176" y="2417" width="12" height="12" rx="2" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.2"/>
+  <text x="1192" y="2428" font-size="9" fill="#475569">Other Systems</text>
+</svg>
