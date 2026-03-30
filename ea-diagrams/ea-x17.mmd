@@ -1,0 +1,74 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart TB
+
+  subgraph EMISSIONS["✈️ Emissions Data Sources"]
+    direction LR
+    ACARS6["ACARS Fuel Burn\nActual fuel per flight"]
+    FUEL_SYS["Fuel Mgmt System\nUplift records · SAF volumes"]
+    GHG["GHG Protocol\nScope 1/2/3 boundaries"]
+  end
+
+  subgraph MEASURE["📏 Measurement &amp; Calculation"]
+    direction TB
+    ESG_PLAT["ESG Data Platform\nIdeagen · Envizi · Sphera"]
+    CO2_CALC["CO2 Calculator\nICAO method · CORSIA factor"]
+    SAF_TRACK["SAF Registry\nBook-and-claim · CoC tracking"]
+    ACARS6 -->|"fuel burn actuals"| CO2_CALC
+    FUEL_SYS -->|"SAF volume"| SAF_TRACK
+    CO2_CALC -->|"emissions data"| ESG_PLAT
+    SAF_TRACK -->|"SAF credits"| ESG_PLAT
+    GHG -->|"methodology"| CO2_CALC
+  end
+
+  subgraph COMPLIANCE2["📜 Regulatory Compliance"]
+    direction TB
+    CORSIA2["CORSIA Portal\nICAO offset submission"]
+    ETS["EU ETS\nEuropa EUTL submission"]
+    DOT2["DOT Consumer\nFlight emissions disclosure"]
+    ESG_PLAT -->|"offset requirement"| CORSIA2
+    ESG_PLAT -->|"ETS allowances"| ETS
+    CO2_CALC -->|"per-flight CO2"| DOT2
+  end
+
+  subgraph OFFSET["💳 Carbon Offset &amp; Trading"]
+    direction TB
+    VERRA["Verra / Gold Standard\nVerified carbon credits"]
+    BROKER["Carbon Broker\nCredit procurement · Price"]
+    CORSIA2 -->|"offset volume"| BROKER
+    BROKER -->|"credits purchased"| VERRA
+    VERRA -->|"retirement confirmed"| ESG_PLAT
+  end
+
+  subgraph REPORT4["📊 ESG Reporting"]
+    direction TB
+    GRI["GRI / TCFD Report\nAnnual sustainability report"]
+    CDP2["CDP Climate\nInvestor disclosure"]
+    INVESTOR["Investor Relations\nESG scorecard · Rating"]
+    ESG_PLAT -->|"verified data"| GRI
+    ESG_PLAT -->|"CDP questionnaire"| CDP2
+    GRI -->|"published report"| INVESTOR
+  end
+
+  subgraph INTERNAL["🎯 Internal Targets"]
+    direction TB
+    NET_ZERO["Net Zero Tracker\n2050 pathway · Milestones"]
+    SAF_GOAL["SAF Target Dashboard\n10% by 2030"]
+    ESG_PLAT -->|"progress data"| NET_ZERO
+    SAF_TRACK -->|"SAF uptake"| SAF_GOAL
+  end
+
+  classDef ems  fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef meas fill:#003366,color:#fff,stroke:#003366
+  classDef comp fill:#fff1f2,stroke:#e11d48,color:#881337
+  classDef off  fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef rep  fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+  classDef int  fill:#fffbeb,stroke:#d97706,color:#78350f
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class ACARS6,FUEL_SYS,GHG ems
+  class ESG_PLAT meas
+  class CO2_CALC,SAF_TRACK key
+  class CORSIA2,ETS,DOT2 comp
+  class VERRA,BROKER off
+  class GRI,CDP2,INVESTOR rep
+  class NET_ZERO,SAF_GOAL int
