@@ -1,0 +1,74 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart TB
+
+  subgraph RECRUIT["🔎 Talent Acquisition"]
+    direction LR
+    ATS["SAP SuccessFactors\nRecruitment · Job postings"]
+    LINKEDIN["LinkedIn / Indeed\nJob boards · Sourcing"]
+    BGCHECK["Background Check\nHireRight · Drug screening"]
+    LINKEDIN -->|"applications"| ATS
+    ATS -->|"offer accepted"| BGCHECK
+    BGCHECK -->|"cleared"| ONBOARD
+  end
+
+  subgraph ONBOARD["🎓 Onboarding & Training"]
+    direction TB
+    LMS["SAP SuccessFactors LMS\nCourses · Certs · Recurrent"]
+    CREW_CERT["Crew Certification\nFAA records · Type rating"]
+    ONBOARD -->|"training plan"| LMS
+    LMS -->|"cert completion"| CREW_CERT
+  end
+
+  subgraph CORE_HR["👥 Core HR"]
+    direction TB
+    HCM["SAP SuccessFactors HCM\nEmployee master · Org structure"]
+    PERF["Performance Mgmt\nGoals · Reviews · Succession"]
+    ABSENCE["Time &amp; Absence\nSchedule · Leave · FMLA"]
+    ONBOARD -->|"new hire data"| HCM
+    HCM -->|"employee data"| PERF
+    HCM -->|"roster link"| ABSENCE
+  end
+
+  subgraph PAYROLL["💰 Payroll &amp; Benefits"]
+    direction TB
+    PAY["SAP Payroll\nGross · Net · Union rules"]
+    BENEFITS["Benefits Admin\nHealth · 401k · Pass travel"]
+    CMS4["Crew Pay Module\nHours · Per diem · Override"]
+    ABSENCE -->|"approved hours"| PAY
+    CMS4 -->|"crew actual hours"| PAY
+    PAY -->|"benefit deductions"| BENEFITS
+  end
+
+  subgraph UNION["🤝 Labour Relations"]
+    direction TB
+    CBA["CBA Tracking\nContract provisions · Violations"]
+    GRIEVANCE["Grievance System\nFiling · Arbitration · Resolve"]
+    CBA -->|"pay rules"| PAY
+    CBA -->|"work rules"| CMS4
+    GRIEVANCE -->|"case outcome"| HCM
+  end
+
+  subgraph ANALYTICS4["📊 People Analytics"]
+    direction TB
+    DW7["People Data Warehouse\nTurnover · Attrition · Costs"]
+    EXEC2["Workforce Dashboard\nHeadcount · Diversity · OT"]
+    HCM -->|"employee data"| DW7
+    PAY -->|"cost data"| DW7
+    DW7 -->|"insights"| EXEC2
+  end
+
+  classDef rec  fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef ob   fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef hr   fill:#003366,color:#fff,stroke:#003366
+  classDef pay  fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef uni  fill:#fffbeb,stroke:#d97706,color:#78350f
+  classDef ana  fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class ATS,LINKEDIN,BGCHECK rec
+  class LMS,CREW_CERT ob
+  class HCM,PERF,ABSENCE hr
+  class PAY,BENEFITS,CMS4 pay
+  class CBA,GRIEVANCE uni
+  class DW7,EXEC2 ana
+  class HCM key
