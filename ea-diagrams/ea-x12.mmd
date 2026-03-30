@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart LR
+
+  subgraph CATALOG["📦 Product Catalogue"]
+    direction TB
+    ATPCO3["ATPCO Optional Services\nBag fees · Seat fees · Rules"]
+    BUNDLER["Bundle Engine\nGood/Better/Best bundles"]
+    ACCELYA["Accelya Offer Mgmt\nOffer construction · EMD"]
+    ATPCO3 -->|"fee rules"| BUNDLER
+    BUNDLER -->|"bundle definition"| ACCELYA
+  end
+
+  subgraph PRICING2["💲 Dynamic Pricing"]
+    direction TB
+    PROS3["PROS Smart CPQ\nWillingness-to-pay · Upsell"]
+    SEAT["Seat Map Engine\nSeat attributes · Preferred seats"]
+    UPGRADE["Upgrade Pricing\nBid upgrade · Complimentary"]
+    PROS3 -->|"seat price"| SEAT
+    PROS3 -->|"upgrade fare"| UPGRADE
+  end
+
+  subgraph CHANNELS["🌐 Offer Delivery Channels"]
+    direction TB
+    NDC3["NDC API Gateway\nIATA NDC 21.3 offers"]
+    WEB2["Airline.com\nAncillary upsell pages"]
+    APP2["Mobile App\nIn-path upsell · Push offers"]
+    ACCELYA -->|"NDC offer"| NDC3
+    SEAT -->|"seat map"| WEB2
+    UPGRADE -->|"upgrade offer"| APP2
+  end
+
+  subgraph FULFIL["✅ Fulfilment & EMD"]
+    direction TB
+    PSS6["Amadeus Altea PSS\nEMD issuance · SSR"]
+    DCS6["Altea DCS\nAt check-in upsell · Upgrade"]
+    NDC3 -->|"order"| PSS6
+    WEB2 -->|"purchase"| PSS6
+    PSS6 -->|"check-in upgrade"| DCS6
+  end
+
+  subgraph SETTLE3["🏦 Settlement"]
+    direction TB
+    RA["Revenue Accounting\nAncillary coupon accounting"]
+    SAP4["SAP S/4HANA\nRevenue recognition · GL"]
+    PSS6 -->|"EMD coupons"| RA
+    RA -->|"revenue posting"| SAP4
+  end
+
+  subgraph ANALYTICS2["📊 Ancillary Analytics"]
+    direction TB
+    DW5["AWS Redshift\nAncillary revenue DW"]
+    AMPL2["Amplitude\nConversion · A/B results"]
+    SAP4 -->|"actuals"| DW5
+    APP2 -->|"click events"| AMPL2
+  end
+
+  classDef cat  fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef pri  fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef ch   fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef ful  fill:#003366,color:#fff,stroke:#003366
+  classDef set  fill:#fff1f2,stroke:#e11d48,color:#881337
+  classDef ana  fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class ATPCO3,BUNDLER cat
+  class PROS3,SEAT,UPGRADE pri
+  class NDC3,WEB2,APP2 ch
+  class PSS6,DCS6 ful
+  class RA,SAP4 set
+  class DW5,AMPL2 ana
+  class ACCELYA key
