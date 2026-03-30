@@ -1,0 +1,78 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart TB
+
+  subgraph EXT2["🌐 External Feeds"]
+    direction LR
+    FAA2["FAA SWIM\nNOTAMs · TFRs · Slots"]
+    WX["Jeppesen / WSI\nWeather · Winds · SIGMETs"]
+    ATC2["ATC Centre\nClearances · Reroutes · Delays"]
+    ACARS4["SITA ACARS\nPosition reports · OOOI times"]
+  end
+
+  subgraph DISPATCH["📋 Dispatch & Flight Planning"]
+    direction TB
+    FP["NAVBLUE / Lido\nFlight plan · Fuel calc · Alternate"]
+    NOTAM["NOTAM Processor\nJeppesen FliteDeck · EFB"]
+    WB["Weight & Balance\nLoad control · ZFW calc"]
+    FAA2 -->|"NOTAMs · flow programs"| FP
+    WX -->|"winds · weather"| FP
+    FP -->|"approved flight plan"| NOTAM
+    FP -->|"fuel load"| WB
+  end
+
+  subgraph NOC2["🖥️ Network Operations Control"]
+    direction TB
+    SCOUT["Avtec Scout NOC\nFlight watch · Gate · Crew"]
+    CAIRO["Cairo AI\nCancellation recommendations"]
+    DELAY["Delay Management\nRoot cause · OTP tracking"]
+    SCOUT -->|"disruption detected"| CAIRO
+    CAIRO -->|"cancel / protect plan"| SCOUT
+    SCOUT -->|"delay codes"| DELAY
+  end
+
+  subgraph CREW2["👨‍✈️ Crew Tracking"]
+    direction TB
+    CMS["Crew Mgmt System\nPairing · Legal checks · AWS"]
+    RESERVE["Reserve Desk\nStandby · Open time"]
+    CMS -->|"crew assignments"| SCOUT
+    SCOUT -->|"disruption"| CMS
+    CMS -->|"open flying"| RESERVE
+  end
+
+  subgraph AIRCRAFT["✈️ Aircraft Systems"]
+    direction TB
+    MRO2["Custom MRO System\nAirworthiness · MEL · Log"]
+    ACARS4 -->|"OOOI / fuel burn"| SCOUT
+    MRO2 -->|"airworthy status"| SCOUT
+  end
+
+  subgraph REPORT2["📊 Post-Flight Reporting"]
+    direction TB
+    FOQA["FDR / FOQA\nFlight data monitoring"]
+    DW3["AWS S3 / Redshift\nOps data lake"]
+    DELAY -->|"OTP data"| DW3
+    ACARS4 -->|"flight data"| FOQA
+    FOQA -->|"safety events"| DW3
+    SCOUT -->|"ops metrics"| DW3
+  end
+
+  WX -->|"meteorological data"| SCOUT
+  ATC2 -->|"expected delay"| SCOUT
+  FP -->|"filed route"| ATC2
+  WB -->|"final load"| SCOUT
+
+  classDef ext  fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef disp fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef noc  fill:#003366,color:#fff,stroke:#003366
+  classDef crew fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef ac   fill:#fdf4ff,stroke:#9333ea,color:#581c87
+  classDef rep  fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class FAA2,WX,ATC2,ACARS4 ext
+  class FP,NOTAM,WB disp
+  class SCOUT noc
+  class CAIRO,DELAY key
+  class CMS,RESERVE crew
+  class MRO2 ac
+  class FOQA,DW3 rep
