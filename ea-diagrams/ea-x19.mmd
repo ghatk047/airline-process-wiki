@@ -1,0 +1,77 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart TB
+
+  subgraph DEMAND2["📊 Demand &amp; Capacity"]
+    direction LR
+    SKYCAST3["Amadeus SkyCAST\nO&amp;D demand · Route profitability"]
+    OAG3["OAG Schedule Analyser\nMarket capacity · Competitor slots"]
+    SKYCAST3 -->|"route opportunity"| SKYWORKS3
+    OAG3 -->|"market data"| SKYWORKS3
+  end
+
+  subgraph SLOT["🗓️ Slot Coordination"]
+    direction TB
+    SKYWORKS3["Amadeus SkyWORKS\nSchedule management · SSIM"]
+    SCR["IATA SCR Portal\nSlot request · Confirmation"]
+    WSG["IATA WSG\nWorld Slot Guidelines"]
+    AIRPORT3["Coordinator Portals\nLGA · DCA · ORD · LHR"]
+    SKYWORKS3 -->|"slot request SSIM"| SCR
+    SCR -->|"confirmed slots"| SKYWORKS3
+    WSG -->|"rule compliance"| SCR
+    SKYWORKS3 -->|"airport-specific slots"| AIRPORT3
+    AIRPORT3 -->|"local confirmation"| SKYWORKS3
+  end
+
+  subgraph CODESHARE["🤝 Codeshare &amp; Interline"]
+    direction TB
+    SCHED_SHARE["Schedule Exchange\nSSIM file to partners"]
+    SPA["Special Prorate Agmt\nInterline fare proration"]
+    MITA["IATA MITA Portal\nInterline billing · Claims"]
+    SKYWORKS3 -->|"partner schedule"| SCHED_SHARE
+    SCHED_SHARE -->|"operating segments"| MKTG_CARRIER
+    SPA -->|"prorate rates"| MITA
+  end
+
+  subgraph MKTG_CARRIER["✈️ Marketing Carrier PSS"]
+    direction TB
+    PSS8["Amadeus Altea PSS\nCodeshare inventory · Ticketing"]
+    ALLIANCE["Alliance Systems\nStar / SkyTeam / oneworld"]
+    SCHED_SHARE -->|"codeshare segments"| PSS8
+    ALLIANCE -->|"reciprocal space"| PSS8
+  end
+
+  subgraph VALIDATE2["✅ Cross-check Validation"]
+    direction TB
+    COCHECK3["Co-location Check\nCrew · Aircraft · Slot aligned"]
+    CMS5["Crew Mgmt System\nCrew legal · Hours check"]
+    MRO5["MRO System\nAircraft availability"]
+    SKYWORKS3 -->|"rotation plan"| COCHECK3
+    CMS5 -->|"crew feasibility"| COCHECK3
+    MRO5 -->|"mx windows"| COCHECK3
+    COCHECK3 -->|"conflict alert"| SKYWORKS3
+  end
+
+  subgraph PUBLISH2["📡 GDS Publication"]
+    direction TB
+    ALTEA6["Amadeus Altea\nSchedule load · Codeshare open"]
+    GDS5["Sabre / Travelport / Amadeus GDS\nBookable schedules"]
+    ALTEA6 -->|"published schedule"| GDS5
+    SKYWORKS3 -->|"approved schedule"| ALTEA6
+  end
+
+  classDef dem fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef slt fill:#003366,color:#fff,stroke:#003366
+  classDef cds fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef mkt fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef val fill:#fffbeb,stroke:#d97706,color:#78350f
+  classDef pub fill:#fdf4ff,stroke:#9333ea,color:#581c87
+  classDef key fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class SKYCAST3,OAG3 dem
+  class SKYWORKS3 slt
+  class SCR,WSG,AIRPORT3 slt
+  class SCHED_SHARE,SPA,MITA cds
+  class PSS8,ALLIANCE mkt
+  class COCHECK3 key
+  class CMS5,MRO5 val
+  class ALTEA6,GDS5 pub
