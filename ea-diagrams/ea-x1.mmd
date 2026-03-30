@@ -1,0 +1,77 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart TB
+
+  subgraph BOOK["✈️ Booking & Reservation"]
+    direction LR
+    GDS["Sabre / Travelport / Amadeus GDS\nFare shopping · PNR creation"]
+    NDC["NDC API Gateway\nOffer · Order · Seat ancillary"]
+    PSS["Amadeus Altéa PSS\nInventory · Reservations · Ticketing"]
+    ATPCO["ATPCO\nFare rules · Tax tables"]
+    GDS -->|"fare availability"| PSS
+    NDC -->|"offer & order"| PSS
+    ATPCO -->|"fare rules"| PSS
+  end
+
+  subgraph RM["💰 Revenue Management"]
+    direction LR
+    NRM["Amadeus NRM\nInventory optimisation · O&D RM"]
+    PROS["PROS RM\nDynamic pricing · Willingness-to-pay"]
+    NRM -->|"fare class controls"| PSS
+    PROS -->|"price recommendations"| NRM
+  end
+
+  subgraph CHECKIN["🛂 Check-In & DCS"]
+    direction LR
+    ALTEA_DCS["Amadeus Altéa DCS\nCheck-in · Seat assignment · Boarding pass"]
+    KIOSK["Self-Service Kiosks\nCUTE · Web check-in · Mobile"]
+    BIOM["Biometric Token\nFace match · Single token travel"]
+    PSS -->|"reservation data"| ALTEA_DCS
+    KIOSK -->|"check-in transactions"| ALTEA_DCS
+    ALTEA_DCS -->|"biometric enrol"| BIOM
+  end
+
+  subgraph OPS["⚙️ Day-of-Operations"]
+    direction LR
+    NOC["Avtec Scout NOC\nFlight watch · Delay tracking"]
+    LOAD["Load Control\nWeight & balance · LDM"]
+    GATE["Gate Reader\nBoarding scan · Final counts"]
+    ALTEA_DCS -->|"passenger manifest"| LOAD
+    ALTEA_DCS -->|"boarding instructions"| GATE
+    NOC -->|"delay / gate change"| ALTEA_DCS
+  end
+
+  subgraph LOYALTY["⭐ Loyalty"]
+    direction LR
+    FFP["Rapid Rewards / FFP\nMiles accrual · Status upgrade"]
+    CRM["Salesforce CRM\nCustomer 360 · Offer targeting"]
+    PSS -->|"flight activity"| FFP
+    FFP -->|"redemption request"| PSS
+    FFP -->|"member data"| CRM
+  end
+
+  subgraph DATA["📊 Analytics"]
+    direction LR
+    DW["AWS Redshift\nData warehouse · Revenue reporting"]
+    BI["Tableau / Power BI\nKPI dashboards · Exec reporting"]
+    PSS -->|"booking & revenue data"| DW
+    NRM -->|"forecast actuals"| DW
+    DW -->|"visualisation"| BI
+  end
+
+  classDef book fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef rm   fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef ci   fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef ops  fill:#fdf4ff,stroke:#9333ea,color:#581c87
+  classDef loy  fill:#fffbeb,stroke:#d97706,color:#78350f
+  classDef data fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+  classDef hub  fill:#003366,color:#fff,stroke:#003366
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class GDS,NDC,ATPCO book
+  class NRM,PROS rm
+  class PSS hub
+  class ALTEA_DCS key
+  class KIOSK,BIOM ci
+  class NOC,LOAD,GATE ops
+  class FFP,CRM loy
+  class DW,BI data
