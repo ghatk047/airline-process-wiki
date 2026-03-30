@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart LR
+
+  subgraph SCHEDULE2["📅 Schedule Input"]
+    direction TB
+    SKYWORKS["Amadeus SkyWORKS\nApproved flight schedule · SSIM"]
+    FLEET["SkyMAX\nFleet rotation · Tail assignments"]
+    SKYWORKS -->|"schedule"| PAIRING
+    FLEET -->|"aircraft rotations"| PAIRING
+  end
+
+  subgraph PLANNING["📋 Crew Planning"]
+    direction TB
+    PAIRING["Jeppesen Crew Pairing\nOptimal pairings · FAR 117 check"]
+    ROSTER["Jeppesen Bidding\nCrew rostering · PBS · Bids"]
+    LEGAL["Legal Engine\nRest rules · CBA · Qualification"]
+    PAIRING -->|"pairings"| ROSTER
+    ROSTER -->|"schedules"| LEGAL
+    LEGAL -->|"violations"| PAIRING
+  end
+
+  subgraph DAYOPS["⚡ Day-of-Operations"]
+    direction TB
+    CMS2["Crew Mgmt System\nReal-time tracking · Duty status"]
+    RESERVE2["Reserve Management\nStandby · Open time · Callout"]
+    CMS2 -->|"open positions"| RESERVE2
+  end
+
+  subgraph COLOC["🔗 Co-location Check"]
+    direction TB
+    COCHECK["Aircraft-Crew\nCo-location Validator\nDecember 2022 fix"]
+    SCOUT2["Avtec Scout NOC\nFlight · Crew · Aircraft unified view"]
+    CMS2 -->|"crew positions"| COCHECK
+    FLEET -->|"aircraft positions"| COCHECK
+    COCHECK -->|"mismatch alert"| SCOUT2
+  end
+
+  subgraph IRROP["🚨 IRROP Recovery"]
+    direction TB
+    CAIRO2["Cairo AI\nCancel recommendations"]
+    REPAIRING["Recovery Optimizer\nNew pairings · Hotel · Transport"]
+    SCOUT2 -->|"disruption event"| CAIRO2
+    CAIRO2 -->|"recovery plan"| REPAIRING
+    REPAIRING -->|"new assignments"| CMS2
+  end
+
+  subgraph SUPPORT["🏨 Crew Support"]
+    direction TB
+    HOTEL["Hotel / Transport\nCrewlogix · Airline systems"]
+    PAYROLL["Crew Pay\nHours · Per diem · Override"]
+    REPAIRING -->|"hotel requests"| HOTEL
+    CMS2 -->|"actual hours"| PAYROLL
+  end
+
+  classDef sched fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef plan  fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef day   fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef coloc fill:#fffbeb,stroke:#d97706,color:#78350f
+  classDef irrop fill:#fff1f2,stroke:#e11d48,color:#881337
+  classDef sup   fill:#fdf4ff,stroke:#9333ea,color:#581c87
+  classDef hub   fill:#003366,color:#fff,stroke:#003366
+  classDef key   fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class SKYWORKS,FLEET sched
+  class PAIRING,ROSTER,LEGAL plan
+  class CMS2 hub
+  class RESERVE2 day
+  class COCHECK key
+  class SCOUT2,CAIRO2 irrop
+  class REPAIRING irrop
+  class HOTEL,PAYROLL sup
