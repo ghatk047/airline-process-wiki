@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart LR
+
+  subgraph MARKET["🌐 Market Intelligence"]
+    direction TB
+    OAG["OAG Schedule Analyser\nCompetitor capacity · Market share"]
+    SABRE_CI["Sabre PRISM\nCompetitor fare monitoring"]
+    ATPCO2["ATPCO\nFare filing · Rules · Taxes"]
+  end
+
+  subgraph PRICING["💲 Pricing Engine"]
+    direction TB
+    PROS2["PROS RM\nWillingness-to-pay · Dynamic pricing"]
+    FARE_DESK["Pricing Analyst\nFare construction · Tariff review"]
+    ATPCO2 -->|"filed fares"| PROS2
+    OAG -->|"market data"| FARE_DESK
+    SABRE_CI -->|"competitor fares"| FARE_DESK
+    FARE_DESK -->|"price parameters"| PROS2
+  end
+
+  subgraph RM2["📈 Revenue Management"]
+    direction TB
+    NRM2["Amadeus NRM\nO&D optimisation · Forecast"]
+    OVERBK["Overbooking Engine\nNo-show model · Denied boarding calc"]
+    PROS2 -->|"price sensitivity"| NRM2
+    NRM2 -->|"booking limits"| OVERBK
+  end
+
+  subgraph PSS2["🎟️ PSS & Inventory"]
+    direction TB
+    ALTEA2["Amadeus Altéa PSS\nInventory · Bookings · Ticketing"]
+    NDC2["NDC API Gateway\nOffer creation · Ancillary"]
+    NRM2 -->|"availability controls"| ALTEA2
+    NRM2 -->|"availability controls"| NDC2
+  end
+
+  subgraph SETTLE["🏦 Settlement & Accounting"]
+    direction TB
+    BSP["IATA BSP\nTravel agency settlement"]
+    ARC["ARC\nUS domestic reporting"]
+    SAP["SAP S/4HANA\nRevenue accounting · GL"]
+    ALTEA2 -->|"ticket coupons"| BSP
+    ALTEA2 -->|"ticket coupons"| ARC
+    BSP -->|"settlement files"| SAP
+    ARC -->|"billing data"| SAP
+  end
+
+  subgraph REPORT["📊 Performance Reporting"]
+    direction TB
+    DW2["AWS Redshift\nRevenue data warehouse"]
+    TABLEAU2["Tableau\nRASK · CASK · Load factor"]
+    SAP -->|"actuals"| DW2
+    ALTEA2 -->|"booking data"| DW2
+    DW2 -->|"dashboards"| TABLEAU2
+  end
+
+  classDef mkt  fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef pri  fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef rm3  fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef pss3 fill:#fdf4ff,stroke:#9333ea,color:#581c87
+  classDef set  fill:#fff1f2,stroke:#e11d48,color:#881337
+  classDef rep  fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+  classDef hub  fill:#003366,color:#fff,stroke:#003366
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class OAG,SABRE_CI,ATPCO2 mkt
+  class PROS2,FARE_DESK pri
+  class NRM2,OVERBK rm3
+  class ALTEA2,NDC2 pss3
+  class BSP,ARC,SAP set
+  class DW2,TABLEAU2 rep
+  class NRM2 hub
+  class ALTEA2 key
