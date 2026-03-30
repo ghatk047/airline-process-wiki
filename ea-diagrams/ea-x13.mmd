@@ -1,0 +1,74 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart TB
+
+  subgraph DETECT["🔍 Event Detection"]
+    direction LR
+    FOQA2["FDR / FOQA\nFlight data exceedance alerts"]
+    ASAP["ASAP Program\nVoluntary crew reports"]
+    MAINT["Maintenance Defect\nTech log entries · MEL"]
+    ATC5["ATC Near-Miss\nATC incident notification"]
+  end
+
+  subgraph CAPTURE["📋 Safety Reporting System"]
+    direction TB
+    SMS["Safety Mgmt System\nEvent capture · Classification"]
+    RISKDB["Risk Register\nHazard log · Likelihood · Impact"]
+    FOQA2 -->|"exceedance data"| SMS
+    ASAP -->|"voluntary report"| SMS
+    MAINT -->|"defect report"| SMS
+    ATC5 -->|"incident report"| SMS
+    SMS -->|"risk assessment"| RISKDB
+  end
+
+  subgraph INVEST["🔬 Investigation & Analysis"]
+    direction TB
+    AIRS["AIRS Investigator\nRoot cause · Bow-tie analysis"]
+    LOSA["LOSA Observations\nLine ops safety audit data"]
+    AIRS -->|"findings"| CORRECTIVE
+    LOSA -->|"safety data"| RISKDB
+    SMS -->|"investigation trigger"| AIRS
+  end
+
+  subgraph CORRECTIVE["🔧 Corrective Actions"]
+    direction TB
+    CAR["Corrective Action\nTask assignment · Due date"]
+    AMOS3["AMOS MRO\nMaintenance corrective work"]
+    TRAINING["Training Mgmt\nRecurrent · CRM · Procedure"]
+    CAR -->|"mx action"| AMOS3
+    CAR -->|"training requirement"| TRAINING
+  end
+
+  subgraph REGULATORY["📜 Regulatory Submission"]
+    direction TB
+    FAA4["FAA ASIAS Portal\nAccident / incident report"]
+    EASA["EASA Occurrence\nReporting system"]
+    ICAO["ICAO ADREP\nAnnual safety data"]
+    SMS -->|"reportable event"| FAA4
+    SMS -->|"occurrence report"| EASA
+    RISKDB -->|"annual data"| ICAO
+  end
+
+  subgraph SPIDB["📊 Safety Performance"]
+    direction TB
+    SPI["SPI Dashboard\nSafety KPIs · Trend analysis"]
+    EXEC["Executive Safety\nBoard safety review"]
+    RISKDB -->|"KPI data"| SPI
+    CORRECTIVE -->|"closure rate"| SPI
+    SPI -->|"safety report"| EXEC
+  end
+
+  classDef det  fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef cap  fill:#003366,color:#fff,stroke:#003366
+  classDef inv  fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef cor  fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef reg  fill:#fff1f2,stroke:#e11d48,color:#881337
+  classDef spi  fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class FOQA2,ASAP,MAINT,ATC5 det
+  class SMS cap
+  class RISKDB key
+  class AIRS,LOSA inv
+  class CAR,AMOS3,TRAINING cor
+  class FAA4,EASA,ICAO reg
+  class SPI,EXEC spi
