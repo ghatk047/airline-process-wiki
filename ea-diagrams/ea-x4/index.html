@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crew Management — Planning to Recovery · Airlines Process Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/wiki.css">
+<style>
+.ea-wrap{width:100%;overflow:auto;background:#F8FAFC;border:1px solid var(--border);border-radius:8px;padding:8px}
+.ea-toolbar{display:flex;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+.ea-btn{padding:6px 14px;border-radius:5px;border:1px solid var(--border);background:white;font-size:12px;cursor:pointer;font-weight:600;color:var(--navy);transition:all .15s}
+.ea-btn:hover{background:var(--navy);color:white}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../../" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <span class="topbar-badge">v1.0</span>
+  <div class="topbar-right">
+    <input type="text" id="searchBox" class="search-box" placeholder="Search processes… (/)" autocomplete="off">
+    <a href="../../">Home</a>
+    <a href="../../ea-diagrams/">EA Diagrams</a>
+    <a href="https://github.com/ghatk047/airline-process-wiki" class="gh-btn" target="_blank">⭐ GitHub</a>
+  </div>
+</header>
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-domain open" data-label="EA Diagrams"><span class="domain-icon">🗺️</span><span class="domain-label">EA Diagrams</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
+      <a class="sidebar-l2-link" href="../../ea-diagrams/">All EA Diagrams</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../ea-diagrams/np/"><span class="pid">EA-NP</span>Network Planning Landscape</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/cx/"><span class="pid">EA-CX</span>Customer Experience Landscape</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/fo/"><span class="pid">EA-FO</span>Flight Ops Landscape</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/cm/"><span class="pid">EA-CM</span>Crew Mgmt Landscape</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/go/"><span class="pid">EA-GO</span>Ground Ops Landscape</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/mr/"><span class="pid">EA-MR</span>MRO Landscape</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/cs/"><span class="pid">EA-CS</span>Corporate Support Landscape</a>
+      </div>
+      <a class="sidebar-l2-link" href="../../ea-diagrams/">Cross-Domain Diagrams</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../../ea-diagrams/ea-x1/"><span class="pid">EA-X1</span>Passenger: Booking to Boarding</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/ea-x2/"><span class="pid">EA-X2</span>Revenue & Pricing — System Integrat</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/ea-x3/"><span class="pid">EA-X3</span>Flight Operations & Dispatch</a>
+        <a class="sidebar-l3-link active" href="../../ea-diagrams/ea-x4/"><span class="pid">EA-X4</span>Crew Management — Planning to Recov</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/ea-x5/"><span class="pid">EA-X5</span>MRO & Airworthiness Integration</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/ea-x6/"><span class="pid">EA-X6</span>Customer Experience & Loyalty</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/ea-x7/"><span class="pid">EA-X7</span>Network Planning to Publication</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/ea-x8/"><span class="pid">EA-X8</span>Ground Operations & Turnaround</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/ea-x9/"><span class="pid">EA-X9</span>Finance & Revenue Accounting</a>
+        <a class="sidebar-l3-link" href="../../ea-diagrams/ea-x10/"><span class="pid">EA-X10</span>Airline Data Platform & AI/ML</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
+<main class="main">
+  <div class="breadcrumb">
+    <a href="../../">Home</a><span class="sep">›</span>
+    <a href="../../ea-diagrams/">EA Diagrams</a><span class="sep">›</span>
+    <span class="current">Crew Management — Planning to Recovery</span>
+  </div>
+  <div class="page-header">
+    <div class="page-header-left">
+      <h1>Crew Management — Planning to Recovery</h1>
+      <p>Crew pairing, rostering, day-of-ops tracking and IRROP recovery flows</p>
+    </div>
+    <div class="page-header-meta">
+      <span class="pid-badge">EA-X4</span>
+      <span class="status-badge complete">✅ Complete</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header"><span class="icon">🗺️</span><h2>Integration Architecture Diagram</h2></div>
+    <div class="card-body">
+      <div class="ea-toolbar">
+        <button class="ea-btn" onclick="document.getElementById('eaImg').style.minHeight='1200px'">⬆ Expand</button>
+        <button class="ea-btn" onclick="document.getElementById('eaImg').style.minHeight='600px'">⬇ Collapse</button>
+        <a class="ea-btn" href="../../ea-diagrams/ea-x4.png" download>⬇ Download PNG</a>
+        <span style="font-size:11px;color:#94A3B8">Labelled arrows show data flows · Click BPMN diagram to zoom</span>
+      </div>
+      <div class="ea-wrap">
+        <img id="eaImg" src="../../ea-diagrams/ea-x4.png" alt="Crew Management — Planning to Recovery"
+             style="width:100%;height:auto;min-height:600px;object-fit:contain;cursor:zoom-in"
+             onerror="this.style.display='none';document.getElementById('phea-x4').style.display='block'">
+        <div id="phea-x4" style="display:none;padding:40px;text-align:center;color:#94A3B8">
+          <p style="margin-bottom:16px">PNG not yet generated. Run on Mac Mini:</p>
+          <code style="font-size:11px;background:#f1f5f9;padding:8px 16px;border-radius:4px;display:inline-block">
+            mmdc -i ea-diagrams/ea-x4.mmd -o ea-diagrams/ea-x4.png -w 2400 -H 1400 --scale 2 --backgroundColor white
+          </code>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="../../assets/js/wiki.js"></script>
+</body>
+</html>
