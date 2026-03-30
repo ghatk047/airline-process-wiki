@@ -17,6 +17,25 @@ SCRIPT_DIR = Path(__file__).parent
 REPO_DIR   = SCRIPT_DIR.parent
 PROCESSES  = REPO_DIR / "data" / "processes.json"
 
+
+def ea_sidebar_section(root="./"):
+    """Returns EA Diagrams sidebar section HTML."""
+    return f"""  <div class="sidebar-section">
+    <div class="sidebar-domain" data-label="EA Diagrams"><span class="domain-icon">\U0001f5fa\ufe0f</span><span class="domain-label">EA Diagrams</span><span class="chevron">\u25b6</span></div>
+    <div class="sidebar-l2">
+      <a class="sidebar-l2-link" href="{root}ea-diagrams/">Enterprise Architecture</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="{root}ea-diagrams/np/"><span class="pid">EA-NP</span>Network Planning &amp; Scheduling</a>
+        <a class="sidebar-l3-link" href="{root}ea-diagrams/cx/"><span class="pid">EA-CX</span>Customer Experience &amp; Loyalty</a>
+        <a class="sidebar-l3-link" href="{root}ea-diagrams/fo/"><span class="pid">EA-FO</span>Flight Operations</a>
+        <a class="sidebar-l3-link" href="{root}ea-diagrams/cm/"><span class="pid">EA-CM</span>Crew Management</a>
+        <a class="sidebar-l3-link" href="{root}ea-diagrams/go/"><span class="pid">EA-GO</span>Ground Operations</a>
+        <a class="sidebar-l3-link" href="{root}ea-diagrams/mr/"><span class="pid">EA-MR</span>Maintenance &amp; MRO</a>
+        <a class="sidebar-l3-link" href="{root}ea-diagrams/cs/"><span class="pid">EA-CS</span>Corporate Support</a>
+      </div>
+    </div>
+  </div>"""
+
 with open(PROCESSES) as f:
     procs = json.load(f)["processes"]
 
