@@ -4,7 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EA Diagrams · Airlines Process Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/wiki.css">
 </head>
 <body>
@@ -19,89 +19,232 @@
 </header>
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-domain" data-label="EA Diagrams"><span class="domain-icon">🗺️</span><span class="domain-label">EA Diagrams</span><span class="chevron">▶</span></div>
-    <div class="sidebar-l2">
-      <a class="sidebar-l2-link" href="../ea-diagrams/">Enterprise Architecture</a>
+    <div class="sidebar-domain open" data-label="EA Diagrams"><span class="domain-icon">🗺️</span><span class="domain-label">EA Diagrams</span><span class="chevron">▶</span></div>
+    <div class="sidebar-l2 open">
+      <a class="sidebar-l2-link" href="../ea-diagrams/">All EA Diagrams</a>
       <div class="sidebar-l3">
-        <a class="sidebar-l3-link" href="../ea-diagrams/np/"><span class="pid">EA-NP</span>Network Planning & Scheduling</a>
-        <a class="sidebar-l3-link" href="../ea-diagrams/cx/"><span class="pid">EA-CX</span>Customer Experience & Loyalty</a>
-        <a class="sidebar-l3-link" href="../ea-diagrams/fo/"><span class="pid">EA-FO</span>Flight Operations</a>
-        <a class="sidebar-l3-link" href="../ea-diagrams/cm/"><span class="pid">EA-CM</span>Crew Management</a>
-        <a class="sidebar-l3-link" href="../ea-diagrams/go/"><span class="pid">EA-GO</span>Ground Operations & Airport Svcs</a>
-        <a class="sidebar-l3-link" href="../ea-diagrams/mr/"><span class="pid">EA-MR</span>Maintenance, Repair & Overhaul</a>
-        <a class="sidebar-l3-link" href="../ea-diagrams/cs/"><span class="pid">EA-CS</span>Corporate Support Functions</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/np/"><span class="pid">EA-NP</span>NP&amp;S Landscape</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/cx/"><span class="pid">EA-CX</span>CX Landscape</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/fo/"><span class="pid">EA-FO</span>Flight Ops Landscape</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/cm/"><span class="pid">EA-CM</span>Crew Mgmt Landscape</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/go/"><span class="pid">EA-GO</span>Ground Ops Landscape</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/mr/"><span class="pid">EA-MR</span>MRO Landscape</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/cs/"><span class="pid">EA-CS</span>Corp Support Landscape</a>
+      </div>
+      <a class="sidebar-l2-link" href="../ea-diagrams/">Cross-Domain Flows</a>
+      <div class="sidebar-l3">
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x1/"><span class="pid">EA-X1</span>Passenger Booking to Boarding</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x2/"><span class="pid">EA-X2</span>Revenue & Pricing Integration</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x3/"><span class="pid">EA-X3</span>Flight Ops & Dispatch</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x4/"><span class="pid">EA-X4</span>Crew Planning & Recovery</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x5/"><span class="pid">EA-X5</span>MRO & Airworthiness</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x6/"><span class="pid">EA-X6</span>Customer Experience & Loyalty</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x7/"><span class="pid">EA-X7</span>Network Planning to Publication</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x8/"><span class="pid">EA-X8</span>Ground Ops & Turnaround</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x9/"><span class="pid">EA-X9</span>Finance & Revenue Accounting</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x10/"><span class="pid">EA-X10</span>Data Platform & AI/ML</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x11/"><span class="pid">EA-X11</span>IRROP End-to-End</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x12/"><span class="pid">EA-X12</span>Ancillary Revenue & NDC</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x13/"><span class="pid">EA-X13</span>Safety & Compliance</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x14/"><span class="pid">EA-X14</span>Fuel Supply Chain</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x15/"><span class="pid">EA-X15</span>HR & Workforce</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x16/"><span class="pid">EA-X16</span>Cargo Operations</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x17/"><span class="pid">EA-X17</span>Sustainability & ESG</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x18/"><span class="pid">EA-X18</span>Distribution & Channels</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x19/"><span class="pid">EA-X19</span>Slot & Codeshare</a>
+        <a class="sidebar-l3-link" href="../ea-diagrams/ea-x20/"><span class="pid">EA-X20</span>IT & Cybersecurity</a>
       </div>
     </div>
   </div>
 </nav>
 <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">◀</button>
 <main class="main">
-  <div class="breadcrumb">
-    <a href="../">Home</a><span class="sep">›</span>
-    <span class="current">EA Diagrams</span>
-  </div>
+  <div class="breadcrumb"><a href="../">Home</a><span class="sep">›</span><span class="current">EA Diagrams</span></div>
   <div class="page-header">
     <div class="page-header-left">
       <h1>Enterprise Architecture Diagrams</h1>
-      <p>Application landscape diagrams — systems, integrations and data flows across all L1 domains</p>
+      <p>Application landscapes and cross-domain integration flows — 7 domain landscapes + 20 integration diagrams</p>
     </div>
     <div class="page-header-meta">
       <span class="pid-badge">EA</span>
-      <span class="status-badge complete">7 diagrams</span>
+      <span class="status-badge complete">27 diagrams</span>
     </div>
   </div>
-  <div class="domain-grid">
+  <h2 style="margin:24px 0 12px;font-size:16px;color:#64748B;font-weight:600">DOMAIN LANDSCAPES</h2>
+<div class="domain-grid">
 <div class="domain-card">
-  <div class="domain-card-hdr"><h3>🗺️ Network Planning & Scheduling</h3><p>EA-NP</p></div>
+  <div class="domain-card-hdr"><h3>🗺️ Network Planning & Scheduling</h3><p>60 subprocesses · 34 systems</p></div>
+  <div class="domain-card-body"><a class="domain-card-link" href="np/">View diagram →</a></div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🗺️ Customer Experience & Loyalty</h3><p>16 subprocesses · 65 systems</p></div>
+  <div class="domain-card-body"><a class="domain-card-link" href="cx/">View diagram →</a></div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🗺️ Flight Operations</h3><p>15 subprocesses · 79 systems</p></div>
+  <div class="domain-card-body"><a class="domain-card-link" href="fo/">View diagram →</a></div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🗺️ Crew Management</h3><p>15 subprocesses · 60 systems</p></div>
+  <div class="domain-card-body"><a class="domain-card-link" href="cm/">View diagram →</a></div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🗺️ Ground Operations</h3><p>15 subprocesses · 94 systems</p></div>
+  <div class="domain-card-body"><a class="domain-card-link" href="go/">View diagram →</a></div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🗺️ Maintenance, Repair & Overhaul</h3><p>15 subprocesses · 35 systems</p></div>
+  <div class="domain-card-body"><a class="domain-card-link" href="mr/">View diagram →</a></div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🗺️ Corporate Support Functions</h3><p>15 subprocesses · 98 systems</p></div>
+  <div class="domain-card-body"><a class="domain-card-link" href="cs/">View diagram →</a></div>
+</div>
+</div>
+<h2 style="margin:24px 0 12px;font-size:16px;color:#64748B;font-weight:600">CROSS-DOMAIN INTEGRATION FLOWS</h2>
+<div class="domain-grid">
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 Passenger: Booking to Boarding</h3><p>EA-X1</p></div>
   <div class="domain-card-body">
-    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">60 subprocesses · 34 systems · 4 L2 groups</div>
-    <a class="domain-card-link" href="np/">View diagram →</a>
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">End-to-end passenger journey</div>
+    <a class="domain-card-link" href="ea-x1/">View diagram →</a>
   </div>
 </div>
 <div class="domain-card">
-  <div class="domain-card-hdr"><h3>🗺️ Customer Experience & Loyalty</h3><p>EA-CX</p></div>
+  <div class="domain-card-hdr"><h3>🔗 Revenue & Pricing Integration</h3><p>EA-X2</p></div>
   <div class="domain-card-body">
-    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">16 subprocesses · 65 systems · 3 L2 groups</div>
-    <a class="domain-card-link" href="cx/">View diagram →</a>
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Fare construction through settlement</div>
+    <a class="domain-card-link" href="ea-x2/">View diagram →</a>
   </div>
 </div>
 <div class="domain-card">
-  <div class="domain-card-hdr"><h3>🗺️ Flight Operations</h3><p>EA-FO</p></div>
+  <div class="domain-card-hdr"><h3>🔗 Flight Operations & Dispatch</h3><p>EA-X3</p></div>
   <div class="domain-card-body">
-    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">15 subprocesses · 79 systems · 2 L2 groups</div>
-    <a class="domain-card-link" href="fo/">View diagram →</a>
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Flight planning through post-flight</div>
+    <a class="domain-card-link" href="ea-x3/">View diagram →</a>
   </div>
 </div>
 <div class="domain-card">
-  <div class="domain-card-hdr"><h3>🗺️ Crew Management</h3><p>EA-CM</p></div>
+  <div class="domain-card-hdr"><h3>🔗 Crew Planning & Recovery</h3><p>EA-X4</p></div>
   <div class="domain-card-body">
-    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">15 subprocesses · 60 systems · 3 L2 groups</div>
-    <a class="domain-card-link" href="cm/">View diagram →</a>
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Pairing through IRROP re-crew</div>
+    <a class="domain-card-link" href="ea-x4/">View diagram →</a>
   </div>
 </div>
 <div class="domain-card">
-  <div class="domain-card-hdr"><h3>🗺️ Ground Operations & Airport Svcs</h3><p>EA-GO</p></div>
+  <div class="domain-card-hdr"><h3>🔗 MRO & Airworthiness</h3><p>EA-X5</p></div>
   <div class="domain-card-body">
-    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">15 subprocesses · 94 systems · 2 L2 groups</div>
-    <a class="domain-card-link" href="go/">View diagram →</a>
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Maintenance planning through compliance</div>
+    <a class="domain-card-link" href="ea-x5/">View diagram →</a>
   </div>
 </div>
 <div class="domain-card">
-  <div class="domain-card-hdr"><h3>🗺️ Maintenance, Repair & Overhaul</h3><p>EA-MR</p></div>
+  <div class="domain-card-hdr"><h3>🔗 Customer Experience & Loyalty</h3><p>EA-X6</p></div>
   <div class="domain-card-body">
-    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">15 subprocesses · 35 systems · 2 L2 groups</div>
-    <a class="domain-card-link" href="mr/">View diagram →</a>
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">CX touchpoints through personalisation</div>
+    <a class="domain-card-link" href="ea-x6/">View diagram →</a>
   </div>
 </div>
 <div class="domain-card">
-  <div class="domain-card-hdr"><h3>🗺️ Corporate Support Functions</h3><p>EA-CS</p></div>
+  <div class="domain-card-hdr"><h3>🔗 Network Planning to Publication</h3><p>EA-X7</p></div>
   <div class="domain-card-body">
-    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">15 subprocesses · 98 systems · 5 L2 groups</div>
-    <a class="domain-card-link" href="cs/">View diagram →</a>
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Demand forecast through GDS loading</div>
+    <a class="domain-card-link" href="ea-x7/">View diagram →</a>
   </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 Ground Ops & Turnaround</h3><p>EA-X8</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Gate assignment through departure</div>
+    <a class="domain-card-link" href="ea-x8/">View diagram →</a>
+  </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 Finance & Revenue Accounting</h3><p>EA-X9</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Ticket sales through financial close</div>
+    <a class="domain-card-link" href="ea-x9/">View diagram →</a>
+  </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 Data Platform & AI/ML</h3><p>EA-X10</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Ingestion through model serving</div>
+    <a class="domain-card-link" href="ea-x10/">View diagram →</a>
+  </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 IRROP — Irregular Operations End-to-End</h3><p>EA-X11</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">How all systems respond to a major disruption — cancel, protect, notify, recover</div>
+    <a class="domain-card-link" href="ea-x11/">View diagram →</a>
+  </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 Ancillary Revenue & NDC Offer Management</h3><p>EA-X12</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Seats, bags, upgrades and ancillary products from pricing to sale</div>
+    <a class="domain-card-link" href="ea-x12/">View diagram →</a>
+  </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 Safety Management & Compliance Reporting</h3><p>EA-X13</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Safety events from detection through investigation to regulatory submission</div>
+    <a class="domain-card-link" href="ea-x13/">View diagram →</a>
+  </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 Fuel Procurement & Supply Chain Integration</h3><p>EA-X14</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Fuel planning, hedging, into-plane delivery and cost accounting flows</div>
+    <a class="domain-card-link" href="ea-x14/">View diagram →</a>
+  </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 Human Resources & Workforce Management</h3><p>EA-X15</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Recruitment through payroll — HR systems integration across the airline</div>
+    <a class="domain-card-link" href="ea-x15/">View diagram →</a>
+  </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 Cargo Operations — Booking to Delivery</h3><p>EA-X16</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Air cargo booking, dangerous goods, ULD build and revenue settlement flows</div>
+    <a class="domain-card-link" href="ea-x16/">View diagram →</a>
+  </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 Sustainability & ESG Data Architecture</h3><p>EA-X17</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Carbon measurement, SAF tracking, CORSIA compliance and ESG reporting flows</div>
+    <a class="domain-card-link" href="ea-x17/">View diagram →</a>
+  </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 Distribution & Channel Technology Integration</h3><p>EA-X18</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Airline content reaching consumers across GDS, NDC, direct and OTA channels</div>
+    <a class="domain-card-link" href="ea-x18/">View diagram →</a>
+  </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 Slot Management & Codeshare Coordination</h3><p>EA-X19</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Airport slots, interline agreements and codeshare schedule coordination</div>
+    <a class="domain-card-link" href="ea-x19/">View diagram →</a>
+  </div>
+</div>
+<div class="domain-card">
+  <div class="domain-card-hdr"><h3>🔗 IT Infrastructure & Cybersecurity Architecture</h3><p>EA-X20</p></div>
+  <div class="domain-card-body">
+    <div class="domain-card-stat" style="font-size:11px;color:#6b7280;margin-bottom:6px">Network zones, identity management, threat detection and DR/BCP flows</div>
+    <a class="domain-card-link" href="ea-x20/">View diagram →</a>
+  </div>
+</div>
 </div>
 
-  </div>
 </main>
 <script src="../assets/js/wiki.js"></script>
 </body>
