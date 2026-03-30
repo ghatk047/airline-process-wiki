@@ -1,0 +1,76 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart TB
+
+  subgraph TRIGGER["⚡ Disruption Trigger"]
+    direction LR
+    WX2["Weather Service\nSIGMETs · Ground stop"]
+    ATC4["ATC / FAA\nGround delay program"]
+    MRO4["MRO / AOG\nUnscheduled mx event"]
+  end
+
+  subgraph DECISION["🧠 Operations Decision"]
+    direction TB
+    NOC4["Avtec Scout NOC\nFlight watch · Delay codes"]
+    CAIRO4["Cairo AI\nCancel vs delay recommendation"]
+    NOC4 -->|"delay threshold hit"| CAIRO4
+    WX2 -->|"GDP alert"| NOC4
+    ATC4 -->|"expected delay"| NOC4
+    MRO4 -->|"aircraft unfit"| NOC4
+    CAIRO4 -->|"cancel decision"| PROTECT
+  end
+
+  subgraph PROTECT["🛡️ Passenger Protection"]
+    direction TB
+    PSS5["Amadeus Altea PSS\nAuto-rebook · Waiver codes"]
+    VOUCHER["Voucher Engine\nHotel · Meal · Transport"]
+    PROT_Q["Protection Queue\nPriority: loyalty status · connection"]
+    CAIRO4 -->|"protect flag"| PSS5
+    PSS5 -->|"rebook complete"| PROT_Q
+    PSS5 -->|"eligible pax"| VOUCHER
+  end
+
+  subgraph NOTIFY["📣 Notification & Comms"]
+    direction TB
+    NOTIF2["Notification Hub\nSMS · Push · Email · IVR"]
+    AIRPORT2["Airport FIDS\nGate boards · Annuncia"]
+    DCS5["Altea DCS\nAgent screen · Gate device"]
+    PSS5 -->|"itinerary change"| NOTIF2
+    NOC4 -->|"flight status"| AIRPORT2
+    NOC4 -->|"delay message"| DCS5
+    NOTIF2 -->|"alerts sent"| PROT_Q
+  end
+
+  subgraph CREW3["👨‍✈️ Crew Recovery"]
+    direction TB
+    CMS3a["Crew Mgmt System\nOpen positions · Legal check"]
+    RESERVE3["Reserve Desk\nStandby callout"]
+    HOTEL2["Crew Hotel System\nLayover · Transport"]
+    NOC4 -->|"crew disruption"| CMS3a
+    CMS3a -->|"open flying"| RESERVE3
+    CMS3a -->|"extended layover"| HOTEL2
+  end
+
+  subgraph REPORT3["📊 Post-IRROP Analysis"]
+    direction TB
+    DW4["AWS Redshift\nIRROP data lake"]
+    OTP["OTP Dashboard\nDelay codes · D0 performance"]
+    COST["Cost Tracker\nVoucher · Hotel · Crew OT"]
+    PROT_Q -->|"final outcomes"| DW4
+    CREW3 -->|"crew costs"| COST
+    NOC4 -->|"delay events"| OTP
+    DW4 -->|"analysis"| OTP
+  end
+
+  classDef trig fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef dec  fill:#003366,color:#fff,stroke:#003366
+  classDef pro  fill:#ff6600,color:#fff,stroke:#ff6600
+  classDef not  fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef crew fill:#fdf4ff,stroke:#9333ea,color:#581c87
+  classDef rep  fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+
+  class WX2,ATC4,MRO4 trig
+  class NOC4,CAIRO4 dec
+  class PSS5,VOUCHER,PROT_Q pro
+  class NOTIF2,AIRPORT2,DCS5 not
+  class CMS3a,RESERVE3,HOTEL2 crew
+  class DW4,OTP,COST rep
