@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart TB
+
+  SCOUT4(["Avtec Scout NOC\nFlight inbound · ETA"]) -->|"inbound alert"| GATE_SYS
+  DCS4(["Altéa DCS\nPassenger manifest"]) -->|"pax count · SSRs"| LOAD2
+
+  subgraph GATE_SYS["🚪 Gate & Resource"]
+    direction LR
+    AMS2["SITA AMS\nGate assignment · Jetway ctrl"]
+    GSE2["GSE Dispatch\nEquipment scheduling · Tracking"]
+    AMS2 -->|"gate confirmed"| GSE2
+  end
+
+  subgraph LOAD2["⚖️ Load Control"]
+    direction TB
+    WB2["Weight & Balance\nZFW · CG · Load sheet"]
+    CARGO["Cargo System\nULD build · Dangerous goods"]
+    WB2 <-->|"cargo weights"| CARGO
+  end
+
+  subgraph GROUND["🔧 Ground Services Execution"]
+    direction LR
+    FUEL4["Into-Plane Fuelling\nUplift · ACARS confirm"]
+    CLEAN3["Cabin Services\nCleaning · Catering"]
+    DEICE2["De-ice System\nFluid type · Application"]
+    PWS2["Water & Waste\nService dispatch"]
+  end
+
+  subgraph BAGGAGE2["🧳 Baggage Operations"]
+    direction LR
+    BRS2["Amadeus BRS\nBag reconciliation · BSM"]
+    HANDHELD["Handheld Scanners\nBag tag · ULD scan"]
+    BRS2 <-->|"scan events"| HANDHELD
+  end
+
+  subgraph DEPART["🛫 Departure Release"]
+    direction TB
+    LDM["LDM / CPM\nLoad message to crew"]
+    RELEASE["Captain Release\nFlight plan acceptance"]
+    ATC3["ATC Clearance\nPushback approval"]
+    LDM -->|"load data"| RELEASE
+    RELEASE -->|"ready to push"| ATC3
+  end
+
+  GSE2 -->|"fuel truck ready"| FUEL4
+  GSE2 -->|"cleaning truck"| CLEAN3
+  GSE2 -->|"de-ice request"| DEICE2
+  FUEL4 -->|"uplift confirmed"| SCOUT4
+  BRS2 -->|"all bags loaded"| WB2
+  WB2 -->|"final load sheet"| LDM
+  CARGO -->|"ULD loaded"| BRS2
+  AMS2 -->|"gate status"| SCOUT4
+  CLEAN3 -->|"cabin ready"| SCOUT4
+
+  classDef ext  fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef gate fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef load fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef gnd  fill:#fdf4ff,stroke:#9333ea,color:#581c87
+  classDef bag  fill:#fffbeb,stroke:#d97706,color:#78350f
+  classDef dep  fill:#fff1f2,stroke:#e11d48,color:#881337
+  classDef hub  fill:#003366,color:#fff,stroke:#003366
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class SCOUT4,DCS4 ext
+  class AMS2,GSE2 gate
+  class WB2,CARGO load
+  class FUEL4,CLEAN3,DEICE2,PWS2 gnd
+  class BRS2,HANDHELD bag
+  class LDM,RELEASE,ATC3 dep
+  class AMS2 hub
+  class WB2 key
