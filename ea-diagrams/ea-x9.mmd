@@ -1,0 +1,68 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart LR
+
+  subgraph REVENUE["💳 Revenue Sources"]
+    direction TB
+    ALTEA5["Amadeus Altéa PSS\nTicket sales · Ancillary"]
+    CARGO2["Cargo Revenue\nAWB · Charter · Mail"]
+    LOYALTY3["Loyalty Revenue\nMiles sold · Co-brand fees"]
+    ALTEA5 -->|"coupon data"| BSP2
+    ALTEA5 -->|"coupon data"| ARC2
+    CARGO2 -->|"AWB revenue"| IATA_CASS
+    LOYALTY3 -->|"partner revenue"| SAP3
+  end
+
+  subgraph SETTLE2["🏦 Settlement Layer"]
+    direction TB
+    BSP2["IATA BSP\nTravel agency billing"]
+    ARC2["ARC\nUS domestic settlement"]
+    IATA_CASS["IATA CASS\nCargo settlement"]
+    INTERLINE["IATA MITA\nInterline billing · Proration"]
+    BSP2 -->|"net remittance"| SAP3
+    ARC2 -->|"remittance"| SAP3
+    IATA_CASS -->|"cargo funds"| SAP3
+    INTERLINE -->|"interline net"| SAP3
+  end
+
+  subgraph ERP2["🏢 SAP S/4HANA Finance"]
+    direction TB
+    SAP3["SAP FI · CO · TR\nGL · AP · AR · Controlling"]
+    ASSET2["SAP Asset Accounting\nFleet depreciation · Lease"]
+    ARIBA2["SAP Ariba\nProcurement · PO · Invoice"]
+    SAP3 <-->|"asset posting"| ASSET2
+    ARIBA2 -->|"purchase invoices"| SAP3
+  end
+
+  subgraph TREASURY["🏛️ Treasury & Risk"]
+    direction TB
+    FUEL_HEDGE["Fuel Hedging\nCommodity derivatives"]
+    FX["FX Risk Management\nForward contracts · Exposure"]
+    REUTERS["Refinitiv Eikon\nMarket data · Rates"]
+    REUTERS -->|"prices"| FUEL_HEDGE
+    REUTERS -->|"FX rates"| FX
+    FUEL_HEDGE -->|"hedge P&L"| SAP3
+    FX -->|"FX revaluation"| SAP3
+  end
+
+  subgraph REPORTING["📊 Financial Reporting"]
+    direction TB
+    BPC["SAP BPC / Analytics Cloud\nBudgeting · Forecasting"]
+    BI2b["Tableau / Power BI\nCASK · RASK · Margin"]
+    SAP3 -->|"actuals"| BPC
+    SAP3 -->|"GL data"| BI2b
+    BPC -->|"plan vs actual"| BI2b
+  end
+
+  classDef rev  fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef set  fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef erp  fill:#003366,color:#fff,stroke:#003366
+  classDef tre  fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef rep  fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class ALTEA5,CARGO2,LOYALTY3 rev
+  class BSP2,ARC2,IATA_CASS,INTERLINE set
+  class SAP3,ASSET2,ARIBA2 erp
+  class FUEL_HEDGE,FX,REUTERS tre
+  class BPC,BI2b rep
+  class SAP3 key
