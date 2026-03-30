@@ -1,0 +1,79 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart TB
+
+  subgraph SOURCES["📡 Data Sources — All Domains"]
+    direction LR
+    PSS4["Amadeus Altéa PSS\nBookings · PNRs · Revenue"]
+    OPS4["Ops Systems\nScout NOC · Crew · MRO"]
+    GDS4["GDS / NDC\nSearch · Booking events"]
+    LOYALTY4["Loyalty Platform\nMember · Miles · Spend"]
+    ERP4["SAP S/4HANA\nFinance · HR · Procurement"]
+  end
+
+  subgraph INGEST["⚙️ Ingestion & Integration"]
+    direction LR
+    GLUE2["AWS Glue\nETL · Data catalogue"]
+    KAFKA["Confluent Kafka\nReal-time event streaming"]
+    FIREHOSE["Kinesis Firehose\nStream to S3"]
+    PSS4 -->|"batch & CDC"| GLUE2
+    OPS4 -->|"real-time events"| KAFKA
+    GDS4 -->|"clickstream"| KAFKA
+    LOYALTY4 -->|"activity events"| KAFKA
+    ERP4 -->|"daily extract"| GLUE2
+    KAFKA -->|"stream"| FIREHOSE
+  end
+
+  subgraph LAKE["🗄️ Data Lake & Warehouse"]
+    direction TB
+    S3["AWS S3\nRaw · Curated · Archived zones"]
+    REDSHIFT2["AWS Redshift\nEnterprise data warehouse"]
+    GLUE2 -->|"transformed"| S3
+    FIREHOSE -->|"streamed"| S3
+    S3 -->|"curated data"| REDSHIFT2
+  end
+
+  subgraph AI["🤖 AI / ML Platform"]
+    direction TB
+    SAGEMAKER["AWS SageMaker\nModel training · Feature store"]
+    CAIRO3["Cairo AI\nCancellation optimiser"]
+    DEMAND2["Demand Forecast\nSkyCAST ML · O&D model"]
+    FRAUD["Fraud Detection\nTransaction scoring"]
+    S3 -->|"training data"| SAGEMAKER
+    SAGEMAKER -->|"models"| CAIRO3
+    SAGEMAKER -->|"models"| DEMAND2
+    SAGEMAKER -->|"models"| FRAUD
+  end
+
+  subgraph SERVE["📤 Model Serving & Consumption"]
+    direction LR
+    REALTIME["Real-Time APIs\nOffer pricing · Disruption alert"]
+    BATCH["Batch Scoring\nDemand forecast · Churn"]
+    CAIRO3 -->|"cancel decision"| REALTIME
+    DEMAND2 -->|"forecast"| BATCH
+    FRAUD -->|"risk score"| REALTIME
+  end
+
+  subgraph ANALYTICS["📊 Analytics & BI"]
+    direction LR
+    TABLEAU3["Tableau\nOps · Commercial · Finance"]
+    POWERBI2["Power BI\nExecutive dashboards"]
+    REDSHIFT2 -->|"data"| TABLEAU3
+    REDSHIFT2 -->|"data"| POWERBI2
+    BATCH -->|"scored data"| REDSHIFT2
+  end
+
+  REALTIME -->|"live data"| KAFKA
+
+  classDef src  fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef ing  fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef lake fill:#003366,color:#fff,stroke:#003366
+  classDef ai   fill:#ff6600,color:#fff,stroke:#ff6600
+  classDef srv  fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef ana  fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+
+  class PSS4,OPS4,GDS4,LOYALTY4,ERP4 src
+  class GLUE2,KAFKA,FIREHOSE ing
+  class S3,REDSHIFT2 lake
+  class SAGEMAKER,CAIRO3,DEMAND2,FRAUD ai
+  class REALTIME,BATCH srv
+  class TABLEAU3,POWERBI2 ana
