@@ -1,0 +1,66 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart TB
+
+  subgraph DEMAND["📊 Demand Intelligence"]
+    direction LR
+    SKYCAST2["Amadeus SkyCAST\nO&D demand · Traffic forecasts"]
+    OAG2["OAG Schedule Analyser\nCompetitor capacity · Market share"]
+    SKYSYM["Amadeus SkySYM\nNetwork simulation · Scenario modelling"]
+    SKYCAST2 -->|"demand forecast"| SKYSYM
+    OAG2 -->|"market data"| SKYSYM
+  end
+
+  subgraph BUILD["🏗️ Schedule Construction"]
+    direction TB
+    SKYWORKS2["Amadeus SkyWORKS\nSchedule editor · SSIM management"]
+    SKYMAX3["Amadeus SkyMAX\nFleet assignment optimisation"]
+    SKYSYM -->|"best network scenario"| SKYWORKS2
+    SKYWORKS2 -->|"draft schedule"| SKYMAX3
+    SKYMAX3 -->|"fleet-assigned schedule"| SKYWORKS2
+  end
+
+  subgraph COORD["🗓️ Slot Coordination"]
+    direction TB
+    IATA_CRS["IATA CRS / SCR\nSlot filing · Confirmation"]
+    AIRPORT["Airport Slot Portals\nLGA · DCA · ORD"]
+    SKYWORKS2 -->|"SSIM slot request"| IATA_CRS
+    IATA_CRS -->|"confirmed slots"| SKYWORKS2
+    SKYWORKS2 -->|"airport-specific slots"| AIRPORT
+  end
+
+  subgraph VALIDATE["✅ Cross-functional Validation"]
+    direction LR
+    CMS3["Crew Mgmt System\nCrew feasibility · FAR 117"]
+    MRO3["MRO System\nMaintenance windows · AOG risk"]
+    COCHECK2["Co-location Validator\nAircraft-crew alignment"]
+    SKYMAX3 -->|"rotation plan"| CMS3
+    SKYMAX3 -->|"tail plan"| MRO3
+    CMS3 -->|"crew positions"| COCHECK2
+    SKYMAX3 -->|"aircraft positions"| COCHECK2
+  end
+
+  subgraph PUBLISH["📡 Publication & Distribution"]
+    direction TB
+    ALTEA4["Amadeus Altéa PSS\nInventory open · Bookable"]
+    SABRE3["Sabre GDS\nFare · Schedule · Availability"]
+    TVPT["Travelport GDS\nSchedule · Seat map"]
+    SKYWORKS2 -->|"final SSIM"| ALTEA4
+    ALTEA4 -->|"schedule load"| SABRE3
+    ALTEA4 -->|"schedule load"| TVPT
+  end
+
+  classDef dem fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef bld fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef crd fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef val fill:#fffbeb,stroke:#d97706,color:#78350f
+  classDef pub fill:#fdf4ff,stroke:#9333ea,color:#581c87
+  classDef hub fill:#003366,color:#fff,stroke:#003366
+  classDef key fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class SKYCAST2,OAG2 dem
+  class SKYSYM dem
+  class SKYWORKS2 hub
+  class SKYMAX3 key
+  class IATA_CRS,AIRPORT crd
+  class CMS3,MRO3,COCHECK2 val
+  class ALTEA4,SABRE3,TVPT pub
