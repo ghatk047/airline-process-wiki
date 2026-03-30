@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart LR
+
+  subgraph BOOK2["📦 Cargo Booking"]
+    direction TB
+    CARGOSPOT["CargoSpot / IBS\nOnline cargo booking · eAWB"]
+    CASS2["IATA CASS\nForwarder credit check"]
+    DGCHECK["DG Acceptance\nHazmat rules · IATA DGR"]
+    CARGOSPOT -->|"booking created"| CMS_CARGO
+    CASS2 -->|"credit OK"| CARGOSPOT
+    CARGOSPOT -->|"DG flagged"| DGCHECK
+  end
+
+  subgraph CMS_CARGO["🧠 Cargo Management System"]
+    direction TB
+    CMSC["IBS iCargo / CROAMIS\nInventory · Rates · Manifests"]
+    RM_CARGO["Cargo RM\nYield · Capacity allocation"]
+    CMSC <-->|"availability"| RM_CARGO
+  end
+
+  subgraph OPS_CARGO["🏭 Ground Handling &amp; Build-up"]
+    direction TB
+    WH["Warehouse System\nAcceptance · X-ray · Screening"]
+    ULD2["ULD Control\nUnit build · Weight · Balance"]
+    LOADSHEET["Load Control\nCargo manifest · LDM / CPM"]
+    DGCHECK -->|"DG cleared"| WH
+    WH -->|"screened cargo"| ULD2
+    ULD2 -->|"build-up complete"| LOADSHEET
+  end
+
+  subgraph TRACK["🔍 Tracking &amp; Tracing"]
+    direction TB
+    SCAN["Handheld Scanners\nMilestone scans · RFID"]
+    CARGOTRACK["Cargo Track Portal\nForwarder visibility · ETA"]
+    WORLDTRACER2["WorldTracer Cargo\nMishandled · Trace request"]
+    SCAN -->|"scan events"| CARGOTRACK
+    ULD2 -->|"loaded confirm"| SCAN
+    SCAN -->|"missing"| WORLDTRACER2
+  end
+
+  subgraph CUSTOMS["🛃 Customs &amp; Compliance"]
+    direction TB
+    CBP3["CBP e-Manifest\nAdvance cargo declaration"]
+    ECCF["Export Control\nSanctions screening · EAR"]
+    CMSC -->|"eManifest"| CBP3
+    CMSC -->|"shipper screening"| ECCF
+  end
+
+  subgraph REVENUE2["💰 Revenue &amp; Settlement"]
+    direction TB
+    AWB["AWB Revenue Accounting\nIATA Cargo Accounts"]
+    SAP6["SAP S/4HANA\nCargo revenue · Invoicing"]
+    CMSC -->|"AWB data"| AWB
+    AWB -->|"settled revenue"| SAP6
+  end
+
+  classDef bk   fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef cms  fill:#003366,color:#fff,stroke:#003366
+  classDef ops  fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef trk  fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef cus  fill:#fffbeb,stroke:#d97706,color:#78350f
+  classDef rev  fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class CARGOSPOT,CASS2,DGCHECK bk
+  class CMSC,RM_CARGO cms
+  class WH,ULD2,LOADSHEET ops
+  class SCAN,CARGOTRACK,WORLDTRACER2 trk
+  class CBP3,ECCF cus
+  class AWB,SAP6 rev
+  class CMSC key
