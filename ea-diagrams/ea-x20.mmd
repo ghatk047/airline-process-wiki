@@ -1,0 +1,72 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart LR
+
+  subgraph ZONES["🌐 Network Zones"]
+    direction TB
+    INTERNET["Internet / CDN\nCloudFront · Akamai"]
+    DMZ["DMZ\nWAF · API Gateway · Load Balancer"]
+    INTERNAL["Internal Network\nSD-WAN · MPLS · Airport VPN"]
+    OT["OT / Aviation Network\nACARSNet · SITA · ATC comms"]
+    INTERNET -->|"filtered traffic"| DMZ
+    DMZ -->|"authenticated requests"| INTERNAL
+  end
+
+  subgraph IAM["🔑 Identity &amp; Access"]
+    direction TB
+    OKTA["Okta / Azure AD\nSSO · MFA · Zero Trust"]
+    PAM["CyberArk PAM\nPrivileged access · Vault"]
+    OKTA -->|"token"| INTERNAL
+    PAM -->|"session recording"| SIEM
+  end
+
+  subgraph CLOUD["☁️ Cloud Platform"]
+    direction TB
+    AWS2["AWS Multi-Region\nus-east-1 · us-west-2"]
+    AZURE2["Azure\nM365 · Teams · SharePoint"]
+    AWS2 <-->|"cross-region replication"| DR
+    AZURE2 -->|"identity federation"| OKTA
+  end
+
+  subgraph SIEM["🛡️ Security Operations"]
+    direction TB
+    SOC["Splunk SIEM\nLog aggregation · Correlation rules"]
+    EDR["CrowdStrike EDR\nEndpoint detection · Response"]
+    VULN["Qualys VMDR\nVulnerability scanning · Patching"]
+    PAM -->|"access logs"| SOC
+    EDR -->|"threat events"| SOC
+    VULN -->|"CVE alerts"| SOC
+    SOC -->|"incident ticket"| ITSM
+  end
+
+  subgraph ITSM["🔧 IT Service Management"]
+    direction TB
+    SNOW["ServiceNow ITSM\nIncidents · Changes · CMDB"]
+    CMDB["CMDB\nAsset inventory · Dependencies"]
+    SNOW <-->|"CI data"| CMDB
+    SNOW -->|"major incident"| CRISIS
+  end
+
+  subgraph DR["♻️ DR &amp; Business Continuity"]
+    direction TB
+    CRISIS["Crisis Management\nRunbook · War room"]
+    RTO["RTO / RPO Tracking\nRecovery objectives"]
+    PILOT["DR Pilot Site\nWarm standby · Failover test"]
+    CRISIS -->|"activate DR"| PILOT
+    PILOT -->|"RTO achieved"| RTO
+  end
+
+  classDef net  fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef iam  fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef cld  fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef sec  fill:#003366,color:#fff,stroke:#003366
+  classDef itsm fill:#fdf4ff,stroke:#9333ea,color:#581c87
+  classDef dr   fill:#fff1f2,stroke:#e11d48,color:#881337
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class INTERNET,DMZ,INTERNAL,OT net
+  class OKTA,PAM iam
+  class AWS2,AZURE2 cld
+  class SOC,EDR,VULN sec
+  class SNOW,CMDB itsm
+  class CRISIS,RTO,PILOT dr
+  class SOC key
