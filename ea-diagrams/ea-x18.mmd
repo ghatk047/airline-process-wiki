@@ -1,0 +1,77 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart LR
+
+  subgraph CONTENT["📡 Content Source"]
+    direction TB
+    PSS7["Amadeus Altea PSS\nInventory · Availability · Fares"]
+    ATPCO4["ATPCO\nFiled fares · Rules · Taxes"]
+    NDC4["NDC Offer Engine\nRich content · Bundles · Bags"]
+    ATPCO4 -->|"fare data"| PSS7
+    PSS7 -->|"inventory feed"| NDC4
+  end
+
+  subgraph DISTRIBUTION["🌐 Distribution Layer"]
+    direction TB
+    SABRE4["Sabre GDS\nFull content agreement"]
+    TVPT2["Travelport GDS\nSmartFares · Rich content"]
+    AMGDS["Amadeus GDS\nBranded fares · Ancillary"]
+    NDC4 -->|"NDC offer"| SABRE4
+    NDC4 -->|"NDC offer"| TVPT2
+    NDC4 -->|"NDC offer"| AMGDS
+    PSS7 -->|"EDIFACT availability"| SABRE4
+    PSS7 -->|"EDIFACT availability"| TVPT2
+  end
+
+  subgraph DIRECT["✈️ Direct Channels"]
+    direction TB
+    WEB3["Airline.com\nLow-cost direct channel"]
+    MAPP["Mobile App\nPersonalised offers"]
+    CALL["Contact Centre\nGenesys · Agent desktop"]
+    NDC4 -->|"direct offer"| WEB3
+    NDC4 -->|"personalised offer"| MAPP
+    PSS7 -->|"PNR management"| CALL
+  end
+
+  subgraph OTA["🏨 OTA &amp; Metasearch"]
+    direction TB
+    EXPEDIA["Expedia / Booking\nPackage · Hotel bundling"]
+    GOOGLE["Google Flights\nFree sale · Hotel Ads"]
+    KAYAK["Kayak / Skyscanner\nComparison · Deep link"]
+    SABRE4 -->|"GDS content"| EXPEDIA
+    NDC4 -->|"direct connect"| EXPEDIA
+    PSS7 -->|"cache feed"| GOOGLE
+    SABRE4 -->|"fares"| KAYAK
+  end
+
+  subgraph CORPORATE["🏢 Corporate &amp; TMC"]
+    direction TB
+    PRISM2["Sabre PRISM\nCorporate private fares"]
+    SAP_TRAVEL["SAP Concur\nExpense · Travel booking"]
+    PRISM2 -->|"negotiated fares"| SAP_TRAVEL
+    SABRE4 -->|"TMC content"| SAP_TRAVEL
+  end
+
+  subgraph SETTLE4["🏦 BSP Settlement"]
+    direction TB
+    BSP3["IATA BSP\nAgency settlement"]
+    ARC3["ARC\nUS domestic"]
+    SABRE4 -->|"ticket coupons"| BSP3
+    TVPT2 -->|"ticket coupons"| ARC3
+    BSP3 -->|"net remittance"| PSS7
+  end
+
+  classDef cont fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef dist fill:#003366,color:#fff,stroke:#003366
+  classDef dir  fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef ota  fill:#fdf4ff,stroke:#9333ea,color:#581c87
+  classDef corp fill:#fffbeb,stroke:#d97706,color:#78350f
+  classDef set  fill:#fff1f2,stroke:#e11d48,color:#881337
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class PSS7,ATPCO4 cont
+  class NDC4 key
+  class SABRE4,TVPT2,AMGDS dist
+  class WEB3,MAPP,CALL dir
+  class EXPEDIA,GOOGLE,KAYAK ota
+  class PRISM2,SAP_TRAVEL corp
+  class BSP3,ARC3 set
