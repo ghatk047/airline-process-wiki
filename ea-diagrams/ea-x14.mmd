@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart LR
+
+  subgraph PLAN2["📋 Fuel Planning"]
+    direction TB
+    NAVBLUE2["NAVBLUE / Lido\nFlight plan fuel calculation"]
+    TANKERING["Tankering Optimiser\nCost differential · Weight penalty"]
+    FUELDB["Fuel Management System\nUplifts · Into-plane contracts"]
+    NAVBLUE2 -->|"required fuel"| TANKERING
+    TANKERING -->|"optimal uplift"| FUELDB
+  end
+
+  subgraph MARKET2["📈 Market & Hedging"]
+    direction TB
+    REUTERS2["Refinitiv Eikon\nJet fuel spot · Forward prices"]
+    HEDGE["Commodity Desk\nSwap · Option · Collar hedges"]
+    EXPOSURE["Exposure Model\nGallons at risk · Hedge ratio"]
+    REUTERS2 -->|"market prices"| EXPOSURE
+    EXPOSURE -->|"hedge requirement"| HEDGE
+    HEDGE -->|"hedge P&L"| SAP5
+  end
+
+  subgraph SUPPLIER["🚚 Supplier & Delivery"]
+    direction TB
+    SUPPLIER2["Fuel Supplier Portal\nWorld Fuel · Shell · BP"]
+    INTOPLANE["Into-Plane System\nTruck dispatch · Meter read"]
+    ACARS5["ACARS Fuel Report\nActual uplift confirmation"]
+    FUELDB -->|"purchase order"| SUPPLIER2
+    SUPPLIER2 -->|"delivery order"| INTOPLANE
+    INTOPLANE -->|"uplift confirmed"| ACARS5
+    ACARS5 -->|"actual vs plan"| FUELDB
+  end
+
+  subgraph FINANCE3["💰 Finance Integration"]
+    direction TB
+    SAP5["SAP S/4HANA\nFuel invoice · Cost allocation"]
+    ARIBA3["SAP Ariba\nSupplier contract · PO"]
+    ARIBA3 -->|"contract terms"| FUELDB
+    FUELDB -->|"consumption data"| SAP5
+  end
+
+  subgraph ANALYTICS3["📊 Fuel Analytics"]
+    direction TB
+    DW6["AWS Redshift\nFuel cost data warehouse"]
+    EFFI["Efficiency Dashboard\nCPG · kg per ASK · OAE"]
+    ESG["ESG Reporting\nCO2 · SAF blend · CORSIA"]
+    SAP5 -->|"cost actuals"| DW6
+    ACARS5 -->|"burn actuals"| DW6
+    DW6 -->|"metrics"| EFFI
+    DW6 -->|"emissions data"| ESG
+  end
+
+  classDef plan fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef mkt  fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef sup  fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef fin  fill:#003366,color:#fff,stroke:#003366
+  classDef ana  fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class NAVBLUE2,TANKERING,FUELDB plan
+  class REUTERS2,HEDGE,EXPOSURE mkt
+  class SUPPLIER2,INTOPLANE,ACARS5 sup
+  class SAP5,ARIBA3 fin
+  class DW6,EFFI,ESG ana
+  class FUELDB key
