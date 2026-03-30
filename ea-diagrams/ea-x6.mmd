@@ -1,0 +1,79 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart LR
+
+  subgraph TOUCH["📱 Customer Touchpoints"]
+    direction TB
+    APP["Airline Mobile App\nBooking · Check-in · Status"]
+    WEB["Airline.com\nSearch · Book · Manage"]
+    CC["Contact Centre\nGenesys / Salesforce CTI"]
+    APP -->|"requests"| ALTEA3
+    WEB -->|"transactions"| ALTEA3
+    CC -->|"agent actions"| CRM2
+  end
+
+  subgraph PSS3["🎟️ PSS & Reservations"]
+    direction TB
+    ALTEA3["Amadeus Altéa PSS\nPNR · Booking · Ticketing"]
+    DCS3["Altéa DCS\nCheck-in · Boarding pass"]
+    ALTEA3 -->|"check-in data"| DCS3
+  end
+
+  subgraph LOYALTY2["⭐ Loyalty Platform"]
+    direction TB
+    FFP2["Loyalty Platform\nRapid Rewards · Miles · Tier"]
+    PARTNER["Partner APIs\nHotels · Car rental · Credit card"]
+    ALTEA3 -->|"flight activity"| FFP2
+    PARTNER -->|"partner earn"| FFP2
+    FFP2 -->|"redemption"| ALTEA3
+  end
+
+  subgraph CX["🧠 Customer Intelligence"]
+    direction TB
+    CRM2["Salesforce CRM\nCustomer 360 · Case mgmt"]
+    CDP["Customer Data Platform\nUnified profile · Segments"]
+    SURVEY["Medallia / Qualtrics\nNPS · CSAT · Journey feedback"]
+    CRM2 <-->|"profile sync"| CDP
+    SURVEY -->|"feedback"| CRM2
+  end
+
+  subgraph PERSONAL["🎯 Personalisation & Offers"]
+    direction TB
+    ADOBE["Adobe Target\nReal-time offer personalisation"]
+    AMPL["Amplitude\nBehavioural analytics"]
+    CDP -->|"segments"| ADOBE
+    CDP -->|"events"| AMPL
+    ADOBE -->|"offers"| APP
+    ADOBE -->|"offers"| WEB
+  end
+
+  subgraph IRROP2["🚨 Disruption Recovery"]
+    direction TB
+    NOC3["NOC / Operations\nDelay · Cancel decision"]
+    NOTIF["Notification Engine\nSMS · Push · Email"]
+    PROTECT["Altéa PSS\nAuto-rebook · Voucher"]
+    NOC3 -->|"flight disruption"| NOTIF
+    NOC3 -->|"disruption flag"| PROTECT
+    NOTIF -->|"alerts"| APP
+    PROTECT -->|"new itinerary"| ALTEA3
+  end
+
+  ALTEA3 -->|"booking events"| CDP
+  DCS3 -->|"boarding events"| CDP
+  FFP2 -->|"loyalty data"| CDP
+  CRM2 -->|"interaction data"| CDP
+
+  classDef touch fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef pss  fill:#003366,color:#fff,stroke:#003366
+  classDef loy  fill:#fffbeb,stroke:#d97706,color:#78350f
+  classDef cx   fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef pers fill:#fdf4ff,stroke:#9333ea,color:#581c87
+  classDef irr  fill:#fff1f2,stroke:#e11d48,color:#881337
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class APP,WEB,CC touch
+  class ALTEA3,DCS3 pss
+  class FFP2,PARTNER loy
+  class CRM2,SURVEY cx
+  class CDP key
+  class ADOBE,AMPL pers
+  class NOC3,NOTIF,PROTECT irr
