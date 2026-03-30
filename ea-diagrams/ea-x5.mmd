@@ -1,0 +1,68 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'13px','fontFamily':'Inter, Arial, sans-serif'}}}%%
+flowchart TB
+
+  subgraph REG["📜 Regulatory Inputs"]
+    direction LR
+    FAA3["FAA Airworthiness\nADs · SBs · AMPs"]
+    OEM["Boeing / Airbus\nMPD · CMM · Engineering orders"]
+    FAA3 -->|"mandatory ADs"| TECH
+    OEM -->|"maintenance data"| TECH
+  end
+
+  subgraph TECH["📋 Technical Records"]
+    direction TB
+    AMOS2["AMOS MRO\nTask cards · Work packages · CAMO"]
+    TRAX["Aircraft Tech Log\nDefects · Deferred items · MEL"]
+    AMOS2 <-->|"defect status"| TRAX
+  end
+
+  subgraph PLAN["🗓️ Maintenance Planning"]
+    direction TB
+    LINE["Line Maintenance Planner\nTransit · Overnight checks"]
+    HEAVY["Heavy Check Planning\nC/D check · Shop visit schedule"]
+    AMOS2 -->|"work orders"| LINE
+    AMOS2 -->|"heavy plan"| HEAVY
+  end
+
+  subgraph PARTS["📦 Parts & Inventory"]
+    direction TB
+    ILS["ILS / Inventory\nPart availability · Min/max levels"]
+    ARIBA["SAP Ariba\nProcurement · PO · Supplier"]
+    AOG2["AOG Desk\nEmergency sourcing · Loan"]
+    AMOS2 -->|"parts demand"| ILS
+    ILS -->|"reorder trigger"| ARIBA
+    ILS -->|"no stock"| AOG2
+  end
+
+  subgraph FLEET2["✈️ Fleet & Operations Link"]
+    direction TB
+    SCOUT3["Avtec Scout NOC\nAircraft status · AOG flag"]
+    SKYMAX2["Amadeus SkyMAX\nFleet availability for planning"]
+    TRAX -->|"MEL / AOG status"| SCOUT3
+    AMOS2 -->|"forecast availability"| SKYMAX2
+  end
+
+  subgraph FINANCE2["💰 Cost & Finance"]
+    direction TB
+    SAP2["SAP S/4HANA PM\nMaintenance costs · Asset value"]
+    KPI["MRO KPI Dashboard\nMTBF · Cost per FH · TAT"]
+    AMOS2 -->|"labour & material cost"| SAP2
+    SAP2 -->|"cost actuals"| KPI
+    AMOS2 -->|"reliability data"| KPI
+  end
+
+  classDef reg  fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+  classDef tech fill:#003366,color:#fff,stroke:#003366
+  classDef plan fill:#fff7ed,stroke:#ea580c,color:#7c2d12
+  classDef par  fill:#f0fdf4,stroke:#16a34a,color:#14532d
+  classDef flt  fill:#fdf4ff,stroke:#9333ea,color:#581c87
+  classDef fin  fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95
+  classDef key  fill:#ff6600,color:#fff,stroke:#ff6600
+
+  class FAA3,OEM reg
+  class AMOS2 tech
+  class TRAX key
+  class LINE,HEAVY plan
+  class ILS,ARIBA,AOG2 par
+  class SCOUT3,SKYMAX2 flt
+  class SAP2,KPI fin
