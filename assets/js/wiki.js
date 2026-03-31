@@ -1,4 +1,4 @@
-/* Airlines Process Wiki JS v3 — icon-rail sidebar + drag resize + lightbox + search */
+/* Airlines Process Wiki JS v4 — icon-rail sidebar + drag resize + lightbox + search-page redirect */
 
 /* L1 domain icons */
 const DOMAIN_ICONS = {
@@ -298,46 +298,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── 12. SEARCH ── */
+  /* ── 12. SEARCH — redirect to search.html on Enter or input ── */
   const searchBox = document.getElementById('searchBox');
-  const resultsEl = document.getElementById('searchResults') || (() => {
-    const el = document.createElement('div');
-    el.id = 'searchResults';
-    el.className = 'search-results';
-    el.style.display = 'none';
-    document.body.appendChild(el);
-    return el;
-  })();
 
   if (searchBox) {
-    const links = [...document.querySelectorAll('.sidebar-l3-link')].map(a => ({
-      text: a.textContent.trim(), href: a.href
-    }));
+    // Determine root URL dynamically (handles any depth)
+    function getSearchUrl(q) {
+      const base = document.querySelector('a.topbar-logo')?.getAttribute('href') || '/airline-process-wiki/';
+      // Ensure base ends with /
+      const root = base.endsWith('/') ? base : base + '/';
+      return root + 'search.html?q=' + encodeURIComponent(q.trim());
+    }
 
-    searchBox.addEventListener('input', () => {
-      const q = searchBox.value.trim().toLowerCase();
-      if (!q) { resultsEl.style.display = 'none'; return; }
-      const hits = links.filter(l => l.text.toLowerCase().includes(q)).slice(0, 8);
-      if (!hits.length) { resultsEl.style.display = 'none'; return; }
-      resultsEl.innerHTML = hits.map(h =>
-        `<a class="sr-item" href="${h.href}">${h.text}</a>`
-      ).join('');
-      resultsEl.style.display = 'block';
-    });
-
-    document.addEventListener('click', e => {
-      if (!searchBox.contains(e.target) && !resultsEl.contains(e.target)) {
-        resultsEl.style.display = 'none';
+    // Navigate to search page on Enter
+    searchBox.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && searchBox.value.trim()) {
+        window.location.href = getSearchUrl(searchBox.value);
       }
     });
 
+    // / shortcut to focus, Escape to clear
     document.addEventListener('keydown', e => {
       if (e.key === '/' && document.activeElement !== searchBox) {
-        e.preventDefault(); searchBox.focus();
+        e.preventDefault();
+        searchBox.focus();
+        searchBox.select();
       }
-      if (e.key === 'Escape') { searchBox.value=''; resultsEl.style.display='none'; searchBox.blur(); }
+      if (e.key === 'Escape' && document.activeElement === searchBox) {
+        searchBox.value = '';
+        searchBox.blur();
+      }
     });
   }
+
 
   /* ── 13. STATUS DOTS ── */
   document.querySelectorAll('.sidebar-l3-link').forEach(link => {
