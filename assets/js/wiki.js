@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return ov;
   }
 
-  document.querySelectorAll('.diagram-wrap img').forEach(img => {
+  document.querySelectorAll('.diagram-wrap img, .ea-wrap img').forEach(img => {
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', () => {
       const lb = buildLightbox();
