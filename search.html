@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Search · Airlines Process Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:   #0f2235;
+    --orange: #e87722;
+    --bg:     #f4f6f9;
+    --white:  #ffffff;
+    --border: #e2e8f0;
+    --text:   #1a2a3a;
+    --muted:  #64748b;
+    --badge-bg: #e8f4fd;
+    --badge-color: #1d6fa4;
+    --hit-bg: #fff8f0;
+    --hit-border: #f0c070;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: var(--navy);
+    padding: 0 24px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .topbar-logo {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .topbar-logo span { color: var(--orange); }
+  .topbar-badge {
+    background: var(--orange);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: .5px;
+  }
+  .topbar-right { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+  .topbar-right a { color: rgba(255,255,255,.75); font-size: 13px; text-decoration: none; }
+  .topbar-right a:hover { color: #fff; }
+
+  /* ── SEARCH HERO ── */
+  .search-hero {
+    background: var(--navy);
+    padding: 40px 24px 36px;
+  }
+  .search-hero-inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .hero-title {
+    color: rgba(255,255,255,.55);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 0 16px;
+    height: 52px;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.25);
+  }
+  .search-bar .icon { color: #94a3b8; font-size: 17px; flex-shrink: 0; }
+  #searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--text);
+    background: transparent;
+  }
+  #searchInput::placeholder { color: #94a3b8; }
+  #clearBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #94a3b8;
+    font-size: 18px;
+    padding: 2px 4px;
+    display: none;
+    line-height: 1;
+  }
+  #clearBtn:hover { color: var(--orange); }
+  #searchBtn {
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 8px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  #searchBtn:hover { background: #d0661a; }
+
+  .search-hint {
+    color: rgba(255,255,255,.35);
+    font-size: 12px;
+    margin-top: 10px;
+    padding-left: 2px;
+  }
+
+  /* ── RESULTS AREA ── */
+  .results-area {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+  }
+
+  .results-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .results-meta strong { color: var(--text); }
+
+  /* ── RESULT CARD ── */
+  .result-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    display: block;
+    transition: border-color .15s, box-shadow .15s, transform .1s;
+  }
+  .result-card:hover {
+    border-color: var(--orange);
+    box-shadow: 0 4px 16px rgba(232,119,34,.12);
+    transform: translateY(-1px);
+  }
+
+  .result-breadcrumb {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .crumb-sep { color: #cbd5e1; }
+
+  .result-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .result-id {
+    background: var(--badge-bg);
+    color: var(--badge-color);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 7px;
+    border-radius: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .result-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+  .result-card:hover .result-title { color: var(--orange); }
+
+  .result-steps {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .result-systems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .sys-tag {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+  }
+
+  /* Highlight matched terms */
+  mark {
+    background: var(--hit-bg);
+    color: var(--orange);
+    font-weight: 600;
+    border-radius: 2px;
+    padding: 0 1px;
+  }
+
+  /* ── EMPTY / ZERO STATE ── */
+  .state-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+  }
+  .state-empty .emoji { font-size: 48px; margin-bottom: 16px; }
+  .state-empty h2 { font-size: 20px; color: var(--text); margin-bottom: 8px; }
+  .state-empty p { font-size: 14px; line-height: 1.6; }
+
+  /* ── LANDING STATE (no query yet) ── */
+  .state-landing {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+  }
+  .state-landing .emoji { font-size: 48px; margin-bottom: 16px; }
+  .state-landing h2 { font-size: 20px; color: var(--text); margin-bottom: 8px; }
+  .state-landing p { font-size: 14px; line-height: 1.6; max-width: 440px; margin: 0 auto; }
+
+  .suggested-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .chip {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color .15s, color .15s;
+    text-decoration: none;
+  }
+  .chip:hover { border-color: var(--orange); color: var(--orange); }
+
+  @media (max-width: 600px) {
+    .search-hero { padding: 24px 16px 20px; }
+    .results-area { padding: 20px 16px 40px; }
+    .search-bar { height: 46px; }
+    #searchInput { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <a href="/airline-process-wiki/" class="topbar-logo">Airlines <span>Process Wiki</span></a>
+  <span class="topbar-badge">v1.0</span>
+  <div class="topbar-right">
+    <a href="/airline-process-wiki/">Home</a>
+    <a href="https://github.com/ghatk047/airline-process-wiki" target="_blank">⭐ GitHub</a>
+  </div>
+</header>
+
+<!-- SEARCH HERO -->
+<div class="search-hero">
+  <div class="search-hero-inner">
+    <p class="hero-title">Process Search</p>
+    <div class="search-bar">
+      <span class="icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Search processes, systems, steps…" autocomplete="off" autofocus>
+      <button id="clearBtn" title="Clear">✕</button>
+      <button id="searchBtn">Search</button>
+    </div>
+    <p class="search-hint">Search across 151 processes · L3 names, L4 steps, systems &amp; IDs</p>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="results-area" id="resultsArea">
+  <!-- populated by JS -->
+</div>
+
+<script>
+const BASE = '/airline-process-wiki';
+const INDEX_URL = BASE + '/search-index.json';
+
+let searchIndex = null;
+let currentQuery = '';
+
+// ── LOAD INDEX ──
+async function loadIndex() {
+  if (searchIndex) return searchIndex;
+  const r = await fetch(INDEX_URL);
+  searchIndex = await r.json();
+  return searchIndex;
+}
+
+// ── URL HELPERS ──
+function getQueryParam(name) {
+  return new URLSearchParams(window.location.search).get(name) || '';
+}
+function setQueryParam(q) {
+  const url = new URL(window.location);
+  if (q) url.searchParams.set('q', q);
+  else url.searchParams.delete('q');
+  history.replaceState(null, '', url);
+}
+
+// ── SEARCH LOGIC ──
+function score(entry, tokens) {
+  let s = 0;
+  const kw = entry.keywords;
+  for (const t of tokens) {
+    if (entry.id.toLowerCase() === t) { s += 100; continue; }
+    if (entry.id.toLowerCase().includes(t)) s += 50;
+    if (entry.title.toLowerCase().includes(t)) s += 40;
+    if (entry.l2.toLowerCase().includes(t)) s += 10;
+    if (entry.l1.toLowerCase().includes(t)) s += 5;
+    if (kw.includes(t)) s += 3;
+  }
+  return s;
+}
+
+function highlight(text, tokens) {
+  if (!tokens.length) return escHtml(text);
+  let s = escHtml(text);
+  tokens.forEach(t => {
+    const re = new RegExp('(' + escRe(t) + ')', 'gi');
+    s = s.replace(re, '<mark>$1</mark>');
+  });
+  return s;
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function escRe(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+}
+
+function runSearch(q) {
+  currentQuery = q;
+  setQueryParam(q);
+  document.getElementById('searchInput').value = q;
+  document.getElementById('clearBtn').style.display = q ? 'block' : 'none';
+
+  const area = document.getElementById('resultsArea');
+
+  if (!q.trim()) {
+    renderLanding(area);
+    return;
+  }
+
+  loadIndex().then(idx => {
+    const tokens = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const hits = idx
+      .map(e => ({ entry: e, score: score(e, tokens) }))
+      .filter(x => x.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .map(x => x.entry);
+
+    renderResults(area, hits, tokens, q);
+  }).catch(err => {
+    area.innerHTML = `<div class="state-empty"><div class="emoji">⚠️</div><h2>Index unavailable</h2><p>${err.message}</p></div>`;
+  });
+}
+
+function renderLanding(area) {
+  const suggestions = ['yield optimization','fare construction','crew pairing','dispatch','baggage','MRO','slot coordination','revenue','overbooking','turnaround'];
+  area.innerHTML = `
+    <div class="state-landing">
+      <div class="emoji">✈️</div>
+      <h2>Search the Process Wiki</h2>
+      <p>Find any of the 151 documented airline processes by name, ID, L4 step, or system.</p>
+      <div class="suggested-chips">
+        ${suggestions.map(s => `<a class="chip" href="?q=${encodeURIComponent(s)}">${s}</a>`).join('')}
+      </div>
+    </div>`;
+  // Re-attach chip listeners
+  area.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', e => {
+      e.preventDefault();
+      runSearch(chip.textContent.trim());
+    });
+  });
+}
+
+function renderResults(area, hits, tokens, q) {
+  if (!hits.length) {
+    area.innerHTML = `
+      <div class="state-empty">
+        <div class="emoji">🔍</div>
+        <h2>No results for "${escHtml(q)}"</h2>
+        <p>Try different keywords, a process ID (e.g. <strong>NP-SP-01</strong>), a system name, or a step name.</p>
+      </div>`;
+    return;
+  }
+
+  const cards = hits.map(e => {
+    const sysChips = e.systems.slice(0,5).map(s =>
+      `<span class="sys-tag">${highlight(s, tokens)}</span>`
+    ).join('');
+    const stepsHtml = e.steps_preview
+      ? `<div class="result-steps">${highlight(e.steps_preview, tokens)}</div>`
+      : '';
+
+    return `<a class="result-card" href="${e.url}">
+      <div class="result-breadcrumb">
+        <span>${highlight(e.l1, tokens)}</span>
+        <span class="crumb-sep">›</span>
+        <span>${highlight(e.l2, tokens)}</span>
+      </div>
+      <div class="result-header">
+        <span class="result-id">${e.id}</span>
+        <span class="result-title">${highlight(e.title, tokens)}</span>
+      </div>
+      ${stepsHtml}
+      ${sysChips ? `<div class="result-systems">${sysChips}</div>` : ''}
+    </a>`;
+  }).join('');
+
+  area.innerHTML = `
+    <div class="results-meta">
+      <strong>${hits.length}</strong> result${hits.length !== 1 ? 's' : ''} for "<strong>${escHtml(q)}</strong>"
+    </div>
+    ${cards}`;
+}
+
+// ── WIRE UP UI ──
+const input = document.getElementById('searchInput');
+const clearBtn = document.getElementById('clearBtn');
+const searchBtn = document.getElementById('searchBtn');
+
+input.addEventListener('input', () => {
+  clearBtn.style.display = input.value ? 'block' : 'none';
+});
+
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter') runSearch(input.value.trim());
+  if (e.key === 'Escape') { input.value = ''; clearBtn.style.display = 'none'; runSearch(''); }
+});
+
+searchBtn.addEventListener('click', () => runSearch(input.value.trim()));
+
+clearBtn.addEventListener('click', () => {
+  input.value = '';
+  clearBtn.style.display = 'none';
+  runSearch('');
+  input.focus();
+});
+
+// ── INIT ──
+const initQ = getQueryParam('q');
+if (initQ) {
+  runSearch(initQ);
+} else {
+  renderLanding(document.getElementById('resultsArea'));
+}
+
+// Pre-load index in background
+loadIndex();
+</script>
+</body>
+</html>
