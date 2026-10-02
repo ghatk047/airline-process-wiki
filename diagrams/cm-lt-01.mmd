@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Flight Schedule Updates<br/>Flight Dispatcher"]
+    N2{"Identify Crew Hotel Requirements<br/>Crew Logistics Coordinator"}
+    N3["Review Hotel Booking Policies<br/>Crew Logistics Coordinator"]
+    N4{"Select Hotel Options<br/>Crew Logistics Coordinator"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Initiate Hotel Booking Request<br/>Crew Logistics Coordinator"]
+    N6{"Monitor Hotel Availability<br/>Crew Logistics Coordinator"}
+    N7{"Negotiate Hotel Rates<br/>Crew Logistics Coordinator"}
+    N8["Confirm Hotel Booking<br/>Crew Logistics Coordinator"]
+    N9["Update Crew Roster with Hotel Details<br/>Crew Logistics Coordinator"]
+    N10["Notify Crew Members of Hotel Booking<br/>Crew Logistics Coordinator"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Hotel Booking Compliance<br/>Revenue Analyst"]
+    N12["Finalize Hotel Booking Costs<br/>Revenue Analyst"]
+    N13["Update Financial Records<br/>Revenue Analyst"]
+    N14["Close Hotel Booking Process<br/>Crew Logistics Coordinator"]
+  end
+  START --> N1
+  E15["Exception Receive Flight Schedule Updates"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Review Hotel Booking Policies"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Initiate Hotel Booking Request"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  E18["Exception Confirm Hotel Booking"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Update Crew Roster with Hotel De"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  E20["Exception Notify Crew Members of Hotel Boo"]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  N11 --> N12
+  E21["Exception Finalize Hotel Booking Costs"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Update Financial Records"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Close Hotel Booking Process"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N2 -.->|No| N1
+  N7 -.->|No| N6
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

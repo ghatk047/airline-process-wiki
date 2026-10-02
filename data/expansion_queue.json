@@ -513,9 +513,9 @@
       "l2_process": "Crew Pay & Administration",
       "l2_slug": "crew-pay",
       "l3_name": "Duty Trade & Open Time Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-PY-04",
@@ -524,9 +524,9 @@
       "l2_process": "Crew Pay & Administration",
       "l2_slug": "crew-pay",
       "l3_name": "Crew Bidding Award Processing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-LT-01",
@@ -535,9 +535,9 @@
       "l2_process": "Crew Logistics & Support",
       "l2_slug": "crew-logistics",
       "l3_name": "Crew Hotel Accommodation Booking",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-LT-02",
@@ -546,9 +546,9 @@
       "l2_process": "Crew Logistics & Support",
       "l2_slug": "crew-logistics",
       "l3_name": "Crew Ground Transport Coordination",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-LT-03",
@@ -557,9 +557,9 @@
       "l2_process": "Crew Logistics & Support",
       "l2_slug": "crew-logistics",
       "l3_name": "Deadhead & Positioning Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-LT-04",
@@ -568,9 +568,9 @@
       "l2_process": "Crew Logistics & Support",
       "l2_slug": "crew-logistics",
       "l3_name": "Crew Communications & Notification",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-LT-05",
@@ -579,9 +579,9 @@
       "l2_process": "Crew Logistics & Support",
       "l2_slug": "crew-logistics",
       "l3_name": "Reserve & Standby Crew Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-PB-01",
@@ -590,9 +590,9 @@
       "l2_process": "Passenger Handling",
       "l2_slug": "passenger-handling",
       "l3_name": "Passenger Check-In Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-PB-02",
@@ -601,9 +601,9 @@
       "l2_process": "Passenger Handling",
       "l2_slug": "passenger-handling",
       "l3_name": "Boarding Gate Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-PB-03",
@@ -612,9 +612,9 @@
       "l2_process": "Passenger Handling",
       "l2_slug": "passenger-handling",
       "l3_name": "Denied Boarding & Oversales Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-PB-04",
@@ -623,9 +623,9 @@
       "l2_process": "Passenger Handling",
       "l2_slug": "passenger-handling",
       "l3_name": "Special Assistance & PRM Services",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-PB-05",
@@ -634,9 +634,9 @@
       "l2_process": "Passenger Handling",
       "l2_slug": "passenger-handling",
       "l3_name": "Unaccompanied Minor Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-PB-06",
@@ -645,9 +645,9 @@
       "l2_process": "Passenger Handling",
       "l2_slug": "passenger-handling",
       "l3_name": "Document & Visa Verification",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-PB-07",
@@ -656,9 +656,9 @@
       "l2_process": "Passenger Handling",
       "l2_slug": "passenger-handling",
       "l3_name": "Standby & Upgrade Processing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-DI-01",
@@ -667,9 +667,9 @@
       "l2_process": "De-Icing & Adverse Weather",
       "l2_slug": "deicing-weather",
       "l3_name": "De-Icing / Anti-Icing Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-DI-02",
@@ -678,9 +678,9 @@
       "l2_process": "De-Icing & Adverse Weather",
       "l2_slug": "deicing-weather",
       "l3_name": "Holdover Time Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-DI-03",
@@ -689,9 +689,9 @@
       "l2_process": "De-Icing & Adverse Weather",
       "l2_slug": "deicing-weather",
       "l3_name": "Winter Operations Planning",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-DI-04",
@@ -700,9 +700,9 @@
       "l2_process": "De-Icing & Adverse Weather",
       "l2_slug": "deicing-weather",
       "l3_name": "Adverse Weather Ground Stop Coordination",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-FS-01",
@@ -711,9 +711,9 @@
       "l2_process": "Fuelling & Servicing",
       "l2_slug": "fuelling-servicing",
       "l3_name": "Into-Plane Fuelling Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-FS-02",
@@ -722,9 +722,9 @@
       "l2_process": "Fuelling & Servicing",
       "l2_slug": "fuelling-servicing",
       "l3_name": "Fuel Quality Control & Sampling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-FS-03",

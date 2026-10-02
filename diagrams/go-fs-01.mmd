@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Fuel Request<br/>Flight Dispatcher"]
+    N2{"Verify Aircraft Status<br/>Ground Control Officer"}
+    N3["Calculate Fuel Requirements<br/>Fuel Planning Analyst"]
+    N4["Dispatch Fueling Crew<br/>Fuel Dispatcher"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Prepare Fueling Stand<br/>Fuel Technician"}
+    N6{"Conduct Pre-Fueling Inspection<br/>Fuel Quality Inspector"}
+    N7{"Initiate Fueling Process<br/>Fuel Dispatcher"}
+    N8["Monitor Fueling Progress<br/>Fuel Quality Inspector"]
+    N9["Conduct Post-Fueling Inspection<br/>Fuel Quality Inspector"]
+    N10["Complete Fueling Process<br/>Fuel Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Update Fuel Records<br/>Fuel Planning Analyst"]
+    N12["Notify Ground Control of Completion<br/>Fuel Dispatcher"]
+    N13["Conduct Post-Operational Review<br/>Fuel Quality Inspector"]
+    N14["Close Fueling Request<br/>Flight Dispatcher"]
+  end
+  START --> N1
+  E15["Exception Receive Fuel Request"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Calculate Fuel Requirements"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Dispatch Fueling Crew"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  E18["Exception Update Fuel Records"]
+  N11 -.->|Exception| E18
+  N11 --> N12
+  E19["Exception Notify Ground Control of Complet"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  E20["Exception Conduct Post-Operational Review"]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  E21["Exception Close Fueling Request"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N6 -.->|No| N5
+  N7 -.->|No| N6
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

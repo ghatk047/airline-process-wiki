@@ -1,0 +1,74 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Check UM Declaration<br/>Customer Service Agent"}
+    N2["Assign UM Handler<br/>Flight Dispatcher"]
+    N3["Prepare UM Documentation<br/>Load Controller"]
+    N4["Notify Ground Operations<br/>Customer Service Agent"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Verify UM Documentation at Gate<br/>Baggage Handler"}
+    N6["Boarding Assistance<br/>Flight Attendant"]
+    N7["Monitor UM During Flight<br/>Flight Attendant"]
+    N8["Prepare Arrival Notification<br/>Customer Service Agent"]
+    N9["Notify Ground Operations for Arrival<br/>Customer Service Agent"]
+    N10["Finalize UM Handling Record<br/>Load Controller"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11{"Review UM Handling Report<br/>Flight Dispatcher"}
+    N12["Update UM Database<br/>Load Controller"]
+    N13["Close UM Case<br/>Customer Service Agent"]
+    N14["Generate UM Feedback Form<br/>Customer Service Agent"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Assign UM Handler"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Prepare UM Documentation"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Notify Ground Operations"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  N5 -->|Yes| N6
+  E18["Exception Boarding Assistance"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  E19["Exception Monitor UM During Flight"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  E20["Exception Prepare Arrival Notification"]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  E21["Exception Notify Ground Operations for Arr"]
+  N9 -.->|Exception| E21
+  N9 --> N10
+  E22["Exception Finalize UM Handling Record"]
+  N10 -.->|Exception| E22
+  N10 --> N11
+  N11 -->|Yes| N12
+  E23["Exception Update UM Database"]
+  N12 -.->|Exception| E23
+  N12 --> N13
+  E24["Exception Close UM Case"]
+  N13 -.->|Exception| E24
+  N13 --> N14
+  E25["Exception Generate UM Feedback Form"]
+  N14 -.->|Exception| E25
+  DONE([Complete])
+  N14 --> DONE
+  N11 -.->|No| N10
+  N1 -.->|No| START
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24,E25 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

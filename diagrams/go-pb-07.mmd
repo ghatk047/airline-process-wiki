@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Standby Requests<br/>Customer Service Representative CSR"]
+    N2{"Review Standby Requests<br/>Flight Dispatcher"}
+    N3{"Evaluate Upgrade Requests<br/>Revenue Analyst"}
+    N4{"Confirm Seat Availability<br/>Load Controller"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Allocate Standby Seats<br/>Flight Dispatcher"]
+    N6["Process Upgrade Requests<br/>Revenue Analyst"]
+    N7["Update Passenger Records<br/>Customer Service Representative CSR"]
+    N8["Notify Passengers<br/>Customer Service Representative CSR"]
+    N9["Monitor Seat Utilization<br/>Load Controller"]
+    N10{"Adjust Seat Allocations if Necessary<br/>Flight Dispatcher"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Passenger Records<br/>Customer Service Representative CSR"]
+    N12["Conduct Pre-Boarding Briefing<br/>Flight Crew"]
+    N13["Monitor Boarding Process<br/>Load Controller"]
+    N14["Post-Flight Review<br/>Customer Service Representative CSR"]
+  end
+  START --> N1
+  E15["Exception Receive Standby Requests"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E16["Exception Allocate Standby Seats"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  E17["Exception Process Upgrade Requests"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 --> N8
+  E18["Exception Notify Passengers"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  N9 --> N10
+  N10 -->|Yes| N11
+  N11 --> N12
+  E19["Exception Conduct Pre-Boarding Briefing"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  E20["Exception Monitor Boarding Process"]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  E21["Exception Post-Flight Review"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N2 -.->|No| N1
+  N10 -.->|No| N9
+  N3 -.->|No| N2
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

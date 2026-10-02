@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Weather Alert<br/>Weather Analyst"]
+    N2{"Assess Impact on Operations<br/>Flight Dispatcher"}
+    N3["Notify Ground Crew and Airlines<br/>Ground Control Coordinator"]
+    N4{"Prepare Ground Stop Plan<br/>Ground Operations Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Implement Ground Stop<br/>Ground Control Coordinator"]
+    N6{"Monitor Ground Stop Effectiveness<br/>Flight Dispatcher"}
+    N7{"Reassess Weather Conditions<br/>Weather Analyst"}
+    N8["Adjust Ground Stop Plan<br/>Ground Operations Manager"]
+    N9["Communicate Adjustments to Stakeholders<br/>Ground Control Coordinator"]
+    N10["Monitor and Control Ground Stop Execution<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Evaluate Ground Stop Outcome<br/>Ground Operations Manager"]
+    N12["Notify Airlines of Lift Off Ground Stop<br/>Ground Control Coordinator"]
+    N13["Update Operational Schedule<br/>Flight Dispatcher"]
+    N14["Review and Document Process<br/>Ground Operations Manager"]
+  end
+  START --> N1
+  E15["Exception Receive Weather Alert"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Notify Ground Crew and Airlines"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Implement Ground Stop"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  E18["Exception Adjust Ground Stop Plan"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Communicate Adjustments to Stake"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Notify Airlines of Lift Off Grou"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  N13 --> N14
+  E21["Exception Review and Document Process"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N2 -.->|No| N1
+  N7 -.->|No| N6
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
