@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Define Project Scope<br/>Project Manager"}
+    N2["Market Research<br/>Revenue Analyst"]
+    N3["Stakeholder Interviews<br/>Cabin Design Specialist"]
+    N4{"Initial Design Concept<br/>Cabin Designer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Material Selection<br/>Purchasing Manager"]
+    N6["Prototype Development<br/>Manufacturing Engineer"]
+    N7{"Pilot Testing<br/>Flight Test Engineer"}
+    N8["Design Refinement<br/>Cabin Designer"]
+    N9{"Cost Estimation<br/>Financial Analyst"}
+    N10["Final Approval<br/>Senior Management"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Production Planning<br/>Manufacturing Engineer"]
+    N12["Quality Assurance<br/>Quality Control Manager"]
+    N13["Deployment Plan<br/>Logistics Manager"]
+    N14["Post-Deployment Review<br/>Cabin Design Specialist"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Market Research"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Stakeholder Interviews"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Material Selection"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Prototype Development"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  E19["Exception Design Refinement"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  N9 -->|Yes| N10
+  N10 --> N11
+  E20["Exception Production Planning"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  N12 --> N13
+  E21["Exception Deployment Plan"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  E22["Exception Post-Deployment Review"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N9 -.->|No| N8
+  N7 -.->|No| N6
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Data Collection Initiation<br/>IFEC System Reliability Analyst"]
+    N2{"System Status Check<br/>IFEC System Reliability Analyst"}
+    N3["Data Integration<br/>IFEC System Reliability Analyst"]
+    N4{"Anomaly Detection<br/>IFEC System Reliability Analyst"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Root Cause Analysis<br/>IFEC System Reliability Analyst"]
+    N6{"Impact Assessment<br/>IFEC System Reliability Analyst"}
+    N7["Action Plan Development<br/>IFEC System Reliability Analyst"]
+    N8{"Resource Allocation<br/>IFEC System Reliability Analyst"}
+    N9["Communication Plan Development<br/>IFEC System Reliability Analyst"]
+    N10["Implementation of Action Plan<br/>IFEC System Reliability Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Post-Implementation Review<br/>IFEC System Reliability Analyst"]
+    N12["Performance Evaluation<br/>IFEC System Reliability Analyst"]
+    N13["Report Generation<br/>IFEC System Reliability Analyst"]
+    N14["Distribution of Report<br/>IFEC System Reliability Analyst"]
+  end
+  START --> N1
+  E15["Exception Data Collection Initiation"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Data Integration"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Root Cause Analysis"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception Action Plan Development"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  N8 -->|Yes| N9
+  E19["Exception Communication Plan Development"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Post-Implementation Review"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  N12 --> N13
+  E21["Exception Report Generation"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  N8 -.->|No| N7
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

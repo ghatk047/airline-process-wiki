@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Configuration Request<br/>Aircraft Configuration Analyst"}
+    N2["Define Configuration Standards<br/>Aircraft Configuration Analyst"]
+    N3["Update Configuration Management System<br/>Aircraft Configuration Analyst"]
+    N4["Notify Stakeholders<br/>Aircraft Configuration Analyst"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Develop Configuration Templates<br/>Aircraft Configuration Analyst"]
+    N6{"Review and Approve Templates<br/>Aircraft Configuration Analyst"}
+    N7["Implement Templates in AMOS<br/>Aircraft Configuration Analyst"]
+    N8["Train Maintenance Crews<br/>Training Manager"]
+    N9{"Conduct Configuration Audits<br/>Aircraft Configuration Analyst"}
+    N10["Update Configuration Documentation<br/>Aircraft Configuration Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Monitor Configuration Compliance<br/>Aircraft Configuration Analyst"]
+    N12{"Report Configuration Issues<br/>Aircraft Configuration Analyst"}
+    N13["Resolve Configuration Issues<br/>Aircraft Configuration Analyst"]
+    N14["Update Configuration Management System Aga<br/>Aircraft Configuration Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Define Configuration Standards"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Update Configuration Management "]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Notify Stakeholders"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  E18["Exception Develop Configuration Templates"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  E19["Exception Implement Templates in AMOS"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  E20["Exception Train Maintenance Crews"]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  N9 -->|Yes| N10
+  E21["Exception Update Configuration Documentati"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  E22["Exception Monitor Configuration Compliance"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  N12 -->|Yes| N13
+  E23["Exception Resolve Configuration Issues"]
+  N13 -.->|Exception| E23
+  N13 --> N14
+  E24["Exception Update Configuration Management "]
+  N14 -.->|Exception| E24
+  DONE([Complete])
+  N14 --> DONE
+  N9 -.->|No| N8
+  N12 -.->|No| N11
+  N6 -.->|No| N5
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

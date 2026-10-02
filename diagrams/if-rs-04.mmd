@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Service Preparation<br/>Flight Attendant"}
+    N2["Product Inventory Check<br/>Load Controller"]
+    N3{"Revenue Management Review<br/>Revenue Analyst"}
+    N4["Customer Loyalty Program Update<br/>Customer Relationship Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Boarding Preparation<br/>Flight Attendant"]
+    N6{"Product Restocking<br/>Flight Attendant"}
+    N7["In-flight Service Delivery<br/>Flight Attendant"]
+    N8{"Product Sales Monitoring<br/>Revenue Analyst"}
+    N9["Customer Feedback Collection<br/>Flight Attendant"]
+    N10["Loyalty Program Enrollment<br/>Customer Relationship Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Post-flight Review<br/>Flight Attendant"]
+    N12["Service Improvement Plan<br/>Customer Relationship Manager"]
+    N13["Inventory Reconciliation<br/>Load Controller"]
+    N14["Revenue Reporting<br/>Revenue Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Product Inventory Check"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Customer Loyalty Program Update"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  E17["Exception Boarding Preparation"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception In-flight Service Delivery"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  N8 -->|Yes| N9
+  E19["Exception Customer Feedback Collection"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Post-flight Review"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  N12 --> N13
+  E21["Exception Inventory Reconciliation"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N8 -.->|No| N7
+  N6 -.->|No| N5
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

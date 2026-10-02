@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Pre-flight Waste Planning<br/>Cabin Crew Leader"]
+    N2["Load Waste Containers<br/>Cabin Crew Member"]
+    N3{"Verify Waste Containers<br/>Flight Dispatcher"}
+    N4["Departure Notification<br/>Flight Dispatcher"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Monitor Waste Generation<br/>Cabin Crew Member"]
+    N6{"Adjust Waste Collection<br/>Cabin Crew Leader"}
+    N7{"Manage Special Waste<br/>Cabin Crew Member"}
+    N8["Pre-landing Waste Assessment<br/>Cabin Crew Leader"]
+    N9{"Prepare Waste for Disposal<br/>Cabin Crew Member"}
+    N10["Notify Ground Services<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Receive Ground Disposal Report<br/>Flight Dispatcher"]
+    N12["Update Waste Management Database<br/>Cabin Crew Leader"]
+    N13["Review Waste Management Performance<br/>Cabin Crew Leader"]
+    N14["Report Waste Management Findings<br/>Cabin Crew Leader"]
+  end
+  START --> N1
+  N1 --> N2
+  E15["Exception Load Waste Containers"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Departure Notification"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  E17["Exception Monitor Waste Generation"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  E18["Exception Pre-landing Waste Assessment"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  N9 -->|Yes| N10
+  E19["Exception Notify Ground Services"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Update Waste Management Database"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  E21["Exception Review Waste Management Performa"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N9 -.->|No| N8
+  N7 -.->|No| N6
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

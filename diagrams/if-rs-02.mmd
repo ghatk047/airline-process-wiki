@@ -1,0 +1,63 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Flight Schedule<br/>Flight Dispatcher"}
+    N2{"Check Inventory Levels<br/>Load Controller"}
+    N3{"Update Pricing Strategy<br/>Revenue Analyst"}
+    N4{"Plan Promotional Activities<br/>Marketing Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Load Products onto Aircraft<br/>Cargo Handler"]
+    N6["Configure In-Flight POS Systems<br/>In-Flight Retail Manager"]
+    N7["Monitor Sales Performance<br/>Revenue Analyst"]
+    N8["Adjust Promotions Based on Feedback<br/>Marketing Manager"]
+    N9["Manage Returns and Exchanges<br/>Customer Service Representative"]
+    N10["Update Inventory Post-Flight<br/>Load Controller"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review BOB Program Performance<br/>Revenue Analyst"]
+    N12["Update BOB Strategy Based on Performance<br/>Revenue Analyst"]
+    N13["Report to Stakeholders<br/>Cabin Services Manager"]
+    N14["Plan for Next Flight Cycle<br/>Revenue Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E15["Exception Load Products onto Aircraft"]
+  N5 -.->|Exception| E15
+  N5 --> N6
+  E16["Exception Configure In-Flight POS Systems"]
+  N6 -.->|Exception| E16
+  N6 --> N7
+  E17["Exception Monitor Sales Performance"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  N8 --> N9
+  E18["Exception Manage Returns and Exchanges"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  E19["Exception Report to Stakeholders"]
+  N13 -.->|Exception| E19
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

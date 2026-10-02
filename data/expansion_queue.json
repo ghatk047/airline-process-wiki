@@ -1833,9 +1833,9 @@
       "l2_process": "Aircraft Lifecycle",
       "l2_slug": "aircraft-lifecycle",
       "l3_name": "Aircraft Registration & Deregistration",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-LC-05",
@@ -1844,9 +1844,9 @@
       "l2_process": "Aircraft Lifecycle",
       "l2_slug": "aircraft-lifecycle",
       "l3_name": "Fleet Configuration Standardization",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AV-01",
@@ -1855,9 +1855,9 @@
       "l2_process": "Asset Value & Risk",
       "l2_slug": "asset-value-risk",
       "l3_name": "Aircraft Insurance Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AV-02",
@@ -1866,9 +1866,9 @@
       "l2_process": "Asset Value & Risk",
       "l2_slug": "asset-value-risk",
       "l3_name": "Aircraft Valuation & Appraisal",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AV-03",
@@ -1877,9 +1877,9 @@
       "l2_process": "Asset Value & Risk",
       "l2_slug": "asset-value-risk",
       "l3_name": "Residual Value Risk Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AV-04",
@@ -1888,9 +1888,9 @@
       "l2_process": "Asset Value & Risk",
       "l2_slug": "asset-value-risk",
       "l3_name": "Aircraft Records for Transaction",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-CA-01",
@@ -1899,9 +1899,9 @@
       "l2_process": "Catering & Provisioning",
       "l2_slug": "catering-provisioning",
       "l3_name": "Inflight Menu Design & Planning",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-CA-02",
@@ -1910,9 +1910,9 @@
       "l2_process": "Catering & Provisioning",
       "l2_slug": "catering-provisioning",
       "l3_name": "Catering Uplift Forecasting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-CA-03",
@@ -1921,9 +1921,9 @@
       "l2_process": "Catering & Provisioning",
       "l2_slug": "catering-provisioning",
       "l3_name": "Galley Loading Plan Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-CA-04",
@@ -1932,9 +1932,9 @@
       "l2_process": "Catering & Provisioning",
       "l2_slug": "catering-provisioning",
       "l3_name": "Special Meal Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-CA-05",
@@ -1943,9 +1943,9 @@
       "l2_process": "Catering & Provisioning",
       "l2_slug": "catering-provisioning",
       "l3_name": "Catering Vendor & Cost Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-CA-06",
@@ -1954,9 +1954,9 @@
       "l2_process": "Catering & Provisioning",
       "l2_slug": "catering-provisioning",
       "l3_name": "Onboard Waste & Recycling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-RS-01",
@@ -1965,9 +1965,9 @@
       "l2_process": "Inflight Retail & Product",
       "l2_slug": "inflight-retail",
       "l3_name": "Onboard Duty-Free & Retail Sales",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-RS-02",
@@ -1976,9 +1976,9 @@
       "l2_process": "Inflight Retail & Product",
       "l2_slug": "inflight-retail",
       "l3_name": "Buy-On-Board Program Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-RS-03",
@@ -1987,9 +1987,9 @@
       "l2_process": "Inflight Retail & Product",
       "l2_slug": "inflight-retail",
       "l3_name": "Cabin Product & Amenity Design",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-RS-04",
@@ -1998,9 +1998,9 @@
       "l2_process": "Inflight Retail & Product",
       "l2_slug": "inflight-retail",
       "l3_name": "Premium Cabin Service Standards",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-EC-01",
@@ -2009,9 +2009,9 @@
       "l2_process": "Inflight Entertainment & Connectivity",
       "l2_slug": "inflight-entertainment",
       "l3_name": "IFE Content Programming & Licensing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-EC-02",
@@ -2020,9 +2020,9 @@
       "l2_process": "Inflight Entertainment & Connectivity",
       "l2_slug": "inflight-entertainment",
       "l3_name": "Onboard WiFi & Connectivity Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-EC-03",
@@ -2031,9 +2031,9 @@
       "l2_process": "Inflight Entertainment & Connectivity",
       "l2_slug": "inflight-entertainment",
       "l3_name": "IFEC System Reliability Monitoring",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-EC-04",
@@ -2042,9 +2042,9 @@
       "l2_process": "Inflight Entertainment & Connectivity",
       "l2_slug": "inflight-entertainment",
       "l3_name": "Digital Cabin & Streaming Services",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-PS-01",

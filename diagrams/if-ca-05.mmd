@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Identify Flight Requirements<br/>Cabin Service Manager"]
+    N2["Review Vendor Capabilities<br/>Procurement Manager"]
+    N3{"Select Optimal Vendor<br/>Procurement Manager"}
+    N4{"Negotiate Contract Terms<br/>Procurement Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Prepare Provisioning Plan<br/>Catering Controller"]
+    N6["Order Catering Items<br/>Catering Controller"]
+    N7["Monitor Inventory Levels<br/>Catering Controller"]
+    N8{"Conduct Quality Checks<br/>Quality Assurance Manager"}
+    N9["Adjust Provisioning Plan<br/>Catering Controller"]
+    N10["Finalize Order and Dispatch<br/>Catering Controller"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Monitor Flight Performance<br/>Cabin Service Manager"]
+    N12{"Review Cost Performance<br/>Procurement Manager"}
+    N13["Update Vendor Performance Records<br/>Procurement Manager"]
+    N14["Report and Optimize<br/>Catering Controller"]
+  end
+  START --> N1
+  E15["Exception Identify Flight Requirements"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Review Vendor Capabilities"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E17["Exception Prepare Provisioning Plan"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Order Catering Items"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  E19["Exception Monitor Inventory Levels"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  N8 -->|Yes| N9
+  E20["Exception Adjust Provisioning Plan"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  E21["Exception Finalize Order and Dispatch"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  E22["Exception Monitor Flight Performance"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  N12 -->|Yes| N13
+  E23["Exception Update Vendor Performance Record"]
+  N13 -.->|Exception| E23
+  N13 --> N14
+  E24["Exception Report and Optimize"]
+  N14 -.->|Exception| E24
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N4 -.->|No| N3
+  N8 -.->|No| N7
+  N12 -.->|No| N11
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
