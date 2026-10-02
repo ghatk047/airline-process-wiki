@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Cargo Manifest<br/>Flight Dispatcher"]
+    N2{"Verify Cargo Items<br/>Load Controller"}
+    N3{"Check Cargo Weight and Dimensions<br/>Load Controller"}
+    N4{"Conduct Security Screening<br/>Security Officer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Update Cargo Status in PSS<br/>Flight Dispatcher"]
+    N6["Prepare Cargo Loading Plan<br/>Load Controller"]
+    N7["Notify Ground Handler<br/>Flight Dispatcher"]
+    N8{"Conduct Final Inspection<br/>Load Controller"}
+    N9["Update Cargo Manifest in SAP S4HANA<br/>Flight Dispatcher"]
+    N10["Notify Security for Final Approval<br/>Security Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Receive Security Approval<br/>Security Officer"]
+    N12["Update PSS with Final Status<br/>Flight Dispatcher"]
+    N13["Notify Ground Handler for Loading<br/>Flight Dispatcher"]
+    N14["Final Review and Documentation<br/>Flight Dispatcher"]
+  end
+  START --> N1
+  E15["Exception Receive Cargo Manifest"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E16["Exception Update Cargo Status in PSS"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  E17["Exception Prepare Cargo Loading Plan"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  E18["Exception Notify Ground Handler"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  N8 -->|Yes| N9
+  E19["Exception Update Cargo Manifest in SAP S4H"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  E20["Exception Notify Security for Final Approv"]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  N11 --> N12
+  E21["Exception Update PSS with Final Status"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Notify Ground Handler for Loadin"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Final Review and Documentation"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  N8 -.->|No| N7
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

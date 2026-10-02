@@ -1,0 +1,55 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Incident Detection<br/>Flight Crew"}
+    N2{"Initial Assessment<br/>Flight Dispatcher"}
+    N3{"Data Collection<br/>Flight Data Analyst"}
+    N4{"Report Preparation<br/>Safety Officer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Internal Review<br/>Safety Committee Chair"]
+    N6["External Reporting<br/>Regulatory Compliance Officer"]
+    N7["Root Cause Analysis<br/>Safety Analyst"]
+    N8["Action Plan Development<br/>Safety Manager"]
+    N9["Implementation Monitoring<br/>Quality Assurance Officer"]
+    N10["Post-Implementation Review<br/>Safety Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Update Safety Policies<br/>Safety Manager"]
+    N12["Training Programs<br/>Training Coordinator"]
+    N13["Continuous Improvement<br/>Safety Analyst"]
+    N14["Final Review and Documentation<br/>Safety Committee Chair"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 --> N6
+  E15["Exception External Reporting"]
+  N6 -.->|Exception| E15
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

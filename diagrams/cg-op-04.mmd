@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Receive Live Animal Request<br/>Cargo Coordinator"}
+    N2{"Review Regulatory Compliance<br/>Regulatory Specialist"}
+    N3{"Allocate Flight and Cargo Space<br/>Flight Dispatcher"}
+    N4["Prepare Animal Handling Plan<br/>Animal Care Specialist"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Coordinate with Ground Handling Agents<br/>Ground Operations Manager"]
+    N6{"Load Live Animals onto Aircraft<br/>Cargo Loader"}
+    N7["Monitor Live Animal Conditions During Flig<br/>Flight Attendant"]
+    N8["Unload Live Animals at Destination<br/>Cargo Loader"]
+    N9["Conduct Post-Transport Review<br/>Animal Care Specialist"]
+    N10["Update Customer and Regulatory Bodies<br/>Cargo Coordinator"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Close Live Animal Transport Case<br/>Cargo Coordinator"]
+    N12["Update Internal Knowledge Base<br/>Animal Care Specialist"]
+    N13["Review and Improve Handling Procedures<br/>Animal Care Specialist"]
+    N14["Finalize Financial Records<br/>Finance Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E15["Exception Prepare Animal Handling Plan"]
+  N4 -.->|Exception| E15
+  N4 --> N5
+  E16["Exception Coordinate with Ground Handling "]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 --> N8
+  N8 --> N9
+  E17["Exception Conduct Post-Transport Review"]
+  N9 -.->|Exception| E17
+  N9 --> N10
+  E18["Exception Update Customer and Regulatory B"]
+  N10 -.->|Exception| E18
+  N10 --> N11
+  E19["Exception Close Live Animal Transport Case"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  E20["Exception Update Internal Knowledge Base"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  E21["Exception Review and Improve Handling Proc"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  E22["Exception Finalize Financial Records"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

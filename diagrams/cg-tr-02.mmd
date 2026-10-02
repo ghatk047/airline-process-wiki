@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Irregularity Detection<br/>Cargo Handler"}
+    N2{"Initial Assessment<br/>Cargo Coordinator"}
+    N3["Notify Stakeholders<br/>Cargo Coordinator"]
+    N4{"Prioritize Handling<br/>Cargo Coordinator"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Coordinate with Ground Handling<br/>Cargo Coordinator"]
+    N6["Update Cargo Status<br/>Cargo Coordinator"]
+    N7{"Monitor Cargo Location<br/>Cargo Coordinator"}
+    N8["Communicate with Customers<br/>Customer Service Representative"]
+    N9["Review Handling Actions<br/>Cargo Coordinator"]
+    N10["Adjust Handling Strategy<br/>Cargo Coordinator"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Cargo Status<br/>Cargo Coordinator"]
+    N12["Close Incident Record<br/>Cargo Coordinator"]
+    N13["Review and Improve Processes<br/>Cargo Coordinator, Process Analyst"]
+    N14["Implement Improvements<br/>Process Analyst, IT Support"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  E15["Exception Notify Stakeholders"]
+  N3 -.->|Exception| E15
+  N3 --> N4
+  N4 -->|Yes| N5
+  E16["Exception Coordinate with Ground Handling"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  E17["Exception Update Cargo Status"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  E18["Exception Communicate with Customers"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  E19["Exception Finalize Cargo Status"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  E20["Exception Close Incident Record"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  E21["Exception Review and Improve Processes"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  E22["Exception Implement Improvements"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N1 -.->|No| START
+  N7 -.->|No| N6
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

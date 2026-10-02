@@ -1393,9 +1393,9 @@
       "l2_process": "Cargo Operations",
       "l2_slug": "cargo-operations",
       "l3_name": "Live Animal Transport",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-OP-05",
@@ -1404,9 +1404,9 @@
       "l2_process": "Cargo Operations",
       "l2_slug": "cargo-operations",
       "l3_name": "Pharma & High-Value Cargo Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-OP-06",
@@ -1415,9 +1415,9 @@
       "l2_process": "Cargo Operations",
       "l2_slug": "cargo-operations",
       "l3_name": "Cargo Acceptance & Screening",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-CU-01",
@@ -1426,9 +1426,9 @@
       "l2_process": "Cargo Customs & Compliance",
       "l2_slug": "cargo-customs",
       "l3_name": "Export & Import Customs Clearance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-CU-02",
@@ -1437,9 +1437,9 @@
       "l2_process": "Cargo Customs & Compliance",
       "l2_slug": "cargo-customs",
       "l3_name": "Security Screening Compliance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-CU-03",
@@ -1448,9 +1448,9 @@
       "l2_process": "Cargo Customs & Compliance",
       "l2_slug": "cargo-customs",
       "l3_name": "Cargo Manifest & Documentation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-CU-04",
@@ -1459,9 +1459,9 @@
       "l2_process": "Cargo Customs & Compliance",
       "l2_slug": "cargo-customs",
       "l3_name": "Embargo & Sanctions Screening",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-TR-01",
@@ -1470,9 +1470,9 @@
       "l2_process": "Cargo Tracking & Recovery",
       "l2_slug": "cargo-tracking",
       "l3_name": "Shipment Track & Trace",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-TR-02",
@@ -1481,9 +1481,9 @@
       "l2_process": "Cargo Tracking & Recovery",
       "l2_slug": "cargo-tracking",
       "l3_name": "Cargo Irregularity Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-TR-03",
@@ -1492,9 +1492,9 @@
       "l2_process": "Cargo Tracking & Recovery",
       "l2_slug": "cargo-tracking",
       "l3_name": "Cargo Claims & Compensation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-TR-04",
@@ -1503,9 +1503,9 @@
       "l2_process": "Cargo Tracking & Recovery",
       "l2_slug": "cargo-tracking",
       "l3_name": "Cargo Revenue Accounting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SM-01",
@@ -1514,9 +1514,9 @@
       "l2_process": "Safety Management System",
       "l2_slug": "safety-management",
       "l3_name": "Hazard Identification & Reporting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SM-02",
@@ -1525,9 +1525,9 @@
       "l2_process": "Safety Management System",
       "l2_slug": "safety-management",
       "l3_name": "Safety Risk Assessment",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SM-03",
@@ -1536,9 +1536,9 @@
       "l2_process": "Safety Management System",
       "l2_slug": "safety-management",
       "l3_name": "Safety Performance Monitoring",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SM-04",
@@ -1547,9 +1547,9 @@
       "l2_process": "Safety Management System",
       "l2_slug": "safety-management",
       "l3_name": "Just Culture & Confidential Reporting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SM-05",
@@ -1558,9 +1558,9 @@
       "l2_process": "Safety Management System",
       "l2_slug": "safety-management",
       "l3_name": "Safety Action Group & Review Board",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-FD-01",
@@ -1569,9 +1569,9 @@
       "l2_process": "Flight Data & Occurrence",
       "l2_slug": "flight-data-occurrence",
       "l3_name": "Flight Data Monitoring (FDM/FOQA)",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-FD-02",
@@ -1580,9 +1580,9 @@
       "l2_process": "Flight Data & Occurrence",
       "l2_slug": "flight-data-occurrence",
       "l3_name": "Occurrence Investigation & Root Cause",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-FD-03",
@@ -1591,9 +1591,9 @@
       "l2_process": "Flight Data & Occurrence",
       "l2_slug": "flight-data-occurrence",
       "l3_name": "Corrective & Preventive Action Tracking",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-FD-04",
@@ -1602,9 +1602,9 @@
       "l2_process": "Flight Data & Occurrence",
       "l2_slug": "flight-data-occurrence",
       "l3_name": "Aviation Safety Reporting (ASR)",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-FD-05",

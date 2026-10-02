@@ -1,0 +1,59 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Shipment Creation<br/>Cargo Agent"]
+    N2{"Initial Tracking Update<br/>Flight Dispatcher"}
+    N3{"Shipment Status Verification<br/>Cargo Control Officer"}
+    N4["Customer Notification<br/>Cargo Agent"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Continuous Tracking Updates<br/>Flight Dispatcher"}
+    N6{"Anomaly Detection<br/>Cargo Control Officer"}
+    N7["Incident Response Planning<br/>Cargo Recovery Coordinator"]
+    N8["Customer Communication Update<br/>Cargo Agent"]
+    N9["Resource Allocation<br/>Cargo Recovery Coordinator"]
+    N10["Recovery Execution<br/>Cargo Recovery Team"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Tracking Update<br/>Flight Dispatcher"]
+    N12["Customer Closure<br/>Cargo Agent"]
+    N13["Post-Recovery Review<br/>Cargo Control Officer"]
+    N14["Continuous Improvement Plan<br/>Cargo Recovery Coordinator"]
+  end
+  START --> N1
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E15["Exception Customer Notification"]
+  N4 -.->|Exception| E15
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  N7 --> N8
+  E16["Exception Customer Communication Update"]
+  N8 -.->|Exception| E16
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E17["Exception Customer Closure"]
+  N12 -.->|Exception| E17
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  N5 -.->|No| N4
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
