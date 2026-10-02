@@ -1,0 +1,55 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Regulatory Changes<br/>Compliance Officer"}
+    N2{"Identify Affected Plans<br/>Safety Manager"}
+    N3{"Engage Stakeholders<br/>Flight Dispatcher"}
+    N4{"Update Emergency Response Plans<br/>Safety Analyst"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Review Draft Plans<br/>Quality Assurance Manager"]
+    N6["Conduct Internal Audit<br/>Internal Auditor"]
+    N7["Update Documentation<br/>Documentation Specialist"]
+    N8["Train Crew Members<br/>Training Coordinator"]
+    N9["Review Training Effectiveness<br/>Safety Manager"]
+    N10["Finalize Emergency Response Plans<br/>Compliance Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Implement Updated Plans<br/>Flight Dispatcher"]
+    N12["Monitor Plan Effectiveness<br/>Safety Analyst"]
+    N13["Report to Regulatory Authorities<br/>Compliance Officer"]
+    N14["Review and Improve Plans<br/>Safety Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E15["Exception Review Draft Plans"]
+  N5 -.->|Exception| E15
+  N5 --> N6
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

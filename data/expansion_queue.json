@@ -1613,9 +1613,9 @@
       "l2_process": "Flight Data & Occurrence",
       "l2_slug": "flight-data-occurrence",
       "l3_name": "Trend Analysis & Predictive Safety",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SE-01",
@@ -1624,9 +1624,9 @@
       "l2_process": "Aviation Security (AVSEC)",
       "l2_slug": "aviation-security",
       "l3_name": "Security Threat Assessment",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SE-02",
@@ -1635,9 +1635,9 @@
       "l2_process": "Aviation Security (AVSEC)",
       "l2_slug": "aviation-security",
       "l3_name": "Access Control & Restricted Area Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SE-03",
@@ -1646,9 +1646,9 @@
       "l2_process": "Aviation Security (AVSEC)",
       "l2_slug": "aviation-security",
       "l3_name": "Cargo & Catering Security",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SE-04",
@@ -1657,9 +1657,9 @@
       "l2_process": "Aviation Security (AVSEC)",
       "l2_slug": "aviation-security",
       "l3_name": "Insider Threat Program",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SE-05",
@@ -1668,9 +1668,9 @@
       "l2_process": "Aviation Security (AVSEC)",
       "l2_slug": "aviation-security",
       "l3_name": "Cyber-Physical Security Coordination",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-QA-01",
@@ -1679,9 +1679,9 @@
       "l2_process": "Quality & Regulatory Assurance",
       "l2_slug": "quality-regulatory",
       "l3_name": "IOSA Audit Preparation & Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-QA-02",
@@ -1690,9 +1690,9 @@
       "l2_process": "Quality & Regulatory Assurance",
       "l2_slug": "quality-regulatory",
       "l3_name": "Internal Quality Audit Program",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-QA-03",
@@ -1701,9 +1701,9 @@
       "l2_process": "Quality & Regulatory Assurance",
       "l2_slug": "quality-regulatory",
       "l3_name": "Regulatory Inspection Coordination",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-QA-04",
@@ -1712,9 +1712,9 @@
       "l2_process": "Quality & Regulatory Assurance",
       "l2_slug": "quality-regulatory",
       "l3_name": "Emergency Response Plan Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-QA-05",
@@ -1723,9 +1723,9 @@
       "l2_process": "Quality & Regulatory Assurance",
       "l2_slug": "quality-regulatory",
       "l3_name": "Dangerous Goods Program Oversight",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-QA-06",
@@ -1734,9 +1734,9 @@
       "l2_process": "Quality & Regulatory Assurance",
       "l2_slug": "quality-regulatory",
       "l3_name": "Regulatory Reporting & Compliance Filing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AQ-01",
@@ -1745,9 +1745,9 @@
       "l2_process": "Fleet Acquisition & Financing",
       "l2_slug": "fleet-acquisition",
       "l3_name": "Fleet Planning & Renewal Strategy",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AQ-02",
@@ -1756,9 +1756,9 @@
       "l2_process": "Fleet Acquisition & Financing",
       "l2_slug": "fleet-acquisition",
       "l3_name": "Aircraft Order & Purchase Negotiation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AQ-03",
@@ -1767,9 +1767,9 @@
       "l2_process": "Fleet Acquisition & Financing",
       "l2_slug": "fleet-acquisition",
       "l3_name": "Operating & Finance Lease Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AQ-04",
@@ -1778,9 +1778,9 @@
       "l2_process": "Fleet Acquisition & Financing",
       "l2_slug": "fleet-acquisition",
       "l3_name": "Aircraft Financing & Capital Structure",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AQ-05",
@@ -1789,9 +1789,9 @@
       "l2_process": "Fleet Acquisition & Financing",
       "l2_slug": "fleet-acquisition",
       "l3_name": "Sale-Leaseback Transaction Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-LC-01",
@@ -1800,9 +1800,9 @@
       "l2_process": "Aircraft Lifecycle",
       "l2_slug": "aircraft-lifecycle",
       "l3_name": "Aircraft Phase-In & Delivery Acceptance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-LC-02",
@@ -1811,9 +1811,9 @@
       "l2_process": "Aircraft Lifecycle",
       "l2_slug": "aircraft-lifecycle",
       "l3_name": "Aircraft Phase-Out & Retirement",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-LC-03",
@@ -1822,9 +1822,9 @@
       "l2_process": "Aircraft Lifecycle",
       "l2_slug": "aircraft-lifecycle",
       "l3_name": "Lease Return & Redelivery Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-LC-04",

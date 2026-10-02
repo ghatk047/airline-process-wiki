@@ -1,0 +1,75 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Initiate Inspection Request<br/>Regulatory Affairs Manager"]
+    N2["Assign Inspection Team<br/>Regulatory Affairs Manager"]
+    N3{"Review Inspection Schedule<br/>Flight Dispatcher"}
+    N4["Prepare Inspection Documentation<br/>Quality Assurance Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Notify Stakeholders<br/>Regulatory Affairs Manager"]
+    N6["Conduct Pre-Inspection Briefing<br/>Quality Assurance Manager"]
+    N7["Monitor Inspection Progress<br/>Regulatory Affairs Manager"]
+    N8{"Review Inspection Findings<br/>Quality Assurance Manager"}
+    N9["Develop Action Plan<br/>Quality Assurance Manager"]
+    N10["Update Compliance Status<br/>Regulatory Affairs Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Notify Authorities of Completion<br/>Regulatory Affairs Manager"]
+    N12["Review and Close Inspection Case<br/>Regulatory Affairs Manager"]
+    N13["Update Training Programs<br/>Quality Assurance Manager"]
+    N14["Review and Report Metrics<br/>Regulatory Affairs Manager"]
+  end
+  START --> N1
+  E15["Exception Initiate Inspection Request"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Assign Inspection Team"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  E17["Exception Prepare Inspection Documentation"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  E18["Exception Notify Stakeholders"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  E19["Exception Conduct Pre-Inspection Briefing"]
+  N6 -.->|Exception| E19
+  N6 --> N7
+  E20["Exception Monitor Inspection Progress"]
+  N7 -.->|Exception| E20
+  N7 --> N8
+  N8 -->|Yes| N9
+  E21["Exception Develop Action Plan"]
+  N9 -.->|Exception| E21
+  N9 --> N10
+  E22["Exception Update Compliance Status"]
+  N10 -.->|Exception| E22
+  N10 --> N11
+  E23["Exception Notify Authorities of Completion"]
+  N11 -.->|Exception| E23
+  N11 --> N12
+  E24["Exception Review and Close Inspection Case"]
+  N12 -.->|Exception| E24
+  N12 --> N13
+  E25["Exception Update Training Programs"]
+  N13 -.->|Exception| E25
+  N13 --> N14
+  E26["Exception Review and Report Metrics"]
+  N14 -.->|Exception| E26
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N8 -.->|No| N7
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24,E25,E26 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

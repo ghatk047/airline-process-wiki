@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Initiate Transaction Request<br/>Fleet Manager"]
+    N2{"Review and Approve Transaction<br/>Senior Finance Manager"}
+    N3{"Negotiate Lease Terms<br/>Legal Counsel, Finance Analyst"}
+    N4{"Finalize Lease Agreement<br/>Legal Counsel, Compliance Officer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Transfer Asset Ownership<br/>Asset Manager, Legal Counsel"}
+    N6["Update Financial Records<br/>Finance Analyst, SAP Administrator"]
+    N7["Monitor Lease Compliance<br/>Compliance Officer, Finance Analyst"]
+    N8["Review and Adjust Lease Terms<br/>Finance Analyst, Legal Counsel"]
+    N9["Update Asset Management System<br/>Asset Manager, SAP Administrator"]
+    N10["Report Financial Performance<br/>Finance Analyst, Reporting Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review and Close Transaction<br/>Fleet Manager, Senior Finance Manager"]
+    N12["Update Strategic Plan<br/>Strategic Planner, Finance Analyst"]
+    N13["Review and Improve Process<br/>Process Improvement Officer, SAP Administr"]
+    N14["Archive Transaction Records<br/>Records Manager, SAP Administrator"]
+  end
+  START --> N1
+  E15["Exception Initiate Transaction Request"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Negotiate Lease Terms"]
+  N3 -.->|Exception| E16
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E17["Exception Transfer Asset Ownership"]
+  N5 -.->|Exception| E17
+  N5 -->|Yes| N6
+  E18["Exception Update Financial Records"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 --> N8
+  E19["Exception Review and Adjust Lease Terms"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Update Asset Management System"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  E21["Exception Report Financial Performance"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  N11 --> N12
+  E22["Exception Update Strategic Plan"]
+  N12 -.->|Exception| E22
+  N12 --> N13
+  N13 --> N14
+  E23["Exception Archive Transaction Records"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  N5 -.->|No| N4
+  N3 -.->|No| N2
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

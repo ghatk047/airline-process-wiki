@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Threat Intelligence Gathering<br/>Security Analyst"]
+    N2{"Risk Assessment<br/>AVSEC Manager"}
+    N3["Security Measures Planning<br/>Flight Dispatcher"]
+    N4["Resource Allocation<br/>Security Officer"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Security Briefing<br/>Flight Crew, Security Officer"]
+    N6{"Passenger Screening<br/>Security Officer, Passenger Services"}
+    N7{"Cargo Security Check<br/>Cargo Handler, Security Officer"}
+    N8{"In-Flight Security Monitoring<br/>Cabin Crew, Security Officer"}
+    N9["Post-Flight Review<br/>AVSEC Manager, Flight Crew"]
+    N10["Continuous Improvement Planning<br/>AVSEC Manager, Security Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Update Security Measures<br/>Flight Dispatcher, Security Officer"]
+    N12["Compliance Check<br/>AVSEC Manager, Compliance Officer"]
+    N13["Training Update<br/>Security Officer, Training Manager"]
+    N14["Documentation Review<br/>AVSEC Manager, Compliance Officer"]
+  end
+  START --> N1
+  E15["Exception Threat Intelligence Gathering"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Security Measures Planning"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Resource Allocation"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  E18["Exception Security Briefing"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  N8 -->|Yes| N9
+  E19["Exception Post-Flight Review"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  E20["Exception Continuous Improvement Planning"]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  E21["Exception Update Security Measures"]
+  N11 -.->|Exception| E21
+  N11 --> N12
+  N12 --> N13
+  E22["Exception Training Update"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N8 -.->|No| N7
+  N6 -.->|No| N5
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

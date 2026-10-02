@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Data Extraction<br/>Flight Data Analyst"}
+    N2["Data Cleaning<br/>Flight Data Analyst"]
+    N3["Data Integration<br/>Flight Data Analyst"]
+    N4{"Initial Trend Identification<br/>Flight Data Analyst"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Advanced Trend Analysis<br/>Flight Data Analyst"]
+    N6{"Predictive Modeling<br/>Data Scientist"}
+    N7{"Risk Assessment<br/>Safety Engineer"}
+    N8["Mitigation Strategy Development<br/>Safety Engineer"]
+    N9["Implementation Plan Creation<br/>Flight Operations Manager"]
+    N10["Stakeholder Communication<br/>Safety Engineer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Execution Monitoring<br/>Flight Operations Manager"]
+    N12["Effectiveness Evaluation<br/>Flight Data Analyst"]
+    N13["Continuous Improvement Planning<br/>Flight Data Analyst"]
+    N14["Documentation Update<br/>Safety Engineer"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Data Cleaning"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Data Integration"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Advanced Trend Analysis"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  E18["Exception Mitigation Strategy Development"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  N9 --> N10
+  E19["Exception Stakeholder Communication"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  E20["Exception Continuous Improvement Planning"]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  E21["Exception Documentation Update"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N7 -.->|No| N6
+  N4 -.->|No| N3
+  N6 -.->|No| N5
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

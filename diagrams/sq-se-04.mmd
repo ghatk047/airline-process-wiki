@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Initial Risk Assessment<br/>Security Manager"]
+    N2{"Security Training Review<br/>Training Coordinator"}
+    N3{"Access Control Review<br/>IT Security Officer"}
+    N4["Behavioral Monitoring Setup<br/>Security Analyst"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Anomaly Detection Analysis<br/>Security Analyst"}
+    N6{"Threat Assessment<br/>Security Manager"}
+    N7["Mitigation Plan Development<br/>Security Manager, IT Security Officer"]
+    N8["Implementation of Mitigation Measures<br/>IT Security Officer, HR Manager"]
+    N9["Employee Interview and Counseling<br/>Security Manager, HR Counselor"]
+    N10["Continuous Monitoring and Review<br/>Security Analyst, IT Security Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Risk Assessment Review<br/>Security Manager, Compliance Officer"]
+    N12["Compliance Check<br/>Compliance Officer"]
+    N13["Reporting and Documentation<br/>Security Manager, Compliance Officer"]
+    N14["Review and Update Program<br/>Security Manager, Compliance Officer"]
+  end
+  START --> N1
+  E15["Exception Initial Risk Assessment"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Behavioral Monitoring Setup"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  E17["Exception Mitigation Plan Development"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  E18["Exception Continuous Monitoring and Review"]
+  N10 -.->|Exception| E18
+  N10 --> N11
+  N11 --> N12
+  E19["Exception Compliance Check"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  E20["Exception Reporting and Documentation"]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N5 -.->|No| N4
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

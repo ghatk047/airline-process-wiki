@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Lease Agreement Review<br/>Legal Counsel"}
+    N2{"Credit Risk Assessment<br/>Finance Analyst"}
+    N3["Lease Accounting Setup<br/>Accountant"]
+    N4{"Lease Compliance Check<br/>Compliance Officer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Lease Payment Calculation<br/>Finance Analyst"]
+    N6["Lease Valuation Update<br/>Asset Manager"]
+    N7{"Lease Performance Review<br/>Finance Analyst"}
+    N8["Lease Renewal Decision<br/>Asset Manager"]
+    N9["Lease Termination Planning<br/>Legal Counsel"]
+    N10["Lease Decommissioning<br/>Maintenance Engineer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Lease Audit<br/>Compliance Officer"]
+    N12["Lease Closure Documentation<br/>Legal Counsel"]
+    N13["Lease Post-Closure Review<br/>Finance Analyst"]
+    N14["Lease Data Archiving<br/>Data Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  E15["Exception Lease Accounting Setup"]
+  N3 -.->|Exception| E15
+  N3 --> N4
+  E16["Exception Lease Compliance Check"]
+  N4 -.->|Exception| E16
+  N4 -->|Yes| N5
+  E17["Exception Lease Payment Calculation"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Lease Valuation Update"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  N8 --> N9
+  N9 --> N10
+  E19["Exception Lease Decommissioning"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Lease Closure Documentation"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  E21["Exception Lease Post-Closure Review"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  E22["Exception Lease Data Archiving"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N7 -.->|No| N6
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

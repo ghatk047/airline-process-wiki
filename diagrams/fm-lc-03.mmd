@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Initiate Redelivery Process<br/>Lease Manager"]
+    N2{"Review Maintenance Logs<br/>Maintenance Planner"}
+    N3["Prepare Redelivery Documentation<br/>Lease Manager"]
+    N4{"Final Inspection and Cleanliness Check<br/>Cabin Crew Chief"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Coordinate Ground Handling Services<br/>Ground Operations Manager"]
+    N6["Load Aircraft for Redelivery<br/>Load Controller"]
+    N7["Conduct Pre-Departure Briefing<br/>Flight Dispatcher"]
+    N8{"Monitor Departure and Redelivery<br/>Flight Operations Manager"}
+    N9{"Handle Any Post-Redelivery Issues<br/>Maintenance Planner"}
+    N10["Update Lease Records<br/>Lease Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Compliance Check<br/>Lease Manager"]
+    N12["Close Redelivery Process in SAP<br/>Lease Manager"]
+    N13["Review and Report on Redelivery Process<br/>Lease Manager"]
+    N14["Update Fleet Availability and Maintenance <br/>Maintenance Planner"]
+  end
+  START --> N1
+  N1 --> N2
+  N2 -->|Yes| N3
+  E15["Exception Prepare Redelivery Documentation"]
+  N3 -.->|Exception| E15
+  N3 --> N4
+  N4 -->|Yes| N5
+  E16["Exception Coordinate Ground Handling Servi"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  N6 --> N7
+  E17["Exception Conduct Pre-Departure Briefing"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  N8 -->|Yes| N9
+  E18["Exception Handle Any Post-Redelivery Issue"]
+  N9 -.->|Exception| E18
+  N9 -->|Yes| N10
+  N10 --> N11
+  N11 --> N12
+  E19["Exception Close Redelivery Process in SAP"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  E20["Exception Review and Report on Redelivery "]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N9 -.->|No| N8
+  N4 -.->|No| N3
+  N8 -.->|No| N7
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

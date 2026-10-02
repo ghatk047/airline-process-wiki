@@ -1,0 +1,61 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Dangerous Goods Regulations<br/>Regulatory Compliance Officer"}
+    N2["Notify Flight Operations<br/>Regulatory Compliance Officer"]
+    N3{"Prepare Dangerous Goods Handling Plan<br/>Flight Dispatcher"}
+    N4{"Review and Approve Plan<br/>Safety Officer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Conduct Pre-flight Briefing<br/>Flight Crew Leader"]
+    N6{"Load Dangerous Goods<br/>Load Controller"}
+    N7["Monitor Dangerous Goods During Flight<br/>Flight Crew Member"]
+    N8["Conduct Post-flight Review<br/>Safety Officer"]
+    N9["Update Dangerous Goods Handling Database<br/>Regulatory Compliance Officer"]
+    N10["Report Incidents or Non-compliance<br/>Safety Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review and Update Procedures<br/>Regulatory Compliance Officer"]
+    N12["Train Staff on Updated Procedures<br/>Training Manager"]
+    N13["Conduct Compliance Audit<br/>Internal Auditor"]
+    N14["Report Audit Findings and Remediation Acti<br/>Internal Auditor"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Notify Flight Operations"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E16["Exception Conduct Pre-flight Briefing"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 --> N8
+  N8 --> N9
+  E17["Exception Update Dangerous Goods Handling "]
+  N9 -.->|Exception| E17
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E18["Exception Train Staff on Updated Procedure"]
+  N12 -.->|Exception| E18
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

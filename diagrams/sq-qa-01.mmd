@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Audit Notification Review<br/>Quality Assurance Manager"}
+    N2["Audit Team Formation<br/>Quality Assurance Manager"]
+    N3["Document Review and Update<br/>Quality Assurance Analyst"]
+    N4["Training Session for Audit Team<br/>Quality Assurance Trainer"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Site Inspection Preparation<br/>Flight Dispatcher"]
+    N6{"Site Walkthrough Execution<br/>Quality Assurance Inspector"}
+    N7{"Non-Conformance Identification<br/>Quality Assurance Inspector"}
+    N8["Non-Conformance Correction Plan Developmen<br/>Quality Assurance Manager"]
+    N9["Correction Plan Implementation<br/>Quality Assurance Inspector"]
+    N10{"Final Audit Report Preparation<br/>Quality Assurance Manager"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Audit Report Review and Approval<br/>Quality Assurance Director"]
+    N12["Audit Report Submission<br/>Quality Assurance Manager"]
+    N13["Follow-Up Action Plan Development<br/>Quality Assurance Manager"]
+    N14["Follow-Up Action Implementation and Monito<br/>Quality Assurance Inspector"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Audit Team Formation"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Document Review and Update"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Training Session for Audit Team"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  E18["Exception Site Inspection Preparation"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  E19["Exception Non-Conformance Correction Plan "]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Correction Plan Implementation"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  N10 -->|Yes| N11
+  N11 --> N12
+  E21["Exception Audit Report Submission"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Follow-Up Action Plan Developmen"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Follow-Up Action Implementation "]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N7 -.->|No| N6
+  N10 -.->|No| N9
+  N6 -.->|No| N5
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
