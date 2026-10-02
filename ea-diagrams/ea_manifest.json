@@ -1,0 +1,54 @@
+{
+  "ea_diagrams": [
+    {
+      "id": "ea-x21",
+      "title": "Cargo End-to-End: Booking to Delivery",
+      "desc": "Cargo sales through customs, ULD build, tracking and settlement across iCargo, DCS, customs and revenue systems"
+    },
+    {
+      "id": "ea-x22",
+      "title": "Safety Management System Data Architecture",
+      "desc": "SMS, FDM/FOQA, occurrence investigation and regulatory reporting integration across safety and ops systems"
+    },
+    {
+      "id": "ea-x23",
+      "title": "Fleet Lifecycle: Acquisition to Retirement",
+      "desc": "Fleet planning, financing, phase-in/out, configuration and records across fleet, finance and MRO systems"
+    },
+    {
+      "id": "ea-x24",
+      "title": "Cabin & Inflight Services Integration",
+      "desc": "Catering uplift, IFEC, onboard retail and cabin product across galley planning, POS and content systems"
+    },
+    {
+      "id": "ea-x25",
+      "title": "Enterprise Data & AI Platform",
+      "desc": "Data lake, streaming, ML model serving and analytics across cloud, warehouse and AI platforms"
+    },
+    {
+      "id": "ea-x26",
+      "title": "Cybersecurity & Zero-Trust Architecture",
+      "desc": "SOC, IAM, threat intel, endpoint and cloud security across the airline security stack"
+    },
+    {
+      "id": "ea-x27",
+      "title": "Revenue Accounting & Interline Settlement",
+      "desc": "Passenger revenue, interline proration, BSP/ARC settlement and revenue integrity flows"
+    },
+    {
+      "id": "ea-x28",
+      "title": "Sustainability & Emissions Reporting",
+      "desc": "Fuel burn, SAF, CORSIA/ETS compliance, offset and ESG disclosure data architecture"
+    },
+    {
+      "id": "ea-x29",
+      "title": "De-Icing & Winter Operations Orchestration",
+      "desc": "De-icing pad coordination, holdover time, fluid inventory and turnaround impact across ground and ops"
+    },
+    {
+      "id": "ea-x30",
+      "title": "Baggage End-to-End & Mishandling Recovery",
+      "desc": "Bag acceptance, BRS reconciliation, WorldTracer tracing, claims and interline baggage flows"
+    }
+  ]
+}

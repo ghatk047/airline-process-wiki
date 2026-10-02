@@ -1,0 +1,52 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Flight Schedule<br/>Flight Dispatcher"}
+    N2{"Analyze Weather Conditions<br/>Weather Analyst"}
+    N3{"Determine Base Fuel Requirement<br/>Fuel Planner"}
+    N4{"Calculate Uplift Factor<br/>Fuel Planner"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Optimize Fuel Policy<br/>Revenue Analyst"]
+    N6["Allocate Fuel for Each Flight<br/>Fuel Planner"]
+    N7["Monitor Fuel Usage During Flight<br/>Flight Dispatcher"]
+    N8["Adjust Fuel Uplift Based on Real-Time Data<br/>Fuel Planner"]
+    N9["Review Post-Flight Fuel Report<br/>Fuel Planner"]
+    N10["Update Historical Data with New Informatio<br/>Fuel Planner"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review and Approve Final Fuel Policy<br/>Operations Manager"]
+    N12["Communicate Final Fuel Policy to Crews<br/>Flight Dispatcher"]
+    N13["Monitor Compliance with Fuel Policy<br/>Compliance Officer"]
+    N14["Update Fuel Policy Documentation<br/>Fuel Planner"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 --> N6
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
