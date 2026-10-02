@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Receive Landing Notification<br/>Ground Operations Controller"}
+    N2["Assign Ground Service Vehicles GSV<br/>Ground Operations Controller"]
+    N3{"Initiate Air Conditioning Power Supply<br/>Aircraft Ground Service Agent AGSA"}
+    N4["Verify Service Readiness<br/>AGSA"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Start Fueling Process<br/>Fueler Operator"}
+    N6["Monitor Fueling Progress<br/>Fueler Operator"]
+    N7{"Complete Fueling Process<br/>Fueler Operator"}
+    N8["Conduct Final Inspection<br/>AGSA"]
+    N9["Update Ground Operations Log<br/>Ground Operations Controller"]
+    N10["Notify Departure Control<br/>Ground Operations Controller"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Ground Services Report<br/>Ground Operations Manager"]
+    N12["Prepare Service Summary<br/>Ground Operations Manager"]
+    N13["Update Maintenance Records<br/>Maintenance Coordinator"]
+    N14["Close Ground Services Case<br/>Ground Operations Controller"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Assign Ground Service Vehicles G"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Verify Service Readiness"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  E17["Exception Monitor Fueling Progress"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  E18["Exception Conduct Final Inspection"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Update Ground Operations Log"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Review Ground Services Report"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  E21["Exception Prepare Service Summary"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Update Maintenance Records"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Close Ground Services Case"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N1 -.->|No| START
+  N7 -.->|No| N6
+  N5 -.->|No| N4
+  N3 -.->|No| N2
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

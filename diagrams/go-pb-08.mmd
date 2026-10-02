@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Booking Confirmation<br/>Revenue Analyst"]
+    N2{"Generate Passenger Manifest<br/>Flight Dispatcher"}
+    N3["Update Ground Handling System<br/>Ground Handler Coordinator"]
+    N4{"Coordinate with Security and Customs<br/>Security Officer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Prepare Passenger Check-in<br/>Baggage Handler"]
+    N6{"Load Aircraft<br/>Load Controller"}
+    N7["Conduct Pre-flight Briefing<br/>Flight Attendant"]
+    N8{"Monitor Flight Departure<br/>Flight Dispatcher"}
+    N9["Handle Passenger Embarkation<br/>Flight Attendant"]
+    N10["Conduct Post-flight Briefing<br/>Flight Attendant"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Process Passenger Disembarkation<br/>Flight Attendant"]
+    N12["Update Passenger Records<br/>Revenue Analyst"]
+    N13["Generate Final Report<br/>Ground Handler Coordinator"]
+    N14["Close Handling Process<br/>Flight Dispatcher"]
+  end
+  START --> N1
+  E15["Exception Receive Booking Confirmation"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Update Ground Handling System"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Prepare Passenger Check-in"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception Conduct Pre-flight Briefing"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  N8 -->|Yes| N9
+  E19["Exception Handle Passenger Embarkation"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  E20["Exception Conduct Post-flight Briefing"]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  E21["Exception Process Passenger Disembarkation"]
+  N11 -.->|Exception| E21
+  N11 --> N12
+  N12 --> N13
+  E22["Exception Generate Final Report"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N4 -.->|No| N3
+  N8 -.->|No| N7
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

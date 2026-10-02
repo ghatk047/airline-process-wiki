@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Review Flight Schedule<br/>Flight Dispatcher"]
+    N2["Determine Ramp Agent Requirements<br/>Load Controller"]
+    N3{"Assign Ramp Agents<br/>Ramp Agent Supervisor"}
+    N4{"Confirm Turnaround Times<br/>Load Controller"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Communicate Roster to Agents<br/>Ramp Agent Supervisor"]
+    N6{"Monitor Ramp Operations<br/>Ramp Agent Supervisor"}
+    N7{"Adjust Turnaround Times if Necessary<br/>Load Controller"}
+    N8["Update Ground Handling System<br/>Ground Handling Coordinator"]
+    N9["Coordinate with Ground Support Teams<br/>Ground Handling Coordinator"]
+    N10["Conduct Post-Operation Review<br/>Ramp Agent Supervisor"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Update Roster for Next Day<br/>Flight Dispatcher"]
+    N12["Review and Adjust Policies<br/>Load Controller"]
+    N13["Generate Final Report<br/>Ramp Agent Supervisor"]
+    N14["Archive Data and Documents<br/>Data Analyst"]
+  end
+  START --> N1
+  E15["Exception Review Flight Schedule"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Determine Ramp Agent Requirement"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E17["Exception Communicate Roster to Agents"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  E18["Exception Update Ground Handling System"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Coordinate with Ground Support T"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Update Roster for Next Day"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  N12 --> N13
+  E21["Exception Generate Final Report"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  E22["Exception Archive Data and Documents"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N4 -.->|No| N3
+  N3 -.->|No| N2
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

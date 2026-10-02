@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Preparation of Biometric System<br/>Flight Dispatcher"}
+    N2["Check-in Data Integration<br/>Load Controller"]
+    N3{"Security Screening Verification<br/>Airport Security Officer"}
+    N4["Boarding Gate Assignment<br/>Flight Dispatcher"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Biometric Enrollment<br/>Passenger Services Agent"]
+    N6{"Biometric Authentication<br/>Passenger Services Agent"}
+    N7["Boarding Pass Generation<br/>Passenger Services Agent"]
+    N8["Baggage Check-in Integration<br/>Load Controller"]
+    N9{"Boarding Gate Preparation<br/>Flight Dispatcher"}
+    N10["Passenger Boarding Notification<br/>Passenger Services Agent"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Boarding Completion Verification<br/>Flight Dispatcher"]
+    N12["Post-Boarding Data Cleanup<br/>Load Controller"]
+    N13["System Performance Review<br/>IT Support Specialist"]
+    N14["Feedback Collection and Analysis<br/>Passenger Services Agent"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Check-in Data Integration"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Boarding Gate Assignment"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  E17["Exception Biometric Enrollment"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception Boarding Pass Generation"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  E19["Exception Baggage Check-in Integration"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  N9 -->|Yes| N10
+  E20["Exception Passenger Boarding Notification"]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  N11 --> N12
+  E21["Exception Post-Boarding Data Cleanup"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception System Performance Review"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Feedback Collection and Analysis"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N1 -.->|No| START
+  N6 -.->|No| N5
+  N9 -.->|No| N8
+  N3 -.->|No| N2
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

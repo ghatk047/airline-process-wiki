@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Initiate Water Quality Check<br/>Ground Service Agent"]
+    N2["Review Water Quality Standards<br/>Quality Control Manager"]
+    N3["Select Sampling Points<br/>Ground Service Agent"]
+    N4["Collect Water Samples<br/>Ground Service Agent"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Laboratory Analysis<br/>Laboratory Technician"}
+    N6{"Review Lab Results<br/>Quality Control Manager"}
+    N7{"Identify Non-Compliance Issues<br/>Quality Control Manager"}
+    N8{"Develop Remediation Plan<br/>Maintenance Manager"}
+    N9["Implement Remediation Actions<br/>Maintenance Team"]
+    N10["Verify Remediation Effectiveness<br/>Laboratory Technician"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Update Water Quality Records<br/>Quality Control Manager"]
+    N12["Generate Compliance Report<br/>Quality Control Manager"]
+    N13["Review Compliance Report<br/>Airport Management"]
+    N14["Close Water Quality Check Cycle<br/>Quality Control Manager"]
+  end
+  START --> N1
+  E15["Exception Initiate Water Quality Check"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Review Water Quality Standards"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  E17["Exception Select Sampling Points"]
+  N3 -.->|Exception| E17
+  N3 --> N4
+  E18["Exception Collect Water Samples"]
+  N4 -.->|Exception| E18
+  N4 --> N5
+  E19["Exception Conduct Laboratory Analysis"]
+  N5 -.->|Exception| E19
+  N5 -->|Yes| N6
+  E20["Exception Review Lab Results"]
+  N6 -.->|Exception| E20
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  N8 -->|Yes| N9
+  N9 --> N10
+  N10 --> N11
+  E21["Exception Update Water Quality Records"]
+  N11 -.->|Exception| E21
+  N11 --> N12
+  E22["Exception Generate Compliance Report"]
+  N12 -.->|Exception| E22
+  N12 --> N13
+  N13 --> N14
+  E23["Exception Close Water Quality Check Cycle"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N6 -.->|No| N5
+  N8 -.->|No| N7
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

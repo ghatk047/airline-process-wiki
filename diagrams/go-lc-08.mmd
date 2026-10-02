@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Receive Special Load Request<br/>Cargo Coordinator"}
+    N2["Verify Load Details<br/>Load Controller"]
+    N3["Update Ramp Safety Plan<br/>Safety Officer"]
+    N4["Notify Ground Crew<br/>Ground Operations Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Coordinate Loading Sequence<br/>Load Controller"}
+    N6["Prepare Special Load Documentation<br/>Cargo Coordinator"]
+    N7{"Conduct Pre-Load Inspection<br/>Safety Officer"}
+    N8["Load Special Load onto Aircraft<br/>Load Controller"]
+    N9{"Update Aircraft Weight and Balance<br/>Flight Dispatcher"}
+    N10["Final Safety Check<br/>Safety Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Notify Operations Team<br/>Ground Operations Manager"]
+    N12["Record Load Handling Data<br/>Cargo Coordinator"]
+    N13["Review and Close Case<br/>Load Controller"]
+    N14["Update Maintenance Log<br/>Maintenance Engineer"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Verify Load Details"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Update Ramp Safety Plan"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Notify Ground Crew"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  N5 -->|Yes| N6
+  E18["Exception Prepare Special Load Documentati"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  E19["Exception Load Special Load onto Aircraft"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  N9 -->|Yes| N10
+  N10 --> N11
+  E20["Exception Notify Operations Team"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  E21["Exception Record Load Handling Data"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  N13 --> N14
+  E22["Exception Update Maintenance Log"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N1 -.->|No| START
+  N5 -.->|No| N4
+  N9 -.->|No| N8
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,74 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Arrival Notification<br/>Ground Control Operator"]
+    N2["Assign Wash Crew<br/>Aircraft Maintenance Supervisor"]
+    N3["Prepare Wash Materials<br/>Aircraft Maintenance Technician"]
+    N4{"Inspect Aircraft Exterior<br/>Aircraft Maintenance Technician"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Start Wash Process<br/>Aircraft Maintenance Technician"]
+    N6["Apply Cleaning Agents<br/>Aircraft Maintenance Technician"]
+    N7["Rinse Aircraft<br/>Aircraft Maintenance Technician"]
+    N8["Dry Aircraft<br/>Aircraft Maintenance Technician"]
+    N9{"Final Inspection<br/>Aircraft Maintenance Technician"}
+    N10["Document Wash Process<br/>Aircraft Maintenance Supervisor"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Report Completion to Ground Control<br/>Aircraft Maintenance Supervisor"]
+    N12["Update Aircraft Status<br/>Aircraft Maintenance Supervisor"]
+    N13{"Review and Adjust Schedule<br/>Aircraft Maintenance Supervisor"}
+    N14["Close Wash Process<br/>Aircraft Maintenance Supervisor"]
+  end
+  START --> N1
+  E15["Exception Receive Arrival Notification"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Assign Wash Crew"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  E17["Exception Prepare Wash Materials"]
+  N3 -.->|Exception| E17
+  N3 --> N4
+  N4 -->|Yes| N5
+  E18["Exception Start Wash Process"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  E19["Exception Apply Cleaning Agents"]
+  N6 -.->|Exception| E19
+  N6 --> N7
+  E20["Exception Rinse Aircraft"]
+  N7 -.->|Exception| E20
+  N7 --> N8
+  E21["Exception Dry Aircraft"]
+  N8 -.->|Exception| E21
+  N8 --> N9
+  N9 -->|Yes| N10
+  E22["Exception Document Wash Process"]
+  N10 -.->|Exception| E22
+  N10 --> N11
+  E23["Exception Report Completion to Ground Cont"]
+  N11 -.->|Exception| E23
+  N11 --> N12
+  E24["Exception Update Aircraft Status"]
+  N12 -.->|Exception| E24
+  N12 --> N13
+  N13 -->|Yes| N14
+  E25["Exception Close Wash Process"]
+  N14 -.->|Exception| E25
+  DONE([Complete])
+  N14 --> DONE
+  N13 -.->|No| N12
+  N4 -.->|No| N3
+  N9 -.->|No| N8
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24,E25 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

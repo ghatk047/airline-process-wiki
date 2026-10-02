@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Data Collection<br/>Maintenance Planner"]
+    N2["Trend Analysis<br/>Maintenance Planner"]
+    N3["Initial Forecasting<br/>Maintenance Planner"]
+    N4{"Review and Adjust Forecast<br/>Maintenance Planner"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Resource Allocation Planning<br/>Maintenance Planner"]
+    N6{"Maintenance Task Prioritization<br/>Maintenance Planner"}
+    N7["Budgeting and Cost Estimation<br/>Maintenance Planner"]
+    N8["Supplier and Vendor Coordination<br/>Maintenance Planner"]
+    N9{"Final Schedule Review<br/>Maintenance Planner"}
+    N10["Communication Plan Development<br/>Maintenance Planner"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11{"Schedule Implementation<br/>Maintenance Planner"}
+    N12["Monitoring and Control<br/>Maintenance Planner"]
+    N13["Performance Review<br/>Maintenance Planner"]
+    N14["Feedback and Continuous Improvement<br/>Maintenance Planner"]
+  end
+  START --> N1
+  E15["Exception Data Collection"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Trend Analysis"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  E17["Exception Initial Forecasting"]
+  N3 -.->|Exception| E17
+  N3 --> N4
+  N4 -->|Yes| N5
+  E18["Exception Resource Allocation Planning"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  E19["Exception Budgeting and Cost Estimation"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  E20["Exception Supplier and Vendor Coordination"]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  N9 -->|Yes| N10
+  E21["Exception Communication Plan Development"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  N11 -->|Yes| N12
+  E22["Exception Monitoring and Control"]
+  N12 -.->|Exception| E22
+  N12 --> N13
+  N13 --> N14
+  E23["Exception Feedback and Continuous Improvem"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N11 -.->|No| N10
+  N4 -.->|No| N3
+  N9 -.->|No| N8
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
