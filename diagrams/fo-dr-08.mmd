@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Identify Overflight Requirements<br/>Flight Dispatcher"]
+    N2{"Check Permit Availability<br/>Flight Dispatcher"}
+    N3["Initiate Permit Application<br/>Flight Dispatcher"]
+    N4["Review and Submit Permit Application<br/>Flight Dispatcher"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Monitor Permit Application Status<br/>Flight Dispatcher"}
+    N6["Prepare Navigation Plan<br/>Load Controller"]
+    N7{"Review Navigation Plan<br/>Flight Dispatcher"}
+    N8["Update Flight Itinerary with Navigation De<br/>Flight Dispatcher"]
+    N9["Notify Relevant Authorities of Permit Stat<br/>Flight Dispatcher"]
+    N10{"Final Review of Permit and Navigation Plan<br/>Flight Dispatcher"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Confirm Permit and Navigation Plan Approva<br/>Flight Dispatcher"]
+    N12["Update Flight Operations System with Permi<br/>Flight Dispatcher"]
+    N13["Notify Crew of Permit and Navigation Plan<br/>Flight Dispatcher"]
+    N14["Close Permit Management Case<br/>Flight Dispatcher"]
+  end
+  START --> N1
+  E15["Exception Identify Overflight Requirements"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Initiate Permit Application"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Review and Submit Permit Applica"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  N5 -->|Yes| N6
+  E18["Exception Prepare Navigation Plan"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  E19["Exception Update Flight Itinerary with Nav"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Notify Relevant Authorities of P"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  N10 -->|Yes| N11
+  E21["Exception Confirm Permit and Navigation Pl"]
+  N11 -.->|Exception| E21
+  N11 --> N12
+  E22["Exception Update Flight Operations System "]
+  N12 -.->|Exception| E22
+  N12 --> N13
+  E23["Exception Notify Crew of Permit and Naviga"]
+  N13 -.->|Exception| E23
+  N13 --> N14
+  E24["Exception Close Permit Management Case"]
+  N14 -.->|Exception| E24
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N5 -.->|No| N4
+  N7 -.->|No| N6
+  N10 -.->|No| N9
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,61 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Identify Potential Diversion<br/>Flight Dispatcher"}
+    N2{"Check Weather Conditions<br/>Flight Dispatcher"}
+    N3{"Review Flight Status<br/>Flight Dispatcher"}
+    N4{"Consult with Operations Manager<br/>Flight Dispatcher"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Analyze Alternative Airports<br/>Flight Dispatcher"]
+    N6["Evaluate Fuel Requirements<br/>Flight Dispatcher"]
+    N7["Assess Crew Availability<br/>Flight Dispatcher"]
+    N8["Consider Operational Costs<br/>Flight Dispatcher"]
+    N9["Review Passenger Impact<br/>Flight Dispatcher"]
+    N10["Finalize Diversion Plan<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Implement Diversion Plan<br/>Flight Dispatcher"]
+    N12["Monitor Flight Progress<br/>Flight Dispatcher"]
+    N13["Coordinate Ground Operations<br/>Flight Dispatcher"]
+    N14["Review and Document Incident<br/>Flight Dispatcher"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 --> N6
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  E15["Exception Implement Diversion Plan"]
+  N11 -.->|Exception| E15
+  N11 --> N12
+  E16["Exception Monitor Flight Progress"]
+  N12 -.->|Exception| E16
+  N12 --> N13
+  E17["Exception Coordinate Ground Operations"]
+  N13 -.->|Exception| E17
+  N13 --> N14
+  E18["Exception Review and Document Incident"]
+  N14 -.->|Exception| E18
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

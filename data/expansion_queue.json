@@ -62,9 +62,9 @@
       "l2_process": "Fuel & Weight Management",
       "l2_slug": "fuel-weight",
       "l3_name": "Last-Minute Change (LMC) Processing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-FW-07",
@@ -73,9 +73,9 @@
       "l2_process": "Fuel & Weight Management",
       "l2_slug": "fuel-weight",
       "l3_name": "Fuel Consumption Monitoring & Analytics",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-FW-08",
@@ -84,9 +84,9 @@
       "l2_process": "Fuel & Weight Management",
       "l2_slug": "fuel-weight",
       "l3_name": "Contingency & Alternate Fuel Planning",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-MET-01",
@@ -95,9 +95,9 @@
       "l2_process": "Weather & Flight Information",
       "l2_slug": "weather-flightinfo",
       "l3_name": "Meteorological Briefing Preparation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-MET-02",
@@ -106,9 +106,9 @@
       "l2_process": "Weather & Flight Information",
       "l2_slug": "weather-flightinfo",
       "l3_name": "Significant Weather Monitoring",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-MET-03",
@@ -117,9 +117,9 @@
       "l2_process": "Weather & Flight Information",
       "l2_slug": "weather-flightinfo",
       "l3_name": "NOTAM Processing & Distribution",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-MET-04",
@@ -128,9 +128,9 @@
       "l2_process": "Weather & Flight Information",
       "l2_slug": "weather-flightinfo",
       "l3_name": "Volcanic Ash & SIGMET Response",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-MET-05",
@@ -139,9 +139,9 @@
       "l2_process": "Weather & Flight Information",
       "l2_slug": "weather-flightinfo",
       "l3_name": "Route Weather Optimization",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-MET-06",
@@ -150,9 +150,9 @@
       "l2_process": "Weather & Flight Information",
       "l2_slug": "weather-flightinfo",
       "l3_name": "Turbulence Forecasting & Avoidance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-DR-01",
@@ -161,9 +161,9 @@
       "l2_process": "Dispatch & Release",
       "l2_slug": "dispatch-release",
       "l3_name": "Operational Flight Plan Construction",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-DR-02",
@@ -172,9 +172,9 @@
       "l2_process": "Dispatch & Release",
       "l2_slug": "dispatch-release",
       "l3_name": "Flight Release & Dispatcher Sign-off",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-DR-03",
@@ -183,9 +183,9 @@
       "l2_process": "Dispatch & Release",
       "l2_slug": "dispatch-release",
       "l3_name": "Minimum Equipment List (MEL) Application",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-DR-04",
@@ -194,9 +194,9 @@
       "l2_process": "Dispatch & Release",
       "l2_slug": "dispatch-release",
       "l3_name": "ETOPS Flight Planning & Validation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-DR-05",
@@ -205,9 +205,9 @@
       "l2_process": "Dispatch & Release",
       "l2_slug": "dispatch-release",
       "l3_name": "Extended Range Operations Monitoring",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-DR-06",
@@ -216,9 +216,9 @@
       "l2_process": "Dispatch & Release",
       "l2_slug": "dispatch-release",
       "l3_name": "Flight Watch & In-Flight Re-dispatch",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-DR-07",
@@ -227,9 +227,9 @@
       "l2_process": "Dispatch & Release",
       "l2_slug": "dispatch-release",
       "l3_name": "Diversion Decision Support",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-DR-08",
@@ -238,9 +238,9 @@
       "l2_process": "Dispatch & Release",
       "l2_slug": "dispatch-release",
       "l3_name": "Overflight & Navigation Permit Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-PE-01",
@@ -249,9 +249,9 @@
       "l2_process": "Performance Engineering",
       "l2_slug": "performance-engineering",
       "l3_name": "Takeoff Performance Calculation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-PE-02",
@@ -260,9 +260,9 @@
       "l2_process": "Performance Engineering",
       "l2_slug": "performance-engineering",
       "l3_name": "Landing Performance & Runway Analysis",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-PE-03",
@@ -271,9 +271,9 @@
       "l2_process": "Performance Engineering",
       "l2_slug": "performance-engineering",
       "l3_name": "Aircraft Performance Database Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-PE-04",
@@ -282,9 +282,9 @@
       "l2_process": "Performance Engineering",
       "l2_slug": "performance-engineering",
       "l3_name": "Special Airport Qualification",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-PE-05",

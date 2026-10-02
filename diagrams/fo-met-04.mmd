@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Alert<br/>Flight Dispatcher"]
+    N2{"Initial Assessment<br/>Flight Dispatcher"}
+    N3["Notify Operations Team<br/>Flight Dispatcher"]
+    N4{"Identify Affected Flights<br/>Flight Dispatcher"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Rerouting Flights<br/>Flight Dispatcher"}
+    N6["Update Flight Crews<br/>Flight Dispatcher"]
+    N7["Notify Ground Operations<br/>Ground Operations Manager"]
+    N8{"Monitor Weather Conditions<br/>Weather Analyst"}
+    N9["Adjust Flight Times<br/>Flight Dispatcher"]
+    N10["Communicate with Customers<br/>Customer Service Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Incident Impact<br/>Flight Operations Manager"]
+    N12["Update Emergency Procedures<br/>Flight Operations Manager"]
+    N13["Close Incident Log<br/>Flight Dispatcher"]
+    N14["Report to Authorities<br/>Regulatory Compliance Officer"]
+  end
+  START --> N1
+  E15["Exception Receive Alert"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Notify Operations Team"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Rerouting Flights"]
+  N5 -.->|Exception| E17
+  N5 -->|Yes| N6
+  E18["Exception Update Flight Crews"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  E19["Exception Notify Ground Operations"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  N8 -->|Yes| N9
+  E20["Exception Adjust Flight Times"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  E21["Exception Communicate with Customers"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  E22["Exception Close Incident Log"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Report to Authorities"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N2 -.->|No| N1
+  N5 -.->|No| N4
+  N8 -.->|No| N7
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

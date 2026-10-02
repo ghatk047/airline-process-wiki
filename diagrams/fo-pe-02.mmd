@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Weather Updates<br/>Flight Dispatcher"]
+    N2{"Analyze Runway Conditions<br/>Aircraft Maintenance Engineer"}
+    N3["Update Aircraft Weight Data<br/>Load Controller"]
+    N4{"Initiate Landing Performance Analysis<br/>Performance Engineer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Adjust Landing Schedule<br/>Flight Dispatcher"}
+    N6["Communicate Changes to Crew<br/>Flight Dispatcher"]
+    N7{"Monitor Runway Usage<br/>Aircraft Maintenance Engineer"}
+    N8["Review Landing Performance Data<br/>Performance Engineer"]
+    N9["Update Maintenance Plan<br/>Aircraft Maintenance Engineer"]
+    N10["Adjust Fuel Levels<br/>Load Controller"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Landing Schedule<br/>Flight Dispatcher"]
+    N12["Notify Ground Crew<br/>Flight Dispatcher"]
+    N13["Monitor Flight Performance<br/>Performance Engineer"]
+    N14["Update Documentation<br/>Performance Engineer"]
+  end
+  START --> N1
+  E15["Exception Receive Weather Updates"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Update Aircraft Weight Data"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  N5 -->|Yes| N6
+  E17["Exception Communicate Changes to Crew"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  N8 --> N9
+  E18["Exception Update Maintenance Plan"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E19["Exception Notify Ground Crew"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  N13 --> N14
+  E20["Exception Update Documentation"]
+  N14 -.->|Exception| E20
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N2 -.->|No| N1
+  N5 -.->|No| N4
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Flight Request<br/>Flight Dispatcher"]
+    N2["Initial Route Planning<br/>Flight Dispatcher"]
+    N3{"ETOPS Compliance Check<br/>Flight Dispatcher"}
+    N4["ETOPS Route Optimization<br/>Flight Dispatcher"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Fuel Calculation<br/>Flight Dispatcher"]
+    N6{"Crew Scheduling<br/>Crew Scheduler"}
+    N7{"Aircraft Availability Check<br/>Maintenance Planner"}
+    N8["Passenger Manifest Preparation<br/>Load Controller"]
+    N9{"Final Flight Plan Review<br/>Flight Dispatcher"}
+    N10["ETOPS Flight Plan Approval<br/>Operations Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Dispatch Notification<br/>Flight Dispatcher"]
+    N12["Pre-flight Briefing<br/>Crew Member"]
+    N13["Post-flight Review<br/>Flight Dispatcher"]
+    N14["ETOPS Flight Plan Archiving<br/>Flight Dispatcher"]
+  end
+  START --> N1
+  E15["Exception Receive Flight Request"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Initial Route Planning"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  E17["Exception ETOPS Route Optimization"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  E18["Exception Fuel Calculation"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  E19["Exception Passenger Manifest Preparation"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  N9 -->|Yes| N10
+  N10 --> N11
+  E20["Exception Dispatch Notification"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  E21["Exception Pre-flight Briefing"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Post-flight Review"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception ETOPS Flight Plan Archiving"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N7 -.->|No| N6
+  N9 -.->|No| N8
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

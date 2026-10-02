@@ -1,0 +1,74 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Weather Data<br/>Weather Analyst"]
+    N2["Initial Route Analysis<br/>Flight Dispatcher"]
+    N3{"Review Initial Proposal<br/>Operations Manager"}
+    N4["Finalize Route Optimization<br/>Flight Dispatcher"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Implement Final Routes<br/>Flight Dispatcher"]
+    N6["Monitor Flight Performance<br/>Flight Operations Analyst"]
+    N7{"Adjust Routes Based on Performance<br/>Flight Dispatcher"}
+    N8["Update Flight Crew<br/>Flight Dispatcher"]
+    N9["Monitor Fuel Consumption<br/>Fuel Analyst"]
+    N10{"Adjust Fuel Reserves Based on Consumption<br/>Fuel Analyst"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Post-Flight Review<br/>Operations Manager"]
+    N12["Update Weather Data Models<br/>Weather Analyst"]
+    N13["Report to Stakeholders<br/>Operations Manager"]
+    N14["Plan for Next Optimization Cycle<br/>Operations Manager"]
+  end
+  START --> N1
+  E15["Exception Receive Weather Data"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Initial Route Analysis"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  E17["Exception Finalize Route Optimization"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  E18["Exception Implement Final Routes"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  E19["Exception Monitor Flight Performance"]
+  N6 -.->|Exception| E19
+  N6 --> N7
+  N7 -->|Yes| N8
+  E20["Exception Update Flight Crew"]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  E21["Exception Monitor Fuel Consumption"]
+  N9 -.->|Exception| E21
+  N9 --> N10
+  N10 -->|Yes| N11
+  E22["Exception Post-Flight Review"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  E23["Exception Update Weather Data Models"]
+  N12 -.->|Exception| E23
+  N12 --> N13
+  E24["Exception Report to Stakeholders"]
+  N13 -.->|Exception| E24
+  N13 --> N14
+  E25["Exception Plan for Next Optimization Cycle"]
+  N14 -.->|Exception| E25
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N7 -.->|No| N6
+  N10 -.->|No| N9
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24,E25 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
