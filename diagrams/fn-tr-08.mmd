@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Initiate Guarantee Request<br/>Financial Analyst"]
+    N2{"Review Guarantee Request<br/>Treasury Manager"}
+    N3["Prepare Guarantee Documentation<br/>Legal Counsel"]
+    N4["Issue Guarantee<br/>Bank Relationship Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Monitor Guarantee Status<br/>Financial Analyst"]
+    N6{"Review Expiry Date<br/>Treasury Manager"}
+    N7{"Renew Guarantee if Necessary<br/>Bank Relationship Manager"}
+    N8["Update Internal Records<br/>Financial Analyst"]
+    N9["Monitor Financial Impact<br/>Financial Analyst"]
+    N10{"Adjust Financial Strategies<br/>Treasury Manager"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Guarantee Closure<br/>Financial Analyst"]
+    N12["Archive Guarantee Documentation<br/>Records Manager"]
+    N13["Review and Report on Guarantee Performance<br/>Treasury Manager"]
+    N14["Update Risk Management Plan<br/>Risk Manager"]
+  end
+  START --> N1
+  E15["Exception Initiate Guarantee Request"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Prepare Guarantee Documentation"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Issue Guarantee"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  E18["Exception Monitor Guarantee Status"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  E19["Exception Renew Guarantee if Necessary"]
+  N7 -.->|Exception| E19
+  N7 -->|Yes| N8
+  E20["Exception Update Internal Records"]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  E21["Exception Monitor Financial Impact"]
+  N9 -.->|Exception| E21
+  N9 --> N10
+  N10 -->|Yes| N11
+  E22["Exception Finalize Guarantee Closure"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  E23["Exception Archive Guarantee Documentation"]
+  N12 -.->|Exception| E23
+  N12 --> N13
+  E24["Exception Review and Report on Guarantee P"]
+  N13 -.->|Exception| E24
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N10 -.->|No| N9
+  N6 -.->|No| N5
+  N7 -.->|No| N6
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

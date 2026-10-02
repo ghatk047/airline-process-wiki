@@ -1,0 +1,52 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Contract Expiry<br/>Procurement Manager"}
+    N2{"Assess Supplier Performance<br/>Procurement Analyst"}
+    N3{"Identify Key Terms for Negotiation<br/>Procurement Specialist"}
+    N4{"Initiate Negotiation Process<br/>Procurement Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Conduct Initial Negotiation Session<br/>Procurement Analyst"]
+    N6["Review Negotiation Outcomes<br/>Procurement Manager"]
+    N7["Prepare Final Contract Draft<br/>Legal Counsel"]
+    N8["Review and Approve Final Contract<br/>Procurement Manager, Legal Counsel"]
+    N9["Notify Supplier of Contract Approval<br/>Procurement Analyst"]
+    N10["Finalize Contract in CMS<br/>Procurement Specialist"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Monitor Contract Performance<br/>Procurement Analyst"]
+    N12["Review and Adjust Contract Terms<br/>Procurement Manager"]
+    N13["Update Internal Records<br/>Procurement Specialist"]
+    N14["Document and Report Contract Lifecycle<br/>Procurement Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 --> N6
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  N1 -.->|No| START
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

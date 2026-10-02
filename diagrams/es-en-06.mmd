@@ -1,0 +1,57 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Assess Current Fleet Emissions<br/>Sustainability Analyst"}
+    N2{"Identify Sustainable Vehicle Options<br/>Sustainability Analyst"}
+    N3{"Evaluate Operational Impact<br/>Operations Manager"}
+    N4{"Secure Funding and Approval<br/>Finance Director"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Procure Sustainable Vehicles<br/>Purchasing Manager"]
+    N6["Train Ground Staff<br/>Training Manager"]
+    N7["Implement Fleet Transition Plan<br/>Operations Manager"]
+    N8["Monitor Fleet Performance<br/>Sustainability Analyst"]
+    N9["Adjust Maintenance Schedule<br/>Maintenance Manager"]
+    N10["Review and Optimize Fleet Usage<br/>Operations Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Fleet Transition<br/>Project Manager"]
+    N12["Report on Sustainability Impact<br/>Sustainability Analyst"]
+    N13["Review and Plan for Future Transition<br/>Sustainability Director"]
+    N14["Continuous Improvement and Reporting<br/>Sustainability Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 --> N6
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E15["Exception Report on Sustainability Impact"]
+  N12 -.->|Exception| E15
+  N12 --> N13
+  N13 --> N14
+  E16["Exception Continuous Improvement and Repor"]
+  N14 -.->|Exception| E16
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  N1 -.->|No| START
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

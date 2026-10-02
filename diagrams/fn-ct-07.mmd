@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Initiate Capital Expenditure Plan<br/>Finance Director"]
+    N2["Gather Business Requirements<br/>Project Manager"]
+    N3["Estimate Costs and Benefits<br/>Financial Analyst"]
+    N4["Develop Capital Expenditure Plan<br/>Budget Analyst"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Review Capital Expenditure Plan<br/>Finance Director"}
+    N6{"Present Plan to Board<br/>Chief Financial Officer"}
+    N7["Allocate Budgets<br/>Budget Analyst"]
+    N8["Monitor Capital Expenditure Progress<br/>Financial Analyst"]
+    N9{"Adjust Capital Expenditure Plan<br/>Finance Director"}
+    N10["Report to Stakeholders<br/>Chief Financial Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11{"Finalize Capital Expenditure Plan<br/>Finance Director"}
+    N12["Implement Capital Expenditure Plan<br/>Project Manager"]
+    N13["Monitor Implementation Progress<br/>Financial Analyst"]
+    N14["Review and Close Capital Expenditure Cycle<br/>Chief Financial Officer"]
+  end
+  START --> N1
+  E15["Exception Initiate Capital Expenditure Pla"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Gather Business Requirements"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  E17["Exception Estimate Costs and Benefits"]
+  N3 -.->|Exception| E17
+  N3 --> N4
+  E18["Exception Develop Capital Expenditure Plan"]
+  N4 -.->|Exception| E18
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  E19["Exception Allocate Budgets"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  E20["Exception Monitor Capital Expenditure Prog"]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  N9 -->|Yes| N10
+  E21["Exception Report to Stakeholders"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  N11 -->|Yes| N12
+  E22["Exception Implement Capital Expenditure Pl"]
+  N12 -.->|Exception| E22
+  N12 --> N13
+  E23["Exception Monitor Implementation Progress"]
+  N13 -.->|Exception| E23
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N11 -.->|No| N10
+  N9 -.->|No| N8
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

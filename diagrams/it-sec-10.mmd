@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Monitor IDS Alerts<br/>Cybersecurity Analyst"}
+    N2{"Assess Threat Severity<br/>Cybersecurity Analyst"}
+    N3{"Initiate Response Plan<br/>Cybersecurity Incident Responder"}
+    N4["Deploy Firewall Rules<br/>Network Administrator"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Threat Hunting<br/>Cybersecurity Analyst"}
+    N6["Update Security Policies<br/>Security Policy Manager"]
+    N7["Perform Vulnerability Assessments<br/>Security Engineer"]
+    N8["Patch Management<br/>IT Operations Manager"]
+    N9["Review and Update Incident Response Plan<br/>Cybersecurity Manager"]
+    N10["Conduct Security Audits<br/>Compliance Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Threat Intelligence Reports<br/>Cybersecurity Analyst"]
+    N12["Update Security Training Programs<br/>Training Manager"]
+    N13["Perform Network Performance Monitoring<br/>Network Engineer"]
+    N14["Review and Report Security Metrics<br/>IT Director"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E15["Exception Deploy Firewall Rules"]
+  N4 -.->|Exception| E15
+  N4 --> N5
+  N5 -->|Yes| N6
+  E16["Exception Update Security Policies"]
+  N6 -.->|Exception| E16
+  N6 --> N7
+  N7 --> N8
+  E17["Exception Patch Management"]
+  N8 -.->|Exception| E17
+  N8 --> N9
+  E18["Exception Review and Update Incident Respo"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  N10 --> N11
+  E19["Exception Review Threat Intelligence Repor"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  E20["Exception Update Security Training Program"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  N13 --> N14
+  E21["Exception Review and Report Security Metri"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N5 -.->|No| N4
+  N2 -.->|No| N1
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

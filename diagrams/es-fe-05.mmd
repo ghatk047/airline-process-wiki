@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"SAF Contract Review<br/>Sustainability Manager"}
+    N2["SAF Batch Registration<br/>Fuel Quality Analyst"]
+    N3["Blending Plan Creation<br/>Fuel Dispatcher"]
+    N4{"Pre-Blend Compliance Check<br/>Sustainability Officer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Blending Execution<br/>Fuel Blender"]
+    N6{"Post-Blend Quality Test<br/>Fuel Quality Analyst"}
+    N7["Certification Request Submission<br/>Sustainability Manager"]
+    N8{"Certification Approval<br/>Regulatory Compliance Officer"}
+    N9["SAF Batch Update<br/>Fuel Quality Analyst"]
+    N10["SAF Usage Reporting<br/>Revenue Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["SAF Performance Review<br/>Sustainability Manager"]
+    N12["Continuous Improvement Plan<br/>Sustainability Officer"]
+    N13["SAF Supplier Feedback<br/>Procurement Manager"]
+    N14["SAF Reporting to Stakeholders<br/>Sustainability Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception SAF Batch Registration"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Blending Plan Creation"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Blending Execution"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception Certification Request Submission"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  N8 -->|Yes| N9
+  E19["Exception SAF Batch Update"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  E20["Exception SAF Usage Reporting"]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  N11 --> N12
+  E21["Exception Continuous Improvement Plan"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception SAF Supplier Feedback"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception SAF Reporting to Stakeholders"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N8 -.->|No| N7
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -4033,9 +4033,9 @@
       "l2_process": "Treasury & Risk",
       "l2_slug": "treasury-risk",
       "l3_name": "Guarantee & Letter of Credit Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-CT-07",
@@ -4044,9 +4044,9 @@
       "l2_process": "Controlling & Planning",
       "l2_slug": "controlling-planning",
       "l3_name": "Capital Expenditure Planning",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-CT-08",
@@ -4055,9 +4055,9 @@
       "l2_process": "Controlling & Planning",
       "l2_slug": "controlling-planning",
       "l3_name": "Fuel Cost Analysis & Reporting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-CT-09",
@@ -4066,9 +4066,9 @@
       "l2_process": "Controlling & Planning",
       "l2_slug": "controlling-planning",
       "l3_name": "Station & Overhead Cost Allocation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-PR-05",
@@ -4077,9 +4077,9 @@
       "l2_process": "Procurement & Supplier",
       "l2_slug": "procurement-supplier",
       "l3_name": "Category & Spend Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-PR-06",
@@ -4088,9 +4088,9 @@
       "l2_process": "Procurement & Supplier",
       "l2_slug": "procurement-supplier",
       "l3_name": "Sustainable & Ethical Sourcing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-PR-07",
@@ -4099,9 +4099,9 @@
       "l2_process": "Procurement & Supplier",
       "l2_slug": "procurement-supplier",
       "l3_name": "Supplier Onboarding & Compliance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-PR-08",
@@ -4110,9 +4110,9 @@
       "l2_process": "Procurement & Supplier",
       "l2_slug": "procurement-supplier",
       "l3_name": "Contract Renewal & Lifecycle",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EM-05",
@@ -4121,9 +4121,9 @@
       "l2_process": "Emissions & Reporting",
       "l2_slug": "emissions-reporting",
       "l3_name": "Scope 3 & Value-Chain Emissions",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EM-06",
@@ -4132,9 +4132,9 @@
       "l2_process": "Emissions & Reporting",
       "l2_slug": "emissions-reporting",
       "l3_name": "Carbon Offset Portfolio Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-FE-05",
@@ -4143,9 +4143,9 @@
       "l2_process": "Fuel Efficiency & SAF",
       "l2_slug": "fuel-efficiency-saf",
       "l3_name": "SAF Blending & Certification Tracking",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-FE-06",
@@ -4154,9 +4154,9 @@
       "l2_process": "Fuel Efficiency & SAF",
       "l2_slug": "fuel-efficiency-saf",
       "l3_name": "Single-Engine Taxi Program",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EN-05",
@@ -4165,9 +4165,9 @@
       "l2_process": "Environmental Operations",
       "l2_slug": "environmental-operations",
       "l3_name": "Wildlife & Habitat Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EN-06",
@@ -4176,9 +4176,9 @@
       "l2_process": "Environmental Operations",
       "l2_slug": "environmental-operations",
       "l3_name": "Sustainable Ground Fleet Transition",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SM-09",
@@ -4187,9 +4187,9 @@
       "l2_process": "Safety Management System",
       "l2_slug": "safety-management",
       "l3_name": "Runway Safety & Excursion Prevention",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SM-10",
@@ -4198,9 +4198,9 @@
       "l2_process": "Safety Management System",
       "l2_slug": "safety-management",
       "l3_name": "Ground Safety & Occupational Health",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-SEC-10",
@@ -4209,9 +4209,9 @@
       "l2_process": "Cybersecurity & Infrastructure",
       "l2_slug": "cyber-infrastructure",
       "l3_name": "Network & Perimeter Security Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-RA-09",
@@ -4220,9 +4220,9 @@
       "l2_process": "Revenue Accounting",
       "l2_slug": "revenue-accounting",
       "l3_name": "Interline Prorate Agreement Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-RA-10",
@@ -4231,9 +4231,9 @@
       "l2_process": "Revenue Accounting",
       "l2_slug": "revenue-accounting",
       "l3_name": "Fare Audit & Revenue Recovery",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-PB-11",
@@ -4242,9 +4242,9 @@
       "l2_process": "Passenger Handling",
       "l2_slug": "passenger-handling",
       "l3_name": "Irregular Operations Ground Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-OP-10",

@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Review Financial Statements<br/>Financial Analyst"]
+    N2{"Identify Overhead Costs<br/>Cost Accountant"}
+    N3{"Determine Allocation Basis<br/>Financial Analyst"}
+    N4["Set Allocation Rates<br/>Cost Accountant"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Allocate Overhead Costs<br/>Cost Accountant"]
+    N6{"Review Station Costs<br/>Station Manager"}
+    N7["Adjust Station Costs<br/>Station Manager"]
+    N8["Allocate Station Costs<br/>Cost Accountant"]
+    N9{"Integrate Overhead and Station Costs<br/>Financial Analyst"}
+    N10["Prepare Final Allocation Report<br/>Financial Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Final Report<br/>Finance Manager"]
+    N12["Update Financial Records<br/>Financial Analyst"]
+    N13["Distribute Allocation Report<br/>Finance Manager"]
+    N14["Monitor and Control<br/>Financial Analyst"]
+  end
+  START --> N1
+  E15["Exception Review Financial Statements"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Set Allocation Rates"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  E17["Exception Allocate Overhead Costs"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception Adjust Station Costs"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  E19["Exception Allocate Station Costs"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  N9 -->|Yes| N10
+  E20["Exception Prepare Final Allocation Report"]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  N11 --> N12
+  E21["Exception Update Financial Records"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Distribute Allocation Report"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Monitor and Control"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  N9 -.->|No| N8
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
