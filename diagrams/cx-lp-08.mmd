@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Identify Communication Trigger<br/>Member Services Analyst"]
+    N2{"Determine Communication Strategy<br/>Loyalty Program Manager"}
+    N3{"Prepare Communication Content<br/>Content Writer"}
+    N4["Schedule Communication Delivery<br/>Marketing Coordinator"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Send Communication<br/>Marketing Coordinator"]
+    N6{"Monitor Communication Engagement<br/>Data Analyst"}
+    N7["Analyze Engagement Data<br/>Data Analyst"]
+    N8["Update Member Records<br/>Member Services Analyst"]
+    N9{"Adjust Communication Strategy<br/>Loyalty Program Manager"}
+    N10["Plan Next Communication Cycle<br/>Marketing Coordinator"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Communication Effectiveness<br/>Loyalty Program Manager"]
+    N12["Report to Stakeholders<br/>Loyalty Program Manager"]
+    N13["Update Communication Tools<br/>IT Specialist"]
+    N14["Close Communication Cycle<br/>Loyalty Program Manager"]
+  end
+  START --> N1
+  E15["Exception Identify Communication Trigger"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Schedule Communication Delivery"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  E17["Exception Send Communication"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception Analyze Engagement Data"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  E19["Exception Update Member Records"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  N9 -->|Yes| N10
+  E20["Exception Plan Next Communication Cycle"]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  N11 --> N12
+  E21["Exception Report to Stakeholders"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Update Communication Tools"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Close Communication Cycle"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  N2 -.->|No| N1
+  N9 -.->|No| N8
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

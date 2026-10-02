@@ -3153,9 +3153,9 @@
       "l2_process": "Maintenance Planning",
       "l2_slug": "maintenance-planning",
       "l3_name": "Deferred Maintenance Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PL-07",
@@ -3164,9 +3164,9 @@
       "l2_process": "Maintenance Planning",
       "l2_slug": "maintenance-planning",
       "l3_name": "Line & Base Maintenance Balancing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PL-08",
@@ -3175,9 +3175,9 @@
       "l2_process": "Maintenance Planning",
       "l2_slug": "maintenance-planning",
       "l3_name": "Third-Party MRO Contract Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-EN-07",
@@ -3186,9 +3186,9 @@
       "l2_process": "Engineering & Modifications",
       "l2_slug": "engineering-mods",
       "l3_name": "Repair Scheme & Damage Assessment",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-EN-08",
@@ -3197,9 +3197,9 @@
       "l2_process": "Engineering & Modifications",
       "l2_slug": "engineering-mods",
       "l3_name": "Aging Aircraft & Corrosion Program",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-EN-09",
@@ -3208,9 +3208,9 @@
       "l2_process": "Engineering & Modifications",
       "l2_slug": "engineering-mods",
       "l3_name": "Weight & Balance Records Control",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-DC-06",
@@ -3219,9 +3219,9 @@
       "l2_process": "Disruption & Care",
       "l2_slug": "disruption-care",
       "l3_name": "Proactive Disruption Notification",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-DC-07",
@@ -3230,9 +3230,9 @@
       "l2_process": "Disruption & Care",
       "l2_slug": "disruption-care",
       "l3_name": "Rebooking Self-Service Enablement",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-DC-08",
@@ -3241,9 +3241,9 @@
       "l2_process": "Disruption & Care",
       "l2_slug": "disruption-care",
       "l3_name": "Special Circumstance Waiver Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-DC-09",
@@ -3252,9 +3252,9 @@
       "l2_process": "Disruption & Care",
       "l2_slug": "disruption-care",
       "l3_name": "Group Disruption Recovery",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-BG-06",
@@ -3263,9 +3263,9 @@
       "l2_process": "Baggage Services",
       "l2_slug": "baggage-services",
       "l3_name": "Baggage Fee & Excess Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-BG-07",
@@ -3274,9 +3274,9 @@
       "l2_process": "Baggage Services",
       "l2_slug": "baggage-services",
       "l3_name": "Priority & Fragile Baggage Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-BG-08",
@@ -3285,9 +3285,9 @@
       "l2_process": "Baggage Services",
       "l2_slug": "baggage-services",
       "l3_name": "Interline Baggage Coordination",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-RF-06",
@@ -3296,9 +3296,9 @@
       "l2_process": "Refunds & Servicing",
       "l2_slug": "refunds-servicing",
       "l3_name": "Schedule Change Refund Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-RF-07",
@@ -3307,9 +3307,9 @@
       "l2_process": "Refunds & Servicing",
       "l2_slug": "refunds-servicing",
       "l3_name": "Loyalty Points Refund & Reinstatement",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-RF-08",
@@ -3318,9 +3318,9 @@
       "l2_process": "Refunds & Servicing",
       "l2_slug": "refunds-servicing",
       "l3_name": "Corporate & Agency Refund Processing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-LP-07",
@@ -3329,9 +3329,9 @@
       "l2_process": "Loyalty & Partnerships",
       "l2_slug": "loyalty-partnerships",
       "l3_name": "Loyalty Program Design & Tiering",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-LP-08",
@@ -3340,9 +3340,9 @@
       "l2_process": "Loyalty & Partnerships",
       "l2_slug": "loyalty-partnerships",
       "l3_name": "Member Communication & Lifecycle",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-LP-09",
@@ -3351,9 +3351,9 @@
       "l2_process": "Loyalty & Partnerships",
       "l2_slug": "loyalty-partnerships",
       "l3_name": "Reward Seat Inventory Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-LP-10",
@@ -3362,9 +3362,9 @@
       "l2_process": "Loyalty & Partnerships",
       "l2_slug": "loyalty-partnerships",
       "l3_name": "Partner Revenue Settlement",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-BK-07",

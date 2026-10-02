@@ -1,0 +1,59 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Define Objectives<br/>Marketing Analyst"]
+    N2{"Identify Customer Segments<br/>Customer Insights Analyst"}
+    N3{"Determine Tier Criteria<br/>Revenue Analyst"}
+    N4{"Design Rewards and Benefits<br/>Marketing Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Develop Program Structure<br/>Product Manager"}
+    N6["Create Enrollment Process<br/>Customer Service Manager"]
+    N7["Design Communication Strategy<br/>Marketing Manager"]
+    N8["Develop Reporting and Analytics<br/>Data Analyst"]
+    N9["Pilot Testing<br/>Marketing Analyst"]
+    N10["Refine Program Based on Feedback<br/>Product Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Launch Program<br/>Marketing Manager"]
+    N12["Monitor Program Performance<br/>Data Analyst"]
+    N13["Adjust Program as Needed<br/>Product Manager"]
+    N14["Review and Iterate<br/>Marketing Analyst"]
+  end
+  START --> N1
+  E15["Exception Define Objectives"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 -->|Yes| N6
+  E16["Exception Create Enrollment Process"]
+  N6 -.->|Exception| E16
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  E17["Exception Refine Program Based on Feedback"]
+  N10 -.->|Exception| E17
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N5 -.->|No| N4
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

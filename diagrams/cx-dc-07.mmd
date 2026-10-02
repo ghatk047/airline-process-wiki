@@ -1,0 +1,75 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Receive Rebooking Request<br/>Customer Service Agent"}
+    N2{"Validate Passenger Details<br/>Passenger"}
+    N3{"Check Availability of Alternative Flights<br/>Flight Dispatcher"}
+    N4{"Confirm Passenger Selection<br/>Passenger"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Calculate Fare Differences<br/>Revenue Analyst"]
+    N6["Process Payment for Fare Difference<br/>Passenger"]
+    N7["Update Booking with New Flight Details<br/>Flight Dispatcher"]
+    N8["Generate Rebooking Confirmation Email<br/>Customer Service Agent"]
+    N9["Monitor System Performance<br/>IT Support Engineer"]
+    N10["Adjust Inventory for Rebooked Flights<br/>Load Controller"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Rebooking Process Logs<br/>Customer Service Manager"]
+    N12["Update Self-Service Portal with Feedback<br/>Customer Experience Analyst"]
+    N13["Adjust Pricing Strategy Based on Rebooking<br/>Revenue Analyst"]
+    N14["Report on Rebooking Process Performance<br/>Customer Experience Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Validate Passenger Details"]
+  N2 -.->|Exception| E15
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Confirm Passenger Selection"]
+  N4 -.->|Exception| E16
+  N4 -->|Yes| N5
+  E17["Exception Calculate Fare Differences"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Process Payment for Fare Differe"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  E19["Exception Update Booking with New Flight D"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  E20["Exception Generate Rebooking Confirmation "]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  E21["Exception Monitor System Performance"]
+  N9 -.->|Exception| E21
+  N9 --> N10
+  E22["Exception Adjust Inventory for Rebooked Fl"]
+  N10 -.->|Exception| E22
+  N10 --> N11
+  E23["Exception Review Rebooking Process Logs"]
+  N11 -.->|Exception| E23
+  N11 --> N12
+  E24["Exception Update Self-Service Portal with "]
+  N12 -.->|Exception| E24
+  N12 --> N13
+  N13 --> N14
+  E25["Exception Report on Rebooking Process Perf"]
+  N14 -.->|Exception| E25
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24,E25 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

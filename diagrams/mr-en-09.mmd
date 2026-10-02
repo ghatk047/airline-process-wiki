@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Maintenance Logs<br/>Flight Dispatcher"}
+    N2["Initial Weight Calculation<br/>Load Controller"]
+    N3{"Review Weight Calculation<br/>Aircraft Engineer"}
+    N4["Update Weight Balance Records<br/>Aircraft Engineer"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Weight Balance Test<br/>Load Controller"}
+    N6["Review Test Results<br/>Flight Dispatcher"]
+    N7["Update Weight Balance Records Again<br/>Aircraft Engineer"]
+    N8["Generate Weight Balance Report<br/>Load Controller"]
+    N9["Notify Flight Operations<br/>Flight Dispatcher"]
+    N10{"Conduct Pre-Flight Check<br/>Pilot"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Review of Records<br/>Aircraft Engineer"]
+    N12["Archive Records<br/>Aircraft Engineer"]
+    N13["Update Maintenance Log<br/>Flight Dispatcher"]
+    N14["Close Weight Balance Process<br/>Aircraft Engineer"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Initial Weight Calculation"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Update Weight Balance Records"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  E17["Exception Review Test Results"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  E18["Exception Update Weight Balance Records Ag"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  E19["Exception Generate Weight Balance Report"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Notify Flight Operations"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  N10 -->|Yes| N11
+  N11 --> N12
+  E21["Exception Archive Records"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Update Maintenance Log"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Close Weight Balance Process"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  N10 -.->|No| N9
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

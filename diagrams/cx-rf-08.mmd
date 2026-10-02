@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Refund Request<br/>Customer Service Representative CSR"]
+    N2{"Validate Refund Eligibility<br/>Revenue Analyst"}
+    N3{"Approve Refund Request<br/>Manager, Revenue Management"}
+    N4["Notify Customer of Approval<br/>Customer Service Representative CSR"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Prepare Refund Form<br/>Revenue Analyst"]
+    N6{"Process Refund Payment<br/>Finance Officer"}
+    N7["Update Passenger Record<br/>Flight Dispatcher"]
+    N8["Notify Customer of Payment<br/>Customer Service Representative CSR"]
+    N9["Review and Adjust Revenue Forecast<br/>Revenue Analyst"]
+    N10["Close Refund Case<br/>Customer Service Representative CSR"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Refund Process Performance<br/>Manager, Revenue Management"]
+    N12{"Identify and Mitigate Issues<br/>Manager, Revenue Management"}
+    N13["Update Refund Policies and Procedures<br/>Manager, Revenue Management"]
+    N14["Monitor Refund Process Compliance<br/>Manager, Revenue Management"]
+  end
+  START --> N1
+  E15["Exception Receive Refund Request"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Notify Customer of Approval"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  E17["Exception Prepare Refund Form"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception Update Passenger Record"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  E19["Exception Notify Customer of Payment"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Review and Adjust Revenue Foreca"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  E21["Exception Close Refund Case"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  E22["Exception Review Refund Process Performanc"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  N12 -->|Yes| N13
+  E23["Exception Update Refund Policies and Proce"]
+  N13 -.->|Exception| E23
+  N13 --> N14
+  E24["Exception Monitor Refund Process Complianc"]
+  N14 -.->|Exception| E24
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  N2 -.->|No| N1
+  N12 -.->|No| N11
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

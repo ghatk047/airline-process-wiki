@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Identify Maintenance Issues<br/>Maintenance Engineer"}
+    N2{"Assess Impact and Priority<br/>Maintenance Planner"}
+    N3{"Obtain Approval for Deferral<br/>Senior Maintenance Manager"}
+    N4["Notify Stakeholders<br/>Maintenance Planner"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Monitor Compliance<br/>Maintenance Engineer"}
+    N6["Adjust Schedule as Needed<br/>Maintenance Planner"]
+    N7["Coordinate with Fleet Management<br/>Fleet Manager"]
+    N8["Update Maintenance Logs<br/>Maintenance Engineer"]
+    N9["Perform Maintenance Tasks<br/>Maintenance Engineer"]
+    N10["Review and Document Findings<br/>Maintenance Engineer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Compliance and Effectiveness<br/>Senior Maintenance Manager"]
+    N12["Update Policies and Procedures<br/>Maintenance Planner"]
+    N13["Report on Deferred Maintenance<br/>Maintenance Planner"]
+    N14["Close Out Process<br/>Maintenance Planner"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  E15["Exception Obtain Approval for Deferral"]
+  N3 -.->|Exception| E15
+  N3 -->|Yes| N4
+  E16["Exception Notify Stakeholders"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 --> N7
+  E17["Exception Coordinate with Fleet Management"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  E18["Exception Update Maintenance Logs"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E19["Exception Update Policies and Procedures"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  E20["Exception Report on Deferred Maintenance"]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

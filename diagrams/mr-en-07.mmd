@@ -1,0 +1,63 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Damage Assessment<br/>Avionics Technician"}
+    N2{"Identify Critical Components<br/>Engineer"}
+    N3["Consult Maintenance Database<br/>Maintenance Planner"]
+    N4["Initial Repair Plan<br/>Maintenance Coordinator"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Resource Allocation<br/>Maintenance Manager"}
+    N6["Obtain Parts and Supplies<br/>Logistics Coordinator"]
+    N7{"Execute Repair Work<br/>Maintenance Team"}
+    N8["Quality Control Inspection<br/>Quality Assurance Engineer"]
+    N9["Cost Estimation<br/>Financial Analyst"]
+    N10["Update Maintenance Records<br/>Maintenance Planner"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Repair Plan Review<br/>Maintenance Manager"]
+    N12["Aircraft Release<br/>Chief Engineer"]
+    N13["Post-Repair Inspection<br/>Avionics Technician"]
+    N14["Final Cost Approval<br/>Finance Director"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  E15["Exception Consult Maintenance Database"]
+  N3 -.->|Exception| E15
+  N3 --> N4
+  E16["Exception Initial Repair Plan"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  E17["Exception Obtain Parts and Supplies"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  N8 --> N9
+  E18["Exception Cost Estimation"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  E19["Exception Update Maintenance Records"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N7 -.->|No| N6
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

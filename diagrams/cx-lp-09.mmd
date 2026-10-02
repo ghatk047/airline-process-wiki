@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Review Loyalty Program Data<br/>Loyalty Analyst"]
+    N2{"Calculate Reward Seat Requirements<br/>Revenue Analyst"}
+    N3{"Validate Seat Availability<br/>Flight Dispatcher"}
+    N4["Notify Loyalty Program Members<br/>Customer Service Representative"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Reserve Reward Seats<br/>Flight Dispatcher"}
+    N6["Update Loyalty Program Database<br/>Loyalty Analyst"]
+    N7{"Monitor Seat Utilization<br/>Revenue Analyst"}
+    N8["Adjust Seat Allocation if Necessary<br/>Revenue Analyst"]
+    N9["Communicate Adjustments to Members<br/>Customer Service Representative"]
+    N10["Finalize Seat Allocation<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Seat Allocation Report<br/>Revenue Analyst"]
+    N12["Update Loyalty Program Metrics<br/>Loyalty Analyst"]
+    N13["Generate Monthly Report<br/>Revenue Analyst"]
+    N14["Review and Plan for Next Month<br/>Revenue Analyst, Loyalty Analyst"]
+  end
+  START --> N1
+  E15["Exception Review Loyalty Program Data"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Validate Seat Availability"]
+  N3 -.->|Exception| E16
+  N3 -->|Yes| N4
+  E17["Exception Notify Loyalty Program Members"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  N5 -->|Yes| N6
+  E18["Exception Update Loyalty Program Database"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  E19["Exception Adjust Seat Allocation if Necess"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Communicate Adjustments to Membe"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  N10 --> N11
+  E21["Exception Review Seat Allocation Report"]
+  N11 -.->|Exception| E21
+  N11 --> N12
+  E22["Exception Update Loyalty Program Metrics"]
+  N12 -.->|Exception| E22
+  N12 --> N13
+  E23["Exception Generate Monthly Report"]
+  N13 -.->|Exception| E23
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N7 -.->|No| N6
+  N5 -.->|No| N4
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

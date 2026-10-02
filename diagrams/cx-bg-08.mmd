@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Booking Information<br/>Revenue Analyst"]
+    N2{"Validate Interline Agreement<br/>Customer Experience Manager"}
+    N3["Confirm Baggage Allowance<br/>Baggage Coordinator"]
+    N4["Initiate Baggage Transfer Request<br/>Baggage Coordinator"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Monitor Baggage Transfer Status<br/>Baggage Coordinator"]
+    N6{"Communicate with Partner Airline<br/>Baggage Coordinator"}
+    N7["Update Passenger Records<br/>Customer Experience Manager"]
+    N8["Prepare for Final Destination<br/>Baggage Coordinator"]
+    N9{"Coordinate with Ground Handling<br/>Ground Handling Coordinator"}
+    N10["Monitor Final Baggage Delivery<br/>Baggage Coordinator"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review and Document Process<br/>Baggage Coordinator"]
+    N12{"Report Outcomes to Stakeholders<br/>Customer Experience Manager"}
+    N13["Update Training and Procedures<br/>Training Coordinator"]
+    N14["Close Process Record<br/>Baggage Coordinator"]
+  end
+  START --> N1
+  N1 --> N2
+  N2 -->|Yes| N3
+  E15["Exception Confirm Baggage Allowance"]
+  N3 -.->|Exception| E15
+  N3 --> N4
+  N4 --> N5
+  E16["Exception Monitor Baggage Transfer Status"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  N6 -->|Yes| N7
+  E17["Exception Update Passenger Records"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  N8 --> N9
+  N9 -->|Yes| N10
+  E18["Exception Monitor Final Baggage Delivery"]
+  N10 -.->|Exception| E18
+  N10 --> N11
+  E19["Exception Review and Document Process"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  N12 -->|Yes| N13
+  E20["Exception Update Training and Procedures"]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  E21["Exception Close Process Record"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N2 -.->|No| N1
+  N9 -.->|No| N8
+  N12 -.->|No| N11
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

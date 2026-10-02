@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Initiate Aging Assessment<br/>Maintenance Engineer"}
+    N2["Identify Corrosion Risk Areas<br/>Corrosion Specialist"]
+    N3{"Develop Maintenance Schedule<br/>Flight Dispatcher"}
+    N4["Allocate Resources<br/>Maintenance Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Pre-Maintenance Inspection<br/>Mechanic"}
+    N6["Execute Corrosion Treatment<br/>Corrosion Specialist"]
+    N7{"Perform Post-Treatment Inspection<br/>Mechanic"}
+    N8["Update Aircraft Documentation<br/>Maintenance Engineer"]
+    N9["Review Maintenance Effectiveness<br/>Maintenance Manager"]
+    N10["Adjust Maintenance Schedule<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Inspection and Certification<br/>Aircraft Inspector"]
+    N12["Update Maintenance Log<br/>Maintenance Engineer"]
+    N13["Review and Report<br/>Maintenance Manager"]
+    N14["Plan for Next Cycle<br/>Maintenance Planner"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Identify Corrosion Risk Areas"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Allocate Resources"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  E17["Exception Execute Corrosion Treatment"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  E18["Exception Update Aircraft Documentation"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  N9 --> N10
+  E19["Exception Adjust Maintenance Schedule"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Update Maintenance Log"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  N13 --> N14
+  E21["Exception Plan for Next Cycle"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N7 -.->|No| N6
+  N1 -.->|No| START
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
