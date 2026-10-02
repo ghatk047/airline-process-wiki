@@ -1,0 +1,81 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Weather Data<br/>Flight Dispatcher"]
+    N2["Review Airport Weather Minima<br/>Flight Dispatcher"]
+    N3{"Compare Current Weather to Minima<br/>Flight Dispatcher"}
+    N4["Notify Operations Team<br/>Flight Dispatcher"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Assess Flight Plan Adjustments<br/>Flight Dispatcher"}
+    N6["Update Flight Status<br/>Flight Dispatcher"]
+    N7["Inform Pilots and Crew<br/>Flight Dispatcher"]
+    N8{"Monitor Weather Conditions<br/>Flight Dispatcher"}
+    N9{"Evaluate Impact on Flight Operations<br/>Flight Dispatcher"}
+    N10["Adjust Flight Schedule if Necessary<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Weather Compliance Decision<br/>Flight Dispatcher"]
+    N12["Update Flight Operations Log<br/>Flight Dispatcher"]
+    N13["Notify Stakeholders<br/>Flight Dispatcher"]
+    N14["Review and Document Process<br/>Flight Dispatcher"]
+  end
+  START --> N1
+  E15["Exception Receive Weather Data"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Review Airport Weather Minima"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  E17["Exception Compare Current Weather to Minim"]
+  N3 -.->|Exception| E17
+  N3 -->|Yes| N4
+  E18["Exception Notify Operations Team"]
+  N4 -.->|Exception| E18
+  N4 --> N5
+  E19["Exception Assess Flight Plan Adjustments"]
+  N5 -.->|Exception| E19
+  N5 -->|Yes| N6
+  E20["Exception Update Flight Status"]
+  N6 -.->|Exception| E20
+  N6 --> N7
+  E21["Exception Inform Pilots and Crew"]
+  N7 -.->|Exception| E21
+  N7 --> N8
+  E22["Exception Monitor Weather Conditions"]
+  N8 -.->|Exception| E22
+  N8 -->|Yes| N9
+  E23["Exception Evaluate Impact on Flight Operat"]
+  N9 -.->|Exception| E23
+  N9 -->|Yes| N10
+  E24["Exception Adjust Flight Schedule if Necess"]
+  N10 -.->|Exception| E24
+  N10 --> N11
+  E25["Exception Finalize Weather Compliance Deci"]
+  N11 -.->|Exception| E25
+  N11 --> N12
+  E26["Exception Update Flight Operations Log"]
+  N12 -.->|Exception| E26
+  N12 --> N13
+  E27["Exception Notify Stakeholders"]
+  N13 -.->|Exception| E27
+  N13 --> N14
+  E28["Exception Review and Document Process"]
+  N14 -.->|Exception| E28
+  DONE([Complete])
+  N14 --> DONE
+  N8 -.->|No| N7
+  N5 -.->|No| N4
+  N3 -.->|No| N2
+  N9 -.->|No| N8
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24,E25,E26,E27,E28 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

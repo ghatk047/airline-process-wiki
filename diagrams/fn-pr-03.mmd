@@ -1,0 +1,63 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Purchase Order Request Received<br/>Procurement Officer"}
+    N2{"Supplier Selection<br/>Procurement Officer"}
+    N3["Purchase Order Issuance<br/>Procurement Officer"]
+    N4{"Invoice Receipt<br/>Accounts Payable Clerk"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Invoice Validation<br/>Accounts Payable Clerk"}
+    N6["Payment Authorization<br/>Finance Manager"]
+    N7["Payment Processing<br/>Accounts Payable Clerk"]
+    N8["Supplier Payment Confirmation<br/>Accounts Payable Clerk"]
+    N9["Reconciliation<br/>Accounts Payable Clerk"]
+    N10["Final Payment Review<br/>Finance Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Payment Release<br/>Accounts Payable Clerk"]
+    N12["Closeout Process<br/>Procurement Officer"]
+    N13["Audit Trail Review<br/>Internal Auditor"]
+    N14["Final Reporting<br/>Finance Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 --> N4
+  E15["Exception Invoice Receipt"]
+  N4 -.->|Exception| E15
+  N4 -->|Yes| N5
+  N5 -->|Yes| N6
+  N6 --> N7
+  E16["Exception Payment Processing"]
+  N7 -.->|Exception| E16
+  N7 --> N8
+  E17["Exception Supplier Payment Confirmation"]
+  N8 -.->|Exception| E17
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  E18["Exception Payment Release"]
+  N11 -.->|Exception| E18
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  E19["Exception Final Reporting"]
+  N14 -.->|Exception| E19
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,63 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Initiate SAF Procurement Plan<br/>Sustainability Manager"}
+    N2["Identify Potential SAF Suppliers<br/>Procurement Manager"]
+    N3{"Evaluate Supplier Capabilities<br/>Procurement Analyst"}
+    N4{"Select SAF Supplier<br/>Procurement Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Negotiate SAF Supply Terms<br/>Procurement Manager"}
+    N6["Order SAF from Supplier<br/>Procurement Analyst"]
+    N7["Monitor SAF Delivery<br/>Supply Chain Coordinator"]
+    N8["Integrate SAF into Fleet Operations<br/>Flight Dispatcher, Load Controller"]
+    N9["Conduct SAF Quality Assurance Tests<br/>Quality Control Engineer"]
+    N10["Update Sustainability Reporting<br/>Sustainability Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review SAF Procurement Outcomes<br/>Sustainability Manager, Procurement Manage"]
+    N12["Plan for Future SAF Procurement<br/>Sustainability Manager, Procurement Manage"]
+    N13["Communicate Procurement Results to Stakeho<br/>Sustainability Manager, Communications Off"]
+    N14["Close SAF Procurement Process<br/>Procurement Manager, Sustainability Manage"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Identify Potential SAF Suppliers"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Select SAF Supplier"]
+  N4 -.->|Exception| E16
+  N4 -->|Yes| N5
+  N5 -->|Yes| N6
+  E17["Exception Order SAF from Supplier"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  E18["Exception Conduct SAF Quality Assurance Te"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E19["Exception Plan for Future SAF Procurement"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N3 -.->|No| N2
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

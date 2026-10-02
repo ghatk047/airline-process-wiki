@@ -2493,9 +2493,9 @@
       "l2_process": "Procurement & Supplier",
       "l2_slug": "procurement-supplier",
       "l3_name": "Procure-to-Pay Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-PR-04",
@@ -2504,9 +2504,9 @@
       "l2_process": "Procurement & Supplier",
       "l2_slug": "procurement-supplier",
       "l3_name": "Supplier Performance & Risk Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EM-01",
@@ -2515,9 +2515,9 @@
       "l2_process": "Emissions & Reporting",
       "l2_slug": "emissions-reporting",
       "l3_name": "Carbon Emissions Measurement & Reporting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EM-02",
@@ -2526,9 +2526,9 @@
       "l2_process": "Emissions & Reporting",
       "l2_slug": "emissions-reporting",
       "l3_name": "CORSIA Compliance & Offsetting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EM-03",
@@ -2537,9 +2537,9 @@
       "l2_process": "Emissions & Reporting",
       "l2_slug": "emissions-reporting",
       "l3_name": "EU ETS Compliance Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EM-04",
@@ -2548,9 +2548,9 @@
       "l2_process": "Emissions & Reporting",
       "l2_slug": "emissions-reporting",
       "l3_name": "ESG Disclosure & Reporting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-FE-01",
@@ -2559,9 +2559,9 @@
       "l2_process": "Fuel Efficiency & SAF",
       "l2_slug": "fuel-efficiency-saf",
       "l3_name": "Fuel Efficiency Program Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-FE-02",
@@ -2570,9 +2570,9 @@
       "l2_process": "Fuel Efficiency & SAF",
       "l2_slug": "fuel-efficiency-saf",
       "l3_name": "Sustainable Aviation Fuel (SAF) Procurement",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-FE-03",
@@ -2581,9 +2581,9 @@
       "l2_process": "Fuel Efficiency & SAF",
       "l2_slug": "fuel-efficiency-saf",
       "l3_name": "Flight Path & Fuel Burn Optimization",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-FE-04",
@@ -2592,9 +2592,9 @@
       "l2_process": "Fuel Efficiency & SAF",
       "l2_slug": "fuel-efficiency-saf",
       "l3_name": "Weight Reduction Initiatives",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EN-01",
@@ -2603,9 +2603,9 @@
       "l2_process": "Environmental Operations",
       "l2_slug": "environmental-operations",
       "l3_name": "Noise Abatement Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EN-02",
@@ -2614,9 +2614,9 @@
       "l2_process": "Environmental Operations",
       "l2_slug": "environmental-operations",
       "l3_name": "Ground Energy & Emissions Reduction",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EN-03",
@@ -2625,9 +2625,9 @@
       "l2_process": "Environmental Operations",
       "l2_slug": "environmental-operations",
       "l3_name": "Waste & Water Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EN-04",
@@ -2636,9 +2636,9 @@
       "l2_process": "Environmental Operations",
       "l2_slug": "environmental-operations",
       "l3_name": "Single-Use Plastic Reduction",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-FW-09",
@@ -2647,9 +2647,9 @@
       "l2_process": "Fuel & Weight Management",
       "l2_slug": "fuel-weight",
       "l3_name": "Fuel Density & Temperature Correction",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-FW-10",
@@ -2658,9 +2658,9 @@
       "l2_process": "Fuel & Weight Management",
       "l2_slug": "fuel-weight",
       "l3_name": "Ballast Fuel Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-MET-07",
@@ -2669,9 +2669,9 @@
       "l2_process": "Weather & Flight Information",
       "l2_slug": "weather-flightinfo",
       "l3_name": "Space Weather & Solar Radiation Monitoring",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-MET-08",
@@ -2680,9 +2680,9 @@
       "l2_process": "Weather & Flight Information",
       "l2_slug": "weather-flightinfo",
       "l3_name": "Icing Condition Forecasting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-MET-09",
@@ -2691,9 +2691,9 @@
       "l2_process": "Weather & Flight Information",
       "l2_slug": "weather-flightinfo",
       "l3_name": "Airport Weather Minima Assessment",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-DR-09",
@@ -2702,9 +2702,9 @@
       "l2_process": "Dispatch & Release",
       "l2_slug": "dispatch-release",
       "l3_name": "Flight Plan Filing with ATC",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-DR-10",

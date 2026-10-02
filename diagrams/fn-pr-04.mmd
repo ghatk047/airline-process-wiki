@@ -1,0 +1,63 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Initiate Supplier Performance Review<br/>Procurement Manager"]
+    N2{"Gather Historical Data<br/>Data Analyst"}
+    N3{"Identify Key Performance Indicators KPIs<br/>Procurement Analyst"}
+    N4["Conduct Supplier Interviews<br/>Supplier Relationship Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Analyze Supplier Performance Data<br/>Data Analyst"}
+    N6{"Identify Potential Risks<br/>Risk Analyst"}
+    N7["Evaluate Risk Mitigation Strategies<br/>Risk Analyst"]
+    N8["Review with Stakeholders<br/>Procurement Manager, Finance Lead"]
+    N9["Update Supplier Contracts<br/>Procurement Manager, Legal Counsel"]
+    N10["Monitor Supplier Performance Post-Update<br/>Data Analyst, Procurement Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review and Adjust Risk Management Strategi<br/>Risk Analyst, Procurement Manager"]
+    N12["Document Supplier Performance and Risk Man<br/>Procurement Analyst, Documentation Special"]
+    N13["Report Findings to Executive Team<br/>Procurement Manager, Finance Lead"]
+    N14["Schedule Next Performance Review Cycle<br/>Procurement Manager, Scheduler"]
+  end
+  START --> N1
+  E15["Exception Initiate Supplier Performance Re"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Conduct Supplier Interviews"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E17["Exception Document Supplier Performance an"]
+  N12 -.->|Exception| E17
+  N12 --> N13
+  E18["Exception Report Findings to Executive Tea"]
+  N13 -.->|Exception| E18
+  N13 --> N14
+  E19["Exception Schedule Next Performance Review"]
+  N14 -.->|Exception| E19
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

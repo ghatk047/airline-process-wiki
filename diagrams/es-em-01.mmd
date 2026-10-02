@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Data Collection Initiation<br/>Sustainability Analyst"}
+    N2["Emissions Calculation Setup<br/>Sustainability Analyst"]
+    N3["Data Integration with Emissions Model<br/>Sustainability Analyst"]
+    N4{"Preliminary Emissions Calculation Review<br/>Sustainability Analyst"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Detailed Emissions Calculation<br/>Sustainability Analyst"]
+    N6{"Data Validation and Verification<br/>Sustainability Analyst"}
+    N7["Reporting Format Preparation<br/>Sustainability Analyst"]
+    N8{"Internal Review and Approval<br/>Sustainability Manager"}
+    N9["External Reporting Submission<br/>Sustainability Manager"]
+    N10["Post-Reporting Analysis and Feedback<br/>Sustainability Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Compliance Check and Documentation<br/>Sustainability Analyst"]
+    N12["Stakeholder Communication Plan<br/>Sustainability Manager"]
+    N13["Stakeholder Engagement and Reporting<br/>Sustainability Manager"]
+    N14["Continuous Improvement Plan<br/>Sustainability Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Emissions Calculation Setup"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Data Integration with Emissions "]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Detailed Emissions Calculation"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception Reporting Format Preparation"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  N8 -->|Yes| N9
+  E19["Exception External Reporting Submission"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Compliance Check and Documentati"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  N12 --> N13
+  E21["Exception Stakeholder Engagement and Repor"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N8 -.->|No| N7
+  N6 -.->|No| N5
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

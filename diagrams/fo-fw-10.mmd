@@ -1,0 +1,61 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Flight Plan Review<br/>Flight Dispatcher"}
+    N2{"Weight and Balance Calculation<br/>Load Controller"}
+    N3{"Ballast Fuel Calculation<br/>Load Controller"}
+    N4{"Fuel Plan Approval<br/>Flight Dispatcher, Aircraft Maintenance En"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Pre-flight Briefing<br/>Flight Dispatcher, Pilot"]
+    N6["Fueling Operations<br/>Fueler, Ground Support Staff"]
+    N7["Weight and Balance Check<br/>Pilot, Load Controller"]
+    N8["Ballast Fuel Adjustment<br/>Load Controller, Pilot"]
+    N9["Post-Fueling Briefing<br/>Pilot, Ground Support Staff"]
+    N10["Flight Departure Preparation<br/>Pilot, Ground Support Staff"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Post-Flight Review<br/>Flight Dispatcher, Load Controller"]
+    N12["Fuel Usage Analysis<br/>Revenue Analyst, Load Controller"]
+    N13["Continuous Improvement Planning<br/>Flight Dispatcher, Load Controller, Revenu"]
+    N14["Documentation and Reporting<br/>Flight Dispatcher, Load Controller"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E15["Exception Fuel Plan Approval"]
+  N4 -.->|Exception| E15
+  N4 -->|Yes| N5
+  N5 --> N6
+  E16["Exception Fueling Operations"]
+  N6 -.->|Exception| E16
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  E17["Exception Flight Departure Preparation"]
+  N10 -.->|Exception| E17
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  E18["Exception Documentation and Reporting"]
+  N14 -.->|Exception| E18
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
