@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Advance Payment<br/>Revenue Analyst"]
+    N2{"Identify Revenue Recognition Trigger<br/>Revenue Analyst"}
+    N3["Create Unearned Revenue Liability Entry<br/>Revenue Analyst"]
+    N4{"Review and Approve Liability Entry<br/>Finance Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Monitor Revenue Recognition Progress<br/>Revenue Analyst"]
+    N6{"Adjust Unearned Revenue Liability<br/>Revenue Analyst"}
+    N7["Generate Revenue Recognition Journal Entry<br/>Revenue Analyst"]
+    N8{"Post Journal Entry to Financial Statements<br/>Accountant"}
+    N9["Review Financial Statements for Accuracy<br/>Finance Manager"]
+    N10["Report Unearned Revenue and Liabilities<br/>Revenue Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Unearned Revenue and Liabilities Re<br/>Finance Manager"]
+    N12["Update Financial Records<br/>Accountant"]
+    N13["Close Financial Period<br/>Finance Manager"]
+    N14["Generate Period-End Financial Report<br/>Accountant"]
+  end
+  START --> N1
+  E15["Exception Receive Advance Payment"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Create Unearned Revenue Liabilit"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Monitor Revenue Recognition Prog"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception Generate Revenue Recognition Jou"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  N8 -->|Yes| N9
+  N9 --> N10
+  E19["Exception Report Unearned Revenue and Liab"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Update Financial Records"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  N13 --> N14
+  E21["Exception Generate Period-End Financial Re"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  N6 -.->|No| N5
+  N8 -.->|No| N7
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Extract Data from POS Systems<br/>Revenue Analyst"]
+    N2{"Validate Extracted Data<br/>Revenue Analyst"}
+    N3["Extract Financial Data from SAP<br/>Financial Analyst"]
+    N4{"Match POS Data with Financial Data<br/>Revenue Analyst"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Reconcile Discrepancies<br/>Revenue Analyst"]
+    N6["Update Financial Records<br/>Financial Analyst"]
+    N7["Generate Reconciliation Report<br/>Revenue Analyst"]
+    N8{"Review Reconciliation Report<br/>Revenue Manager"}
+    N9["Prepare Financial Statements<br/>Financial Analyst"]
+    N10["Submit Financial Statements to Authorities<br/>Compliance Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Close Reconciliation Cycle<br/>Revenue Analyst"]
+    N12{"Review and Document Issues<br/>Revenue Manager"}
+    N13["Update Internal Controls<br/>Internal Auditor"]
+    N14["Report on Reconciliation Process<br/>Revenue Manager"]
+  end
+  START --> N1
+  E15["Exception Extract Data from POS Systems"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Extract Financial Data from SAP"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Reconcile Discrepancies"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Update Financial Records"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  E19["Exception Generate Reconciliation Report"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  N8 -->|Yes| N9
+  E20["Exception Prepare Financial Statements"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  E21["Exception Submit Financial Statements to A"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  E22["Exception Close Reconciliation Cycle"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  N12 -->|Yes| N13
+  E23["Exception Update Internal Controls"]
+  N13 -.->|Exception| E23
+  N13 --> N14
+  E24["Exception Report on Reconciliation Process"]
+  N14 -.->|Exception| E24
+  DONE([Complete])
+  N14 --> DONE
+  N12 -.->|No| N11
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  N8 -.->|No| N7
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

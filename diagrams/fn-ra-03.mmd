@@ -1,0 +1,57 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Receive Settlement Documents<br/>Revenue Analyst"}
+    N2{"Validate Settlement Data<br/>Revenue Analyst"}
+    N3{"Review and Approve Settlements<br/>Accounting Manager"}
+    N4{"Generate Payment Instructions<br/>Payment Specialist"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Process Payment Instructions<br/>Accountant"]
+    N6["Reconcile Settlements<br/>Revenue Analyst"]
+    N7["Review Reconciliation Report<br/>Accounting Manager"]
+    N8["Update Financial Records<br/>Accountant"]
+    N9["Generate Settlement Reports<br/>Revenue Analyst"]
+    N10["Distribute Settlement Reports<br/>Accounting Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Monitor Payment Status<br/>Payment Specialist"]
+    N12["Resolve Payment Issues<br/>Payment Specialist"]
+    N13["Review Financial Statements<br/>Financial Controller"]
+    N14["Close Settlement Cycle<br/>Accounting Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 --> N6
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  E15["Exception Monitor Payment Status"]
+  N11 -.->|Exception| E15
+  N11 --> N12
+  E16["Exception Resolve Payment Issues"]
+  N12 -.->|Exception| E16
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N1 -.->|No| START
+  N3 -.->|No| N2
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

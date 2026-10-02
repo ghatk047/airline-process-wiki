@@ -1,0 +1,74 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Extract Sales Data<br/>Revenue Analyst"]
+    N2["Review Sales Data<br/>Revenue Analyst"]
+    N3["Compare with Financial Records<br/>Revenue Analyst"]
+    N4{"Identify Potential Leakage<br/>Revenue Analyst"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Investigate Discrepancies<br/>Revenue Analyst"]
+    N6{"Verify Data Integrity<br/>Revenue Analyst"}
+    N7["Adjust Financial Records<br/>Revenue Analyst"]
+    N8["Update Revenue Recognition System<br/>Revenue Analyst"]
+    N9["Report to Management<br/>Revenue Analyst"]
+    N10{"Review and Approve Adjustments<br/>Finance Manager"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Close Revenue Cycle<br/>Revenue Analyst"]
+    N12["Update Revenue Dashboard<br/>Revenue Analyst"]
+    N13["Archive Records<br/>Revenue Analyst"]
+    N14["Review and Report on Leakage Control<br/>Revenue Analyst"]
+  end
+  START --> N1
+  E15["Exception Extract Sales Data"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Review Sales Data"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  E17["Exception Compare with Financial Records"]
+  N3 -.->|Exception| E17
+  N3 --> N4
+  N4 -->|Yes| N5
+  E18["Exception Investigate Discrepancies"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  E19["Exception Adjust Financial Records"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  E20["Exception Update Revenue Recognition Syste"]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  E21["Exception Report to Management"]
+  N9 -.->|Exception| E21
+  N9 --> N10
+  N10 -->|Yes| N11
+  E22["Exception Close Revenue Cycle"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  E23["Exception Update Revenue Dashboard"]
+  N12 -.->|Exception| E23
+  N12 --> N13
+  E24["Exception Archive Records"]
+  N13 -.->|Exception| E24
+  N13 --> N14
+  E25["Exception Review and Report on Leakage Con"]
+  N14 -.->|Exception| E25
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N6 -.->|No| N5
+  N10 -.->|No| N9
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24,E25 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -2273,9 +2273,9 @@
       "l2_process": "Cybersecurity & Infrastructure",
       "l2_slug": "cyber-infrastructure",
       "l3_name": "Disaster Recovery & Business Continuity",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-RA-01",
@@ -2284,9 +2284,9 @@
       "l2_process": "Revenue Accounting",
       "l2_slug": "revenue-accounting",
       "l3_name": "Passenger Revenue Accounting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-RA-02",
@@ -2295,9 +2295,9 @@
       "l2_process": "Revenue Accounting",
       "l2_slug": "revenue-accounting",
       "l3_name": "Interline Billing & Proration (IATA)",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-RA-03",
@@ -2306,9 +2306,9 @@
       "l2_process": "Revenue Accounting",
       "l2_slug": "revenue-accounting",
       "l3_name": "BSP & ARC Settlement Processing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-RA-04",
@@ -2317,9 +2317,9 @@
       "l2_process": "Revenue Accounting",
       "l2_slug": "revenue-accounting",
       "l3_name": "Ancillary Revenue Reconciliation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-RA-05",
@@ -2328,9 +2328,9 @@
       "l2_process": "Revenue Accounting",
       "l2_slug": "revenue-accounting",
       "l3_name": "Revenue Integrity & Leakage Control",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-RA-06",
@@ -2339,9 +2339,9 @@
       "l2_process": "Revenue Accounting",
       "l2_slug": "revenue-accounting",
       "l3_name": "Unearned Revenue & Liability Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-TR-01",
@@ -2350,9 +2350,9 @@
       "l2_process": "Treasury & Risk",
       "l2_slug": "treasury-risk",
       "l3_name": "Fuel Hedging & Commodity Risk",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-TR-02",
@@ -2361,9 +2361,9 @@
       "l2_process": "Treasury & Risk",
       "l2_slug": "treasury-risk",
       "l3_name": "Foreign Exchange Risk Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-TR-03",
@@ -2372,9 +2372,9 @@
       "l2_process": "Treasury & Risk",
       "l2_slug": "treasury-risk",
       "l3_name": "Cash & Liquidity Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-TR-04",
@@ -2383,9 +2383,9 @@
       "l2_process": "Treasury & Risk",
       "l2_slug": "treasury-risk",
       "l3_name": "Aircraft Financing Treasury Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-TR-05",
@@ -2394,9 +2394,9 @@
       "l2_process": "Treasury & Risk",
       "l2_slug": "treasury-risk",
       "l3_name": "Insurance & Risk Financing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-CT-01",
@@ -2405,9 +2405,9 @@
       "l2_process": "Controlling & Planning",
       "l2_slug": "controlling-planning",
       "l3_name": "Financial Planning & Budgeting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-CT-02",
@@ -2416,9 +2416,9 @@
       "l2_process": "Controlling & Planning",
       "l2_slug": "controlling-planning",
       "l3_name": "Cost Management & Unit Cost Analysis",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-CT-03",
@@ -2427,9 +2427,9 @@
       "l2_process": "Controlling & Planning",
       "l2_slug": "controlling-planning",
       "l3_name": "Route Profitability Analysis",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-CT-04",
@@ -2438,9 +2438,9 @@
       "l2_process": "Controlling & Planning",
       "l2_slug": "controlling-planning",
       "l3_name": "Management Reporting & Analytics",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-CT-05",
@@ -2449,9 +2449,9 @@
       "l2_process": "Controlling & Planning",
       "l2_slug": "controlling-planning",
       "l3_name": "Tax Planning & Compliance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-CT-06",
@@ -2460,9 +2460,9 @@
       "l2_process": "Controlling & Planning",
       "l2_slug": "controlling-planning",
       "l3_name": "Investor Relations Reporting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-PR-01",
@@ -2471,9 +2471,9 @@
       "l2_process": "Procurement & Supplier",
       "l2_slug": "procurement-supplier",
       "l3_name": "Strategic Sourcing & Vendor Selection",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-PR-02",
@@ -2482,9 +2482,9 @@
       "l2_process": "Procurement & Supplier",
       "l2_slug": "procurement-supplier",
       "l3_name": "Supplier Contract Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-PR-03",

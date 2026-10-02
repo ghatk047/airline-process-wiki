@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Financing Agreement<br/>Treasury Analyst"}
+    N2["Set Up Financial Records<br/>Financial Controller"]
+    N3{"Allocate Budget for Financing<br/>Budget Analyst"}
+    N4{"Monitor Cash Flow Projections<br/>Treasury Analyst"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Process Loan Payments<br/>Accounts Payable Clerk"]
+    N6["Manage Interest Payments<br/>Treasury Analyst"]
+    N7{"Review Financial Statements<br/>Financial Analyst"}
+    N8["Optimize Cash Flow Management<br/>Treasury Manager"]
+    N9["Monitor Market Conditions<br/>Market Analyst"]
+    N10["Adjust Financing Strategy<br/>Treasury Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Financial Reporting<br/>Financial Analyst"]
+    N12["Review Compliance Requirements<br/>Compliance Officer"]
+    N13["Update Internal Controls<br/>Internal Auditor"]
+    N14["Close Financial Period<br/>Financial Controller"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Set Up Financial Records"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E16["Exception Process Loan Payments"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  E17["Exception Manage Interest Payments"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  N8 --> N9
+  E18["Exception Monitor Market Conditions"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  N10 --> N11
+  E19["Exception Finalize Financial Reporting"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  E20["Exception Close Financial Period"]
+  N14 -.->|Exception| E20
+  DONE([Complete])
+  N14 --> DONE
+  N1 -.->|No| START
+  N3 -.->|No| N2
+  N4 -.->|No| N3
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

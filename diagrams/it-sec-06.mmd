@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Identify Incident<br/>IT Security Analyst"}
+    N2{"Assess Impact<br/>IT Security Analyst"}
+    N3{"Initiate Recovery Plan<br/>IT Security Manager"}
+    N4["Notify Stakeholders<br/>IT Security Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Restore Core Systems<br/>IT Operations Team"}
+    N6["Verify System Integrity<br/>IT Operations Team"]
+    N7["Restore Secondary Systems<br/>IT Operations Team"]
+    N8["Conduct Post-Recovery Review<br/>IT Security Analyst"]
+    N9["Update Recovery Plan<br/>IT Security Manager"]
+    N10["Communicate Recovery Status<br/>IT Security Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Recovery Process<br/>IT Security Manager"]
+    N12["Review and Document Lessons Learned<br/>IT Security Analyst"]
+    N13["Update Training Programs<br/>IT Security Manager"]
+    N14["Close Incident<br/>IT Security Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E15["Exception Notify Stakeholders"]
+  N4 -.->|Exception| E15
+  N4 --> N5
+  E16["Exception Restore Core Systems"]
+  N5 -.->|Exception| E16
+  N5 -->|Yes| N6
+  N6 --> N7
+  N7 --> N8
+  E17["Exception Conduct Post-Recovery Review"]
+  N8 -.->|Exception| E17
+  N8 --> N9
+  E18["Exception Update Recovery Plan"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  E19["Exception Communicate Recovery Status"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  E20["Exception Finalize Recovery Process"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  E21["Exception Review and Document Lessons Lear"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Update Training Programs"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Close Incident"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N1 -.->|No| START
+  N3 -.->|No| N2
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
