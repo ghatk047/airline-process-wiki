@@ -1,0 +1,52 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Feature Request Analysis<br/>Product Manager"}
+    N2{"Stakeholder Engagement<br/>Product Manager, IT Project Manager"}
+    N3{"Resource Allocation Planning<br/>IT Project Manager, Finance Analyst"}
+    N4{"Development Team Setup<br/>IT Project Manager, Development Lead"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Design Phase Initiation<br/>UI/UX Designer, Product Manager"]
+    N6["Development Phase Initiation<br/>Software Developer, QA Engineer"]
+    N7["Testing Phase Initiation<br/>QA Engineer, Product Manager"]
+    N8["User Acceptance Testing UAT<br/>End User, Product Manager"]
+    N9["Deployment Planning<br/>IT Deployment Manager, DevOps Engineer"]
+    N10["Post-Deployment Monitoring<br/>IT Support Engineer, DevOps Engineer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Post-Deployment Review<br/>Product Manager, IT Project Manager"]
+    N12["Feedback Collection<br/>Product Manager, IT Support Engineer"]
+    N13["Continuous Improvement Planning<br/>Product Manager, IT Project Manager"]
+    N14["Documentation Update<br/>IT Documentation Specialist, Product Manag"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 --> N6
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N1 -.->|No| START
+  N3 -.->|No| N2
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

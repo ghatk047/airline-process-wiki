@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Access Request<br/>IT Security Officer"]
+    N2{"Review Access Request<br/>IT Security Officer"}
+    N3["Assign Roles and Permissions<br/>IT Security Officer"]
+    N4["Notify User of Access<br/>IT Security Officer"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Monitor User Activity<br/>IT Security Analyst"}
+    N6["Investigate Anomalies<br/>IT Security Analyst"]
+    N7{"Review and Adjust Permissions<br/>IT Security Officer"}
+    N8["Notify User of Changes<br/>IT Security Officer"]
+    N9["Update Documentation<br/>IT Security Officer"]
+    N10{"Review IAM Policies<br/>IT Security Officer"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Conduct Audit<br/>IT Security Auditor"]
+    N12["Review Audit Report<br/>IT Security Officer"]
+    N13["Implement Action Plan<br/>IT Security Officer, IT Security Analyst"]
+    N14["Close Audit Ticket<br/>IT Security Auditor"]
+  end
+  START --> N1
+  E15["Exception Receive Access Request"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Assign Roles and Permissions"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 --> N5
+  N5 -->|Yes| N6
+  E17["Exception Investigate Anomalies"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  N8 --> N9
+  E18["Exception Update Documentation"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  N10 -->|Yes| N11
+  N11 --> N12
+  E19["Exception Review Audit Report"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  N13 --> N14
+  E20["Exception Close Audit Ticket"]
+  N14 -.->|Exception| E20
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N5 -.->|No| N4
+  N7 -.->|No| N6
+  N10 -.->|No| N9
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

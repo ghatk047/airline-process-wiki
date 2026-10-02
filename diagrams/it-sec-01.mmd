@@ -1,0 +1,63 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Incident Detection<br/>Security Analyst"}
+    N2{"Initial Assessment<br/>Security Analyst"}
+    N3{"Containment Planning<br/>Security Analyst"}
+    N4["Communication Initiation<br/>Cybersecurity Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Containment Execution<br/>IT Operations Team"}
+    N6["Threat Analysis<br/>Security Analyst"]
+    N7["Remediation Planning<br/>Security Analyst"]
+    N8["Remediation Execution<br/>IT Operations Team"]
+    N9["Post-Incident Review<br/>Cybersecurity Manager, Security Analyst"]
+    N10["Reporting and Documentation<br/>Security Analyst, IT Operations Team"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Recovery Planning<br/>IT Operations Team"]
+    N12["Recovery Execution<br/>IT Operations Team"]
+    N13["Communication Closure<br/>Cybersecurity Manager"]
+    N14["Incident Closure<br/>Security Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E15["Exception Communication Initiation"]
+  N4 -.->|Exception| E15
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  E16["Exception Post-Incident Review"]
+  N9 -.->|Exception| E16
+  N9 --> N10
+  E17["Exception Reporting and Documentation"]
+  N10 -.->|Exception| E17
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  E18["Exception Communication Closure"]
+  N13 -.->|Exception| E18
+  N13 --> N14
+  E19["Exception Incident Closure"]
+  N14 -.->|Exception| E19
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N5 -.->|No| N4
+  N1 -.->|No| START
+  N3 -.->|No| N2
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

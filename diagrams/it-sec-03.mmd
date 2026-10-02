@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Initiate Vulnerability Scan<br/>Security Analyst"]
+    N2["Review Scan Results<br/>Security Analyst"]
+    N3{"Assess Vulnerability Impact<br/>Security Analyst"}
+    N4["Identify Applicable Patches<br/>Patch Management Specialist"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Deploy Patches to Test Environment<br/>Patch Management Specialist"}
+    N6{"Conduct Patch Testing<br/>Security Analyst"}
+    N7{"Review Patch Testing Results<br/>Security Analyst"}
+    N8["Deploy Patches to Production Environment<br/>Patch Management Specialist"]
+    N9["Monitor Patch Deployment<br/>Security Analyst"]
+    N10["Conduct Post-Patch Testing<br/>Security Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Update Vulnerability Database<br/>Security Analyst"]
+    N12["Generate Patch Management Report<br/>Patch Management Specialist"]
+    N13["Review and Approve Patch Management Report<br/>Security Manager"]
+    N14["Close Vulnerability Case<br/>Security Analyst"]
+  end
+  START --> N1
+  E15["Exception Initiate Vulnerability Scan"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Review Scan Results"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  E17["Exception Identify Applicable Patches"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  E18["Exception Update Vulnerability Database"]
+  N11 -.->|Exception| E18
+  N11 --> N12
+  E19["Exception Generate Patch Management Report"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  N13 --> N14
+  E20["Exception Close Vulnerability Case"]
+  N14 -.->|Exception| E20
+  DONE([Complete])
+  N14 --> DONE
+  N7 -.->|No| N6
+  N5 -.->|No| N4
+  N6 -.->|No| N5
+  N3 -.->|No| N2
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

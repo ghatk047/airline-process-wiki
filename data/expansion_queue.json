@@ -2053,9 +2053,9 @@
       "l2_process": "Core Airline Platforms",
       "l2_slug": "core-platforms",
       "l3_name": "PSS Operations & Support",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-PS-02",
@@ -2064,9 +2064,9 @@
       "l2_process": "Core Airline Platforms",
       "l2_slug": "core-platforms",
       "l3_name": "Departure Control System Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-PS-03",
@@ -2075,9 +2075,9 @@
       "l2_process": "Core Airline Platforms",
       "l2_slug": "core-platforms",
       "l3_name": "E-Commerce Platform Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-PS-04",
@@ -2086,9 +2086,9 @@
       "l2_process": "Core Airline Platforms",
       "l2_slug": "core-platforms",
       "l3_name": "Mobile App Product Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-PS-05",
@@ -2097,9 +2097,9 @@
       "l2_process": "Core Airline Platforms",
       "l2_slug": "core-platforms",
       "l3_name": "Booking Engine & Availability Services",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-PS-06",
@@ -2108,9 +2108,9 @@
       "l2_process": "Core Airline Platforms",
       "l2_slug": "core-platforms",
       "l3_name": "API & Integration Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-DA-01",
@@ -2119,9 +2119,9 @@
       "l2_process": "Data & Analytics",
       "l2_slug": "data-analytics",
       "l3_name": "Enterprise Data Platform Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-DA-02",
@@ -2130,9 +2130,9 @@
       "l2_process": "Data & Analytics",
       "l2_slug": "data-analytics",
       "l3_name": "Data Governance & Quality Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-DA-03",
@@ -2141,9 +2141,9 @@
       "l2_process": "Data & Analytics",
       "l2_slug": "data-analytics",
       "l3_name": "Business Intelligence & Reporting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-DA-04",
@@ -2152,9 +2152,9 @@
       "l2_process": "Data & Analytics",
       "l2_slug": "data-analytics",
       "l3_name": "Real-Time Streaming & Event Data",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-DA-05",
@@ -2163,9 +2163,9 @@
       "l2_process": "Data & Analytics",
       "l2_slug": "data-analytics",
       "l3_name": "Master Data Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-AI-01",
@@ -2174,9 +2174,9 @@
       "l2_process": "AI & Advanced Analytics",
       "l2_slug": "ai-analytics",
       "l3_name": "ML Model Development & Deployment",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-AI-02",
@@ -2185,9 +2185,9 @@
       "l2_process": "AI & Advanced Analytics",
       "l2_slug": "ai-analytics",
       "l3_name": "Demand Forecasting Model Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-AI-03",
@@ -2196,9 +2196,9 @@
       "l2_process": "AI & Advanced Analytics",
       "l2_slug": "ai-analytics",
       "l3_name": "AI Ops & Model Monitoring",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-AI-04",
@@ -2207,9 +2207,9 @@
       "l2_process": "AI & Advanced Analytics",
       "l2_slug": "ai-analytics",
       "l3_name": "Generative AI Assistant Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-SEC-01",
@@ -2218,9 +2218,9 @@
       "l2_process": "Cybersecurity & Infrastructure",
       "l2_slug": "cyber-infrastructure",
       "l3_name": "Security Operations Center (SOC)",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-SEC-02",
@@ -2229,9 +2229,9 @@
       "l2_process": "Cybersecurity & Infrastructure",
       "l2_slug": "cyber-infrastructure",
       "l3_name": "Identity & Access Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-SEC-03",
@@ -2240,9 +2240,9 @@
       "l2_process": "Cybersecurity & Infrastructure",
       "l2_slug": "cyber-infrastructure",
       "l3_name": "Vulnerability & Patch Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-SEC-04",
@@ -2251,9 +2251,9 @@
       "l2_process": "Cybersecurity & Infrastructure",
       "l2_slug": "cyber-infrastructure",
       "l3_name": "Cloud Infrastructure Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-SEC-05",
@@ -2262,9 +2262,9 @@
       "l2_process": "Cybersecurity & Infrastructure",
       "l2_slug": "cyber-infrastructure",
       "l3_name": "IT Service Management & Support",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-SEC-06",

@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Flight Schedule Updates<br/>Flight Dispatcher"]
+    N2{"Process Passenger Bookings<br/>Revenue Analyst"}
+    N3["Update Passenger Data in SAP S4HANA<br/>Data Analyst"]
+    N4["Generate Check-in Notifications<br/>Customer Service Agent"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Process Check-in Data<br/>Load Controller"}
+    N6["Update Boarding Passes<br/>Baggage Handler"]
+    N7{"Manage Baggage Handling<br/>Baggage Handler"}
+    N8["Monitor PSS System Performance<br/>IT Support Engineer"]
+    N9{"Resolve System Issues<br/>IT Support Engineer"}
+    N10["Update Passenger Status in SAP S4HANA<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Passenger Data for Departure<br/>Data Analyst"]
+    N12["Generate Departure Notifications<br/>Customer Service Agent"]
+    N13["Monitor Departure Process<br/>Flight Dispatcher"]
+    N14["Post-Departure Review and Reporting<br/>IT Support Engineer"]
+  end
+  START --> N1
+  E15["Exception Receive Flight Schedule Updates"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Update Passenger Data in SAP S4H"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Generate Check-in Notifications"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  N5 -->|Yes| N6
+  E18["Exception Update Boarding Passes"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  E19["Exception Monitor PSS System Performance"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  N9 -->|Yes| N10
+  E20["Exception Update Passenger Status in SAP S"]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  N11 --> N12
+  E21["Exception Generate Departure Notifications"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Monitor Departure Process"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N5 -.->|No| N4
+  N7 -.->|No| N6
+  N9 -.->|No| N8
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
