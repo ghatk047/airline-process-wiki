@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Taxable Data<br/>Revenue Analyst"]
+    N2{"Identify Applicable Taxes<br/>Revenue Analyst"}
+    N3["Calculate Tax Amounts<br/>Revenue Analyst"]
+    N4{"Review and Approve Tax Calculations<br/>Finance Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Post Tax Amounts to General Ledger<br/>Accountant"]
+    N6["Generate Tax Reporting Documents<br/>Accountant"]
+    N7{"Review Tax Reports for Compliance<br/>Tax Manager"}
+    N8["Submit Tax Reports to Authorities<br/>Tax Manager"]
+    N9["Monitor Tax Payments<br/>Accountant"]
+    N10["Update Financial Records<br/>Accountant"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11{"Conduct Post-Processing Review<br/>Finance Manager"}
+    N12["Resolve Any Discrepancies<br/>Revenue Analyst, Accountant"]
+    N13["Update Taxation Policies and Procedures<br/>Tax Manager, Revenue Analyst"]
+    N14["Archive Tax Documents<br/>Accountant"]
+  end
+  START --> N1
+  E15["Exception Receive Taxable Data"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Calculate Tax Amounts"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Post Tax Amounts to General Ledg"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Generate Tax Reporting Documents"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  E19["Exception Submit Tax Reports to Authoritie"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Monitor Tax Payments"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  E21["Exception Update Financial Records"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  N11 -->|Yes| N12
+  E22["Exception Resolve Any Discrepancies"]
+  N12 -.->|Exception| E22
+  N12 --> N13
+  N13 --> N14
+  E23["Exception Archive Tax Documents"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N7 -.->|No| N6
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  N11 -.->|No| N10
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

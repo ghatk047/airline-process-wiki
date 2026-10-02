@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Flight Manifest<br/>Flight Dispatcher"}
+    N2["Configure Inflight Entertainment System<br/>Inflight Entertainment Specialist"]
+    N3{"Prepare USB Port Allocation Plan<br/>Load Controller"}
+    N4["Notify Cabin Crew<br/>Flight Dispatcher"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Monitor USB Port Usage<br/>Inflight Entertainment Specialist"}
+    N6["Adjust Port Allocation Dynamically<br/>Load Controller"]
+    N7{"Provide Passenger Assistance<br/>Cabin Crew"}
+    N8["Update Inflight Entertainment System<br/>Inflight Entertainment Specialist"]
+    N9["Monitor Passenger Satisfaction<br/>Customer Service Manager"]
+    N10["Adjust Policies Based on Feedback<br/>Revenue Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize USB Port Usage Report<br/>Inflight Entertainment Specialist"]
+    N12["Update System for Next Flight<br/>Inflight Entertainment Specialist"]
+    N13["Review and Document Issues<br/>Flight Dispatcher"]
+    N14["Close Case and Update Records<br/>Customer Service Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Configure Inflight Entertainment"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Notify Cabin Crew"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  E17["Exception Adjust Port Allocation Dynamical"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  E18["Exception Update Inflight Entertainment Sy"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  N9 --> N10
+  E19["Exception Adjust Policies Based on Feedbac"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Update System for Next Flight"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  N13 --> N14
+  E21["Exception Close Case and Update Records"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

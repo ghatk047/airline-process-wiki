@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Define Personalization Goals<br/>Data Scientist"}
+    N2["Data Collection and Integration<br/>Data Engineer"]
+    N3["Feature Engineering<br/>Data Scientist"]
+    N4{"Model Selection and Training<br/>Data Scientist"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Personalization Engine Deployment<br/>DevOps Engineer"]
+    N6["Real-time Data Processing<br/>Data Engineer"]
+    N7{"Personalization Rule Creation<br/>Business Analyst"}
+    N8{"A/B Testing Setup<br/>Marketing Manager"}
+    N9["Campaign Execution and Monitoring<br/>Marketing Campaign Manager"]
+    N10["Performance Evaluation and Optimization<br/>Data Scientist"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Review and Approval<br/>Product Owner"]
+    N12["Rollout to Production<br/>DevOps Engineer"]
+    N13["Continuous Monitoring and Maintenance<br/>DevOps Engineer"]
+    N14["Feedback Collection and Improvement<br/>Customer Experience Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Data Collection and Integration"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Feature Engineering"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Personalization Engine Deploymen"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Real-time Data Processing"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  N8 -->|Yes| N9
+  E19["Exception Campaign Execution and Monitorin"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Rollout to Production"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  E21["Exception Continuous Monitoring and Mainte"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N7 -.->|No| N6
+  N8 -.->|No| N7
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

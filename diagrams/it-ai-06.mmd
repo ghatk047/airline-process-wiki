@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Data Collection<br/>Data Engineer"]
+    N2["Feature Engineering<br/>Data Scientist"]
+    N3{"Model Training<br/>Data Scientist"}
+    N4{"Model Validation<br/>Data Scientist"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Model Deployment<br/>DevOps Engineer"]
+    N6["Real-time Data Streaming<br/>Data Engineer"]
+    N7["Predictive Analysis<br/>Data Scientist"]
+    N8{"Maintenance Scheduling<br/>Maintenance Planner"}
+    N9["Resource Allocation<br/>Maintenance Planner"]
+    N10{"Feedback Loop<br/>Data Scientist, Maintenance Planner"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Performance Monitoring<br/>DevOps Engineer, Data Scientist"]
+    N12["Continuous Improvement<br/>Data Scientist, Maintenance Planner"]
+    N13["Documentation and Reporting<br/>Data Engineer, Maintenance Planner"]
+    N14["Stakeholder Communication<br/>Maintenance Planner, Data Scientist"]
+  end
+  START --> N1
+  E15["Exception Data Collection"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Feature Engineering"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E17["Exception Model Deployment"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Real-time Data Streaming"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  E19["Exception Predictive Analysis"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  N8 -->|Yes| N9
+  E20["Exception Resource Allocation"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  N10 -->|Yes| N11
+  E21["Exception Performance Monitoring"]
+  N11 -.->|Exception| E21
+  N11 --> N12
+  N12 --> N13
+  E22["Exception Documentation and Reporting"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Stakeholder Communication"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N8 -.->|No| N7
+  N4 -.->|No| N3
+  N10 -.->|No| N9
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Payment Request Reception<br/>Web Developer"]
+    N2{"PCI Compliance Check<br/>IT Security Officer"}
+    N3{"Payment Gateway Authorization<br/>Payment Gateway Operator"}
+    N4["Payment Capture<br/>Revenue Analyst"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Settlement Request Preparation<br/>Financial Analyst"]
+    N6{"Settlement Processing<br/>Payment Processor"}
+    N7{"Post-Settlement Audit<br/>IT Auditor"}
+    N8["Customer Confirmation<br/>Customer Service Representative"]
+    N9["Payment Gateway Monitoring<br/>IT Operations Manager"]
+    N10["PCI Compliance Review<br/>IT Security Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Settlement Confirmation<br/>Financial Analyst"]
+    N12["Payment Gateway Maintenance<br/>IT Operations Manager"]
+    N13["PCI Compliance Training<br/>IT Security Officer"]
+    N14["Payment Gateway Optimization<br/>Web Developer"]
+  end
+  START --> N1
+  E15["Exception Payment Request Reception"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception PCI Compliance Check"]
+  N2 -.->|Exception| E16
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E17["Exception Payment Capture"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  E18["Exception Settlement Request Preparation"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  E19["Exception Post-Settlement Audit"]
+  N7 -.->|Exception| E19
+  N7 -->|Yes| N8
+  E20["Exception Customer Confirmation"]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  N9 --> N10
+  E21["Exception PCI Compliance Review"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  E22["Exception Final Settlement Confirmation"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  N12 --> N13
+  E23["Exception PCI Compliance Training"]
+  N13 -.->|Exception| E23
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  N6 -.->|No| N5
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

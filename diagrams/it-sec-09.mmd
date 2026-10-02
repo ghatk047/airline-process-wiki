@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Vendor Onboarding Request<br/>IT Security Officer"}
+    N2["Risk Assessment Initiation<br/>IT Security Analyst"]
+    N3["Security Questionnaire Distribution<br/>IT Security Analyst"]
+    N4{"Security Questionnaire Review<br/>IT Security Officer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Access Control Configuration<br/>IT Security Engineer"]
+    N6["Monitoring Setup<br/>IT Security Analyst"]
+    N7["Regular Security Audits<br/>IT Security Officer"]
+    N8{"Incident Response Planning<br/>IT Security Manager"}
+    N9["Compliance Monitoring<br/>IT Security Analyst"]
+    N10{"Continuous Improvement<br/>IT Security Officer"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review and Update Access Controls<br/>IT Security Engineer"]
+    N12["Final Security Assessment<br/>IT Security Officer"]
+    N13["Vendor Relationship Management<br/>IT Security Analyst"]
+    N14["Documentation and Reporting<br/>IT Security Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Risk Assessment Initiation"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Security Questionnaire Distribut"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Access Control Configuration"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Monitoring Setup"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  E19["Exception Regular Security Audits"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  N8 -->|Yes| N9
+  E20["Exception Compliance Monitoring"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  N10 -->|Yes| N11
+  E21["Exception Review and Update Access Control"]
+  N11 -.->|Exception| E21
+  N11 --> N12
+  N12 --> N13
+  E22["Exception Vendor Relationship Management"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Documentation and Reporting"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N8 -.->|No| N7
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  N10 -.->|No| N9
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

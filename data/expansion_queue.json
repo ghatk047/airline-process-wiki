@@ -3813,9 +3813,9 @@
       "l2_process": "Inflight Entertainment & Connectivity",
       "l2_slug": "inflight-entertainment",
       "l3_name": "Content Compliance & Censorship",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-EC-06",
@@ -3824,9 +3824,9 @@
       "l2_process": "Inflight Entertainment & Connectivity",
       "l2_slug": "inflight-entertainment",
       "l3_name": "Passenger Device & USB Power Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-EC-07",
@@ -3835,9 +3835,9 @@
       "l2_process": "Inflight Entertainment & Connectivity",
       "l2_slug": "inflight-entertainment",
       "l3_name": "Onboard Portal & Advertising",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-PS-07",
@@ -3846,9 +3846,9 @@
       "l2_process": "Core Airline Platforms",
       "l2_slug": "core-platforms",
       "l3_name": "Interline & Codeshare System Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-PS-08",
@@ -3857,9 +3857,9 @@
       "l2_process": "Core Airline Platforms",
       "l2_slug": "core-platforms",
       "l3_name": "Loyalty Platform Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-PS-09",
@@ -3868,9 +3868,9 @@
       "l2_process": "Core Airline Platforms",
       "l2_slug": "core-platforms",
       "l3_name": "Payment Gateway & PCI Compliance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-DA-06",
@@ -3879,9 +3879,9 @@
       "l2_process": "Data & Analytics",
       "l2_slug": "data-analytics",
       "l3_name": "Data Lake & Warehouse Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-DA-07",
@@ -3890,9 +3890,9 @@
       "l2_process": "Data & Analytics",
       "l2_slug": "data-analytics",
       "l3_name": "Self-Service Analytics Enablement",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-DA-08",
@@ -3901,9 +3901,9 @@
       "l2_process": "Data & Analytics",
       "l2_slug": "data-analytics",
       "l3_name": "Data Privacy & Consent Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-AI-05",
@@ -3912,9 +3912,9 @@
       "l2_process": "AI & Advanced Analytics",
       "l2_slug": "ai-analytics",
       "l3_name": "Revenue & Pricing Optimization AI",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-AI-06",
@@ -3923,9 +3923,9 @@
       "l2_process": "AI & Advanced Analytics",
       "l2_slug": "ai-analytics",
       "l3_name": "Predictive Maintenance Analytics",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-AI-07",
@@ -3934,9 +3934,9 @@
       "l2_process": "AI & Advanced Analytics",
       "l2_slug": "ai-analytics",
       "l3_name": "Customer Personalization Engine",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-AI-08",
@@ -3945,9 +3945,9 @@
       "l2_process": "AI & Advanced Analytics",
       "l2_slug": "ai-analytics",
       "l3_name": "Operational Decision Support AI",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-SEC-07",
@@ -3956,9 +3956,9 @@
       "l2_process": "Cybersecurity & Infrastructure",
       "l2_slug": "cyber-infrastructure",
       "l3_name": "Threat Intelligence & Hunting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-SEC-08",
@@ -3967,9 +3967,9 @@
       "l2_process": "Cybersecurity & Infrastructure",
       "l2_slug": "cyber-infrastructure",
       "l3_name": "Security Awareness & Phishing Program",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IT-SEC-09",
@@ -3978,9 +3978,9 @@
       "l2_process": "Cybersecurity & Infrastructure",
       "l2_slug": "cyber-infrastructure",
       "l3_name": "Third-Party & Supply-Chain Security",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-RA-07",
@@ -3989,9 +3989,9 @@
       "l2_process": "Revenue Accounting",
       "l2_slug": "revenue-accounting",
       "l3_name": "Refund & Exchange Accounting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-RA-08",
@@ -4000,9 +4000,9 @@
       "l2_process": "Revenue Accounting",
       "l2_slug": "revenue-accounting",
       "l3_name": "Tax & Ancillary Fee Accounting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-TR-06",
@@ -4011,9 +4011,9 @@
       "l2_process": "Treasury & Risk",
       "l2_slug": "treasury-risk",
       "l3_name": "Working Capital & Payables Financing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-TR-07",
@@ -4022,9 +4022,9 @@
       "l2_process": "Treasury & Risk",
       "l2_slug": "treasury-risk",
       "l3_name": "Credit Card & Merchant Settlement Risk",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FN-TR-08",

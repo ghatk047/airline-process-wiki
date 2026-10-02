@@ -1,0 +1,61 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Monitor System Health<br/>IT Operations Analyst"}
+    N2{"Data Ingestion Check<br/>ETL Developer"}
+    N3{"Storage Optimization Review<br/>Data Warehouse Manager"}
+    N4{"Security Audit<br/>IT Security Analyst"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Schema Validation<br/>Data Architect"]
+    N6["Query Performance Tuning<br/>Database Administrator"]
+    N7["Data Quality Assessment<br/>Data Analyst"]
+    N8["Backup and Recovery Test<br/>IT Operations Analyst"]
+    N9["Capacity Planning Review<br/>Cloud Infrastructure Engineer"]
+    N10["Compliance Check<br/>IT Compliance Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Implement Optimization Changes<br/>IT Operations Analyst"]
+    N12["Monitor Post-Change Performance<br/>IT Operations Analyst"]
+    N13["Update Documentation<br/>IT Documentation Specialist"]
+    N14["Feedback Loop and Review<br/>IT Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 --> N6
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  E15["Exception Implement Optimization Changes"]
+  N11 -.->|Exception| E15
+  N11 --> N12
+  E16["Exception Monitor Post-Change Performance"]
+  N12 -.->|Exception| E16
+  N12 --> N13
+  E17["Exception Update Documentation"]
+  N13 -.->|Exception| E17
+  N13 --> N14
+  E18["Exception Feedback Loop and Review"]
+  N14 -.->|Exception| E18
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
