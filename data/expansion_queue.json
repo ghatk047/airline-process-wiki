@@ -1173,9 +1173,9 @@
       "l2_process": "Refunds & Servicing",
       "l2_slug": "refunds-servicing",
       "l3_name": "Refund Request Processing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-RF-02",
@@ -1184,9 +1184,9 @@
       "l2_process": "Refunds & Servicing",
       "l2_slug": "refunds-servicing",
       "l3_name": "Ticket Exchange & Reissue",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-RF-03",
@@ -1195,9 +1195,9 @@
       "l2_process": "Refunds & Servicing",
       "l2_slug": "refunds-servicing",
       "l3_name": "Involuntary Refund Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-RF-04",
@@ -1206,9 +1206,9 @@
       "l2_process": "Refunds & Servicing",
       "l2_slug": "refunds-servicing",
       "l3_name": "Chargeback & Dispute Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-RF-05",
@@ -1217,9 +1217,9 @@
       "l2_process": "Refunds & Servicing",
       "l2_slug": "refunds-servicing",
       "l3_name": "Travel Credit & Voucher Redemption",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-LP-01",
@@ -1228,9 +1228,9 @@
       "l2_process": "Loyalty & Partnerships",
       "l2_slug": "loyalty-partnerships",
       "l3_name": "Elite Tier Qualification & Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-LP-02",
@@ -1239,9 +1239,9 @@
       "l2_process": "Loyalty & Partnerships",
       "l2_slug": "loyalty-partnerships",
       "l3_name": "Points Accrual & Redemption Processing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-LP-03",
@@ -1250,9 +1250,9 @@
       "l2_process": "Loyalty & Partnerships",
       "l2_slug": "loyalty-partnerships",
       "l3_name": "Co-Brand Credit Card Partnership",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-LP-04",
@@ -1261,9 +1261,9 @@
       "l2_process": "Loyalty & Partnerships",
       "l2_slug": "loyalty-partnerships",
       "l3_name": "Airline & Hotel Partner Reward Exchange",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-LP-05",
@@ -1272,9 +1272,9 @@
       "l2_process": "Loyalty & Partnerships",
       "l2_slug": "loyalty-partnerships",
       "l3_name": "Loyalty Fraud Detection",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-LP-06",
@@ -1283,9 +1283,9 @@
       "l2_process": "Loyalty & Partnerships",
       "l2_slug": "loyalty-partnerships",
       "l3_name": "Promotional Campaign Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-BK-01",
@@ -1294,9 +1294,9 @@
       "l2_process": "Cargo Sales & Booking",
       "l2_slug": "cargo-booking",
       "l3_name": "Cargo Capacity Allocation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-BK-02",
@@ -1305,9 +1305,9 @@
       "l2_process": "Cargo Sales & Booking",
       "l2_slug": "cargo-booking",
       "l3_name": "Air Waybill Creation & Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-BK-03",
@@ -1316,9 +1316,9 @@
       "l2_process": "Cargo Sales & Booking",
       "l2_slug": "cargo-booking",
       "l3_name": "Cargo Rate Quotation & Contracts",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-BK-04",
@@ -1327,9 +1327,9 @@
       "l2_process": "Cargo Sales & Booking",
       "l2_slug": "cargo-booking",
       "l3_name": "Interline Cargo Booking",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-BK-05",
@@ -1338,9 +1338,9 @@
       "l2_process": "Cargo Sales & Booking",
       "l2_slug": "cargo-booking",
       "l3_name": "E-Commerce & Mail Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-BK-06",
@@ -1349,9 +1349,9 @@
       "l2_process": "Cargo Sales & Booking",
       "l2_slug": "cargo-booking",
       "l3_name": "Charter Cargo Coordination",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-OP-01",
@@ -1360,9 +1360,9 @@
       "l2_process": "Cargo Operations",
       "l2_slug": "cargo-operations",
       "l3_name": "ULD Build-Up & Palletization",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-OP-02",
@@ -1371,9 +1371,9 @@
       "l2_process": "Cargo Operations",
       "l2_slug": "cargo-operations",
       "l3_name": "Dangerous Goods Cargo Acceptance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-OP-03",
@@ -1382,9 +1382,9 @@
       "l2_process": "Cargo Operations",
       "l2_slug": "cargo-operations",
       "l3_name": "Perishable & Cold-Chain Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-OP-04",

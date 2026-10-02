@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Monitor Account Activity<br/>Fraud Analyst"}
+    N2{"Initial Investigation<br/>Fraud Analyst"}
+    N3{"Review and Escalate<br/>Fraud Analyst, Compliance Officer"}
+    N4["Notify Stakeholders<br/>Compliance Officer, Customer Service Manag"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Detailed Investigation<br/>Fraud Analyst, Compliance Officer"}
+    N6["Analyze Transaction Patterns<br/>Data Analyst"]
+    N7["Review Customer Profiles<br/>Customer Service Manager, Data Analyst"]
+    N8["Identify Potential Fraudsters<br/>Fraud Analyst, Compliance Officer"]
+    N9["Implement Fraud Mitigation Measures<br/>Compliance Officer, IT Security Manager"]
+    N10["Monitor Mitigation Effectiveness<br/>Fraud Analyst, IT Security Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review and Update Policies<br/>Compliance Officer, Legal Counsel"]
+    N12["Report to Management<br/>Compliance Officer, CEO"]
+    N13["Train Staff<br/>Customer Service Manager, Compliance Offic"]
+    N14["Continuous Monitoring and Improvement<br/>Fraud Analyst, Data Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  E15["Exception Review and Escalate"]
+  N3 -.->|Exception| E15
+  N3 -->|Yes| N4
+  E16["Exception Notify Stakeholders"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  E17["Exception Implement Fraud Mitigation Measu"]
+  N9 -.->|Exception| E17
+  N9 --> N10
+  E18["Exception Monitor Mitigation Effectiveness"]
+  N10 -.->|Exception| E18
+  N10 --> N11
+  N11 --> N12
+  E19["Exception Report to Management"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  N13 --> N14
+  E20["Exception Continuous Monitoring and Improv"]
+  N14 -.->|Exception| E20
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

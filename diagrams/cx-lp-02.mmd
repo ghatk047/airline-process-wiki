@@ -1,0 +1,55 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Identify Customer Activity<br/>Revenue Analyst"}
+    N2{"Determine Points Accrual Rules<br/>Loyalty Program Manager"}
+    N3{"Calculate Points Accrual<br/>Revenue Analyst"}
+    N4{"Update Customer Loyalty Records<br/>Revenue Analyst"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Process Redemption Requests<br/>Loyalty Program Manager"]
+    N6["Validate Redemption Eligibility<br/>Revenue Analyst"]
+    N7["Allocate Redemption Points<br/>Revenue Analyst"]
+    N8["Update Customer Loyalty Records Post-Redem<br/>Revenue Analyst"]
+    N9["Generate Redemption Receipts<br/>Revenue Analyst"]
+    N10["Notify Customers of Redemption Status<br/>Customer Service Representative"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Points Accrual and Redemption Repor<br/>Loyalty Program Manager"]
+    N12["Generate Monthly Loyalty Report<br/>Revenue Analyst"]
+    N13["Review and Adjust Points Accrual Rules<br/>Loyalty Program Manager"]
+    N14["Monitor and Report on KPIs<br/>Revenue Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 --> N6
+  E15["Exception Validate Redemption Eligibility"]
+  N6 -.->|Exception| E15
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

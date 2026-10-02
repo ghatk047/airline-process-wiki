@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Application/Initiate Review<br/>Customer Relationship Manager CRM"}
+    N2{"Validate Eligibility Criteria<br/>Loyalty Analyst"}
+    N3{"Approve/Deny Application<br/>Loyalty Program Manager"}
+    N4["Notify Member of Status<br/>Customer Service Representative CSR"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Monitor Member Activity<br/>Data Analyst"]
+    N6{"Assess Qualification Status<br/>Loyalty Analyst"}
+    N7["Adjust Benefits as Needed<br/>Loyalty Program Manager"]
+    N8["Update Member Records<br/>Data Analyst"]
+    N9["Communicate Changes to Members<br/>Customer Service Representative CSR"]
+    N10["Review and Optimize Program<br/>Loyalty Program Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Conduct Final Review<br/>Loyalty Program Manager"]
+    N12["Implement Changes<br/>IT Specialist"]
+    N13["Monitor Program Performance<br/>Data Analyst"]
+    N14["Report to Stakeholders<br/>Loyalty Program Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Validate Eligibility Criteria"]
+  N2 -.->|Exception| E15
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Notify Member of Status"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  E17["Exception Monitor Member Activity"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 --> N8
+  E18["Exception Update Member Records"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Communicate Changes to Members"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Implement Changes"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  E21["Exception Monitor Program Performance"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  E22["Exception Report to Stakeholders"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

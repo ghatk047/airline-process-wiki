@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Proposal Review<br/>Loyalty Program Manager"}
+    N2["Define Benefits and Terms<br/>Loyalty Program Analyst"]
+    N3{"Technical Feasibility Assessment<br/>IT Systems Engineer"}
+    N4{"Secure Funding and Approval<br/>Finance Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Develop Marketing Strategy<br/>Marketing Manager"]
+    N6["Design Credit Card Offerings<br/>Product Manager"]
+    N7{"Implement Technical Integration<br/>IT Developer"}
+    N8["Conduct Internal Training<br/>Customer Service Manager"]
+    N9["Launch Campaign Preparation<br/>Marketing Manager"]
+    N10["Execute Launch Campaign<br/>Marketing Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Monitor Program Performance<br/>Loyalty Program Analyst"]
+    N12["Evaluate Customer Feedback<br/>Customer Service Manager"]
+    N13["Adjust Program Based on Feedback<br/>Loyalty Program Manager"]
+    N14["Review and Renew Partnership<br/>Loyalty Program Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Define Benefits and Terms"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Secure Funding and Approval"]
+  N4 -.->|Exception| E16
+  N4 -->|Yes| N5
+  E17["Exception Develop Marketing Strategy"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Design Credit Card Offerings"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  E19["Exception Conduct Internal Training"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Launch Campaign Preparation"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  N10 --> N11
+  E21["Exception Monitor Program Performance"]
+  N11 -.->|Exception| E21
+  N11 --> N12
+  N12 --> N13
+  E22["Exception Adjust Program Based on Feedback"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N7 -.->|No| N6
+  N4 -.->|No| N3
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
