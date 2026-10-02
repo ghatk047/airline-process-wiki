@@ -1,0 +1,74 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Verify Aircraft Equipment<br/>Flight Dispatcher"}
+    N2{"Check Flight Plan<br/>Flight Dispatcher"}
+    N3["Review Weather Conditions<br/>Weather Analyst"]
+    N4{"Confirm RVSM Approval<br/>Flight Dispatcher"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Update Flight Plan in PSS<br/>Flight Dispatcher"]
+    N6["Notify Air Traffic Control ATC<br/>Flight Dispatcher"]
+    N7["Monitor Flight Departure<br/>Flight Dispatcher"]
+    N8["Review Flight Performance<br/>Flight Dispatcher"]
+    N9["Update Maintenance Records<br/>Maintenance Coordinator"]
+    N10["Prepare for Next Flight<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review RVSM Compliance Post-Flight<br/>Flight Dispatcher"]
+    N12["Update RVSM Compliance Status<br/>Flight Dispatcher"]
+    N13["Report RVSM Compliance to Management<br/>Flight Operations Manager"]
+    N14["Close RVSM Compliance Case<br/>Flight Dispatcher"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  E15["Exception Review Weather Conditions"]
+  N3 -.->|Exception| E15
+  N3 --> N4
+  N4 -->|Yes| N5
+  E16["Exception Update Flight Plan in PSS"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  E17["Exception Notify Air Traffic Control ATC"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  E18["Exception Monitor Flight Departure"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  E19["Exception Review Flight Performance"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Update Maintenance Records"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  E21["Exception Prepare for Next Flight"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  E22["Exception Review RVSM Compliance Post-Flig"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  E23["Exception Update RVSM Compliance Status"]
+  N12 -.->|Exception| E23
+  N12 --> N13
+  E24["Exception Report RVSM Compliance to Manage"]
+  N13 -.->|Exception| E24
+  N13 --> N14
+  E25["Exception Close RVSM Compliance Case"]
+  N14 -.->|Exception| E25
+  DONE([Complete])
+  N14 --> DONE
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24,E25 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

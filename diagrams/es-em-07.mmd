@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Initiate Climate Risk Assessment<br/>Sustainability Manager"}
+    N2["Gather Data on Emissions and Operations<br/>Data Analyst"]
+    N3{"Identify Climate Risks<br/>Risk Analyst"}
+    N4["Conduct Scenario Analysis<br/>Climate Risk Specialist"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Develop TCFD Disclosure Framework<br/>Sustainability Manager"}
+    N6["Draft TCFD Disclosure Document<br/>Sustainability Analyst"]
+    N7{"Review and Edit TCFD Document<br/>Sustainability Manager, Legal Counsel"}
+    N8["External Review by Stakeholders<br/>Stakeholder Relations Manager"]
+    N9["Finalize TCFD Disclosure Document<br/>Sustainability Manager"]
+    N10["Prepare for Submission<br/>Sustainability Manager, Compliance Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Submit TCFD Disclosure Document<br/>Sustainability Manager, Compliance Officer"]
+    N12["Monitor Stakeholder Feedback<br/>Stakeholder Relations Manager"]
+    N13["Review and Update Climate Risk Management <br/>Sustainability Manager, Risk Analyst"]
+    N14["Document Lessons Learned<br/>Sustainability Manager, Continuous Improve"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Gather Data on Emissions and Ope"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Conduct Scenario Analysis"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  E17["Exception Draft TCFD Disclosure Document"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  E18["Exception External Review by Stakeholders"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Finalize TCFD Disclosure Documen"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Monitor Stakeholder Feedback"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  N13 --> N14
+  E21["Exception Document Lessons Learned"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N7 -.->|No| N6
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

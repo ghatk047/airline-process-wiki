@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Maintenance Plan<br/>Maintenance Planner"}
+    N2["Obtain Vendor Quotes<br/>Maintenance Planner"]
+    N3{"Evaluate Quotes and Select Vendors<br/>Maintenance Planner"}
+    N4{"Update Maintenance Budget<br/>Finance Analyst"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Procure Parts and Services<br/>Maintenance Planner"]
+    N6{"Schedule Maintenance Tasks<br/>Flight Dispatcher"}
+    N7["Monitor Maintenance Progress<br/>Maintenance Planner"]
+    N8["Adjust Budget for Variations<br/>Finance Analyst"]
+    N9["Execute Maintenance Tasks<br/>Maintenance Crew"]
+    N10["Conduct Post-Maintenance Review<br/>Maintenance Planner"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Maintenance Budget<br/>Finance Analyst"]
+    N12["Update Maintenance Records<br/>Maintenance Planner"]
+    N13["Report Maintenance Costs to Management<br/>Finance Analyst"]
+    N14["Close Maintenance Cycle<br/>Maintenance Planner"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Obtain Vendor Quotes"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Update Maintenance Budget"]
+  N4 -.->|Exception| E16
+  N4 -->|Yes| N5
+  E17["Exception Procure Parts and Services"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception Monitor Maintenance Progress"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  N8 --> N9
+  E19["Exception Execute Maintenance Tasks"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Update Maintenance Records"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

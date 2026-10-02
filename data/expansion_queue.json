@@ -4253,9 +4253,9 @@
       "l2_process": "Cargo Operations",
       "l2_slug": "cargo-operations",
       "l3_name": "Valuable & Vulnerable Cargo Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-CA-10",
@@ -4264,9 +4264,9 @@
       "l2_process": "Catering & Provisioning",
       "l2_slug": "catering-provisioning",
       "l3_name": "Zero-Waste & Sustainable Catering",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-LC-09",
@@ -4275,9 +4275,9 @@
       "l2_process": "Aircraft Lifecycle",
       "l2_slug": "aircraft-lifecycle",
       "l3_name": "End-of-Lease Technical Reconciliation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PL-09",
@@ -4286,9 +4286,9 @@
       "l2_process": "Maintenance Planning",
       "l2_slug": "maintenance-planning",
       "l3_name": "Maintenance Cost Control & Budgeting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-DC-10",
@@ -4297,9 +4297,9 @@
       "l2_process": "Disruption & Care",
       "l2_slug": "disruption-care",
       "l3_name": "Passenger Rights Regulatory Compliance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-DR-11",
@@ -4308,9 +4308,9 @@
       "l2_process": "Dispatch & Release",
       "l2_slug": "dispatch-release",
       "l3_name": "Reduced Vertical Separation (RVSM) Compliance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-TR-11",
@@ -4319,9 +4319,9 @@
       "l2_process": "Crew Training & Qualification",
       "l2_slug": "crew-training",
       "l3_name": "Pilot Cadet & Ab-Initio Program",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "ES-EM-07",
@@ -4330,9 +4330,9 @@
       "l2_process": "Emissions & Reporting",
       "l2_slug": "emissions-reporting",
       "l3_name": "Climate Risk & TCFD Disclosure",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     }
   ]
 }
