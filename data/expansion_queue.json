@@ -3373,9 +3373,9 @@
       "l2_process": "Cargo Sales & Booking",
       "l2_slug": "cargo-booking",
       "l3_name": "Cargo Capacity Forecasting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-BK-08",
@@ -3384,9 +3384,9 @@
       "l2_process": "Cargo Sales & Booking",
       "l2_slug": "cargo-booking",
       "l3_name": "Cargo Yield & Pricing Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-BK-09",
@@ -3395,9 +3395,9 @@
       "l2_process": "Cargo Sales & Booking",
       "l2_slug": "cargo-booking",
       "l3_name": "Special Cargo Booking Approval",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-OP-07",
@@ -3406,9 +3406,9 @@
       "l2_process": "Cargo Operations",
       "l2_slug": "cargo-operations",
       "l3_name": "Cargo Warehouse Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-OP-08",
@@ -3417,9 +3417,9 @@
       "l2_process": "Cargo Operations",
       "l2_slug": "cargo-operations",
       "l3_name": "Cargo Cool-Chain Facility Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-OP-09",
@@ -3428,9 +3428,9 @@
       "l2_process": "Cargo Operations",
       "l2_slug": "cargo-operations",
       "l3_name": "Mail & Courier Integration",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-CU-05",
@@ -3439,9 +3439,9 @@
       "l2_process": "Cargo Customs & Compliance",
       "l2_slug": "cargo-customs",
       "l3_name": "Advance Cargo Information Filing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-CU-06",
@@ -3450,9 +3450,9 @@
       "l2_process": "Cargo Customs & Compliance",
       "l2_slug": "cargo-customs",
       "l3_name": "Cargo Security Regulated Agent Program",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-CU-07",
@@ -3461,9 +3461,9 @@
       "l2_process": "Cargo Customs & Compliance",
       "l2_slug": "cargo-customs",
       "l3_name": "Restricted & Prohibited Goods Screening",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-TR-05",
@@ -3472,9 +3472,9 @@
       "l2_process": "Cargo Tracking & Recovery",
       "l2_slug": "cargo-tracking",
       "l3_name": "Cargo Milestone Status Updates",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-TR-06",
@@ -3483,9 +3483,9 @@
       "l2_process": "Cargo Tracking & Recovery",
       "l2_slug": "cargo-tracking",
       "l3_name": "Cargo Damage & Loss Investigation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CG-TR-07",
@@ -3494,9 +3494,9 @@
       "l2_process": "Cargo Tracking & Recovery",
       "l2_slug": "cargo-tracking",
       "l3_name": "Cargo Interline Settlement",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SM-06",
@@ -3505,9 +3505,9 @@
       "l2_process": "Safety Management System",
       "l2_slug": "safety-management",
       "l3_name": "Change Management Safety Assessment",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SM-07",
@@ -3516,9 +3516,9 @@
       "l2_process": "Safety Management System",
       "l2_slug": "safety-management",
       "l3_name": "Safety Promotion & Culture Survey",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SM-08",
@@ -3527,9 +3527,9 @@
       "l2_process": "Safety Management System",
       "l2_slug": "safety-management",
       "l3_name": "Supplier & Outsource Safety Oversight",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-FD-06",
@@ -3538,9 +3538,9 @@
       "l2_process": "Flight Data & Occurrence",
       "l2_slug": "flight-data-occurrence",
       "l3_name": "Line Operations Safety Audit (LOSA)",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-FD-07",
@@ -3549,9 +3549,9 @@
       "l2_process": "Flight Data & Occurrence",
       "l2_slug": "flight-data-occurrence",
       "l3_name": "Fatigue & Human Factors Analysis",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-FD-08",
@@ -3560,9 +3560,9 @@
       "l2_process": "Flight Data & Occurrence",
       "l2_slug": "flight-data-occurrence",
       "l3_name": "Safety Data Sharing (ASIAS) Program",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SE-06",
@@ -3571,9 +3571,9 @@
       "l2_process": "Aviation Security (AVSEC)",
       "l2_slug": "aviation-security",
       "l3_name": "Passenger & Baggage Screening Coordination",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SE-07",
@@ -3582,9 +3582,9 @@
       "l2_process": "Aviation Security (AVSEC)",
       "l2_slug": "aviation-security",
       "l3_name": "Security Incident Response",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-SE-08",

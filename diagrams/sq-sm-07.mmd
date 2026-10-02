@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Define Survey Scope<br/>Safety Manager"}
+    N2["Develop Survey Questions<br/>Safety Analyst"]
+    N3["Select Survey Participants<br/>HR Manager"]
+    N4["Launch Survey<br/>Safety Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Monitor Survey Progress<br/>Safety Analyst"]
+    N6["Collect Survey Responses<br/>Safety Analyst"]
+    N7{"Analyze Survey Data<br/>Safety Analyst"}
+    N8{"Develop Action Plan<br/>Safety Manager"}
+    N9["Communicate Survey Results<br/>Safety Manager"]
+    N10{"Implement Action Plan<br/>Safety Manager, Line Managers"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Action Plan Progress<br/>Safety Manager"]
+    N12["Conduct Follow-Up Survey Optional<br/>Safety Analyst"]
+    N13["Finalize Safety Culture Report<br/>Safety Manager"]
+    N14["Report to Management<br/>Safety Manager, CEO"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Develop Survey Questions"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Select Survey Participants"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Launch Survey"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  E18["Exception Monitor Survey Progress"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  E19["Exception Collect Survey Responses"]
+  N6 -.->|Exception| E19
+  N6 --> N7
+  N7 -->|Yes| N8
+  N8 -->|Yes| N9
+  E20["Exception Communicate Survey Results"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  N10 -->|Yes| N11
+  E21["Exception Review Action Plan Progress"]
+  N11 -.->|Exception| E21
+  N11 --> N12
+  N12 --> N13
+  E22["Exception Finalize Safety Culture Report"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Report to Management"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N10 -.->|No| N9
+  N1 -.->|No| START
+  N8 -.->|No| N7
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

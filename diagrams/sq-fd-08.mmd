@@ -1,0 +1,63 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Report Occurrence<br/>Flight Dispatcher"}
+    N2{"Initial Assessment<br/>Safety Analyst"}
+    N3{"Data Validation<br/>Quality Assurance Officer"}
+    N4["Prepare Sharing Package<br/>Safety Coordinator"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Distribute Sharing Package<br/>Safety Coordinator"]
+    N6{"Receive Feedback<br/>Safety Analyst"}
+    N7["Analyze Feedback<br/>Safety Analyst"]
+    N8["Develop Safety Recommendations<br/>Safety Coordinator"]
+    N9["Implement Recommendations<br/>Safety Manager"]
+    N10["Monitor Effectiveness<br/>Safety Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review and Update Program<br/>Safety Coordinator"]
+    N12["Communicate Updates<br/>Safety Coordinator"]
+    N13["Audit Compliance<br/>Compliance Officer"]
+    N14["Close Case<br/>Safety Coordinator"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E15["Exception Prepare Sharing Package"]
+  N4 -.->|Exception| E15
+  N4 --> N5
+  E16["Exception Distribute Sharing Package"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  E17["Exception Monitor Effectiveness"]
+  N10 -.->|Exception| E17
+  N10 --> N11
+  N11 --> N12
+  E18["Exception Communicate Updates"]
+  N12 -.->|Exception| E18
+  N12 --> N13
+  N13 --> N14
+  E19["Exception Close Case"]
+  N14 -.->|Exception| E19
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

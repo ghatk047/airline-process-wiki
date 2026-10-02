@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Booking Request<br/>Cargo Sales Agent"]
+    N2{"Validate Booking Details<br/>Cargo Operations Manager"}
+    N3{"Allocate Cargo Space<br/>Load Controller"}
+    N4["Generate Load Manifest<br/>Flight Dispatcher"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Load Cargo onto Aircraft<br/>Cargo Handler"]
+    N6{"Conduct Pre-flight Inspection<br/>Flight Engineer"}
+    N7["Update Tracking System<br/>Cargo Operations Manager"]
+    N8["Monitor Flight Progress<br/>Flight Dispatcher"]
+    N9{"Prepare for Unloading<br/>Load Controller"}
+    N10["Unload Cargo from Aircraft<br/>Cargo Handler"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Update Final Tracking Status<br/>Cargo Operations Manager"]
+    N12["Generate Delivery Report<br/>Cargo Operations Manager"]
+    N13["Conduct Post-Delivery Review<br/>Cargo Operations Manager"]
+    N14["Update Customer Records<br/>Cargo Operations Manager"]
+  end
+  START --> N1
+  E15["Exception Receive Booking Request"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Allocate Cargo Space"]
+  N3 -.->|Exception| E16
+  N3 -->|Yes| N4
+  E17["Exception Generate Load Manifest"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  E18["Exception Load Cargo onto Aircraft"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  E19["Exception Update Tracking System"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  E20["Exception Monitor Flight Progress"]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  N9 -->|Yes| N10
+  E21["Exception Unload Cargo from Aircraft"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  E22["Exception Update Final Tracking Status"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  E23["Exception Generate Delivery Report"]
+  N12 -.->|Exception| E23
+  N12 --> N13
+  N13 --> N14
+  E24["Exception Update Customer Records"]
+  N14 -.->|Exception| E24
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N3 -.->|No| N2
+  N9 -.->|No| N8
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Cargo Manifest Review<br/>Cargo Agent"]
+    N2{"Initial Screening<br/>Cargo Security Officer"}
+    N3["Customs Declaration Preparation<br/>Customs Broker"]
+    N4["Customs Submission<br/>Customs Broker"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Customs Response Analysis<br/>Cargo Agent"}
+    N6{"Cargo Re-routing Decision<br/>Operations Manager"}
+    N7["Cargo Re-routing Execution<br/>Flight Dispatcher"]
+    N8{"Final Screening<br/>Cargo Security Officer"}
+    N9["Customs Clearance Notification<br/>Cargo Agent"]
+    N10["Post-Clearance Audit<br/>Internal Auditor"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Compliance Review<br/>Legal Counsel"]
+    N12["Training and Documentation Update<br/>Training Manager"]
+    N13["Process Improvement Planning<br/>Operations Manager"]
+    N14["Implementation of Improvements<br/>IT Support Team"]
+  end
+  START --> N1
+  E15["Exception Cargo Manifest Review"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Customs Declaration Preparation"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Customs Submission"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  N5 -->|Yes| N6
+  E18["Exception Cargo Re-routing Decision"]
+  N6 -.->|Exception| E18
+  N6 -->|Yes| N7
+  E19["Exception Cargo Re-routing Execution"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  N8 -->|Yes| N9
+  E20["Exception Customs Clearance Notification"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  E21["Exception Post-Clearance Audit"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  N11 --> N12
+  E22["Exception Training and Documentation Updat"]
+  N12 -.->|Exception| E22
+  N12 --> N13
+  N13 --> N14
+  E23["Exception Implementation of Improvements"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N5 -.->|No| N4
+  N8 -.->|No| N7
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

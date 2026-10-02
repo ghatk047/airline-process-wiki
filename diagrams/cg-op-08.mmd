@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Receive Cargo Arrival Notification<br/>Cargo Operations Coordinator"}
+    N2{"Allocate Cool-Chain Facility<br/>Facility Manager"}
+    N3["Set Temperature Parameters<br/>Facility Engineer"]
+    N4{"Monitor Initial Temperature Stability<br/>Facility Engineer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Update Cargo Tracking Record<br/>Cargo Operations Coordinator"]
+    N6["Conduct Regular Temperature Monitoring<br/>Facility Engineer"]
+    N7{"Review Monitoring Reports<br/>Facility Manager"}
+    N8["Adjust Temperature Settings if Necessary<br/>Facility Engineer"]
+    N9["Update Cargo Tracking Record with Adjustme<br/>Cargo Operations Coordinator"]
+    N10["Prepare for Departure<br/>Cargo Operations Coordinator"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Conduct Final Temperature Check<br/>Facility Engineer"]
+    N12["Update Cargo Tracking Record with Final Ch<br/>Cargo Operations Coordinator"]
+    N13["Generate Cargo Release Documentation<br/>Cargo Operations Coordinator"]
+    N14["Notify Ground Handling of Departure<br/>Cargo Operations Coordinator"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  E15["Exception Set Temperature Parameters"]
+  N3 -.->|Exception| E15
+  N3 --> N4
+  N4 -->|Yes| N5
+  E16["Exception Update Cargo Tracking Record"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  E17["Exception Conduct Regular Temperature Moni"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  N8 --> N9
+  E18["Exception Update Cargo Tracking Record wit"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E19["Exception Update Cargo Tracking Record wit"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  E20["Exception Generate Cargo Release Documenta"]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  E21["Exception Notify Ground Handling of Depart"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N1 -.->|No| START
+  N7 -.->|No| N6
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Initiate Safety Audit Request<br/>Safety Manager"]
+    N2["Assign Auditor<br/>Safety Manager"]
+    N3["Prepare Audit Checklist<br/>Auditor"]
+    N4{"Conduct Initial Audit<br/>Auditor"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Review Initial Audit Report<br/>Safety Manager"]
+    N6{"Schedule Follow-Up Audit<br/>Safety Manager"}
+    N7{"Conduct Follow-Up Audit<br/>Auditor"}
+    N8["Review Follow-Up Audit Report<br/>Safety Manager"]
+    N9["Update Supplier Compliance Status<br/>Safety Manager"]
+    N10["Generate Compliance Report<br/>Safety Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11{"Review Annual Compliance Report<br/>Senior Management"}
+    N12["Update Safety Management System<br/>Safety Manager"]
+    N13["Communicate Compliance Status<br/>Safety Manager"]
+    N14["Plan Continuous Improvement<br/>Safety Manager"]
+  end
+  START --> N1
+  E15["Exception Initiate Safety Audit Request"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 --> N3
+  E16["Exception Prepare Audit Checklist"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Conduct Initial Audit"]
+  N4 -.->|Exception| E17
+  N4 -->|Yes| N5
+  E18["Exception Review Initial Audit Report"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  E19["Exception Conduct Follow-Up Audit"]
+  N7 -.->|Exception| E19
+  N7 -->|Yes| N8
+  E20["Exception Review Follow-Up Audit Report"]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  E21["Exception Update Supplier Compliance Statu"]
+  N9 -.->|Exception| E21
+  N9 --> N10
+  E22["Exception Generate Compliance Report"]
+  N10 -.->|Exception| E22
+  N10 --> N11
+  N11 -->|Yes| N12
+  E23["Exception Update Safety Management System"]
+  N12 -.->|Exception| E23
+  N12 --> N13
+  E24["Exception Communicate Compliance Status"]
+  N13 -.->|Exception| E24
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N4 -.->|No| N3
+  N11 -.->|No| N10
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

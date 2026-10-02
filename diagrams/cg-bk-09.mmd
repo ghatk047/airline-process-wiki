@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Booking Request<br/>Cargo Sales Representative"]
+    N2{"Initial Screening<br/>Cargo Operations Analyst"}
+    N3{"Risk Assessment<br/>Risk Analyst"}
+    N4{"Legal Review<br/>Legal Counsel"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Financial Impact Analysis<br/>Finance Analyst"}
+    N6["Compliance Check<br/>Compliance Officer"]
+    N7["Customer Communication Plan<br/>Cargo Sales Representative"]
+    N8["Final Approval Review<br/>Cargo Operations Manager"]
+    N9["Update Booking Status<br/>Cargo Operations Analyst"]
+    N10["Notify Stakeholders<br/>Cargo Operations Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Post-Approval Review<br/>Cargo Operations Analyst"]
+    N12["Close Booking Request<br/>Cargo Operations Manager"]
+    N13["Update Customer Records<br/>Cargo Sales Representative"]
+    N14["Final Documentation Review<br/>Legal Counsel"]
+  end
+  START --> N1
+  E15["Exception Receive Booking Request"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 -->|Yes| N6
+  N6 --> N7
+  E16["Exception Customer Communication Plan"]
+  N7 -.->|Exception| E16
+  N7 --> N8
+  N8 --> N9
+  E17["Exception Update Booking Status"]
+  N9 -.->|Exception| E17
+  N9 --> N10
+  E18["Exception Notify Stakeholders"]
+  N10 -.->|Exception| E18
+  N10 --> N11
+  E19["Exception Post-Approval Review"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  E20["Exception Close Booking Request"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  E21["Exception Update Customer Records"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  E22["Exception Final Documentation Review"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N3 -.->|No| N2
+  N4 -.->|No| N3
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

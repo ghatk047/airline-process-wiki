@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Booking Request<br/>Cargo Sales Representative"]
+    N2["Initial Yield Assessment<br/>Cargo Yield Analyst"]
+    N3{"Pricing Strategy Review<br/>Revenue Analyst"}
+    N4{"Customer Negotiation Initiation<br/>Cargo Sales Representative"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Negotiation<br/>Cargo Sales Representative"}
+    N6{"Validate Pricing Agreement<br/>Revenue Analyst"}
+    N7["Update Cargo Manifest<br/>Load Controller"]
+    N8["Generate Invoicing Document<br/>Finance Analyst"]
+    N9["Send Invoicing Document to Customer<br/>Cargo Sales Representative"]
+    N10["Monitor Payment Status<br/>Finance Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Cargo Utilization<br/>Cargo Yield Analyst"]
+    N12["Update Pricing Strategy<br/>Revenue Analyst"]
+    N13["Review Financial Impact<br/>Finance Analyst"]
+    N14["Adjust Pricing Strategy if Necessary<br/>Revenue Analyst"]
+  end
+  START --> N1
+  E15["Exception Receive Booking Request"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Initial Yield Assessment"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  E17["Exception Pricing Strategy Review"]
+  N3 -.->|Exception| E17
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 -->|Yes| N6
+  E18["Exception Validate Pricing Agreement"]
+  N6 -.->|Exception| E18
+  N6 -->|Yes| N7
+  E19["Exception Update Cargo Manifest"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  E20["Exception Generate Invoicing Document"]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  E21["Exception Send Invoicing Document to Custo"]
+  N9 -.->|Exception| E21
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N6 -.->|No| N5
+  N4 -.->|No| N3
+  N3 -.->|No| N2
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

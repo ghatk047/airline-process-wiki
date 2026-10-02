@@ -1,0 +1,63 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Cargo Event<br/>Cargo Handler"]
+    N2{"Validate Event Data<br/>Cargo Operations Analyst"}
+    N3{"Update Cargo Status<br/>Cargo Operations Analyst"}
+    N4["Notify Stakeholders<br/>Cargo Operations Analyst"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Monitor Cargo Milestones<br/>Cargo Tracking Coordinator"}
+    N6{"Identify Exceptions<br/>Cargo Tracking Coordinator"}
+    N7["Escalate Exceptions<br/>Cargo Tracking Coordinator"]
+    N8["Update Recovery Plan<br/>Cargo Recovery Manager"]
+    N9["Execute Recovery Actions<br/>Cargo Recovery Team"]
+    N10["Monitor Recovery Progress<br/>Cargo Recovery Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Cargo Status<br/>Cargo Operations Analyst"]
+    N12["Generate Final Report<br/>Cargo Operations Analyst"]
+    N13["Archive Records<br/>Cargo Operations Analyst"]
+    N14["Review and Improve Process<br/>Cargo Operations Manager"]
+  end
+  START --> N1
+  E15["Exception Receive Cargo Event"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Notify Stakeholders"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  E17["Exception Escalate Exceptions"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E18["Exception Generate Final Report"]
+  N12 -.->|Exception| E18
+  N12 --> N13
+  E19["Exception Archive Records"]
+  N13 -.->|Exception| E19
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N6 -.->|No| N5
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

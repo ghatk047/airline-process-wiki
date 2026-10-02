@@ -1,0 +1,75 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Delivery Confirmation<br/>Cargo Agent"]
+    N2["Validate Cargo Details<br/>Cargo Control Officer"]
+    N3["Prepare Interline Settlement Form<br/>Finance Analyst"]
+    N4{"Review Interline Settlement Form<br/>Finance Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Send Interline Settlement Form<br/>Cargo Agent"]
+    N6["Receive Payment Confirmation<br/>Cargo Agent"]
+    N7["Update SAP S4HANA with Payment Details<br/>Finance Analyst"]
+    N8["Generate Financial Report<br/>Finance Manager"]
+    N9{"Review Financial Report<br/>Finance Director"}
+    N10["Archive Financial Report<br/>Finance Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Notify Stakeholders<br/>Cargo Agent"]
+    N12["Close Interline Settlement Case<br/>Cargo Control Officer"]
+    N13["Update Historical Data<br/>Data Analyst"]
+    N14["Review and Improve Process<br/>Process Improvement Team"]
+  end
+  START --> N1
+  E15["Exception Receive Delivery Confirmation"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Validate Cargo Details"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  E17["Exception Prepare Interline Settlement For"]
+  N3 -.->|Exception| E17
+  N3 --> N4
+  N4 -->|Yes| N5
+  E18["Exception Send Interline Settlement Form"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  E19["Exception Receive Payment Confirmation"]
+  N6 -.->|Exception| E19
+  N6 --> N7
+  E20["Exception Update SAP S4HANA with Payment D"]
+  N7 -.->|Exception| E20
+  N7 --> N8
+  E21["Exception Generate Financial Report"]
+  N8 -.->|Exception| E21
+  N8 --> N9
+  N9 -->|Yes| N10
+  E22["Exception Archive Financial Report"]
+  N10 -.->|Exception| E22
+  N10 --> N11
+  E23["Exception Notify Stakeholders"]
+  N11 -.->|Exception| E23
+  N11 --> N12
+  E24["Exception Close Interline Settlement Case"]
+  N12 -.->|Exception| E24
+  N12 --> N13
+  E25["Exception Update Historical Data"]
+  N13 -.->|Exception| E25
+  N13 --> N14
+  E26["Exception Review and Improve Process"]
+  N14 -.->|Exception| E26
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N9 -.->|No| N8
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24,E25,E26 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
