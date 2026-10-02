@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Request Initiation<br/>Flight Dispatcher"]
+    N2{"Resource Allocation<br/>Training Manager"}
+    N3{"Curriculum Review<br/>Training Curriculum Specialist"}
+    N4["Training Commencement<br/>Instructor"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Theoretical Training<br/>Instructor"}
+    N6{"Practical Training<br/>Flight Simulator Instructor"}
+    N7["Checkride Preparation<br/>Training Manager"]
+    N8["Checkride Execution<br/>Flight Examiner"]
+    N9["Certification Issuance<br/>Crew Certification Officer"]
+    N10["Post-Certification Review<br/>Training Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Training Record Update<br/>Crew Records Officer"]
+    N12["Feedback Integration<br/>Training Curriculum Specialist"]
+    N13["Compliance Monitoring<br/>Quality Assurance Manager"]
+    N14["Closure Documentation<br/>Training Manager"]
+  end
+  START --> N1
+  E15["Exception Request Initiation"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Training Commencement"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  E17["Exception Checkride Preparation"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  N8 --> N9
+  E18["Exception Certification Issuance"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  N10 --> N11
+  E19["Exception Training Record Update"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  E20["Exception Feedback Integration"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  N13 --> N14
+  E21["Exception Closure Documentation"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  N5 -.->|No| N4
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

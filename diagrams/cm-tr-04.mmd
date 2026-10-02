@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Initiate Line Check Request<br/>Flight Dispatcher"]
+    N2["Assign Line Check Examiner<br/>Crew Management Specialist"]
+    N3["Schedule Line Check<br/>Flight Dispatcher"]
+    N4["Notify Pilot and Examiner<br/>Crew Management Specialist"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Conduct Pre-Line Check Briefing<br/>Line Check Examiner"]
+    N6{"Execute Line Check Flight Simulation<br/>Line Check Examiner"}
+    N7["Conduct Post-Line Check Debriefing<br/>Line Check Examiner"]
+    N8{"Prepare Route Qualification Document<br/>Crew Management Specialist"}
+    N9{"Review Route Qualification Document<br/>Crew Management Specialist"}
+    N10["Notify Pilot of Qualification Status<br/>Crew Management Specialist"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Update Pilots Qualification Records<br/>Crew Management Specialist"]
+    N12["Document Line Check and Route Qualificatio<br/>Crew Management Specialist"]
+    N13["Archive Line Check and Route Qualification<br/>Crew Management Specialist"]
+    N14{"Monitor Pilot Performance Post-Qualificati<br/>Flight Dispatcher, Crew Management Special"}
+  end
+  START --> N1
+  E15["Exception Initiate Line Check Request"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Assign Line Check Examiner"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  E17["Exception Schedule Line Check"]
+  N3 -.->|Exception| E17
+  N3 --> N4
+  E18["Exception Notify Pilot and Examiner"]
+  N4 -.->|Exception| E18
+  N4 --> N5
+  E19["Exception Conduct Pre-Line Check Briefing"]
+  N5 -.->|Exception| E19
+  N5 --> N6
+  N6 -->|Yes| N7
+  E20["Exception Conduct Post-Line Check Debriefi"]
+  N7 -.->|Exception| E20
+  N7 --> N8
+  N8 -->|Yes| N9
+  N9 -->|Yes| N10
+  E21["Exception Notify Pilot of Qualification St"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  E22["Exception Update Pilots Qualification Reco"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  E23["Exception Document Line Check and Route Qu"]
+  N12 -.->|Exception| E23
+  N12 --> N13
+  E24["Exception Archive Line Check and Route Qua"]
+  N13 -.->|Exception| E24
+  N13 --> N14
+  DONE([Complete])
+  N14 -->|Yes| DONE
+  N6 -.->|No| N5
+  N9 -.->|No| N8
+  N14 -.->|No| N13
+  N8 -.->|No| N7
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

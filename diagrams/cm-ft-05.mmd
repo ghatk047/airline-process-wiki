@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Daily Flight Schedule<br/>Flight Dispatcher"]
+    N2["Calculate Duty Hours<br/>Crew Management Analyst"]
+    N3{"Review Fatigue Levels<br/>Crew Management Analyst"}
+    N4{"Identify Crew Shortages<br/>Crew Management Analyst"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Adjust Flight Schedule<br/>Flight Dispatcher"]
+    N6["Update Crew Duty Log<br/>Crew Management Analyst"]
+    N7{"Monitor Crew Performance<br/>Crew Management Analyst"}
+    N8["Adjust Crew Scheduling<br/>Crew Management Analyst"]
+    N9["Notify Crew Members<br/>Crew Management Analyst"]
+    N10{"Review Compliance<br/>Crew Management Analyst"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Crew Duty Log<br/>Crew Management Analyst"]
+    N12["Archive Records<br/>Crew Management Analyst"]
+    N13["Review and Report<br/>Crew Management Analyst"]
+    N14["Update Policies and Procedures<br/>Crew Management Analyst"]
+  end
+  START --> N1
+  E15["Exception Receive Daily Flight Schedule"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Calculate Duty Hours"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E17["Exception Adjust Flight Schedule"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Update Crew Duty Log"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  E19["Exception Adjust Crew Scheduling"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Notify Crew Members"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  N10 -->|Yes| N11
+  E21["Exception Finalize Crew Duty Log"]
+  N11 -.->|Exception| E21
+  N11 --> N12
+  E22["Exception Archive Records"]
+  N12 -.->|Exception| E22
+  N12 --> N13
+  E23["Exception Review and Report"]
+  N13 -.->|Exception| E23
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N10 -.->|No| N9
+  N7 -.->|No| N6
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Initiate Cycle Plan<br/>Flight Operations Manager"]
+    N2{"Review Data Sources<br/>Data Analyst"}
+    N3["Prepare Data for Update<br/>Data Engineer"]
+    N4{"Validate Data Integrity<br/>Quality Assurance Engineer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Deploy Data to Test Environment<br/>System Administrator"]
+    N6{"Conduct System Testing<br/>Flight Test Engineer"}
+    N7{"Review Test Results<br/>Flight Operations Manager"}
+    N8["Prepare Data for Production<br/>Data Engineer"]
+    N9["Deploy Data to Production Environment<br/>System Administrator"]
+    N10["Monitor System Performance<br/>Flight Operations Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Review and Documentation<br/>Flight Operations Manager"]
+    N12["Update Documentation and Records<br/>Data Analyst"]
+    N13["Notify Stakeholders<br/>Flight Operations Manager"]
+    N14["Close Cycle and Plan Next Update<br/>Flight Operations Manager"]
+  end
+  START --> N1
+  E15["Exception Initiate Cycle Plan"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Prepare Data for Update"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Deploy Data to Test Environment"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  E18["Exception Prepare Data for Production"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Deploy Data to Production Enviro"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Final Review and Documentation"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  E21["Exception Update Documentation and Records"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Notify Stakeholders"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Close Cycle and Plan Next Update"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N2 -.->|No| N1
+  N7 -.->|No| N6
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

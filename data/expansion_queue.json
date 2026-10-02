@@ -293,9 +293,9 @@
       "l2_process": "Performance Engineering",
       "l2_slug": "performance-engineering",
       "l3_name": "Obstacle & Terrain Clearance Analysis",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-ND-01",
@@ -304,9 +304,9 @@
       "l2_process": "Navigation & Data Management",
       "l2_slug": "navigation-data",
       "l3_name": "Navigation Database (NavData) Cycle Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-ND-02",
@@ -315,9 +315,9 @@
       "l2_process": "Navigation & Data Management",
       "l2_slug": "navigation-data",
       "l3_name": "EFB Content & Chart Distribution",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-ND-03",
@@ -326,9 +326,9 @@
       "l2_process": "Navigation & Data Management",
       "l2_slug": "navigation-data",
       "l3_name": "Required Navigation Performance (RNP) Authorization",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-ND-04",
@@ -337,9 +337,9 @@
       "l2_process": "Navigation & Data Management",
       "l2_slug": "navigation-data",
       "l3_name": "Ops Manual & SOP Control",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-ND-05",
@@ -348,9 +348,9 @@
       "l2_process": "Navigation & Data Management",
       "l2_slug": "navigation-data",
       "l3_name": "Flight Ops Document Revision Control",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-FT-01",
@@ -359,9 +359,9 @@
       "l2_process": "Fatigue & Duty Management",
       "l2_slug": "fatigue-duty",
       "l3_name": "Fatigue Risk Management System (FRMS) Operation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-FT-02",
@@ -370,9 +370,9 @@
       "l2_process": "Fatigue & Duty Management",
       "l2_slug": "fatigue-duty",
       "l3_name": "Flight Duty Period Compliance Check",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-FT-03",
@@ -381,9 +381,9 @@
       "l2_process": "Fatigue & Duty Management",
       "l2_slug": "fatigue-duty",
       "l3_name": "Rest Period Validation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-FT-04",
@@ -392,9 +392,9 @@
       "l2_process": "Fatigue & Duty Management",
       "l2_slug": "fatigue-duty",
       "l3_name": "Fatigue Report Investigation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-FT-05",
@@ -403,9 +403,9 @@
       "l2_process": "Fatigue & Duty Management",
       "l2_slug": "fatigue-duty",
       "l3_name": "Cumulative Duty Monitoring",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-TR-01",
@@ -414,9 +414,9 @@
       "l2_process": "Crew Training & Qualification",
       "l2_slug": "crew-training",
       "l3_name": "Recurrent Training Scheduling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-TR-02",
@@ -425,9 +425,9 @@
       "l2_process": "Crew Training & Qualification",
       "l2_slug": "crew-training",
       "l3_name": "Simulator Slot Planning & Booking",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-TR-03",
@@ -436,9 +436,9 @@
       "l2_process": "Crew Training & Qualification",
       "l2_slug": "crew-training",
       "l3_name": "Type Rating & Conversion Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-TR-04",
@@ -447,9 +447,9 @@
       "l2_process": "Crew Training & Qualification",
       "l2_slug": "crew-training",
       "l3_name": "Line Check & Route Qualification",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-TR-05",
@@ -458,9 +458,9 @@
       "l2_process": "Crew Training & Qualification",
       "l2_slug": "crew-training",
       "l3_name": "Cabin Crew Safety Training",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-TR-06",
@@ -469,9 +469,9 @@
       "l2_process": "Crew Training & Qualification",
       "l2_slug": "crew-training",
       "l3_name": "Instructor & Examiner Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-TR-07",
@@ -480,9 +480,9 @@
       "l2_process": "Crew Training & Qualification",
       "l2_slug": "crew-training",
       "l3_name": "Training Records & Currency Tracking",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-PY-01",
@@ -491,9 +491,9 @@
       "l2_process": "Crew Pay & Administration",
       "l2_slug": "crew-pay",
       "l3_name": "Crew Pay Rule Calculation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-PY-02",
@@ -502,9 +502,9 @@
       "l2_process": "Crew Pay & Administration",
       "l2_slug": "crew-pay",
       "l3_name": "Per Diem & Expense Processing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-PY-03",

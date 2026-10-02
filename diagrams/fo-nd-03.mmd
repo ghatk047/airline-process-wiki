@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Application<br/>Flight Operations Manager"]
+    N2{"Evaluate Aircraft Capabilities<br/>Aircraft Maintenance Engineer"}
+    N3{"Review Regulatory Requirements<br/>Regulatory Compliance Officer"}
+    N4["Prepare RNP Authorization Document<br/>Flight Operations Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Submit RNP Authorization Document to Autho<br/>Regulatory Compliance Officer"]
+    N6{"Monitor Application Status<br/>Regulatory Compliance Officer"}
+    N7{"Review Authorities Feedback<br/>Regulatory Compliance Officer"}
+    N8["Prepare Response to Authorities<br/>Flight Operations Manager"]
+    N9["Resubmit Response Document<br/>Regulatory Compliance Officer"]
+    N10["Finalize RNP Authorization<br/>Flight Operations Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Notify Stakeholders of Authorization Outco<br/>Flight Operations Manager"]
+    N12["Update Flight Operations Plan<br/>Flight Dispatcher"]
+    N13["Review and Close Case<br/>Regulatory Compliance Officer"]
+    N14["Archive RNP Authorization Documents<br/>Flight Operations Manager"]
+  end
+  START --> N1
+  E15["Exception Receive Application"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Prepare RNP Authorization Docume"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  E17["Exception Submit RNP Authorization Documen"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  E18["Exception Prepare Response to Authorities"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Resubmit Response Document"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Notify Stakeholders of Authoriza"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  E21["Exception Update Flight Operations Plan"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Review and Close Case"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Archive RNP Authorization Docume"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N2 -.->|No| N1
+  N7 -.->|No| N6
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

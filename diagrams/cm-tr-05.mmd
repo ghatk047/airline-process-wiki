@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Identify Training Needs<br/>Training Manager"]
+    N2{"Schedule Training Sessions<br/>Training Scheduler"}
+    N3["Notify Crew Members<br/>Crew Communication Officer"]
+    N4["Prepare Training Materials<br/>Training Coordinator"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Safety Training<br/>Cabin Crew Instructor"}
+    N6{"Administer Quizzes and Assessments<br/>Training Coordinator"}
+    N7["Review and Feedback<br/>Training Manager"]
+    N8["Update Training Records<br/>Training Coordinator"]
+    N9{"Monitor Training Attendance<br/>Training Scheduler"}
+    N10["Follow-Up with Absentees<br/>Crew Communication Officer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Certify Completion<br/>Training Manager"]
+    N12["Update Crew Profiles<br/>Crew Data Administrator"]
+    N13["Review and Improve Process<br/>Training Manager, Training Coordinator"]
+    N14["Archive Training Records<br/>Crew Data Administrator"]
+  end
+  START --> N1
+  E15["Exception Identify Training Needs"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Notify Crew Members"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 --> N5
+  E17["Exception Conduct Safety Training"]
+  N5 -.->|Exception| E17
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  E18["Exception Review and Feedback"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  E19["Exception Update Training Records"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  N9 -->|Yes| N10
+  E20["Exception Follow-Up with Absentees"]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  N11 --> N12
+  E21["Exception Update Crew Profiles"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Review and Improve Process"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Archive Training Records"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N2 -.->|No| N1
+  N5 -.->|No| N4
+  N9 -.->|No| N8
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

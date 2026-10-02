@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Training Requirements<br/>Training Manager"}
+    N2{"Identify Simulator Availability<br/>Flight Dispatcher"}
+    N3{"Allocate Simulator Slots<br/>Load Controller"}
+    N4{"Confirm Crew Availability<br/>Crew Scheduler"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Book Simulator Slots<br/>Flight Dispatcher"]
+    N6["Update Training Program Document<br/>Training Manager"]
+    N7["Notify Crew Members<br/>Crew Scheduler"]
+    N8["Monitor Simulator Usage<br/>Flight Dispatcher"]
+    N9["Review Training Feedback<br/>Training Manager"]
+    N10["Adjust Training Schedule<br/>Training Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Simulator Slot Booking<br/>Flight Dispatcher"]
+    N12["Update SAP S4HANA with Final Details<br/>Load Controller"]
+    N13["Close Training Program Document<br/>Training Manager"]
+    N14["Review and Report on Simulator Slot Utiliz<br/>Flight Dispatcher"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  E15["Exception Allocate Simulator Slots"]
+  N3 -.->|Exception| E15
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E16["Exception Book Simulator Slots"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  N6 --> N7
+  E17["Exception Notify Crew Members"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  E18["Exception Finalize Simulator Slot Booking"]
+  N11 -.->|Exception| E18
+  N11 --> N12
+  E19["Exception Update SAP S4HANA with Final Det"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  N13 --> N14
+  E20["Exception Review and Report on Simulator S"]
+  N14 -.->|Exception| E20
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
