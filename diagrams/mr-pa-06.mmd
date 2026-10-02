@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Claim Reception<br/>Warranty Coordinator"]
+    N2{"Initial Claim Review<br/>Warranty Analyst"}
+    N3{"Determine Warranty Coverage<br/>Warranty Analyst"}
+    N4["Notify Claimant of Coverage Decision<br/>Warranty Coordinator"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Prepare Repair or Replacement Plan<br/>Maintenance Planner"}
+    N6["Order Parts for Repair or Replacement<br/>Purchasing Manager"]
+    N7{"Execute Repair or Replacement Work<br/>Maintenance Technician"}
+    N8["Verify Work Completion and Quality<br/>Quality Assurance Engineer"]
+    N9["Prepare Financial Compensation if Applicab<br/>Financial Analyst"]
+    N10["Process Financial Compensation Payment<br/>Accounts Payable Clerk"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Update Warranty Claim Status<br/>Warranty Coordinator"]
+    N12["Notify Claimant of Resolution<br/>Warranty Coordinator"]
+    N13["Close Warranty Claim Case<br/>Warranty Coordinator"]
+    N14["Review and Improve Processes<br/>Warranty Manager"]
+  end
+  START --> N1
+  E15["Exception Claim Reception"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Notify Claimant of Coverage Deci"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  E17["Exception Order Parts for Repair or Replac"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  N8 --> N9
+  N9 --> N10
+  E18["Exception Process Financial Compensation P"]
+  N10 -.->|Exception| E18
+  N10 --> N11
+  E19["Exception Update Warranty Claim Status"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  E20["Exception Notify Claimant of Resolution"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  E21["Exception Close Warranty Claim Case"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Defect Reporting<br/>Maintenance Engineer"]
+    N2["Defect Categorization<br/>Defect Analyst"]
+    N3{"Root Cause Analysis Initiation<br/>Quality Manager"}
+    N4["Data Collection for Analysis<br/>Maintenance Engineer"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Root Cause Analysis Execution<br/>Defect Analyst"}
+    N6["Corrective Action Plan Development<br/>Quality Manager"]
+    N7{"Implementation of Corrective Actions<br/>Maintenance Engineer"}
+    N8["Post-Implementation Monitoring<br/>Defect Analyst"]
+    N9{"Review and Update of Maintenance Procedure<br/>Maintenance Engineer"}
+    N10["Training for Maintenance Personnel<br/>Training Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Review and Approval<br/>Quality Manager"]
+    N12["Documentation and Reporting<br/>Defect Analyst"]
+    N13["Continuous Improvement Review<br/>Quality Manager"]
+    N14["Feedback Loop and Closure<br/>Maintenance Engineer"]
+  end
+  START --> N1
+  E15["Exception Defect Reporting"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Defect Categorization"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  E17["Exception Data Collection for Analysis"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  N5 -->|Yes| N6
+  E18["Exception Corrective Action Plan Developme"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  E19["Exception Post-Implementation Monitoring"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  N9 -->|Yes| N10
+  E20["Exception Training for Maintenance Personn"]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  N11 --> N12
+  E21["Exception Documentation and Reporting"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  N13 --> N14
+  E22["Exception Feedback Loop and Closure"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N3 -.->|No| N2
+  N7 -.->|No| N6
+  N9 -.->|No| N8
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

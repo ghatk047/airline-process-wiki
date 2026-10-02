@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Arrival Notification<br/>Flight Dispatcher"]
+    N2{"Confirm Aircraft Type and Requirements<br/>Load Controller"}
+    N3["Allocate Service Crew and Equipment<br/>Ground Services Manager"]
+    N4["Prepare Service Area<br/>Ground Services Supervisor"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Start Water Servicing<br/>Water Service Technician"}
+    N6{"Start Lavatory Servicing<br/>Lavatory Service Technician"}
+    N7{"Conduct Final Inspection<br/>Ground Services Supervisor"}
+    N8["Update SAP S4HANA with Service Status<br/>Flight Dispatcher"]
+    N9["Notify Aircraft Captain<br/>Ground Services Manager"]
+    N10["Deallocate Service Crew and Equipment<br/>Ground Services Supervisor"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Service Logs<br/>Ground Services Manager"]
+    N12["Update Maintenance Records<br/>Maintenance Technician"]
+    N13["Conduct Post-Service Briefing<br/>Ground Services Supervisor"]
+    N14["Close Service Case in SAP S4HANA<br/>Flight Dispatcher"]
+  end
+  START --> N1
+  N1 --> N2
+  N2 -->|Yes| N3
+  E15["Exception Allocate Service Crew and Equipm"]
+  N3 -.->|Exception| E15
+  N3 --> N4
+  E16["Exception Prepare Service Area"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  E17["Exception Update SAP S4HANA with Service S"]
+  N8 -.->|Exception| E17
+  N8 --> N9
+  E18["Exception Notify Aircraft Captain"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  E19["Exception Deallocate Service Crew and Equi"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Update Maintenance Records"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  E21["Exception Conduct Post-Service Briefing"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  E22["Exception Close Service Case in SAP S4HANA"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N2 -.->|No| N1
+  N7 -.->|No| N6
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

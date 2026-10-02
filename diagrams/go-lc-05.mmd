@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Receive Flight Schedule<br/>Flight Dispatcher"}
+    N2["Check GSE Availability<br/>Load Controller"]
+    N3{"Allocate GSE<br/>Load Controller"}
+    N4["Update Ramp Safety Plan<br/>Safety Officer"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Coordinate with Ground Handlers<br/>Load Controller"]
+    N6{"Monitor GSE Usage<br/>Maintenance Technician"}
+    N7["Schedule Maintenance<br/>Maintenance Scheduler"]
+    N8{"Conduct Pre-flight Inspection<br/>Maintenance Technician"}
+    N9["Update GSE Status<br/>Maintenance Coordinator"]
+    N10["Report Issues to Ground Operations<br/>Maintenance Coordinator"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review GSE Performance<br/>Load Controller"]
+    N12["Adjust GSE Allocation Strategy<br/>Load Controller"]
+    N13["Update Training Programs<br/>Training Manager"]
+    N14["Close GSE Management Cycle<br/>Load Controller"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Check GSE Availability"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Update Ramp Safety Plan"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  E17["Exception Coordinate with Ground Handlers"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception Schedule Maintenance"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  N8 -->|Yes| N9
+  E19["Exception Update GSE Status"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Review GSE Performance"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  N12 --> N13
+  E21["Exception Update Training Programs"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  E22["Exception Close GSE Management Cycle"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N1 -.->|No| START
+  N8 -.->|No| N7
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

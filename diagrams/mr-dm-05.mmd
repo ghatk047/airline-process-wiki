@@ -1,0 +1,55 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Identify Recurring Defects<br/>Maintenance Engineer"}
+    N2{"Assess Impact and Severity<br/>Reliability Engineer"}
+    N3{"Initiate Escalation Process<br/>Maintenance Manager"}
+    N4["Notify Stakeholders<br/>Quality Assurance Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Root Cause Analysis<br/>Maintenance Engineer"}
+    N6["Develop Maintenance Program Optimization P<br/>Maintenance Planner"]
+    N7["Review and Approve Optimization Plan<br/>Maintenance Manager"]
+    N8["Implement Optimization Plan<br/>Maintenance Team Leader"]
+    N9["Monitor and Adjust Maintenance Program<br/>Maintenance Engineer"]
+    N10["Report on Optimization Outcomes<br/>Quality Assurance Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Optimization Outcomes<br/>Maintenance Manager"]
+    N12["Update Maintenance Program<br/>Maintenance Planner"]
+    N13["Communicate Changes to Stakeholders<br/>Quality Assurance Manager"]
+    N14["Close Case and Document Lessons Learned<br/>Maintenance Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  E15["Exception Close Case and Document Lessons "]
+  N14 -.->|Exception| E15
+  DONE([Complete])
+  N14 --> DONE
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

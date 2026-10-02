@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Cleaning Instructions<br/>Flight Dispatcher"]
+    N2["Assign Cleaning Crew<br/>Ground Operations Manager"]
+    N3["Prepare Cleaning Equipment<br/>Ground Maintenance Technician"]
+    N4{"Conduct Initial Inspection<br/>Cabin Cleaning Supervisor"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Perform Deep Cleaning<br/>Cabin Cleaner"]
+    N6["Sanitize Surfaces<br/>Cabin Cleaner"]
+    N7["Check and Restock Supplies<br/>Cabin Cleaner"]
+    N8{"Review and Adjust Cleaning Plan<br/>Cabin Cleaning Supervisor"}
+    N9{"Final Inspection<br/>Cabin Cleaning Supervisor"}
+    N10["Report Cleaning Status<br/>Cabin Cleaning Supervisor"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Update Maintenance Logs<br/>Ground Maintenance Technician"]
+    N12["Notify Flight Crew<br/>Flight Dispatcher"]
+    N13["Prepare for Next Flight<br/>Ground Operations Manager"]
+    N14{"Final Quality Check<br/>Cabin Cleaning Supervisor"}
+  end
+  START --> N1
+  E15["Exception Receive Cleaning Instructions"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Assign Cleaning Crew"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  E17["Exception Prepare Cleaning Equipment"]
+  N3 -.->|Exception| E17
+  N3 --> N4
+  N4 -->|Yes| N5
+  E18["Exception Perform Deep Cleaning"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  E19["Exception Sanitize Surfaces"]
+  N6 -.->|Exception| E19
+  N6 --> N7
+  E20["Exception Check and Restock Supplies"]
+  N7 -.->|Exception| E20
+  N7 --> N8
+  N8 -->|Yes| N9
+  N9 -->|Yes| N10
+  E21["Exception Report Cleaning Status"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  E22["Exception Update Maintenance Logs"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  E23["Exception Notify Flight Crew"]
+  N12 -.->|Exception| E23
+  N12 --> N13
+  E24["Exception Prepare for Next Flight"]
+  N13 -.->|Exception| E24
+  N13 --> N14
+  DONE([Complete])
+  N14 -->|Yes| DONE
+  N4 -.->|No| N3
+  N14 -.->|No| N13
+  N8 -.->|No| N7
+  N9 -.->|No| N8
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Receive Catering Request<br/>Flight Dispatcher"}
+    N2{"Validate Catering Requirements<br/>Catering Manager"}
+    N3{"Allocate Catering Resources<br/>Catering Coordinator"}
+    N4{"Confirm Availability with Catering Vendor<br/>Catering Coordinator"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Prepare Catering Items<br/>Catering Staff"]
+    N6["Load Catering Items onto Aircraft<br/>Ground Handling Staff"]
+    N7["Conduct Final Quality Check<br/>Catering Manager"]
+    N8["Update Catering Status in PSS<br/>Catering Coordinator"]
+    N9["Notify Flight Crew of Catering Details<br/>Flight Dispatcher"]
+    N10["Monitor Catering Delivery During Flight<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Catering Service Post-Flight<br/>Catering Manager"]
+    N12["Update Catering Inventory Levels<br/>Catering Coordinator"]
+    N13["Prepare Catering Report for Management<br/>Catering Manager"]
+    N14["Close Catering Uplift Coordination Case<br/>Catering Coordinator"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E15["Exception Prepare Catering Items"]
+  N5 -.->|Exception| E15
+  N5 --> N6
+  E16["Exception Load Catering Items onto Aircraf"]
+  N6 -.->|Exception| E16
+  N6 --> N7
+  N7 --> N8
+  E17["Exception Update Catering Status in PSS"]
+  N8 -.->|Exception| E17
+  N8 --> N9
+  E18["Exception Notify Flight Crew of Catering D"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  E19["Exception Monitor Catering Delivery During"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  E20["Exception Review Catering Service Post-Fli"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  E21["Exception Update Catering Inventory Levels"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Prepare Catering Report for Mana"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Close Catering Uplift Coordinati"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N4 -.->|No| N3
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

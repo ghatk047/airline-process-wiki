@@ -733,9 +733,9 @@
       "l2_process": "Fuelling & Servicing",
       "l2_slug": "fuelling-servicing",
       "l3_name": "Water & Lavatory Servicing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-FS-04",
@@ -744,9 +744,9 @@
       "l2_process": "Fuelling & Servicing",
       "l2_slug": "fuelling-servicing",
       "l3_name": "Cabin Cleaning & Grooming",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-FS-05",
@@ -755,9 +755,9 @@
       "l2_process": "Fuelling & Servicing",
       "l2_slug": "fuelling-servicing",
       "l3_name": "Catering Uplift Coordination",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-LC-01",
@@ -766,9 +766,9 @@
       "l2_process": "Load Control & Ramp Safety",
       "l2_slug": "load-ramp-safety",
       "l3_name": "Load Planning & Distribution",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-LC-02",
@@ -777,9 +777,9 @@
       "l2_process": "Load Control & Ramp Safety",
       "l2_slug": "load-ramp-safety",
       "l3_name": "ULD Build-Up & Breakdown",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-LC-03",
@@ -788,9 +788,9 @@
       "l2_process": "Load Control & Ramp Safety",
       "l2_slug": "load-ramp-safety",
       "l3_name": "Dangerous Goods Ground Acceptance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-LC-04",
@@ -799,9 +799,9 @@
       "l2_process": "Load Control & Ramp Safety",
       "l2_slug": "load-ramp-safety",
       "l3_name": "Ramp Safety & FOD Control",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-LC-05",
@@ -810,9 +810,9 @@
       "l2_process": "Load Control & Ramp Safety",
       "l2_slug": "load-ramp-safety",
       "l3_name": "Ground Support Equipment (GSE) Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-LC-06",
@@ -821,9 +821,9 @@
       "l2_process": "Load Control & Ramp Safety",
       "l2_slug": "load-ramp-safety",
       "l3_name": "Pushback & Towing Operations",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-DM-01",
@@ -832,9 +832,9 @@
       "l2_process": "Defect & Reliability Management",
       "l2_slug": "defect-reliability",
       "l3_name": "Defect Reporting & MEL Deferral",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-DM-02",
@@ -843,9 +843,9 @@
       "l2_process": "Defect & Reliability Management",
       "l2_slug": "defect-reliability",
       "l3_name": "Aircraft Technical Log Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-DM-03",
@@ -854,9 +854,9 @@
       "l2_process": "Defect & Reliability Management",
       "l2_slug": "defect-reliability",
       "l3_name": "Reliability Program & Data Analysis",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-DM-04",
@@ -865,9 +865,9 @@
       "l2_process": "Defect & Reliability Management",
       "l2_slug": "defect-reliability",
       "l3_name": "Recurring Defect Investigation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-DM-05",
@@ -876,9 +876,9 @@
       "l2_process": "Defect & Reliability Management",
       "l2_slug": "defect-reliability",
       "l3_name": "Maintenance Program Escalation & Optimization",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PA-01",
@@ -887,9 +887,9 @@
       "l2_process": "Parts & Materials",
       "l2_slug": "parts-materials",
       "l3_name": "Rotable & Repairable Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PA-02",
@@ -898,9 +898,9 @@
       "l2_process": "Parts & Materials",
       "l2_slug": "parts-materials",
       "l3_name": "Spare Parts Inventory Planning",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PA-03",
@@ -909,9 +909,9 @@
       "l2_process": "Parts & Materials",
       "l2_slug": "parts-materials",
       "l3_name": "AOG Parts Sourcing & Expediting",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PA-04",
@@ -920,9 +920,9 @@
       "l2_process": "Parts & Materials",
       "l2_slug": "parts-materials",
       "l3_name": "Consumables & Chemicals Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PA-05",
@@ -931,9 +931,9 @@
       "l2_process": "Parts & Materials",
       "l2_slug": "parts-materials",
       "l3_name": "Tooling Control & Calibration",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PA-06",
@@ -942,9 +942,9 @@
       "l2_process": "Parts & Materials",
       "l2_slug": "parts-materials",
       "l3_name": "Warranty Claim Administration",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PL-01",

@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Data Collection Initiation<br/>Reliability Engineer"]
+    N2["Data Validation<br/>Reliability Engineer"]
+    N3["Trend Analysis Setup<br/>Reliability Engineer"]
+    N4{"Initial Trend Analysis<br/>Reliability Engineer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Detailed Failure Analysis<br/>Reliability Engineer"}
+    N6["Maintenance Action Planning<br/>Reliability Engineer"]
+    N7["Maintenance Action Implementation<br/>Maintenance Manager"]
+    N8{"Post-Implementation Review<br/>Reliability Engineer"}
+    N9["Continuous Improvement Planning<br/>Reliability Engineer"]
+    N10["Implementation of Continuous Improvements<br/>Maintenance Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Reliability Report Generation<br/>Reliability Engineer"]
+    N12["Report Distribution and Review<br/>Maintenance Manager"]
+    N13{"Action Plan Review and Approval<br/>Maintenance Manager"}
+    N14["Process Closure and Documentation<br/>Reliability Engineer"]
+  end
+  START --> N1
+  E15["Exception Data Collection Initiation"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Data Validation"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  E17["Exception Trend Analysis Setup"]
+  N3 -.->|Exception| E17
+  N3 --> N4
+  N4 -->|Yes| N5
+  N5 -->|Yes| N6
+  E18["Exception Maintenance Action Planning"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  E19["Exception Maintenance Action Implementatio"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  N8 -->|Yes| N9
+  E20["Exception Continuous Improvement Planning"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  E21["Exception Implementation of Continuous Imp"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  E22["Exception Final Reliability Report Generat"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  E23["Exception Report Distribution and Review"]
+  N12 -.->|Exception| E23
+  N12 --> N13
+  N13 -->|Yes| N14
+  E24["Exception Process Closure and Documentatio"]
+  N14 -.->|Exception| E24
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N4 -.->|No| N3
+  N8 -.->|No| N7
+  N13 -.->|No| N12
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

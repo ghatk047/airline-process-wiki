@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Shipment Notification<br/>Load Controller"]
+    N2{"Verify Dangerous Goods Declaration<br/>Load Controller"}
+    N3{"Check Handling Instructions<br/>Load Controller"}
+    N4["Notify Ground Safety Team<br/>Load Controller"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Safety Inspection<br/>Ground Safety Officer"}
+    N6{"Prepare Loading Plan<br/>Load Controller"}
+    N7["Coordinate with Cargo Handlers<br/>Load Controller"]
+    N8["Load Dangerous Goods onto Aircraft<br/>Cargo Handler"]
+    N9["Conduct Final Safety Check<br/>Ground Safety Officer"]
+    N10["Update SAP S4HANA with Loading Details<br/>Load Controller"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Notify Cargo Agent of Completion<br/>Load Controller"]
+    N12["Review and Archive Documentation<br/>Load Controller"]
+    N13["Conduct Post-Load Review Meeting<br/>Load Controller"]
+    N14["Update Training Records<br/>Load Controller"]
+  end
+  START --> N1
+  E15["Exception Receive Shipment Notification"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Notify Ground Safety Team"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  E17["Exception Coordinate with Cargo Handlers"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  E18["Exception Update SAP S4HANA with Loading D"]
+  N10 -.->|Exception| E18
+  N10 --> N11
+  E19["Exception Notify Cargo Agent of Completion"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  E20["Exception Review and Archive Documentation"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  E21["Exception Conduct Post-Load Review Meeting"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  E22["Exception Update Training Records"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

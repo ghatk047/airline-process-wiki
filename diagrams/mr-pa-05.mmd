@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Initiate Calibration Request<br/>Maintenance Engineer"}
+    N2{"Tool Availability Check<br/>Maintenance Engineer"}
+    N3{"Schedule Calibration Appointment<br/>Maintenance Scheduler"}
+    N4["Prepare Calibration Kit<br/>Maintenance Technician"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Calibration Test<br/>Maintenance Technician"}
+    N6["Review Calibration Results<br/>Maintenance Engineer"]
+    N7["Update Tool Status in SAP S4HANA<br/>Maintenance Engineer"]
+    N8["Document Calibration Process<br/>Maintenance Engineer"]
+    N9["Notify Stakeholders<br/>Maintenance Engineer"]
+    N10["Plan for Future Calibration<br/>Maintenance Scheduler"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Calibration History<br/>Maintenance Engineer"]
+    N12["Update Maintenance Plan<br/>Maintenance Planner"]
+    N13["Conduct Tool Audit<br/>Maintenance Supervisor"]
+    N14["Close Calibration Process<br/>Maintenance Engineer"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  E15["Exception Schedule Calibration Appointment"]
+  N3 -.->|Exception| E15
+  N3 -->|Yes| N4
+  E16["Exception Prepare Calibration Kit"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 --> N7
+  E17["Exception Update Tool Status in SAP S4HANA"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  E18["Exception Document Calibration Process"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Notify Stakeholders"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Review Calibration History"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  N12 --> N13
+  E21["Exception Conduct Tool Audit"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  E22["Exception Close Calibration Process"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
