@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Flight Logs<br/>Flight Dispatcher"}
+    N2["Identify Maintenance Requirements<br/>Maintenance Planner"]
+    N3{"Allocate Resources<br/>Maintenance Planner"}
+    N4["Sequence Check Packages<br/>Maintenance Planner"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Prepare Maintenance Work Orders<br/>Maintenance Planner"]
+    N6{"Schedule Maintenance Tasks<br/>Maintenance Planner"}
+    N7["Assign Technicians<br/>Maintenance Planner"]
+    N8["Update Maintenance Records<br/>Maintenance Planner"]
+    N9{"Monitor Maintenance Progress<br/>Maintenance Planner"}
+    N10["Adjust Schedule as Needed<br/>Maintenance Planner"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Finalize Maintenance Plan<br/>Maintenance Planner"]
+    N12["Communicate Plan to Stakeholders<br/>Maintenance Planner"]
+    N13["Review and Approve Plan<br/>Maintenance Manager"]
+    N14["Execute Maintenance Plan<br/>Maintenance Planner"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Identify Maintenance Requirement"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Sequence Check Packages"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  E17["Exception Prepare Maintenance Work Orders"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  E18["Exception Assign Technicians"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  E19["Exception Update Maintenance Records"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  N9 -->|Yes| N10
+  E20["Exception Adjust Schedule as Needed"]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  N11 --> N12
+  E21["Exception Communicate Plan to Stakeholders"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  N13 --> N14
+  E22["Exception Execute Maintenance Plan"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N9 -.->|No| N8
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

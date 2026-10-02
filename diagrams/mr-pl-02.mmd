@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Receive Maintenance Requests<br/>Maintenance Planner"}
+    N2["Assess Aircraft Availability<br/>Maintenance Planner"]
+    N3["Determine Hangar Requirements<br/>Maintenance Planner"]
+    N4{"Allocate Hangar Slots<br/>Maintenance Planner"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Update Maintenance Schedule<br/>Maintenance Planner"]
+    N6["Notify Maintenance Teams<br/>Maintenance Planner"]
+    N7{"Monitor Hangar Utilization<br/>Maintenance Planner"}
+    N8{"Adjust Slot Assignments if Necessary<br/>Maintenance Planner"}
+    N9["Ensure Compliance with Regulations<br/>Regulatory Compliance Officer"]
+    N10["Optimize Resource Allocation<br/>Maintenance Planner"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Maintenance Outcomes<br/>Maintenance Planner"]
+    N12["Update Maintenance Plan<br/>Maintenance Planner"]
+    N13["Report on Capacity Utilization<br/>Maintenance Planner"]
+    N14["Plan for Future Needs<br/>Maintenance Planner"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Assess Aircraft Availability"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Determine Hangar Requirements"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  E17["Exception Update Maintenance Schedule"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Notify Maintenance Teams"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  N8 -->|Yes| N9
+  N9 --> N10
+  N10 --> N11
+  E19["Exception Review Maintenance Outcomes"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  N12 --> N13
+  E20["Exception Report on Capacity Utilization"]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N8 -.->|No| N7
+  N4 -.->|No| N3
+  N7 -.->|No| N6
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

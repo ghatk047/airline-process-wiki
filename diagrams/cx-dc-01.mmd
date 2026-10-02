@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Identify Affected Passengers<br/>Customer Service Representative"]
+    N2{"Assess Passenger Preferences<br/>Customer Service Representative"}
+    N3{"Determine Alternative Flights<br/>Flight Dispatcher"}
+    N4["Notify Passengers of Re-accommodation Opti<br/>Customer Service Representative"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Confirm Passenger Selections<br/>Customer Service Representative"}
+    N6["Update Passenger Records<br/>Flight Dispatcher, Revenue Analyst"]
+    N7{"Reserve Alternative Flights<br/>Flight Dispatcher"}
+    N8["Generate Re-accommodation Tickets<br/>Revenue Analyst"]
+    N9["Notify Passengers of Ticket Issuance<br/>Customer Service Representative"]
+    N10["Monitor Passenger Check-in<br/>Customer Service Representative, Baggage H"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Re-accommodation Process<br/>Customer Service Manager, Flight Dispatche"]
+    N12["Update Disruption Response Plan<br/>Customer Service Manager, Operations Contr"]
+    N13["Communicate with Stakeholders<br/>Customer Service Manager, Operations Contr"]
+    N14["Monitor Passenger Satisfaction<br/>Customer Service Manager, Revenue Analyst"]
+  end
+  START --> N1
+  E15["Exception Identify Affected Passengers"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Notify Passengers of Re-accommod"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  E17["Exception Update Passenger Records"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  E18["Exception Generate Re-accommodation Ticket"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Notify Passengers of Ticket Issu"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Review Re-accommodation Process"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  E21["Exception Update Disruption Response Plan"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Communicate with Stakeholders"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Monitor Passenger Satisfaction"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N7 -.->|No| N6
+  N3 -.->|No| N2
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,63 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Project Initiation<br/>Engineering Manager"}
+    N2{"Feasibility Study<br/>Aerospace Engineer"}
+    N3["Conceptual Design<br/>Interior Designer"]
+    N4{"Regulatory Compliance Check<br/>Legal and Regulatory Specialist"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Detailed Design<br/>Aerospace Engineer"]
+    N6["Prototype Development<br/>Manufacturing Engineer"]
+    N7{"Prototype Testing<br/>Quality Assurance Engineer"}
+    N8["Final Design Approval<br/>Engineering Manager"]
+    N9["Procurement Plan<br/>Purchasing Manager"]
+    N10["Manufacturing Execution<br/>Production Supervisor"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Aircraft Installation<br/>Flight Engineer"]
+    N12["Post-Installation Testing<br/>Quality Assurance Engineer"]
+    N13["Operational Training<br/>Cabin Crew Trainer"]
+    N14["Final Acceptance and Documentation<br/>Engineering Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  E15["Exception Conceptual Design"]
+  N3 -.->|Exception| E15
+  N3 --> N4
+  N4 -->|Yes| N5
+  E16["Exception Detailed Design"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  E17["Exception Prototype Development"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  N8 --> N9
+  N9 --> N10
+  E18["Exception Manufacturing Execution"]
+  N10 -.->|Exception| E18
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  E19["Exception Operational Training"]
+  N13 -.->|Exception| E19
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  N7 -.->|No| N6
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["AD Notification<br/>Maintenance Manager"]
+    N2{"Initial Review<br/>Aircraft Engineer"}
+    N3{"Impact Analysis<br/>Maintenance Planner"}
+    N4["Stakeholder Consultation<br/>Operations Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Resource Allocation<br/>Maintenance Manager"}
+    N6{"Task Scheduling<br/>Maintenance Planner"}
+    N7["Training Needs Assessment<br/>Aircraft Engineer"]
+    N8["Training Implementation<br/>Maintenance Trainer"]
+    N9["Task Execution<br/>Maintenance Technician"]
+    N10["Post-Implementation Review<br/>Aircraft Engineer"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Final Report Preparation<br/>Maintenance Manager"]
+    N12["Regulatory Submission<br/>Legal Compliance Officer"]
+    N13["Continuous Monitoring<br/>Maintenance Manager"]
+    N14["Documentation Update<br/>Aircraft Engineer"]
+  end
+  START --> N1
+  E15["Exception AD Notification"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Stakeholder Consultation"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  N7 --> N8
+  E17["Exception Training Implementation"]
+  N8 -.->|Exception| E17
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  E18["Exception Final Report Preparation"]
+  N11 -.->|Exception| E18
+  N11 --> N12
+  N12 --> N13
+  E19["Exception Continuous Monitoring"]
+  N13 -.->|Exception| E19
+  N13 --> N14
+  E20["Exception Documentation Update"]
+  N14 -.->|Exception| E20
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N5 -.->|No| N4
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

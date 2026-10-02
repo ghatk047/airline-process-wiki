@@ -953,9 +953,9 @@
       "l2_process": "Maintenance Planning",
       "l2_slug": "maintenance-planning",
       "l3_name": "Check Package Planning & Sequencing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PL-02",
@@ -964,9 +964,9 @@
       "l2_process": "Maintenance Planning",
       "l2_slug": "maintenance-planning",
       "l3_name": "Hangar Slot & Capacity Planning",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PL-03",
@@ -975,9 +975,9 @@
       "l2_process": "Maintenance Planning",
       "l2_slug": "maintenance-planning",
       "l3_name": "Task Card & Work Order Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-PL-04",
@@ -986,9 +986,9 @@
       "l2_process": "Maintenance Planning",
       "l2_slug": "maintenance-planning",
       "l3_name": "Maintenance Ground Time Optimization",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-EN-01",
@@ -997,9 +997,9 @@
       "l2_process": "Engineering & Modifications",
       "l2_slug": "engineering-mods",
       "l3_name": "Airworthiness Directive Assessment",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-EN-02",
@@ -1008,9 +1008,9 @@
       "l2_process": "Engineering & Modifications",
       "l2_slug": "engineering-mods",
       "l3_name": "Service Bulletin Evaluation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-EN-03",
@@ -1019,9 +1019,9 @@
       "l2_process": "Engineering & Modifications",
       "l2_slug": "engineering-mods",
       "l3_name": "Engineering Order & Modification Control",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-EN-04",
@@ -1030,9 +1030,9 @@
       "l2_process": "Engineering & Modifications",
       "l2_slug": "engineering-mods",
       "l3_name": "STC & Repair Design Approval",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-EN-05",
@@ -1041,9 +1041,9 @@
       "l2_process": "Engineering & Modifications",
       "l2_slug": "engineering-mods",
       "l3_name": "Aircraft Configuration & Records (CAMO)",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "MR-EN-06",
@@ -1052,9 +1052,9 @@
       "l2_process": "Engineering & Modifications",
       "l2_slug": "engineering-mods",
       "l3_name": "Cabin Reconfiguration Engineering",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-DC-01",
@@ -1063,9 +1063,9 @@
       "l2_process": "Disruption & Care",
       "l2_slug": "disruption-care",
       "l3_name": "IRROP Passenger Re-accommodation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-DC-02",
@@ -1074,9 +1074,9 @@
       "l2_process": "Disruption & Care",
       "l2_slug": "disruption-care",
       "l3_name": "EU261 / DOT Compensation Processing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-DC-03",
@@ -1085,9 +1085,9 @@
       "l2_process": "Disruption & Care",
       "l2_slug": "disruption-care",
       "l3_name": "Overnight & Meal Voucher Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-DC-04",
@@ -1096,9 +1096,9 @@
       "l2_process": "Disruption & Care",
       "l2_slug": "disruption-care",
       "l3_name": "Duty of Care Communication",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-DC-05",
@@ -1107,9 +1107,9 @@
       "l2_process": "Disruption & Care",
       "l2_slug": "disruption-care",
       "l3_name": "Misconnection Recovery Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-BG-01",
@@ -1118,9 +1118,9 @@
       "l2_process": "Baggage Services",
       "l2_slug": "baggage-services",
       "l3_name": "Mishandled Baggage Tracing",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-BG-02",
@@ -1129,9 +1129,9 @@
       "l2_process": "Baggage Services",
       "l2_slug": "baggage-services",
       "l3_name": "Baggage Claim & Compensation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-BG-03",
@@ -1140,9 +1140,9 @@
       "l2_process": "Baggage Services",
       "l2_slug": "baggage-services",
       "l3_name": "Delayed Baggage Delivery",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-BG-04",
@@ -1151,9 +1151,9 @@
       "l2_process": "Baggage Services",
       "l2_slug": "baggage-services",
       "l3_name": "Damaged & Pilferage Claims",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-BG-05",
@@ -1162,9 +1162,9 @@
       "l2_process": "Baggage Services",
       "l2_slug": "baggage-services",
       "l3_name": "Lost & Found Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CX-RF-01",

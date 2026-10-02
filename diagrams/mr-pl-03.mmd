@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Identify Maintenance Needs<br/>Flight Engineer"}
+    N2["Create Task Cards<br/>Maintenance Planner"]
+    N3{"Assign Work Orders<br/>Maintenance Scheduler"}
+    N4["Update Maintenance Log<br/>Maintenance Coordinator"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Prepare Maintenance Kit<br/>Maintenance Technician"]
+    N6{"Execute Maintenance Tasks<br/>Maintenance Technician"}
+    N7{"Conduct Quality Checks<br/>Quality Assurance Engineer"}
+    N8["Update Work Order Status<br/>Maintenance Scheduler"]
+    N9["Document Maintenance Activities<br/>Maintenance Coordinator"]
+    N10["Review Maintenance Costs<br/>Finance Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Close Work Orders<br/>Maintenance Scheduler"]
+    N12["Update Aircraft Status<br/>Flight Engineer"]
+    N13["Review Maintenance Records<br/>Maintenance Coordinator"]
+    N14["Plan Next Maintenance Cycle<br/>Maintenance Planner"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Create Task Cards"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Update Maintenance Log"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  E17["Exception Prepare Maintenance Kit"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  E18["Exception Update Work Order Status"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Document Maintenance Activities"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Update Aircraft Status"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  E21["Exception Review Maintenance Records"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N6 -.->|No| N5
+  N7 -.->|No| N6
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

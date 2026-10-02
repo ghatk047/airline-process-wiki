@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Claim Submission<br/>Baggage Claims Officer"]
+    N2{"Initial Assessment<br/>Baggage Claims Officer"}
+    N3{"Damage Verification<br/>Baggage Inspector"}
+    N4{"Claim Authorization<br/>Claims Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Compensation Calculation<br/>Claims Analyst"]
+    N6["Payment Preparation<br/>Finance Officer"]
+    N7["Customer Notification<br/>Customer Service Representative"]
+    N8["Payment Disbursement<br/>Finance Officer"]
+    N9["Customer Follow-Up<br/>Customer Service Representative"]
+    N10["Claim Closure<br/>Claims Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review and Reporting<br/>Claims Analyst"]
+    N12{"Process Improvement Identification<br/>Claims Analyst"}
+    N13["Implementation Plan Development<br/>Claims Manager"]
+    N14["Training and Communication<br/>Claims Manager"]
+  end
+  START --> N1
+  E15["Exception Claim Submission"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E16["Exception Compensation Calculation"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  E17["Exception Payment Preparation"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  E18["Exception Customer Notification"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  E19["Exception Payment Disbursement"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Customer Follow-Up"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  E21["Exception Claim Closure"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  E22["Exception Review and Reporting"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  N12 -->|Yes| N13
+  E23["Exception Implementation Plan Development"]
+  N13 -.->|Exception| E23
+  N13 --> N14
+  E24["Exception Training and Communication"]
+  N14 -.->|Exception| E24
+  DONE([Complete])
+  N14 --> DONE
+  N12 -.->|No| N11
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  N3 -.->|No| N2
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

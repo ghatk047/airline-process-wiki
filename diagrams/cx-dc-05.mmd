@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Misconnection Report<br/>Customer Service Agent"]
+    N2["Verify Passenger Details<br/>Customer Service Agent"]
+    N3{"Identify Available Rebooking Options<br/>Flight Dispatcher"}
+    N4{"Review Rebooking Options with Passenger<br/>Customer Service Agent"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Book Selected Rebooking Option<br/>Flight Dispatcher"]
+    N6["Update Passenger Record<br/>Customer Service Agent"]
+    N7{"Issue Compensation if Applicable<br/>Customer Service Agent"}
+    N8["Notify Passenger of Rebooking and Compensa<br/>Customer Service Agent"]
+    N9["Monitor Passenger Check-In Status<br/>Customer Service Agent, Load Controller"]
+    N10{"Assist with Ground Transportation if Neede<br/>Customer Service Agent, Ground Services Co"}
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Close Misconnection Case<br/>Customer Service Agent"]
+    N12["Review and Analyze Misconnection Data<br/>Revenue Analyst, Customer Experience Manag"]
+    N13["Update Policies and Procedures Based on An<br/>Customer Experience Manager, Operations Di"]
+    N14["Implement Continuous Improvement Initiativ<br/>Customer Experience Manager, Operations Di"]
+  end
+  START --> N1
+  E15["Exception Receive Misconnection Report"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Verify Passenger Details"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E17["Exception Book Selected Rebooking Option"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  E18["Exception Update Passenger Record"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  E19["Exception Notify Passenger of Rebooking an"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Monitor Passenger Check-In Statu"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  N10 -->|Yes| N11
+  E21["Exception Close Misconnection Case"]
+  N11 -.->|Exception| E21
+  N11 --> N12
+  E22["Exception Review and Analyze Misconnection"]
+  N12 -.->|Exception| E22
+  N12 --> N13
+  N13 --> N14
+  E23["Exception Implement Continuous Improvement"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N10 -.->|No| N9
+  N7 -.->|No| N6
+  N4 -.->|No| N3
+  N3 -.->|No| N2
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
