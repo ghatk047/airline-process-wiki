@@ -1,0 +1,69 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Finalized Roster<br/>Crew Scheduler"}
+    N2["Generate Roster Report<br/>Crew Scheduler"]
+    N3{"Review Roster Report<br/>Crew Manager"}
+    N4["Publish Roster to Crew Members<br/>Crew Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Identify Disruption Events<br/>Flight Dispatcher"}
+    N6["Calculate Disruption Pay<br/>Revenue Analyst"]
+    N7{"Review Disruption Pay Report<br/>Crew Manager"}
+    N8["Notify Crew Members of Disruption Pay<br/>Crew Manager"]
+    N9["Update Crew Pay Records<br/>Revenue Analyst"]
+    N10["Generate Disruption Pay Summary Report<br/>Revenue Analyst"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Disruption Pay Summary Report<br/>Crew Manager"]
+    N12["Archive Roster and Pay Records<br/>Crew Scheduler"]
+    N13["Review and Update Crew Policies<br/>Crew Manager"]
+    N14["Finalize Crew Pay Administration Process<br/>Revenue Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Generate Roster Report"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Publish Roster to Crew Members"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  E17["Exception Calculate Disruption Pay"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  E18["Exception Notify Crew Members of Disruptio"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Update Crew Pay Records"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  E20["Exception Generate Disruption Pay Summary "]
+  N10 -.->|Exception| E20
+  N10 --> N11
+  N11 --> N12
+  E21["Exception Archive Roster and Pay Records"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  N13 --> N14
+  E22["Exception Finalize Crew Pay Administration"]
+  N14 -.->|Exception| E22
+  DONE([Complete])
+  N14 --> DONE
+  N7 -.->|No| N6
+  N5 -.->|No| N4
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Review Weather Conditions<br/>Flight Dispatcher"]
+    N2["Check Runway Availability<br/>Flight Dispatcher"]
+    N3{"Determine Noise Abatement Route<br/>Flight Dispatcher"}
+    N4["Notify Ground Crew<br/>Flight Dispatcher"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Prepare Flight Plan<br/>Flight Dispatcher"]
+    N6{"Coordinate with Air Traffic Control<br/>Flight Dispatcher"}
+    N7["Monitor Departure Progress<br/>Flight Dispatcher"]
+    N8{"Adjust Flight Path if Necessary<br/>Flight Dispatcher"}
+    N9["Update Ground Crew<br/>Flight Dispatcher"]
+    N10["Finalize Departure Sequence<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Monitor Departure Completion<br/>Flight Dispatcher"]
+    N12{"Review Noise Impact<br/>Flight Dispatcher"}
+    N13["Update Noise Abatement Database<br/>Flight Dispatcher"]
+    N14["Report to Compliance Team<br/>Flight Dispatcher"]
+  end
+  START --> N1
+  E15["Exception Review Weather Conditions"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Check Runway Availability"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  E17["Exception Notify Ground Crew"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  E18["Exception Prepare Flight Plan"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  E19["Exception Monitor Departure Progress"]
+  N7 -.->|Exception| E19
+  N7 --> N8
+  N8 -->|Yes| N9
+  E20["Exception Update Ground Crew"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  E21["Exception Finalize Departure Sequence"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  E22["Exception Monitor Departure Completion"]
+  N11 -.->|Exception| E22
+  N11 --> N12
+  N12 -->|Yes| N13
+  E23["Exception Update Noise Abatement Database"]
+  N13 -.->|Exception| E23
+  N13 --> N14
+  E24["Exception Report to Compliance Team"]
+  N14 -.->|Exception| E24
+  DONE([Complete])
+  N14 --> DONE
+  N8 -.->|No| N7
+  N12 -.->|No| N11
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Data Extraction<br/>Data Analyst"]
+    N2["Data Cleaning<br/>Data Analyst"]
+    N3{"Define Analysis Scope<br/>Operations Manager"}
+    N4["Data Integration<br/>Data Analyst"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Run Productivity Metrics<br/>Data Analyst"]
+    N6{"Analyze Key Indicators<br/>Data Analyst"}
+    N7{"Identify Root Causes<br/>Operations Manager"}
+    N8{"Develop Improvement Strategies<br/>Operations Manager"}
+    N9["Prioritize Strategies<br/>Operations Manager"]
+    N10["Communicate Findings and Plan<br/>Operations Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Monitor Implementation Progress<br/>Operations Manager"]
+    N12["Evaluate Impact on Productivity<br/>Data Analyst"]
+    N13["Adjust Strategies if Necessary<br/>Operations Manager"]
+    N14["Document Lessons Learned<br/>Operations Manager"]
+  end
+  START --> N1
+  E15["Exception Data Extraction"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Data Cleaning"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  E17["Exception Data Integration"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  E18["Exception Run Productivity Metrics"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 -->|Yes| N8
+  N8 -->|Yes| N9
+  N9 --> N10
+  E19["Exception Communicate Findings and Plan"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  E20["Exception Monitor Implementation Progress"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  N12 --> N13
+  N13 --> N14
+  E21["Exception Document Lessons Learned"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N7 -.->|No| N6
+  N8 -.->|No| N7
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

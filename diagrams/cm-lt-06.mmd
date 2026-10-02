@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Identify Visa Requirements<br/>Flight Dispatcher"}
+    N2["Check Existing Documentation<br/>Crew Documentation Officer"]
+    N3["Prepare Visa Application Forms<br/>Crew Documentation Officer"]
+    N4{"Submit Visa Applications<br/>Crew Documentation Officer"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Monitor Visa Application Status<br/>Crew Documentation Officer"}
+    N6["Prepare Travel Documents<br/>Crew Documentation Officer"]
+    N7["Update Crew Profile<br/>Crew Documentation Officer"]
+    N8["Notify Crew Member<br/>Crew Documentation Officer"]
+    N9{"Review Visa and Documentation<br/>Flight Dispatcher"}
+    N10["Update Flight Schedule<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Conduct Pre-Departure Briefing<br/>Crew Documentation Officer"]
+    N12["Verify Final Documentation<br/>Flight Dispatcher"]
+    N13["Update Crew Status<br/>Crew Documentation Officer"]
+    N14["Close Case<br/>Crew Documentation Officer"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Check Existing Documentation"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 --> N4
+  N4 -->|Yes| N5
+  N5 -->|Yes| N6
+  E16["Exception Prepare Travel Documents"]
+  N6 -.->|Exception| E16
+  N6 --> N7
+  N7 --> N8
+  E17["Exception Notify Crew Member"]
+  N8 -.->|Exception| E17
+  N8 --> N9
+  N9 -->|Yes| N10
+  E18["Exception Update Flight Schedule"]
+  N10 -.->|Exception| E18
+  N10 --> N11
+  E19["Exception Conduct Pre-Departure Briefing"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  N12 --> N13
+  E20["Exception Update Crew Status"]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  E21["Exception Close Case"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N9 -.->|No| N8
+  N5 -.->|No| N4
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

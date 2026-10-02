@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Training Schedule<br/>Training Manager"}
+    N2["Allocate Training Slots<br/>Training Coordinator"]
+    N3["Notify Crew Members<br/>Crew Communication Officer"]
+    N4{"Confirm Attendance<br/>Training Coordinator"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Drill Simulation<br/>Flight Instructor"}
+    N6{"Evaluate Performance<br/>Training Manager"}
+    N7["Provide Feedback<br/>Crew Communication Officer"]
+    N8["Identify Training Gaps<br/>Training Analyst"]
+    N9["Plan Remedial Training<br/>Training Manager"]
+    N10["Conduct Remedial Training<br/>Flight Instructor"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Final Performance<br/>Training Manager"]
+    N12["Update Training Records<br/>Training Coordinator"]
+    N13["Report Training Outcomes<br/>Training Analyst"]
+    N14["Review and Improve Process<br/>Training Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Allocate Training Slots"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Notify Crew Members"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  N5 -->|Yes| N6
+  N6 -->|Yes| N7
+  E17["Exception Provide Feedback"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  N8 --> N9
+  E18["Exception Plan Remedial Training"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E19["Exception Update Training Records"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  E20["Exception Report Training Outcomes"]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N5 -.->|No| N4
+  N6 -.->|No| N5
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

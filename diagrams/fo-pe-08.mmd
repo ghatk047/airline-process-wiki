@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Flight Plan<br/>Flight Dispatcher"]
+    N2["Initial Weight Calculation<br/>Load Controller"]
+    N3{"Review Regulatory Requirements<br/>Regulatory Compliance Officer"}
+    N4{"Adjust Payload Based on Compliance<br/>Load Controller"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Optimize Fuel Load<br/>Fuel Planner"}
+    N6["Update Flight Plan with Optimized Payload <br/>Flight Dispatcher"]
+    N7{"Conduct Final Weight Check<br/>Load Controller"}
+    N8["Notify Ground Crew of Final Payload and Fu<br/>Flight Dispatcher"]
+    N9["Monitor Flight Performance<br/>Performance Engineer"]
+    N10["Review and Adjust Post-Flight<br/>Load Controller"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Update Weight and Payload Database<br/>Data Analyst"]
+    N12["Generate Performance Report<br/>Performance Engineer"]
+    N13["Review and Document Lessons Learned<br/>Flight Dispatcher"]
+    N14["Close Case and Archive Documents<br/>Data Analyst"]
+  end
+  START --> N1
+  E15["Exception Receive Flight Plan"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Initial Weight Calculation"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  N5 -->|Yes| N6
+  E17["Exception Update Flight Plan with Optimize"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  E18["Exception Notify Ground Crew of Final Payl"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Monitor Flight Performance"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Update Weight and Payload Databa"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  E21["Exception Generate Performance Report"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Review and Document Lessons Lear"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Close Case and Archive Documents"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N7 -.->|No| N6
+  N5 -.->|No| N4
+  N3 -.->|No| N2
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Receive Flight Schedule<br/>Flight Dispatcher"]
+    N2["Identify Crew Members with Special Needs<br/>Crew Resource Manager CRM"]
+    N3{"Confirm Meal Preferences and Allergies<br/>Cabin Crew"}
+    N4{"Order Meals and Special Needs Supplies<br/>Flight Catering Coordinator"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Prepare Meals and Special Supplies<br/>Catering Staff"]
+    N6{"Load Meals onto Aircraft<br/>Cargo Handler"}
+    N7{"Verify Meal Placement on Aircraft<br/>Flight Dispatcher"}
+    N8["Update Crew Manifest with Meal Information<br/>Flight Dispatcher"]
+    N9["Notify Cabin Crew of Meal Details<br/>Cabin Crew Coordinator"]
+    N10["Monitor Meal Consumption During Flight<br/>Cabin Crew"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Meal Consumption Report<br/>Crew Resource Manager CRM"]
+    N12["Update Meal Menu and Preferences<br/>Catering Manager"]
+    N13["Review and Adjust Catering Budget<br/>Finance Manager"]
+    N14["Document and Close Process<br/>Crew Resource Manager CRM"]
+  end
+  START --> N1
+  E15["Exception Receive Flight Schedule"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  E16["Exception Identify Crew Members with Speci"]
+  N2 -.->|Exception| E16
+  N2 --> N3
+  N3 -->|Yes| N4
+  E17["Exception Order Meals and Special Needs Su"]
+  N4 -.->|Exception| E17
+  N4 -->|Yes| N5
+  E18["Exception Prepare Meals and Special Suppli"]
+  N5 -.->|Exception| E18
+  N5 --> N6
+  N6 -->|Yes| N7
+  E19["Exception Verify Meal Placement on Aircraf"]
+  N7 -.->|Exception| E19
+  N7 -->|Yes| N8
+  E20["Exception Update Crew Manifest with Meal I"]
+  N8 -.->|Exception| E20
+  N8 --> N9
+  E21["Exception Notify Cabin Crew of Meal Detail"]
+  N9 -.->|Exception| E21
+  N9 --> N10
+  N10 --> N11
+  N11 --> N12
+  E22["Exception Update Meal Menu and Preferences"]
+  N12 -.->|Exception| E22
+  N12 --> N13
+  N13 --> N14
+  E23["Exception Document and Close Process"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N7 -.->|No| N6
+  N3 -.->|No| N2
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Contaminant Detection<br/>Ground Crew"}
+    N2{"Initial Assessment<br/>Flight Dispatcher"}
+    N3{"Contamination Impact Analysis<br/>Aircraft Maintenance Engineer"}
+    N4{"Contingency Planning<br/>Flight Operations Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Communication to Pilots<br/>Flight Dispatcher"]
+    N6["Update Flight Schedule<br/>Flight Operations Manager"]
+    N7["Monitor Runway Conditions<br/>Ground Crew"]
+    N8["Evaluate Weather Conditions<br/>Weather Analyst"]
+    N9["Adjust Flight Path<br/>Flight Dispatcher"]
+    N10["Final Safety Check<br/>Flight Operations Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Execute Contingency Plan<br/>Flight Dispatcher"]
+    N12["Monitor Flight Operations<br/>Flight Dispatcher"]
+    N13["Post-Operation Review<br/>Flight Operations Manager"]
+    N14["Update Procedures<br/>Flight Operations Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E15["Exception Communication to Pilots"]
+  N5 -.->|Exception| E15
+  N5 --> N6
+  E16["Exception Update Flight Schedule"]
+  N6 -.->|Exception| E16
+  N6 --> N7
+  E17["Exception Monitor Runway Conditions"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  E18["Exception Execute Contingency Plan"]
+  N11 -.->|Exception| E18
+  N11 --> N12
+  E19["Exception Monitor Flight Operations"]
+  N12 -.->|Exception| E19
+  N12 --> N13
+  E20["Exception Post-Operation Review"]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  E21["Exception Update Procedures"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N2 -.->|No| N1
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -2713,9 +2713,9 @@
       "l2_process": "Dispatch & Release",
       "l2_slug": "dispatch-release",
       "l3_name": "Slot & CTOT Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-PE-06",
@@ -2724,9 +2724,9 @@
       "l2_process": "Performance Engineering",
       "l2_slug": "performance-engineering",
       "l3_name": "Contaminated Runway Performance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-PE-07",
@@ -2735,9 +2735,9 @@
       "l2_process": "Performance Engineering",
       "l2_slug": "performance-engineering",
       "l3_name": "Engine-Out Procedure Analysis",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-PE-08",
@@ -2746,9 +2746,9 @@
       "l2_process": "Performance Engineering",
       "l2_slug": "performance-engineering",
       "l3_name": "Weight Variant & Payload Optimization",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-PE-09",
@@ -2757,9 +2757,9 @@
       "l2_process": "Performance Engineering",
       "l2_slug": "performance-engineering",
       "l3_name": "Noise Abatement Departure Procedure",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-ND-06",
@@ -2768,9 +2768,9 @@
       "l2_process": "Navigation & Data Management",
       "l2_slug": "navigation-data",
       "l3_name": "Terrain & Obstacle Database Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-ND-07",
@@ -2779,9 +2779,9 @@
       "l2_process": "Navigation & Data Management",
       "l2_slug": "navigation-data",
       "l3_name": "Instrument Procedure Validation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FO-ND-08",
@@ -2790,9 +2790,9 @@
       "l2_process": "Navigation & Data Management",
       "l2_slug": "navigation-data",
       "l3_name": "Flight Ops Quality Assurance Documentation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-FT-06",
@@ -2801,9 +2801,9 @@
       "l2_process": "Fatigue & Duty Management",
       "l2_slug": "fatigue-duty",
       "l3_name": "Ultra-Long-Haul Crew Augmentation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-FT-07",
@@ -2812,9 +2812,9 @@
       "l2_process": "Fatigue & Duty Management",
       "l2_slug": "fatigue-duty",
       "l3_name": "Circadian & Jet Lag Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-FT-08",
@@ -2823,9 +2823,9 @@
       "l2_process": "Fatigue & Duty Management",
       "l2_slug": "fatigue-duty",
       "l3_name": "Fatigue Data Analytics & Trending",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-TR-08",
@@ -2834,9 +2834,9 @@
       "l2_process": "Crew Training & Qualification",
       "l2_slug": "crew-training",
       "l3_name": "CRM & Human Factors Training",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-TR-09",
@@ -2845,9 +2845,9 @@
       "l2_process": "Crew Training & Qualification",
       "l2_slug": "crew-training",
       "l3_name": "Emergency & Evacuation Drill Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-TR-10",
@@ -2856,9 +2856,9 @@
       "l2_process": "Crew Training & Qualification",
       "l2_slug": "crew-training",
       "l3_name": "Dangerous Goods Crew Training",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-PY-05",
@@ -2867,9 +2867,9 @@
       "l2_process": "Crew Pay & Administration",
       "l2_slug": "crew-pay",
       "l3_name": "Crew Union Agreement Administration",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-PY-06",
@@ -2878,9 +2878,9 @@
       "l2_process": "Crew Pay & Administration",
       "l2_slug": "crew-pay",
       "l3_name": "Crew Productivity Analysis",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-PY-07",
@@ -2889,9 +2889,9 @@
       "l2_process": "Crew Pay & Administration",
       "l2_slug": "crew-pay",
       "l3_name": "Crew Roster Publication & Disruption Pay",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-LT-06",
@@ -2900,9 +2900,9 @@
       "l2_process": "Crew Logistics & Support",
       "l2_slug": "crew-logistics",
       "l3_name": "Crew Visa & Documentation Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-LT-07",
@@ -2911,9 +2911,9 @@
       "l2_process": "Crew Logistics & Support",
       "l2_slug": "crew-logistics",
       "l3_name": "Crew Meal & Special Needs",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "CM-LT-08",
@@ -2922,9 +2922,9 @@
       "l2_process": "Crew Logistics & Support",
       "l2_slug": "crew-logistics",
       "l3_name": "Crew Fatigue Call-Out Handling",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "GO-PB-08",

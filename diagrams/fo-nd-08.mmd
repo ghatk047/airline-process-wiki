@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Flight Logs<br/>Flight Dispatcher"}
+    N2["Gather Crew Feedback<br/>Cabin Crew Manager"]
+    N3{"Check Weather Conditions<br/>Flight Operations Manager"}
+    N4{"Review Maintenance Reports<br/>Maintenance Coordinator"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Compile Documentation Package<br/>Quality Assurance Analyst"]
+    N6{"Review Documentation for Compliance<br/>Regulatory Compliance Officer"}
+    N7["Update Quality Assurance Database<br/>Data Analyst"]
+    N8["Prepare for Audit<br/>Audit Coordinator"]
+    N9["Conduct Internal Audit<br/>Internal Auditor"]
+    N10["Review Audit Findings<br/>Quality Assurance Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Update Flight Operations Manual<br/>Training Manager"]
+    N12["Notify Stakeholders<br/>Communication Officer"]
+    N13["Close Documentation Case<br/>Quality Assurance Analyst"]
+    N14["Review Process Efficiency<br/>Process Improvement Lead"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Gather Crew Feedback"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E16["Exception Compile Documentation Package"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  N6 -->|Yes| N7
+  E17["Exception Update Quality Assurance Databas"]
+  N7 -.->|Exception| E17
+  N7 --> N8
+  E18["Exception Prepare for Audit"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  N9 --> N10
+  N10 --> N11
+  E19["Exception Update Flight Operations Manual"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  E20["Exception Notify Stakeholders"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  E21["Exception Close Documentation Case"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N4 -.->|No| N3
+  N6 -.->|No| N5
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
