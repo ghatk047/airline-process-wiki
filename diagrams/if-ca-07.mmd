@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Review Flight Schedule<br/>Cabin Services Manager"}
+    N2["Determine Catering Needs<br/>Load Controller"]
+    N3{"Order Catering Supplies<br/>Catering Manager"}
+    N4["Prepare Catering Inventory<br/>Catering Staff"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Hygiene Checks<br/>Catering Supervisor"}
+    N6["Prepare Catering Items<br/>Catering Staff"]
+    N7{"Load Catering onto Aircraft<br/>Flight Dispatcher"}
+    N8["Conduct Final Hygiene Inspection<br/>Cabin Services Manager"]
+    N9["Update Catering Records<br/>Catering Manager"]
+    N10["Notify Ground Staff<br/>Cabin Services Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Monitor Flight Departure<br/>Flight Dispatcher"]
+    N12["Review Post-Flight Report<br/>Catering Manager"]
+    N13["Update Inventory Levels<br/>Catering Staff"]
+    N14["Close Catering Process<br/>Catering Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Determine Catering Needs"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  E16["Exception Prepare Catering Inventory"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  N5 -->|Yes| N6
+  E17["Exception Prepare Catering Items"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  N8 --> N9
+  E18["Exception Update Catering Records"]
+  N9 -.->|Exception| E18
+  N9 --> N10
+  E19["Exception Notify Ground Staff"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Review Post-Flight Report"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  N13 --> N14
+  E21["Exception Close Catering Process"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N5 -.->|No| N4
+  N1 -.->|No| START
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

@@ -1,0 +1,65 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Market Analysis<br/>Fleet Analyst"}
+    N2{"Cost Analysis<br/>Finance Analyst"}
+    N3{"Operational Feasibility Study<br/>Operations Manager"}
+    N4{"Stakeholder Consultation<br/>Fleet Strategy Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Develop Fleet Strategy Document<br/>Fleet Strategy Manager"]
+    N6["Budget Allocation<br/>Finance Director"]
+    N7["Aircraft Selection<br/>Fleet Analyst"]
+    N8["Negotiate Contracts<br/>Procurement Manager"]
+    N9["Update Fleet Management Systems<br/>IT Manager"]
+    N10["Plan Training and Support<br/>Training Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Monitor Fleet Performance<br/>Operations Manager"]
+    N12["Review and Adjust Strategy<br/>Fleet Strategy Manager"]
+    N13["Report to Senior Management<br/>CEO/CFO"]
+    N14["Plan Future Acquisitions<br/>Fleet Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E15["Exception Develop Fleet Strategy Document"]
+  N5 -.->|Exception| E15
+  N5 --> N6
+  E16["Exception Budget Allocation"]
+  N6 -.->|Exception| E16
+  N6 --> N7
+  N7 --> N8
+  N8 --> N9
+  E17["Exception Update Fleet Management Systems"]
+  N9 -.->|Exception| E17
+  N9 --> N10
+  E18["Exception Plan Training and Support"]
+  N10 -.->|Exception| E18
+  N10 --> N11
+  E19["Exception Monitor Fleet Performance"]
+  N11 -.->|Exception| E19
+  N11 --> N12
+  N12 --> N13
+  E20["Exception Report to Senior Management"]
+  N13 -.->|Exception| E20
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  N4 -.->|No| N3
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

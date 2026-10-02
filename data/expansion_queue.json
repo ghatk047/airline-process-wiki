@@ -3593,9 +3593,9 @@
       "l2_process": "Aviation Security (AVSEC)",
       "l2_slug": "aviation-security",
       "l3_name": "Aircraft Security Search Program",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-QA-07",
@@ -3604,9 +3604,9 @@
       "l2_process": "Quality & Regulatory Assurance",
       "l2_slug": "quality-regulatory",
       "l3_name": "Supplier Audit & Approval",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-QA-08",
@@ -3615,9 +3615,9 @@
       "l2_process": "Quality & Regulatory Assurance",
       "l2_slug": "quality-regulatory",
       "l3_name": "Document & Manual Control System",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "SQ-QA-09",
@@ -3626,9 +3626,9 @@
       "l2_process": "Quality & Regulatory Assurance",
       "l2_slug": "quality-regulatory",
       "l3_name": "Continuous Monitoring & Compliance Dashboard",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AQ-06",
@@ -3637,9 +3637,9 @@
       "l2_process": "Fleet Acquisition & Financing",
       "l2_slug": "fleet-acquisition",
       "l3_name": "Fleet Commonality & Type Strategy",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AQ-07",
@@ -3648,9 +3648,9 @@
       "l2_process": "Fleet Acquisition & Financing",
       "l2_slug": "fleet-acquisition",
       "l3_name": "Manufacturer Relationship Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AQ-08",
@@ -3659,9 +3659,9 @@
       "l2_process": "Fleet Acquisition & Financing",
       "l2_slug": "fleet-acquisition",
       "l3_name": "Aircraft Pre-Delivery Payment Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-LC-06",
@@ -3670,9 +3670,9 @@
       "l2_process": "Aircraft Lifecycle",
       "l2_slug": "aircraft-lifecycle",
       "l3_name": "Fleet Utilization Optimization",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-LC-07",
@@ -3681,9 +3681,9 @@
       "l2_process": "Aircraft Lifecycle",
       "l2_slug": "aircraft-lifecycle",
       "l3_name": "Transition & Bridging Lease Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-LC-08",
@@ -3692,9 +3692,9 @@
       "l2_process": "Aircraft Lifecycle",
       "l2_slug": "aircraft-lifecycle",
       "l3_name": "Aircraft Storage & Parking Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AV-05",
@@ -3703,9 +3703,9 @@
       "l2_process": "Asset Value & Risk",
       "l2_slug": "asset-value-risk",
       "l3_name": "Fleet Asset Register Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AV-06",
@@ -3714,9 +3714,9 @@
       "l2_process": "Asset Value & Risk",
       "l2_slug": "asset-value-risk",
       "l3_name": "Engine Asset & LLP Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "FM-AV-07",
@@ -3725,9 +3725,9 @@
       "l2_process": "Asset Value & Risk",
       "l2_slug": "asset-value-risk",
       "l3_name": "Component Value & Green-Time Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-CA-07",
@@ -3736,9 +3736,9 @@
       "l2_process": "Catering & Provisioning",
       "l2_slug": "catering-provisioning",
       "l3_name": "Catering Hygiene & Food Safety",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-CA-08",
@@ -3747,9 +3747,9 @@
       "l2_process": "Catering & Provisioning",
       "l2_slug": "catering-provisioning",
       "l3_name": "Halal / Kosher / Dietary Compliance",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-CA-09",
@@ -3758,9 +3758,9 @@
       "l2_process": "Catering & Provisioning",
       "l2_slug": "catering-provisioning",
       "l3_name": "Bonded Store & Duty Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-RS-05",
@@ -3769,9 +3769,9 @@
       "l2_process": "Inflight Retail & Product",
       "l2_slug": "inflight-retail",
       "l3_name": "Onboard Payment & POS Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-RS-06",
@@ -3780,9 +3780,9 @@
       "l2_process": "Inflight Retail & Product",
       "l2_slug": "inflight-retail",
       "l3_name": "Inventory & Stock Reconciliation",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-RS-07",
@@ -3791,9 +3791,9 @@
       "l2_process": "Inflight Retail & Product",
       "l2_slug": "inflight-retail",
       "l3_name": "Crew Sales Incentive Management",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-RS-08",
@@ -3802,9 +3802,9 @@
       "l2_process": "Inflight Retail & Product",
       "l2_slug": "inflight-retail",
       "l3_name": "Amenity Kit Sourcing & Design",
-      "status": "Queued",
+      "status": "Complete",
       "l4_steps": [],
-      "run_date": null
+      "run_date": "2026-10-02"
     },
     {
       "id": "IF-EC-05",

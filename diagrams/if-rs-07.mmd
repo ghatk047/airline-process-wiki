@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Data Extraction<br/>Revenue Analyst"]
+    N2{"Performance Review<br/>Revenue Analyst"}
+    N3["Incentive Calculation<br/>Revenue Analyst"]
+    N4{"Approval Request<br/>Revenue Analyst"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Manager Review<br/>Inflight Services Manager"}
+    N6["Payment Preparation<br/>Finance Analyst"]
+    N7["Bank Transfer Setup<br/>Finance Analyst"]
+    N8{"Bank Transfer Execution<br/>Finance Analyst"}
+    N9["Incentive Distribution Notification<br/>Revenue Analyst"]
+    N10["Audit Review<br/>Internal Auditor"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Incentive Report Generation<br/>Revenue Analyst"]
+    N12["Review and Feedback<br/>Inflight Services Manager"]
+    N13["Process Improvement Plan<br/>Revenue Analyst"]
+    N14["Final Review and Closure<br/>Inflight Services Manager"]
+  end
+  START --> N1
+  E15["Exception Data Extraction"]
+  N1 -.->|Exception| E15
+  N1 --> N2
+  N2 -->|Yes| N3
+  E16["Exception Incentive Calculation"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  N4 -->|Yes| N5
+  N5 -->|Yes| N6
+  E17["Exception Payment Preparation"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  E18["Exception Bank Transfer Setup"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  N8 -->|Yes| N9
+  E19["Exception Incentive Distribution Notificat"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Incentive Report Generation"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  N12 --> N13
+  E21["Exception Process Improvement Plan"]
+  N13 -.->|Exception| E21
+  N13 --> N14
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N2 -.->|No| N1
+  N4 -.->|No| N3
+  N8 -.->|No| N7
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

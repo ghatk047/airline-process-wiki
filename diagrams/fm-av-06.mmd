@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Identify Asset Needs<br/>Maintenance Planner"}
+    N2{"Review LLP Availability<br/>Supply Chain Manager"}
+    N3{"Plan Asset Replacement<br/>Maintenance Manager"}
+    N4["Notify Stakeholders<br/>Asset Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Order LLPs<br/>Procurement Specialist"]
+    N6["Monitor Order Status<br/>Supply Chain Analyst"]
+    N7["Prepare for Installation<br/>Maintenance Engineer"]
+    N8{"Install New Asset<br/>Maintenance Engineer"}
+    N9["Conduct Post-Installation Check<br/>Quality Assurance Engineer"]
+    N10["Update Asset Records<br/>Asset Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Maintenance Logs<br/>Maintenance Planner"]
+    N12["Schedule Next Maintenance<br/>Maintenance Scheduler"]
+    N13["Monitor Asset Performance<br/>Performance Analyst"]
+    N14["Update Risk Assessment<br/>Risk Analyst"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E15["Exception Notify Stakeholders"]
+  N4 -.->|Exception| E15
+  N4 --> N5
+  E16["Exception Order LLPs"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  E17["Exception Monitor Order Status"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  E18["Exception Prepare for Installation"]
+  N7 -.->|Exception| E18
+  N7 --> N8
+  N8 -->|Yes| N9
+  N9 --> N10
+  E19["Exception Update Asset Records"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  E20["Exception Review Maintenance Logs"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  E21["Exception Schedule Next Maintenance"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Monitor Asset Performance"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Update Risk Assessment"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N8 -.->|No| N7
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

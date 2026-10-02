@@ -1,0 +1,73 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Initiate Search Plan<br/>Flight Dispatcher"}
+    N2["Assign Security Personnel<br/>Security Manager"]
+    N3["Prepare Checklists and Equipment<br/>Security Personnel"]
+    N4["Conduct Briefing<br/>Security Manager"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5{"Conduct Initial Walkaround<br/>Security Personnel"}
+    N6["Perform Detailed Search<br/>Security Personnel"]
+    N7{"Check Cargo and Luggage<br/>Security Personnel"}
+    N8["Review and Document Findings<br/>Security Manager"]
+    N9["Conduct Debriefing<br/>Security Manager"]
+    N10["Update Security Logs<br/>Security Manager"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11{"Clear Aircraft for Departure<br/>Flight Dispatcher"}
+    N12["Notify Stakeholders<br/>Security Manager"]
+    N13["Review and Improve Procedures<br/>Security Manager"]
+    N14["Close Case File<br/>Security Manager"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Assign Security Personnel"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  E16["Exception Prepare Checklists and Equipment"]
+  N3 -.->|Exception| E16
+  N3 --> N4
+  E17["Exception Conduct Briefing"]
+  N4 -.->|Exception| E17
+  N4 --> N5
+  N5 -->|Yes| N6
+  E18["Exception Perform Detailed Search"]
+  N6 -.->|Exception| E18
+  N6 --> N7
+  N7 -->|Yes| N8
+  E19["Exception Review and Document Findings"]
+  N8 -.->|Exception| E19
+  N8 --> N9
+  E20["Exception Conduct Debriefing"]
+  N9 -.->|Exception| E20
+  N9 --> N10
+  E21["Exception Update Security Logs"]
+  N10 -.->|Exception| E21
+  N10 --> N11
+  N11 -->|Yes| N12
+  E22["Exception Notify Stakeholders"]
+  N12 -.->|Exception| E22
+  N12 --> N13
+  E23["Exception Review and Improve Procedures"]
+  N13 -.->|Exception| E23
+  N13 --> N14
+  E24["Exception Close Case File"]
+  N14 -.->|Exception| E24
+  DONE([Complete])
+  N14 --> DONE
+  N5 -.->|No| N4
+  N1 -.->|No| START
+  N11 -.->|No| N10
+  N7 -.->|No| N6
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23,E24 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

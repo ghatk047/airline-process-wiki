@@ -1,0 +1,67 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1["Identify Components for Review<br/>Aircraft Maintenance Engineer"]
+    N2["Determine Component Value<br/>Asset Valuation Analyst"]
+    N3{"Assess Component Green-Time<br/>Maintenance Planner"}
+    N4{"Prioritize Maintenance Actions<br/>Maintenance Manager"}
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Schedule Maintenance Tasks<br/>Flight Dispatcher"]
+    N6["Notify Ground Crew<br/>Maintenance Coordinator"]
+    N7{"Execute Maintenance Tasks<br/>Aircraft Mechanic"}
+    N8["Update Component Status<br/>Asset Valuation Analyst"]
+    N9{"Review Maintenance Outcomes<br/>Maintenance Manager"}
+    N10["Adjust Maintenance Schedule<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Monitor Component Performance<br/>Aircraft Maintenance Engineer"]
+    N12["Update Asset Value Database<br/>Asset Valuation Analyst"]
+    N13["Review Financial Impact<br/>Revenue Analyst"]
+    N14["Report to Management<br/>Maintenance Manager"]
+  end
+  START --> N1
+  N1 --> N2
+  E15["Exception Determine Component Value"]
+  N2 -.->|Exception| E15
+  N2 --> N3
+  N3 -->|Yes| N4
+  N4 -->|Yes| N5
+  E16["Exception Schedule Maintenance Tasks"]
+  N5 -.->|Exception| E16
+  N5 --> N6
+  E17["Exception Notify Ground Crew"]
+  N6 -.->|Exception| E17
+  N6 --> N7
+  N7 -->|Yes| N8
+  E18["Exception Update Component Status"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  N9 -->|Yes| N10
+  E19["Exception Adjust Maintenance Schedule"]
+  N10 -.->|Exception| E19
+  N10 --> N11
+  N11 --> N12
+  E20["Exception Update Asset Value Database"]
+  N12 -.->|Exception| E20
+  N12 --> N13
+  N13 --> N14
+  E21["Exception Report to Management"]
+  N14 -.->|Exception| E21
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N4 -.->|No| N3
+  N7 -.->|No| N6
+  N9 -.->|No| N8
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e

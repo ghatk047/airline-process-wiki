@@ -1,0 +1,71 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'12px','fontFamily':'Inter, Arial'}}}%%
+flowchart LR
+  START([Start])
+  subgraph P1["Phase 1 Initiation"]
+    direction TB
+    N1{"Receive Landing Notification<br/>Flight Dispatcher"}
+    N2{"Check Maintenance Status<br/>Maintenance Planner"}
+    N3{"Assign Parking Slot<br/>Ground Handling Coordinator"}
+    N4["Update Ground Operations System<br/>Ground Handling Coordinator"]
+  end
+  subgraph P2["Phase 2 Execution"]
+    direction TB
+    N5["Notify Ground Crew<br/>Ground Handling Coordinator"]
+    N6{"Monitor Aircraft Arrival<br/>Flight Dispatcher"}
+    N7["Direct Aircraft to Parking Slot<br/>Ground Handling Coordinator"]
+    N8["Verify Aircraft in Parking Slot<br/>Ground Handling Coordinator"]
+    N9["Update Maintenance System<br/>Maintenance Planner"]
+    N10["Prepare for Next Operation<br/>Flight Dispatcher"]
+  end
+  subgraph P3["Phase 3 Close"]
+    direction TB
+    N11["Review Ground Operations Report<br/>Ground Handling Coordinator"]
+    N12["Update Fleet Management System<br/>Fleet Manager"]
+    N13["Notify Maintenance Team<br/>Maintenance Planner"]
+    N14["Close Ground Operations Case<br/>Ground Handling Coordinator"]
+  end
+  START --> N1
+  N1 -->|Yes| N2
+  E15["Exception Check Maintenance Status"]
+  N2 -.->|Exception| E15
+  N2 -->|Yes| N3
+  N3 -->|Yes| N4
+  E16["Exception Update Ground Operations System"]
+  N4 -.->|Exception| E16
+  N4 --> N5
+  E17["Exception Notify Ground Crew"]
+  N5 -.->|Exception| E17
+  N5 --> N6
+  N6 -->|Yes| N7
+  N7 --> N8
+  E18["Exception Verify Aircraft in Parking Slot"]
+  N8 -.->|Exception| E18
+  N8 --> N9
+  E19["Exception Update Maintenance System"]
+  N9 -.->|Exception| E19
+  N9 --> N10
+  N10 --> N11
+  E20["Exception Review Ground Operations Report"]
+  N11 -.->|Exception| E20
+  N11 --> N12
+  E21["Exception Update Fleet Management System"]
+  N12 -.->|Exception| E21
+  N12 --> N13
+  E22["Exception Notify Maintenance Team"]
+  N13 -.->|Exception| E22
+  N13 --> N14
+  E23["Exception Close Ground Operations Case"]
+  N14 -.->|Exception| E23
+  DONE([Complete])
+  N14 --> DONE
+  N3 -.->|No| N2
+  N1 -.->|No| START
+  N2 -.->|No| N1
+  N6 -.->|No| N5
+  classDef startEnd fill:#003366,color:#fff,stroke:#003366
+  classDef exc fill:#fee2e2,stroke:#ef4444,color:#991b1b
+  class START,DONE startEnd
+  class E15,E16,E17,E18,E19,E20,E21,E22,E23 exc
+  style P1 fill:#dbeafe,stroke:#3b82f6
+  style P2 fill:#fef9c3,stroke:#f59e0b
+  style P3 fill:#dcfce7,stroke:#22c55e
