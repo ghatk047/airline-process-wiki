@@ -94,6 +94,7 @@ def build_sidebar(active_l1s=None, active_l2s=None, depth=1):
                 )
             lines.append(f'      </div>')
         lines += [f'    </div>', f'  </div>']
+    lines.append(ea_sidebar_section(root))
     return "\n".join(lines)
 
 # ── Shared page shell ──────────────────────────────────────────────
